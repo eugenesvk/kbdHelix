@@ -1,0 +1,420 @@
+[
+  {
+    "backcolor": "#dbdbdb",
+    "name": "🧬Helix 0.6 ⌨zxcv0.2",
+    "radii": "6px 6px 12px 12px / 18px 18px 12px 12px",
+    "css": ".keytop {\n  margin-top \t: -3px           \t; /*0px*/\n  margin-left\t: -5px           \t; /*0px*/\n  width      \t: 52px !important\t; /*42px → 52*/\n  height     \t: 45px !important\t; /*42px → 46*/\n}\n.keylabel0, .keylabel3, .keylabel6 { margin-left\t: -6px;} /* left */\n.keylabel2, .keylabel5, .keylabel8 { margin-left\t:  6px;} /* right */\n.keylabel0, .keylabel2, .keylabel3 { margin-top \t: -4px;} /* top */\n.keylabel3, .keylabel4, .keylabel5 { margin-top \t: -1px;} /* center */\n.keylabel6, .keylabel7, .keylabel8 { margin-top \t:  1px;} /* bottom */\n/*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */\n"
+  },
+  [
+    {
+      "t": "#ff0000\n\n\n\n#000000",
+      "p": "R1",
+      "f": 2,
+      "fa": [
+        6,
+        6,
+        0,
+        6
+      ]
+    },
+    "𝕒⇋𝔸\n𝔸𝕒\n\n𝕒𝔸\n` ~",
+    {
+      "t": "#ff0000\n#800080\n\n#800080\n#000000"
+    },
+    "🢔<i class='fa fa-usd'></i>\n1\n\n⎗\n1 !",
+    "<i class='fa fa-usd'></i>🢖\n2\n\n⎘\n2 @",
+    {
+      "t": "#006400\n#800080\n\n\n#000000"
+    },
+    "\n3\n\n<span class='cd'>⎗&#801;</span>\n3 #",
+    {
+      "t": "#377bb5\n#800080\n\n#006400\n#000000"
+    },
+    "<i class='fa fa-usd'></i>ᵏ|\n4\n\n<span class='cd'>⎘&#801;</span>\n4 $",
+    {
+      "t": "#377bb5\n#800080\n\n\n#000000"
+    },
+    "∀▋\n5\n\n\n5 %",
+    {
+      "t": "#ff0000\n#800080\n\n\n#000000"
+    },
+    "𝕒𝔸\n6\n\n\n6 ^",
+    "<i class='fa fa-align-justify'></i>\n7\n\n\n7 &",
+    {
+      "t": "#800080\n\n\n\n#000000"
+    },
+    "𝖗🢔▋\n8\n\n\n8 *",
+    {
+      "t": "#ff0000\n#800080\n\n\n#000000"
+    },
+    "⟲\n9\n\n\n9 (",
+    "⟳\n0\n\n\n0 )",
+    {
+      "t": "#377bb5\n\n\n\n#000000"
+    },
+    "✁\n✁\n\n\n- _",
+    {
+      "t": "#377bb5\n#ff0000\n\n\n#000000"
+    },
+    "<i class='fa fa-copy'></i>\nℱ\n\n\n= +",
+    {
+      "t": "#377bb5\n\n\n#ff0000\n#000000\n\n\n\n\n#ff0000\n#000000",
+      "fa": [
+        6,
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        5
+      ]
+    },
+    "\n\n\nw\n⌫\n\n\n\n\nW\n×⭠",
+    "\n\n\nw\n⌦\n\n\n\n\nW\n×⭢"
+  ],
+  [
+    {
+      "x": 1.5,
+      "t": "#006400\n\n\n#377bb5\n#000000\n\n\n\n\n\n#000000",
+      "p": "R2",
+      "fa": [
+        6,
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        6
+      ]
+    },
+    "W\nw\n\nw\nQ\n\n\n\n\n\n⭠",
+    {
+      "t": "#006400\n\n\n#377bb5\n#000000\n\n\n\n\n#800080\n#000000",
+      "fa": [
+        6,
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        6
+      ]
+    },
+    "W\nw\n\nw\nW\n\n\n\n\n☰🗔\n⭲",
+    {
+      "t": "#006400\n\n\n#377bb5\n#000000\n\n\n\n\n\n#000000"
+    },
+    "W\nw\n\nw\nE\n\n\n\n\n\n⭢",
+    {
+      "t": "#ff0000\n\n\n\n#000000"
+    },
+    "🗘ʸ\n🗘\n\n\nR",
+    {
+      "t": "#ff0000\n#006400\n\n\n#000000"
+    },
+    "\n∞\n\n\nT",
+    {
+      "t": "#ff0000\n\n\n\n#000000",
+      "fa": [
+        6,
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5
+      ]
+    },
+    "\n∞\n\n\nY\n\n\n\n\n↷",
+    {
+      "t": "#ff0000\n\n\n#377bb5\n#000000"
+    },
+    "⭡␤\n⭣␤\n\n×\nU",
+    "⁁⭰\n⁁⤸\n\n×∀\nI",
+    {
+      "t": "#ff0000\n\n\n\n#000000\n\n\n\n\n#800080"
+    },
+    "⭲⎀\n⤹⎀\n\n\nO\n\n\n\n\n&nbsp;&nbsp;☰␜",
+    {
+      "t": "#800080\n\n\n\n#000000"
+    },
+    "☰&#65279;👁&#65279;ₛ\n☰👁\n\n\nP",
+    {
+      "t": "#006400\n#800080\n\n\n#000000"
+    },
+    "⭠¶\n☰[\n\n\n[ {",
+    "¶⭢\n☰]\n\n\n] }",
+    {
+      "t": "#ff0000\n\n\n#800080\n#000000"
+    },
+    "|\n\n\n|to\n\\ |"
+  ],
+  [
+    {
+      "t": "#ff0000\n\n\n\n#000000",
+      "p": "R3 LONG",
+      "a": 7,
+      "w": 1.75
+    },
+    "\n\n\n\n⇪",
+    {
+      "t": "#377bb5\n\n\n\n#000000",
+      "p": "R3",
+      "a": 4,
+      "fa": [
+        6,
+        5
+      ]
+    },
+    "⮀\n🠼▋🠾\n\n\nA\n\n\n\n\n∀▋",
+    {
+      "t": "#377bb5\n\n\n\n#000000\n\n\n\n\n#800080",
+      "fa": [
+        5,
+        5,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    "䷖𝖗\n𝖗▋\n\n䷖␤\nS\n\n\n\n\n<i class='fa fa-save'></i>&nbsp;",
+    {
+      "t": "#377bb5\n\n\n\n#000000",
+      "fa": [
+        6,
+        6
+      ]
+    },
+    "⎯\n⮒\n\n\nD",
+    {
+      "t": "#006400\n\n\n\n#000000",
+      "fa": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "n": true
+    },
+    "<i class='fa fa-search'></i>\n<i class='mss mss-Search-3'></i>\n<i class='fa fa-search'></i>₋\n<i class='mss mss-Search-3'></i>₋\nF",
+    "⮊⎯\n☰⮊\n\n\nG",
+    {
+      "t": "#006400\n\n\n#800080\n#000000"
+    },
+    "⭰\n⤉\n\n🖈\nH",
+    {
+      "t": "#ff0000\n#006400\n\n#377bb5\n#000000\n\n\n\n\n#800080",
+      "fa": [
+        6,
+        6,
+        6,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "n": true
+    },
+    "⨝\n←\n\n⟲\nJ\n\n\n\n\n🖈",
+    {
+      "t": "#377bb5\n#006400\n\n\n#000000\n\n\n\n\n#006400"
+    },
+    "ᵏ𝖗\n↓\n\n🠷\nK\n\n\n\n\n⇟",
+    "×𝖗\n↑\n\n🠵\nL\n\n\n\n\n⇞",
+    {
+      "t": "#800080\n#006400\n\n#377bb5\n#000000"
+    },
+    "⌘\n→\n\n⟳\n; :",
+    {
+      "t": "#800080\n#377bb5\n\n#377bb5\n#000000"
+    },
+    "®\n🢖🢔\n\n⮀\n' \"",
+    {
+      "t": "#ff0000\n\n\n\n#000000",
+      "p": "R3 LONG",
+      "w": 1.75
+    },
+    "⭡␤\n⭣␤\n\n\n⏎"
+  ],
+  [
+    {
+      "x": 2.25,
+      "t": "#ff0000\n\n#377bb5\n#377bb5\n#000000",
+      "p": "R4"
+    },
+    "<i class='fa fa-history'></i>\n⎌\n×∀\n×\nZ\n\n\n\n\n⎌",
+    {
+      "t": "#ff0000\n\n\n\n#000000\n\n\n\n\n\n#000000",
+      "fa": [
+        6,
+        6,
+        5,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    "Δ\n×\n🕱Δ\n🕱\nX\n\n\n\n\n<i class='fa fa-clipboard'></i>\n▋",
+    {
+      "t": "#800080\n\n\n\n#000000",
+      "fa": [
+        5,
+        5,
+        5,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    "<i class='fa fa-clipboard'></i>\n<i class='fa fa-copy'></i>\n\n\nC\n\n\n\n\n<i class='fa fa-clipboard'></i>",
+    {
+      "t": "#ff0000\n\n\n\n#000000",
+      "fa": [
+        4,
+        4,
+        5,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    "⤸<i class='fa fa-copy'></i>\n<i class='fa fa-copy'></i>⤹\n\n\nV\n\n\n\n\n<i class='fa fa-clipboard'></i>⤹",
+    {
+      "fa": [
+        6,
+        6
+      ]
+    },
+    "<i class='fa fa-clock-o'></i>\n↷\n\n\nB",
+    {
+      "t": "#006400\n\n\n\n#000000"
+    },
+    "⭲\n⤈\n\n\nN",
+    {
+      "t": "#800080\n#377bb5\n\n\n#000000",
+      "fa": [
+        6,
+        6,
+        0,
+        6
+      ]
+    },
+    "▶\n☰<i class='fa fa-puzzle-piece'></i>\n\n⏺\nM",
+    {
+      "t": "#006400\n\n\n#ff0000\n#000000\n\n\n\n\n#ff0000",
+      "fa": [
+        6,
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ]
+    },
+    "🢔◎\n🢔◎\n\n⇚\n, <\n\n\n\n\n&nbsp;⊖",
+    {
+      "t": "#006400\n#ff0000\n\n#ff0000\n#000000\n\n\n\n\n#ff0000"
+    },
+    "◎🢖\n∞\n\n⇛\n. >\n\n\n\n\n⊕",
+    {
+      "t": "#006400\n\n\n\n#000000\n\n\n\n\n#ff0000",
+      "fa": [
+        6,
+        6,
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5
+      ]
+    },
+    "<i class='fa fa-search'></i>𝖗\n<i class='mss mss-Search-3'></i>𝖗\n\n\n/ ?\n\n\n\n\n//"
+  ],
+  [
+    {
+      "t": "#000000",
+      "p": "R5 LONG",
+      "f": 6,
+      "w": 1.75
+    },
+    "⇧\n\n⇧⌥\n⌥\nmods\n\n\n\n\n⌃\n∀",
+    {
+      "x": 2.5,
+      "t": "#006400\n#800080\n\n\n#000000",
+      "p": "SPACE LONG",
+      "f": 2,
+      "fa": [
+        0,
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "w": 5.25
+    },
+    "\n☰␣\n\n\n␣\n\n\n<font color=\"#006400\"> Move </font> <font color=\"#377bb5\"> Select </font> <font color=\"#ff0000\"> Change </font> <font color=\"#800080\"> Other </font>",
+    {
+      "x": 3,
+      "t": "#ff0000\n#800080\n#000000\n#000000\n#000000\n#000000\n#006400\n#000000",
+      "p": "R5",
+      "a": 0,
+      "fa": [
+        4,
+        4,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "w": 2.5,
+      "d": true
+    },
+    "∞\n☰&#65279;👁&#65279;ₛ\nmove from .\nmake sticky\n🧬0.6\nzxcv0.2 <i class='fa fa-keyboard-o'></i>\n◎🢖\nmove to ."
+  ]
+]
