@@ -1,0 +1,83 @@
+@font-face{
+  font-family	: 'combining-diacritical';
+  src        	: url(../font/combining-diacritical.ttf) format('truetype');
+  font-weight	: normal;
+  font-style 	: normal
+}
+.cd{
+  display                	: inline-block;
+  font                   	: normal normal normal 14px/1 combining-diacritical;
+  font-size              	: inherit;
+  text-rendering         	: auto;
+  -webkit-font-smoothing 	: antialiased;
+  -moz-osx-font-smoothing	: grayscale;
+  transform              	: translate(0,0)}
+html,body{
+  height               	: 100%;
+  font-family          	: "Segoe UI","Arial","Helvetica",sans-serif;
+  -webkit-touch-callout	: none;
+  cursor               	: default
+}
+.body{
+  margin	: 10px}
+  #wrap{
+    min-height	: 100%;
+    height    	: auto!important;
+    height    	: 100%;
+    margin    	: 0 auto -70px;
+    padding   	: 0 0 60px}
+  #keyboard{
+    padding      	: 4px;
+    border-radius	: 3px;
+    margin-top   	: 10px;
+    margin-bottom	: 10px;
+    border       	: dashed 1px #ddd}
+  #keyboard #keyboard-bg{
+    position  	: inherit;
+    border    	: solid 1px #ddd;
+    padding   	: 9px;
+    box-sizing	: content-box;
+    min-width 	: 56px;
+    min-height	: 56px}
+  #keyboard-bg div{
+    position     	: absolute;
+    border-color 	: #000;
+  box-sizing     	: border-box;
+  background-clip	: padding-box}
+  #keyboard .keyborder{
+    border-color	: #000;
+    border-style	: solid}
+  #keyboard .decal .keyborder{
+    border-style	: none!important;
+    background  	: transparent!important}
+  .keylabel>div{
+    display    	: table-cell;
+    white-space	: nowrap;
+    position   	: static!important
+  }
+  .keylabel0>div,.keylabel1>div,.keylabel2>div{vertical-align:top}
+  .keylabel3>div,.keylabel4>div,.keylabel5>div{vertical-align:middle}
+  .keylabel6>div,.keylabel7>div,.keylabel8>div{vertical-align:bottom}
+  .keylabel9,.keylabel10,.keylabel11 {
+      top        	: 100%;
+      margin-top 	: -1px;
+      font-size  	: 10px!important;
+      max-height 	: 1em!important;
+      white-space	: nowrap;
+      overflow   	: hidden
+    }
+  .keylabel0>div,.keylabel3>div,.keylabel6>div,.keylabel9>div {text-align:left}
+  .keylabel4>div,.keylabel7>div,.keylabel10>div               {text-align:center}
+  .keylabel2>div,.keylabel5>div,.keylabel8>div,.keylabel11>div{text-align:right}
+  .keylabel.textsize2{font-size:10px; line-height:1em}
+  .keylabel.textsize3{font-size:12px; line-height:1em}
+  .keylabel.textsize4{font-size:14px; line-height:1em}
+  .keylabel.textsize5{font-size:16px; line-height:1em}
+  .keylabel.textsize6{font-size:18px; line-height:1em}
+  .keylabels{
+    font-family	: "Helvetica","Arial",sans-serif}
+  .HOMING .keylabels{
+    background-image   	: url(../img/bg.png);
+    background-repeat  	: no-repeat;
+    background-position	: center 90%
+}
