@@ -1,0 +1,199 @@
+[keys.normal]
+# Movement
+  "left"     = "move_char_left"           	# Move left
+  "down"     = "move_line_down"           	# Move down
+  "up"       = "move_line_up"             	# Move up
+  "right"    = "move_char_right"          	# Move right
+  "h"        = "move_char_left"           	# Move left
+  "j"        = "move_line_down"           	# Move down
+  "k"        = "move_line_up"             	# Move up
+  "l"        = "move_char_right"          	# Move right
+  "w"        = "move_next_word_start"     	# Move next word start
+  "b"        = "move_prev_word_start"     	# Move previous word start
+  "e"        = "move_next_word_end"       	# Move next word end
+  "W"        = "move_next_long_word_start"	# Move next WORD start
+  "B"        = "move_prev_long_word_start"	# Move previous WORD start
+  "E"        = "move_next_long_word_end"  	# Move next WORD end
+  "t"        = "find_till_char"           	# Find 'till next char
+  "f"        = "find_next_char"           	# Find next char
+  "T"        = "till_prev_char"           	# Find 'till previous char
+  "F"        = "find_prev_char"           	# Find previous char
+  "A-."      = "repeat_last_motion"       	# Repeat last motion (f, t or m)
+  "home"     = "goto_line_start"          	# Move to the start of the line
+  "end"      = "goto_line_end"            	# Move to the end of the line
+  "pageup"   = "page_up"                  	# Move page up
+  "pagedown" = "page_down"                	# Move page down
+  "C-u"      = "half_page_up"             	# Move half page up
+  "C-d"      = "half_page_down"           	# Move half page down
+  "C-i"      = "jump_forward"             	# Jump forward on the jumplist
+  "C-o"      = "jump_backward"            	# Jump backward on the jumplist
+  "v"        = "select_mode"              	# Enter select (extend) mode
+  ":"        = "command_mode"             	# Enter command mode
+
+# Changes
+  "r"   = "replace"                	# Replace with a character
+  "R"   = "replace_with_yanked"    	# Replace with yanked text
+  "~"   = "switch_case"            	# Switch case of the selected text
+  "`"   = "switch_to_lowercase"    	# Set the selected text to lower case
+  "A-`" = "switch_to_uppercase"    	# Set the selected text to upper case
+  "i"   = "insert_mode"            	# Insert before selection
+  "a"   = "append_mode"            	# Insert after selection (append)
+  "I"   = "prepend_to_line"        	# Insert at the start of the line
+  "A"   = "append_to_line"         	# Insert at the end of the line
+  "o"   = "open_below"             	# Open new line below selection
+  "O"   = "open_above"             	# Open new line above selection
+  "u"   = "undo"                   	# Undo change
+  "U"   = "redo"                   	# Redo change
+  "A-u" = "earlier"                	# Move backward in history
+  "A-U" = "later"                  	# Move forward in history
+  "y"   = "yank"                   	# Yank selection
+  "p"   = "paste_after"            	# Paste after selection
+  "P"   = "paste_before"           	# Paste after selection
+  "\""  = "select_register"        	# Select a register to yank to or paste from
+  "gt"  = "indent"                 	# Indent selection
+  "lt"  = "unindent"               	# Unindent selection
+  "="   = "format_selections"      	# Format selection (LSP)
+  "d"   = "delete_selection"       	# Delete selection
+  "A-d" = "delete_selection_noyank"	# Delete selection, without yanking
+  "c"   = "change_selection"       	# Change selection (delete and enter insert mode)
+  "A-c" = "change_selection_noyank"	# Change selection (delete and enter insert mode, without yanking)
+  "C-a" = "increment"              	# Increment object (number) under cursor
+  "C-x" = "decrement"              	# Decrement object (number) under cursor
+
+# Shell
+  "|"   = "shell_pipe"         	# Pipe each selection through shell command, replacing with output
+  "A-|" = "shell_pipe_to"      	# Pipe each selection into shell command, ignoring output
+  "!"   = "shell_insert_output"	# Run shell command, inserting output before each selection
+  "A-!" = "shell_append_output"	# Run shell command, appending output after each selection
+
+# Selection manipulation
+  "s"           = "select_regex"                      	# Select all regex matches inside selections
+  "S"           = "split_selection"                   	# Split selection into subselections on regex matches
+  "A-s"         = "split_selection_on_newline"        	# Split selection on newlines
+  "&"           = "align_selections"                  	# Align selection in columns
+  "_"           = "trim_selections"                   	# Trim whitespace from the selection
+  "semicolon"   = "collapse_selection"                	# Collapse selection onto a single cursor
+  "A-semicolon" = "flip_selections"                   	# Flip selection cursor and anchor
+  ","           = "keep_primary_selection"            	# Keep only the primary selection
+  "A-,"         = "remove_primary_selection"          	# Remove the primary selection
+  "C"           = "copy_selection_on_next_line"       	# Copy selection onto the next line (Add cursor below)
+  "A-C"         = "copy_selection_on_prev_line"       	# Copy selection onto the previous line (Add cursor above)
+  "("           = "rotate_selections_backward"        	# Rotate main selection backward
+  ")"           = "rotate_selections_forward"         	# Rotate main selection forward
+  "A-("         = "rotate_selection_contents_backward"	# Rotate selection contents backward
+  "A-)"         = "rotate_selection_contents_forward" 	# Rotate selection contents forward
+  "percent"     = "select_all"                        	# Select entire file
+  "x"           = "extend_line"                       	# Select current line, if already selected, extend to next line
+  "X"           = "extend_to_line_bounds"             	# Extend selection to line bounds (line-wise selection)
+  "J"           = "join_selections"                   	# Join lines inside selection
+  "K"           = "keep_selections"                   	# Keep selections matching the regex
+  "A-K"         = "remove_selections"                 	# Remove selections matching the regex
+  "$"           = "shell_keep_pipe"                   	# Pipe each selection into shell command, keep selections where command returned 0
+  "C-c"         = "toggle_comments"                   	# Comment/uncomment the selections
+
+# Search
+  "/" = "search"          	# Search for regex pattern
+  "?" = "rsearch"         	# Search for previous pattern
+  "n" = "search_next"     	# Select next search match
+  "N" = "search_prev"     	# Select previous search match
+  "*" = "search_selection"	# Use current selection as the search pattern
+
+# View mode
+[keys.normal.z]
+ "z"    = "align_view_center"	# Vertically center the line
+ "c"    = "align_view_center"	# Vertically center the line
+ "t"    = "align_view_top"   	# Align the line to the top of the screen
+ "b"    = "align_view_bottom"	# Align the line to the bottom of the screen
+ "m"    = "align_view_middle"	# Align the line to the middle of the screen (horizontally)
+ "down" = "scroll_down"      	# Scroll the view downwards
+ "j"    = "scroll_down"      	# Scroll the view downwards
+ "up"   = "scroll_up"        	# Scroll the view upwards
+ "k"    = "scroll_up"        	# Scroll the view upwards
+ "f"    = "page_down"        	# Move page down
+ "b"    = "page_up"          	# Move page up
+ "d"    = "half_page_down"   	# Move half page down
+ "u"    = "half_page_up"     	# Move half page up
+
+# Goto mode
+[keys.normal.g]
+ "g" = "goto_file_start"         	# Go to the start of the file
+ "e" = "goto_last_line"          	# Go to the end of the file
+ "h" = "goto_line_start"         	# Go to files in the selection
+ "l" = "goto_line_end"           	# Go to the start of the line
+ "s" = "goto_first_nonwhitespace"	# Go to the end of the line
+ "t" = "goto_window_top"         	# Go to first non-whitespace character of the line
+ "m" = "goto_window_center"      	# Go to the top of the screen
+ "b" = "goto_window_bottom"      	# Go to the middle of the screen
+ "d" = "goto_definition"         	# Go to the bottom of the screen
+ "y" = "goto_type_definition"    	# Go to definition (LSP)
+ "r" = "goto_reference"          	# Go to type definition (LSP)
+ "i" = "goto_implementation"     	# Go to references (LSP)
+ "a" = "goto_last_accessed_file" 	# Go to implementation (LSP)
+ "f" = "goto_file"               	# Go to the last accessed/alternate file
+ "n" = "goto_next_buffer"        	# Go to next buffer
+ "p" = "goto_previous_buffer"    	# Go to previous buffer
+ "." = "goto_last_modification"  	# Go to last modification in current file
+
+# Match mode
+[keys.normal.m]
+ "m" = "match_brackets"          	#  Goto matching bracket (TS)
+ "s" = "surround_add"            	# Surround current selection with <char>
+ "r" = "surround_replace"        	# Replace surround character <from> with <to>
+ "d" = "surround_delete"         	# Delete surround character <char>
+ "a" = "select_textobject_around"	# Select around textobject
+ "i" = "select_textobject_inner" 	# Select inside textobject
+
+# Window mode
+[keys.normal.C-w]
+ "w"     = "rotate_view"    	#  Switch to next window
+ "C-w"   = "rotate_view"    	# Switch to next window
+ "v"     = "vsplit"         	# Vertical right split
+ "C-v"   = "vsplit"         	# Vertical right split
+ "s"     = "hsplit"         	# Horizontal bottom split
+ "C-s"   = "hsplit"         	# Horizontal bottom split
+ "left"  = "jump_view_left" 	# Move to left split
+ "h"     = "jump_view_left" 	# Move to left split
+ "C-h"   = "jump_view_left" 	# Move to left split
+ "down"  = "jump_view_down" 	# Move to split below
+ "j"     = "jump_view_down" 	# Move to split below
+ "C-j"   = "jump_view_down" 	# Move to split below
+ "up"    = "jump_view_up"   	# Move to split above
+ "k"     = "jump_view_up"   	# Move to split above
+ "C-k"   = "jump_view_up"   	# Move to split above
+ "right" = "jump_view_right"	# Move to right split
+ "l"     = "jump_view_right"	# Move to right split
+ "C-l"   = "jump_view_right"	# Move to right split
+ "f"     = "goto_file"      	# Go to files in the selection in horizontal splits
+ "F"     = "goto_file"      	# Go to files in the selection in vertical splits
+ "q"     = "wclose"         	# Close current window
+ "C-q"   = "wclose"         	# Close current window
+ "o"     = "wonly"          	# Only keep the current window closing all the others
+ "C-o"   = "wonly"          	# Only keep the current window closing all the others
+
+# Space mode
+[keys.normal.space]
+ "f"    = "file_picker"                      	#  Open file picker
+ "b"    = "buffer_picker"                    	# Open buffer picker
+ "k"    = "hover"                            	# Show documentation for item under cursor in a popup (LSP)
+ "s"    = "symbol_picker"                    	# Open document symbol picker (LSP)
+ "a"    = "code_action"                      	# Apply code action (LSP)
+ "'"    = "last_picker"                      	# Open last fuzzy picker
+ "p"    = "paste_clipboard_after"            	# Paste system clipboard before selections
+ "P"    = "paste_clipboard_before"           	# Paste system clipboard after selections
+ "y"    = "yank_joined_to_clipboard"         	# Join and yank selections to clipboard
+ "Y"    = "yank_main_selection_to_clipboard" 	# Yank main selection to clipboard
+ "R"    = "replace_selections_with_clipboard"	# Replace selections by clipboard contents
+ "/"    = "global_search"                    	# Global search in workspace folder
+ "S"    = "workspace_symbol_picker"          	# Open workspace symbol picker (LSP)
+ "r"    = "rename_symbol"                    	# Rename symbol (LSP)
+
+# Unimpaired
+[keys.normal."["]
+ "d"     = "goto_prev_diag"   	# Go to previous diagnostic (LSP)
+ "D"     = "goto_first_diag"  	# Go to first diagnostic in document (LSP)
+ "space" = "add_newline_above"	# Add newline above
+
+[keys.normal."]"]
+ "d"     = "goto_next_diag"   	# Go to next diagnostic (LSP)
+ "D"     = "goto_last_diag"   	# Go to last diagnostic in document (LSP)
+ "space" = "add_newline_below"	# Add newline below
