@@ -12,13 +12,66 @@ title: "🧬Helix Keymap ZXCV"
 <link rel=stylesheet type=text/css href=css/kbd-custom.css>
 
 # Table of contents
+- [Overview](#overview)
 - [Helix Keymap ZXCV](#helix-keymap-zxcv)
 - [Helix Keymap Default](#helix-keymap-default)
 - [Helix Keymap Refactor](#helix-keymap-refactor)
 
+
+### Overview
+
+This is a draft of a Helix keymap __ZXCV__ (for lack of a better name) in an attempt to fix some of the vim design issues I didn't like and also match some of the common operations of the zxcv keys that I'm used to from other apps, or more specifically: 
+
+  - Fix the age-old vim design flaw that required you to shift fingers from home row for cursor movement <br><kbd>h</kbd><kbd>j</kbd><kbd>k</kbd><kbd>l</kbd> → <kbd>j</kbd><kbd>k</kbd><kbd>l</kbd><kbd>;</kbd>
+  - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
+    + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>←</kbd><kbd>→</kbd>) instead of being on the same key with the second operation behind a <kbd>Shift</kbd>'ed status. This greatly simplifies going back and forth and is way more important than mnemonics[^1], so:
+        + <kbd>q</kbd>/<kbd>w</kbd> to move by word `move_prev_word_start`/`move_next_word_end` instead of <kbd>b</kbd>/<kbd>e</kbd>
+        + <kbd>z</kbd>/<kbd>b</kbd> does `undo`/`redo` instead of <kbd>u</kbd>/<kbd>Shift</kbd><kbd>u</kbd>
+        + similarly, <kbd>Shift</kbd>+<kbd>z</kbd>/<kbd>b</kbd> does `earlier`/`later` instead of <kbd>Alt</kbd>+<kbd>u</kbd>/<kbd>Shift</kbd><kbd>u</kbd>
+        + <kbd>Ctrl</kbd>+<kbd>,</kbd>/<kbd>.</kbd> to `increment`/`decrement` instead of <kbd>Ctrl</kbd>+<kbd>a</kbd>/<kbd>x</kbd>
+        + buffer ←→ navigation to <kbd>Alt</kbd><kbd>1</kbd>/<kbd>2</kbd> (`goto_previous_buffer`/`goto_next_buffer`)<br>(using this method to navigate tabs in all other apps, and <kbd>Alt</kbd> is a more convenient thumb-vs-palm/pinky modifier vs. <kbd>Ctrl</kbd>)
+        + jumplist ←→ navigation to <kbd>Alt</kbd><kbd>3</kbd>/<kbd>4</kbd> (`jump_backward`/`jump_forward`)<br> (or swap this with the above, <kbd>1</kbd>/<kbd>2</kbd> might be more convenient, but it breaks with the convention in other apps for me)
+    + __Single-press__ keybinds can remain as is — with the opposite direction <kbd>Shift</kbd>'ed (e.g., `open_below`/`open_above` as you only press it once)
+  - Map `Undo`/`Cut`/`Copy`/`Paste` to the more usual (to some) <kbd>z</kbd><kbd>x</kbd><kbd>c</kbd><kbd>v</kbd> and `redo` to the somewhat paired <kbd>b</kbd>[^2]
+  - Ok to use <kbd>Alt</kbd> when you don't need the word-jump functions (that are useful in the `Extend/Select` mode), so the multi-cursor mode uses <kbd>Alt</kbd>+cursor:
+      - <kbd>Alt</kbd><kbd>k</kbd>/<kbd>l</kbd> to select down/up (`copy_selection_on_next_line`/`copy_selection_on_prev_line`)
+      - <kbd>Alt</kbd><kbd>j</kbd>/<kbd>;</kbd> to shift selection back/forward (`rotate_selections_backward`/`rotate_selections_forward`)
+      - bonus: quick selection correction without releasing the modifier with <kbd>Alt</kbd><kbd>z</kbd> (backup <kbd>u</kbd>) (`remove_primary_selection`)
+      - <kbd>Alt</kbd><kbd>Shift</kbd>/<kbd>z</kbd> (backup <kbd>Alt</kbd><kbd>i</kbd>) to undo all selection (`keep_primary_selection`)
+      - unrelated bonus: extend by word without entering the `Extend/Select` mode with <kbd>Alt</kbd>+<kbd>q</kbd>/<kbd>w</kbd>/<kbd>e</kbd> (`extend_prev_word_start`,`extend_next_word_end`,`extend_next_word_start`)
+  - Group various inserts together (`insert_mode`/`prepend_to_line` to <kbd>i</kbd>, `append_mode`/`append_to_line` to <kbd>o</kbd>, `open_below`/`open_above` to <kbd>u</kbd> /+<kbd>Shift</kbd>)
+  - Add free-standing `half_page_up`/`half_page_down` to <kbd>h</kbd>/<kbd>n</kbd>
+  - Add `goto_line_start`/`goto_line_end` to <kbd>Shift</kbd>+<kbd>h</kbd>/<kbd>n</kbd>
+  - Add a few keybinds to make it similar to non-modal editors to help with transition
+    - <kbd>Shift</kbd>+/<kbd>Enter</kbd> Insert a new line (`open_below`/`open_above`)
+    - <kbd>Ctrl</kbd><kbd>a</kbd> Select all (`select_all`)
+    - <kbd>Ctrl</kbd><kbd>s</kbd> Save (`:write`)
+    - <kbd>Ctrl</kbd><kbd>z</kbd> Undo (`undo`)
+    - <kbd>Ctrl</kbd><kbd>y</kbd> Redo (`redo`)
+    - <kbd>Ctrl</kbd><kbd>o</kbd> Open (`file_picker`)
+    - <kbd>Ctrl</kbd><kbd>x</kbd> Cut (`yank_main_selection_to_clipboard`, `delete_selection`)
+    - <kbd>Ctrl</kbd><kbd>c</kbd> Copy (`yank_main_selection_to_clipboard`)
+    - <kbd>Ctrl</kbd><kbd>v</kbd> Paste (`paste_clipboard_after`)
+    - <kbd>Alt</kbd>/<kbd>Ctrl</kbd>+<kbd>⌫</kbd>/<kbd>⌦</kbd> to delete a w/Word left/right (e.g., `move_next_word_end`,`delete_selection`)
+    - <kbd>Ctrl</kbd><kbd>PageUp</kbd>/<kbd>PageDown</kbd> to navigate files (`goto_previous_buffer`/`goto_next_buffer`)
+
+[^1]: re. mnemonics: in such a complex keybind system such as Helix's I don't find them all that useful as they don't offer intuitive predictability due to said complexity since there are several alternatives to most of the keys, e.g., should <kbd>c</kbd> stand for Cut/Copy/Change/Collapse/Comment/Char/Command/Case/...?
+[^2]: this breaks the 'sticky' `select_mode` as I don't know how to pass the 'sticky' option it via config, seems to be hardcoded in `keymap.rs`
+
+
+Below are the 3 layouts — the new __ZXCV__ along with the current default and the proposed default refactoring ( [from this comment](https://github.com/helix-editor/helix/issues/165#issuecomment-965563368)) in an html format to make it easier to copy a function icon and search for it in another layout, though it might also be more convenient to just visually flip through the locally saved images (or open them side-by-side): [ZXCV](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-zxcv.png?raw=true), [Default](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-default_icons.png?raw=true), [Refactor](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-refactor_icons.png?raw=true)
+
+Each layout also has a Keyboard Layout Editor link as well as the Helix config files (ZXCV and default only since the Refactor one requires additional changes in Helix to be fully implemented)
+
+Re. the keymap format: I've decided to convert the word walls in 3 separate layout images (normal, with <kbd>Ctrl</kbd>, with <kbd>Alt</kbd>) from the official wiki to a much more compact and ultimately more readable/comparable icons (though at first they might look more cryptic, so you might need to jump back and forth between the configuration file and the layout, the configuration file also has most of these in comments to help with that)
+
+  |    | Modifier key legend	| Example of <kbd>j</kbd> |
+  | :- | :-----------------:	| :---------------------: |
+  | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br> <div>Colors: <font color=#006400>Move</font> <font color=#377bb5>Select</font> <font color=#ff0000>Change</font> <font color=#800080>Other</font></div> </div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
+
 #### Helix Keymap ZXCV
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/826de60bd259fe9f2253298a28ce681c), [image](../img/helix-keymap-zxcv.png?raw=true), [config](../helper/config_zxcv.toml)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/826de60bd259fe9f2253298a28ce681c), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-zxcv.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_zxcv.toml)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
   <div id=keyboard-bg ng-attr-style="height:{{kbHeight}}px; width:{{kbWidth}}px; background-color:{{keyboard.meta.backcolor}}; border-radius: {{keyboard.meta.radii || '6px'}}; {{keyboard.meta.background.style}}" style="height:270px;width:810px;background-color:#dbdbdb;border-radius:6px 6px 12px 12px / 18px 18px 12px 12px">
@@ -30,7 +83,7 @@ title: "🧬Helix Keymap ZXCV"
 
 #### Helix Keymap Default
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/9382e46d0aaed7c6f9638fee9ab55254), [image](../img/helix-keymap-default_icons.png?raw=true); original without icons: [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/fb432523c4e62a6d3babfdaa0152b5d0), [image](../img/helix-keymap-default.png?raw=true), [source](https://github.com/helix-editor/helix/wiki/Keymap-brainstorm)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/9382e46d0aaed7c6f9638fee9ab55254), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-default_icons.png?raw=true); original without icons: [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/fb432523c4e62a6d3babfdaa0152b5d0), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-default.png?raw=true), [source](https://github.com/helix-editor/helix/wiki/Keymap-brainstorm)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
   <div id=keyboard-bg ng-attr-style="height:{{kbHeight}}px; width:{{kbWidth}}px; background-color:{{keyboard.meta.backcolor}}; border-radius: {{keyboard.meta.radii || '6px'}}; {{keyboard.meta.background.style}}" style=height:270px;width:810px;background-color:#eeeeee;border-radius:6px>
@@ -41,7 +94,7 @@ title: "🧬Helix Keymap ZXCV"
 
 #### Helix Keymap Refactor
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/4399c2ca9dedc04489a974c8651117c9), [image](../img/helix-keymap-refactor_icons.png?raw=true); original without icons: [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cfd365f36b8aceb6c81f61dad24fa0f0), [image](../img/helix-keymap-refactor.png?raw=true), [source](https://github.com/helix-editor/helix/issues/165#issuecomment-965563368)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/4399c2ca9dedc04489a974c8651117c9), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-refactor_icons.png?raw=true); original without icons: [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cfd365f36b8aceb6c81f61dad24fa0f0), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-refactor.png?raw=true), [source](https://github.com/helix-editor/helix/issues/165#issuecomment-965563368)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
   <div id=keyboard-bg ng-attr-style="height:{{kbHeight}}px; width:{{kbWidth}}px; background-color:{{keyboard.meta.backcolor}}; border-radius: {{keyboard.meta.radii || '6px'}}; {{keyboard.meta.background.style}}" style=height:270px;width:810px;background-color:#eeeeee;border-radius:6px>
