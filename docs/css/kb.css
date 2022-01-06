@@ -13,7 +13,6 @@
   -moz-osx-font-smoothing	: grayscale;
   transform              	: translate(0,0)}
 html,body{
-  height               	: 100%;
   font-family          	: "Segoe UI","Arial","Helvetica",sans-serif;
   -webkit-touch-callout	: none;
   cursor               	: default
