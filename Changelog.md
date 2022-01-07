@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
-[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.1.0...HEAD
+[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.2.0...HEAD
 ## [Unreleased]
   <!-- - __Added__ -->
    <!-- + :sparkles: ??? -->
@@ -21,6 +21,9 @@ All notable changes to this project will be documented in this file
   <!-- - __Security__ -->
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
+
+[0.2.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.2.0
+## [0.2.0]
 
   - __Added__
     - A few keybinds to make it similar to non-modal editors
@@ -57,6 +60,3 @@ All notable changes to this project will be documented in this file
         - <kbd>i</kbd> `insert_mode`/`prepend_to_line`
         - <kbd>o</kbd> `append_mode`/`append_to_line`
         - <kbd>u</kbd>/<kbd>⇧</kbd><kbd>u</kbd> `open_below`/`open_above` 
-
-[0.1.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.1.0
-## [0.1.0]
