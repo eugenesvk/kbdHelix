@@ -355,36 +355,35 @@
   # [keys.normal."A-t"] # [⇧ z] [View] ☰👁ₛ "sticky", persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
 
   [keys.normal."g"] # [  g] [] ⓖ☰⮊ Goto mode Jumps to various locations
-    "q"  	= "move_prev_word_end"       	# [I.⌥b, ⌥◀] []                 	Move prev word end
-    "Q"  	= "move_prev_long_word_start"	#⇧[ ⇧b] []                      	Move prev WORD start
-    "e"  	= "move_prev_word_end"       	# [I.⌥b, ⌥◀] [goto_last_line]   	Move prev word end
-    "E"  	= "move_prev_long_word_start"	#⇧[ ⇧b] []                      	Move prev word end
-    # "g"	= "goto_file_start"          	# [g] [goto_file_start]         	line number `<n>` else file start
-    # "h"	= "goto_line_start"          	# [h] [goto_line_start]         	line start ⭰
-    # "j"	= "goto_line_start"          	# [h] []                        	line start ⭰
-    "j"  	= "extend_to_line_start"     	# [ ] []                        	line start ⭰▋ with selection
-    "k"  	= "goto_last_line"           	# [e] []                        	file end
-    "l"  	= "goto_file_start"          	# [g] [goto_line_end]           	line number `<n>` else file start
-    # ";"	= "goto_line_end"            	# [l] []                        	line end   ⭲
-    ";"  	= "extend_to_line_end"       	# [l] []                        	line end   ⭲▋ with selection
-    # "s"	= "goto_first_nonwhitespace" 	# [s] [goto_first_nonwhitespace]	first non-whitespace character of the line
-    # "f"	= "goto_file"                	# [f] [goto_file]                files in the selection #HX5
-    # "t"	= "goto_window_top"          	# [t] [goto_window_top]          screen top
-    # "c"	= "goto_window_center"       	# [c] [goto_window_center]       screen middle
-    "g"  	= "goto_window_center"       	# [c] []                         screen middle
-    # "b"	= "goto_window_bottom"       	# [b] [goto_window_bottom]       screen bottom
-    # "d"	= "goto_definition"          	# [d] [goto_definition]               definition (**LSP**)
-    "F12"	= "goto_definition"          	# [d] []                              definition (**LSP**)
-    # "y"	= "goto_type_definition"     	# [y] [goto_type_definition]     type definition (**LSP**)
-    # "r"	= "goto_reference"           	# [r] [goto_reference]           references (**LSP**)
-    # "i"	= "goto_implementation"      	# [i] [goto_implementation]      implementation (**LSP**)
-    # "a"	= "goto_last_accessed_file"  	# [a] [goto_last_accessed_file]  the last accessed/alternate file
-    # "m"	= "goto_last_modified_file"  	# [m] [goto_last_modified_file]  the last modified/alternate file
-    # "."	= "goto_last_modification"   	# [.] [goto_last_modification]   last modification in current file
-    # "p"	= "goto_previous_buffer"     	# [p] [goto_previous_buffer]     buffer previous
-    # "n"	= "goto_next_buffer"         	# [n] [goto_next_buffer]         buffer next
-    # "1"	= "goto_previous_buffer"     	#[p] # conflicts with line number setting
-    # "2"	= "goto_next_buffer"         	#[n] # conflicts with line number setting
+    "j"  	= "goto_last_line"          	# [e] []                        	file end
+    "k"  	= "goto_file_start"         	# [g] [goto_line_end]           	line number `<n>` else file start
+    # "g"	= "goto_file_start"         	# [g] [goto_file_start]         	line number `<n>` else file start
+    # "s"	= "goto_first_nonwhitespace"	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
+    "a"  	= "goto_first_nonwhitespace"	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
+    "l"  	= "goto_line_start"         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
+    ";"  	= "goto_line_end"           	# [l] []                        	line end   ⭲ !!! change to ¶🢖 when implemented
+    # "f"	= "goto_file"               	# [f] [goto_file]               	files in the selection
+    "m"  	= "goto_window_bottom"      	# [b] [goto_last_modified_file] 	🗔⭳ screen bottom
+    ","  	= "goto_window_top"         	# [t] []                        	🗔⭱ screen top
+    "n"  	= "goto_window_center"      	# [c] [goto_next_buffer]        	🗔· screen middle
+    # "d"	= "goto_definition"         	# [d] [goto_definition]         	≝      definition (LSP)
+    "F12"	= "goto_definition"         	# [d] []                        	≝      definition (LSP)
+    "e"  	= "goto_type_definition"    	# [y] [goto_last_line]          	≝ type definition (LSP)
+    # "y"	= "goto_type_definition"    	# [y] [goto_type_definition]    	≝ type definition (LSP)
+    # "r"	= "goto_reference"          	# [r] [goto_reference]          	🅁※ references (LSP)
+    # "i"	= "goto_implementation"     	# [i] [goto_implementation]     	🄸 implementation (LSP)
+    "t"  	= "goto_implementation"     	# [i] [goto_window_top]         	🄸 implementation (LSP)
+    "c"  	= "goto_last_accessed_file" 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+    "v"  	= "goto_last_modified_file" 	# [m] []                        	✎␜ file last modified/alternate
+    "1"  	= "goto_previous_buffer"    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
+    "2"  	= "goto_next_buffer"        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
+    "3"  	= "jump_backward"           	# [] []                         	⎗̡ Jump backward on the jumplist !!! blocked by ∀* implementation
+    "4"  	= "jump_forward"            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
+    "u"  	= "goto_last_modification"  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
+    # "."	= "goto_last_modification"  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
+    "b"  	= "no_op"                   	# [] [goto_window_bottom]       	#
+    "h"  	= "no_op"                   	# [] [goto_line_start]          	#
+    "p"  	= "no_op"                   	# [] [goto_previous_buffer]     	#
 
   [keys.normal."n"] # [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
     "n"	= "match_brackets"          	# Goto matching bracket (TS)
@@ -602,34 +601,35 @@
 
 
   [keys.select."g"] # [  g] [goto] ☰ Goto mode Jumps to various locations
-    "q"  	= "move_prev_word_end"       	# [I.⌥b, ⌥◀] []              	Move prev word end
-    "Q"  	= "move_prev_long_word_start"	#⇧[ ⇧b] []                   	Move prev WORD start
-    "e"  	= "move_prev_word_end"       	# [I.⌥b, ⌥◀] [goto_last_line]	Move prev word end
-    "E"  	= "move_prev_long_word_start"	#⇧[ ⇧b] []                   	Move prev word end
-    # "g"	= "goto_file_start"          	# [g] [goto_file_start]          line number `<n>` else file start
-    # "h"	= "goto_line_start"          	# [h] [goto_line_start]          line start ⭰
-    "j"  	= "goto_line_start"          	# [h] []                         line start ⭰
-    "k"  	= "goto_last_line"           	# [e] []                         file end
-    "l"  	= "goto_file_start"          	# [g] [goto_line_end]            line number `<n>` else file start
-    ";"  	= "goto_line_end"            	# [l] []                         line end   ⭲
-    # "s"	= "goto_first_nonwhitespace" 	# [s] [goto_first_nonwhitespace] first non-whitespace character of the line
-    # "f"	= "goto_file"                	# [f] [goto_file]                files in the selection #HX5
-    # "t"	= "goto_window_top"          	# [t] [goto_window_top]          screen top
-    # "c"	= "goto_window_center"       	# [c] [goto_window_center]       screen middle
-    "g"  	= "goto_window_center"       	# [c] []                         screen middle
-    # "b"	= "goto_window_bottom"       	# [b] [goto_window_bottom]       screen bottom
-    # "d"	= "goto_definition"          	# [d] [goto_definition]               definition (**LSP**)
-    "F12"	= "goto_definition"          	# [d] []                              definition (**LSP**)
-    # "y"	= "goto_type_definition"     	# [y] [goto_type_definition]     type definition (**LSP**)
-    # "r"	= "goto_reference"           	# [r] [goto_reference]           references (**LSP**)
-    # "i"	= "goto_implementation"      	# [i] [goto_implementation]      implementation (**LSP**)
-    # "a"	= "goto_last_accessed_file"  	# [a] [goto_last_accessed_file]  the last accessed/alternate file
-    # "m"	= "goto_last_modified_file"  	# [m] [goto_last_modified_file]  the last modified/alternate file
-    # "."	= "goto_last_modification"   	# [.] [goto_last_modification]   last modification in current file
-    # "p"	= "goto_previous_buffer"     	# [p] [goto_previous_buffer]     buffer previous
-    # "n"	= "goto_next_buffer"         	# [n] [goto_next_buffer]         buffer next
-    # "1"	= "goto_previous_buffer"     	#[p] # conflicts with line number setting
-    # "2"	= "goto_next_buffer"         	#[n] # conflicts with line number setting
+    "j"  	= "goto_last_line"          	# [e] []                        	file end
+    "k"  	= "goto_file_start"         	# [g] [goto_line_end]           	line number `<n>` else file start
+    # "g"	= "goto_file_start"         	# [g] [goto_file_start]         	line number `<n>` else file start
+    # "s"	= "goto_first_nonwhitespace"	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
+    "a"  	= "goto_first_nonwhitespace"	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
+    "l"  	= "goto_line_start"         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
+    ";"  	= "goto_line_end"           	# [l] []                        	line end   ⭲ !!! change to ¶🢖 when implemented
+    # "f"	= "goto_file"               	# [f] [goto_file]               	files in the selection
+    "m"  	= "goto_window_bottom"      	# [b] [goto_last_modified_file] 	🗔⭳ screen bottom
+    ","  	= "goto_window_top"         	# [t] []                        	🗔⭱ screen top
+    "n"  	= "goto_window_center"      	# [c] [goto_next_buffer]        	🗔· screen middle
+    # "d"	= "goto_definition"         	# [d] [goto_definition]         	≝      definition (LSP)
+    "F12"	= "goto_definition"         	# [d] []                        	≝      definition (LSP)
+    "e"  	= "goto_type_definition"    	# [y] [goto_last_line]          	≝ type definition (LSP)
+    # "y"	= "goto_type_definition"    	# [y] [goto_type_definition]    	≝ type definition (LSP)
+    # "r"	= "goto_reference"          	# [r] [goto_reference]          	🅁※ references (LSP)
+    # "i"	= "goto_implementation"     	# [i] [goto_implementation]     	🄸 implementation (LSP)
+    "t"  	= "goto_implementation"     	# [i] [goto_window_top]         	🄸 implementation (LSP)
+    "c"  	= "goto_last_accessed_file" 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+    "v"  	= "goto_last_modified_file" 	# [m] []                        	✎␜ file last modified/alternate
+    "1"  	= "goto_previous_buffer"    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
+    "2"  	= "goto_next_buffer"        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
+    "3"  	= "jump_backward"           	# [] []                         	⎗̡ Jump backward on the jumplist !!! blocked by ∀* implementation
+    "4"  	= "jump_forward"            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
+    "u"  	= "goto_last_modification"  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
+    "."  	= "goto_last_modification"  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
+    "b"  	= "no_op"                   	# [] [goto_window_bottom]       	#
+    "h"  	= "no_op"                   	# [] [goto_line_start]          	#
+    "p"  	= "no_op"                   	# [] [goto_previous_buffer]     	#
 
 
 
@@ -832,23 +832,35 @@
       "d"   	= "half_page_down"
       "u"   	= "half_page_up"
     [keys.insert."A-g"] # Goto mode
-      "g"	= "goto_file_start"
-      "e"	= "goto_last_line"
-      "h"	= "goto_line_start"
-      "l"	= "goto_line_end"
-      "s"	= "goto_first_nonwhitespace"
-      "t"	= "goto_window_top"
-      "m"	= "goto_window_center"
-      "b"	= "goto_window_bottom"
-      "d"	= "goto_definition"
-      "y"	= "goto_type_definition"
-      "r"	= "goto_reference"
-      "i"	= "goto_implementation"
-      "a"	= "goto_last_accessed_file"
-      "f"	= "goto_file"             	#HX5
-      "1"	= "goto_previous_buffer"  	#[p] HX5
-      "2"	= "goto_next_buffer"      	#[n] HX5
-      "."	= "goto_last_modification"	#HX5
+      "j"  	= "goto_last_line"          	# [e] []                        	file end
+      "k"  	= "goto_file_start"         	# [g] [goto_line_end]           	line number `<n>` else file start
+      "g"  	= "goto_file_start"         	# [g] [goto_file_start]         	line number `<n>` else file start
+      "s"  	= "goto_first_nonwhitespace"	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
+      "a"  	= "goto_first_nonwhitespace"	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
+      "l"  	= "goto_line_start"         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
+      ";"  	= "goto_line_end"           	# [l] []                        	line end   ⭲ !!! change to ¶🢖 when implemented
+      "f"  	= "goto_file"               	# [f] [goto_file]               	files in the selection
+      "m"  	= "goto_window_bottom"      	# [b] [goto_last_modified_file] 	🗔⭳ screen bottom
+      ","  	= "goto_window_top"         	# [t] []                        	🗔⭱ screen top
+      "n"  	= "goto_window_center"      	# [c] [goto_next_buffer]        	🗔· screen middle
+      "d"  	= "goto_definition"         	# [d] [goto_definition]         	≝      definition (LSP)
+      "F12"	= "goto_definition"         	# [d] []                        	≝      definition (LSP)
+      "e"  	= "goto_type_definition"    	# [y] [goto_last_line]          	≝ type definition (LSP)
+      "y"  	= "goto_type_definition"    	# [y] [goto_type_definition]    	≝ type definition (LSP)
+      "r"  	= "goto_reference"          	# [r] [goto_reference]          	🅁※ references (LSP)
+      "i"  	= "goto_implementation"     	# [i] [goto_implementation]     	🄸 implementation (LSP)
+      "t"  	= "goto_implementation"     	# [i] [goto_window_top]         	🄸 implementation (LSP)
+      "c"  	= "goto_last_accessed_file" 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+      "v"  	= "goto_last_modified_file" 	# [m] []                        	✎␜ file last modified/alternate
+      "1"  	= "goto_previous_buffer"    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
+      "2"  	= "goto_next_buffer"        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
+      "3"  	= "jump_backward"           	# [] []                         	⎗̡ Jump backward on the jumplist !!! blocked by ∀* implementation
+      "4"  	= "jump_forward"            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
+      "u"  	= "goto_last_modification"  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
+      "."  	= "goto_last_modification"  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
+      "b"  	= "no_op"                   	# [] [goto_window_bottom]       	#
+      "h"  	= "no_op"                   	# [] [goto_line_start]          	#
+      "p"  	= "no_op"                   	# [] [goto_previous_buffer]     	#
     [keys.insert."A-m"] # Match mode
       "m"	= "match_brackets"
       "s"	= "surround_add"
