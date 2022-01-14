@@ -1133,26 +1133,23 @@
 
 
 # Help —————————————————————————————————————————————————————————————————————————————————————————————
-
-
-
-# Commands @ github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs at the invocation of static_commands! macro and the TypableCommandList
-# Key name          	Representation
-# Control Shift Alt 	"C-" "S-" "A-" # prefix-only
-# Escape            	"esc"
-# Backspace         	"backspace"
-# Space             	"space"
-# Return/Enter      	"ret"
-# < >               	"lt" "gt"
-# + -               	"plus" "minus"
-# ;                 	"semicolon"
-# %                 	"percent"
-# Left Right Up Down	"left" "right" "up" "down"
-# Home End          	"home" "end"
-# PageUp            	"pageup"
-# PageDown          	"pagedown"
-# Tab               	"tab"
-# Delete            	"del"
-# Insert            	"ins"
-# Null              	"null"
-# Keys can be disabled by binding them to the no_op command
+  # Commands @ github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs at the invocation of static_commands! macro and the TypableCommandList
+  # Key name          	Representation
+  # Control Shift Alt 	"C-" "S-" "A-" # prefix-only
+  # Escape            	"esc"
+  # Backspace         	"backspace"
+  # Space             	"space"
+  # Return/Enter      	"ret"
+  # < >               	"lt" "gt"
+  # + -               	"plus" "minus"
+  # ;                 	"semicolon"
+  # %                 	"percent"
+  # Left Right Up Down	"left" "right" "up" "down"
+  # Home End          	"home" "end"
+  # PageUp            	"pageup"
+  # PageDown          	"pagedown"
+  # Tab               	"tab"
+  # Delete            	"del"
+  # Insert            	"ins"
+  # Null              	"null"
+  # Keys can be disabled by binding them to the no_op command
