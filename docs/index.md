@@ -31,6 +31,7 @@ It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoema
 Below is a summary of some of the design decisions followed up by detailed keymap Cheat Sheets for the main layout and the various "minor" modes:
 
   - __Home__ row is __safe__: a lot of the movement commands happen to be the most frequent, enough to utilize the 8 home row keys, so as a side effect you get safety — to modify a buffer move your fingers elsewhere!
+  - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the sames keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
   - (to do) convert most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
