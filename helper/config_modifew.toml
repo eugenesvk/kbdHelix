@@ -483,8 +483,8 @@
 
 
 
-[keys.select] # Select/Extend mode
-  # Free keys
+[keys.select] #Ⓢ Select/Extend mode
+  #Ⓢ Free keys
   "h"	= "no_op"	# [] [extend_char_left]
   "B"	= "no_op"	#⇧[] [extend_prev_long_word_start]
 
@@ -493,7 +493,7 @@
   "C-a"  	= ["save_selection","select_all"]	# [n.⇧ 5]  [increment]     	∀▋ Select entire file
   # "esc"	= "exit_select_mode"             	# [esc] [exit_select_mode]
 
-  # Remap cursor
+  #Ⓢ Cursor@Home
   "j"	= "extend_char_left" 	# [h/◀] [extend_line_down]
   "k"	= "extend_line_down" 	# [j/▼] [extend_line_up]
   "l"	= "extend_line_up"   	# [k/▲] [extend_char_right]
@@ -506,30 +506,30 @@
   "W"	= "extend_next_long_word_end"  	#⇧[⇧ e] [extend_next_long_word_start]	W⭢ Extend this WORD end
   "E"	= "extend_next_long_word_start"	#⇧[⇧ w] [extend_next_long_word_end]  	W⭲ Extend next WORD start
 
-  # Char  	                         	 
-  # "f"   	= "extend_next_char"     	# [  f] [extend_next_char]	🔍   Extend       next     char
-  # "F"   	= "extend_prev_char"     	#⇧[⇧ f] [extend_prev_char]	🔎   Extend       previous char
-  "A-f"   	= "extend_till_char"     	# [  t] []                	🔍₋₁ Extend 'till next     char
-  "A-F"   	= "extend_till_prev_char"	#⇧[⇧ t] []                	🔎₋₁ Extend 'till previous char
-  # Line  	                         	 
-  # "home"	= "extend_to_line_start" 	# [home] [extend_to_line_start]
-  # "end" 	= "extend_to_line_end"   	# [end] [extend_to_line_end]
-  "H"     	= "extend_to_line_start" 	# [Home] []                 	⭰ Extend     line start
-  "N"     	= "extend_to_line_end"   	# [End] [extend_search_prev]	⭲ Extend     line end
-  # Search	                         	 
-  # "n"   	= "extend_search_next"   	# [n] [extend_search_next]     Extend next     search match
-  # "N"   	= "extend_search_prev"   	#⇧[N] [extend_search_prev]     Extend previous search match
-  ","     	= "extend_search_prev"   	# [⇧ n] [keep_primary_selection]	🢔◎ ◎͔ Extend previous search match
-  "."     	= "extend_search_next"   	# [  n] [search_next]           	◎🢖 ◎͕ Extend next     search match !!! blocked by .Repeat last change
-  "<"     	= "extend_search_prev"   	#⇧[⇧ n] [unindent]              	🢔◎ ◎͔ Extend previous search match ↑!!! temp
-  ">"     	= "extend_search_next"   	#⇧[  n] [indent]                	◎🢖 ◎͕ Extend next     search match ↑!!! temp
+  #Ⓢ Char  	                         	 
+  # "f"    	= "extend_next_char"     	# [  f] [extend_next_char]	🔍   Extend       next     char
+  # "F"    	= "extend_prev_char"     	#⇧[⇧ f] [extend_prev_char]	🔎   Extend       previous char
+  "A-f"    	= "extend_till_char"     	# [  t] []                	🔍₋₁ Extend 'till next     char
+  "A-F"    	= "extend_till_prev_char"	#⇧[⇧ t] []                	🔎₋₁ Extend 'till previous char
+  #Ⓢ Line  	                         	 
+  # "home" 	= "extend_to_line_start" 	# [home] [extend_to_line_start]
+  # "end"  	= "extend_to_line_end"   	# [end] [extend_to_line_end]
+  "H"      	= "extend_to_line_start" 	# [Home] []                 	⭰▋ Extend     line start
+  "N"      	= "extend_to_line_end"   	# [End] [extend_search_prev]	▋⭲ Extend     line end
+  #Ⓢ Search	                         	 
+  # "n"    	= "extend_search_next"   	# [n] [extend_search_next]     Extend next     search match
+  # "N"    	= "extend_search_prev"   	#⇧[N] [extend_search_prev]     Extend previous search match
+  ","      	= "extend_search_prev"   	# [⇧ n] [keep_primary_selection]	🢔◎ ◎͔ Extend previous search match
+  "."      	= "extend_search_next"   	# [  n] [search_next]           	◎🢖 ◎͕ Extend next     search match !!! blocked by .Repeat last change
+  "<"      	= "extend_search_prev"   	#⇧[⇧ n] [unindent]              	🢔◎ ◎͔ Extend previous search match ↑!!! temp
+  ">"      	= "extend_search_next"   	#⇧[  n] [indent]                	◎🢖 ◎͕ Extend next     search match ↑!!! temp
 
-  ##   	From Normal                         	 
+  #Ⓢ   	From Normal                         	 
   "c"  	= "yank"                            	# [  c] [change_selection]            	🗐 Yank selection
   "C-c"	= "yank_main_selection_to_clipboard"	# [␣,⇧y] [toggle_comments]            	📋 Yank main selection into system clipboard
   "C"  	= "yank_main_selection_to_clipboard"	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard
 
-  ##         	Changes                     	 
+  #Ⓢ         	Changes                     	 
   "x"        	= "delete_selection"        	# [  d] [extend_line]              	×▋
   "A-x"      	= "delete_selection_noyank" 	# [ ⌥d] []                         	🕱▋ (...without yanking)
   "X"        	= "change_selection"        	#⇧[  c] [extend_to_line_bounds]    	Δ (delete and enter Insert mode)
@@ -569,7 +569,7 @@
   "C-z"      	= "undo"                    	# [  u] []                         	⎌ Undo change
   "C-Z"      	= "redo"                    	#⇧[⇧ u] []                         	↷ Redo change !!!not working
 
-  [keys.select."p"] # "view" [  z] [paste_after] ☰👁 View mode intended for scrolling and manipulating the view without changing the selection
+  [keys.select."p"] #Ⓢ "view" [  z] [paste_after] ☰👁 View mode intended for scrolling and manipulating the view without changing the selection
     "u"       	= "align_view_bottom"	# [b] []                 	🗔⭳ Align line to Screen bottom
     "i"       	= "align_view_top"   	# [t] []                 	🗔⭱ Align line to Screen top
     "n"       	= "align_view_center"	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -596,7 +596,7 @@
     "C-u"     	= "no_op"            	# [] [half_page_up]
     "C-f"     	= "no_op"            	# [] [page_down]
     "C-b"     	= "no_op"            	# [] [page_up]
-  [keys.select."P"] # "view sticky" [⇧ z] [paste_before] ☰👁ₛ "sticky", persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+  [keys.select."P"] #Ⓢ "view sticky" [⇧ z] [paste_before] ☰👁ₛ "sticky", persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
     "u"       	= "align_view_bottom"	# [b] []                 	🗔⭳ Align line to Screen bottom
     "i"       	= "align_view_top"   	# [t] []                 	🗔⭱ Align line to Screen top
     "n"       	= "align_view_center"	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -624,9 +624,7 @@
     "C-f"     	= "no_op"            	# [] [page_down]
     "C-b"     	= "no_op"            	# [] [page_up]
 
-
-
-  [keys.select."g"] # [  g] [goto] ☰ Goto mode Jumps to various locations
+  [keys.select."g"] # Ⓢ[  g] [goto] ☰ Goto mode Jumps to various locations
     "j"  	= "goto_last_line"          	# [e] []                        	file end
     "k"  	= "goto_file_start"         	# [g] [goto_line_end]           	line number `<n>` else file start
     # "g"	= "goto_file_start"         	# [g] [goto_file_start]         	line number `<n>` else file start
@@ -656,6 +654,9 @@
     "b"  	= "no_op"                   	# [] [goto_window_bottom]       	#
     "h"  	= "no_op"                   	# [] [goto_line_start]          	#
     "p"  	= "no_op"                   	# [] [goto_previous_buffer]     	#
+
+    [keys.select."C-w"] #Ⓢ Window mode
+      "c"	= "page_down"	# !!!test
 
 
 
