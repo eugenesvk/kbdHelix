@@ -664,281 +664,437 @@
 
 
 
-[keys.insert]
-  # "Escape"     	= "normal_mode"     	# [Escape] Switch to normal mode
-  # "A-x"        	= "normal_mode"     	# Maps Alt-X to enter normal mode
-  # "A-S-x"      	= "normal_mode"     	# Maps Alt-X to enter normal mode
-  # "A-X"        	= "normal_mode"     	# Maps Alt-X to enter normal mode
-  # "C-backspace"	= "normal_mode"     	# Maps Alt-X to enter normal mode
-  "C-space"      	= "normal_mode"     	# !!! fails
-  "C-S-space"    	= "normal_mode"     	# !!! fails
-  "S-space"      	= "normal_mode"     	# !!! fails
-  "A-backspace"  	= "normal_mode"     	# !!! fails
-  "S-backspace"  	= "normal_mode"     	# works
-  # "Z"          	= "normal_mode"     	# works
-  "S-z"          	= "normal_mode"     	# fails
-  # "C-S-q"      	= "normal_mode"     	# Control-Shift-q → typable command :q! (:quit!), without saving
-  # j            	= {k="normal_mode" }	# Maps `jk` to exit insert mode
-  ";"            	= {j="normal_mode" }	# Maps `;k` to exit insert mode
-
-  "C-h"        	= "delete_word_backward"	# [Ctrl-w]
-  "A-h"        	= "delete_word_backward"	# []
-  "A-backspace"	= "delete_word_backward"	# [] since in wezterm ^h is bound to !⌫
-
-  # Restore    	some keybinds from non-modal editors
-  "C-left"     	= "move_prev_long_word_start"  	# []
-  "C-right"    	= "move_next_long_word_start"  	# []
-  "A-left"     	= "move_prev_word_end"         	# []
-  "A-right"    	= "move_next_word_start"       	# []
-  "S-left"     	= "extend_char_left"           	# [V.h/◀] []
-  "S-down"     	= "extend_line_down"           	# [V.j/▼] []
-  "S-up"       	= "extend_line_up"             	# [V.k/▲] []
-  "S-right"    	= "extend_char_right"          	# [V.l/▶] []
-  "S-A-left"   	= "extend_prev_word_start"     	# [V.  b] [] w← Extend previous word start
-  "S-A-right"  	= "extend_next_word_end"       	# [V.  e] [] w⇥ Extend next     word end
-  # "S-A-right"	= "extend_next_word_start"     	# [V.  w] [] w→ Extend next     word start
-  "S-C-left"   	= "extend_prev_long_word_start"	# [V. ⇧b] [] W← Extend previous WORD start
-  "S-C-right"  	= "extend_next_long_word_start"	# [V. ⇧W] [] W→ Extend next     WORD start
-  # "S-C-right"	= "extend_next_long_word_end"  	# [V. ⇧E] [] W⇥ Extend next    WORD end
-
-  # "C-x"      	= "completion"           	# [C-x] [completion]                	Autocomplete
-  # "C-r"      	= "insert_register"      	# [C-r] [insert_register]           	Insert a register content
-  # "C-w"      	= "delete_word_backward" 	# [C-w] [delete_word_backward]      	Delete previous word
-  # "A-d"      	= "delete_word_forward"  	# [A-d] [delete_word_forward]       	Delete next word
-  # "A-b"      	= "move_prev_word_end"   	# [A-b] [move_prev_word_end]        	Backward a word
-  # "A-Left"   	= "move_prev_word_end"   	# [A-Left] [move_prev_word_end]     	Backward a word
-  # "C-b"      	= "move_char_left"       	# [C-b] [move_char_left]            	Backward a char
-  # "Left"     	= "move_char_left"       	# [Left] [move_char_left]           	Backward a char
-  # "A-f"      	= "move_next_word_start" 	# [A-f] [move_next_word_start]      	Forward a word
-  # "A-Right"  	= "move_next_word_start" 	# [A-Right] [move_next_word_start]  	Forward a word
-  # "C-f"      	= "move_char_right"      	# [C-f] [move_char_right]           	Forward a char
-  # "Right"    	= "move_char_right"      	# [Right] [move_char_right]         	Forward a char
-  # "C-e"      	= "goto_line_end_newline"	# [C-e] [goto_line_end_newline]     	move to line end
-  # "End"      	= "goto_line_end_newline"	# [End] [goto_line_end_newline]     	move to line end
-  # "C-a"      	= "goto_line_start"      	# [C-a] [goto_line_start]           	move to line start
-  # "Home"     	= "goto_line_start"      	# [Home] [goto_line_start]          	move to line start
-  # "C-u"      	= "kill_to_line_start"   	# [C-u] [kill_to_line_start]        	delete to start of line
-  # "C-k"      	= "kill_to_line_end"     	# [C-k] [kill_to_line_end]          	delete to end of line
-  # "backspace"	= "delete_char_backward" 	# [backspace] [delete_char_backward]	delete previous char
-  # "C-h"      	= "delete_char_backward" 	# [C-h] [delete_char_backward]      	delete previous char
-  # "del"      	= "delete_char_forward"  	# [delete] [delete_char_forward]    	delete previous char
-  # "C-d"      	= "delete_char_forward"  	# [C-d] [delete_char_forward]       	delete previous char
-  # "C-p"      	= "move_line_up"         	# [C-p] [move_line_up]              	move to previous line
-  # "Up"       	= "move_line_up"         	# [Up] [move_line_up]               	move to previous line
-  # "C-n"      	= "move_line_down"       	# [C-n] [move_line_down]            	move to next line
-  # "Down"     	= "move_line_down"       	# [Down] [move_line_down]           	move to next line
+[keys.insert] #ⓘ
+  ";"	= {j="normal_mode" }	# Maps `;k` to exit insert mode !!! flashes dialog during typing
+  #ⓘ Test ——————————————————————————————————————————————————————————————————————
+    # "Escape"     	= "normal_mode"	# [Escape] Switch to normal mode
+    # "A-x"        	= "normal_mode"	# Maps Alt-X to enter normal mode
+    # "A-S-x"      	= "normal_mode"	# Maps Alt-X to enter normal mode
+    # "A-X"        	= "normal_mode"	# Maps Alt-X to enter normal mode
+    # "C-space"    	= "normal_mode"	# !!! fails
+    # "C-S-space"  	= "normal_mode"	# !!! fails
+    # "S-space"    	= "normal_mode"	# !!! fails
+    # "A-backspace"	= "normal_mode"	# !!! fails
+    # "S-z"        	= "normal_mode"	# !!! fails
+    # "S-backspace"	= "normal_mode"	# works
+    # "Z"          	= "normal_mode"	# works
+    # "C-S-q"      	= "normal_mode"	# Control-Shift-q → typable command :q! (:quit!), without saving
+  #ⓘ Free ——————————————————————————————————————————————————————————————————————
+    "C-p"  	= "no_op"	# [] [move_line_up]         	move to previous line
+    "A-d"  	= "no_op"	# [] [delete_word_forward]  	#
+    "C-d"  	= "no_op"	# [] [delete_char_forward]  	#
+    "A-b"  	= "no_op"	# [] [move_prev_word_end]   	#
+    "C-f"  	= "no_op"	# [] [move_char_right]      	#
+    "C-u"  	= "no_op"	# [] [kill_to_line_start]   	#
+    "C-e"  	= "no_op"	# [] [goto_line_end_newline]	# ???useful vs selections
+    # "C-a"	= ""     	# [C-a] [goto_line_start]   	# ???useful vs selections
 
 
-  ## Norm	mode in Insert
-  "C-c"  	= "yank_main_selection_to_clipboard" 	# [␣,⇧y] [toggle_comments]	📋 Yank main selection into system clipboard
-  "C-x"  	= ["yank_main_selection_to_clipboard"	                          	,
-         	   "delete_selection"]               	# []   [decrement]        		×📋 cut to clipboard
-  #      	                                     	# !!!useless in insert mode
-  # "C-z"	= "undo"                             	# [  u] []	⎌ Undo change
-  # "C-Z"	= "redo"                             	#⇧[⇧ u] []	↷ Redo change !!!not working
-  "C-v"  	= "paste_clipboard_after"            	# [␣.p] []	📋⤹ Paste after selection
+    "A-|"  	= "shell_pipe"   	#⇧[Ⓝ⇧ \] [shell_pipe]   	Pipe each selection through shell command, replacing with output
+    "A-\\" 	= "shell_pipe_to"	# [Ⓝ ⌥\] []             	Pipe each selection into    shell command, ignoring       output
+    # "A-|"	= "shell_pipe_to"	#⇧[Ⓝ⇧⌥\] [shell_pipe_to]	Pipe each selection into    shell command, ignoring       output
 
-  ### Alt-mode in Insert view github.com/helix-editor/helix/discussions/1211
-    "C-o"	= "file_picker"	# [␣.f] [jump_backward] Jump backward on the jumplist
+  #ⓘ Move ——————————————————————————————————————————————————————————————————————
+    #            	Compat with non-modal editors
+    "C-left"     	= "move_prev_long_word_start"  	# []
+    "C-right"    	= "move_next_long_word_start"  	# []
+    "S-left"     	= "extend_char_left"           	# [Ⓢh/◀] []
+    "S-down"     	= "extend_line_down"           	# [Ⓢj/▼] []
+    "S-up"       	= "extend_line_up"             	# [Ⓢk/▲] []
+    "S-right"    	= "extend_char_right"          	# [Ⓢl/▶] []
+    "S-A-left"   	= "extend_prev_word_start"     	# [Ⓢ  b] [] w← Extend previous word start
+    "S-A-right"  	= "extend_next_word_end"       	# [Ⓢ  e] [] w⇥ Extend next     word end
+    # "S-A-right"	= "extend_next_word_start"     	# [Ⓢ  w] [] w→ Extend next     word start
+    "S-C-left"   	= "extend_prev_long_word_start"	# [Ⓢ ⇧b] [] W← Extend previous WORD start
+    "S-C-right"  	= "extend_next_long_word_start"	# [Ⓢ ⇧W] [] W→ Extend next     WORD start
+    # "S-C-right"	= "extend_next_long_word_end"  	# [Ⓢ ⇧E] [] W⇥ Extend next    WORD end
 
-    #HX5 : Not support on Helix 0.5.0
-    #ALT : Conflict with alt key
-    # Movement
-    # "left" 	= "move_char_left"
-    # "down" 	= "move_line_down"
-    # "up"   	= "move_line_up"
-    # "right"	= "move_char_right"
-    "A-j"    	= "move_char_left"
-    "A-k"    	= "move_line_down"
-    "A-l"    	= "move_line_up"
-    "A-;"    	= "move_char_right"
+    # "A-left" 	= "move_prev_word_end"  	# [ⓘ⌥◀] [move_prev_word_end]  	⤝w Move   prev word end   (this start + space)
+    # "A-right"	= "move_next_word_start"	# [ⓘ⌥▶] [move_next_word_start]	w⤞ Move   next word start (this end   + space)
 
-    "A-q"	= "move_prev_word_start"     	# [  b] [record_macro]              w⭠ Move this word start
-    "A-w"	= "move_next_word_end"       	# [  e] [move_next_word_start]      w⭲ Move this word end
-    "A-e"	= "move_next_word_start"     	# [  w] [move_next_word_end]        w⭢ Move next word start
-    "A-Q"	= "move_prev_long_word_start"	#⇧[⇧ b] [replay_macro]                W⭠ Move this WORD start
-    "A-W"	= "move_next_long_word_end"  	#⇧[⇧ e] [move_next_long_word_start] W⭢ Move this WORD start
-    "A-E"	= "move_next_long_word_start"	#⇧[⇧ w] [move_next_long_word_end]   W⭲ Move next WORD end
+    # "C-b"	= "move_char_left"	# [ ^b] [move_char_left]		⌫c × char ←
 
-    "A-t"       	= "find_till_char"
-    "A-f"       	= "find_next_char"
-    "A-T"       	= "till_prev_char"
-    "A-F"       	= "find_prev_char"
-    #ALT "A-."  	= "repeat_last_motion"
-    # "home"    	= "goto_line_start"
-    # "end"     	= "goto_line_end"
-    # "pageup"  	= "page_up"
-    # "pagedown"	= "page_down"
-    "C-u"       	= "half_page_up"
-    "C-d"       	= "half_page_down"
-    "C-i"       	= "jump_forward"
-    # "C-o"     	= "jump_backward"
-    "A-v"       	= "select_mode"
-    "A-:"       	= "command_mode"
+    "C-c"	= "yank_main_selection_to_clipboard"	# [␣,⇧y] [toggle_comments]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
+    "C-o"	= "file_picker"                     	# [␣.f] [jump_backward]   	☰␜ Open file   picker
+    "C-s"	= ":write"                          	# [Ⓝ ^s] [save_selection] 	save file <i class='fa fa-save'></i>
+    "C-n"	= ":new"                            	# [Ⓝ^n][move_line_down]   	🗋 new buffer
+    "C-/"	= "toggle_comments"                 	# [Ⓝ^c][] un-/comment the selections  #!!! doesn't work :(
 
-    # Changes
-    "A-r"     	= "replace"
-    "A-R"     	= "replace_with_yanked"
-    "A-~"     	= "switch_case"
-    "A-`"     	= "switch_to_lowercase"
-    #ALT "A-`"	= "switch_to_uppercase"
-    "A-i"     	= "insert_mode"
-    "A-a"     	= "append_mode"
-    "A-I"     	= "prepend_to_line"
-    "A-A"     	= "append_to_line"
-    "A-o"     	= "open_below"
-    "A-O"     	= "open_above"
-    "A-u"     	= "undo"
-    "A-U"     	= "redo"
-    #ALT "A-u"	= "earlier"
-    #ALT "A-U"	= "later"
-    "A-y"     	= "yank"
-    "A-p"     	= "paste_after"
-    "A-P"     	= "paste_before"
-    "A-\""    	= "select_register"
-    "A-gt"    	= "indent"
-    "A-lt"    	= "unindent"
-    "A-="     	= "format_selections"
-    "A-d"     	= "delete_selection"
-    #ALT "A-d"	= "delete_selection_noyank"
-    "A-c"     	= "change_selection"
-    #ALT "A-c"	= "change_selection_noyank"
-    #HX5 "C-a"	= "increment"
-    #HX5 "C-x"	= "decrement"
-
-    # Shell
-    "A-|"     	= "shell_pipe"
-    #ALT "A-|"	= "shell_pipe_to"
-    "A-!"     	= "shell_insert_output"
-    #ALT "A-!"	= "shell_append_output"
-
-    # Selection manipulation
-    "A-s"             	= "select_regex"
-    "A-S"             	= "split_selection"
-    #ALT "A-s"        	= "split_selection_on_newline"
-    #HX5 "A-&"        	= "align_selections"
-    #ALT "A-_"        	= "trim_selections"
-    "A-semicolon"     	= "collapse_selection"
-    #ALT "A-semicolon"	= "flip_selections"
-    "A-,"             	= "keep_primary_selection"
-    #ALT "A-,"        	= "remove_primary_selection"
-    "A-C"             	= "copy_selection_on_next_line"
-    #ALT "A-C"        	= "copy_selection_on_prev_line"
-    "A-("             	= "rotate_selections_backward"
-    "A-)"             	= "rotate_selections_forward"
-    #ALT "A-("        	= "rotate_selection_contents_backward"
-    #ALT "A-)"        	= "rotate_selection_contents_forward"
-    "A-percent"       	= "select_all"
-    "A-x"             	= "extend_line"
-    "A-X"             	= "extend_to_line_bounds"
-    "A-J"             	= "join_selections"
-    "A-K"             	= "keep_selections"
-    #ALT "A-K"        	= "remove_selections"
-    "A-$"             	= "shell_keep_pipe"
-    "C-/"             	= "toggle_comments"	# [ ^c][] un-/comment the selections #!!! doesn't work :(
-
-    # Search
-    "A-/"     	= "search"
-    #HX5 "A-?"	= "rsearch"
-    "A-n"     	= "search_next"
-    #HX5 "A-N"	= "search_prev"
-    "A-*"     	= "search_selection"
-
-    [keys.insert."A-z"] # View mode
-      "z"   	= "align_view_center"
-      "c"   	= "align_view_center"
-      "t"   	= "align_view_top"
-      "b"   	= "align_view_bottom"
-      "m"   	= "align_view_center"
-      "down"	= "scroll_down"
-      "j"   	= "scroll_down"
-      "up"  	= "scroll_up"
-      "k"   	= "scroll_up"
-      "f"   	= "page_down"
-      "b"   	= "page_up"
-      "d"   	= "half_page_down"
-      "u"   	= "half_page_up"
-    [keys.insert."A-g"] # Goto mode
-      "j"  	= "goto_last_line"          	# [e] []                        	file end
-      "k"  	= "goto_file_start"         	# [g] [goto_line_end]           	line number `<n>` else file start
-      "g"  	= "goto_file_start"         	# [g] [goto_file_start]         	line number `<n>` else file start
-      "s"  	= "goto_first_nonwhitespace"	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
-      "a"  	= "goto_first_nonwhitespace"	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
-      "l"  	= "goto_line_start"         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
-      ";"  	= "goto_line_end"           	# [l] []                        	line end   ⭲ !!! change to ¶🢖 when implemented
-      "f"  	= "goto_file"               	# [f] [goto_file]               	files in the selection
-      "m"  	= "goto_window_bottom"      	# [b] [goto_last_modified_file] 	🗔⭳ screen bottom
-      ","  	= "goto_window_top"         	# [t] []                        	🗔⭱ screen top
-      "n"  	= "goto_window_center"      	# [c] [goto_next_buffer]        	🗔· screen middle
-      "d"  	= "goto_definition"         	# [d] [goto_definition]         	≝      definition (LSP)
-      "F12"	= "goto_definition"         	# [d] []                        	≝      definition (LSP)
-      "e"  	= "goto_type_definition"    	# [y] [goto_last_line]          	≝ type definition (LSP)
-      "y"  	= "goto_type_definition"    	# [y] [goto_type_definition]    	≝ type definition (LSP)
-      "r"  	= "goto_reference"          	# [r] [goto_reference]          	🅁※ references (LSP)
-      "i"  	= "goto_implementation"     	# [i] [goto_implementation]     	🄸 implementation (LSP)
-      "t"  	= "goto_implementation"     	# [i] [goto_window_top]         	🄸 implementation (LSP)
-      "c"  	= "goto_last_accessed_file" 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
-      "v"  	= "goto_last_modified_file" 	# [m] []                        	✎␜ file last modified/alternate
-      "1"  	= "goto_previous_buffer"    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
-      "2"  	= "goto_next_buffer"        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
-      "3"  	= "jump_backward"           	# [] []                         	⎗̡ Jump backward on the jumplist !!! blocked by ∀* implementation
-      "4"  	= "jump_forward"            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
-      "u"  	= "goto_last_modification"  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
-      "."  	= "goto_last_modification"  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
-      "b"  	= "no_op"                   	# [] [goto_window_bottom]       	#
-      "h"  	= "no_op"                   	# [] [goto_line_start]          	#
-      "p"  	= "no_op"                   	# [] [goto_previous_buffer]     	#
-    [keys.insert."A-m"] # Match mode
-      "m"	= "match_brackets"
-      "s"	= "surround_add"
-      "r"	= "surround_replace"
-      "d"	= "surround_delete"
-      "a"	= "select_textobject_around"
-      "i"	= "select_textobject_inner"
-    [keys.insert."C-w"] # Window mode
-      "w"       	= "rotate_view"
-      "C-w"     	= "rotate_view"
-      "v"       	= "vsplit"
-      "C-v"     	= "vsplit"
-      "s"       	= "hsplit"
-      "C-s"     	= "hsplit"
-      "left"    	= "jump_view_left"
-      "h"       	= "jump_view_left"
-      "C-h"     	= "jump_view_left"
-      "down"    	= "jump_view_down"
-      "j"       	= "jump_view_down"
-      "C-j"     	= "jump_view_down"
-      "up"      	= "jump_view_up"
-      "k"       	= "jump_view_up"
-      "C-k"     	= "jump_view_up"
-      "right"   	= "jump_view_right"
-      "l"       	= "jump_view_right"
-      "C-l"     	= "jump_view_right"
-      #HX5 "f"  	= "goto_file"
-      #HX5 "F"  	= "goto_file",
-      #HX5 "q"  	= "wclose"
-      #HX5 "C-q"	= "wclose"
-      #HX5 "o"  	= "wonly"
-      #HX5 "C-o"	= "wonly"
-    [keys.insert."A-space"] # [ⓝ  ␣] [] ☰␣  Space mode !!! doesn't seem to work
-      "f"    	= "file_picker"                      	#         	☰␜ Open file   picker
-      "b"    	= "buffer_picker"                    	#         	☰b Open buffer picker
-      "k"    	= "hover"                            	#         	? Show documentation for item under cursor in a popup (LSP)
-      "s"    	= "symbol_picker"                    	#         	🅂🗋  Open document  symbol picker (LSP)
-      "S"    	= "workspace_symbol_picker"          	#         	🅂🗍  Open workspace symbol picker (LSP)
-      "a"    	= "code_action"                      	#         	Ⓐ Apply code action (LSP)
-      "'"    	= "last_picker"                      	#         	☰∞ Open last fuzzy picker
-      "v"    	= "paste_clipboard_after"            	# [␣. p][]	📋⤸ Paste before selections
-      "V"    	= "paste_clipboard_before"           	#⇧[␣.⇧p][]	📋⤹ Paste after  selections
-      "C-v"  	= "replace_selections_with_clipboard"	# [␣.⇧r][]	🗘📋 Replace selections by clipboard contents
-      "R"    	= "replace_selections_with_clipboard"	#         	🗘📋 Replace selections by clipboard contents
-      "y"    	= "yank_joined_to_clipboard"         	#         	⨝📋 Join and yank selections to clipboard
-      "Y"    	= "yank_main_selection_to_clipboard" 	#         	📋 Yank main selection to clipboard
-      "/"    	= "global_search"                    	#         	🔎🗁 Global search in workspace folder
-      "r"    	= "rename_symbol"                    	#         	✎ Rename symbol (LSP)
-      "space"	= "insert_mode"                      	# [  i] []	⁁⤸ Insert before selection !!! not implemented yet
+  #ⓘ Change ——————————————————————————————————————————————————————————————————————
+    #             	Delete
+    "C-l"         	= "delete_char_backward"       	# [ ^h] []                   	⌫c × char ←
+    "C-;"         	= "delete_char_forward"        	# [ ^d] [] !!!fails          	⌦c × char →
+    "del"         	= "delete_selection"           	# [Ⓝd] [delete_char_forward] 	×▋??? might be better to delete word/till line ends after selection
+    "C-h"         	= ["move_prev_long_word_start",	# [] [delete_char_backward]  	⌫W
+                  	   "delete_selection"]         	#                            	 × Word ←
+    "A-h"         	= "delete_word_backward"       	# [ ^w]                      	⌫w × word ←
+    "A-backspace" 	= "delete_word_backward"       	# [ ^w]                      	⌫w × word ← !!! in wezterm ^h is bound to !⌫
+    "A-del"       	= "delete_word_forward"        	# [⌥ d] []                   	⌦w × word →
+    # "A-h"       	= ["move_prev_word_start",     	# [] []                      	⌫w
+    #             	   "delete_selection"]         	#                            	× word ←
+    # "A-del"     	= ["move_next_word_end",       	# [] []                      	⌦w
+                  	   # "delete_selection"]       	#                            	× word →
+    #"A-backspace"	= ["move_prev_word_start",     	# [] []                      	⌫w
+    #             	   "delete_selection"]         	#                            	 × word ←
+    "C-backspace" 	= ["move_prev_long_word_start",	# [] []                      	⌫W
+                  	   "delete_selection"]         	#                            	 × Word ←
+    "C-del"       	= ["move_next_long_word_end",  	# [] []                      	⌦W
+                  	   "delete_selection"]         	#                            	 × Word →
+    "C-a"         	= "kill_to_line_start"         	# [ⓘ ^u] [goto_line_start]   	⭰× × to line ⭰ ??? better than ∀▋select_all
+    "C-A"         	= "kill_to_line_end"           	# [ⓘ ^k] []                  	×⭲ × to line ⭲
+    "C-j"         	= "kill_to_line_start"         	# [ⓘ ^u] [kill_to_line_start]	⭰× × to line ⭰
+    "C-k"         	= "kill_to_line_end"           	# [ⓘ ^k] [kill_to_line_end]  	×⭲ × to line ⭲
+    #             	                               	#
+    # "C-r"       	= "insert_register"            	# [ⓘ ^r] [insert_register]	📋r Paste register
+    "S-ret"       	= "open_above"                 	#⇧[⇧ o] []                	⭡␤ Open new line above selection
+    # "ret"       	= "insert_newline"             	# [  ⏎] [insert_newline]  	⭣␤ Open new line below selection
 
 
+    "C-i"	= "completion"	# [ ^x] []	A… Autocomplete
+    "C-m"	= "decrement" 	# [Ⓝ ^x][]	⊖ o̠ Decrement object (number) under cursor <span class='cd'>o&#800;</span>
+    "C-,"	= "increment" 	# [Ⓝ ^a][]	⊕ o̟ Increment object (number) under cursor <span class='cd'>o&#799;</span>
+
+  ###ⓘ Normal mode copy on Alt
+  ##ⓘ    	Misc ——————————————————————————————————————————————————————————————————————
+    "A-c"	= "yank"                            	# [  c] [change_selection]            	🗐 Yank selection <i class='fa fa-copy'></i>
+    "A-C"	= "yank_main_selection_to_clipboard"	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
+  ##ⓘ Move ——————————————————————————————————————————————————————————————————————
+    #ⓘ   	Cursor@Home
+    "A-j"	= "move_line_down"      	# [ⓘ ^n] [move_line_down]        	▼
+    "A-k"	= "move_line_up"        	# [ⓘ ^p] [move_line_up]          	▲
+    "A-l"	= "move_char_left"      	# [ⓘ ^b] [move_char_right]       	◀
+    "A-;"	= "move_char_right"     	# [ⓘ ^f] [collapse_selection]    	▶
+    "A-m"	= "half_page_down"      	# [Ⓝ ^d] [☰🧩]                    	⤈ Move half page down
+    "A-,"	= "half_page_up"        	# [Ⓝ ^u] [keep_primary_selection]	⤉ Move half page up
+    "A-a"	= "extend_to_line_start"	# [ⓈHome] [append_mode]          	⭰▋ Move     line start + select # goto_line_start
+    "A-A"	= "extend_to_line_end"  	# [ⓈEnd] [append_to_line]        	⭲▋ Move     line end   + select # goto_line_end
+
+    #ⓘ   	File/jumplist
+    "A-1"	= "goto_previous_buffer"	# [ⓖp] [] 	⎗
+    "A-2"	= "goto_next_buffer"    	# [ⓖn] [] 	⎘
+    "A-3"	= "jump_backward"       	# [Ⓝ^o] []	⎗̡ Jump backward on the jumplist
+    "A-4"	= "jump_forward"        	# [Ⓝ^i] []	⎘̡ Jump forward  on the jumplist
+
+    #ⓘ     	Word
+    "A-d"  	= "move_prev_word_start"     	# [Ⓝ  b] [delete_word_forward]       	🢔w Move   this word start
+    "A-f"  	= "move_next_word_end"       	# [Ⓝ  e] [move_next_word_start]      	w🢖 Move   this word end
+    "A-D"  	= "move_prev_long_word_start"	#⇧[Ⓝ⇧ b] []                          	🢔W Move   this WORD start
+    "A-F"  	= "move_next_long_word_end"  	#⇧[Ⓝ⇧ e] [find_prev_char]            	W🢖 Move   this WORD end
+    # "A-d"	= "move_prev_word_end"       	# [ⓘ⌥b, ⌥◀] [delete_selection_noyank]	⤝w Move   prev word end (this start + space)
+    # "A-f"	= "move_next_word_start"     	# [ⓘ⌥f] []                           	w⤞ Move   next word start (this end + space)
+
+    #ⓘ     	Line
+    # "A-G"	= "goto_line"   	#⇧[Ⓝ⇧ g] []	⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎
+    "A-G"  	= "command_mode"	#⇧[Ⓝ⇧ ;] []	Ⓒ Enter command mode
+    "A-:"  	= "command_mode"	#⇧[Ⓝ⇧ ;] []	Ⓒ Enter command mode
+
+    "A-r"	= "repeat_last_motion"	# [Ⓝ ⌥.] [replace]	∞ Repeat last motion (f/t/m)
+
+    #"A->"	= "no_op"	# [Ⓝ⇧ [] [indent] 	🢔¶ Move paragraph start #!!!not implemented yet
+    #"A-?"	= "no_op"	# [Ⓝ⇧ ]] [rsearch]	¶🢖 Move paragraph end   #!!!not implemented yet
+
+    #ⓘ     	Find
+    "A-w"  	= "find_next_char"  	# [Ⓝ  f] [move_next_word_start]     	🔍   Find       next     char <i class='mss mss-Search-3'></i>
+    "A-W"  	= "find_prev_char"  	#⇧[Ⓝ⇧ f] [move_next_long_word_start]	🔎   Find       previous char <i class='fa fa-search'></i>
+    # "A-w"	= "find_till_char"  	# [Ⓝ  t] []                         	🔍₋₁ Find 'till next     char <i class='mss mss-Search-3'></i>₋
+    # "A-W"	= "till_prev_char"  	#⇧[Ⓝ⇧ t] []                         	🔎₋₁ Find 'till previous char <i class='fa fa-search'></i>₋
+    "A-S"  	= "rsearch"         	# [Ⓝ⇧ /] [split_selection]          	🔍𝖗 for previous regex pattern
+    "A-s"  	= "search"          	#⇧[Ⓝ  /] [select_regex]             	🔎𝖗 for          regex pattern
+    "A-."  	= "search_prev"     	# [Ⓝ⇧ n] [repeat_last_change]       	🢔◎ ◎͔ Select previous search match
+    "A-/"  	= "search_next"     	# [Ⓝ  n] [search]                   	◎🢖 ◎͕ Select next     search match
+    "A-8"  	= "search_selection"	# [Ⓝ⇧ 8] [<8>]                      	𝖗🢔▋ Use current selection as the search pattern !!! blocked by ∀* implementation
+    # "*"  	= "search_selection"	#⇧[Ⓝ⇧ 8] [search_selection]         	𝖗🢔▋ Use current selection as the search pattern
+
+  ##ⓘ Select ——————————————————————————————————————————————————————————————————————
+    "A-e"	= "select_mode"	# [Ⓝ  v] [move_next_word_end]	Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt <i class='fa fa-arrows'></i>
+
+    # Compat with non-modal editors
+    # "C-a"	= ["save_selection","select_all"]	# [Ⓝ⇧ 5]  [increment]	∀▋ Select entire file ???better than ⭰× × to line ⭰
+
+    "A-S-down"	= "copy_selection_on_next_line"	# [Ⓝ⇧ c]  []	🠷 Copy selection onto the next     line (add cursor below)
+    "A-S-up"  	= "copy_selection_on_prev_line"	# [Ⓝ⇧⌥c] [] 	🠵 Copy selection onto the previous line (add cursor above)
+
+    "C-g"  	= "save_selection"	# [Ⓝ  ^s] []	🖈 Save the current selection to the jumplist
+    # "A-G"	= "save_selection"	# [Ⓝ  ^s] []	🖈 Save the current selection to the jumplist
+
+    "A-J"  	= "extend_line"          	# [Ⓝ  x] [join_selections]        	⮒ Select current line, if already selected, extend to next line
+    "A-E"  	= "extend_line"          	#⇧[Ⓝ  x] [move_next_long_word_end]	⮒ Select current line, if already selected, extend to next line
+    # "A-e"	= "extend_to_line_bounds"	# [Ⓝ⇧ x] []                       	⎯ Extend selection to line bounds (line-wise selection)
+    # ""   	= "expand_selection"     	# [Ⓝ] [expand_selection]       Expand selection to parent syntax node TODO: pick a key (**TS**)
+    # "A-5"	= "select_paragraph"     	# [Ⓝ  ] [<5>]        	¶▋ Select this paragraph !!! blocked by ∀* implementation !!! command not implemented yet
+    "A-%"  	= "select_all"           	#⇧[Ⓝ⇧ 5] [select_all]	∀▋ Select entire file
+
+    # "A-j"	= "copy_selection_on_next_line"	# [Ⓝ⇧ c]  []                         	🠷 Copy selection onto the next     line (add cursor below)
+    # "A-k"	= "copy_selection_on_prev_line"	# [Ⓝ⇧⌥c] []                          	🠵 Copy selection onto the previous line (add cursor above)
+    # "A-s"	= "select_regex"               	# [Ⓝ  s] [split_selection_on_newline]	𝖗▋ Select all regex matches inside selections
+    "A-N"  	= "split_selection"            	#⇧[Ⓝ⇧ s] [search_prev]               	䷖𝖗 on regex matches
+    # "A-n"	= "split_selection_on_newline" 	# [Ⓝ ⌥s] []                          	䷖␤ (﹨␤)
+
+    "A-'"  	= "collapse_selection"        	# [Ⓝ  ;] []               	🢖🢔 Collapse selection onto a single cursor
+    # "A-'"	= "flip_selections"           	# [Ⓝ ⌥;][]                	⮀ Flip selection cursor and anchor
+    # "A-a"	= "flip_selections"           	#⇧[Ⓝ ⌥;][]                	⮀ Flip selection cursor and anchor
+    # "A-A"	= "flip_selections"           	#⇧[Ⓝ ⌥;][]                	⮀ Flip selection cursor and anchor
+    # "A-l"	= "rotate_selections_backward"	# [Ⓝ⇧ 9] []               	⟲ Rotate main selection backward
+    # "A-;"	= "rotate_selections_forward" 	# [Ⓝ⇧ 0] [flip_selections]	⟳ Rotate main selection forward
+    # "A-u"	= "remove_primary_selection"  	# [Ⓝ ⌥,] [earlier]        	×         the primary selection
+    # "A-i"	= "keep_primary_selection"    	# [Ⓝ  ,] []               	×∀ all but the primary selection (keep only)
+    # "A-U"	= "no_op"                     	#⇧[Ⓝ ⌥,] [earlier]        	×× undo remove selection (!!!not implemented yet)
+    "A-K"  	= "keep_selections"           	#⇧[Ⓝ⇧ k] [keep_selections]	ᵏ𝖗 selections not matching the regex (keep)
+    "A-L"  	= "remove_selections"         	#⇧[Ⓝ⇧⌥k] []               	×𝖗 selections     matching the regex
+    # "A-:"	= "ensure_selections_forward" 	#⇧[Ⓝ⇧⌥;] []               	???
+
+    # "_"    	= "trim_selections"	#⇧[Ⓝ⇧ -] [trim_selections]	✁Trim whitespace from the selection
+    "A-minus"	= "trim_selections"	# [Ⓝ⇧ -] []               	✁Trim whitespace from the selection
+    # "+"    	= "dupe_selections"	#⇧[Ⓝ⇧ =] [dupe_selections]	🗐Duplicate selection (currently nonfunctional/disabled)
+
+  ##ⓘ Change ——————————————————————————————————————————————————————————————————————
+    "S-del"	= "delete_selection_noyank"	# [ ⌥d] []              	🕱▋
+    "S-ret"	= "open_above"             	#⇧[⇧ o] []              	⭡␤ Open new line above selection
+    "A-ret"	= "open_below"             	# [  o] [insert_newline]	⭣␤ Open new line below selection
+    "C-ret"	= "open_below"             	# [  o] [insert_newline]	⭣␤ Open new line below selection
+
+    "A-6"  	= "delete_char_forward"    	# [Ⓝ ⌦] [<5>]                  	⌦ !!! blocked by ∀* implementation
+    "A-x"  	= "delete_selection"       	# [Ⓝ  d] [extend_line]         	×▋
+    # "A-x"	= "delete_selection_noyank"	# [Ⓝ ⌥d] []                    	🕱▋ (...without yanking)
+    # "A-c"	= "change_selection"       	# [c] [change_selection_noyank]	Δ
+    # "A-h"	= "delete_char_backward"   	# [⌫] [move_char_left]         	⌫c × char ←
+    "A-H"  	= "delete_char_forward"    	#⇧[⌦] []                       	⌦c × char →
+    #"A-h" 	= ["move_prev_word_start", 	# [] []                        	⌫w
+    #      	   "delete_selection"]     	#                              	× word ←
+    #"A-H" 	= ["move_next_word_end",   	# [] []                        	⌦w
+    #      	   "delete_selection"]     	#                              	× word →
+    "A-X"  	= "join_selections"        	#⇧[⇧ j] [extend_to_line_bounds]	×␤ ⨝ Join lines inside selection
+
+    "A-t"	= "replace"            	# [Ⓝ  r] [find_till_char]	🗘  Replace with a character
+    "A-T"	= "replace_with_yanked"	#⇧[Ⓝ⇧ r] [till_prev_char]	🗘ʸ Replace with yanked text
+
+    "A-B"  	= "switch_case"        	#⇧[Ⓝ⇧ `] [move_prev_long_word_start]	𝕒⇋𝔸 (selection)
+    # "C-b"	= "switch_to_uppercase"	#⇧[Ⓝ⇧⌥`] [move_char_left]           	𝕒𝔸 (selection)
+    "A-`"  	= "switch_to_lowercase"	# [Ⓝ  `] [switch_to_lowercase]      	𝕒𝔸  (selection)
+    "A-~"  	= "switch_case"        	#⇧[Ⓝ⇧ `] [switch_case]              	𝕒⇋𝔸 (selection)
+    # "~"  	= "switch_to_uppercase"	# [Ⓝ⇧⌥`] [switch_case]              	𝕒𝔸 (selection)
+    "A-^"  	= "switch_to_uppercase"	# [Ⓝ⇧⌥`] []                         	𝕒𝔸 (selection)
+
+    # "A-,"	= "unindent"	# [Ⓝ⇧,][remove_primary_selection] ⇚ (selection)
+    # "A-."	= "indent"  	# [Ⓝ⇧.][repeat_last_motion]       ⇛ (selection)
+
+    # "q" 	= "record_macro"   	# [Ⓝ  q] [record_macro]      	⏺ Start/stop macro recording to the selected register
+    # "Q" 	= "replay_macro"   	#⇧[Ⓝ⇧ q] replay_macro]       	▶  Play back a recorded macro from the selected register
+    "A-\""	= "select_register"	# [Ⓝ"<reg>] [select_register]	®  Select a register to yank to or paste from
+
+    # "A-b"	= "N/Arepeat_last_change"             	#⇧[Ⓝ  .] [move_prev_word_start]	∞ Repeat last change !!! no command yet
+    "A-I"  	= "open_above"                        	#⇧[Ⓝ⇧ o] [prepend_to_line]     	⭡␤ Open new line above selection
+    "A-O"  	= "open_below"                        	# [Ⓝ  o] [append_to_line]      	⭣␤ Open new line below selection
+    "A-u"  	= "undo"                              	# [Ⓝ  u] [undo mode]           	⎌ Undo change
+    "A-y"  	= "redo"                              	# [Ⓝ⇧ u] [yank]                	↷ Redo change
+    "A-U"  	= "earlier"                           	#⇧[Ⓝ ⌥u] [redo]                	🕘 Move backward in history   <i class='fa fa-history'></i>
+    "A-Y"  	= "later"                             	#⇧[Ⓝ⇧⌥u] []                    	🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i>
+    "C-y"  	= "redo"                              	# [Ⓝ⇧ u] []                    	↷ Redo change !!!not working
+    "A-v"  	= "paste_after"                       	# [Ⓝ  p] [select_mode]         	📋⤹ Paste after selection
+    "C-v"  	= "paste_clipboard_after"             	# [Ⓝ␣.p] []                    	📋⤹ Paste after selection
+    "A-V"  	= "paste_before"                      	# [Ⓝ⇧ p] []                    	⤸📋 Paste before selection
+    "C-z"  	= "undo"                              	# [Ⓝ  u] []                    	⎌ Undo change
+    "C-Z"  	= "redo"                              	#⇧[Ⓝ⇧ u] []                    	↷ Redo change !!!not working
+    "C-x"  	= ["yank_main_selection_to_clipboard",	# []   [completion]            	×📋
+           	   "delete_selection"]                	#                              	cut to clipboard <i class='fa fa-clipboard'></i>
+
+    #ⓘ   	Select manipulation ————————————————————————————————————————————————————————————————————
+    "A-("	= "rotate_selection_contents_backward"	#⇧[Ⓝ⇧⌥9] [rotate_selections_backward]	⟲ Rotate selection contents backward
+    "A-)"	= "rotate_selection_contents_forward" 	#⇧[Ⓝ⇧⌥0] [rotate_selections_forward] 	⟳ Rotate selection contents forward
+    "A-7"	= "align_selections"                  	# [Ⓝ⇧ 7] [<7>]                       	⥂ Align selection in columns !!! blocked by ∀* implementation
+    "A-&"	= "align_selections"                  	#⇧[Ⓝ⇧ 7] [align_selections]          	⥂ Align selection in columns
+    "A-="	= "format_selections"                 	# [Ⓝ  =] [format_selections]         	ℱ Format selection (currently nonfunctional/disabled) (LSP)
+
+    "A-$"	= "shell_keep_pipe"	# [Ⓝ⇧ 4] [shell_keep_pipe] $ᵏ| Pipe each selection into shell command, keep selections where command returned 0
+
+    #ⓘ   	Shell
+    "A-!"	= "shell_insert_output"	#⇧[Ⓝ⇧  1] [shell_insert_output] 🢔$ Run shell command, inserting output before each selection
+    "A-@"	= "shell_append_output"	#⇧[Ⓝ⇧⌥1] []                    $🢖 Run shell command, appending output after  each selection
+
+
+  ### ☰Minor modes
+  [keys.insert."A-p"] #ⓘ "view" [Ⓝ  z] [paste_after] ☰👁 View mode intended for scrolling and manipulating the view without changing the selection
+    "u"       	= "align_view_bottom"	# [b] []                 	🗔⭳ Align line to Screen bottom
+    "i"       	= "align_view_top"   	# [t] []                 	🗔⭱ Align line to Screen top
+    "n"       	= "align_view_center"	# [z] [align_view_center]	🗔·| Align line to center (vertically)
+    "h"       	= "align_view_middle"	# [m] [align_view_middle]	🗔·⎯ Align line to Screen middle (horizontally)
+    "l"       	= "align_view_middle"	# [m] []                 	🗔·⎯ Align line to Screen middle (horizontally)
+    "down"    	= "scroll_down"      	# [down] [scroll_down]   	▼ Scroll ↓
+    "up"      	= "scroll_up"        	# [up]   [scroll_up]     	▲ Scroll ↑
+    "j"       	= "scroll_down"      	# [j] [scroll_down]      	▼ Scroll ↓
+    "k"       	= "scroll_up"        	# [k] [scroll_up]        	▲ Scroll ↑
+    "m"       	= "half_page_down"   	# [d] [align_view_middle]	⤈ Move half page ↓
+    ","       	= "half_page_up"     	# [u] []                 	⤉ Move half page ↑
+    "J"       	= "page_down"        	# [f] []                 	⇟ Move      page ↓
+    "K"       	= "page_up"          	# [b] []                 	⇞ Move      page ↑
+    "C-j"     	= "page_down"        	# [f] []                 	⇟ Move      page ↓
+    "C-k"     	= "page_up"          	# [b] []                 	⇞ Move      page ↑
+    "pageup"  	= "page_down"        	# [pageup] [page_down]   	⇟ Move      page ↓
+    "pagedown"	= "page_up"          	# [pagedown] [page_up]   	⇞ Move      page ↑
+    "z"       	= "no_op"            	# [] [align_view_center] 	#
+    "c"       	= "no_op"            	# [] [align_view_center] 	#
+    "t"       	= "no_op"            	# [] [align_view_top]    	#
+    "b"       	= "no_op"            	# [] [align_view_bottom] 	#
+    "b"       	= "no_op"            	# [] [page_up]           	# !!!duplciate with align_view_bottom
+    "C-d"     	= "no_op"            	# [] [half_page_down]
+    "C-u"     	= "no_op"            	# [] [half_page_up]
+    "C-f"     	= "no_op"            	# [] [page_down]
+    "C-b"     	= "no_op"            	# [] [page_up]
+  [keys.insert."A-P"] #ⓘ "view sticky" ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ "sticky", persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+    "u"       	= "align_view_bottom"	# [b] []                 	🗔⭳ Align line to Screen bottom
+    "i"       	= "align_view_top"   	# [t] []                 	🗔⭱ Align line to Screen top
+    "n"       	= "align_view_center"	# [z] [align_view_center]	🗔·| Align line to center (vertically)
+    "h"       	= "align_view_middle"	# [m] [align_view_middle]	🗔·⎯ Align line to Screen middle (horizontally)
+    "l"       	= "align_view_middle"	# [m] []                 	🗔·⎯ Align line to Screen middle (horizontally)
+    "down"    	= "scroll_down"      	# [down] [scroll_down]   	▼ Scroll ↓
+    "up"      	= "scroll_up"        	# [up]   [scroll_up]     	▲ Scroll ↑
+    "j"       	= "scroll_down"      	# [j] [scroll_down]      	▼ Scroll ↓
+    "k"       	= "scroll_up"        	# [k] [scroll_up]        	▲ Scroll ↑
+    "m"       	= "half_page_down"   	# [d] [align_view_middle]	⤈ Move half page ↓
+    ","       	= "half_page_up"     	# [u] []                 	⤉ Move half page ↑
+    "J"       	= "page_down"        	# [f] []                 	⇟ Move      page ↓
+    "K"       	= "page_up"          	# [b] []                 	⇞ Move      page ↑
+    "C-j"     	= "page_down"        	# [f] []                 	⇟ Move      page ↓
+    "C-k"     	= "page_up"          	# [b] []                 	⇞ Move      page ↑
+    "pageup"  	= "page_down"        	# [pageup] [page_down]   	⇟ Move      page ↓
+    "pagedown"	= "page_up"          	# [pagedown] [page_up]   	⇞ Move      page ↑
+    "z"       	= "no_op"            	# [] [align_view_center] 	#
+    "c"       	= "no_op"            	# [] [align_view_center] 	#
+    "t"       	= "no_op"            	# [] [align_view_top]    	#
+    "b"       	= "no_op"            	# [] [align_view_bottom] 	#
+    "b"       	= "no_op"            	# [] [page_up]           	# !!!duplciate with align_view_bottom
+    "C-d"     	= "no_op"            	# [] [half_page_down]
+    "C-u"     	= "no_op"            	# [] [half_page_up]
+    "C-f"     	= "no_op"            	# [] [page_down]
+    "C-b"     	= "no_op"            	# [] [page_up]
+  [keys.insert."A-Z"] #ⓘ "view sticky" ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ "sticky", persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+    "u"       	= "align_view_bottom"	# [b] []                 	🗔⭳ Align line to Screen bottom
+    "i"       	= "align_view_top"   	# [t] []                 	🗔⭱ Align line to Screen top
+    "n"       	= "align_view_center"	# [z] [align_view_center]	🗔·| Align line to center (vertically)
+    "h"       	= "align_view_middle"	# [m] [align_view_middle]	🗔·⎯ Align line to Screen middle (horizontally)
+    "l"       	= "align_view_middle"	# [m] []                 	🗔·⎯ Align line to Screen middle (horizontally)
+    "down"    	= "scroll_down"      	# [down] [scroll_down]   	▼ Scroll ↓
+    "up"      	= "scroll_up"        	# [up]   [scroll_up]     	▲ Scroll ↑
+    "j"       	= "scroll_down"      	# [j] [scroll_down]      	▼ Scroll ↓
+    "k"       	= "scroll_up"        	# [k] [scroll_up]        	▲ Scroll ↑
+    "m"       	= "half_page_down"   	# [d] [align_view_middle]	⤈ Move half page ↓
+    ","       	= "half_page_up"     	# [u] []                 	⤉ Move half page ↑
+    "J"       	= "page_down"        	# [f] []                 	⇟ Move      page ↓
+    "K"       	= "page_up"          	# [b] []                 	⇞ Move      page ↑
+    "C-j"     	= "page_down"        	# [f] []                 	⇟ Move      page ↓
+    "C-k"     	= "page_up"          	# [b] []                 	⇞ Move      page ↑
+    "pageup"  	= "page_down"        	# [pageup] [page_down]   	⇟ Move      page ↓
+    "pagedown"	= "page_up"          	# [pagedown] [page_up]   	⇞ Move      page ↑
+    "z"       	= "no_op"            	# [] [align_view_center] 	#
+    "c"       	= "no_op"            	# [] [align_view_center] 	#
+    "t"       	= "no_op"            	# [] [align_view_top]    	#
+    "b"       	= "no_op"            	# [] [align_view_bottom] 	#
+    "b"       	= "no_op"            	# [] [page_up]           	# !!!duplciate with align_view_bottom
+    "C-d"     	= "no_op"            	# [] [half_page_down]
+    "C-u"     	= "no_op"            	# [] [half_page_up]
+    "C-f"     	= "no_op"            	# [] [page_down]
+    "C-b"     	= "no_op"            	# [] [page_up]
+
+  [keys.insert."A-g"] #ⓘ [Ⓝ  g] [] ⓖ☰⮊ Goto mode Jumps to various locations
+    "j"  	= "goto_last_line"          	# [e] []                        	file end
+    "k"  	= "goto_file_start"         	# [g] [goto_line_end]           	line number `<n>` else file start
+    "g"  	= "goto_file_start"         	# [g] [goto_file_start]         	line number `<n>` else file start
+    "s"  	= "goto_first_nonwhitespace"	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
+    "a"  	= "goto_first_nonwhitespace"	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
+    "l"  	= "goto_line_start"         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
+    ";"  	= "goto_line_end"           	# [l] []                        	line end   ⭲ !!! change to ¶🢖 when implemented
+    "f"  	= "goto_file"               	# [f] [goto_file]               	files in the selection
+    "m"  	= "goto_window_bottom"      	# [b] [goto_last_modified_file] 	🗔⭳ screen bottom
+    ","  	= "goto_window_top"         	# [t] []                        	🗔⭱ screen top
+    "n"  	= "goto_window_center"      	# [c] [goto_next_buffer]        	🗔· screen middle
+    "d"  	= "goto_definition"         	# [d] [goto_definition]         	≝      definition (LSP)
+    "F12"	= "goto_definition"         	# [d] []                        	≝      definition (LSP)
+    "e"  	= "goto_type_definition"    	# [y] [goto_last_line]          	≝ type definition (LSP)
+    "y"  	= "goto_type_definition"    	# [y] [goto_type_definition]    	≝ type definition (LSP)
+    "r"  	= "goto_reference"          	# [r] [goto_reference]          	🅁※ references (LSP)
+    "i"  	= "goto_implementation"     	# [i] [goto_implementation]     	🄸 implementation (LSP)
+    "t"  	= "goto_implementation"     	# [i] [goto_window_top]         	🄸 implementation (LSP)
+    "c"  	= "goto_last_accessed_file" 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+    "v"  	= "goto_last_modified_file" 	# [m] []                        	✎␜ file last modified/alternate
+    "1"  	= "goto_previous_buffer"    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
+    "2"  	= "goto_next_buffer"        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
+    "3"  	= "jump_backward"           	# [] []                         	⎗̡ Jump backward on the jumplist !!! blocked by ∀* implementation
+    "4"  	= "jump_forward"            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
+    "u"  	= "goto_last_modification"  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
+    "."  	= "goto_last_modification"  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
+    "b"  	= "no_op"                   	# [] [goto_window_bottom]       	#
+    "h"  	= "no_op"                   	# [] [goto_line_start]          	#
+    "p"  	= "no_op"                   	# [] [goto_previous_buffer]     	#
+
+  [keys.insert."A-n"] #ⓘ [Ⓝ  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
+    "n"  	= "match_brackets"          	# Goto matching bracket (TS)
+    "s"  	= "surround_add"            	# Surround current selection with <char>
+    "r"  	= "surround_replace"        	# Replace surround character <from> with <to>
+    "d"  	= "surround_delete"         	# Delete surround character <char>
+    "a"  	= "select_textobject_around"	# Select around textobject
+    "i"  	= "select_textobject_inner" 	# Select inside textobject
+    "A-n"	= "match_brackets"          	# Goto matching bracket (TS)
+    "A-s"	= "surround_add"            	# Surround current selection with <char>
+    "A-r"	= "surround_replace"        	# Replace surround character <from> with <to>
+    "A-d"	= "surround_delete"         	# Delete surround character <char>
+    "A-a"	= "select_textobject_around"	# Select around textobject
+    "A-i"	= "select_textobject_inner" 	# Select inside textobject
+
+  [keys.insert."C-w"] #ⓘ [Ⓝ^ w] [] ☰🗔  Window mode
+    "w"    	= "rotate_view"    	# Switch to next window
+    "C-w"  	= "rotate_view"    	# Switch to next window
+    "v"    	= "vsplit"         	# Vertical right split
+    "C-v"  	= "vsplit"         	# Vertical right split
+    "s"    	= "hsplit"         	# Horizontal bottom split
+    "C-s"  	= "hsplit"         	# Horizontal bottom split
+    "left" 	= "jump_view_left" 	# Move to left split
+    "h"    	= "jump_view_left" 	# Move to left split
+    "C-h"  	= "jump_view_left" 	# Move to left split
+    "down" 	= "jump_view_down" 	# Move to split below
+    "j"    	= "jump_view_down" 	# Move to split below
+    "C-j"  	= "jump_view_down" 	# Move to split below
+    "up"   	= "jump_view_up"   	# Move to split above
+    "k"    	= "jump_view_up"   	# Move to split above
+    "C-k"  	= "jump_view_up"   	# Move to split above
+    "right"	= "jump_view_right"	# Move to right split
+    "l"    	= "jump_view_right"	# Move to right split
+    "C-l"  	= "jump_view_right"	# Move to right split
+    "f"    	= "goto_file"      	# Go to files in the selection in horizontal splits
+    "F"    	= "goto_file"      	# Go to files in the selection in vertical splits
+    "q"    	= "wclose"         	# Close current window
+    "C-q"  	= "wclose"         	# Close current window
+    "o"    	= "wonly"          	# Only keep the current window closing all the others
+    "C-o"  	= "wonly"          	# Only keep the current window closing all the others
+
+  [keys.insert."A-space"] #ⓘ [Ⓝ  ␣] [] ☰␣  Space mode !!!fails
+    "f"    	= "file_picker"                      	#                            	☰␜ Open file   picker
+    "b"    	= "buffer_picker"                    	#                            	☰b Open buffer picker
+    "k"    	= "hover"                            	#                            	? Show documentation for item under cursor in a popup (LSP)
+    "s"    	= "symbol_picker"                    	#                            	🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ
+    "S"    	= "workspace_symbol_picker"          	#                            	🅂🗍 Open workspace symbol picker (LSP)
+    "a"    	= "code_action"                      	#                            	Ⓐ Apply code action (LSP)
+    "'"    	= "last_picker"                      	#                            	☰∞ Open last fuzzy picker
+    "p"    	= "no_op"                            	# [] [paste_clipboard_after] 	📋⤸ Paste before selections
+    "P"    	= "no_op"                            	#⇧[] [paste_clipboard_before]	📋⤹ Paste after  selections
+    "v"    	= "paste_clipboard_after"            	# [␣. p][]                   	📋⤸ Paste before selections
+    "V"    	= "paste_clipboard_before"           	#⇧[␣.⇧p][]                   	📋⤹ Paste after  selections
+    "C-v"  	= "replace_selections_with_clipboard"	# [␣.⇧r][]                   	🗘📋 Replace selections by clipboard contents
+    "R"    	= "replace_selections_with_clipboard"	#                            	🗘📋 Replace selections by clipboard contents
+    "y"    	= "yank_joined_to_clipboard"         	#                            	⨝📋 Join and yank selections to clipboard
+    "Y"    	= "yank_main_selection_to_clipboard" 	#                            	📋 Yank main selection to clipboard
+    "/"    	= "global_search"                    	#                            	🔎🗁 Global search in workspace folder
+    "r"    	= "rename_symbol"                    	#                            	✎ Rename symbol (LSP)
+    "space"	= "insert_mode"                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
+
+  # Unimpaired
+  [keys.insert."A-["] #ⓘ ☰[
+    "d"    	= "goto_prev_diag"   	# [d] [goto_prev_diag]    Go to previous diagnostic (LSP)
+    "D"    	= "goto_first_diag"  	# [D] [goto_first_diag]   Go to first diagnostic in document (LSP)
+    "space"	= "add_newline_above"	# [␣] [add_newline_above] Add newline above
+  [keys.insert."A-]"] #ⓘ ☰]
+    "d"    	= "goto_next_diag"   	# [d]  [goto_next_diag]   Go to next diagnostic (LSP)
+    "D"    	= "goto_last_diag"   	# [D]  [goto_last_diag]   Go to last diagnostic in document (LSP)
+    "space"	= "add_newline_below"	# [␣] [add_newline_below] Add newline below
 
 # —————————————————————————————————————————————————————————————————————————————————————————————————
 
