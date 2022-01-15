@@ -21,6 +21,7 @@
     "A-d"	= "no_op"           	# [ ⌥d] [delete_selection_noyank]           	#
     "C-i"	= "no_op"           	# [] [jump_forward]                         	#
     "R"  	= "no_op"           	#⇧[] [replace_with_yanked]                  	#
+    "b"  	= "no_op"           	#⇧[] [replace_with_yanked]                  	#
     # "X"	= "change_selection"	#⇧[  c] [extend_to_line_bounds]             	Δ (delete and enter Insert mode)
     # "Z"	=  "N/A"            	# [] [view mode sticky]                     	☰👁ₛ
 
@@ -49,13 +50,10 @@
   "C-,"	= "increment"      	# [ ^a][] !!!fails	⊕ o̟ Increment object (number) under cursor <span class='cd'>o&#799;</span>
 
   #Ⓝ   	Copy                                	 
-  "C-c"	= "yank_main_selection_to_clipboard"	# [␣,⇧y] [toggle_comments]            	📋 Yank main selection into system clipboard
-  "C"  	= "yank_main_selection_to_clipboard"	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard
-  #    	                                    	:clipboard-yank
-  #    	                                    	:clipboard-yank-join
-  #    	                                    	:clipboard-paste-after
-  #    	                                    	:clipboard-paste-before
-  #    	                                    	:clipboard-paste-replace
+  "c"  	= "yank"                            	# [  c] [change_selection]            	🗐 Yank selection <i class='fa fa-copy'></i>
+  "C-c"	= "yank_main_selection_to_clipboard"	# [␣,⇧y] [toggle_comments]            	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
+  "C"  	= "yank_main_selection_to_clipboard"	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
+  # :clipboard-yank :clipboard-yank-join :clipboard-paste-after :clipboard-paste-before :clipboard-paste-replace
 
   #Ⓝ Shell 	                 	 
     # "|"  	= "shell_pipe"   	#⇧[⇧ \] [shell_pipe]   	Pipe each selection through shell command, replacing with output
@@ -75,11 +73,11 @@
     "a"  	= "extend_to_line_start"	# [ⓈHome] [append_mode]         	⭰▋ Move     line start + select # goto_line_start
     "A"  	= "extend_to_line_end"  	# [ⓈEnd] [append_to_line]       	⭲▋ Move     line end   + select # goto_line_end
 
-    #Ⓝ Disable	old                          	 
-    "C-left"  	= "move_prev_long_word_start"	# [] no move_prev_long_word_end
-    "C-right" 	= "move_next_long_word_start"	# [] alt move_next_long_word_end
-    "A-left"  	= "move_prev_word_end"       	# []
-    "A-right" 	= "move_next_word_start"     	# []
+    #Ⓝ       	Disable old
+    "C-left" 	= "move_prev_long_word_start"	# [] no move_prev_long_word_end
+    "C-right"	= "move_next_long_word_start"	# [] alt move_next_long_word_end
+    "A-left" 	= "move_prev_word_end"       	# []
+    "A-right"	= "move_next_word_start"     	# []
 
     #Ⓝ          	Compat with non-modal editors
     "C-home"    	= "goto_file_start"     	# [g] []  	line number `<n>` else file start
@@ -100,16 +98,17 @@
     "A-3"	= "jump_backward"       	# [ ^o] []   	⎗̡ Jump backward on the jumplist
     "A-4"	= "jump_forward"        	# [ ^i] []   	⎘̡ Jump forward  on the jumplist
 
-    #Ⓝ M 	                             	 
-    "d"  	= "move_prev_word_start"     	# [  b] [delete_selection]           	🢔w Move   this word start
-    "f"  	= "move_next_word_end"       	# [  e] [find_next_char]             	w🢖 Move   this word end
-    "A-d"	= "move_prev_word_end"       	# [ⓘ⌥b, ⌥◀] [delete_selection_noyank]	⤝w Move   prev word end (this start + space)
-    "A-f"	= "move_next_word_start"     	# [  w] []                           	w⤞ Move   next word start (this end + space)
-    "D"  	= "move_prev_long_word_start"	#⇧[⇧ b] []                           	🢔W Move   this WORD start
-    "F"  	= "move_next_long_word_end"  	#⇧[⇧ e] [find_prev_char]             	W🢖 Move   this WORD end
-    # "f"	= "move_next_word_start"     	# [  w] [find_next_char]             	w⤞ Move   next word start (this end + space)
-    # "F"	= "move_next_long_word_start"	#⇧[⇧ w] [find_prev_char]             	W⤞ Move   next WORD end   (this end + space)
-    # "G"	= "goto_line"                	#⇧[⇧ g] [goto_line]                  	⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎
+    #Ⓝ   	word
+    "d"  	= "move_prev_word_start"     	# [  b] [delete_selection]          	🢔w Move   this word start
+    "f"  	= "move_next_word_end"       	# [  e] [find_next_char]            	w🢖 Move   this word end
+    "A-d"	= "move_prev_word_end"       	# [ⓘ⌥b,⌥◀] [delete_selection_noyank]	⤝w Move   prev word end (this start + space)
+    "A-f"	= "move_next_word_start"     	# [  w] []                          	w⤞ Move   next word start (this end + space)
+    "D"  	= "move_prev_long_word_start"	#⇧[⇧ b] []                          	🢔W Move   this WORD start
+    "F"  	= "move_next_long_word_end"  	#⇧[⇧ e] [find_prev_char]            	W🢖 Move   this WORD end
+    # "f"	= "move_next_word_start"     	# [  w] [find_next_char]            	w⤞ Move   next word start (this end + space)
+    "A-D"	= "move_prev_long_word_start"	#⇧[⇧ b] []                          	🢔W Move   this WORD start
+    "A-F"	= "move_next_long_word_start"	#⇧[⇧ w] [find_prev_char]            	W⤞ Move   next WORD end   (this end + space)
+    # "G"	= "goto_line"                	#⇧[⇧ g] [goto_line]                 	⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎
 
     "r"	= "repeat_last_motion"	# [ ⌥.] [replace]	∞ Repeat last motion (f/t/m)
 
@@ -145,7 +144,7 @@
     "e"	= "select_mode"	# [  v] [move_next_word_end]	Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt <i class='fa fa-arrows'></i>
 
     #Ⓝ       	Compat with non-modal editors    	 
-    "C-a"    	= ["save_selection","select_all"]	# [⇧ 5]  [increment]	∀▋ Select entire file
+    "C-a"    	= ["save_selection","select_all"]	# [⇧ 5]  [increment]	🖈, ∀▋
     "A-down" 	= "copy_selection_on_next_line"  	# [⇧ c]  []         	🠷 Copy selection onto the next     line (add cursor below)
     "A-up"   	= "copy_selection_on_prev_line"  	# [⇧⌥c] []          	🠵 Copy selection onto the previous line (add cursor above)
     "S-left" 	= "extend_char_left"             	# [V.h/◀] []
@@ -222,20 +221,11 @@
     "backspace"	= "delete_char_backward"             	# [I.bs] []                    	⌫
     "X"        	= "join_selections"                  	#⇧[⇧ j] [extend_to_line_bounds]	×␤ ⨝ Join lines inside selection
 
-    # "backspace"	= "delete_char_backward"	# [backspace] [delete_char_backward]	delete previous char
-    # "C-h"      	= "delete_char_backward"	# [C-h] [delete_char_backward]      	delete previous char
-    "del"        	= "delete_char_forward" 	# [delete] [delete_char_forward]    	delete previous char
-    # "C-d"      	= "delete_char_forward" 	# [C-d] [delete_char_forward]       	delete previous char
+    # "backspace"	= "delete_char_backward"	# [backspace] [delete_char_backward]	⌫c × char ←
+    # "C-h"      	= "delete_char_backward"	# [C-h] [delete_char_backward]      	⌫c × char ←
+    "del"        	= "delete_char_forward" 	# [delete] [delete_char_forward]    	⌦c × char →
+    # "C-d"      	= "delete_char_forward" 	# [C-d] [delete_char_forward]       	⌦c × char →
 
-
-    "c"  	= "yank"                            	# [  c] [change_selection]            	🗐 Yank selection <i class='fa fa-copy'></i>
-    "C-c"	= "yank_main_selection_to_clipboard"	# [␣,⇧y] [toggle_comments]            	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
-    "C"  	= "yank_main_selection_to_clipboard"	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
-    # :clipboard-yank
-    # :clipboard-yank-join
-    # :clipboard-paste-after
-    # :clipboard-paste-before
-    # :clipboard-paste-replace
     "t"	= "replace"            	# [  r] [find_till_char]	🗘  Replace with a character
     "T"	= "replace_with_yanked"	#⇧[⇧ r] [till_prev_char]	🗘ʸ Replace with yanked text
 
@@ -944,7 +934,7 @@
     # "A-|"	= "shell_pipe_to"	#⇧[Ⓝ⇧⌥\] [shell_pipe_to]	Pipe each selection into    shell command, ignoring       output
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
-    #            	Compat with non-modal editors
+    #ⓘ           	Compat with non-modal editors
     "C-left"     	= "move_prev_long_word_start"  	# []
     "C-right"    	= "move_next_long_word_start"  	# []
     "S-left"     	= "extend_char_left"           	# [Ⓢh/◀] []
