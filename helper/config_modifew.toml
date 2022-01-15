@@ -401,12 +401,14 @@
     'p'  	= 'no_op'                   	# [] [goto_previous_buffer]     	#
 
   [keys.normal.'n'] #Ⓝ [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
-    'n'	= 'match_brackets'          	# Goto matching bracket (TS)
-    's'	= 'surround_add'            	# Surround current selection with <char>
-    'r'	= 'surround_replace'        	# Replace surround character <from> with <to>
-    'd'	= 'surround_delete'         	# Delete surround character <char>
-    'a'	= 'select_textobject_around'	# Select around textobject
-    'i'	= 'select_textobject_inner' 	# Select inside textobject
+    'n'	= 'match_brackets'          	# [  m] []	🢔()🢖 Goto matching   bracket (TS)
+    '.'	= 'match_brackets'          	# [  ] [] 	🢔(   Goto next left  bracket (TS) !!!not implemented
+    '/'	= 'match_brackets'          	# [  ] [] 	  )🢖 Goto next right bracket (TS) !!!not implemented
+    'i'	= 'surround_add'            	# [  s] []	(+)  Surround current selection with <char>
+    't'	= 'surround_replace'        	# [  r] []	(🗘) Replace surround character <from> with <to>
+    'x'	= 'surround_delete'         	# [  d] []	(×)  Delete  surround character <char>
+    'e'	= 'select_textobject_around'	# [  a] []	🢔O🢖  Select around textobject
+    'a'	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
 
   [keys.normal.'C-w'] #Ⓝ [ ^w] [] ☰🗔  Window mode
     'a'      	= 'page_down'      	# !!!test
@@ -832,13 +834,15 @@
     'h'  	= 'no_op'                   	# [] [goto_line_start]          	#
     'p'  	= 'no_op'                   	# [] [goto_previous_buffer]     	#
 
-  [keys.select.'n'] #Ⓢ [Ⓝ  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
-    'n'	= 'match_brackets'          	# Goto matching bracket (TS)
-    's'	= 'surround_add'            	# Surround current selection with <char>
-    'r'	= 'surround_replace'        	# Replace surround character <from> with <to>
-    'd'	= 'surround_delete'         	# Delete surround character <char>
-    'a'	= 'select_textobject_around'	# Select around textobject
-    'i'	= 'select_textobject_inner' 	# Select inside textobject
+  [keys.select.'n'] #Ⓢ [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
+    'n'	= 'match_brackets'          	# [  m] []	🢔()🢖 Goto matching   bracket (TS)
+    '.'	= 'match_brackets'          	# [  ] [] 	🢔(   Goto next left  bracket (TS) !!!not implemented
+    '/'	= 'match_brackets'          	# [  ] [] 	  )🢖 Goto next right bracket (TS) !!!not implemented
+    'i'	= 'surround_add'            	# [  s] []	(+)  Surround current selection with <char>
+    't'	= 'surround_replace'        	# [  r] []	(🗘) Replace surround character <from> with <to>
+    'x'	= 'surround_delete'         	# [  d] []	(×)  Delete  surround character <char>
+    'e'	= 'select_textobject_around'	# [  a] []	🢔O🢖  Select around textobject
+    'a'	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
 
   [keys.select.'C-w'] #Ⓢ [Ⓝ ^w] [] ☰🗔  Window mode
     'a'      	= 'page_down'      	# !!!test
@@ -1272,18 +1276,22 @@
     'p'  	= 'no_op'                   	# [] [goto_previous_buffer]     	#
 
   [keys.insert.'A-n'] #ⓘ [Ⓝ  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
-    'n'  	= 'match_brackets'          	# Goto matching bracket (TS)
-    's'  	= 'surround_add'            	# Surround current selection with <char>
-    'r'  	= 'surround_replace'        	# Replace surround character <from> with <to>
-    'd'  	= 'surround_delete'         	# Delete surround character <char>
-    'a'  	= 'select_textobject_around'	# Select around textobject
-    'i'  	= 'select_textobject_inner' 	# Select inside textobject
-    'A-n'	= 'match_brackets'          	# Goto matching bracket (TS)
-    'A-s'	= 'surround_add'            	# Surround current selection with <char>
-    'A-r'	= 'surround_replace'        	# Replace surround character <from> with <to>
-    'A-d'	= 'surround_delete'         	# Delete surround character <char>
-    'A-a'	= 'select_textobject_around'	# Select around textobject
-    'A-i'	= 'select_textobject_inner' 	# Select inside textobject
+    'n'  	= 'match_brackets'          	# [  m] []	🢔()🢖 Goto matching   bracket (TS)
+    '.'  	= 'match_brackets'          	# [  ] [] 	🢔(   Goto next left  bracket (TS) !!!not implemented
+    '/'  	= 'match_brackets'          	# [  ] [] 	  )🢖 Goto next right bracket (TS) !!!not implemented
+    'i'  	= 'surround_add'            	# [  s] []	(+)  Surround current selection with <char>
+    't'  	= 'surround_replace'        	# [  r] []	(🗘) Replace surround character <from> with <to>
+    'x'  	= 'surround_delete'         	# [  d] []	(×)  Delete  surround character <char>
+    'e'  	= 'select_textobject_around'	# [  a] []	🢔O🢖  Select around textobject
+    'a'  	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
+    'A-n'	= 'match_brackets'          	# [  m] []	🢔()🢖 Goto matching   bracket (TS)
+    'A-.'	= 'match_brackets'          	# [  ] [] 	🢔(   Goto next left  bracket (TS) !!!not implemented
+    'A-/'	= 'match_brackets'          	# [  ] [] 	  )🢖 Goto next right bracket (TS) !!!not implemented
+    'A-i'	= 'surround_add'            	# [  s] []	(+)  Surround current selection with <char>
+    'A-t'	= 'surround_replace'        	# [  r] []	(🗘) Replace surround character <from> with <to>
+    'A-x'	= 'surround_delete'         	# [  d] []	(×)  Delete  surround character <char>
+    'A-e'	= 'select_textobject_around'	# [  a] []	🢔O🢖  Select around textobject
+    'A-a'	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
 
   [keys.insert.'C-w'] #ⓘ [Ⓝ^ w] [] ☰🗔  Window mode
     'w'    	= 'rotate_view'    	# Switch to next window
