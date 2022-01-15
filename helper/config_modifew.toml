@@ -1378,7 +1378,15 @@
 
 
 # Help —————————————————————————————————————————————————————————————————————————————————————————————
-  # Commands @ github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs at the invocation of static_commands! macro and the TypableCommandList
+  # At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
+  # g = { a = "code_action" } # Maps `ga` to show possible code actions
+  # Default commands @ github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs at the invocation of static_commands! macro and the TypableCommandList
+  # [keys.normal.g.l]
+  # "d" = "cmd1"  # gld
+  # "r" = "cmd2"  # glr
+  # [keys.normal.z]
+  # "$" = "cmd1"  # z$
+
   # Key name          	Representation
   # Control Shift Alt 	"C-" "S-" "A-" # prefix-only
   # Escape            	"esc"
