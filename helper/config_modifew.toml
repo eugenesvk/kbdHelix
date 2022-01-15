@@ -191,18 +191,18 @@
 
   #Ⓝ Change ——————————————————————————————————————————————————————————————————————
     #            	Compat with non-modal editors
-    "A-del"      	= ["move_next_word_end",       	# [] []   	⌦w
-                 	   "delete_selection"]         	#         	× word →
-    "C-del"      	= ["move_next_long_word_end",  	# [] []   	⌦W
-                 	   "delete_selection"]         	#         	 × Word →
-    "A-backspace"	= ["move_prev_word_start",     	# [] []   	⌫w
-                 	   "delete_selection"]         	#         	 × word ←
-    "C-backspace"	= ["move_prev_long_word_start",	# [] []   	⌫W
-                 	   "delete_selection"]         	#         	 × Word ←
-    # "del"      	= "delete_selection"           	# [  d] []	×▋
-    "S-del"      	= "delete_selection_noyank"    	# [ ⌥d] []	🕱▋
-    "S-ret"      	= "open_above"                 	#⇧[⇧ o] []	⭡␤ Open new line above selection
-    "ret"        	= "open_below"                 	# [  o] []	⭣␤ Open new line below selection
+    "A-del"      	= ["extend_next_word_end",       	# [] []   	⌦w
+                 	   "delete_selection"]           	#         	× word →
+    "C-del"      	= ["extend_next_long_word_end",  	# [] []   	⌦W
+                 	   "delete_selection"]           	#         	 × Word →
+    "A-backspace"	= ["extend_prev_word_start",     	# [] []   	⌫w
+                 	   "delete_selection"]           	#         	 × word ←
+    "C-backspace"	= ["extend_prev_long_word_start",	# [] []   	⌫W
+                 	   "delete_selection"]           	#         	 × Word ←
+    # "del"      	= "delete_selection"             	# [  d] []	×▋
+    "S-del"      	= "delete_selection_noyank"      	# [ ⌥d] []	🕱▋
+    "S-ret"      	= "open_above"                   	#⇧[⇧ o] []	⭡␤ Open new line above selection
+    "ret"        	= "open_below"                   	# [  o] []	⭣␤ Open new line below selection
 
     # "."      	= "N/A"                              	# [.] [n/a]                    	∞ Repeat last change
     "6"        	= "delete_char_forward"              	# [ ⌦] [<5>]                   	⌦ !!! blocked by ∀* implementation
@@ -970,33 +970,32 @@
     "C-/"	= "toggle_comments"                 	# [Ⓝ^c][] un-/comment the selections  #!!! doesn't work :(
 
   #ⓘ Change ——————————————————————————————————————————————————————————————————————
-    #             	Delete
-    "C-l"         	= "delete_char_backward"       	# [ ^h] []                   	⌫c × char ←
-    "C-;"         	= "delete_char_forward"        	# [ ^d] [] !!!fails          	⌦c × char →
-    "del"         	= "delete_selection"           	# [Ⓝd] [delete_char_forward] 	×▋??? might be better to delete word/till line ends after selection
-    "C-h"         	= ["move_prev_long_word_start",	# [] [delete_char_backward]  	⌫W
-                  	   "delete_selection"]         	#                            	 × Word ←
-    "A-h"         	= "delete_word_backward"       	# [ ^w]                      	⌫w × word ←
-    "A-backspace" 	= "delete_word_backward"       	# [ ^w]                      	⌫w × word ← !!! in wezterm ^h is bound to !⌫
-    "A-del"       	= "delete_word_forward"        	# [⌥ d] []                   	⌦w × word →
-    # "A-h"       	= ["move_prev_word_start",     	# [] []                      	⌫w
-    #             	   "delete_selection"]         	#                            	× word ←
-    # "A-del"     	= ["move_next_word_end",       	# [] []                      	⌦w
-                  	   # "delete_selection"]       	#                            	× word →
-    #"A-backspace"	= ["move_prev_word_start",     	# [] []                      	⌫w
-    #             	   "delete_selection"]         	#                            	 × word ←
-    "C-backspace" 	= ["move_prev_long_word_start",	# [] []                      	⌫W
-                  	   "delete_selection"]         	#                            	 × Word ←
-    "C-del"       	= ["move_next_long_word_end",  	# [] []                      	⌦W
-                  	   "delete_selection"]         	#                            	 × Word →
-    "C-a"         	= "kill_to_line_start"         	# [ⓘ ^u] [goto_line_start]   	⭰× × to line ⭰ ??? better than ∀▋select_all
-    "C-A"         	= "kill_to_line_end"           	# [ⓘ ^k] []                  	×⭲ × to line ⭲
-    "C-j"         	= "kill_to_line_start"         	# [ⓘ ^u] [kill_to_line_start]	⭰× × to line ⭰
-    "C-k"         	= "kill_to_line_end"           	# [ⓘ ^k] [kill_to_line_end]  	×⭲ × to line ⭲
-    #             	                               	#
-    # "C-r"       	= "insert_register"            	# [ⓘ ^r] [insert_register]	📋r Paste register
-    "S-ret"       	= "open_above"                 	#⇧[⇧ o] []                	⭡␤ Open new line above selection
-    # "ret"       	= "insert_newline"             	# [  ⏎] [insert_newline]  	⭣␤ Open new line below selection
+    #            	Delete
+    "C-l"        	= "delete_char_backward"         	# [ ^h] []                   	⌫c × char ←
+    "C-;"        	= "delete_char_forward"          	# [ ^d] [] !!!fails          	⌦c × char →
+    "del"        	= "delete_selection"             	# [Ⓝd] [delete_char_forward] 	×▋??? might be better to delete word/till line ends after selection
+    "C-h"        	= ["extend_prev_long_word_start",	# [] [delete_char_backward]  	⌫W
+                 	   "delete_selection"]           	#                            	 × Word ←
+    "A-h"        	= ["extend_prev_word_start",     	# [] []                      	⌫w
+                 	   "delete_selection"]           	#                            	× word ←
+    "A-del"      	= ["extend_next_word_end",       	# [] []                      	⌦w
+                 	   "delete_selection"]           	#                            	× word →
+    "A-backspace"	= ["extend_prev_word_start",     	# [] []                      	⌫w
+                 	   "delete_selection"]           	#                            	× word ← !!! in wezterm ^h is bound to !⌫
+    "C-backspace"	= ["extend_prev_long_word_start",	# [] []                      	⌫W
+                 	   "delete_selection"]           	#                            	 × Word ←
+    "C-del"      	= ["extend_next_long_word_end",  	# [] []                      	⌦W
+                 	   "delete_selection"]           	#                            	 × Word →
+    "C-a"        	= "kill_to_line_start"           	# [ⓘ ^u] [goto_line_start]   	⭰× × to line ⭰ ??? better than ∀▋select_all
+    "C-A"        	= "kill_to_line_end"             	# [ⓘ ^k] []                  	×⭲ × to line ⭲
+    "C-j"        	= "kill_to_line_start"           	# [ⓘ ^u] [kill_to_line_start]	⭰× × to line ⭰
+    "C-k"        	= "kill_to_line_end"             	# [ⓘ ^k] [kill_to_line_end]  	×⭲ × to line ⭲
+    # "A-h"      	= "delete_word_backward"         	# [ ^w][]                    	⌫w × word ← !!! ignore newlines
+    # "A-del"    	= "delete_word_forward"          	# [⌥ d] []                   	⌦w × word →
+    #            	                                 	#
+    # "C-r"      	= "insert_register"              	# [ⓘ ^r] [insert_register]	📋r Paste register
+    "S-ret"      	= "open_above"                   	#⇧[⇧ o] []                	⭡␤ Open new line above selection
+    # "ret"      	= "insert_newline"               	# [  ⏎] [insert_newline]  	⭣␤ Open new line below selection
 
 
     "C-i"	= "completion"	# [ ^x] []	A… Autocomplete
