@@ -74,7 +74,7 @@ Below is a summary of some of the design decisions followed up by detailed keyma
     - <kbd>⌥</kbd>/<kbd>^</kbd>+<kbd>⌫</kbd>/<kbd>⌦</kbd> to delete a w/Word left/right
     - <kbd>^</kbd><kbd>⇞</kbd>/<kbd>⇟</kbd> to navigate files (`goto_previous_buffer`/`goto_next_buffer`)
   - <span style="color: orange">⚠</span> (lacking sufficient frequency data) little optimization was applied to the top vs. bottom row placement of commands
-  - <span style="color: orange">⚠</span> number row-base commands don't work pending implementing this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use the version with modifiers
+  - <span style="color: orange">⚠</span> number row-base commands don't work pending implementation of this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use the version with modifiers
 
 [^1]: re. mnemonics: in such a complex keybind system such as Helix's I don't find them all that useful as they don't offer intuitive predictability due to said complexity since there are several alternatives to most of the keys, e.g., should <kbd>c</kbd> stand for Cut/Copy/Change/Collapse/Comment/Char/Command/Case/...?
 [^2]: hopefully Helix will introduce a way to translate keycap labels to an arbitrary layout without having to rebind every single key (maybe as a solution to [this issue](https://github.com/helix-editor/helix/issues/133))
