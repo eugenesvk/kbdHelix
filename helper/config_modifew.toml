@@ -474,14 +474,16 @@
     'ret'	= 'command_mode'	# [  ⎋][] Ⓒ Enter command mode
 
   # Unimpaired Mappings (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
-  # [keys.normal.'['] # ☰[
-  #   'd'    	= 'goto_prev_diag'   	# [d] [goto_prev_diag]    Go to previous diagnostic (LSP)
-  #   'D'    	= 'goto_first_diag'  	# [D] [goto_first_diag]   Go to first diagnostic in document (LSP)
-  #   'space'	= 'add_newline_above'	# [␣] [add_newline_above] Add newline above
-  # [keys.normal.']'] #☰]
-  #   'd'    	= 'goto_next_diag'   	# [d]  [goto_next_diag]   Go to next diagnostic (LSP)
-  #   'D'    	= 'goto_last_diag'   	# [D]  [goto_last_diag]   Go to last diagnostic in document (LSP)
-  #   'space'	= 'add_newline_below'	# [␣] [add_newline_below] Add newline below
+  [keys.normal.'['] # ☰[
+    'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
+    'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
+    'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
+    'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
+  [keys.normal.']'] #☰]
+    'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
+    'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
+    'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
+    'space'	= 'add_newline_below'	# [ ␣] [add_newline_below]	⭣␤  Add newline below
 
 
 
@@ -920,14 +922,16 @@
     # 'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
     'ret'    	= 'command_mode'                     	# [  ⎋][] Ⓒ Enter command mode
 
-  # [keys.normal.'['] #Ⓢ ☰[ Unimpaired
-  #   'd'    	= 'goto_prev_diag'   	# [d] [goto_prev_diag]    Go to previous diagnostic (LSP)
-  #   'D'    	= 'goto_first_diag'  	# [D] [goto_first_diag]   Go to first diagnostic in document (LSP)
-  #   'space'	= 'add_newline_above'	# [␣] [add_newline_above] Add newline above
-  # [keys.normal.']'] #☰]
-  #   'd'    	= 'goto_next_diag'   	# [d]  [goto_next_diag]   Go to next diagnostic (LSP)
-  #   'D'    	= 'goto_last_diag'   	# [D]  [goto_last_diag]   Go to last diagnostic in document (LSP)
-  #   'space'	= 'add_newline_below'	# [␣] [add_newline_below] Add newline below
+  [keys.select.'['] #Ⓢ Ⓝ[ ☰[ Unimpaired
+    'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
+    'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
+    'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
+    'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
+  [keys.select.']'] #Ⓢ Ⓝ] ☰]
+    'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
+    'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
+    'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
+    'space'	= 'add_newline_below'	# [ ␣] [add_newline_below]	⭣␤  Add newline below
 
 
 
@@ -1382,15 +1386,16 @@
     'r'    	= 'rename_symbol'                    	#                            	✎ Rename symbol (LSP)
     'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
 
-  # Unimpaired
-  [keys.insert.'A-['] #ⓘ ☰[
-    'd'    	= 'goto_prev_diag'   	# [d] [goto_prev_diag]    Go to previous diagnostic (LSP)
-    'D'    	= 'goto_first_diag'  	# [D] [goto_first_diag]   Go to first diagnostic in document (LSP)
-    'space'	= 'add_newline_above'	# [␣] [add_newline_above] Add newline above
-  [keys.insert.'A-]'] #ⓘ ☰]
-    'd'    	= 'goto_next_diag'   	# [d]  [goto_next_diag]   Go to next diagnostic (LSP)
-    'D'    	= 'goto_last_diag'   	# [D]  [goto_last_diag]   Go to last diagnostic in document (LSP)
-    'space'	= 'add_newline_below'	# [␣] [add_newline_below] Add newline below
+  [keys.insert.'A-['] #ⓘ Ⓝ[ ☰[ Unimpaired
+    'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
+    'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
+    'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
+    'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
+  [keys.insert.'A-]'] #ⓘ Ⓝ] ☰]
+    'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
+    'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
+    'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
+    'space'	= 'add_newline_below'	# [ ␣] [add_newline_below]	⭣␤  Add newline below
 
 
 # —————————————————————————————————————————————————————————————————————————————————————————————————
