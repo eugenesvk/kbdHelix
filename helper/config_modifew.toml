@@ -471,6 +471,47 @@
     # 'r'    	= 'rename_symbol'                    	#                            	✎ Rename symbol (LSP)
     # 'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
 
+  [keys.normal.'space'.'w'] #Ⓝ [ ␣w] [] ☰🗔  Window mode in Space mode
+    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
+    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
+    's'      	= 'no_op'           	# [  ][hsplit]         	#
+    'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
+    'v'      	= 'no_op'           	# [  ][vsplit]         	#
+    'C-v'    	= 'no_op'           	# [  ][vsplit]         	#
+    'F'      	= 'no_op'           	#⇧[  ][goto_file]      	#
+    'j'      	= 'jump_view_down'  	# [ j][jump_view_down] 	🗗▼ Move to Split ↓
+    'k'      	= 'jump_view_up'    	# [ k][jump_view_up]   	🗗▲ Move to Split ↑
+    'l'      	= 'jump_view_left'  	# [ h][jump_view_right]	🗗◀ Move to Split ←
+    ';'      	= 'jump_view_right' 	# [ l][]               	🗗▶ Move to Split →
+    'C-j'    	= 'jump_view_down'  	# [^j][jump_view_down] 	🗗▼ Move to Split ↓
+    'C-k'    	= 'jump_view_up'    	# [^k][jump_view_up]   	🗗▲ Move to Split ↑
+    'C-l'    	= 'jump_view_left'  	# [^h][jump_view_right]	🗗◀ Move to Split ←
+    'C-;'    	= 'jump_view_right' 	# [^l][]               	🗗▶ Move to Split → #!!!fails
+    'C-down' 	= 'jump_view_down'  	# [▼][]                	🗗▼ Move to Split ↓
+    'C-up'   	= 'jump_view_up'    	# [▲][]                	🗗▲ Move to Split ↑
+    'C-left' 	= 'jump_view_left'  	# [◀][]                	🗗◀ Move to Split ←
+    'C-right'	= 'jump_view_right' 	# [▶][]                	🗗▶ Move to Split →
+    'w'      	= 'rotate_view'     	# [ w][rotate_view]    	🗗⟳ Switch to next window
+    'C-w'    	= 'rotate_view'     	# [^w][rotate_view]    	🗗⟳ Switch to next window
+    'f'      	= 'vsplit'          	# [ v][vsplit]         	 🗗→ Split right  (Vertical)
+    'C-f'    	= 'vsplit'          	# [^v][vsplit]         	 🗗→ Split right  (Vertical)
+    'm'      	= 'hsplit'          	# [ s][]               	 🗗↓ Split bottom (Horizontal)
+    'C-m'    	= 'hsplit'          	# [^s][]               	 🗗↓ Split bottom (Horizontal)
+    'h'      	= 'goto_file_hsplit'	# [ f][jump_view_left] 	 ⮋❚␜ Go to files in the selection in horizontal splits
+    'C-h'    	= 'goto_file_hsplit'	# [ f][jump_view_left] 	 ⮋❚␜ Go to files in the selection in horizontal splits
+    'g'      	= 'goto_file_vsplit'	# [⇧f][]               	 ⮊❚␜ Go to files in the selection in vertical   splits
+    'C-g'    	= 'goto_file_vsplit'	# [⇧f][]               	 ⮊❚␜ Go to files in the selection in vertical   splits
+    'q'      	= 'wclose'          	# [ q][wclose]         	 ×🗔 Close          current window
+    'C-q'    	= 'wclose'          	# [^q][wclose]         	 ×🗔 Close          current window
+    'o'      	= 'wonly'           	# [ o][wonly]          	 ×∀🗔 Close all but current window
+    'C-o'    	= 'wonly'           	# [^o][wonly]          	 ×∀🗔 Close all but current window
+    'x'      	= 'wonly'           	# [ o][]               	 ×∀🗔 Close all but current window
+    'C-x'    	= 'wonly'           	# [^o][]               	 ×∀🗔 Close all but current window
+    # 'down' 	= 'jump_view_down'  	# [▼][jump_view_down]  	 Move to split below
+    # 'up'   	= 'jump_view_up'    	# [▲][jump_view_up]    	 Move to split above
+    # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
+    # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
+
     'ret'	= 'command_mode'	# [  ⎋][] Ⓒ Enter command mode
 
   # Unimpaired Mappings (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
@@ -921,6 +962,47 @@
     # 'r'    	= 'rename_symbol'                    	#                            	✎ Rename symbol (LSP)
     # 'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
     'ret'    	= 'command_mode'                     	# [  ⎋][] Ⓒ Enter command mode
+
+  [keys.select.'space'.'w'] #Ⓢ [Ⓝ␣w] [] ☰🗔  Window mode in Space mode
+    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
+    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
+    's'      	= 'no_op'           	# [  ][hsplit]         	#
+    'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
+    'v'      	= 'no_op'           	# [  ][vsplit]         	#
+    'C-v'    	= 'no_op'           	# [  ][vsplit]         	#
+    'F'      	= 'no_op'           	#⇧[  ][goto_file]      	#
+    'j'      	= 'jump_view_down'  	# [ j][jump_view_down] 	🗗▼ Move to Split ↓
+    'k'      	= 'jump_view_up'    	# [ k][jump_view_up]   	🗗▲ Move to Split ↑
+    'l'      	= 'jump_view_left'  	# [ h][jump_view_right]	🗗◀ Move to Split ←
+    ';'      	= 'jump_view_right' 	# [ l][]               	🗗▶ Move to Split →
+    'C-j'    	= 'jump_view_down'  	# [^j][jump_view_down] 	🗗▼ Move to Split ↓
+    'C-k'    	= 'jump_view_up'    	# [^k][jump_view_up]   	🗗▲ Move to Split ↑
+    'C-l'    	= 'jump_view_left'  	# [^h][jump_view_right]	🗗◀ Move to Split ←
+    'C-;'    	= 'jump_view_right' 	# [^l][]               	🗗▶ Move to Split → #!!!fails
+    'C-down' 	= 'jump_view_down'  	# [▼][]                	🗗▼ Move to Split ↓
+    'C-up'   	= 'jump_view_up'    	# [▲][]                	🗗▲ Move to Split ↑
+    'C-left' 	= 'jump_view_left'  	# [◀][]                	🗗◀ Move to Split ←
+    'C-right'	= 'jump_view_right' 	# [▶][]                	🗗▶ Move to Split →
+    'w'      	= 'rotate_view'     	# [ w][rotate_view]    	🗗⟳ Switch to next window
+    'C-w'    	= 'rotate_view'     	# [^w][rotate_view]    	🗗⟳ Switch to next window
+    'f'      	= 'vsplit'          	# [ v][vsplit]         	 🗗→ Split right  (Vertical)
+    'C-f'    	= 'vsplit'          	# [^v][vsplit]         	 🗗→ Split right  (Vertical)
+    'm'      	= 'hsplit'          	# [ s][]               	 🗗↓ Split bottom (Horizontal)
+    'C-m'    	= 'hsplit'          	# [^s][]               	 🗗↓ Split bottom (Horizontal)
+    'h'      	= 'goto_file_hsplit'	# [ f][jump_view_left] 	 ⮋❚␜ Go to files in the selection in horizontal splits
+    'C-h'    	= 'goto_file_hsplit'	# [ f][jump_view_left] 	 ⮋❚␜ Go to files in the selection in horizontal splits
+    'g'      	= 'goto_file_vsplit'	# [⇧f][]               	 ⮊❚␜ Go to files in the selection in vertical   splits
+    'C-g'    	= 'goto_file_vsplit'	# [⇧f][]               	 ⮊❚␜ Go to files in the selection in vertical   splits
+    'q'      	= 'wclose'          	# [ q][wclose]         	 ×🗔 Close          current window
+    'C-q'    	= 'wclose'          	# [^q][wclose]         	 ×🗔 Close          current window
+    'o'      	= 'wonly'           	# [ o][wonly]          	 ×∀🗔 Close all but current window
+    'C-o'    	= 'wonly'           	# [^o][wonly]          	 ×∀🗔 Close all but current window
+    'x'      	= 'wonly'           	# [ o][]               	 ×∀🗔 Close all but current window
+    'C-x'    	= 'wonly'           	# [^o][]               	 ×∀🗔 Close all but current window
+    # 'down' 	= 'jump_view_down'  	# [▼][jump_view_down]  	 Move to split below
+    # 'up'   	= 'jump_view_up'    	# [▲][jump_view_up]    	 Move to split above
+    # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
+    # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
 
   [keys.select.'['] #Ⓢ Ⓝ[ ☰[ Unimpaired
     'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
