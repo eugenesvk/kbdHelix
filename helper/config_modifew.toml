@@ -170,20 +170,20 @@
     'N'  	= 'split_selection'            	#⇧[⇧ s] [search_prev]               	䷖𝖗 on regex matches
     'A-n'	= 'split_selection_on_newline' 	# [ ⌥s] []                          	䷖␤ (﹨␤)
 
-    "'"    	= 'collapse_selection'        	# [  ;] []               	🢖🢔 Collapse selection onto a single cursor
-    "A-'"  	= 'flip_selections'           	# [ ⌥;][]                	⮀ Flip selection cursor and anchor
-    'A-a'  	= 'flip_selections'           	#⇧[ ⌥;][]                	⮀ Flip selection cursor and anchor
-    'A-A'  	= 'flip_selections'           	#⇧[ ⌥;][]                	⮀ Flip selection cursor and anchor
-    'A-u'  	= 'remove_primary_selection'  	# [ ⌥,] [earlier]        	×         the primary selection
-    'A-i'  	= 'keep_primary_selection'    	# [  ,] []               	×∀ all but the primary selection (keep only)
-    'A-U'  	= 'no_op'                     	#⇧[ ⌥,] [earlier]        	×× undo remove selection (!!!not implemented yet)
-    'K'    	= 'keep_selections'           	#⇧[⇧ k] [keep_selections]	ᵏ𝖗 selections not matching the regex (keep)
-    'L'    	= 'remove_selections'         	#⇧[⇧⌥k] []               	×𝖗 selections     matching the regex
-    # 'A-:'	= 'ensure_selections_forward' 	#⇧[⇧⌥;] []               	???
+    "'"    	= 'collapse_selection'        	# [  ;] []                        	🢖🢔 Collapse selection onto a single cursor
+    "A-'"  	= 'flip_selections'           	# [ ⌥;][]                         	⮀ Flip selection cursor and anchor
+    'A-a'  	= 'flip_selections'           	#⇧[ ⌥;][]                         	⮀ Flip selection cursor and anchor
+    'A-A'  	= 'flip_selections'           	#⇧[ ⌥;][]                         	⮀ Flip selection cursor and anchor
     'A-l'  	= 'rotate_selections_backward'	# [⇧ 9] []                        	⟲ Rotate main selection backward (← with many columns)
     'A-;'  	= 'rotate_selections_forward' 	# [⇧ 0] [flip_selections]         	⟳ Rotate main selection forward  (→ with many columns)
     'A-m'  	= 'rotate_selections_forward' 	# [⇧ 0] []                        	⟳ Rotate main selection forward  (↓ with many lines)
     'A-,'  	= 'rotate_selections_backward'	# [⇧ 9] [remove_primary_selection]	⟲ Rotate main selection backward (↑ with many lines)
+    'A-u'  	= 'remove_primary_selection'  	# [ ⌥,] [earlier]                 	×         the primary selection
+    'A-i'  	= 'keep_primary_selection'    	# [  ,] []                        	×∀ all but the primary selection (keep only)
+    'A-U'  	= 'no_op'                     	#⇧[ ⌥,] [earlier]                 	×× undo remove selection (!!!not implemented yet)
+    'K'    	= 'keep_selections'           	#⇧[⇧ k] [keep_selections]         	ᵏ𝖗 selections not matching the regex (keep)
+    'L'    	= 'remove_selections'         	#⇧[⇧⌥k] []                        	×𝖗 selections     matching the regex
+    # 'A-:'	= 'ensure_selections_forward' 	#⇧[⇧⌥;] []                        	???
 
     # '_'  	= 'trim_selections'	#⇧[⇧ -] [trim_selections]	✁Trim whitespace from the selection
     'minus'	= 'trim_selections'	# [⇧ -] []               	✁Trim whitespace from the selection
