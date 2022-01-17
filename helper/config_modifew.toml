@@ -238,8 +238,8 @@
     '^'  	= 'switch_to_uppercase'	# [⇧⌥`] []                         	𝕒𝔸 (selection)
     'A-`'	= 'switch_to_lowercase'	# [   `] [switch_to_uppercase]     	𝔸𝕒  (selection)
 
-    'A-,'	= 'unindent'	# [⇧,][remove_primary_selection] ⇚ (selection)
-    'A-.'	= 'indent'  	# [⇧.][repeat_last_motion]       ⇛ (selection)
+    'A-.'	= 'unindent'	# [⇧,][repeat_last_motion]	⇚ (selection)
+    'A-/'	= 'indent'  	# [⇧.][]                  	⇛ (selection)
 
     # 'q'	= 'record_macro'   	# [  q] [record_macro]        	⏺ Start/stop macro recording to the selected register
     # 'Q'	= 'replay_macro'   	#⇧[⇧ q] replay_macro]         	▶  Play back a recorded macro from the selected register
@@ -1238,8 +1238,8 @@
     # '~'  	= 'switch_to_uppercase'	# [Ⓝ⇧⌥`] [switch_case]              	𝕒𝔸 (selection)
     'A-^'  	= 'switch_to_uppercase'	# [Ⓝ⇧⌥`] []                         	𝕒𝔸 (selection)
 
-    # 'A-,'	= 'unindent'	# [Ⓝ⇧,][remove_primary_selection] ⇚ (selection)
-    # 'A-.'	= 'indent'  	# [Ⓝ⇧.][repeat_last_motion]       ⇛ (selection)
+    # 'A-.'	= 'unindent'	# [Ⓝ⇧,][repeat_last_motion]	⇚ (selection)
+    # 'A-/'	= 'indent'  	# [Ⓝ⇧.][]                  	⇛ (selection)
 
     # 'q'	= 'record_macro'   	# [Ⓝ  q] [record_macro]      	⏺ Start/stop macro recording to the selected register
     # 'Q'	= 'replay_macro'   	#⇧[Ⓝ⇧ q] replay_macro]       	▶  Play back a recorded macro from the selected register
