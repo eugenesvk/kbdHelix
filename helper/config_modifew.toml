@@ -630,8 +630,10 @@
     'A-W'	= 'extend_till_prev_char'	#⇧[⇧ t] []                           	🔎₋₁ Extend 'till previous char
     'S'  	= 'rsearch'              	# [⇧ /] [split_selection]            	🔍𝖗 for previous regex pattern
     's'  	= 'search'               	#⇧[  /] [select_regex]               	🔎𝖗 for          regex pattern
-    ','  	= 'extend_search_prev'   	# [⇧ n] [keep_primary_selection]     	🢔◎ ◎͔ Extend previous search match
-    '.'  	= 'extend_search_next'   	# [  n] [search_next]                	◎🢖 ◎͕ Extend next     search match
+    '.'  	= 'extend_search_prev'   	# [⇧ n] [goto_last_modification!!!]  	🢔◎ ◎͔ Extend previous search match
+    '/'  	= 'extend_search_next'   	# [  n] [search]                     	◎🢖 ◎͕ Extend next     search match
+    '>'  	= 'extend_search_prev'   	#⇧[⇧ [] [indent]                     	🢔¶    Extend paragraph start #!!!not implemented yet
+    '?'  	= 'extend_search_next'   	#⇧[⇧ ]] [rsearch]                    	¶🢖    Extend paragraph end   #!!!not implemented yet
     '8'  	= 'search_selection'     	# [⇧ 8] [<8>]                        	𝖗🢔▋ Use current selection as the search pattern !!! blocked by ∀* implementation
 
     #Ⓢ          	Compat with non-modal editors
