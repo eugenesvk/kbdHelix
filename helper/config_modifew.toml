@@ -873,7 +873,7 @@
     'C-u'     	= 'no_op'            	# [] [half_page_up]
     'C-f'     	= 'no_op'            	# [] [page_down]
     'C-b'     	= 'no_op'            	# [] [page_up]
-  [keys.select.'P'] #Ⓢ 'view sticky' [Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+  [keys.select.'P'] #Ⓢ 'view sticky' [Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -900,7 +900,7 @@
     'C-u'     	= 'no_op'            	# [] [half_page_up]
     'C-f'     	= 'no_op'            	# [] [page_down]
     'C-b'     	= 'no_op'            	# [] [page_up]
-  [keys.select.'Z'] #Ⓢ 'view sticky' ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+  [keys.select.'Z'] #Ⓢ 'view sticky' ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -1370,7 +1370,7 @@
     'C-u'     	= 'no_op'            	# [] [half_page_up]
     'C-f'     	= 'no_op'            	# [] [page_down]
     'C-b'     	= 'no_op'            	# [] [page_up]
-  [keys.insert.'A-P'] #ⓘ 'view sticky' ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+  [keys.insert.'A-P'] #ⓘ 'view sticky' ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -1397,7 +1397,7 @@
     'C-u'     	= 'no_op'            	# [] [half_page_up]
     'C-f'     	= 'no_op'            	# [] [page_down]
     'C-b'     	= 'no_op'            	# [] [page_up]
-  [keys.insert.'A-Z'] #ⓘ 'view sticky' ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
+  [keys.insert.'A-Z'] #ⓘ 'view sticky' ⇧[Ⓝ⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
