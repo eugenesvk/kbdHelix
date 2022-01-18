@@ -64,9 +64,10 @@
   'C-,'	= 'increment'      	# [ ^a][] !!!fails	⊕ o̟ Increment object (number) under cursor <span class='cd'>o&#799;</span>
 
   #Ⓝ   	Copy                                	 
-  'c'  	= 'yank'                            	# [  c] [change_selection]            	🗐 Yank selection <i class='fa fa-copy'></i>
-  'C-c'	= 'yank_main_selection_to_clipboard'	# [␣,⇧y] [toggle_comments]            	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
-  'C'  	= 'yank_main_selection_to_clipboard'	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
+  'c'  	= 'yank'                            	# [  c] [change_selection]            	🗐▋ Copy main selection <i class='fa fa-copy'></i>
+  'C-c'	= 'yank_main_selection_to_clipboard'	# [␣,⇧y] [toggle_comments]            	📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>
+  'C'  	= 'yank_main_selection_to_clipboard'	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>
+  'A-c'	= 'yank_joined_to_clipboard'        	# [␣ y] []                            	∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
   # :clipboard-yank :clipboard-yank-join :clipboard-paste-after :clipboard-paste-before :clipboard-paste-replace
 
   #Ⓝ Shell 	                 	 
@@ -222,7 +223,7 @@
     # '.'      	= 'N/A'                              	# [.] [n/a]                    	∞ Repeat last change
     '6'        	= 'delete_char_forward'              	# [ ⌦] [<5>]                   	⌦ !!! blocked by ∀* implementation
     'x'        	= 'delete_selection'                 	# [  d] [extend_line]          	×▋
-    'A-x'      	= 'delete_selection_noyank'          	# [ ⌥d] []                     	🕱▋ (...without yanking)
+    'A-x'      	= 'delete_selection_noyank'          	# [ ⌥d] []                     	🕱▋ (...without copying)
     'A-c'      	= 'change_selection'                 	# [c] [change_selection_noyank]	Δ
     'h'        	= 'delete_char_backward'             	# [⌫] [move_char_left]         	⌫c × char ←
     'H'        	= 'delete_char_forward'              	#⇧[⌦] []                       	⌦c × char →
@@ -242,8 +243,9 @@
     'del'        	= 'delete_char_forward' 	# [delete] [delete_char_forward]    	⌦c × char →
     # 'C-d'      	= 'delete_char_forward' 	# [C-d] [delete_char_forward]       	⌦c × char →
 
-    't'	= 'replace'            	# [  r] [find_till_char]	🗘  Replace with a character
-    'T'	= 'replace_with_yanked'	#⇧[⇧ r] [till_prev_char]	🗘ʸ Replace with yanked text
+    't'  	= 'replace'                          	# [  r] [find_till_char]	🗘c  Replace with a character
+    'T'  	= 'replace_with_yanked'              	#⇧[⇧ r] [till_prev_char]	🗘📋 Replace with copied text <i class='fa fa-copy'></i>
+    'A-t'	= 'replace_selections_with_clipboard'	# [␣ ⇧r] []             	🗘📋 Replace selections by clipboard contents <i class='fa fa-clipboard'></i>
 
     'B'  	= 'switch_case'        	# [⇧ `] [move_prev_long_word_start]	𝕒⇋𝔸 (selection)
     'C-b'	= 'switch_to_uppercase'	#⇧[⇧⌥`] []                         	𝕒𝔸 (selection)
@@ -259,7 +261,7 @@
 
     # 'q'	= 'record_macro'   	# [  q] [record_macro]        	⏺ Start/stop macro recording to the selected register
     # 'Q'	= 'replay_macro'   	#⇧[⇧ q] replay_macro]         	▶  Play back a recorded macro from the selected register
-    # '"'	= 'select_register'	# [  '<reg>] [select_register]	®  Select a register to yank to or paste from
+    # '"'	= 'select_register'	# [  '<reg>] [select_register]	®  Select a register to copy/paste from
 
     # 'b'	= 'N/Arepeat_last_change' 	#⇧[  .] [move_prev_word_start] 	∞ Repeat last change !!! no command yet
     # '.'	=  'N/Arepeat_last_change'	# [  .] [n/arepeat_last_change]	∞ Repeat last change
@@ -574,9 +576,10 @@
   'C-,'	= 'increment'      	# [ ^a][] !!!fails	⊕ o̟ Increment object (number) under cursor <span class='cd'>o&#799;</span>
 
   #Ⓢ   	Copy                                	 
-  'c'  	= 'yank'                            	# [  c] [change_selection]            	🗐 Yank selection <i class='fa fa-copy'></i>
-  'C-c'	= 'yank_main_selection_to_clipboard'	# [␣,⇧y] [toggle_comments]            	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
-  'C'  	= 'yank_main_selection_to_clipboard'	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
+  'c'  	= 'yank'                            	# [  c] [change_selection]           	🗐 Copy selection <i class='fa fa-copy'></i>
+  'C-c'	= 'yank_main_selection_to_clipboard'	# [␣⇧y] [toggle_comments]            	📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>
+  'C'  	= 'yank_main_selection_to_clipboard'	#⇧[␣⇧y] [copy_selection_on_next_line]	📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>
+  'A-c'	= 'yank_joined_to_clipboard'        	# [␣ y] []                           	∀▋📋 Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i>
 
   #Ⓢ Shell 	                 	 
     # '|'  	= 'shell_pipe'   	#⇧[⇧ \] [shell_pipe]   	Pipe each selection through shell command, replacing with output
