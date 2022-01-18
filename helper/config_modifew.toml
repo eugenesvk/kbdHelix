@@ -88,15 +88,9 @@
     'a'  	= 'extend_to_line_start'	# [ⓈHome] [append_mode]         	⭰▋ Move     line start + select # goto_line_start
     'A'  	= 'extend_to_line_end'  	# [ⓈEnd] [append_to_line]       	⭲▋ Move     line end   + select # goto_line_end
 
-    #Ⓝ       	Disable old
-    'C-left' 	= 'move_prev_long_word_start'	# [] no move_prev_long_word_end
-    'C-right'	= 'move_next_long_word_start'	# [] alt move_next_long_word_end
-    'A-left' 	= 'move_prev_word_end'       	# []
-    'A-right'	= 'move_next_word_start'     	# []
-
     #Ⓝ          	Compat with non-modal editors
-    'C-home'    	= 'goto_file_start'     	# [g] []  	line number `<n>` else file start
-    'C-end'     	= 'goto_last_line'      	# [e] []  	file end
+    'C-home'    	= 'goto_file_start'     	# [g] []  	⇱ line number `<n>` else file start
+    'C-end'     	= 'goto_last_line'      	# [e] []  	⇲ file end
     'C-S-tab'   	= 'goto_previous_buffer'	#⇧[ⓖp][]  	⎗ !!! not working
     'C-tab'     	= 'goto_next_buffer'    	# [ⓖn][]  	⎘ !!! not working
     'C-pageup'  	= 'goto_previous_buffer'	# [   ] []	⎗
@@ -113,17 +107,21 @@
     'A-3'	= 'jump_backward'       	# [ ^o] []   	⎗̡ Jump backward on the jumplist
     'A-4'	= 'jump_forward'        	# [ ^i] []   	⎘̡ Jump forward  on the jumplist
 
-    #Ⓝ   	word
-    'd'  	= 'move_prev_word_start'     	# [  b] [delete_selection]          	🢔w Move   this word start
-    'f'  	= 'move_next_word_end'       	# [  e] [find_next_char]            	w🢖 Move   this word end
-    'A-d'	= 'move_prev_word_end'       	# [ⓘ⌥b,⌥◀] [delete_selection_noyank]	⤝w Move   prev word end (this start + space)
-    'A-f'	= 'move_next_word_start'     	# [  w] []                          	w⤞ Move   next word start (this end + space)
-    'D'  	= 'move_prev_long_word_start'	#⇧[⇧ b] []                          	🢔W Move   this WORD start
-    'F'  	= 'move_next_long_word_end'  	#⇧[⇧ e] [find_prev_char]            	W🢖 Move   this WORD end
-    # 'f'	= 'move_next_word_start'     	# [  w] [find_next_char]            	w⤞ Move   next word start (this end + space)
-    'A-D'	= 'move_prev_long_word_start'	#⇧[⇧ b] []                          	🢔W Move   this WORD start
-    'A-F'	= 'move_next_long_word_start'	#⇧[⇧ w] [find_prev_char]            	W⤞ Move   next WORD end   (this end + space)
-    # 'G'	= 'goto_line'                	#⇧[⇧ g] [goto_line]                 	⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎
+    #Ⓝ       	word
+    'd'      	= 'move_prev_word_start'     	# [  b] [delete_selection]       	🢔w Move   this word start
+    'f'      	= 'move_next_word_end'       	# [  e] [find_next_char]         	w🢖 Move   this word end
+    'A-d'    	= 'move_prev_word_end'       	# [ⓘ⌥b] [delete_selection_noyank]	⤝w Move   prev word end (this start + space)
+    'A-f'    	= 'move_next_word_start'     	# [  w] []                       	w⤞ Move   next word start (this end   + space)
+    'D'      	= 'move_prev_long_word_start'	#⇧[⇧ b] []                       	🢔W Move   this WORD start
+    'F'      	= 'move_next_long_word_end'  	#⇧[⇧ e] [find_prev_char]         	W🢖 Move   this WORD end
+    # 'f'    	= 'move_next_word_start'     	# [  w] [find_next_char]         	w⤞ Move   next word start (this end + space)
+    'A-D'    	= 'move_prev_long_word_start'	#⇧[⇧ b] []                       	🢔W Move   this WORD start
+    'A-F'    	= 'move_next_long_word_start'	#⇧[⇧ w] [find_prev_char]         	W⤞ Move   next WORD end   (this end + space)
+    # 'G'    	= 'goto_line'                	#⇧[⇧ g] [goto_line]              	⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎
+    'C-left' 	= 'move_prev_long_word_start'	#⇧[⇧ b] []                       	🢔W Move   this WORD start
+    'C-right'	= 'move_next_long_word_start'	#⇧[⇧ w] []                       	W⤞ Move   next WORD end   (this end + space)
+    'A-left' 	= 'move_prev_word_end'       	# [ⓘ⌥◀] []                       	⤝w Move   prev word end   (this start + space)
+    'A-right'	= 'move_next_word_start'     	# [ⓘ⌥▶] []                       	w⤞ Move   next word start (this end   + space)
 
     'r'	= 'repeat_last_motion'	# [ ⌥.] [replace]	∞ Repeat last motion (f/t/m)
 
@@ -388,9 +386,9 @@
   # [keys.normal.'A-t'] # [⇧ z] [View] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
 
   [keys.normal.'g'] #Ⓝ [  g] [] ⓖ☰⮊ Goto mode Jumps to various locations
-    'j'  	= 'goto_last_line'          	# [e] []                        	file end
-    'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	line number `<n>` else file start
-    # 'g'	= 'goto_file_start'         	# [g] [goto_file_start]         	line number `<n>` else file start
+    'j'  	= 'goto_last_line'          	# [e] []                        	⇲ file end
+    'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	⇱ line number `<n>` else file start
+    # 'g'	= 'goto_file_start'         	# [g] [goto_file_start]         	⇱ line number `<n>` else file start
     # 's'	= 'goto_first_nonwhitespace'	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
     'a'  	= 'goto_first_nonwhitespace'	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
     'l'  	= 'goto_line_start'         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
@@ -532,13 +530,12 @@
 
     'ret'	= 'command_mode'	# [  ⎋][] Ⓒ Enter command mode
 
-  # Unimpaired Mappings (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
-  [keys.normal.'['] # ☰[
+  [keys.normal.'['] #Ⓝ ☰[ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
     'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
     'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
     'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
     'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
-  [keys.normal.']'] #☰]
+  [keys.normal.']'] #Ⓝ ☰]
     'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
     'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
     'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
@@ -635,15 +632,9 @@
     '.'  	= 'extend_search_next'   	# [  n] [search_next]                	◎🢖 ◎͕ Extend next     search match
     '8'  	= 'search_selection'     	# [⇧ 8] [<8>]                        	𝖗🢔▋ Use current selection as the search pattern !!! blocked by ∀* implementation
 
-    #Ⓢ       	Disable old
-    'C-left' 	= 'move_prev_long_word_start'	# [] no move_prev_long_word_end
-    'C-right'	= 'move_next_long_word_start'	# [] alt move_next_long_word_end
-    'A-left' 	= 'move_prev_word_end'       	# []
-    'A-right'	= 'move_next_word_start'     	# []
-
     #Ⓢ          	Compat with non-modal editors
-    'C-home'    	= 'goto_file_start'     	# [g] []  	line number `<n>` else file start
-    'C-end'     	= 'goto_last_line'      	# [e] []  	file end
+    'C-home'    	= 'goto_file_start'     	# [g] []  	⇱ line number `<n>` else file start
+    'C-end'     	= 'goto_last_line'      	# [e] []  	⇲ file end
     'C-S-tab'   	= 'goto_previous_buffer'	#⇧[ⓖp][]  	⎗ !!! not working
     'C-tab'     	= 'goto_next_buffer'    	# [ⓖn][]  	⎘ !!! not working
     'C-pageup'  	= 'goto_previous_buffer'	# [   ] []	⎗
@@ -880,9 +871,9 @@
 
 
   [keys.select.'g'] #Ⓢ [Ⓝ  g] [goto] ☰ Goto mode Jumps to various locations
-    'j'  	= 'goto_last_line'          	# [e] []                        	file end
-    'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	line number `<n>` else file start
-    'g'  	= 'goto_file_start'         	# [g] [goto_file_start]         	line number `<n>` else file start
+    'j'  	= 'goto_last_line'          	# [e] []                        	⇲ file end
+    'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	⇱ line number `<n>` else file start
+    'g'  	= 'goto_file_start'         	# [g] [goto_file_start]         	⇱ line number `<n>` else file start
     's'  	= 'goto_first_nonwhitespace'	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
     'a'  	= 'goto_first_nonwhitespace'	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
     'l'  	= 'goto_line_start'         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
@@ -1084,8 +1075,8 @@
     'S-C-left'   	= 'extend_prev_long_word_start'	# [Ⓢ ⇧b] [] W← Extend previous WORD start
     'S-C-right'  	= 'extend_next_long_word_start'	# [Ⓢ ⇧W] [] W→ Extend next     WORD start
     # 'S-C-right'	= 'extend_next_long_word_end'  	# [Ⓢ ⇧E] [] W⇥ Extend next    WORD end
-    'C-home'     	= 'goto_file_start'            	# [g] []  	line number `<n>` else file start
-    'C-end'      	= 'goto_last_line'             	# [e] []  	file end
+    'C-home'     	= 'goto_file_start'            	# [g] []  	⇱ line number `<n>` else file start
+    'C-end'      	= 'goto_last_line'             	# [e] []  	⇲ file end
     'C-S-tab'    	= 'goto_previous_buffer'       	#⇧[ⓖp][]  	⎗ !!! not working
     'C-tab'      	= 'goto_next_buffer'           	# [ⓖn][]  	⎘ !!! not working
     'C-pageup'   	= 'goto_previous_buffer'       	# [   ] []	⎗
@@ -1132,7 +1123,7 @@
     # 'ret'      	= 'insert_newline'               	# [  ⏎] [insert_newline]  	⭣␤ Open new line below selection
 
 
-    'C-i'	= 'completion'	# [ ^x] []	A… Autocomplete
+    'C-i'	= 'completion'	# [ ^x] []	⎁ Autocomplete
     'C-m'	= 'decrement' 	# [Ⓝ ^x][]	⊖ o̠ Decrement object (number) under cursor <span class='cd'>o&#800;</span>
     'C-,'	= 'increment' 	# [Ⓝ ^a][]	⊕ o̟ Increment object (number) under cursor <span class='cd'>o&#799;</span>
 
@@ -1378,9 +1369,9 @@
     'C-b'     	= 'no_op'            	# [] [page_up]
 
   [keys.insert.'A-g'] #ⓘ [Ⓝ  g] [] ⓖ☰⮊ Goto mode Jumps to various locations
-    'j'  	= 'goto_last_line'          	# [e] []                        	file end
-    'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	line number `<n>` else file start
-    'g'  	= 'goto_file_start'         	# [g] [goto_file_start]         	line number `<n>` else file start
+    'j'  	= 'goto_last_line'          	# [e] []                        	⇲ file end
+    'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	⇱ line number `<n>` else file start
+    'g'  	= 'goto_file_start'         	# [g] [goto_file_start]         	⇱ line number `<n>` else file start
     's'  	= 'goto_first_nonwhitespace'	# [s] [goto_first_nonwhitespace]	line start 1ₛₜ non-whitespace char
     'a'  	= 'goto_first_nonwhitespace'	# [s] [goto_last_accessed_file] 	line start 1ₛₜ non-whitespace char
     'l'  	= 'goto_line_start'         	# [h] []                        	line start ⭰ !!! change to 🢔¶ when implemented
