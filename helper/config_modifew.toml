@@ -304,6 +304,15 @@
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
 
   [keys.normal.'p'] #Ⓝ 'view' [  z] [paste_after] ☰👁 View mode intended for scrolling and manipulating the view without changing the selection
+    'z'       	= 'no_op'            	# [] [align_view_center]	#
+    'c'       	= 'no_op'            	# [] [align_view_center]	#
+    't'       	= 'no_op'            	# [] [align_view_top]   	#
+    'b'       	= 'no_op'            	# [] [align_view_bottom]	#
+    'b'       	= 'no_op'            	# [] [page_up]          	# !!!duplciate with align_view_bottom
+    'C-d'     	= 'no_op'            	# [] [half_page_down]
+    'C-u'     	= 'no_op'            	# [] [half_page_up]
+    'C-f'     	= 'no_op'            	# [] [page_down]
+    'C-b'     	= 'no_op'            	# [] [page_up]
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -321,16 +330,16 @@
     'C-k'     	= 'page_up'          	# [b] []                 	⇞ Move      page ↑
     'pageup'  	= 'page_down'        	# [pageup] [page_down]   	⇟ Move      page ↓
     'pagedown'	= 'page_up'          	# [pagedown] [page_up]   	⇞ Move      page ↑
-    'z'       	= 'no_op'            	# [] [align_view_center] 	#
-    'c'       	= 'no_op'            	# [] [align_view_center] 	#
-    't'       	= 'no_op'            	# [] [align_view_top]    	#
-    'b'       	= 'no_op'            	# [] [align_view_bottom] 	#
-    'b'       	= 'no_op'            	# [] [page_up]           	# !!!duplciate with align_view_bottom
+  [keys.normal.'P'] #Ⓝ 'view sticky' ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
+    'z'       	= 'no_op'            	# [] [align_view_center]	#
+    'c'       	= 'no_op'            	# [] [align_view_center]	#
+    't'       	= 'no_op'            	# [] [align_view_top]   	#
+    'b'       	= 'no_op'            	# [] [align_view_bottom]	#
+    'b'       	= 'no_op'            	# [] [page_up]          	# !!!duplciate with align_view_bottom
     'C-d'     	= 'no_op'            	# [] [half_page_down]
     'C-u'     	= 'no_op'            	# [] [half_page_up]
     'C-f'     	= 'no_op'            	# [] [page_down]
     'C-b'     	= 'no_op'            	# [] [page_up]
-  [keys.normal.'P'] #Ⓝ 'view sticky' ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -348,16 +357,16 @@
     'C-k'     	= 'page_up'          	# [b] []                 	⇞ Move      page ↑
     'pageup'  	= 'page_down'        	# [pageup] [page_down]   	⇟ Move      page ↓
     'pagedown'	= 'page_up'          	# [pagedown] [page_up]   	⇞ Move      page ↑
-    'z'       	= 'no_op'            	# [] [align_view_center] 	#
-    'c'       	= 'no_op'            	# [] [align_view_center] 	#
-    't'       	= 'no_op'            	# [] [align_view_top]    	#
-    'b'       	= 'no_op'            	# [] [align_view_bottom] 	#
-    'b'       	= 'no_op'            	# [] [page_up]           	# !!!duplciate with align_view_bottom
+  [keys.normal.'Z'] #Ⓝ 'view sticky' ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
+    'z'       	= 'no_op'            	# [] [align_view_center]	#
+    'c'       	= 'no_op'            	# [] [align_view_center]	#
+    't'       	= 'no_op'            	# [] [align_view_top]   	#
+    'b'       	= 'no_op'            	# [] [align_view_bottom]	#
+    'b'       	= 'no_op'            	# [] [page_up]          	# !!!duplciate with align_view_bottom
     'C-d'     	= 'no_op'            	# [] [half_page_down]
     'C-u'     	= 'no_op'            	# [] [half_page_up]
     'C-f'     	= 'no_op'            	# [] [page_down]
     'C-b'     	= 'no_op'            	# [] [page_up]
-  [keys.normal.'Z'] #Ⓝ 'view sticky' ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
     'u'       	= 'align_view_bottom'	# [b] []                 	🗔⭳ Align line to Screen bottom
     'i'       	= 'align_view_top'   	# [t] []                 	🗔⭱ Align line to Screen top
     'n'       	= 'align_view_center'	# [z] [align_view_center]	🗔·| Align line to center (vertically)
@@ -375,20 +384,11 @@
     'C-k'     	= 'page_up'          	# [b] []                 	⇞ Move      page ↑
     'pageup'  	= 'page_down'        	# [pageup] [page_down]   	⇟ Move      page ↓
     'pagedown'	= 'page_up'          	# [pagedown] [page_up]   	⇞ Move      page ↑
-    'z'       	= 'no_op'            	# [] [align_view_center] 	#
-    'c'       	= 'no_op'            	# [] [align_view_center] 	#
-    't'       	= 'no_op'            	# [] [align_view_top]    	#
-    'b'       	= 'no_op'            	# [] [align_view_bottom] 	#
-    'b'       	= 'no_op'            	# [] [page_up]           	# !!!duplciate with align_view_bottom
-    'C-d'     	= 'no_op'            	# [] [half_page_down]
-    'C-u'     	= 'no_op'            	# [] [half_page_up]
-    'C-f'     	= 'no_op'            	# [] [page_down]
-    'C-b'     	= 'no_op'            	# [] [page_up]
-
-  # !!! how to make it with a name??? and make it sticky
-  # [keys.normal.'A-t'] # [⇧ z] [View] ☰👁ₛ 'sticky', persistent; use the Escape key to return to Normal mode after usage (useful when you're simply looking over text and not actively editing it)
 
   [keys.normal.'g'] #Ⓝ [  g] [] ⓖ☰⮊ Goto mode Jumps to various locations
+    'b'  	= 'no_op'                   	# [] [goto_window_bottom]       	#
+    'h'  	= 'no_op'                   	# [] [goto_line_start]          	#
+    'p'  	= 'no_op'                   	# [] [goto_previous_buffer]     	#
     'j'  	= 'goto_last_line'          	# [e] []                        	⇲ file end
     'k'  	= 'goto_file_start'         	# [g] [goto_line_end]           	⇱ line number `<n>` else file start
     # 'g'	= 'goto_file_start'         	# [g] [goto_file_start]         	⇱ line number `<n>` else file start
@@ -415,9 +415,6 @@
     '4'  	= 'jump_forward'            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
     'u'  	= 'goto_last_modification'  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
     # '.'	= 'goto_last_modification'  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
-    'b'  	= 'no_op'                   	# [] [goto_window_bottom]       	#
-    'h'  	= 'no_op'                   	# [] [goto_line_start]          	#
-    'p'  	= 'no_op'                   	# [] [goto_previous_buffer]     	#
 
   [keys.normal.'n'] #Ⓝ [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
     'n'	= 'match_brackets'          	# [  m] []	🢔()🢖 Goto matching   bracket (TS)
@@ -430,8 +427,6 @@
     'a'	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
 
   [keys.normal.'C-w'] #Ⓝ [ ^w] [] ☰🗔  Window mode
-    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
-    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
     's'      	= 'no_op'           	# [  ][hsplit]         	#
     'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
     'v'      	= 'no_op'           	# [  ][vsplit]         	#
@@ -547,8 +542,6 @@
   #   'p'  	= 'u+000C'        	# ␌ formfeed
 
   [keys.normal.'space'.'w'] #Ⓝ [ ␣w] [] ☰🗔  Window mode in Space mode
-    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
-    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
     's'      	= 'no_op'           	# [  ][hsplit]         	#
     'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
     'v'      	= 'no_op'           	# [  ][vsplit]         	#
@@ -978,8 +971,6 @@
     'a'	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
 
   [keys.select.'C-w'] #Ⓢ [Ⓝ ^w] [] ☰🗔  Window mode
-    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
-    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
     's'      	= 'no_op'           	# [  ][hsplit]         	#
     'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
     'v'      	= 'no_op'           	# [  ][vsplit]         	#
@@ -1040,8 +1031,6 @@
     'ret'    	= 'command_mode'                     	# [  ⎋][] Ⓒ Enter command mode
 
   [keys.select.'space'.'w'] #Ⓢ [Ⓝ␣w] [] ☰🗔  Window mode in Space mode
-    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
-    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
     's'      	= 'no_op'           	# [  ][hsplit]         	#
     'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
     'v'      	= 'no_op'           	# [  ][vsplit]         	#
@@ -1486,8 +1475,6 @@
     'A-a'	= 'select_textobject_inner' 	# [  i] []	🢖O🢔  Select inside textobject
 
   [keys.insert.'C-w'] #ⓘ [Ⓝ^ w] [] ☰🗔  Window mode
-    'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
-    'C-h'    	= 'no_op'           	# [  ][jump_view_left] 	#
     's'      	= 'no_op'           	# [  ][hsplit]         	#
     'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
     'v'      	= 'no_op'           	# [  ][vsplit]         	#
