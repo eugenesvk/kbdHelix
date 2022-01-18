@@ -95,6 +95,8 @@
     'C-tab'     	= 'goto_next_buffer'    	# [ⓖn][]  	⎘ !!! not working
     'C-pageup'  	= 'goto_previous_buffer'	# [   ] []	⎗
     'C-pagedown'	= 'goto_next_buffer'    	# [   ] []	⎘
+    'A-pageup'  	= 'jump_backward'       	# [   ] []	⎗̡
+    'A-pagedown'	= 'jump_forward'        	# [   ] []	⎘̡
     # 'C-j'     	= 'jump_backward'       	# [ ^o] []	⎗̡ Jump backward on the jumplist
     # 'C-;'     	= 'jump_forward'        	# [ ^i] []	⎘̡ Jump forward  on the jumplist #!!! doesn't work
 
@@ -639,6 +641,8 @@
     'C-tab'     	= 'goto_next_buffer'    	# [ⓖn][]  	⎘ !!! not working
     'C-pageup'  	= 'goto_previous_buffer'	# [   ] []	⎗
     'C-pagedown'	= 'goto_next_buffer'    	# [   ] []	⎘
+    'A-pageup'  	= 'jump_backward'       	# [   ] []	⎗̡
+    'A-pagedown'	= 'jump_forward'        	# [   ] []	⎘̡
     # 'C-j'     	= 'jump_backward'       	# [ ^o] []	⎗̡ Jump backward on the jumplist
     # 'C-;'     	= 'jump_forward'        	# [ ^i] []	⎘̡ Jump forward  on the jumplist #!!! doesn't work
 
@@ -1081,6 +1085,8 @@
     'C-tab'      	= 'goto_next_buffer'           	# [ⓖn][]  	⎘ !!! not working
     'C-pageup'   	= 'goto_previous_buffer'       	# [   ] []	⎗
     'C-pagedown' 	= 'goto_next_buffer'           	# [   ] []	⎘
+    'A-pageup'   	= 'jump_backward'              	# [   ] []	⎗̡
+    'A-pagedown' 	= 'jump_forward'               	# [   ] []	⎘̡
 
 
     # 'A-left' 	= 'move_prev_word_end'  	# [ⓘ⌥◀] [move_prev_word_end]  	⤝w Move   prev word end   (this start + space)
