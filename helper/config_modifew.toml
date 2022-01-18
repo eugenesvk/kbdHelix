@@ -596,20 +596,25 @@
     'C-j'	= 'page_down'        	# [ ^d] []                      	⇟ Move      page down
     'C-k'	= 'page_up'          	# [ ^u] []                      	⇞ Move      page up
 
-    #Ⓢ     	word
-    'd'    	= 'extend_prev_word_start'     	# [  b] []                	🢔w Extend   this word start
-    'f'    	= 'extend_next_word_end'       	# [  e] [extend_next_char]	w🢖 Extend   this word end
-    'A-d'  	= 'extend_prev_word_start'     	# [] []                   	🢔w Extend   this word start
-    # 'A-d'	= 'extend_prev_word_end'       	# [] [] !!!not implemented	⤝w Extend   prev word end   (this start + ␣)
-    'A-f'  	= 'extend_next_word_start'     	# [  w] []                	w⤞ Extend   next word start (this end   + ␣)
-    'D'    	= 'extend_prev_long_word_start'	#⇧[⇧ b] []                	🢔W Extend   this WORD start
-    'F'    	= 'extend_next_long_word_end'  	#⇧[⇧ e] [extend_prev_char]	W🢖 Extend   this WORD end
-    'A-D'  	= 'extend_prev_long_word_start'	#⇧[⇧ b] []                	🢔W Extend   this WORD start
-    'A-F'  	= 'extend_next_long_word_start'	#⇧[⇧ w] []                	W⤞ Extend   next WORD end   (this end + ␣)
-    # 'r'  	= 'extend_next_word_start'     	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
-    # 'R'  	= 'extend_next_long_word_start'	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
-    # 'A-r'	= 'extend_next_word_start'     	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
-    # 'A-R'	= 'extend_next_long_word_start'	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
+    #Ⓢ        	word
+    'd'       	= 'extend_prev_word_start'     	# [  b] []                	🢔w Extend   this word start
+    'f'       	= 'extend_next_word_end'       	# [  e] [extend_next_char]	w🢖 Extend   this word end
+    'A-d'     	= 'extend_prev_word_start'     	# [] []                   	🢔w Extend   this word start
+    # 'A-d'   	= 'extend_prev_word_end'       	# [] [] !!!not implemented	⤝w Extend   prev word end   (this start + ␣)
+    'A-f'     	= 'extend_next_word_start'     	# [  w] []                	w⤞ Extend   next word start (this end   + ␣)
+    'D'       	= 'extend_prev_long_word_start'	#⇧[⇧ b] []                	🢔W Extend   this WORD start
+    'F'       	= 'extend_next_long_word_end'  	#⇧[⇧ e] [extend_prev_char]	W🢖 Extend   this WORD end
+    'A-D'     	= 'extend_prev_long_word_start'	#⇧[⇧ b] []                	🢔W Extend   this WORD start
+    'A-F'     	= 'extend_next_long_word_start'	#⇧[⇧ w] []                	W⤞ Extend   next WORD end   (this end + ␣)
+    # 'r'     	= 'extend_next_word_start'     	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
+    # 'R'     	= 'extend_next_long_word_start'	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
+    # 'A-r'   	= 'extend_next_word_start'     	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
+    # 'A-R'   	= 'extend_next_long_word_start'	# [⇧ w] []                	W⤞ Extend   next WORD start (this end + ␣)
+    'C-left'  	= 'extend_prev_long_word_start'	# [⇧ b] []                	🢔W Extend   this WORD start
+    'C-right' 	= 'extend_next_long_word_start'	# [⇧ w] []                	W⤞ Extend   next WORD end   (this end + ␣)
+    # 'A-left'	= 'extend_prev_word_end'       	# [] [] !!!not implemented	⤝w Extend   prev word end   (this start + ␣)
+    'A-left'  	= 'extend_prev_word_start'     	# [] []                   	🢔w Extend   this word start
+    'A-right' 	= 'extend_next_word_start'     	# [  w] []                	w⤞ Extend   next word start (this end   + ␣)
 
     #Ⓢ      	Line
     # 'home'	= 'extend_to_line_start'	# [home] [extend_to_line_start]	⭰▋ Extend     line start
