@@ -22,6 +22,7 @@
     'C-i'	= 'no_op'           	# [] [jump_forward]                         	#
     'R'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
     'b'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
+    'C-f'	= 'no_op'           	# [] [page_down]                            	#
     # 'X'	= 'change_selection'	#⇧[  c] [extend_to_line_bounds]             	Δ (delete and enter Insert mode)
     # 'Z'	=  'N/A'            	# [] [view mode sticky]                     	☰👁ₛ
   #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
