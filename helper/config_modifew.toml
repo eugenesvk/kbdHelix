@@ -471,24 +471,80 @@
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
 
   [keys.normal.'space'] #Ⓝ [  ␣] [] ☰␣  Space mode
-    # 'f'    	= 'file_picker'                      	#                            	☰␜ Open file   picker
-    # 'b'    	= 'buffer_picker'                    	#                            	☰b Open buffer picker
-    # 'k'    	= 'hover'                            	#                            	? Show documentation for item under cursor in a popup (LSP)
-    # 's'    	= 'symbol_picker'                    	#                            	🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ
-    # 'S'    	= 'workspace_symbol_picker'          	#                            	🅂🗍 Open workspace symbol picker (LSP)
-    # 'a'    	= 'code_action'                      	#                            	Ⓐ Apply code action (LSP)
-    # "'"    	= 'last_picker'                      	#                            	☰∞ Open last fuzzy picker
-    'p'      	= 'no_op'                            	# [] [paste_clipboard_after] 	📋⤸ Paste before selections
-    'P'      	= 'no_op'                            	#⇧[] [paste_clipboard_before]	📋⤹ Paste after  selections
-    'v'      	= 'paste_clipboard_after'            	# [␣. p][]                   	📋⤸ Paste before selections
-    'V'      	= 'paste_clipboard_before'           	#⇧[␣.⇧p][]                   	📋⤹ Paste after  selections
-    'C-v'    	= 'replace_selections_with_clipboard'	# [␣.⇧r][]                   	🗘📋 Replace selections by clipboard contents
-    # 'R'    	= 'replace_selections_with_clipboard'	#                            	🗘📋 Replace selections by clipboard contents
-    # 'y'    	= 'yank_joined_to_clipboard'         	#                            	⨝📋 Join and yank selections to clipboard
-    # 'Y'    	= 'yank_main_selection_to_clipboard' 	#                            	📋 Yank main selection to clipboard
-    # '/'    	= 'global_search'                    	#                            	🔎🗁 Global search in workspace folder
-    # 'r'    	= 'rename_symbol'                    	#                            	✎ Rename symbol (LSP)
-    # 'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
+    'f'      	= 'no_op'                            	# [ f] [file_picker]                     	#
+    'b'      	= 'no_op'                            	# [ b] [buffer_picker]                   	#
+    'p'      	= 'no_op'                            	# [] [paste_clipboard_after]             	#
+    'P'      	= 'no_op'                            	#⇧[] [paste_clipboard_before]            	#
+    'Y'      	= 'no_op'                            	# [  ] [yank_main_selection_to_clipboard]	#
+    'y'      	= 'no_op'                            	# [  ] [yank_joined_to_clipboard]        	#
+    '3'      	= 'file_picker'                      	# [ f] []                                	☰␜ Open file   picker
+    '4'      	= 'buffer_picker'                    	# [ b] []                                	☰b Open buffer picker
+    '6'      	= 'switch_to_uppercase'              	# [⇧⌥`] []                               	𝕒𝔸 (selection) !!! change to Sentence Case
+    # '6'    	= 'switch_to_uppercase'              	# [⇧⌥`] []                               	𝕒𝔸 (selection) !!! change to Sentence Case
+    # '7'    	= 'toggle_spellcheck'                	# [] []                                  	⇝ spell check !!! not implemented
+    # 'k'    	= 'hover'                            	# [  ] []                                	? Show documentation for item under cursor in a popup (LSP)
+    # 's'    	= 'symbol_picker'                    	# [  ] []                                	🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ
+    # 'S'    	= 'workspace_symbol_picker'          	# [  ] []                                	🅂🗍 Open workspace symbol picker (LSP)
+    # 'a'    	= 'code_action'                      	# [  ] []                                	Ⓐ Apply code action (LSP)
+    # "'"    	= 'last_picker'                      	# [  ] []                                	☰☾ ∞Open last fuzzy picker
+    'v'      	= 'paste_clipboard_after'            	# [␣ p][]                                	📋⤸ Paste before selections
+    'V'      	= 'paste_clipboard_before'           	#⇧[␣⇧p][]                                	📋⤹ Paste after  selections
+    'C-v'    	= 'replace_selections_with_clipboard'	# [␣⇧r][]                                	🗘📋 Replace selections by clipboard contents
+    # 'R'    	= 'replace_selections_with_clipboard'	# [  ] []                                	🗘📋 Replace selections by clipboard contents
+    'c'      	= 'yank_joined_to_clipboard'         	# [␣  y] []                              	∀▋📋 Copy all selections to clipboard (joined) ⨝📋
+    # 'u'    	= 'list_kills'                       	# [] []                                  	🕱☰ Show all text kills/cuts
+    # '/'    	= 'global_search'                    	# [  ] []                                	🔎🗁 Global search in workspace folder
+    # 'r'    	= 'rename_symbol'                    	# [  ] []                                	✎ Rename symbol (LSP)
+    # 'space'	= 'insert_mode'                      	# [  i] [] !!!panick!                    	⁁⤸ Insert before selection !!!not implemented
+    'q'      	= ':buffer-close'                    	# [  q][]                                	×b Close the current buffer !!! add a prompt to save if unsaved
+    'Q'      	= ':buffer-close!'                   	#⇧[ ⇧q][]                                	🕱b Close the current buffer (kill unsaved changes)
+    'ret'    	= 'command_mode'                     	# [  ⎋][]                                	Ⓒ Enter command mode
+
+
+  [keys.normal.'space'.'o'] #Ⓝ [ ␣o] [] ⓞ☰␜ File mode in Space mode
+    # 'o'	= 'open file fast'         	# open file fast Prompt to open a file from bookmark
+    's'  	= ':write'                 	# save file <i class='fa fa-save'></i>
+    'j'  	= ':write'                 	# save file <i class='fa fa-save'></i>
+    'a'  	= "goto_last_accessed_file"	# [ⓖ a] []	Go to the last accessed/alternate file
+    'm'  	= "goto_last_modified_file"	# [ⓖ m] []	Go to the last modified/alternate file
+    # 'w'	= 'find file'              	# find file
+    # 'f'	= 'open file at cursor'    	# ❚␜ open file at cursor
+    # 'c'	= 'copy file path'         	# copy file path
+    # 'g'	= 'bookmark bmenu list'    	# ☰🖈bookmark bmenu list
+    # ';'	= 'new empty buffer'       	# new empty buffer
+    # 'n'	= 'new empty buffer'       	# new empty buffer
+    # 'p'	= 'bookmark set'           	# bookmark set
+    # 'k'	= 'recentf open files'     	# recentf open files
+    # 't'	= 'list recently closed'   	# list recently closed
+    # 'r'	= 'open last closed'       	# open last closed
+    # 'y'	= 'open recently closed'   	# open recently closed
+    # 'u'	= 'open in terminal'       	# open in terminal
+    # 'w'	= 'open in external app'   	# open in external app
+    # 's'	= 'show in desktop'        	# show in desktop
+    # 'd'	= 'ibuffer'                	# ibuffer
+
+  # [keys.normal.'space'.'d'] #Ⓝ [ ␣w] [] ☰{([ Bracket mode in Space mode (place cursor in between)
+  #   'RET'	= 'insert char'   	#
+  #   'SPC'	= 'insert unicode'	#
+  #   'd'  	= '()'            	# () parenthesis
+  #   'f'  	= '[]'            	# [] square bracket
+  #   'j'  	= '{}'            	# {} brace
+  #   'k'  	= '""'            	# "" regular double quote
+  #   'l'  	= "''"            	# '' regular single quote
+  #   'r'  	= '‹›'            	# ‹› single angle quote (single chevrons)
+  #   't'  	= '«»'            	# «» double angle quote (double chevrons)
+  #   'm'  	= '「」'            	# 「」 corner bracket
+  #   'n'  	= '【】'            	# 【】 black lenticular bracket
+  #   'o'  	= '〔〕'            	# 〔〕 tortoise shell bracket
+  #   ','  	= '〈〉'            	# 〈〉 angle bracket or math ⟨⟩
+  #   '.'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+  #   '<'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+  #   'g'  	= '‘’'            	# ‘’ curly single quote
+  #   'h'  	= '“”'            	# “” double curly quote
+  #   'y'  	= "`'"            	# `' emacs quote
+  #   ';'  	= '=""'           	# ="" string assignment
+  #   'c'  	= 'date'          	# 📆📅current date
+  #   'p'  	= 'u+000C'        	# ␌ formfeed
 
   [keys.normal.'space'.'w'] #Ⓝ [ ␣w] [] ☰🗔  Window mode in Space mode
     'h'      	= 'no_op'           	# [  ][jump_view_left] 	#
@@ -530,8 +586,6 @@
     # 'up'   	= 'jump_view_up'    	# [▲][jump_view_up]    	 Move to split above
     # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
-
-    'ret'	= 'command_mode'	# [  ⎋][] Ⓒ Enter command mode
 
   [keys.normal.'['] #Ⓝ ☰[ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
     'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
