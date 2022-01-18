@@ -24,6 +24,20 @@
     'b'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
     # 'X'	= 'change_selection'	#⇧[  c] [extend_to_line_bounds]             	Δ (delete and enter Insert mode)
     # 'Z'	=  'N/A'            	# [] [view mode sticky]                     	☰👁ₛ
+  #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
+    # 'i'	= 'insert_mode' 	# [  i] [insert_mode]       	⁁⤸ Insert before selection
+    # 'e'	= 'select_mode' 	# [  v] [move_next_word_end]	Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt <i class='fa fa-arrows'></i>
+    # ':'	= 'command_mode'	# [⇧ ;] [command_mode]      	Ⓒ Enter command mode
+  #Ⓝ Minor modes / menu dialogs ———————————————————————————————————————————————————————
+    # 'p'    	 #Ⓝ [  z] [paste_after]  ☰👁 View mode intended for scrolling and manipulating the view without changing the selection
+    # 'P'    	 #Ⓝ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
+    # 'Z'    	 #Ⓝ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
+    # 'g'    	 #Ⓝ [  g] [] ⓖ☰⮊ Goto mode Jumps to various locations
+    # 'n'    	 #Ⓝ [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
+    # 'C-w'  	#Ⓝ [ ^w] [] ☰🗔  Window mode
+    # 'space'	#Ⓝ [  ␣] [] ☰␣  Space mode
+    # '['    	#Ⓝ {  ]} {} ☰[ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
+    # ']'    	#Ⓝ {  [} {} ☰]
 
 
   #Ⓝ         	Compat with non-modal editors	 
