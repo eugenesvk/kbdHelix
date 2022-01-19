@@ -23,6 +23,9 @@
     'R'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
     'b'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
     'C-f'	= 'no_op'           	# [] [page_down]                            	#
+    '`'  	= "no_op"           	# [] [switch_to_lowercase]                  	#
+    '~'  	= "no_op"           	#⇧[] [switch_case]                          	#
+    'A-`'	= "no_op"           	# [] [switch_to_uppercase]                  	#
     # 'X'	= 'change_selection'	#⇧[  c] [extend_to_line_bounds]             	Δ (delete and enter Insert mode)
     # 'Z'	=  'N/A'            	# [] [view mode sticky]                     	☰👁ₛ
   #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
@@ -39,6 +42,7 @@
     # 'space'	#Ⓝ [  ␣] [] ☰␣  Space mode
     # '['    	#Ⓝ {  ]} {} ☰[ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
     # ']'    	#Ⓝ {  [} {} ☰]
+    # '`'    	#Ⓝ [  ] [switch_to_lowercase] ☰𝔸𝕒 Case conversion mode
 
 
   #Ⓝ         	Compat with non-modal editors	 
@@ -248,14 +252,10 @@
     'T'  	= 'replace_with_yanked'              	#⇧[⇧ r] [till_prev_char]	🗘📋 Replace with copied text <i class='fa fa-copy'></i>
     'A-t'	= 'replace_selections_with_clipboard'	# [␣ ⇧r] []             	🗘📋 Replace selections by clipboard contents <i class='fa fa-clipboard'></i>
 
-    'B'  	= 'switch_case'        	# [⇧ `] [move_prev_long_word_start]	𝕒⇋𝔸 (selection)
-    'C-b'	= 'switch_to_uppercase'	#⇧[⇧⌥`] []                         	𝕒𝔸 (selection)
-    # '~'	= 'switch_case'        	# [⇧ `] [switch_case]              	𝕒⇋𝔸 (selection)
-    # '`'	= 'switch_to_lowercase'	# [  `] [switch_to_lowercase]      	𝕒𝔸  (selection)
-    # '`'	= 'switch_case'        	# [⇧ `] [switch_to_lowercase]      	𝕒⇋𝔸 (selection)
-    # '~'	= 'switch_to_uppercase'	# [⇧⌥`] [switch_case]              	𝕒𝔸 (selection)
-    '^'  	= 'switch_to_uppercase'	# [⇧⌥`] []                         	𝕒𝔸 (selection)
-    'A-`'	= 'switch_to_lowercase'	# [   `] [switch_to_uppercase]     	𝔸𝕒  (selection)
+    #'`' 	= ''                   	# [  ] [switch_to_lowercase] ☰𝔸𝕒 Case conversion mode !!! aliases not implemented yet
+    '^'  	= 'switch_to_uppercase'	# [ ⌥`] []	𝕒𝔸 (selection)
+    'B'  	= 'switch_to_lowercase'	#⇧[  `] []	𝔸𝕒 (selection)
+    'C-b'	= 'switch_to_uppercase'	# [ ⌥`] []	𝕒𝔸 (selection)
 
     'A-.'	= 'unindent'	# [⇧,][repeat_last_motion]	⇚ (selection)
     'A-/'	= 'indent'  	# [⇧.][]                  	⇛ (selection)
@@ -302,6 +302,13 @@
   # 'A-!' 	= 'shell_append_output'	# [⇧⌥1] [shell_append_output] $🢖 Run shell command, appending output after  each selection
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
+
+  [keys.normal.'`'] #Ⓝ [  ] [] ☰𝔸𝕒 Case conversion mode
+    '`'  	= 'switch_case'        	# [⇧ `] []	𝕒⇋𝔸 (selection)
+    'j'  	= 'switch_to_lowercase'	# [  `] []	𝔸𝕒 (selection)
+    'k'  	= 'switch_to_uppercase'	# [ ⌥`] []	𝕒𝔸 (selection)
+    # 'l'	= 'switch_to_sentence' 	# [ ] []  	𝔸𝕒 𝔹𝕓 (selection) !!! not implemented
+    # ';'	= 'switch_to_camel'    	# [ ] []  	ℂ𝕒𝕄𝕖𝕝 (selection) !!! not implemented
 
   [keys.normal.'p'] #Ⓝ 'view' [  z] [paste_after] ☰👁 View mode intended for scrolling and manipulating the view without changing the selection
     'z'       	= 'no_op'            	# [] [align_view_center]	#
