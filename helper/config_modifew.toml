@@ -40,8 +40,8 @@
     # 'n'    	 #Ⓝ [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
     # 'C-w'  	#Ⓝ [ ^w] [] ☰🗔  Window mode
     # 'space'	#Ⓝ [  ␣] [] ☰␣  Space mode
-    # '['    	#Ⓝ {  ]} {} ☰[ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
-    # ']'    	#Ⓝ {  [} {} ☰]
+    # '['    	#Ⓝ {  ]} {} ☰⧛ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
+    # ']'    	#Ⓝ {  [} {} ☰⧚
     # '`'    	#Ⓝ [  ] [switch_to_lowercase] ☰𝔸𝕒 Case conversion mode
 
 
@@ -587,15 +587,15 @@
     # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
 
-  [keys.normal.'['] #Ⓝ ☰[ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
+  [keys.normal.'['] #Ⓝ ☰⧛ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
     'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
     'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
     'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
     'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
-  [keys.normal.']'] #Ⓝ ☰]
+  [keys.normal.']'] #Ⓝ ☰⧚
     'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
-    'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
-    'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
+    'D'    	= 'goto_last_diag'   	# [⇧d]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
+    'f'    	= 'goto_last_diag'   	# [⇧d]  []                	🛠⭲ Diagnostic last  in document (LSP)
     'space'	= 'add_newline_below'	# [ ␣] [add_newline_below]	⭣␤  Add newline below
 
 
@@ -1076,12 +1076,13 @@
     # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
 
-  [keys.select.'['] #Ⓢ Ⓝ[ ☰[ Unimpaired
+
+  [keys.select.'['] #Ⓢ Ⓝ[ ☰⧛ Unimpaired
     'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
     'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
     'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
     'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
-  [keys.select.']'] #Ⓢ Ⓝ] ☰]
+  [keys.select.']'] #Ⓢ Ⓝ] ☰⧚
     'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
     'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
     'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
@@ -1540,12 +1541,12 @@
     'r'    	= 'rename_symbol'                    	#                            	✎ Rename symbol (LSP)
     'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
 
-  [keys.insert.'A-['] #ⓘ Ⓝ[ ☰[ Unimpaired
+  [keys.insert.'A-['] #ⓘ Ⓝ[ ☰⧛ Unimpaired
     'd'    	= 'goto_prev_diag'   	# [ d] [goto_prev_diag]   	🢔🛠  Diagnostic previous (LSP)
     'D'    	= 'goto_first_diag'  	# [⇧d] [goto_first_diag]  	⭰🛠 Diagnostic first    in document (LSP)
     'f'    	= 'goto_first_diag'  	# [⇧d] []                 	⭰🛠 Diagnostic first    in document (LSP)
     'space'	= 'add_newline_above'	# [ ␣] [add_newline_above]	⭡␤  Add newline above
-  [keys.insert.'A-]'] #ⓘ Ⓝ] ☰]
+  [keys.insert.'A-]'] #ⓘ Ⓝ] ☰⧚
     'd'    	= 'goto_next_diag'   	# [ d]  [goto_next_diag]  	🛠🢖  Diagnostic next (LSP)
     'D'    	= 'goto_last_diag'   	# [ ⇧]  [goto_last_diag]  	🛠⭲ Diagnostic last  in document (LSP)
     'f'    	= 'goto_last_diag'   	# [ ⇧]  []                	🛠⭲ Diagnostic last  in document (LSP)
