@@ -1126,28 +1126,173 @@
     # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
 
-  [keys.select.'space'] #Ⓢ [Ⓝ  ␣] [] ☰␣  Space mode
-    # 'f'    	= 'file_picker'                      	#                            	☰␜ Open file   picker
-    # 'b'    	= 'buffer_picker'                    	#                            	☰b Open buffer picker
-    # 'k'    	= 'hover'                            	#                            	? Show documentation for item under cursor in a popup (LSP)
-    # 's'    	= 'symbol_picker'                    	#                            	🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ
-    # 'S'    	= 'workspace_symbol_picker'          	#                            	🅂🗍 Open workspace symbol picker (LSP)
-    # 'a'    	= 'code_action'                      	#                            	Ⓐ Apply code action (LSP)
-    # "'"    	= 'last_picker'                      	#                            	☰∞ Open last fuzzy picker
-    'p'      	= 'no_op'                            	# [] [paste_clipboard_after] 	📋⤸ Paste before selections
-    'P'      	= 'no_op'                            	#⇧[] [paste_clipboard_before]	📋⤹ Paste after  selections
-    'v'      	= 'paste_clipboard_after'            	# [␣. p][]                   	📋⤸ Paste before selections
-    'V'      	= 'paste_clipboard_before'           	#⇧[␣.⇧p][]                   	📋⤹ Paste after  selections
-    'C-v'    	= 'replace_selections_with_clipboard'	# [␣.⇧r][]                   	🗘📋 Replace selections by clipboard contents
-    # 'R'    	= 'replace_selections_with_clipboard'	#                            	🗘📋 Replace selections by clipboard contents
-    # 'y'    	= 'yank_joined_to_clipboard'         	#                            	⨝📋 Join and yank selections to clipboard
-    # 'Y'    	= 'yank_main_selection_to_clipboard' 	#                            	📋 Yank main selection to clipboard
-    # '/'    	= 'global_search'                    	#                            	🔎🗁 Global search in workspace folder
-    # 'r'    	= 'rename_symbol'                    	#                            	✎ Rename symbol (LSP)
-    # 'space'	= 'insert_mode'                      	# [  i] []                   	⁁⤸ Insert before selection !!! not implemented yet
-    'ret'    	= 'command_mode'                     	# [  ⎋][] Ⓒ Enter command mode
+  [keys.select.'space'] #Ⓢ [Ⓝ ␣] [] ☰␣  Space mode
+    # 'space'	= 'insert_mode'                       	# [  i] [] !!!panick!                   	⁁⤸ Insert before selection !!!not implemented
+    'ret'    	= 'command_mode'                      	# [  ⎋] []                              	Ⓒ Enter command mode
+    'P'      	= 'no_op'                             	#⇧[] [paste_clipboard_before]           	#
+    'Y'      	= 'no_op'                             	# [] [yank_main_selection_to_clipboard] 	#
+    'R'      	= 'no_op'                             	#⇧[] [replace_selections_with_clipboard]	#
+    'S'      	= 'no_op'                             	#⇧[] [workspace_symbol_picker]          	#
+    # Home   	row                                   	 
+    'j'      	= 'extend_line'                       	# [ x] []                        	⮒ Select current line, if already selected, extend to next line
+    'k'      	= 'keep_selections'                   	# [⇧ k] []                       	ᵏ𝖗 selections not matching the regex (keep)
+    'l'      	= 'remove_selections'                 	# [⇧⌥k] []                       	×𝖗 selections     matching the regex
+    ';'      	= 'command_mode'                      	# [⇧ ;] []                       	Ⓒ Enter command mode
+    # 'f'    	= 'mode_file'                         	# [] [file_picker]               	☰␜ File mode !!! aliases not implemented yet
+    # 'd'    	= 'mode_bracket'                      	# [] []                          	☰⟪ Insert various brackets !!! aliases not implemented yet
+    's'      	= 'select_regex'                      	# [  s] [symbol_picker]          	𝖗▋ Select all regex matches inside selections
+    'a'      	= ['save_selection',                  	# [⇧ 5] []                       	🖈∀▋
+             	   'select_all']                      	#                                	Save current position and select everything
+    'h'      	= ['kill_to_line_start',              	# [] []                          	×⎯ Delete this line
+             	   'kill_to_line_end']                	#                                	Delete this line
+    'g'      	= 'save_selection'                    	# [  ^s] []                      	🖈 Save the current selection to the jumplist
+    # Upper  	row                                   	                                 	 
+    # 'u'    	= 'mode_U'                            	# [] []                          	☰u TBD LSPs? or list_kills like z !!! aliases not implemented yet
+    # 'i'    	= 'mode_Register'                     	# [] []                          	☰® Register/copy/paste etc.
+    'o'      	= 'hover'                             	# [k] []                         	? Show documentation for item under cursor in a popup (LSP)
+    # 'p'    	= 'mode_P'                            	# [][paste_clipboard_after]      	☰p TBD !!! aliases not implemented yet
+    'r'      	= 'rename_symbol'                     	#≝[][rename_symbol]              	  ✎ Rename symbol (LSP)
+    'e'      	= 'extend_line'                       	# [ x] []                        	⮒ Select current line, if already selected, extend to next line
+    #'w'     	= 'mode_window'                       	# [␣ w][mode_window]             	☰🗔 Window mode !!! aliases not implemented yet
+    # 'q'    	= '???'                               	# [ q] []                        	#
+    'y'      	= 'code_action'                       	# [␣ a][yank_joined_to_clipboard]	Ⓐ Apply code action (LSP)
+    't'      	= 'replace_with_yanked'               	# [⇧ r] []                       	🗘📋 Replace with copied text <i class='fa fa-copy'></i>
+    # Lower  	row                                   	                                 	 
+    'm'      	= 'symbol_picker'                     	# [␣ s] []                       	🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ
+    ','      	= 'workspace_symbol_picker'           	# [␣⇧s] []                       	🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ
+    # '.'    	= 'no_op'                             	# [] []                          	#TBD
+    '/'      	= 'global_search'                     	#≝[␣ /][global_search]           	🔎🗁 Global search in workspace folder
+    'v'      	= 'paste_clipboard_after'             	# [␣ p] []                       	📋⤹ Paste after selections
+    'c'      	= 'yank_main_selection_to_clipboard'  	# [␣ ⇧y]                         	📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>▋
+    'x'      	= ['yank_main_selection_to_clipboard',	# [] []                          	×📋 ▋<i class='fa fa-clipboard'></i>
+             	   'delete_selection']                	#                                	cut to clipboard
+    # 'z'    	= 'list_kills'                        	# [] []                          	🕱☰ create a new buffer and paste a buffer there !!! not available yet
+    'n'      	= 'split_selection'                   	# [⇧ s] []                       	䷖𝖗 on regex matches
+    'b'      	= 'switch_to_lowercase'               	# [  `] [buffer_picker]          	𝔸𝕒  (selection)
+    "'"      	= 'flip_selections'                   	# [ ⌥;] []                       	⮀ Flip selection cursor and anchor
+    '\'      	= 'shell_pipe'                        	# [⇧ \] []                       	Pipe each selection through shell command, replacing with output
+    # Numbers	row                                   	                                 	 
+    # "'"    	= 'last_picker'                       	# [  ] []                        	☰☾ ∞Open last fuzzy picker
+    '6'      	= 'switch_to_uppercase'               	# [⇧⌥`] []                       	𝕒𝔸 (selection) !!! change to Sentence Case
+    # '7'    	= 'toggle_spellcheck'                 	# [] []                          	⇝ spell check !!! not implemented
 
-  [keys.select.'space'.'w'] #Ⓢ [Ⓝ␣w] [] ☰🗔  Window mode in Space mode
+  [keys.select.'space'.'f'] #Ⓢ [ ␣f] [] ☰␜ File mode in Space mode
+    'j'  	= ':write'                 	#        	💾 save file
+    'k'  	= 'file_picker'            	# [␣ f]  	🗁 Open file   picker
+    # 'l'	= 'open file at cursor'    	#        	❚␜ open file at cursor
+    'f'  	= 'buffer_picker'          	# [ b] []	☰b Open buffer picker
+    # 'd'	= 'show in desktop'        	#        	show in desktop
+    's'  	= ':write'                 	#        	💾 save file
+    'S'  	= ':write-all'             	#⇧       	💾∀v all views
+    'a'  	= 'goto_last_accessed_file'	# [ⓖ a]  	🕮 file last accessed/alternate
+    # 'g'	= 'bookmark bmenu list'    	#        	☰🖈bookmark bmenu list
+    # 'h'	= 'bookmark set'           	#        	🖈 bookmark set
+    # 'u'	= 'open last closed'       	#        	open last closed
+    # 'o'	= 'open file fast'         	#        	open file fast Prompt to open a file from bookmark
+    # 'r'	= 'rename_file'            	#        	✎ rename current file
+    # 'e'	= 'open in external app'   	#        	open in external app
+    # 'w'	= 'find_file'              	# []     	🔎 Find file  <i class='mss mss-Search-3'></i>
+    # 'q'	= 'mode_fs_close'          	# []     	☰× Close buffers/files saved/unsaved
+    'v'  	= 'goto_last_modified_file'	# [ⓖ m]  	✎ file last modified/alternate
+    # 'c'	= 'copy file path'         	#        	📋C:\ copy file path <i class='fa fa-clipboard'>C:\
+    # 't'	= 'list recently closed'   	#        	list recently closed
+    # 'y'	= 'open recently closed'   	#        	open recently closed
+    'o'  	= 'file_picker'            	# [␣ f]  	🗁 Open file   picker
+    'n'  	= ':new'                   	# [Ⓝ^n]  	🗋 new empty buffer
+    # 'b'	= 'recentf open files'     	#        	recentf open files
+    # '\'	= 'open in terminal'       	#        	open in terminal
+    '`'  	= ':reload'                	# []     	🗘 Discard changes and reload from the source file
+  [keys.select.'space'.'f'.'q'] #Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'q'	= ':buffer-close'   	# ×b current buffer
+    'f'	= ':buffer-close'   	# ×b current buffer
+    'r'	= ':buffer-close!'  	# 🕱b current buffer (kill unsaved changes)
+    'd'	= ':quit'           	# ×v current view
+    'e'	= ':quit!'          	# 🕱v current view
+    'a'	= ':quit-all'       	# ×∀v all views
+    'q'	= ':quit-all!'      	# 🕱∀v all views
+    's'	= ':write-quit'     	# 💾                ×v current view
+    'w'	= ':write-quit!'    	# 💾                🕱v current view
+    'j'	= ':write-quit'     	# 💾                ×v current view
+    'u'	= ':write-quit!'    	# 💾                🕱v current view
+    'k'	= ':write-quit-all' 	# 💾∀v all views, ×∀v all views
+    'i'	= ':write-quit-all!'	# 💾∀v all views, 🕱∀v all views
+    ';'	= ':cquit'          	# Quit with exit code (default 1)
+  [keys.select.'space'.'f'.'x'] #Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'x'	= ':buffer-close'   	# ×b current buffer
+    'f'	= ':buffer-close'   	# ×b current buffer
+    'r'	= ':buffer-close!'  	# 🕱b current buffer (kill unsaved changes)
+    'd'	= ':quit'           	# ×v current view
+    'e'	= ':quit!'          	# 🕱v current view
+    'a'	= ':quit-all'       	# ×∀v all views
+    'q'	= ':quit-all!'      	# 🕱∀v all views
+    's'	= ':write-quit'     	# 💾                ×v current view
+    'w'	= ':write-quit!'    	# 💾                🕱v current view
+    'j'	= ':write-quit'     	# 💾                ×v current view
+    'u'	= ':write-quit!'    	# 💾                🕱v current view
+    'k'	= ':write-quit-all' 	# 💾∀v all views, ×∀v all views
+    'i'	= ':write-quit-all!'	# 💾∀v all views, 🕱∀v all views
+    ';'	= ':cquit'          	# Quit with exit code (default 1)
+
+  [keys.select.'space'.'i'] #Ⓢ [ ␣i] [] ☰®  Register/copy/paste etc.
+    'i'  	= 'select_register'                  	# [ '<reg>]	®  Select a register to copy/paste from ??? make it sticky for further reg ops or use the main layer
+    # '1'	= 'append_to_register 1'             	#          	®1⎀ Append current line/selection to reg 1, or current line when none
+    # '2'	= 'clear_register 1'                 	#          	®1× x
+    # '3'	= 'copy_to_register 1'               	#          	®1🗐 x
+    # '4'	= 'paste_from_register 1'            	#          	®1📋 x
+    # '7'	= 'append_to_register 1'             	#          	®1⎀ x
+    # '8'	= 'clear_register 1'                 	#          	®1× x
+    't'  	= 'replace_selections_with_clipboard'	# [␣⇧r]    	🗘▋📋 Replace selections by clipboard contents <i class='fa fa-clipboard'></i>▋
+    'x'  	= 'join_selections'                  	# [Ⓝ⇧j]    	×␤ ⨝ Join lines inside selection
+    'v'  	= 'paste_clipboard_before'           	# [␣⇧p]    	⤸📋 Paste after  selections ⤸<i class='fa fa-clipboard'></i>
+    'c'  	= 'yank_joined_to_clipboard'         	# [␣ y]    	📋∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
+    # 'a'	= ':clipboard-yank'                  	# Copy main   selection  to system         clipboard
+    # 'a'	= ':clipboard-yank-join'             	# Copy joined selections to system         clipboard. A separator can be provided as first argument. Default value is newline
+    # 'a'	= ':primary-clipboard-yank'          	# Copy main   selection  to system primary clipboard
+    # 'a'	= ':primary-clipboard-yank-join'     	# Copy joined selections to system primary clipboard. A separator can be provided as first argument. Default value is newline
+    # 'a'	= ':clipboard-paste-after'           	# Paste system  clipboard after   selections
+    # 'a'	= ':clipboard-paste-before'          	# Paste system  clipboard before  selections
+    # 'a'	= ':clipboard-paste-replace'         	# Paste system  clipboard replace selections
+    # 'a'	= ':primary-clipboard-paste-after'   	# Paste primary clipboard after   selections
+    # 'a'	= ':primary-clipboard-paste-before'  	# Paste primary clipboard before  selections
+    # 'a'	= ':primary-clipboard-paste-replace' 	# Paste primary clipboard replace selections
+    # 'a'	= ':show-clipboard-provider'         	# Show clipboard provider name in status bar
+    'j'  	= ':sort'                            	# 𝕒🢖𝕫 Sort ranges in selection 𝟙𝟚𝟛
+    'k'  	= ':rsort'                           	# 𝕫🢖𝕒 Sort ranges in selection in reverse order 𝟛𝟚𝟙
+    # 'd'	='list-matching-lines'               	#	!!!not implemented yet
+    # 'f'	='delete-matching-lines'             	#	!!!not implemented yet
+    # 'g'	='delete-non-matching-lines'         	#	!!!not implemented yet
+    # 't'	='delete-duplicate-lines'            	#	!!!not implemented yet
+    # 'n'	='reformat-to-sentence-lines'        	#	!!!not implemented yet
+    # 'o'	='copy-rectangle-to-register'        	#	!!!not implemented yet
+    # 'r'	='query-replace-regexp'              	#	!!!not implemented yet
+    # 'h'	='mark-defun'                        	#	!!!not implemented yet
+    # ';'	='escape-quotes'                     	# Add slash before double quote in current line or selection
+
+  # [keys.select.'space'.'d'] #Ⓢ [ ␣w] [] ☰⟪ Bracket mode in Space mode (place cursor in between)
+    # 'RET'	= 'insert char'   	#
+    # 'SPC'	= 'insert unicode'	#
+    # 'd'  	= '()'            	# () parenthesis
+    # 'f'  	= '[]'            	# [] square bracket
+    # 'j'  	= '{}'            	# {} brace
+    # 'k'  	= '""'            	# "" regular double quote
+    # 'l'  	= "''"            	# '' regular single quote
+    # 'r'  	= '‹›'            	# ‹› single angle quote (single chevrons)
+    # 't'  	= '«»'            	# «» double angle quote (double chevrons)
+    # 'n'  	= '【】'            	# 【】 black lenticular bracket
+    # 'm'  	= '「」'            	# 「」 corner bracket
+    # 'o'  	= '〔〕'            	# 〔〕 tortoise shell bracket
+    # ','  	= '〈〉'            	# 〈〉 angle bracket or math ⟨⟩
+    # '.'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+    # '<'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+    # 'g'  	= '‘’'            	# ‘’ curly single quote
+    # 'h'  	= '“”'            	# “” double curly quote
+    # 'y'  	= "`'"            	# `' emacs quote
+    # ';'  	= '=""'           	# ="" string assignment
+    # 'z'  	= '⸨⸩'            	# ⸨⸩ Double Parenthesis
+    # 'c'  	= 'date'          	# 📆📅current date
+    # 'p'  	= 'u+000C'        	# ␌ formfeed
+
+  [keys.select.'space'.'w'] #Ⓢ [ ␣w] [] ☰🗔  Window mode in Space mode
     's'      	= 'no_op'           	# [  ][hsplit]         	#
     'C-s'    	= 'no_op'           	# [  ][hsplit]         	#
     'v'      	= 'no_op'           	# [  ][vsplit]         	#
@@ -1185,6 +1330,24 @@
     # 'up'   	= 'jump_view_up'    	# [▲][jump_view_up]    	 Move to split above
     # 'left' 	= 'jump_view_left'  	# [◀][jump_view_left]  	 Move to left split
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
+
+  [keys.select.'space'.'u'] #Ⓢ 🌐 ☰ⓤ LSPs and various ones
+    'u'  	= 'remove_primary_selection'	# [ ⌥,]	×          the primary selection
+    'i'  	= 'keep_primary_selection'  	# [  ,]	×∀ all but the primary selection (keep only)
+    # LSP	                            	 
+    'a'  	= 'format_selections'       	# [  =]	ℱ  Format selection (currently nonfunctional/disabled) (LSP)
+    'q'  	= ':format'                 	# []   	ℱ∀ Format the file using the LSP formatter
+    'j'  	= 'code_action'             	# [␣ a]	Ⓐ  Apply code action (LSP)
+    's'  	= 'symbol_picker'           	# [␣ s]	🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ
+    'w'  	= 'workspace_symbol_picker' 	# [␣⇧s]	🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ
+    'r'  	= 'rename_symbol'           	#≝[]   	✎  Rename symbol (LSP)
+    'l'  	= 'goto_prev_diag'          	# [⧛ d]	🢔🛠  Diagnostic previous (LSP) !!! make these sticky
+    ';'  	= 'goto_next_diag'          	# [⧚ d]	🛠🢖  Diagnostic next     (LSP) !!! make these sticky
+    '.'  	= 'goto_first_diag'         	# [⧛⇧d]	⭰🛠 Diagnostic first    in document (LSP)
+    '/'  	= 'goto_last_diag'          	# [⧚⇧d]	🛠⭲ Diagnostic last     in document (LSP)
+
+  # [keys.select.'space'.'p']	#Ⓢ ☰ⓟ TBD
+
 
 
   [keys.select.'['] #Ⓢ Ⓝ[ ☰⧛ Unimpaired
