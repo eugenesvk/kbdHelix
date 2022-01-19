@@ -46,8 +46,8 @@
 
 
   #Ⓝ         	Compat with non-modal editors	 
-  'C-o'      	= 'file_picker'              	# [␣.f] [jump_backward]  	☰␜ Open file   picker
-  'C-s'      	= ':write'                   	# [  ^s] [save_selection]	save file <i class='fa fa-save'></i>
+  'C-o'      	= 'file_picker'              	# [␣ f] [jump_backward]  	🗁 Open file   picker
+  'C-s'      	= ':write'                   	# [  ^s] [save_selection]	💾 save file
   # 'C-S-s'  	= 'Save As'                  	#⇧[⇧^s][]                	???
   'C-n'      	= ':new'                     	# [ ^n][]                	🗋 new buffer
   # 'C-S-t'  	= 'open-last-closed'         	#⇧[⇧^t][]                	???
@@ -73,12 +73,11 @@
   'C-c'	= 'yank_main_selection_to_clipboard'	# [␣,⇧y] [toggle_comments]            	📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>
   'C'  	= 'yank_main_selection_to_clipboard'	#⇧[␣,⇧y] [copy_selection_on_next_line]	📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>
   'A-c'	= 'yank_joined_to_clipboard'        	# [␣ y] []                            	∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
-  # :clipboard-yank :clipboard-yank-join :clipboard-paste-after :clipboard-paste-before :clipboard-paste-replace
 
   #Ⓝ Shell 	                 	 
-    # '|'  	= 'shell_pipe'   	#⇧[⇧ \] [shell_pipe]   	Pipe each selection through shell command, replacing with output
-    "A-\\" 	= 'shell_pipe_to'	# [ ⌥\] []             	Pipe each selection into    shell command, ignoring       output
-    # 'A-|'	= 'shell_pipe_to'	#⇧[⇧⌥\] [shell_pipe_to]	Pipe each selection into    shell command, ignoring       output
+    # '|'  	= 'shell_pipe'   	#⇧[⇧ \] [shell_pipe]   	|   Pipe each selection through shell command, replacing with output
+    "A-\\" 	= 'shell_pipe_to'	# [ ⌥\] []             	|to Pipe each selection into    shell command, ignoring       output
+    # 'A-|'	= 'shell_pipe_to'	#⇧[⇧⌥\] [shell_pipe_to]	  Pipe each selection into    shell command, ignoring       output
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
     #    	Cursor@Home
@@ -144,10 +143,10 @@
     #'?'	= 'no_op'	# [⇧ ]] [rsearch]	¶🢖 Move paragraph end   #!!!not implemented yet
 
     #Ⓝ   	Find
-    'w'  	= 'find_next_char'  	# [  f] [move_next_word_start]     	🔍   Find       next     char <i class='mss mss-Search-3'></i>
-    'W'  	= 'find_prev_char'  	#⇧[⇧ f] [move_next_long_word_start]	🔎   Find       previous char <i class='fa fa-search'></i>
-    'A-w'	= 'find_till_char'  	# [  t] []                         	🔍₋₁ Find 'till next     char <i class='mss mss-Search-3'></i>₋
-    'A-W'	= 'till_prev_char'  	#⇧[⇧ t] []                         	🔎₋₁ Find 'till previous char <i class='fa fa-search'></i>₋
+    'w'  	= 'find_next_char'  	# [  f] [move_next_word_start]     	🔎   Find       next     char <i class='mss mss-Search-3'></i>
+    'W'  	= 'find_prev_char'  	#⇧[⇧ f] [move_next_long_word_start]	🔍   Find       previous char <i class='fa fa-search'></i>
+    'A-w'	= 'find_till_char'  	# [  t] []                         	🔎₋₁ Find 'till next     char <i class='mss mss-Search-3'></i>₋
+    'A-W'	= 'till_prev_char'  	#⇧[⇧ t] []                         	🔍₋₁ Find 'till previous char <i class='fa fa-search'></i>₋
     'S'  	= 'rsearch'         	# [⇧ /] [split_selection]          	🔍𝖗 for previous regex pattern
     's'  	= 'search'          	#⇧[  /] [select_regex]             	🔎𝖗 for          regex pattern
     '.'  	= 'search_prev'     	# [⇧ n] [repeat_last_change!!!]    	🢔◎ ◎͔ Select previous search match !!! blocked by .Repeat last change
@@ -164,7 +163,7 @@
     'e'	= 'select_mode'	# [  v] [move_next_word_end]	Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt <i class='fa fa-arrows'></i>
 
     #Ⓝ       	Compat with non-modal editors    	 
-    'C-a'    	= ['save_selection','select_all']	# [⇧ 5]  [increment]	🖈, ∀▋
+    'C-a'    	= ['save_selection','select_all']	# [⇧ 5]  [increment]	🖈∀▋
     'A-down' 	= 'copy_selection_on_next_line'  	# [⇧ c]  []         	🠷 Copy selection onto the next     line (add cursor below)
     'A-up'   	= 'copy_selection_on_prev_line'  	# [⇧⌥c] []          	🠵 Copy selection onto the previous line (add cursor above)
     'S-left' 	= 'extend_char_left'             	# [V.h/◀] []
@@ -222,8 +221,8 @@
                  	   'delete_selection']           	#         	 × Word ←
     # 'del'      	= 'delete_selection'             	# [  d] []	×▋
     'S-del'      	= 'delete_selection_noyank'      	# [ ⌥d] []	🕱▋
-    'S-ret'      	= 'open_above'                   	#⇧[⇧ o] []	⭡␤ Open new line above selection
-    'ret'        	= 'open_below'                   	# [  o] []	⭣␤ Open new line below selection
+    'S-ret'      	= 'open_below'                   	# [  o] []	⭣␤ Open new line below selection
+    'ret'        	= 'open_above'                   	#⇧[⇧ o] []	⭡␤ Open new line above selection
 
     # '.'      	= 'N/A'                              	# [.] [n/a]                    	∞ Repeat last change
     '6'        	= 'delete_char_forward'              	# [ ⌦] [<5>]                   	⌦ !!! blocked by ∀* implementation
@@ -275,9 +274,9 @@
     'U'  	= 'earlier'               	#⇧[ ⌥u] [redo]                 	🕘 Move backward in history   <i class='fa fa-history'></i>
     'Y'  	= 'later'                 	#⇧[⇧⌥u] []                     	🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i>
     'C-y'	= 'redo'                  	# [⇧ u] []                     	↷ Redo change
-    'v'  	= 'paste_after'           	# [  p] [select_mode]          	📋⤹ Paste after selection
-    'C-v'	= 'paste_clipboard_after' 	# [␣.p] []                     	📋⤹ Paste after selection
-    'V'  	= 'paste_before'          	# [⇧ p] []                     	⤸📋 Paste before selection
+    'v'  	= 'paste_after'           	# [  p] [select_mode]          	📋⤹ Paste after selection ⤹<i class='fa fa-copy'></i>
+    'C-v'	= 'paste_clipboard_after' 	# [␣ p] []                     	📋⤹ Paste after selection  <i class='fa fa-copy'></i>⤹
+    'V'  	= 'paste_before'          	# [⇧ p] []                     	⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹
     'C-z'	= 'undo'                  	# [  u] []                     	⎌ Undo change
     'C-Z'	= 'redo'                  	#⇧[⇧ u] []                     	↷ Redo change !!!not working
     # 'I'	= 'prepend_to_line'       	#⇧[⇧ i] [prepend_to_line]      	⁁⭰ Insert at the start of the line
@@ -337,6 +336,7 @@
     'C-k'     	= 'page_up'          	# [b] []                 	⇞ Move      page ↑
     'pageup'  	= 'page_down'        	# [pageup] [page_down]   	⇟ Move      page ↓
     'pagedown'	= 'page_up'          	# [pagedown] [page_up]   	⇞ Move      page ↑
+    # 'p'     	= 'view_mode_sticky' 	# [] []                  	☰👁ₛ 'sticky', persistent
   [keys.normal.'P'] #Ⓝ 'view sticky' ⇧[⇧ z] [paste_before] ☰👁ₛ 'sticky', persistent
     'z'       	= 'no_op'            	# [] [align_view_center]	#
     'c'       	= 'no_op'            	# [] [align_view_center]	#
@@ -414,7 +414,7 @@
     # 'r'	= 'goto_reference'          	# [r] [goto_reference]          	🅁※ references (LSP)
     # 'i'	= 'goto_implementation'     	# [i] [goto_implementation]     	🄸 implementation (LSP)
     't'  	= 'goto_implementation'     	# [i] [goto_window_top]         	🄸 implementation (LSP)
-    'c'  	= 'goto_last_accessed_file' 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+    'c'  	= 'goto_last_accessed_file' 	# [a] [goto_window_center]      	🕮␜ file last accessed/alternate
     'v'  	= 'goto_last_modified_file' 	# [m] []                        	✎␜ file last modified/alternate
     '1'  	= 'goto_previous_buffer'    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
     '2'  	= 'goto_next_buffer'        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
@@ -422,6 +422,7 @@
     '4'  	= 'jump_forward'            	# [] []                         	⎘̡ Jump forward  on the jumplist !!! blocked by ∀* implementation
     'u'  	= 'goto_last_modification'  	# [.] []                        	🕘 last modification in current file <i class='fa fa-history'></i>
     # '.'	= 'goto_last_modification'  	# [.] [goto_last_modification]  	🕘 last modification in current file <i class='fa fa-history'></i>
+    # "'"	= 'goto-char#'              	# [] []                         	c# !!! not available
 
   [keys.normal.'n'] #Ⓝ [  m] [] ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>
     'n'	= 'match_brackets'          	# [  m] []	🢔()🢖 Goto matching   bracket (TS)
@@ -610,12 +611,12 @@
   #Ⓢ Test ——————————————————————————————————————————————————————————————————————
   #Ⓢ Free ——————————————————————————————————————————————————————————————————————
 
-  'C-a'	= ['save_selection','select_all']	# [] []	🖈, ∀▋
-  # 'A'	= ['save_selection','select_all']	#⇧[] []	🖈, ∀▋
+  'C-a'	= ['save_selection','select_all']	# [] []	🖈∀▋
+  # 'A'	= ['save_selection','select_all']	#⇧[] []	🖈∀▋
 
 
   #Ⓢ           	Compat with non-modal editors	 
-    'C-o'      	= 'file_picker'              	# [␣.f] [jump_backward]  	☰␜ Open file   picker
+    'C-o'      	= 'file_picker'              	# [␣ f] [jump_backward]  	☰␜ Open file   picker
     'C-s'      	= ':write'                   	# [  ^s] [save_selection]	save file <i class='fa fa-save'></i>
     # 'C-S-s'  	= 'Save As'                  	#⇧[⇧^s][]                	???
     'C-n'      	= ':new'                     	# [ ^n][]                	🗋 new buffer
@@ -774,8 +775,8 @@
                  	   'delete_selection']           	#         	 × Word ←
     # 'del'      	= 'delete_selection'             	# [  d] []	×▋
     'S-del'      	= 'delete_selection_noyank'      	# [ ⌥d] []	🕱▋
-    'S-ret'      	= 'open_above'                   	#⇧[⇧ o] []	⭡␤ Open new line above selection
-    'ret'        	= 'open_below'                   	# [  o] []	⭣␤ Open new line below selection
+    'S-ret'      	= 'open_below'                   	# [  o] []	⭣␤ Open new line below selection
+    'ret'        	= 'open_above'                   	#⇧[⇧ o] []	⭡␤ Open new line above selection
 
     # '.'      	= 'N/A'                              	# [.] [n/a]                    	∞ Repeat last change
     '6'        	= 'delete_char_forward'              	# [ ⌦] [<5>]                   	⌦ !!! blocked by ∀* implementation
@@ -831,7 +832,7 @@
     'Y'  	= 'later'                 	#⇧[⇧⌥u] []                     	🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i>
     'C-y'	= 'redo'                  	# [⇧ u] []                     	↷ Redo change
     'v'  	= 'paste_after'           	# [  p] [select_mode]          	📋⤹ Paste after selection
-    'C-v'	= 'paste_clipboard_after' 	# [␣.p] []                     	📋⤹ Paste after selection
+    'C-v'	= 'paste_clipboard_after' 	# [␣ p] []                     	📋⤹ Paste after selection
     'V'  	= 'paste_before'          	# [⇧ p] []                     	⤸📋 Paste before selection
     'C-z'	= 'undo'                  	# [  u] []                     	⎌ Undo change
     'C-Z'	= 'redo'                  	#⇧[⇧ u] []                     	↷ Redo change !!!not working
@@ -955,7 +956,7 @@
     'r'  	= 'goto_reference'          	# [r] [goto_reference]          	🅁※ references (LSP)
     'i'  	= 'goto_implementation'     	# [i] [goto_implementation]     	🄸 implementation (LSP)
     't'  	= 'goto_implementation'     	# [i] [goto_window_top]         	🄸 implementation (LSP)
-    'c'  	= 'goto_last_accessed_file' 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+    'c'  	= 'goto_last_accessed_file' 	# [a] [goto_window_center]      	🕮␜ file last accessed/alternate
     'v'  	= 'goto_last_modified_file' 	# [m] []                        	✎␜ file last modified/alternate
     '1'  	= 'goto_previous_buffer'    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
     '2'  	= 'goto_next_buffer'        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
@@ -1154,8 +1155,8 @@
     # 'C-b'	= 'move_char_left'	# [ ^b] [move_char_left]		⌫c × char ←
 
     'C-c'	= 'yank_main_selection_to_clipboard'	# [␣,⇧y] [toggle_comments]	📋 Yank main selection into system clipboard <i class='fa fa-clipboard'></i>
-    'C-o'	= 'file_picker'                     	# [␣.f] [jump_backward]   	☰␜ Open file   picker
-    'C-s'	= ':write'                          	# [Ⓝ ^s] [save_selection] 	save file <i class='fa fa-save'></i>
+    'C-o'	= 'file_picker'                     	# [␣ f] [jump_backward]   	☰␜ Open file   picker
+    'C-s'	= ':write'                          	# [Ⓝ ^s] [save_selection] 	💾 save file
     'C-n'	= ':new'                            	# [Ⓝ^n][move_line_down]   	🗋 new buffer
     'C-/'	= 'toggle_comments'                 	# [Ⓝ^c][] un-/comment the selections  #!!! doesn't work :(
 
@@ -1184,8 +1185,9 @@
     # 'A-del'    	= 'delete_word_forward'          	# [⌥ d] []                   	⌦w × word →
     #            	                                 	#
     # 'C-r'      	= 'insert_register'              	# [ⓘ ^r] [insert_register]	📋r Paste register
-    'S-ret'      	= 'open_above'                   	#⇧[⇧ o] []                	⭡␤ Open new line above selection
-    # 'ret'      	= 'insert_newline'               	# [  ⏎] [insert_newline]  	⭣␤ Open new line below selection
+    'S-ret'      	= 'open_below'                   	# [  o] []                	⭣␤ Open new line below selection
+    # 'ret'      	= 'open_above'                   	#⇧[⇧ o] []                	⭡␤ Open new line above selection
+    # 'ret'      	= 'insert_newline'               	# [  ⏎] [insert_newline]  	 ␤ Insert new line
 
 
     'C-i'	= 'completion'	# [ ^x] []	⎁ Autocomplete
@@ -1232,10 +1234,10 @@
     #'A-?'	= 'no_op'	# [Ⓝ⇧ ]] [rsearch]	¶🢖 Move paragraph end   #!!!not implemented yet
 
     #ⓘ     	Find
-    'A-w'  	= 'find_next_char'  	# [Ⓝ  f] [move_next_word_start]     	🔍   Find       next     char <i class='mss mss-Search-3'></i>
-    'A-W'  	= 'find_prev_char'  	#⇧[Ⓝ⇧ f] [move_next_long_word_start]	🔎   Find       previous char <i class='fa fa-search'></i>
-    # 'A-w'	= 'find_till_char'  	# [Ⓝ  t] []                         	🔍₋₁ Find 'till next     char <i class='mss mss-Search-3'></i>₋
-    # 'A-W'	= 'till_prev_char'  	#⇧[Ⓝ⇧ t] []                         	🔎₋₁ Find 'till previous char <i class='fa fa-search'></i>₋
+    'A-w'  	= 'find_next_char'  	# [Ⓝ  f] [move_next_word_start]     	🔎   Find       next     char <i class='mss mss-Search-3'></i>
+    'A-W'  	= 'find_prev_char'  	#⇧[Ⓝ⇧ f] [move_next_long_word_start]	🔍   Find       previous char <i class='fa fa-search'></i>
+    # 'A-w'	= 'find_till_char'  	# [Ⓝ  t] []                         	🔎₋₁ Find 'till next     char <i class='mss mss-Search-3'></i>₋
+    # 'A-W'	= 'till_prev_char'  	#⇧[Ⓝ⇧ t] []                         	🔍₋₁ Find 'till previous char <i class='fa fa-search'></i>₋
     'A-S'  	= 'rsearch'         	# [Ⓝ⇧ /] [split_selection]          	🔍𝖗 for previous regex pattern
     'A-s'  	= 'search'          	#⇧[Ⓝ  /] [select_regex]             	🔎𝖗 for          regex pattern
     'A-.'  	= 'search_prev'     	# [Ⓝ⇧ n] [repeat_last_change]       	🢔◎ ◎͔ Select previous search match
@@ -1329,7 +1331,7 @@
     'A-Y'  	= 'later'                             	#⇧[Ⓝ⇧⌥u] []                    	🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i>
     'C-y'  	= 'redo'                              	# [Ⓝ⇧ u] []                    	↷ Redo change !!!not working
     'A-v'  	= 'paste_after'                       	# [Ⓝ  p] [select_mode]         	📋⤹ Paste after selection
-    'C-v'  	= 'paste_clipboard_after'             	# [Ⓝ␣.p] []                    	📋⤹ Paste after selection
+    'C-v'  	= 'paste_clipboard_after'             	# [Ⓝ␣ p] []                    	📋⤹ Paste after selection
     'A-V'  	= 'paste_before'                      	# [Ⓝ⇧ p] []                    	⤸📋 Paste before selection
     'C-z'  	= 'undo'                              	# [Ⓝ  u] []                    	⎌ Undo change
     'C-Z'  	= 'redo'                              	#⇧[Ⓝ⇧ u] []                    	↷ Redo change !!!not working
@@ -1452,7 +1454,7 @@
     'r'  	= 'goto_reference'          	# [r] [goto_reference]          	🅁※ references (LSP)
     'i'  	= 'goto_implementation'     	# [i] [goto_implementation]     	🄸 implementation (LSP)
     't'  	= 'goto_implementation'     	# [i] [goto_window_top]         	🄸 implementation (LSP)
-    'c'  	= 'goto_last_accessed_file' 	# [a] [goto_window_center]      	📖␜ file last accessed/alternate
+    'c'  	= 'goto_last_accessed_file' 	# [a] [goto_window_center]      	🕮␜ file last accessed/alternate
     'v'  	= 'goto_last_modified_file' 	# [m] []                        	✎␜ file last modified/alternate
     '1'  	= 'goto_previous_buffer'    	# [p] []                        	buffer previous !!! blocked by ∀* universal argument
     '2'  	= 'goto_next_buffer'        	# [n] []                        	buffer next     !!! blocked by ∀* universal argument
@@ -1522,6 +1524,8 @@
     # 'right'	= 'jump_view_right' 	# [▶][jump_view_right] 	 Move to right split
 
   [keys.insert.'A-space'] #ⓘ [Ⓝ  ␣] [] ☰␣  Space mode !!!fails
+    'p'    	= 'no_op'                            	# [] [paste_clipboard_after] 	📋⤸ Paste before selections
+    'P'    	= 'no_op'                            	#⇧[] [paste_clipboard_before]	📋⤹ Paste after  selections
     'f'    	= 'file_picker'                      	#                            	☰␜ Open file   picker
     'b'    	= 'buffer_picker'                    	#                            	☰b Open buffer picker
     'k'    	= 'hover'                            	#                            	? Show documentation for item under cursor in a popup (LSP)
@@ -1529,11 +1533,9 @@
     'S'    	= 'workspace_symbol_picker'          	#                            	🅂🗍 Open workspace symbol picker (LSP)
     'a'    	= 'code_action'                      	#                            	Ⓐ Apply code action (LSP)
     "'"    	= 'last_picker'                      	#                            	☰∞ Open last fuzzy picker
-    'p'    	= 'no_op'                            	# [] [paste_clipboard_after] 	📋⤸ Paste before selections
-    'P'    	= 'no_op'                            	#⇧[] [paste_clipboard_before]	📋⤹ Paste after  selections
-    'v'    	= 'paste_clipboard_after'            	# [␣. p][]                   	📋⤸ Paste before selections
-    'V'    	= 'paste_clipboard_before'           	#⇧[␣.⇧p][]                   	📋⤹ Paste after  selections
-    'C-v'  	= 'replace_selections_with_clipboard'	# [␣.⇧r][]                   	🗘📋 Replace selections by clipboard contents
+    'v'    	= 'paste_clipboard_after'            	# [␣  p][]                   	📋⤹ Paste after  selections
+    'V'    	= 'paste_clipboard_before'           	#⇧[␣ ⇧p][]                   	📋⤸ Paste before selections
+    'C-v'  	= 'replace_selections_with_clipboard'	# [␣ ⇧r][]                   	🗘📋 Replace selections by clipboard contents
     'R'    	= 'replace_selections_with_clipboard'	#                            	🗘📋 Replace selections by clipboard contents
     'y'    	= 'yank_joined_to_clipboard'         	#                            	⨝📋 Join and yank selections to clipboard
     'Y'    	= 'yank_main_selection_to_clipboard' 	#                            	📋 Yank main selection to clipboard
