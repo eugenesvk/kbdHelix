@@ -709,6 +709,70 @@
     'space'	= 'add_newline_below'	# [ ␣] [add_newline_below]	⭣␤  Add newline below
 
 
+  # [keys.prompt] #Ⓝ ⧁ Prompt
+  #   # !!! Remapping currently not supported
+  #   'A-b'	= "no_op"	# [] [move_prev_word_end]     	#
+  #   'C-b'	= "no_op"	# [] [Backward a char]        	#
+  #   'C-f'	= "no_op"	# [] [Forward a char]         	#
+  #   'C-a'	= "no_op"	# [] [Move prompt start]      	#
+  #   'C-e'	= "no_op"	# [] [Move prompt end]        	#
+  #   'C-w'	= "no_op"	# [] [Delete previous word]   	#
+  #   'A-d'	= "no_op"	# [] [Delete next word]       	#
+  #   'C-h'	= "no_op"	# [] [Delete previous char]   	#
+  #   'C-d'	= "no_op"	# [] [Delete next char]       	#
+  #   'C-s'	= "no_op"	# [] [Insert a word]          	#
+  #   'C-p'	= "no_op"	# [] [Select previous history]	#
+  #   'C-n'	= "no_op"	# [] [Select next history]    	#
+
+  #   'Escape'	= "Close prompt" 	#≝ [  ⎋] [Close prompt] 	# Close prompt
+  #   'C-c'   	= "Close prompt" 	#≝ [^ c] [Close prompt] 	# Close prompt
+  #   'Enter' 	= "Open selected"	#≝ [  ⏎] [Open selected]	# Open selected
+
+  #   #⧁ Move ——————————————————————————————————————————————————————————————————————
+  #   #        	Char                         	                          	 
+  #   'A-l'    	= 'move_prev_char'           	# [^ b] []                	🢔c Move   prev char
+  #   'A-;'    	= 'move_next_char'           	# [^ f] []                	c🢖 Move   next char
+  #   #        	Word                         	                          	 
+  #   'A-d'    	= 'move_prev_word_start'     	# [⌥ d] [delete next word]	🢔w Move   this word start
+  #   'A-f'    	= 'move_next_word_end'       	#≝[⌥ f] [Forward a word]  	w🢖 Move   this word end
+  #   'A-D'    	= 'move_prev_long_word_start'	#⇧[⇧ b] []                	🢔W Move   this WORD start
+  #   'A-F'    	= 'move_next_long_word_start'	#⇧[⇧ w] []                	W⤞ Move   next WORD end   (this end + space)
+  #   'C-left' 	= 'move_prev_long_word_start'	#⇧[⇧ b] []                	🢔W Move   this WORD start
+  #   'C-right'	= 'move_next_long_word_start'	#⇧[⇧ w] []                	W⤞ Move   next WORD end   (this end + space)
+  #   'Left'   	= "move_prev_char"           	# [  ◀] []                	🢔c Move   prev char
+  #   'Right'  	= "move_next_char"           	# [  ▶] []                	c🢖 Move   next char
+  #   'A-left' 	= 'move_prev_word_end'       	# [⌥◀] []                 	⤝w Move   prev word end   (this start + space)
+  #   'A-right'	= 'move_next_word_start'     	# [⌥▶] []                 	w⤞ Move   next word start (this end   + space)
+  #   #        	Line                         	                          	 
+  #   'A-a'    	= 'move_to_prompt_start'     	# [⭰] [Move prompt start] 	⭰▋ Move   line start
+  #   'A-A'    	= 'move_to_prompt_end'       	# [⭲] [Move prompt end]   	⭲▋ Move   line end
+  #   'End'    	= "Move prompt end"          	#≝[⭰] [Move prompt start] 	⭰▋ Move   line start
+  #   'Home'   	= "Move prompt start"        	#≝[⭲] [Move prompt end]   	⭲▋ Move   line end
+
+  #   #⧁ Change ——————————————————————————————————————————————————————————————————————
+  #   'A-x'      	= 'delete_selection'       	# [  ] []                     	×▋
+  #   #          	Char                       	                              	 
+  #   'A-h'      	= 'delete_char_backward'   	#≝[^ h] [delete_char_backward]	⌫c × char ←
+  #   'A-6'      	= 'delete_char_forward'    	#≝[^ d] [delete_char_forward] 	⌦c × char →
+  #   'backspace'	= 'delete_char_backward'   	#≝[⌫] [delete_char_backward]  	⌫c × char ←
+  #   'del'      	= 'delete_char_forward'    	#≝[⌦] [delete_char_forward]   	⌦c × char →
+  #   #          	Word                       	                              	 
+  #   #          	Line                       	                              	 
+  #   'C-u'      	= "Delete to start of line"	# [] [] Delete to start of line
+  #   'C-k'      	= "Delete to end of line"  	# [] [] Delete to end of line
+
+  #   'C-v'	= 'paste_before'	# [^ s] []	⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹
+
+  #   #⧁ Select ——————————————————————————————————————————————————————————————————————
+  #   'A-a'    	= 'extend_to_line_start'           	# [] []   	⭰▋ Move     line start + select
+  #   'A-A'    	= 'extend_to_line_end'             	# [] []   	⭲▋ Move     line end   + select
+  #   'A-j'    	= "Select next history"            	# [^ n] []	Select next history
+  #   'A-k'    	= "Select previous history"        	# [^ p] []	Select previous history
+  #   'Down'   	= "Select next history"            	#≝[ ▼] [] 	Select next history
+  #   'Up'     	= "Select previous history"        	#≝[ ▲] [] 	Select previous history
+  #   'Tab'    	= "Select next completion item"    	#≝[ ⭾] [] 	Select next completion item
+  #   'BackTab'	= "Select previous completion item"	#≝⇧[⇧⭾] []	Select previous completion item
+
 
 # —————————————————————————————————————————————————————————————————————————————————————————————————
 
