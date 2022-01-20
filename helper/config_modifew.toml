@@ -176,8 +176,8 @@
     'C-g'	= 'save_selection'	# [  ^s] []         	🖈 Save the current selection to the jumplist
     'G'  	= 'save_selection'	# [  ^s] [goto_line]	🖈 Save the current selection to the jumplist
 
-    'J'  	= 'extend_line'          	# [  x] [join_selections]        	⮒ Select current line, if already selected, extend to next line
-    'E'  	= 'extend_line'          	#⇧[  x] [move_next_long_word_end]	⮒ Select current line, if already selected, extend to next line
+    'J'  	= 'extend_line'          	#⇧[  x] [join_selections]        	⮒ Select current line, if already selected, extend to next line
+    'E'  	= 'extend_to_line_bounds'	#⇧[  x] [move_next_long_word_end]	⎯ Extend selection to line bounds (line-wise selection)
     'A-e'	= 'extend_to_line_bounds'	# [⇧ x] []                       	⎯ Extend selection to line bounds (line-wise selection)
     # '' 	= 'expand_selection'     	# [] [expand_selection]       Expand selection to parent syntax node TODO: pick a key (**TS**)
     # '5'	= 'select_paragraph'     	# [  ] [<5>]        	¶▋ Select this paragraph !!! blocked by ∀* implementation !!! command not implemented yet
@@ -499,7 +499,7 @@
     'o'      	= 'hover'                             	# [k] []                         	? Show documentation for item under cursor in a popup (LSP)
     # 'p'    	= 'mode_P'                            	# [][paste_clipboard_after]      	☰p TBD !!! aliases not implemented yet
     'r'      	= 'rename_symbol'                     	#≝[][rename_symbol]              	  ✎ Rename symbol (LSP)
-    'e'      	= 'extend_line'                       	# [ x] []                        	⮒ Select current line, if already selected, extend to next line
+    'e'      	= 'extend_to_line_bounds'             	# [ x] []                        	⎯ Extend selection to line bounds (line-wise selection)
     #'w'     	= 'mode_window'                       	# [␣ w][mode_window]             	☰🗔 Window mode !!! aliases not implemented yet
     # 'q'    	= '???'                               	# [ q] []                        	#
     'y'      	= 'code_action'                       	# [␣ a][yank_joined_to_clipboard]	Ⓐ Apply code action (LSP)
@@ -842,8 +842,8 @@
     'C-g'	= 'save_selection'	# [  ^s] []         	🖈 Save the current selection to the jumplist
     'G'  	= 'save_selection'	# [  ^s] [goto_line]	🖈 Save the current selection to the jumplist
 
-    'J'  	= 'extend_line'          	# [  x] [join_selections]        	⮒ Select current line, if already selected, extend to next line
-    'E'  	= 'extend_line'          	#⇧[  x] [move_next_long_word_end]	⮒ Select current line, if already selected, extend to next line
+    'J'  	= 'extend_line'          	#⇧[  x] [join_selections]        	⮒ Select current line, if already selected, extend to next line
+    'E'  	= 'extend_to_line_bounds'	#⇧[  x] [move_next_long_word_end]	⎯ Extend selection to line bounds (line-wise selection)
     'A-e'	= 'extend_to_line_bounds'	# [⇧ x] []                       	⎯ Extend selection to line bounds (line-wise selection)
     # "" 	= 'expand_selection'     	# [] [expand_selection]       Expand selection to parent syntax node TODO: pick a key (**TS**)
     # '5'	= 'select_paragraph'     	# [  ] [<5>]        	¶▋ Select this paragraph !!! blocked by ∀* implementation !!! command not implemented yet
@@ -1152,7 +1152,7 @@
     'o'      	= 'hover'                             	# [k] []                         	? Show documentation for item under cursor in a popup (LSP)
     # 'p'    	= 'mode_P'                            	# [][paste_clipboard_after]      	☰p TBD !!! aliases not implemented yet
     'r'      	= 'rename_symbol'                     	#≝[][rename_symbol]              	  ✎ Rename symbol (LSP)
-    'e'      	= 'extend_line'                       	# [ x] []                        	⮒ Select current line, if already selected, extend to next line
+    'e'      	= 'extend_to_line_bounds'             	# [ x] []                        	⎯ Extend selection to line bounds (line-wise selection)
     #'w'     	= 'mode_window'                       	# [␣ w][mode_window]             	☰🗔 Window mode !!! aliases not implemented yet
     # 'q'    	= '???'                               	# [ q] []                        	#
     'y'      	= 'code_action'                       	# [␣ a][yank_joined_to_clipboard]	Ⓐ Apply code action (LSP)
@@ -1529,8 +1529,8 @@
     'C-g'  	= 'save_selection'	# [Ⓝ  ^s] []	🖈 Save the current selection to the jumplist
     # 'A-G'	= 'save_selection'	# [Ⓝ  ^s] []	🖈 Save the current selection to the jumplist
 
+    'A-E'  	= 'extend_to_line_bounds'	#⇧[Ⓝ  x] [move_next_long_word_end]	⎯ Extend selection to line bounds (line-wise selection)
     'A-J'  	= 'extend_line'          	# [Ⓝ  x] [join_selections]        	⮒ Select current line, if already selected, extend to next line
-    'A-E'  	= 'extend_line'          	#⇧[Ⓝ  x] [move_next_long_word_end]	⮒ Select current line, if already selected, extend to next line
     # 'A-e'	= 'extend_to_line_bounds'	# [Ⓝ⇧ x] []                       	⎯ Extend selection to line bounds (line-wise selection)
     # ''   	= 'expand_selection'     	# [Ⓝ] [expand_selection]       Expand selection to parent syntax node TODO: pick a key (**TS**)
     # 'A-5'	= 'select_paragraph'     	# [Ⓝ  ] [<5>]        	¶▋ Select this paragraph !!! blocked by ∀* implementation !!! command not implemented yet
