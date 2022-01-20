@@ -774,6 +774,31 @@
   #   'BackTab'	= "Select previous completion item"	#≝⇧[⇧⭾] []	Select previous completion item
 
 
+  # [keys.picker] #Ⓝ 🅟 Picker
+  # !!! Remapping currently not supported
+  #   'Escape'	= "Close picker"	#≝ [  ⎋] [Close picker] 	# Close picker
+  #   'C-c'   	= "Close picker"	#≝ [^ c] [Close picker] 	# Close picker
+  #   'C-k'   	= "no_op"       	# [] [Previous entry]   	#
+  #   'C-j'   	= "no_op"       	# [] [Next entry]       	#
+  #   'C-p'   	= "no_op"       	# [] [Previous entry]   	#
+  #   'C-n'   	= "no_op"       	# [] [Next entry]       	#
+  #   'C-s'   	= "no_op"       	# [] [Open horizontally]	#
+  #   'C-v'   	= "no_op"       	# [] [Open vertically]  	#
+
+  #   'Down' 	= "N/A"	#≝[ ▼] [] 	Select Next entry
+  #   'Up'   	= "N/A"	#≝[ ▲] [] 	Select Previous entry
+  #   'A-j'  	= "N/A"	# [^ j] []	Select Next entry
+  #   'A-k'  	= "N/A"	# [^ k] []	Select Previous entry
+  #   # 'A-f'	= "N/A"	# [^ p] []	Select Next entry
+  #   # 'A-d'	= "N/A"	# [^ n] []	Select Previous entry
+
+  #   'A-f'	= 'vsplit'	# [^ v][]	 🗗→ Open right  (Vertical)
+  #   'A-m'	= 'hsplit'	# [^ s][]	 🗗↓ Open bottom (Horizontal)
+
+  #   'C-space'	= "N/A"	#≝[^ ␣] [Filter options]	Filter options
+  #   'Enter'  	= "N/A"	#≝[  ⏎] [Open selected] 	Open selected
+
+
 # —————————————————————————————————————————————————————————————————————————————————————————————————
 
 
