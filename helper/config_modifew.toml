@@ -12,7 +12,6 @@
     # '0'	= 'univeral_arg'      	# [  ][0]               	∀* number prefix to treat all the following numbers as # of repeats for the following command !!! blocked by ∀* implementation
   #Ⓝ Free ——————————————————————————————————————————————————————————————————————
     'C-u'	= 'no_op'           	# [] [half_page_up]                         	#
-    'C-d'	= 'no_op'           	# [] [half_page_down]                       	#
     'A-C'	= 'no_op'           	#⇧[] [copy_selection_on_prev_line]          	#
     'A-c'	= 'no_op'           	# [] [change_selection_noyank]              	#
     'A-('	= 'no_op'           	#⇧[⇧⌥9] [rotate_selection_contents_backward]	#
@@ -22,7 +21,6 @@
     'C-i'	= 'no_op'           	# [] [jump_forward]                         	#
     'R'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
     'b'  	= 'no_op'           	#⇧[] [replace_with_yanked]                  	#
-    'C-f'	= 'no_op'           	# [] [page_down]                            	#
     '`'  	= "no_op"           	# [] [switch_to_lowercase]                  	#
     '~'  	= "no_op"           	#⇧[] [switch_case]                          	#
     'A-`'	= "no_op"           	# [] [switch_to_uppercase]                  	#
@@ -128,6 +126,12 @@
     'C-right'	= 'move_next_long_word_start'	#⇧[⇧ w] []                       	W⤞ Move   next WORD end   (this end + space)
     'A-left' 	= 'move_prev_word_end'       	# [ⓘ⌥◀] []                       	⤝w Move   prev word end   (this start + space)
     'A-right'	= 'move_next_word_start'     	# [ⓘ⌥▶] []                       	w⤞ Move   next word start (this end   + space)
+    'C-d'    	= ['move_prev_long_word_start',	#⤝W  Move prev WORD end                      	⇧[⇧ b]   [half_page_down]
+             	   'extend_prev_word_start',   	#
+             	   'extend_next_word_start']   	#!!!move_prev_long_word_end not implemented
+    'C-f'    	= 'move_next_long_word_start'  	#W⤞ Move next WORD end   (this end + space)	⇧[⇧ w]   [page_down]
+    # 'C-f'  	= ['collapse_selection',       	#W⤞ Move next WORD end   (this end + space)	⇧[⇧ w]   [page_down]
+    #        	   'extend_next_long_word_end']	#
 
     'r'	= 'repeat_last_motion'	# [ ⌥.] [replace]	∞ Repeat last motion (f/t/m)
 
