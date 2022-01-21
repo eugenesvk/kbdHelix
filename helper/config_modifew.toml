@@ -1324,12 +1324,14 @@
 
   [keys.select.'space'.'i'] #Ⓢ [ ␣i] [] ☰®  Register/copy/paste etc.
     'i'  	= 'select_register'                  	# [ '<reg>]	®  Select a register to copy/paste from ??? make it sticky for further reg ops or use the main layer
-    # '1'	= 'append_to_register 1'             	#          	®1⎀ Append current line/selection to reg 1, or current line when none
-    # '2'	= 'clear_register 1'                 	#          	®1× x
-    # '3'	= 'copy_to_register 1'               	#          	®1🗐 x
-    # '4'	= 'paste_from_register 1'            	#          	®1📋 x
-    # '7'	= 'append_to_register 1'             	#          	®1⎀ x
+    # '7'	= 'append_to_register 1'             	#          	®1⎀ Append current line/selection to reg 1
     # '8'	= 'clear_register 1'                 	#          	®1× x
+    # '9'	= 'copy_to_register 1'               	#          	®1🗐 x
+    # '0'	= 'paste_from_register 1'            	#          	®1📋 x
+    # '1'	= 'append_to_register 2'             	#          	®2⎀ Append current line/selection to reg 2
+    # '2'	= 'clear_register 2'                 	#          	®2× x
+    # '3'	= 'copy_to_register 2'               	#          	®2🗐 x
+    # '4'	= 'paste_from_register 2'            	#          	®2📋 x
     't'  	= 'replace_selections_with_clipboard'	# [␣⇧r]    	🗘▋📋 Replace selections by clipboard contents <i class='fa fa-clipboard'></i>▋
     'x'  	= 'join_selections'                  	# [Ⓝ⇧j]    	×␤ ⨝ Join lines inside selection
     'v'  	= 'paste_clipboard_before'           	# [␣⇧p]    	⤸📋 Paste after  selections ⤸<i class='fa fa-clipboard'></i>
