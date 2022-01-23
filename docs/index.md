@@ -12,15 +12,17 @@ title: "🧬Helix Keymap modiƒew"
 
 # Table of contents
 - [Overview](#overview)
-- [Helix Keymap modiƒew Normal](#helix-keymap-modiew-normal)
-- [Helix Keymap modiƒew Insert](#helix-keymap-modiew-insert)
-- [Helix Keymap modiƒew Select](#helix-keymap-modiew-select)
-- [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
-- [Helix Keymap modiƒew Space](#helix-keymap-modiew-space)
-- [Helix Keymap modiƒew View](#helix-keymap-modiew-view)
-- [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
-- [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
-- [Helix Keymap modiƒew Unimpaired](#helix-keymap-modiew-unimpaired)
+- [Major modes](#major-modes)
+    - [Helix Keymap modiƒew Normal](#helix-keymap-modiew-normal)
+    - [Helix Keymap modiƒew Insert](#helix-keymap-modiew-insert)
+    - [Helix Keymap modiƒew Select](#helix-keymap-modiew-select)
+- [Minor modes](#minor-modes)
+    - [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
+    - [Helix Keymap modiƒew Space](#helix-keymap-modiew-space)
+    - [Helix Keymap modiƒew View](#helix-keymap-modiew-view)
+    - [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
+    - [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
+    - [Helix Keymap modiƒew Unimpaired](#helix-keymap-modiew-unimpaired)
 
 
 ### Overview
@@ -89,6 +91,8 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
 
 
 
+### Major modes
+
 #### Helix Keymap modiƒew Normal
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml)
@@ -124,6 +128,8 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
 </div>
 
 
+
+### Minor modes
 
 #### Helix Keymap modiƒew GoTo
 
