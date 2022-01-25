@@ -12,6 +12,7 @@ title: "🧬Helix Keymap modiƒew"
 
 # Table of contents
 - [Overview](#overview)
+- [Helix Keymap modiƒew Normal](#helix-keymap-modiew-normal)
 
 
 ### Overview
@@ -75,3 +76,12 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
   |    | Modifier key legend	| Example of <kbd>j</kbd> |
   | :- | :-----------------:	| :---------------------: |
   | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
+
+
+
+#### Helix Keymap modiƒew Normal
+
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml)
+
+<div id=keyboard tabindex=0 style="display: inline-flex;">
+</div>
