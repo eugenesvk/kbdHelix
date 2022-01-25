@@ -31,7 +31,7 @@
 
 #buttons {
   position        	: fixed;
-  top             	:  0;
+  bottom          	:  0;
   background-color	: hsla(0, 0%, 100%, 1);
   z-index         	: 99;
   height          	: 1.7em;
