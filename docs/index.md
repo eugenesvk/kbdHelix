@@ -38,10 +38,10 @@ title: "🧬Helix Keymap modiƒew"
 ### Overview
 
 
-This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^1] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆 (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
+This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^1] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆🏻 (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
 It also attempts to convert most of the commands requiring modifiers into a chainable key sequence, hence its name: "few modifiers based on frequency" (__ƒ__ for frequency) or __modiƒew__
 
-This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the top
+This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍🏻👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the top
 
 It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoemacs_vi_mode.html) and uses Xah Lee's data on [Emacs command frequencies](http://xahlee.info/emacs/emacs/command-frequency.html), but is trying to outlfy the fly master :) by being more consistent in applying the basic frequent→best principle[^3]
 
@@ -53,16 +53,16 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
         + Strongest non-thumb fingers on the __right__ hand:<br>
-          move by line 👆down/🖕up <kbd lyt=q>j</kbd><span class="keyMove">▼</span> <kbd lyt=q>k</kbd><span class="keyMove">▲</span>
+          move by line 👆🏻down/🖕🏻up <kbd lyt=q>j</kbd><span class="keyMove">▼</span> <kbd lyt=q>k</kbd><span class="keyMove">▲</span>
         + Strongest non-thumb fingers on the __left__ hand:<br>
           move by word 👆left/🖕right <kbd lyt=q>d</kbd><span class="keyMove">🢔w</span> <kbd lyt=q>f</kbd><span class="keyMove">w🢖</span>
         + Rest of the home row on the __right__ for the next most frequent commands:<br>
-          move by char 💍left/🤙right <kbd lyt=q>l</kbd><span class="keyMove">◀</span> <kbd lyt=q>;</kbd><span class="keyMove">▶</span>
-        + Repeat the 👆down/🖕up right hand mnemonic:
+          move by char 💍left/🤙🏻right <kbd lyt=q>l</kbd><span class="keyMove">◀</span> <kbd lyt=q>;</kbd><span class="keyMove">▶</span>
+        + Repeat the 👆🏻down/🖕🏻up right hand mnemonic:
             + for the less frequent commands: decrement/increment object (number) under cursor <kbd>^</kbd><kbd lyt=q>m</kbd><span class="keyChange">⊖</span> <kbd>^</kbd><kbd lyt=q>,</kbd><span class="keyChange">⊕</span>
             + in the lower row: move half page down/up <kbd lyt=q>m</kbd><span class="keyMove">⤈</span> <kbd lyt=q>,</kbd><span class="keyMove">⤉</span>
             + for the minor modes: (in <span class="keyOther">☰👁</span> View mode) <kbd lyt=q>u</kbd><span class="keyOther">🗔⭳</span> <kbd lyt=q>i</kbd><span class="keyOther">🗔⭱</span>
-        + Repeat the 💍left/🤙right right hand mnemonic in the lower row: select previous/next search match <kbd lyt=q>.</kbd><span class="keyMove">🢔◎</span> <kbd lyt=q>/</kbd><span class="keyMove">◎🢖</span> (broken pending fixing [this issue](https://github.com/helix-editor/helix/issues/1488), at the moment requires <kbd>⇧</kbd>)
+        + Repeat the 💍left/🤙🏻right right hand mnemonic in the lower row: select previous/next search match <kbd lyt=q>.</kbd><span class="keyMove">🢔◎</span> <kbd lyt=q>/</kbd><span class="keyMove">◎🢖</span> (broken pending fixing [this issue](https://github.com/helix-editor/helix/issues/1488), at the moment requires <kbd>⇧</kbd>)
         + Repeat the 👆left/🖕right left hand mnemonic for jumplist ←→ navigation <kbd lyt=q>3</kbd><span class="keyMove">⎗̡</span> <kbd lyt=q>4</kbd><span class="keyMove">⎘̡</span> (pending adding this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use <kbd>⌥</kbd>)
         + `Undo`/`redo` isn't yet fully optimized in this way (they are on adjacent <kbd lyt=q>y</kbd><span class="keyChange">↷</span> <kbd lyt=q>u</kbd><span class="keyChange">⎌</span>, but on the same finger and in reverse order), some frequency data on the other Helix top row commands would help
     + __Single-press__ paired keybinds can remain with the opposite direction <kbd>⇧</kbd>’ed, e.g. move to the beginning/end of a line <kbd lyt=q>a</kbd><span class="keyMove">⭰</span> <kbd>⇧</kbd><kbd lyt=q>a</kbd><span class="keyMove">⭲</span>
