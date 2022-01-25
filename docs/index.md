@@ -24,6 +24,16 @@ title: "🧬Helix Keymap modiƒew"
     - [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
     - [Helix Keymap modiƒew Unimpaired](#helix-keymap-modiew-unimpaired)
 
+<div id=buttons>
+  Change keyboard layout to:
+  <button class="btn" id=btn_qwerty    	type=button style=margin:5px>QWERTY</button>
+  <button class="btn" id=btn_dvorak    	type=button style=margin:5px>Dvorak</button>
+  <button class="btn" id=btn_colemak   	type=button style=margin:5px>Colemak</button>
+  <button class="btn" id=btn_colemak_dh	type=button style=margin:5px>Colemak DH</button>
+  <button class="btn" id=btn_workman   	type=button style=margin:5px>Workman</button>
+  <button class="btn" id=btn_neo2      	type=button style=margin:5px>Neo2</button>
+</div>
+<script defer src=js/layout-convert.js></script>
 
 ### Overview
 
