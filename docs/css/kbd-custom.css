@@ -11,11 +11,11 @@
 }
 #keyboard .SPACE .keycap .keytop {width	: 281px !important	;}
 
-.keylabel0, .keylabel3, .keylabel6 { margin-left	: -6px;} /* left */
-.keylabel2, .keylabel5, .keylabel8 { margin-left	:  6px;} /* right */
-.keylabel0, .keylabel1, .keylabel2 { margin-top 	: -4px;} /* top */
-.keylabel3, .keylabel4, .keylabel5 { margin-top 	: -1px;} /* center */
-.keylabel6, .keylabel7, .keylabel8 { margin-top 	:  1px;} /* bottom */
+.keylabel0, .keylabel3, .keylabel6	{ margin-left	: -6px;} /* left */
+.keylabel2, .keylabel5, .keylabel8	{ margin-left	:  6px;} /* right */
+.keylabel0, .keylabel1, .keylabel2	{ margin-top 	: -4px;} /* top */
+.keylabel3, .keylabel4, .keylabel5	{ margin-top 	: -1px;} /* center */
+.keylabel6, .keylabel7, .keylabel8	{ margin-top 	:  1px;} /* bottom */
 .keylabel9                        	{ margin-left : -0.6em;} /* left  label*/
 .keylabel11                       	{ margin-left :  0.6em;} /* right label*/
 /*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */
