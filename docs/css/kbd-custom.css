@@ -16,6 +16,8 @@
 .keylabel0, .keylabel1, .keylabel2 { margin-top 	: -4px;} /* top */
 .keylabel3, .keylabel4, .keylabel5 { margin-top 	: -1px;} /* center */
 .keylabel6, .keylabel7, .keylabel8 { margin-top 	:  1px;} /* bottom */
+.keylabel9                        	{ margin-left : -0.6em;} /* left  label*/
+.keylabel11                       	{ margin-left :  0.6em;} /* right label*/
 /*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */
 
 .keyMove  	{color	: #006400;}
