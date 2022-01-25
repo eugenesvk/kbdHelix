@@ -691,16 +691,76 @@
 
 
 
-  [keys.normal.'['] #Ⓝ ☰⧛ Unimpaired (see github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
-    'd'    	= 'goto_prev_diag'   	# 🢔🛠  Diagnostic previous (LSP)           	 「  d」 「goto_prev_diag」
-    'D'    	= 'goto_first_diag'  	# ⭰🛠 Diagnostic first    in document (LSP)	 「⇧d」 「goto_first_diag」
-    'f'    	= 'goto_first_diag'  	# ⭰🛠 Diagnostic first    in document (LSP)	 「⇧d」 「」
-    'space'	= 'add_newline_above'	# ⭡␤  Add newline above                   	 「 ␣」 「add_newline_above」
+  [keys.normal.'['] #Ⓝ ☰⧛ Unimpaired
+    'd'    	= 'goto_prev_diag'         	# 🢔🛠  Diagnostic previous (LSP)           	  ≝「  d」 「goto_prev_diag」
+    'D'    	= 'goto_first_diag'        	# ⭰🛠 Diagnostic first    in document (LSP)	≝「⇧ d」 「goto_first_diag」
+    'f'    	= 'goto_first_diag'        	# ⭰🛠 Diagnostic first    in document (LSP)	 「⇧ d」 「」
+    'space'	= 'add_newline_above'      	# ⭡␤  Add newline above                   	   「  ␣」 「add_newline_above」
+    'm'    	= ['extend_to_line_bounds',	# Exchange the current line with [n] lines above it (!!!missing n)
+           	   'delete_selection',     	#
+           	   'move_line_up',         	#
+           	   'paste_before']         	#
+  [keys.normal.'['.'c'] #Ⓝ ☰⧛ℂ Unimpaired Config toggle
+    'e'	= ':set-option line-number absolute'	# #⭳  Line number display: absolute
+    's'	= ':set-option smart-case true'     	# 𝖗𝕒  Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'd'	= ':set-option auto-pairs true'     	# ⟪⟫  Auto insertion of pairs to parentheses, brackets, etc
+    'a'	= ':set-option auto-completion true'	# ⎁  Auto pop up of auto-completion
+    'i'	= ':set-option auto-info true'      	# 🛈  Display infoboxes
+    # !!!fails
+    # 'h'	= ':set-option file_picker_config.hidden true'	# Ignore hidden files
+    # 'k'	= ':set-option parents true'                  	# Read ignore files from parent directories
+    # 'l'	= ':set-option ignore true'                   	# Read .ignore files
+    # ';'	= ':set-option git-ignore true'               	# Read .gitignore files
+    # ','	= ':set-option git-global true'               	# Read global .gitignore (path: core.excludefile option of git's config)
+    # '.'	= ':set-option git-exclude true'              	# Read .git/info/exclude files
+
   [keys.normal.']'] #Ⓝ ☰⧚
-    'd'    	= 'goto_next_diag'   	# 🛠🢖  Diagnostic next (LSP)            	「  d」 「goto_next_diag」
-    'D'    	= 'goto_last_diag'   	# 🛠⭲ Diagnostic last  in document (LSP)	「⇧d」 「goto_last_diag」
-    'f'    	= 'goto_last_diag'   	# 🛠⭲ Diagnostic last  in document (LSP)	「⇧d」 「」
-    'space'	= 'add_newline_below'	# ⭣␤  Add newline below                	 「 ␣」 「add_newline_below」
+    'd'    	= 'goto_next_diag'         	# 🛠🢖  Diagnostic next (LSP)            	≝「  d」 「goto_next_diag」
+    'D'    	= 'goto_last_diag'         	# 🛠⭲ Diagnostic last  in document (LSP)	≝「⇧ d」 「goto_last_diag」
+    'f'    	= 'goto_last_diag'         	# 🛠⭲ Diagnostic last  in document (LSP)	 「⇧ d」 「」
+    'space'	= 'add_newline_below'      	# ⭣␤  Add newline below                	   「  ␣」 「add_newline_below」
+    'm'    	= ['extend_to_line_bounds',	# Exchange the current line with [n] lines below it (!!!missing n)
+           	   'delete_selection',     	#
+           	   'goto_line_end',        	#
+           	   'paste_after']          	#
+  [keys.normal.']'.'c'] #Ⓝ ☰⧛ℂ Unimpaired Config toggle
+    'e'	= ':set-option line-number relative' 	# #⭥  Line number display: relative
+    's'	= ':set-option smart-case false'     	# 𝖗𝔸  Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'd'	= ':set-option auto-pairs false'     	# ⟪  Auto insertion of pairs to parentheses, brackets, etc
+    'a'	= ':set-option auto-completion false'	# ⎁  Auto pop up of auto-completion
+    'i'	= ':set-option auto-info false'      	# 🛈  Display infoboxes
+
+    # [n                      Go to the previous SCM conflict marker or diff/patch hunk. Try d[n inside a conflict
+    # ]n                      Go to the next SCM conflict marker or diff/patch hunk    . Try d]n inside a conflict.
+    # ENCODING AND DECODING
+    # Each of these operations has a map that takes a motion, a map that targets [count] lines, and a visual mode map.  The linewise variant integrates with repeat.vim.
+    # Mnemonic: encoding always comes before decoding; "[" always comes before "]".
+    # [x{motion}              XML encode.  *[x* *[xx* *v_[x*
+    # [xx                     <foo bar="baz"> => &lt;foo bar=&quot;baz&quot;&gt;
+    # {Visual}[x
+    # ]x{motion}              XML decode.  HTML entities are handled as well. *]x* *]xx* *v_]x*
+    # ]xx
+    # {Visual}]x
+    # [u{motion}              URL encode. *[u* *[uu* *v_[u*
+    # [uu                     foo bar => foo%20bar
+    # {Visual}[u
+    # ]u{motion}              URL decode. *]u* *]uu* *v_]u*
+    # ]uu
+    # {Visual}]u
+    # [y{motion}              C String encode.  Backslash escape control *[y* *[yy* *v_[y* *[C* *[CC* *v_[C*
+    # [yy                     characters, quotation marks, and backslashes.
+    # {Visual}[y
+    # [C{motion}
+    # [CC
+    # {Visual}[C
+    #                                         *]y* *]yy* *v_]y* *]C* *]CC* *v_]C*
+    # ]y{motion}              C String decode.
+    # ]yy
+    # {Visual}]y
+    # ]C{motion}
+    # ]CC
+    # {Visual}]C
+
 
 
   # [keys.prompt] #Ⓝ ⧁ Prompt
