@@ -13,6 +13,7 @@ title: "🧬Helix Keymap modiƒew"
 # Table of contents
 - [Overview](#overview)
 - [Helix Keymap modiƒew Normal](#helix-keymap-modiew-normal)
+- [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
 
 
 ### Overview
@@ -82,6 +83,15 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
 #### Helix Keymap modiƒew Normal
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml)
+
+<div id=keyboard tabindex=0 style="display: inline-flex;">
+</div>
+
+
+
+#### Helix Keymap modiƒew GoTo
+
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-goto.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
