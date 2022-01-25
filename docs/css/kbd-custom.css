@@ -17,3 +17,8 @@
 .keylabel3, .keylabel4, .keylabel5 { margin-top 	: -1px;} /* center */
 .keylabel6, .keylabel7, .keylabel8 { margin-top 	:  1px;} /* bottom */
 /*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */
+
+.keyMove  	{color	: #006400;}
+.keySelect	{color	: #377bb5;}
+.keyChange	{color	: #ff0000;}
+.keyOther 	{color	: #800080;}
