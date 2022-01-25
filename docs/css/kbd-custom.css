@@ -24,3 +24,15 @@
 .keySelect	{color	: #377bb5;}
 .keyChange	{color	: #ff0000;}
 .keyOther 	{color	: #800080;}
+
+.layout_button_clicked {
+  border: 2px solid green;
+}
+
+#buttons {
+  position        	: fixed;
+  top             	:  0;
+  background-color	: hsla(0, 0%, 100%, 1);
+  z-index         	: 99;
+  height          	: 1.7em;
+}
