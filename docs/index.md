@@ -41,7 +41,7 @@ title: "🧬Helix Keymap modiƒew"
 This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^1] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆🏻 (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
 It also attempts to convert most of the commands requiring modifiers into a chainable key sequence, hence its name: "few modifiers based on frequency" (__ƒ__ for frequency) or __modiƒew__
 
-This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍🏻👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the top
+This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍🏻👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the bottom
 
 It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoemacs_vi_mode.html) and uses Xah Lee's data on [Emacs command frequencies](http://xahlee.info/emacs/emacs/command-frequency.html), but is trying to outlfy the fly master :) by being more consistent in applying the basic frequent→best principle[^3]
 
