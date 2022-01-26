@@ -326,8 +326,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     # 'p'     	= 'view_mode_sticky' 	# ☰👁ₛ 'sticky', persistent                      	 「   」 「」
   [keys.normal.'P'] #Ⓝ ☰👁ₛ 'sticky', persistent ⇧「$!」 「paste_before」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
@@ -354,8 +354,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
   [keys.normal.'Z'] #Ⓝ ☰👁ₛ 'sticky', persistent ⇧「$!」 「paste_before」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
@@ -381,8 +381,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
 
   [keys.normal.'g'] #Ⓝ ⓖ☰⮊ Goto mode Jumps to various locations 「$!」 「」
     'b'  	= 'no_op'                   	#                                    	   「   」 「goto_window_bottom」
@@ -1122,8 +1122,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     't'       	= 'no_op'            	#                                               	 「   」 「align_view_top」
@@ -1149,8 +1149,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     't'       	= 'no_op'            	#                                               	 「   」 「align_view_top」
@@ -1176,8 +1176,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     't'       	= 'no_op'            	#                                               	 「   」 「align_view_top」
@@ -1765,8 +1765,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     't'       	= 'no_op'            	#                                               	 「   」 「align_view_top」
@@ -1792,8 +1792,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     't'       	= 'no_op'            	#                                               	 「   」 「align_view_top」
@@ -1819,8 +1819,8 @@
     'K'       	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
     'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                            	 「  f」 「」
     'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                            	 「  b」 「」
-    'pageup'  	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
-    'pagedown'	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                            	 「pageup」 「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                            	 「pagedown」 「page_up」
     'z'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     'c'       	= 'no_op'            	#                                               	 「   」 「align_view_center」
     't'       	= 'no_op'            	#                                               	 「   」 「align_view_top」
