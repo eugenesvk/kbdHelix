@@ -21,6 +21,9 @@ html {
   -webkit-tap-highlight-color	: rgba(0, 0, 0, 0)
 }
 
+.markdown-body ul, .markdown-body ol {
+  padding-left	: 1.0em	; /*2em*/
+}
 body .markdown-body {
   padding-top   	: 0.0em	; /*40px*/
   padding-bottom	: 0.7em	; /*40px*/
