@@ -45,19 +45,19 @@ This keymap is based on a dumb standard staggered keyboard design, so if you use
 
 It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoemacs_vi_mode.html) and uses Xah Lee's data on [Emacs command frequencies](http://xahlee.info/emacs/emacs/command-frequency.html), but is trying to outlfy the fly master :) by being more consistent in applying the basic frequent→best principle[^3]
 
-Below is a summary of some of the design decisions followed up by detailed keymap Cheat Sheets for the main layout and the various modes:
+Below is a summary of some of the design decisions followed up by detailed keymap Cheat Sheets for the various modes:
 
   - __Home__ row is __safe__: a lot of the movement commands happen to be the most frequent, enough to utilize the 8 home row keys, so as a side effect you get safety — to modify a buffer move your fingers elsewhere!
   - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the sames keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
-  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>^</kbd> or <kbd>⇧</kbd> in the main mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
+  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>^</kbd> or <kbd>⇧</kbd> in the Normal mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
         + Strongest non-thumb fingers on the __right__ hand:<br>
-          move by line 👆🏻down/🖕🏻up <kbd lyt=q>j</kbd><span class="keyMove">▼</span> <kbd lyt=q>k</kbd><span class="keyMove">▲</span>
+          move by __line__ 👆🏻down/🖕🏻up <kbd lyt=q>j</kbd><span class="keyMove">▼</span> <kbd lyt=q>k</kbd><span class="keyMove">▲</span>
         + Strongest non-thumb fingers on the __left__ hand:<br>
-          move by word 👆left/🖕right <kbd lyt=q>d</kbd><span class="keyMove">🢔w</span> <kbd lyt=q>f</kbd><span class="keyMove">w🢖</span>
+          move by __word__ 👆left/🖕right <kbd lyt=q>d</kbd><span class="keyMove">🢔w</span> <kbd lyt=q>f</kbd><span class="keyMove">w🢖</span>
         + Rest of the home row on the __right__ for the next most frequent commands:<br>
-          move by char 💍left/🤙🏻right <kbd lyt=q>l</kbd><span class="keyMove">◀</span> <kbd lyt=q>;</kbd><span class="keyMove">▶</span>
+          move by __char__ 💍left/🤙🏻right <kbd lyt=q>l</kbd><span class="keyMove">◀</span> <kbd lyt=q>;</kbd><span class="keyMove">▶</span>
         + Repeat the 👆🏻down/🖕🏻up right hand mnemonic:
             + for the less frequent commands: decrement/increment object (number) under cursor <kbd>^</kbd><kbd lyt=q>m</kbd><span class="keyChange">⊖</span> <kbd>^</kbd><kbd lyt=q>,</kbd><span class="keyChange">⊕</span>
             + in the lower row: move half page down/up <kbd lyt=q>m</kbd><span class="keyMove">⤈</span> <kbd lyt=q>,</kbd><span class="keyMove">⤉</span>
@@ -93,7 +93,7 @@ Below is a summary of some of the design decisions followed up by detailed keyma
 [^3]: for example, instead of placing the 2nd most frequent command <span class="keyMove">▲</span> (15.5%) on a non-home row <kbd lyt=q>i</kbd> it uses the home row <kbd lyt=q>k</kbd>
 [^4]: this breaks the 'sticky' `select_mode` pending implementation of [this feature request](https://github.com/helix-editor/helix/issues/1487)
 
-Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "minor" menu modes), in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to Keyboard Layout Editor so you could fit the cheat sheet to a modified keymap
+Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to Keyboard Layout Editor so you could fit the cheat sheet to a modified keymap
 
   |    | Modifier key legend	| Example of <kbd>j</kbd> |
   | :- | :-----------------:	| :---------------------: |
