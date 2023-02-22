@@ -44,6 +44,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ^u」   	「」
     # 'C-r'	= 'yank_joined_to_register'        	# Control-q → typable command :q! (:quit!)
     # 'C-r'	= 'yank_joined'                    	# Control-q → typable command :q! (:quit!)
+    'C-l'  	= 'suspend'                        	# 💤 Suspend job	「⎈z」	「」
 
     # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ^u」	「」
 
@@ -302,7 +303,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'v'  	= 'paste_after'           	# 📋⤹ Paste after selection ⤹<i class='fa fa-copy'></i>      	「  p」 	「select_mode」
     'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection  <i class='fa fa-copy'></i>⤹     	「␣ p」 	「」
     'V'  	= 'paste_before'          	# ⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹	「⇧ p」 	「」
-    'C-z'	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「」
+    'C-z'	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「suspend」
     'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
     # 'I'	= 'prepend_to_line'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「prepend_to_line」
     # 'A'	= 'append_to_line'        	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「append_to_line」
