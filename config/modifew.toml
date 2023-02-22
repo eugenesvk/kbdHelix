@@ -3,18 +3,18 @@
 theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/helix-editor/helix/wiki/Themes
 
 [editor]
-  # 'scrolloff'              = 3           	# 「3」   	Number of lines of padding around the edge of the screen when scrolling.
-  # 'mouse'                  = true        	# 「true」	Enable mouse mode
-  # 'middle-click-paste'     = true        	# 「true」	Middle click paste support.
-  'scroll-lines'             = 2           	# 「3」   	Number of lines to scroll per scroll wheel step.
-  # 'line-number'            = 'absolute'  	# 「absolute」	Line number display (absolute, relative)
-  # 'smart-case'             = false       	# 「true」    	Smart case regex searching (case insensitive unless pattern contains upper case characters)
-  # 'auto-pairs'             = true        	# 「true」    	Auto insertion of pairs to parentheses, brackets, etc
-  # 'auto-completion'        = true        	# 「true」    	Auto pop up of auto-completion
-  # 'idle-timeout'           = 400         	# 「400」     	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.
-  # 'completion-trigger-len' = 2           	# 「2」       	The min-length of word under cursor to trigger autocompletion
-  # 'auto-info'              = true        	# 「3」       	Whether to display infoboxes
+  # 'scrolloff'             	= 3          	# 「3」   	Number of lines of padding around the edge of the screen when scrolling.
+  # 'mouse'                 	= true       	# 「true」	Enable mouse mode
+  # 'middle-click-paste'    	= true       	# 「true」	Middle click paste support.
+  'scroll-lines'            	= 2          	# 「3」   	Number of lines to scroll per scroll wheel step.
   'shell'                   	= ['nu','-c']	# 「'sh','-c'」 shell to use to run external commands (:sh ...)
+  # 'line-number'           	= 'absolute' 	# 「absolute」	Line number display (absolute, relative)
+  # 'smart-case'            	= false      	# 「true」    	Smart case regex searching (case insensitive unless pattern contains upper case characters)
+  # 'auto-pairs'            	= true       	# 「true」    	Auto insertion of pairs to parentheses, brackets, etc
+  # 'auto-completion'       	= true       	# 「true」    	Auto pop up of auto-completion
+  # 'idle-timeout'          	= 400        	# 「400」     	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.
+  # 'completion-trigger-len'	= 2          	# 「2」       	The min-length of word under cursor to trigger autocompletion
+  # 'auto-info'             	= true       	# 「3」       	Whether to display infoboxes
 
   # [editor.'file-picker'] #
   #   'hidden'      = true	# 「true」	Ignore hidden files
