@@ -34,7 +34,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 # —————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-
+# github.com/helix-editor/helix/blob/master/helix-term/src/keymap/default.rs
 [keys.normal] #Ⓝ
   #Ⓝ Test ——————————————————————————————————————————————————————————————————————
     'C-q'  	= ':quit!'                         	# Control-q → typable command :q! (:quit!)
