@@ -3,18 +3,18 @@
 theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/helix-editor/helix/wiki/Themes
 
 [editor]
-  # 'scrolloff'             	= 3          	# 「3」   	Number of lines of padding around the edge of the screen when scrolling.
-  # 'mouse'                 	= true       	# 「true」	Enable mouse mode
-  # 'middle-click-paste'    	= true       	# 「true」	Middle click paste support.
-  'scroll-lines'            	= 2          	# 「3」   	Number of lines to scroll per scroll wheel step.
-  'shell'                   	= ['nu','-c']	# 「'sh','-c'」 shell to use to run external commands (:sh ...)
-  # 'line-number'           	= 'absolute' 	# 「absolute」	Line number display (absolute, relative)
-  # 'smart-case'            	= false      	# 「true」    	Smart case regex searching (case insensitive unless pattern contains upper case characters)
-  # 'auto-pairs'            	= true       	# 「true」    	Auto insertion of pairs to parentheses, brackets, etc
-  # 'auto-completion'       	= true       	# 「true」    	Auto pop up of auto-completion
-  # 'idle-timeout'          	= 400        	# 「400」     	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.
-  # 'completion-trigger-len'	= 2          	# 「2」       	The min-length of word under cursor to trigger autocompletion
-  # 'auto-info'             	= true       	# 「3」       	Whether to display infoboxes
+  # 'scrolloff'              = 3         	# 「3」        	Number of lines of padding around the edge of the screen when scrolling.
+  # 'mouse'                  = true      	# 「true」     	Enable mouse mode
+  # 'middle-click-paste'     = true      	# 「true」     	Middle click paste support.
+  'scroll-lines'             = 2         	# 「3」        	Number of lines to scroll per scroll wheel step.
+  'shell'                                	= ['nu','-c']	# 「'sh','-c'」 Shell to use when running external commands.
+  # 'line-number'            = 'absolute'	# 「absolute」 	Line number display (absolute, relative)
+  # 'smart-case'             = false     	# 「true」     	Smart case regex searching (case insensitive unless pattern contains upper case characters)
+  # 'auto-pairs'             = true      	# 「true」     	Auto insertion of pairs to parentheses, brackets, etc
+  # 'auto-completion'        = true      	# 「true」     	Auto pop up of auto-completion
+  # 'idle-timeout'           = 400       	# 「400」      	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.
+  # 'completion-trigger-len' = 2         	# 「2」        	The min-length of word under cursor to trigger autocompletion
+  # 'auto-info'              = true      	# 「3」        	Whether to display infoboxes
 
   # [editor.'file-picker'] #
   #   'hidden'      = true	# 「true」	Ignore hidden files
@@ -34,7 +34,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 # —————————————————————————————————————————————————————————————————————————————————————————————————
 
 
-# github.com/helix-editor/helix/blob/master/helix-term/src/keymap/default.rs
+
 [keys.normal] #Ⓝ
   #Ⓝ Test ——————————————————————————————————————————————————————————————————————
     'C-q'  	= ':quit!'                         	# Control-q → typable command :q! (:quit!)
@@ -44,8 +44,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ^u」   	「」
     # 'C-r'	= 'yank_joined_to_register'        	# Control-q → typable command :q! (:quit!)
     # 'C-r'	= 'yank_joined'                    	# Control-q → typable command :q! (:quit!)
-    'C-l'  	= 'suspend'                        	# 💤 Suspend job	「⎈z」	「」
 
+    'C-l'  	= 'suspend'    	# 💤 Suspend job      	「⎈z」    	「」
     # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ^u」	「」
 
   #Ⓝ Free ——————————————————————————————————————————————————————————————————————
@@ -303,7 +303,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'v'  	= 'paste_after'           	# 📋⤹ Paste after selection ⤹<i class='fa fa-copy'></i>      	「  p」 	「select_mode」
     'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection  <i class='fa fa-copy'></i>⤹     	「␣ p」 	「」
     'V'  	= 'paste_before'          	# ⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹	「⇧ p」 	「」
-    'C-z'	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「suspend」
+    'C-z'	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「」
     'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
     # 'I'	= 'prepend_to_line'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「prepend_to_line」
     # 'A'	= 'append_to_line'        	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「append_to_line」
@@ -1112,23 +1112,23 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '"'	= 'select_register'	# ®  Select a register to yank to or paste from        	「  '<reg>」	「select_register」
 
     # 'b'	= 'N/Arepeat_last_change' 	# ∞ Repeat last change !!! no command yet                   	「⇧  .」	「move_prev_word_start」
-    # '.'	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」	「n/arepeat_last_change」
-    # 'i'	= 'insert_mode'           	# ⁁⤸ Insert before selection                                	「  i」	「insert_mode」
-    'o'  	= 'append_mode'           	# ⤹⎀ Insert after selection (append)                        	「  a」	「open_above」
-    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」	「prepend_to_line」
-    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」	「append_to_line」
-    'u'  	= 'undo'                  	# ⎌ Undo change                                             	「  u」	「undo mode」
-    'y'  	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」	「yank」
+    # '.'	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
+    # 'i'	= 'insert_mode'           	# ⁁⤸ Insert before selection                                	「  i」 	「insert_mode」
+    'o'  	= 'append_mode'           	# ⤹⎀ Insert after selection (append)                        	「  a」 	「open_above」
+    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「prepend_to_line」
+    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「append_to_line」
+    'u'  	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「undo mode」
+    'y'  	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「yank」
     'U'  	= 'earlier'               	# 🕘 Move backward in history   <i class='fa fa-history'></i>	「⇧ ⌥u」	「redo」
-    'Y'  	= 'later'                 	# 🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i> 	「⇧⌥u」	「」
-    'C-y'	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」	「」
-    'v'  	= 'paste_after'           	# 📋⤹ Paste after selection                                  	「  p」	「select_mode」
-    'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection                                  	「␣ p」	「」
-    'V'  	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」	「」
-    'C-z'	= 'undo'                  	# ⎌ Undo change                                             	「  u」	「」
-    'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」	「」
-    # 'I'	= 'prepend_to_line'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」	「prepend_to_line」
-    # 'A'	= 'append_to_line'        	# ⭲⎀ Insert at the end of the line                          	「⇧ a」	「append_to_line」
+    'Y'  	= 'later'                 	# 🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i> 	「⇧⌥u」 	「」
+    'C-y'	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「」
+    'v'  	= 'paste_after'           	# 📋⤹ Paste after selection                                  	「  p」 	「select_mode」
+    'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection                                  	「␣ p」 	「」
+    'V'  	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」 	「」
+    'C-z'	= 'suspend'               	# ⎌ Undo change                                             	「  u」 	「」
+    'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
+    # 'I'	= 'prepend_to_line'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「prepend_to_line」
+    # 'A'	= 'append_to_line'        	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「append_to_line」
 
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
     '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward	「⇧⌥9」	「rotate_selections_backward」
