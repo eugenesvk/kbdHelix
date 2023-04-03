@@ -169,20 +169,27 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⌥.」	「replace」
 
     #Ⓝ   	Find
-    'w'  	= 'find_next_char'  	# 🔎   Find       next     char           	「  f」	「move_next_word_start」    	<i class='mss mss-Search-3'></i>
-    'W'  	= 'find_prev_char'  	# 🔍   Find       previous char           	「⇧ f」	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-w'	= 'find_till_char'  	# 🔎₋₁ Find 'till next     char           	「  t」	「」                        	<i class='mss mss-Search-3'></i>₋
-    'A-W'	= 'till_prev_char'  	# 🔍₋₁ Find 'till previous char           	「⇧ t」	「」                         	<i class='fa fa-search'></i>₋
-    'S'  	= 'rsearch'         	# 🔍𝖗 for previous regex pattern          	「⇧ /」	「split_selection」
-    's'  	= 'search'          	# 🔎𝖗 for          regex pattern          	「⇧  /」	「select_regex」
-    '.'  	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    '/'  	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「search」
-    '>'  	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	   「⇧ n」	「indent」   !!! blocked by .Repeat
-    '?'  	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「rsearch」   !!! remove after .Repeat
-    # 'N'	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	  「⇧ n」	「search_prev」
-    # 'n'	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「search_next」
-    '8'  	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	   「⇧ 8」	「<8>」   !!! blocked by ∀*
-    # '*'	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	  「⇧ 8」	「search_selection」
+    'w'  	= 'find_next_char'    	# 🔎   Find       next     char           	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'W'  	= 'find_prev_char'    	# 🔍   Find       previous char           	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    'A-w'	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char           	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
+    'A-W'	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char           	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
+    'S'  	= 'rsearch'           	# 🔍𝖗 for previous regex pattern          	「⇧ /」   	「split_selection」
+    's'  	= 'search'            	# 🔎𝖗 for          regex pattern          	「⇧  /」  	「select_regex」
+    '.'  	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match     	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
+    '/'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「search」
+    '>'  	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match     	   「⇧ n」	「indent」   !!! blocked by .Repeat
+    '?'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「rsearch」   !!! remove after .Repeat
+    # 'N'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match     	  「⇧ n」 	「search_prev」
+    # 'n'	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「search_next」
+    '8'  	= 'search_selection'  	# 𝖗🢔▋ Use selection as the search pattern	   「⇧ 8」	「<8>」   !!! blocked by ∀*
+    # '*'	= 'search_selection'  	# 𝖗🢔▋ Use selection as the search pattern	  「⇧ 8」 	「search_selection」
+    '*'  	= ['select_mode'      	#
+      ,  	'move_prev_word_start'	#
+      ,  	'move_next_word_end'  	#
+      ,  	'search_selection'    	#
+      ,  	'extend_search_next'  	#
+      ,  	'exit_select_mode'    	#
+      ]  	                      	# = find_under_expand
 
 
   #Ⓝ Select ——————————————————————————————————————————————————————————————————————
