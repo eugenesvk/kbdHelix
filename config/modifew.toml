@@ -8,7 +8,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
   # 'middle-click-paste'    	= true       	#「true     	」 Middle click paste support.
   'scroll-lines'            	= 2          	#「3        	」 Number of lines to scroll per scroll wheel step.
   'shell'                   	= ['nu','-c']	#「'sh','-c'	」 Shell to use when running external commands.
-  # 'line-number'           	= 'absolute' 	#「absolute 	」 Line number display (absolute, relative)
+  'line-number'             	= 'relative' 	#「absolute 	」 Line number display (absolute¦relative(=absⓘ))
   #Completion               	             	#          	#
   # 'auto-completion'       	= true       	#「true     	」 Auto pop up of auto-completion
   # 'completion-trigger-len'	= 2          	#「2        	」 min-length of word under cursor to trigger autocompletion
@@ -179,14 +179,14 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'g'    	 #ⓖ☰⮊ Goto mode           	  Ⓝ 「  g」	「」
     # 'n'    	 #☰🧩  Match mode          	Ⓝ 「  m」  	「」 ☰<i class='fa fa-puzzle-piece'></i>
     # 'C-w'  	#☰🗔  Window mode          	  Ⓝ 「 ⎈w」	「」
-    # 'space'	#☰␣  Space mode           	  Ⓝ 「  ␣」	「」
+    # 'space'	#☰␠  Space mode           	  Ⓝ 「  ␠」	「」
     # '['    	#☰⧛ Unimpaired            	  Ⓝ 「  ]」	「」
     # ']'    	#☰⧚                       	  Ⓝ 「  [」	「」
     # '`'    	#☰𝔸𝕒 Case conversion      	  Ⓝ 「  」 	「switch_to_lowercase」
 
   #Ⓝ         	Compat with non-modal editors        	 
-  'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「␣  f」	「jump_backward」
-  'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「␣⇧ f」	「」
+  'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
+  'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
   'C-s'      	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」	「save_selection」
   # 'C-S-s'  	= 'Save As'                          	# ???                      	「⇧⎈s」 	「」
   'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」 	「」
@@ -196,9 +196,9 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   #Ⓝ   	Copy                                	 
   'c'  	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」 	「change_selection」
-  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「␣,⇧y」	「toggle_comments」
-  'C'  	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「⇧␣,y」	「copy_selection_on_next_line」
-  'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「␣ y」 	「change_selection_noyank」
+  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
+  'C'  	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「⇧␠,y」	「copy_selection_on_next_line」
+  'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」 	「change_selection_noyank」
 
   #Ⓝ Shell 	                 	 
     # '|'  	= 'shell_pipe'   	# |   Pipe each selection through shell command, replacing with output	「⇧ \」	「shell_pipe」
@@ -243,24 +243,24 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     #Ⓝ       	word
     'd'      	= 'move_prev_word_start'       	# 🢔ω  Move this word start                           	「  b」	「delete_selection」
     'f'      	= 'move_next_word_end'         	# ω🢖  Move this word end                             	「  e」	「find_next_char」
-    'A-d'    	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␣)           	「ⓘ⎇b」	「delete_selection_noyank」
-    'A-f'    	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␣)           	「  w」	「」
+    'A-d'    	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␠)           	「ⓘ⎇b」	「delete_selection_noyank」
+    'A-f'    	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␠)           	「  w」	「」
     'D'      	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                           	「⇧ b」	「」
     'F'      	= 'move_next_long_word_end'    	# W🢖  Move this WORD end                             	「⇧ e」	「find_prev_char」
-    # 'f'    	= 'move_next_word_start'       	# ω⤞ Move next word start (this end + ␣)             	「  w」	「find_next_char」
+    # 'f'    	= 'move_next_word_start'       	# ω⤞ Move next word start (this end + ␠)             	「  w」	「find_next_char」
     'A-D'    	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                           	「⇧ b」	「」
-    'A-F'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)             	「⇧ w」	「find_prev_char」
+    'A-F'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␠)             	「⇧ w」	「find_prev_char」
     'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev WORD end                             	「⇧ b」	「half_page_down」
              	   'extend_prev_word_start',   	#                                                    	 
              	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing                 	 
-    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)             	「⇧ w」	「page_down」
-    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next WORD end   (this end + ␣)             	「⇧ w」	「page_down」
+    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␠)             	「⇧ w」	「page_down」
+    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next WORD end   (this end + ␠)             	「⇧ w」	「page_down」
     #        	   'extend_next_long_word_end']	#                                                    	 
     # 'G'    	= 'goto_line'                  	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧ g」   	「goto_line」
     'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                           	   「⇧ b」	「」
-    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)             	「⇧ w」   	「」
-    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␣)           	「ⓘ⎇◀」   	「」
-    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␣)           	「ⓘ⎇▶」   	「」
+    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␠)             	「⇧ w」   	「」
+    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␠)           	「ⓘ⎇◀」   	「」
+    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␠)           	「ⓘ⎇▶」   	「」
 
     #Ⓝ      	Line
     # ':'   	= 'command_mode'   	# Ⓒ Enter command mode         	「⇧ ;」 	「command_mode」
@@ -333,24 +333,29 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
+    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「flip_selections」
+    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
     'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「split_selection_on_newline」
     'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                                   	「 ⎇s」	「」
 
-    "'"    	= 'collapse_selection'        	# 🢖🢔 Collapse selection onto a single cursor            	「  ;」 	「」
-    "A-'"  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「 ⎇;」 	「」
-    'A-a'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	⇧[ ⎇;」	「」
-    'A-A'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	⇧[ ⎇;」	「」
-    'A-l'  	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (← with many columns)	「⇧ 9」 	「」
-    'A-;'  	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
-    #'A-m' 	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (↓ with many lines)  	「⇧ 0」 	「」
-    #'A-,' 	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
-    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary selection                       	「 ⎇,」 	「earlier」
-    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary selection (keep only)          	「  ,」 	「」
-    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove selection (!!!missing)                 	「⇧ ⎇,」	「earlier」
-    'K'    	= 'keep_selections'           	# ᵏ𝖗 selections not matching the regex (keep)           	「⇧ k」 	「keep_selections」
-    'L'    	= 'remove_selections'         	# ᵡ𝖗 selections     matching the regex                  	「⇧⎇k」 	「」
-    # 'A-:'	= 'ensure_selections_forward' 	# ???                                                   	「⇧⎇;」 	「」
+    "'"   	= 'collapse_selection'        	# 🢖🢔 Collapse selection onto a single cursor            	「  ;」 	「」
+    "A-'" 	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「 ⎇;」 	「」
+    'A-a' 	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	⇧[ ⎇;」	「」
+    'A-A' 	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	⇧[ ⎇;」	「」
+    'A-p' 	= 'ensure_selections_forward' 	# ↠ Flip selection forward: cursor after anchor         	「⇧⎇;」 	「」
+    #'A-:'	= 'ensure_selections_forward' 	# ↠ Flip selection forward: cursor after anchor         	「⇧⎇;」 	「」
+    #'A-l'	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (← with many columns)	「⇧ 9」 	「」
+    #'A-;'	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
+    'A-m' 	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (↓ with many lines)  	「⇧ 0」 	「」
+    'A-,' 	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
+    'A-u' 	= 'remove_primary_selection'  	# ᵡ         the primary selection                       	「 ⎇,」 	「earlier」
+    'A-i' 	= 'keep_primary_selection'    	# ᵡ∀ all but the primary selection (keep only)          	「  ,」 	「」
+    'A-U' 	= 'no_op'                     	# ᵡᵡ undo remove selection (!!!missing)                 	「⇧ ⎇,」	「earlier」
+    'K'   	= 'keep_selections'           	# ᵏ𝖗 selections not matching the regex (keep)           	「⇧ k」 	「keep_selections」
+    'L'   	= 'remove_selections'         	# ᵡ𝖗 selections     matching the regex                  	「⇧⎇k」 	「」
 
     'minus'	= 'trim_selections'             	# ✁Trim whitespace from the selection                    	「⇧ -」 	「」
     '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive selections ⨝                       	「⇧⎇ -」	「trim_selections」
@@ -399,7 +404,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
     't'  	= 'replace'                          	# 🗘c  Replace with a character               	   「  r」	「find_till_char」
     'T'  	= 'replace_with_yanked'              	# 🗘📋 Replace with copied text                	「⇧ r」   	「till_prev_char」  <i class='fa fa-copy'></i>
-    'A-t'	= 'replace_selections_with_clipboard'	# 🗘📋 Replace selections by clipboard contents	「␣ ⇧r」  	「」 <i class='fa fa-clipboard'></i>
+    'A-t'	= 'replace_selections_with_clipboard'	# 🗘📋 Replace selections by clipboard contents	「☰␠ ⇧r」  	「」 <i class='fa fa-clipboard'></i>
 
     #'`' 	= ''                   	# ☰𝔸𝕒 Case conversion mode	「  」  	「switch_to_lowercase」 !!!missing aliases
     '⎈'  	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「 ⎇`」 	「」
@@ -424,7 +429,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'Y'  	= 'later'                	# 🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i> 	「⇧⎇u」 	「」
     'C-y'	= 'redo'                 	# ↷ Redo change                                             	「⇧ u」 	「」
     'v'  	= 'paste_after'          	# 📋⤹ Paste after selection ⤹<i class='fa fa-copy'></i>      	「  p」 	「select_mode」
-    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after selection  <i class='fa fa-copy'></i>⤹     	「␣ p」 	「」
+    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after selection  <i class='fa fa-copy'></i>⤹     	「☰␠ p」 	「」
     'V'  	= 'paste_before'         	# ⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹	「⇧ p」 	「」
     'C-z'	= 'undo'                 	# ⎌ Undo change                                             	「  u」 	「」
     'C-Z'	= 'redo'                 	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
@@ -629,7 +634,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
 
-  [          	keys.normal.'space']                	#Ⓝ ☰␣  Space mode                                 	「Ⓝ ␣」 	「」
+  [          	keys.normal.'space']                	#Ⓝ ☰␠  Space mode                                 	「Ⓝ ␠」 	「」
     # 'space'	= 'insert_mode'                     	# ⁁⤸ Insert before selection                      	「  i」 	「」 !!!panick! !!!missing
     'ret'    	= 'command_mode'                    	# Ⓒ Enter command mode                            	「  ⎋」 	「」
     'P'      	= 'no_op'                           	#                                                 	「⇧   」	「paste_clipboard_before」
@@ -641,7 +646,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'k'      	= 'keep_selections'                 	# ᵏ𝖗 selections not matching the regex (keep)     	   「⇧ k」	「」
     'l'      	= 'remove_selections'               	# ᵡ𝖗 selections     matching the regex            	   「⇧⎇k」	「」
     ';'      	= 'command_mode'                    	# Ⓒ Enter command mode                            	「⇧ ;」   	「」
-    'F'      	= 'file_picker_in_current_directory'	# 🗁 Open file   picker@curdir                     	「␣⇧ f」  	「file_picker_in_current_directory」
+    'F'      	= 'file_picker_in_current_directory'	# 🗁 Open file   picker@curdir                     	「☰␠⇧ f」 	「file_picker_in_current_directory」
     # 'f'    	= 'mode_file'                       	# ☰␜ File mode                                    	「   」   	「file_picker」 !!!missing_aliases
     # 'd'    	= 'mode_bracket'                    	# ☰⟪ Insert various brackets                      	「   」   	「」 !!!missing_aliases
     's'      	= 'select_regex'                    	# 𝖗▋ Select all regex matches inside selections   	   「  s」	「symbol_picker」
@@ -657,90 +662,95 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'p'    	= 'mode_P'                          	# ☰p TBD                                          	「」「paste_clipboard_after」 !!!missing_aliases
     'r'      	= 'rename_symbol'                   	# ✎ Rename symbol (LSP)                           	≝「   」	「rename_symbol]
     'e'      	= 'extend_to_line_bounds'           	# ⎯ Extend selection to line bounds               	「  x」 	「」
-    #'w'     	= 'mode_window'                     	# ☰🗔 Window mode                                  	「␣ w」 	「mode_window」 !!!missing_aliases
+    #'w'     	= 'mode_window'                     	# ☰🗔 Window mode                                  	「☰␠ w」 	「mode_window」 !!!missing_aliases
     # 'q'    	= '???'                             	#                                                 	「  q」 	「」
-    'y'      	= 'code_action'                     	# Ⓐ Apply code action (LSP)                       	「␣ a」 	「yank_joined_to_clipboard」
+    'y'      	= 'code_action'                     	# Ⓐ Apply code action (LSP)                       	「☰␠ a」 	「yank_joined_to_clipboard」
     't'      	= 'replace_with_yanked'             	# 🗘📋 Replace with copied text                     	「⇧ r」 	「」  <i class='fa fa-copy'></i>
     # Lower  	row                                 	                                                  	 
-    'm'      	= 'symbol_picker'                   	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ        	「␣ s」	「」
-    ','      	= 'workspace_symbol_picker'         	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ        	「␣⇧s」	「」
+    'm'      	= 'symbol_picker'                   	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ        	「☰␠ s」	「」
+    ','      	= 'workspace_symbol_picker'         	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ        	「☰␠⇧s」	「」
 
-    '/'      	= 'global_search'                     	# 🔎🗁 Global search in workspace folder           	≝「␣ /」	「global_search」
-    'v'      	= 'paste_clipboard_after'             	# 📋⤹ Paste after selections                      	「␣ p」 	「」
-    'c'      	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main selection into system clipboard   	「␣ ⇧y」	「」 <i class='fa fa-clipboard'></i>▋
-    'x'      	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                                           	「   」 	「」 <i class='fa fa-clipboard'></i>
-             	   'delete_selection']                	# cut to clipboard                               	「   」 	「」  create a new buffer and paste a buffer there !!! not available yet
-    # 'z'    	= 'list_kills'                        	# 🕱☰ new buffer with clipboard content           	「   」 	「」	 !!!missing
-    'n'      	= 'split_selection'                   	# ䷖𝖗 on regex matches                            	「⇧ s」 	「」
-    'b'      	= 'switch_to_lowercase'               	# 𝔸𝕒  (selection)                                	「  `」 	「buffer_picker」
-    "'"      	= 'flip_selections'                   	# ⮀ Flip selection cursor and anchor             	「 ⎇;」 	「」
-    '\'      	= 'shell_pipe'                        	# Pipe selections thru shell, replace with output	「⇧ \」 	「」
+    '/'      	= 'global_search'                     	# 🔎🗁 Global search in workspace folder           	≝「☰␠ /」	「global_search」
+    'v'      	= 'paste_clipboard_after'             	# 📋⤹ Paste after selections                      	「☰␠ p」 	「」
+    'c'      	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main selection into system clipboard   	「☰␠ ⇧y」 	「」 <i class='fa fa-clipboard'></i>▋
+    'x'      	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                                           	「   」  	「」 <i class='fa fa-clipboard'></i>
+             	   'delete_selection']                	# cut to clipboard                               	「   」  	「」  create a new buffer and paste a buffer there !!! not available yet
+    # 'z'    	= 'list_kills'                        	# 🕱☰ new buffer with clipboard content           	「   」  	「」	 !!!missing
+    'n'      	= 'split_selection'                   	# ䷖𝖗 on regex matches                            	「⇧ s」  	「」
+    'b'      	= 'switch_to_lowercase'               	# 𝔸𝕒  (selection)                                	「  `」  	「buffer_picker」
+    "'"      	= 'flip_selections'                   	# ⮀ Flip selection cursor and anchor             	「 ⎇;」  	「」
+    '\'      	= 'shell_pipe'                        	# Pipe selections thru shell, replace with output	「⇧ \」  	「」
     # Numbers	row                                   	                                                 	 
     # "'"    	= 'last_picker'                       	# ☰☾ ∞Open last fuzzy picker                     	「  」 	「」
     '6'      	= 'switch_to_uppercase'               	# 𝕒𝔸 (selection)                                 	「⇧⎇`」	「」 !!! change to Sentence Case
     # '7'    	= 'toggle_spellcheck'                 	# ⇝ spell check                                  	「   」	「」  !!!missing
 
-  [      	keys.normal.'space'.'f']                   	#Ⓝ ☰␜ File mode in Space mode                       	「␣ f」		「」
-    'j'  	= ['commit_undo_checkpoint',':write']      	# 💾 save file                                       	「  」 	「  」
-    'k'  	= 'file_picker'                            	# 🗁 Open file   picker                              	「␣ f」	「  」
-    ','  	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir                     	「   」	「」
-    # 'l'	= 'open file at cursor'                    	# ❚␜ open file at cursor                            	「  」 	「  」
-    'f'  	= 'buffer_picker'                          	# ☰b Open buffer picker                             	「  b」	「file_picker」
-    # 'd'	= 'show in desktop'                        	# show in desktop                                   	「  」 	「  」
-    's'  	= ['commit_undo_checkpoint',':write']      	# 💾 save file                                       	「  」 	「  」
-    'S'  	= ['commit_undo_checkpoint',':write-all']  	# 💾∀v all views                                     	「  」 	「  」
-    'A-s'	= ':update'                                	# 💾Δ save file if modified                          	「  」 	「  」
-    'a'  	= 'goto_last_accessed_file'                	# 🕮 file last accessed/alternate                    	「ⓖ a」	「  」
-    # 'g'	= 'bookmark bmenu list'                    	# ☰🖈bookmark bmenu list                             	「  」 	「  」
-    # 'h'	= 'bookmark set'                           	# 🖈 bookmark set                                    	「  」 	「  」
-    # 'u'	= 'open last closed'                       	# open last closed                                  	「  」 	「  」
-    # 'o'	= 'open file fast'                         	# prompt toopen a file from bookmark                	「  」 	「  」
-    # 'r'	= 'rename_file'                            	# ✎ rename current file                             	「  」 	「  」
-    # 'e'	= 'open in external app'                   	# open in external app                              	「  」 	「  」
-    # 'w'	= 'find_file'                              	# 🔎 Find file  <i class='mss mss-Search-3'></i>     	「  」 	「  」
-    # 'q'	= 'mode_fs_close'                          	# ☰× Close buffers/files saved/unsaved              	「  」 	「  」
-    'v'  	= 'goto_last_modified_file'                	# ✎ file last modified/alternate                    	「ⓖ m」	「  」
-    # 'c'	= 'copy file path'                         	# 📋C:\ copy file path <i class='fa fa-clipboard'>C:\	「  」 	「  」
-    # 't'	= 'list recently closed'                   	# list recently closed                              	「  」 	「  」
-    # 'y'	= 'open recently closed'                   	# open recently closed                              	「  」 	「  」
-    'o'  	= 'file_picker'                            	# 🗁 Open file   picker                              	「␣ f」	「  」
-    'O'  	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir                     	「   」	「」
-    'n'  	= ':new'                                   	# 🗋 new empty buffer                                	「Ⓝ⎈n」	「  」
-    # 'b'	= 'recentf open files'                     	# recentf open files                                	「  」 	「  」
-    # '\'	= 'open in terminal'                       	# open in terminal                                  	「  」 	「  」
-    '`'  	= ':reload'                                	# 🗘 Discard, Reload from source                     	「  」 	「  」
-    '~'  	= ':reload-all'                            	# 🗘∀ Discard, Reload all from source                	「  」 	「  」
-    'p'  	= ':config-open-workspace'                 	# 🛠🗋 Open workspace config file                     	「  」 	「  」
-  [      	keys.normal.'space'.'f'.'q']               	#Ⓝ ☰␜☰× Close mode in File mode in Space mode
-    'x'  	= ':buffer-close'                          	# ×b buffer current
-    'f'  	= ':buffer-close'                          	# ×b buffer current
-    'r'  	= ':buffer-close!'                         	# 🕱b buffer current (kill unsaved)
-    'd'  	= ':quit'                                  	# ×v view   current
-    'e'  	= ':quit!'                                 	# 🕱v view   current
-    'a'  	= ':quit-all'                              	# ×∀v view  all
-    'q'  	= ':quit-all!'                             	# 🕱∀v view  all
-    's'  	= ':write-quit'                            	# 💾×v view current
-    'w'  	= ':write-quit!'                           	# 💾🕱v view current
-    'j'  	= ':write-quit'                            	# 💾×v view current
-    'u'  	= ':write-quit!'                           	# 💾🕱v view current
-    'k'  	= ':write-quit-all'                        	# 💾∀v view all, ×∀v view all
-    'i'  	= ':write-quit-all!'                       	# 💾∀v view all, 🕱∀v view all
-    ';'  	= ':cquit'                                 	# Quit with exit code (default 1)
-  [      	keys.normal.'space'.'f'.'x']               	#Ⓝ ☰␜☰× Close mode in File mode in Space mode !!!missing alias
-    'x'  	= ':buffer-close'                          	# ×b buffer current
-    'f'  	= ':buffer-close'                          	# ×b buffer current
-    'r'  	= ':buffer-close!'                         	# 🕱b buffer current (kill unsaved)
-    'd'  	= ':quit'                                  	# ×v view   current
-    'e'  	= ':quit!'                                 	# 🕱v view   current
-    'a'  	= ':quit-all'                              	# ×∀v view  all
-    'q'  	= ':quit-all!'                             	# 🕱∀v view  all
-    's'  	= ':write-quit'                            	# 💾×v view current
-    'w'  	= ':write-quit!'                           	# 💾🕱v view current
-    'j'  	= ':write-quit'                            	# 💾×v view current
-    'u'  	= ':write-quit!'                           	# 💾🕱v view current
-    'k'  	= ':write-quit-all'                        	# 💾∀v view all, ×∀v view all
-    'i'  	= ':write-quit-all!'                       	# 💾∀v view all, 🕱∀v view all
-    ';'  	= ':cquit'                                 	# Quit with exit code (default 1)
+  [      	keys.normal.'space'.'f']   	#Ⓝ ☰␜ File mode in Space mode                       	「☰␠ f」		「」
+    'j'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'k'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    # 'l'	= 'open file at cursor'    	# ❚␜ open file at cursor                            	「  」  	「  」
+    'f'  	= 'buffer_picker'          	# ☰b Open buffer picker                             	「  b」 	「file_picker」
+    # 'd'	= 'show in desktop'        	# show in desktop                                   	「  」  	「  」
+    's'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'S'  	= ['commit_undo_checkpoint'	# 💾∀v all views                                     	「  」  	「  」
+      ,  	  ':write-all']            	                                                    	      	#
+    'A-s'	= ':update'                	# 💾Δ save file if modified                          	「  」  	「  」
+    'a'  	= 'goto_last_accessed_file'	# 🕮 file last accessed/alternate                    	「ⓖ a」 	「  」
+    # 'g'	= 'bookmark bmenu list'    	# ☰🖈bookmark bmenu list                             	「  」  	「  」
+    # 'h'	= 'bookmark set'           	# 🖈 bookmark set                                    	「  」  	「  」
+    # 'u'	= 'open last closed'       	# open last closed                                  	「  」  	「  」
+    # 'o'	= 'open file fast'         	# prompt toopen a file from bookmark                	「  」  	「  」
+    # 'r'	= 'rename_file'            	# ✎ rename current file                             	「  」  	「  」
+    # 'e'	= 'open in external app'   	# open in external app                              	「  」  	「  」
+    # 'w'	= 'find_file'              	# 🔎 Find file  <i class='mss mss-Search-3'></i>     	「  」  	「  」
+    # 'q'	= 'mode_fs_close'          	# ☰× Close buffers/files saved/unsaved              	「  」  	「  」
+    'v'  	= 'goto_last_modified_file'	# ✎ file last modified/alternate                    	「ⓖ m」 	「  」
+    # 'c'	= 'copy file path'         	# 📋C:\ copy file path <i class='fa fa-clipboard'>C:\	「  」  	「  」
+    # 't'	= 'list recently closed'   	# list recently closed                              	「  」  	「  」
+    # 'y'	= 'open recently closed'   	# open recently closed                              	「  」  	「  」
+    'o'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    'n'  	= ':new'                   	# 🗋 new empty buffer                                	「Ⓝ⎈n」 	「  」
+    # 'b'	= 'recentf open files'     	# recentf open files                                	「  」  	「  」
+    # '\'	= 'open in terminal'       	# open in terminal                                  	「  」  	「  」
+    '`'  	= ':reload'                	# 🗘 Discard, Reload from source                     	「  」  	「  」
+    '~'  	= ':reload-all'            	# 🗘∀ Discard, Reload all from source                	「  」  	「  」
+    'p'  	= ':config-open-workspace' 	# 🛠🗋 Open workspace config file                     	「  」  	「  」
+
+    ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+    'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+
+  [    	keys.normal.'space'.'f'.'q']	#Ⓝ ☰␜☰× Close mode in File mode in Space mode
+    'x'	= ':buffer-close'           	# ×b buffer current
+    'f'	= ':buffer-close'           	# ×b buffer current
+    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
+    'd'	= ':quit'                   	# ×v view   current
+    'e'	= ':quit!'                  	# 🕱v view   current
+    'a'	= ':quit-all'               	# ×∀v view  all
+    'q'	= ':quit-all!'              	# 🕱∀v view  all
+    's'	= ':write-quit'             	# 💾×v view current
+    'w'	= ':write-quit!'            	# 💾🕱v view current
+    'j'	= ':write-quit'             	# 💾×v view current
+    'u'	= ':write-quit!'            	# 💾🕱v view current
+    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
+    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
+    ';'	= ':cquit'                  	# Quit with exit code (default 1)
+  [    	keys.normal.'space'.'f'.'x']	#Ⓝ ☰␜☰× Close mode in File mode in Space mode !!!missing alias
+    'x'	= ':buffer-close'           	# ×b buffer current
+    'f'	= ':buffer-close'           	# ×b buffer current
+    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
+    'd'	= ':quit'                   	# ×v view   current
+    'e'	= ':quit!'                  	# 🕱v view   current
+    'a'	= ':quit-all'               	# ×∀v view  all
+    'q'	= ':quit-all!'              	# 🕱∀v view  all
+    's'	= ':write-quit'             	# 💾×v view current
+    'w'	= ':write-quit!'            	# 💾🕱v view current
+    'j'	= ':write-quit'             	# 💾×v view current
+    'u'	= ':write-quit!'            	# 💾🕱v view current
+    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
+    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
+    ';'	= ':cquit'                  	# Quit with exit code (default 1)
 
   [keys.normal.'space'.'i'] #Ⓝ ☰®  Register/copy/paste etc.
     'i'  	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
@@ -752,10 +762,10 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '2'	= 'clear_register 2'                 	# ®2× x
     # '3'	= 'copy_to_register 2'               	# ®2🗐 x
     # '4'	= 'paste_from_register 2'            	# ®2📋 x
-    't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「␣⇧r」 <i class='fa fa-clipboard'></i>▋
+    't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「☰␠⇧r」 <i class='fa fa-clipboard'></i>▋
     'x'  	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection                	「Ⓝ⇧j」
-    'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「␣⇧p」 ⤸<i class='fa fa-clipboard'></i>
-    'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「␣ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
+    'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「☰␠⇧p」 ⤸<i class='fa fa-clipboard'></i>
+    'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「☰␠ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
     # 'a'	= ':clipboard-yank'                  	# Copy main   sel to system         clipboard
     # 'a'	= ':clipboard-yank-join'             	# Copy joined sel to system         clipboard with sep \n
     # 'a'	= ':primary-clipboard-yank'          	# Copy main   sel to system primary clipboard
@@ -1054,13 +1064,13 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
   #   'A-d'    	= 'move_prev_word_start'     	# 🢔ω Move   this word start                 	「⎇ d」 	「delete next word」
   #   'A-f'    	= 'move_next_word_end'       	# ω🢖 Move   this word end                   	≝「⎇ f」	「Forward a word」
   #   'A-D'    	= 'move_prev_long_word_start'	# 🢔W Move   this WORD start                 	「⇧ b」 	「」
-  #   'A-F'    	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␣)  	「⇧ w」 	「」
+  #   'A-F'    	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␠)  	「⇧ w」 	「」
   #   'C-left' 	= 'move_prev_long_word_start'	# 🢔W Move   this WORD start                 	「⇧ b」 	「」
-  #   'C-right'	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␣)  	「⇧ w」 	「」
+  #   'C-right'	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␠)  	「⇧ w」 	「」
   #   'Left'   	= "move_prev_char"           	# 🢔c Move   prev char                       	「  ◀」 	「」
   #   'Right'  	= "move_next_char"           	# c🢖 Move   next char                       	「  ▶」 	「」
-  #   'A-left' 	= 'move_prev_word_end'       	# ⤝ω Move   prev word end   (this start + ␣)	「⎇◀」  	「」
-  #   'A-right'	= 'move_next_word_start'     	# ω⤞ Move   next word start (this end   + ␣)	「⎇▶」  	「」
+  #   'A-left' 	= 'move_prev_word_end'       	# ⤝ω Move   prev word end   (this start + ␠)	「⎇◀」  	「」
+  #   'A-right'	= 'move_next_word_start'     	# ω⤞ Move   next word start (this end   + ␠)	「⎇▶」  	「」
   #   #        	Line                         	                                            	 
   #   'A-a'    	= 'move_to_prompt_start'     	# ⭰▋ Move   line start                      	「⭰」 	「Move prompt start」
   #   'A-A'    	= 'move_to_prompt_end'       	# ⭲▋ Move   line end                        	「⭲」 	「Move prompt end」
@@ -1113,7 +1123,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
   #   'A-f'	= 'vsplit'	#  🗗→ Open right  (Vertical) 	「⎈ v」	「」
   #   'A-m'	= 'hsplit'	# 🗗↓ Open bottom (Horizontal)	「⎈ s」	「」
 
-  #   'C-space'	= "N/A"	# Filter options	≝「⎈ ␣」	「Filter options」
+  #   'C-space'	= "N/A"	# Filter options	≝「⎈ ␠」	「Filter options」
   #   'Enter'  	= "N/A"	# Open selected 	≝「  ⏎」	「Open selected」
 
 
@@ -1131,8 +1141,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
 
   #Ⓢ           	Compat with non-modal editors        	 
-    'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「␣  f」	「jump_backward」
-    'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「␣⇧ f」	「」
+    'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
+    'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
     'C-s'      	= ['commit_undo_checkpoint',':write']	# save file                	「  ⎈s」	「save_selection」 <i class='fa fa-save'></i>
     # 'C-S-s'  	= 'Save As'                          	# ???                      	⇧[⇧⎈s」	「」
     'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」 	「」
@@ -1148,9 +1158,9 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   #Ⓢ   	Copy                                	 
   'c'  	= 'yank'                            	# 🗐 Copy selection <i class='fa fa-copy'></i>                                     	「  y」	「change_selection」
-  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	「␣⇧y」	「toggle_comments」
-  'C'  	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	「␣⇧y」	「copy_selection_on_next_line」
-  'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋📋 Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i>	「␣ y」	「」
+  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	「☰␠⇧y」	「toggle_comments」
+  'C'  	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	「☰␠⇧y」	「copy_selection_on_next_line」
+  'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋📋 Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i>	「☰␠ y」	「」
 
   #Ⓢ Shell 	                 	 
     # '|'  	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧ \」	「shell_pipe」
@@ -1171,20 +1181,20 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     #Ⓢ        	word
     'd'       	= 'extend_prev_word_start'     	# 🢔ω Extend   this word start                 	   「  b」	「」
     'f'       	= 'extend_next_word_end'       	# ω🢖 Extend   this word end                   	   「  e」	「extend_next_char」
-    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␣)	「   」   	「」
-    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␣)	「  w」   	「」
+    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␠)	「   」   	「」
+    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␠)	「  w」   	「」
     'D'       	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
     'F'       	= 'extend_next_long_word_end'  	# W🢖 Extend   this WORD end                   	  「⇧ e」 	「extend_prev_char」
     'A-D'     	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
-    'A-F'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␣)  	「⇧ w」   	「」
-    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␣)  	「⇧ w」   	「」
-    # 'R'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␣)  	「⇧ w」   	「」
-    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␣)  	「⇧ w」   	「」
-    # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␣)  	「⇧ w」   	「」
+    'A-F'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␠)  	「⇧ w」   	「」
+    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    # 'R'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
     'C-left'  	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	   「⇧ b」	「」
-    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␣)  	「⇧ w」   	「」
-    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␣)	「   」   	「」
-    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␣)	「  w」   	「」
+    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␠)  	「⇧ w」   	「」
+    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␠)	「   」   	「」
+    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␠)	「  w」   	「」
 
     #Ⓢ      	Line
     # 'home'	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「home」	「extend_to_line_start」
@@ -1251,7 +1261,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'G'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
 
     'J'  	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
-    'E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)        	「⇧ x」 	「move_next_long_word_end」
+    'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection) ⎯      	「⇧ x」 	「move_next_long_word_end」
     'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」 	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,  	 'move_prev_word_start'    	#
@@ -1265,22 +1275,29 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
-    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections	「  s」	「split_selection_on_newline」
-    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches	「⇧ s」	「search_prev」
-    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)	「 ⎇s」	「」
+    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「flip_selections」
+    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
+    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「split_selection_on_newline」
+    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧ s」	「search_prev」
+    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                                   	「 ⎇s」	「」
 
-    "'"    	= 'collapse_selection'        	# 🢖🢔 Collapse selection onto a single cursor  	「  ;」 	「」
-    "A-'"  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor          	「 ⎇;」 	「」
-    'A-a'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor          	「⇧ ⎇;」	「」
-    'A-A'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor          	「⇧ ⎇;」	「」
-    'A-l'  	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward            	「⇧ 9」 	「」
-    'A-;'  	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward             	「⇧ 0」 	「flip_selections」
-    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary selection             	「 ⎇,」 	「earlier」
-    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary selection (keep only)	「  ,」 	「」
-    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove selection                    	「⇧ ⎇,」	「earlier」 !!!missing
-    'K'    	= 'keep_selections'           	# ᵏ𝖗 selections not matching the regex (keep) 	「⇧ k」 	「keep_selections」
-    'L'    	= 'remove_selections'         	# ᵡ𝖗 selections     matching the regex        	「⇧⎇k」 	「」
-    # 'A-:'	= 'ensure_selections_forward' 	# ???                                         	「⇧⎇;」 	「」
+    "'"    	= 'collapse_selection'        	# 🢖🢔 Collapse selection onto a single cursor            	「  ;」 	「」
+    "A-'"  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「 ⎇;」 	「」
+    'A-a'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「⇧ ⎇;」	「」
+    'A-A'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「⇧ ⎇;」	「」
+    'A-p'  	= 'ensure_selections_forward' 	# ↠ Flip selection forward: cursor after anchor         	「⇧⎇;」 	「」
+    # 'A-:'	= 'ensure_selections_forward' 	# ↠ Flip selection forward: cursor after anchor         	「⇧⎇;」 	「」
+    #'A-l' 	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (← with many columns)	「⇧ 9」 	「」
+    #'A-;' 	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
+    'A-m'  	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (↓ with many lines)  	「⇧ 0」 	「」
+    'A-,'  	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
+    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary selection                       	「 ⎇,」 	「earlier」
+    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary selection (keep only)          	「  ,」 	「」
+    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove selection                              	「⇧ ⎇,」	「earlier」 !!!missing
+    'K'    	= 'keep_selections'           	# ᵏ𝖗 selections not matching the regex (keep)           	「⇧ k」 	「keep_selections」
+    'L'    	= 'remove_selections'         	# ᵡ𝖗 selections     matching the regex                  	「⇧⎇k」 	「」
 
     'minus'	= 'trim_selections'             	# ✁Trim whitespace from the selection                    	「⇧ -」 	「」
     '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive selections ⨝                       	「⇧⎇ -」	「trim_selections」
@@ -1356,11 +1373,11 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'Y'  	= 'later'                 	# 🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i> 	「⇧⎇u」 	「」
     'C-y'	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「」
     'v'  	= 'paste_after'           	# 📋⤹ Paste after selection                                  	「  p」 	「select_mode」
-    'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection                                  	「␣ p」 	「」
+    'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection                                  	「☰␠ p」	「」
     'V'  	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」 	「」
     'C-z'	= 'suspend'               	# ⎌ Undo change                                             	「  u」 	「」
     'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
-    # 'I'	= 'insert_at_line_start'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
+    # 'I'	= 'insert_at_line_start'  	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
     # 'A'	= 'insert_at_line_end'    	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
 
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
@@ -1542,7 +1559,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
 
-  [          	keys.select.'space']       	#Ⓢ ☰␣  Space mode                                 	「Ⓝ ␣」 	「」
+  [          	keys.select.'space']       	#Ⓢ ☰␠  Space mode                                 	「Ⓝ ␠」 	「」
     # 'space'	= 'insert_mode'            	# ⁁⤸ Insert before selection                      	「  i」 	「」 !!!panick! !!!missing
     'ret'    	= 'command_mode'           	# Ⓒ Enter command mode                            	「  ⎋」 	「」
     'P'      	= 'no_op'                  	#                                                 	「⇧   」	「paste_clipboard_before」
@@ -1569,17 +1586,17 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'p'    	= 'mode_P'                 	# ☰p TBD                                          	「」「paste_clipboard_after」 !!!missing_aliases
     'r'      	= 'rename_symbol'          	# ✎ Rename symbol (LSP)                           	≝「   」	「rename_symbol」
     'e'      	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds               	「  x」 	「」
-    #'w'     	= 'mode_window'            	# ☰🗔 Window mode                                  	「␣ w」 	「mode_window」 !!!missing_aliases
+    #'w'     	= 'mode_window'            	# ☰🗔 Window mode                                  	「☰␠ w」	「mode_window」 !!!missing_aliases
     # 'q'    	= '???'                    	#                                                 	「  q」 	「」
-    'y'      	= 'code_action'            	# Ⓐ Apply code action (LSP)                       	「␣ a」 	「yank_joined_to_clipboard」
+    'y'      	= 'code_action'            	# Ⓐ Apply code action (LSP)                       	「☰␠ a」	「yank_joined_to_clipboard」
     't'      	= 'replace_with_yanked'    	# 🗘📋 Replace with copied text                     	「⇧ r」 	「」  <i class='fa fa-copy'></i>
     # Lower  	row                        	                                                  	 
-    'm'      	= 'symbol_picker'          	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ        	「␣ s」	「」
-    ','      	= 'workspace_symbol_picker'	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ        	「␣⇧s」	「」
+    'm'      	= 'symbol_picker'          	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ        	「☰␠ s」	「」
+    ','      	= 'workspace_symbol_picker'	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ        	「☰␠⇧s」 	「」
 
-    '/'      	= 'global_search'                     	# 🔎🗁 Global search in workspace folder           	≝「␣ /」	「global_search」
-    'v'      	= 'paste_clipboard_after'             	# 📋⤹ Paste after selections                      	「␣ p」 	「」
-    'c'      	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main selection into system clipboard   	「␣ ⇧y」  <i class='fa fa-clipboard'></i>▋
+    '/'      	= 'global_search'                     	# 🔎🗁 Global search in workspace folder           	≝「☰␠ /」	「global_search」
+    'v'      	= 'paste_clipboard_after'             	# 📋⤹ Paste after selections                      	「☰␠ p」 	「」
+    'c'      	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main selection into system clipboard   	「☰␠ ⇧y」  <i class='fa fa-clipboard'></i>▋
     'x'      	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                                           	「   」	「」 <i class='fa fa-clipboard'></i>
              	   'delete_selection']                	# cut to clipboard                               	「   」	「」  create a new buffer and paste a buffer there !!! not available yet
     # 'z'    	= 'list_kills'                        	# 🕱☰ new buffer with clipboard content           	「   」	「」	 !!!missing
@@ -1592,67 +1609,72 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     '6'      	= 'switch_to_uppercase'               	# 𝕒𝔸 (selection)                                 	「⇧⎇`」	「」 !!! change to Sentence Case
     # '7'    	= 'toggle_spellcheck'                 	# ⇝ spell check                                  	「   」	「」  !!!missing
 
-  [      	keys.select.'space'.'f']                   	#Ⓢ ☰␜ File mode in Space mode                       	「␣ f」		「」
-    'j'  	= ['commit_undo_checkpoint',':write']      	# 💾 save file                                       	「  」 	「  」
-    'k'  	= 'file_picker'                            	# 🗁 Open file   picker                              	「␣ f」	「  」
-    ','  	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir                     	「   」	「」
-    # 'l'	= 'open file at cursor'                    	# ❚␜ open file at cursor                            	「  」 	「  」
-    'f'  	= 'buffer_picker'                          	# ☰b Open buffer picker                             	「  b」	「file_picker」
-    # 'd'	= 'show in desktop'                        	# show in desktop                                   	「  」 	「  」
-    's'  	= ['commit_undo_checkpoint',':write']      	# 💾 save file                                       	「  」 	「  」
-    'S'  	= ['commit_undo_checkpoint',':write-all']  	# 💾∀v all views                                     	「  」 	「  」
-    'A-s'	= ':update'                                	# 💾Δ save file if modified                          	「  」 	「  」
-    'a'  	= 'goto_last_accessed_file'                	# 🕮 file last accessed/alternate                    	「ⓖ a」	「  」
-    # 'g'	= 'bookmark bmenu list'                    	# ☰🖈bookmark bmenu list                             	「  」 	「  」
-    # 'h'	= 'bookmark set'                           	# 🖈 bookmark set                                    	「  」 	「  」
-    # 'u'	= 'open last closed'                       	# open last closed                                  	「  」 	「  」
-    # 'o'	= 'open file fast'                         	# prompt toopen a file from bookmark                	「  」 	「  」
-    # 'r'	= 'rename_file'                            	# ✎ rename current file                             	「  」 	「  」
-    # 'e'	= 'open in external app'                   	# open in external app                              	「  」 	「  」
-    # 'w'	= 'find_file'                              	# 🔎 Find file  <i class='mss mss-Search-3'></i>     	「  」 	「  」
-    # 'q'	= 'mode_fs_close'                          	# ☰× Close buffers/files saved/unsaved              	「  」 	「  」
-    'v'  	= 'goto_last_modified_file'                	# ✎ file last modified/alternate                    	「ⓖ m」	「  」
-    # 'c'	= 'copy file path'                         	# 📋C:\ copy file path <i class='fa fa-clipboard'>C:\	「  」 	「  」
-    # 't'	= 'list recently closed'                   	# list recently closed                              	「  」 	「  」
-    # 'y'	= 'open recently closed'                   	# open recently closed                              	「  」 	「  」
-    'o'  	= 'file_picker'                            	# 🗁 Open file   picker                              	「␣ f」	「  」
-    'O'  	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir                     	「   」	「」
-    'n'  	= ':new'                                   	# 🗋 new empty buffer                                	「Ⓝ⎈n」	「  」
-    # 'b'	= 'recentf open files'                     	# recentf open files                                	「  」 	「  」
-    # '\'	= 'open in terminal'                       	# open in terminal                                  	「  」 	「  」
-    '`'  	= ':reload'                                	# 🗘 Discard, Reload from source                     	「  」 	「  」
-    '~'  	= ':reload-all'                            	# 🗘∀ Discard, Reload all from source                	「  」 	「  」
-    'p'  	= ':config-open-workspace'                 	# 🛠🗋 Open workspace config file                     	「  」 	「  」
-  [      	keys.select.'space'.'f'.'q']               	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
-    'x'  	= ':buffer-close'                          	# ×b buffer current
-    'f'  	= ':buffer-close'                          	# ×b buffer current
-    'r'  	= ':buffer-close!'                         	# 🕱b buffer current (kill unsaved)
-    'd'  	= ':quit'                                  	# ×v view   current
-    'e'  	= ':quit!'                                 	# 🕱v view   current
-    'a'  	= ':quit-all'                              	# ×∀v view  all
-    'q'  	= ':quit-all!'                             	# 🕱∀v view  all
-    's'  	= ':write-quit'                            	# 💾×v view current
-    'w'  	= ':write-quit!'                           	# 💾🕱v view current
-    'j'  	= ':write-quit'                            	# 💾×v view current
-    'u'  	= ':write-quit!'                           	# 💾🕱v view current
-    'k'  	= ':write-quit-all'                        	# 💾∀v view all, ×∀v view all
-    'i'  	= ':write-quit-all!'                       	# 💾∀v view all, 🕱∀v view all
-    ';'  	= ':cquit'                                 	# Quit with exit code (default 1)
-  [      	keys.select.'space'.'f'.'x']               	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
-    'x'  	= ':buffer-close'                          	# ×b buffer current
-    'f'  	= ':buffer-close'                          	# ×b buffer current
-    'r'  	= ':buffer-close!'                         	# 🕱b buffer current (kill unsaved)
-    'd'  	= ':quit'                                  	# ×v view   current
-    'e'  	= ':quit!'                                 	# 🕱v view   current
-    'a'  	= ':quit-all'                              	# ×∀v view  all
-    'q'  	= ':quit-all!'                             	# 🕱∀v view  all
-    's'  	= ':write-quit'                            	# 💾×v view current
-    'w'  	= ':write-quit!'                           	# 💾🕱v view current
-    'j'  	= ':write-quit'                            	# 💾×v view current
-    'u'  	= ':write-quit!'                           	# 💾🕱v view current
-    'k'  	= ':write-quit-all'                        	# 💾∀v view all, ×∀v view all
-    'i'  	= ':write-quit-all!'                       	# 💾∀v view all, 🕱∀v view all
-    ';'  	= ':cquit'                                 	# Quit with exit code (default 1)
+  [      	keys.select.'space'.'f']   	#Ⓢ ☰␜ File mode in Space mode                       	「☰␠ f」		「」
+    'j'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'k'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    # 'l'	= 'open file at cursor'    	# ❚␜ open file at cursor                            	「  」  	「  」
+    'f'  	= 'buffer_picker'          	# ☰b Open buffer picker                             	「  b」 	「file_picker」
+    # 'd'	= 'show in desktop'        	# show in desktop                                   	「  」  	「  」
+    's'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'S'  	= ['commit_undo_checkpoint'	# 💾∀v all views                                     	「  」  	「  」
+      ,  	  ':write-all']            	                                                    	      	#
+    'A-s'	= ':update'                	# 💾Δ save file if modified                          	「  」  	「  」
+    'a'  	= 'goto_last_accessed_file'	# 🕮 file last accessed/alternate                    	「ⓖ a」 	「  」
+    # 'g'	= 'bookmark bmenu list'    	# ☰🖈bookmark bmenu list                             	「  」  	「  」
+    # 'h'	= 'bookmark set'           	# 🖈 bookmark set                                    	「  」  	「  」
+    # 'u'	= 'open last closed'       	# open last closed                                  	「  」  	「  」
+    # 'o'	= 'open file fast'         	# prompt toopen a file from bookmark                	「  」  	「  」
+    # 'r'	= 'rename_file'            	# ✎ rename current file                             	「  」  	「  」
+    # 'e'	= 'open in external app'   	# open in external app                              	「  」  	「  」
+    # 'w'	= 'find_file'              	# 🔎 Find file  <i class='mss mss-Search-3'></i>     	「  」  	「  」
+    # 'q'	= 'mode_fs_close'          	# ☰× Close buffers/files saved/unsaved              	「  」  	「  」
+    'v'  	= 'goto_last_modified_file'	# ✎ file last modified/alternate                    	「ⓖ m」 	「  」
+    # 'c'	= 'copy file path'         	# 📋C:\ copy file path <i class='fa fa-clipboard'>C:\	「  」  	「  」
+    # 't'	= 'list recently closed'   	# list recently closed                              	「  」  	「  」
+    # 'y'	= 'open recently closed'   	# open recently closed                              	「  」  	「  」
+    'o'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    'n'  	= ':new'                   	# 🗋 new empty buffer                                	「Ⓝ⎈n」 	「  」
+    # 'b'	= 'recentf open files'     	# recentf open files                                	「  」  	「  」
+    # '\'	= 'open in terminal'       	# open in terminal                                  	「  」  	「  」
+    '`'  	= ':reload'                	# 🗘 Discard, Reload from source                     	「  」  	「  」
+    '~'  	= ':reload-all'            	# 🗘∀ Discard, Reload all from source                	「  」  	「  」
+    'p'  	= ':config-open-workspace' 	# 🛠🗋 Open workspace config file                     	「  」  	「  」
+
+    ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+    'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+
+  [    	keys.select.'space'.'f'.'q']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'x'	= ':buffer-close'           	# ×b buffer current
+    'f'	= ':buffer-close'           	# ×b buffer current
+    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
+    'd'	= ':quit'                   	# ×v view   current
+    'e'	= ':quit!'                  	# 🕱v view   current
+    'a'	= ':quit-all'               	# ×∀v view  all
+    'q'	= ':quit-all!'              	# 🕱∀v view  all
+    's'	= ':write-quit'             	# 💾×v view current
+    'w'	= ':write-quit!'            	# 💾🕱v view current
+    'j'	= ':write-quit'             	# 💾×v view current
+    'u'	= ':write-quit!'            	# 💾🕱v view current
+    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
+    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
+    ';'	= ':cquit'                  	# Quit with exit code (default 1)
+  [    	keys.select.'space'.'f'.'x']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'x'	= ':buffer-close'           	# ×b buffer current
+    'f'	= ':buffer-close'           	# ×b buffer current
+    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
+    'd'	= ':quit'                   	# ×v view   current
+    'e'	= ':quit!'                  	# 🕱v view   current
+    'a'	= ':quit-all'               	# ×∀v view  all
+    'q'	= ':quit-all!'              	# 🕱∀v view  all
+    's'	= ':write-quit'             	# 💾×v view current
+    'w'	= ':write-quit!'            	# 💾🕱v view current
+    'j'	= ':write-quit'             	# 💾×v view current
+    'u'	= ':write-quit!'            	# 💾🕱v view current
+    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
+    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
+    ';'	= ':cquit'                  	# Quit with exit code (default 1)
 
   [keys.select.'space'.'i'] #Ⓢ ☰®  Register/copy/paste etc.
     'i'  	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
@@ -1664,10 +1686,10 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '2'	= 'clear_register 2'                 	# ®2× x
     # '3'	= 'copy_to_register 2'               	# ®2🗐 x
     # '4'	= 'paste_from_register 2'            	# ®2📋 x
-    't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「␣⇧r」 <i class='fa fa-clipboard'></i>▋
+    't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「☰␠⇧r」 <i class='fa fa-clipboard'></i>▋
     'x'  	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection                	「Ⓝ⇧j」
-    'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「␣⇧p」 ⤸<i class='fa fa-clipboard'></i>
-    'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「␣ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
+    'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「☰␠⇧p」 ⤸<i class='fa fa-clipboard'></i>
+    'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「☰␠ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
     # 'a'	= ':clipboard-yank'                  	# Copy main   sel to system         clipboard
     # 'a'	= ':clipboard-yank-join'             	# Copy joined sel to system         clipboard with sep \n
     # 'a'	= ':primary-clipboard-yank'          	# Copy main   sel to system primary clipboard
@@ -1827,15 +1849,15 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'C-a'	= ''     	# ???useful vs selections	「C-a」	「goto_line_start」
 
   #ⓘ   	Compat with non-modal editors        	 
-  'C-o'	= 'file_picker'                      	# 🗁 Open file picker       	「␣  f」	「jump_backward」
-  'C-O'	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「␣⇧ f」	「」
+  'C-o'	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
+  'C-O'	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
   'C-s'	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」	「commit_undo_checkpoint」
   'C-n'	= ':new'                             	# 🗋 new buffer             	「 ⎈n」 	「」
 
   #ⓘ   	Copy                                	 
-  'A-c'	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」	「change_selection」
-  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「␣,⇧y」	「toggle_comments」
-  'A-C'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「␣ y」	「」
+  'A-c'	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」  	「change_selection」
+  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
+  'A-C'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」  	「」
 
   #ⓘ Shell 	                 	 
     'A-|'  	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧Ⓝ \」	「shell_pipe」
@@ -1887,15 +1909,15 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev WORD end                  	「⇧ b」   	「half_page_down」
              	   'extend_prev_word_start',   	#                                         	 
              	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing      	 
-    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)  	「⇧ w」	「page_down」
-    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next WORD end   (this end + ␣)  	「⇧ w」	「page_down」
+    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␠)  	「⇧ w」	「page_down」
+    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next WORD end   (this end + ␠)  	「⇧ w」	「page_down」
     #        	   'extend_next_long_word_end']	#                                         	 
     'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                	   「⇧ b」	「」
-    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end   + ␣)	「⇧ w」   	「」
-    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␣)	≝「ⓘ⎇◀」  	「move_prev_word_end」
-    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␣)	≝「ⓘ⎇▶」  	「move_next_word_start」
-    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move   prev word end (this start + ␣)	「ⓘ⎇b」   	「」
-    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move   next word start (this end + ␣)	「ⓘ⎇f」   	「」
+    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end   + ␠)	「⇧ w」   	「」
+    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␠)	≝「ⓘ⎇◀」  	「move_prev_word_end」
+    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␠)	≝「ⓘ⎇▶」  	「move_next_word_start」
+    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move   prev word end (this start + ␠)	「ⓘ⎇b」   	「」
+    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move   next word start (this end + ␠)	「ⓘ⎇f」   	「」
 
     #ⓘ     	Line
     # 'A-G'	= 'goto_line'   	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧Ⓝ g」	「」
@@ -1934,7 +1956,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
 
     'A-E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)	「⇧Ⓝ  x」	「move_next_long_word_end」
-    'C-e'  	= ['select_mode'           	# =ω "Extend" selection to same word w₌                  	「   」  	「goto_line_end_newline」
+    'C-e'  	= ['select_mode'           	# =ω "Extend" selection to same word ω₌ ω≡               	「   」  	「goto_line_end_newline」
       ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,    	 'move_prev_word_start'    	#
       ,    	 'search_selection'        	#
@@ -1950,10 +1972,9 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-S-down'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「Ⓝ⇧ c」	「」
     'A-S-up'  	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「Ⓝ⇧⎇c」	「」
 
-    "A-'"  	= 'collapse_selection'       	# 🢖🢔 Collapse selection onto a single cursor 	「Ⓝ  ;」	「」
-    'A-K'  	= 'keep_selections'          	# ᵏ𝖗 selections not matching the regex (keep)	「⇧Ⓝ k」	「keep_selections」
-    'A-L'  	= 'remove_selections'        	# ᵡ𝖗 selections     matching the regex       	「⇧Ⓝ⎇k」	「」
-    # 'A-:'	= 'ensure_selections_forward'	# ???                                        	「⇧Ⓝ⎇;」	「」
+    "A-'"	= 'collapse_selection'	# 🢖🢔 Collapse selection onto a single cursor 	「Ⓝ  ;」	「」
+    'A-K'	= 'keep_selections'   	# ᵏ𝖗 selections not matching the regex (keep)	「⇧Ⓝ k」	「keep_selections」
+    'A-L'	= 'remove_selections' 	# ᵡ𝖗 selections     matching the regex       	「⇧Ⓝ⎇k」	「」
 
     'A-minus'	= 'trim_selections'             	# ✁Trim whitespace from the selection                    	「Ⓝ⇧ -」	「」
     'A-_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive selections ⨝                       	「⇧⎇ -」	「trim_selections」
@@ -2032,7 +2053,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-Y'	= 'later'                	# 🕒 Move forward in history ⏱     	「⇧Ⓝ⎇u」 	「」 <i class='fa fa-clock-o'></i>
     'C-y'	= 'redo'                 	# ↷ Redo change                   	「Ⓝ⇧ u」 	「」
     'A-v'	= 'paste_after'          	# 📋⤹ Paste after selection        	「Ⓝ  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
-    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after selection        	「Ⓝ␣ p」 	「」  <i class='fa fa-copy'></i>⤹
+    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after selection        	「Ⓝ␠ p」 	「」  <i class='fa fa-copy'></i>⤹
     'A-V'	= 'paste_before'         	# ⤸📋 Paste before selection       	「Ⓝ⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
     'C-z'	= 'undo'                 	# ⎌ Undo change                   	「Ⓝ  u」 	「」
     'C-Z'	= 'redo'                 	# ↷ Redo change !!!fail           	「⇧Ⓝ u」 	「」
@@ -2230,7 +2251,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
 
-  # [	keys.insert.'A-space']	#ⓘ ☰␣  Space mode	「$!」	「」 !!!fails, A-space blocked by system
+  # [	keys.insert.'A-space']	#ⓘ ☰␠  Space mode	「$!」	「」 !!!fails, A-space blocked by system
 
   [keys.insert.'A-['] #ⓘ Ⓝ[ ☰⧛ Unimpaired
     'd'    	= 'goto_prev_diag'   	# 🢔🛠  Diagnostic previous (LSP)           	「  d」	「goto_prev_diag」
