@@ -2145,6 +2145,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'A-5'	= 'select_paragraph'       	# ¶▋ Select this paragraph                                       	Ⓝ「   」	「<5>」  !!!missing ∀* !!!missing command
     'A-%'  	= 'select_all'             	# ∀▋ Select entire file                                          	「⇧Ⓝ 5」	「select_all」
 
+    'A-M'     	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection    🌳TS ⸙₋          	Ⓝ「 ⎇i」	「」
+    'A-<'     	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node 🌳TS ⸙₊          	Ⓝ「 ⎇o」	「」
     'A-N'     	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧Ⓝ s」	「search_prev」
     'A-S-down'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	Ⓝ「⇧ c」	「」
     'A-S-up'  	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	Ⓝ「⇧⎇c」	「」
@@ -2188,7 +2190,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     #'A-H'       	= 'delete_word_forward'          	# ⌦ω ᵡ word →   	 ⓘ「  ⎇d」	「」
     'C-a'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「goto_line_start」  ??? better than ∀▋select_all
     'C-A'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「」
-    'C-j'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「kill_to_line_start」
+    'C-j'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「insert_newline」
     'C-k'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「kill_to_line_end」
     #ⓘ           	selection
     'A-x'        	= 'delete_selection'                  	# ᵡ▋                              	Ⓝ「  d」 	「extend_line」
