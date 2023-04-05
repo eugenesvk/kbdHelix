@@ -843,27 +843,44 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'left'   	= 'jump_view_left'      	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'     	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
 
-  [keys.normal.'space'.'u'] #Ⓝ 🌐 ☰ⓤ LSP, DAP, and various ones
-    'u'  	= 'remove_primary_selection'       	# ×          the primary selection                   	「 ⎇,」
-    'i'  	= 'keep_primary_selection'         	# ×∀ all but the primary selection (keep only)       	「  ,」
-    # LSP	                                   	                                                     	 
-    'a'  	= 'format_selections'              	# ℱ  Format selection (LSP)                          	「  =」 !!!missing
-    'q'  	= ':format'                        	# ℱ∀ Format the file using the LSP formatter         	「  」
-    'j'  	= 'code_action'                    	# Ⓐ  Apply code action (LSP)                         	「␣ a」
-    's'  	= 'symbol_picker'                  	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ           	「␣ s」
-    'w'  	= 'workspace_symbol_picker'        	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ           	「␣⇧s」
-    'r'  	= 'rename_symbol'                  	# ✎  Rename symbol (LSP)                             	「␣ r」
-    'l'  	= 'goto_prev_diag'                 	# 🢔🛠  Diagnostic previous (LSP) !!! make these sticky	「⧛ d」
-    ';'  	= 'goto_next_diag'                 	# 🛠🢖  Diagnostic next     (LSP) !!! make these sticky	「⧚ d」
-    '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic first    in document (LSP)           	「⧛⇧d」
-    '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last     in document (LSP)           	「⧚⇧d」
-    '\'  	= ':lsp-restart'                   	# 🔄 Restart (LSP)                                    	「  」
-    'x'  	= ':lsp-stop'                      	# ⏹ Stop (LSP)                                       	「  」
-    'c'  	= ':lsp-workspace-command'         	# 🄲🗍 workspace command picker (LSP)                  	「  」
-    'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints (LSP)                         	「  」
-    'p'  	= 'dap_restart'                    	# 🔄 Restart (DAP)                                    	「  」
-    't'  	= ':reset-diff-change'             	# ×Δ Reset diff hunk                                 	「  」
-    'd'  	= ':character-info'                	# 🔣ℹ Character info                                  	「  」
+  [      	keys.normal.'space'.'u']           	#Ⓝ 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
+    'u'  	= 'remove_primary_selection'       	# ×          primary sel            	「 ⎇,」
+    'i'  	= 'keep_primary_selection'         	# ×∀ all but primary sel (keep only)	「  ,」
+    'o'  	= ':character-info'                	# 🔣ℹ Character info                 	「  」
+    #Δ   	                                   	                                    	 
+    'j'  	= 'goto_next_change'               	# Δ🢖 Change            next         	「⧚  g」	「」 !!!→sticky
+    'k'  	= 'goto_prev_change'               	# 🢔Δ Change            previous     	「⧛  g」	「」 !!!→sticky
+    'l'  	= 'goto_first_change'              	# ⭰Δ Change             1st         	「⧛⇧ g」	「」 !!!→sticky
+    ';'  	= 'goto_last_change'               	# Δ⭲ Change            last         	「⧚⇧ g」	「」 !!!→sticky
+    'b'  	= ':reset-diff-change'             	# ×Δ Reset diff hunk                	「  」
+    #🌳TS 	                                   	                                    	 
+    'a'  	= 'goto_prev_parameter'            	# 🢔α Argument/parameter previous    	「⧛  a」	「」 !!!→sticky
+    's'  	= 'goto_next_parameter'            	# α🢖 Argument/parameter next        	「⧚  a」	「」 !!!→sticky
+    'd'  	= 'goto_prev_function'             	# 🢔ƒ Function           previous    	「⧛  f」	「」 !!!→sticky
+    'f'  	= 'goto_next_function'             	# ƒ🢖 Function           next        	「⧚  f」	「」 !!!→sticky
+    'z'  	= 'goto_prev_comment'              	# 🢔ↄ Comment            previous    	「⧛  c」	「」 !!!→sticky
+    'x'  	= 'goto_next_comment'              	# ↄ🢖 Comment            next        	「⧚  c」	「」 !!!→sticky
+    'c'  	= 'goto_prev_class'                	# 🢔τ Type definition    previous    	「⧛  t」	「」 !!!→sticky
+    'v'  	= 'goto_next_class'                	# τ🢖 Type definition    next        	「⧛  t」	「」!!!→sticky
+    't'  	= 'goto_prev_test'                 	# 🢔🧪 Test               previous    	「⧛⇧ t」	「」 !!!→sticky
+    'y'  	= 'goto_next_test'                 	# 🧪🢖 Test               next        	「⧚⇧ t」	「」 !!!→sticky
+    #🄻LSP	                                   	                                    	 
+    'm'  	= 'goto_next_diag'                 	# 🛠🢖 Diagnostic next                	「⧚  d」	「」 !!!→sticky
+    ','  	= 'goto_prev_diag'                 	# 🢔🛠 Diagnostic previous            	「⧛  d」	「」 !!!→sticky
+    '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic 1st @ doc           	「⧛⇧ d」	「」 !!!→sticky
+    '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last @ doc          	「⧚⇧ d」	「」 !!!→sticky
+    'e'  	= 'symbol_picker'                  	# 🅂🗋 Document  symbol picker ⚛Ⓢ     	「☰␠ s」
+    'r'  	= 'workspace_symbol_picker'        	# 🅂🗍 Workspace symbol picker ⚛Ⓢ     	「☰␠⇧s」
+    "'"  	= ':format'                        	# ℱ∀ Format the file                	「  」
+    'q'  	= 'format_selections'              	# ℱ  Format selection               	「  =」
+    'g'  	= 'code_action'                    	# Ⓐ  Apply code action              	「☰␠ a」
+    'n'  	= 'rename_symbol'                  	# ✎  Rename symbol                  	「☰␠ r」
+    'w'  	= ':lsp-workspace-command'         	# 🄲🗍 Workspace command picker       	「  」
+    'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints              	「  」
+    'p'  	= ':lsp-stop'                      	# ⏹🄻 Stop                           	「  」
+    ']'  	= ':lsp-restart'                   	# 🔄🄻 Restart                        	「  」
+    #🄳DAP	                                   	                                    	 
+    '['  	= 'dap_restart'                    	# 🔄🄳 Restart (DAP)                  	「  」
 
   # [keys.normal.'space'.'p']	#Ⓝ ☰ⓟ TBD
 
@@ -1738,27 +1755,44 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'left'   	= 'jump_view_left'      	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'     	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
 
-  [keys.select.'space'.'u'] #Ⓢ 🌐 ☰ⓤ LSPs and various ones
-    'u'  	= 'remove_primary_selection'       	# ᵡ          the primary selection                   	「 ⎇,」
-    'i'  	= 'keep_primary_selection'         	# ᵡ∀ all but the primary selection (keep only)       	「  ,」
-    # LSP	                                   	                                                     	 
-    'a'  	= 'format_selections'              	# ℱ  Format selection (LSP)                          	「  =」 !!!missing
-    'q'  	= ':format'                        	# ℱ∀ Format the file using the LSP formatter         	「  」
-    'j'  	= 'code_action'                    	# Ⓐ  Apply code action (LSP)                         	「␣ a」
-    's'  	= 'symbol_picker'                  	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ           	「␣ s」
-    'w'  	= 'workspace_symbol_picker'        	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ           	「␣⇧s」
-    'r'  	= 'rename_symbol'                  	# ✎  Rename symbol (LSP)                             	「␣ r」
-    'l'  	= 'goto_prev_diag'                 	# 🢔🛠  Diagnostic previous (LSP) !!! make these sticky	「⧛ d」
-    ';'  	= 'goto_next_diag'                 	# 🛠🢖  Diagnostic next     (LSP) !!! make these sticky	「⧚ d」
-    '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic first    in document (LSP)           	「⧛⇧d」
-    '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last     in document (LSP)           	「⧚⇧d」
-    '\'  	= ':lsp-restart'                   	# 🔄🄻 Restart (LSP)                                   	「  」
-    'x'  	= ':lsp-stop'                      	# ⏹🄻 Stop (LSP)                                      	「  」
-    'c'  	= ':lsp-workspace-command'         	# 🄲🗍 workspace command picker (LSP)                  	「  」
-    'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints (LSP)                         	「  」
-    'p'  	= 'dap_restart'                    	# 🔄🄳 Restart (DAP)                                   	「  」
-    't'  	= ':reset-diff-change'             	# ᵡΔ Reset diff hunk                                 	「  」
-    'd'  	= ':character-info'                	# 🔣ℹ Character info                                  	「  」
+  [      	keys.select.'space'.'u']           	#Ⓢ 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
+    'u'  	= 'remove_primary_selection'       	# ×          primary sel            	「 ⎇,」
+    'i'  	= 'keep_primary_selection'         	# ×∀ all but primary sel (keep only)	「  ,」
+    'o'  	= ':character-info'                	# 🔣ℹ Character info                 	「  」
+    #Δ   	                                   	                                    	 
+    'j'  	= 'goto_next_change'               	# Δ🢖 Change            next         	「⧚  g」	「」 !!!→sticky
+    'k'  	= 'goto_prev_change'               	# 🢔Δ Change            previous     	「⧛  g」	「」 !!!→sticky
+    'l'  	= 'goto_first_change'              	# ⭰Δ Change             1st         	「⧛⇧ g」	「」 !!!→sticky
+    ';'  	= 'goto_last_change'               	# Δ⭲ Change            last         	「⧚⇧ g」	「」 !!!→sticky
+    'b'  	= ':reset-diff-change'             	# ×Δ Reset diff hunk                	「  」
+    #🌳TS 	                                   	                                    	 
+    'a'  	= 'goto_prev_parameter'            	# 🢔α Argument/parameter previous    	「⧛  a」	「」 !!!→sticky
+    's'  	= 'goto_next_parameter'            	# α🢖 Argument/parameter next        	「⧚  a」	「」 !!!→sticky
+    'd'  	= 'goto_prev_function'             	# 🢔ƒ Function           previous    	「⧛  f」	「」 !!!→sticky
+    'f'  	= 'goto_next_function'             	# ƒ🢖 Function           next        	「⧚  f」	「」 !!!→sticky
+    'z'  	= 'goto_prev_comment'              	# 🢔ↄ Comment            previous    	「⧛  c」	「」 !!!→sticky
+    'x'  	= 'goto_next_comment'              	# ↄ🢖 Comment            next        	「⧚  c」	「」 !!!→sticky
+    'c'  	= 'goto_prev_class'                	# 🢔τ Type definition    previous    	「⧛  t」	「」 !!!→sticky
+    'v'  	= 'goto_next_class'                	# τ🢖 Type definition    next        	「⧛  t」	「」!!!→sticky
+    't'  	= 'goto_prev_test'                 	# 🢔🧪 Test               previous    	「⧛⇧ t」	「」 !!!→sticky
+    'y'  	= 'goto_next_test'                 	# 🧪🢖 Test               next        	「⧚⇧ t」	「」 !!!→sticky
+    #🄻LSP	                                   	                                    	 
+    'm'  	= 'goto_next_diag'                 	# 🛠🢖 Diagnostic next                	「⧚  d」	「」 !!!→sticky
+    ','  	= 'goto_prev_diag'                 	# 🢔🛠 Diagnostic previous            	「⧛  d」	「」 !!!→sticky
+    '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic 1st @ doc           	「⧛⇧ d」	「」 !!!→sticky
+    '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last @ doc          	「⧚⇧ d」	「」 !!!→sticky
+    'e'  	= 'symbol_picker'                  	# 🅂🗋 Document  symbol picker ⚛Ⓢ     	「☰␠ s」
+    'r'  	= 'workspace_symbol_picker'        	# 🅂🗍 Workspace symbol picker ⚛Ⓢ     	「☰␠⇧s」
+    "'"  	= ':format'                        	# ℱ∀ Format the file                	「  」
+    'q'  	= 'format_selections'              	# ℱ  Format selection               	「  =」
+    'g'  	= 'code_action'                    	# Ⓐ  Apply code action              	「☰␠ a」
+    'n'  	= 'rename_symbol'                  	# ✎  Rename symbol                  	「☰␠ r」
+    'w'  	= ':lsp-workspace-command'         	# 🄲🗍 Workspace command picker       	「  」
+    'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints              	「  」
+    'p'  	= ':lsp-stop'                      	# ⏹🄻 Stop                           	「  」
+    ']'  	= ':lsp-restart'                   	# 🔄🄻 Restart                        	「  」
+    #🄳DAP	                                   	                                    	 
+    '['  	= 'dap_restart'                    	# 🔄🄳 Restart (DAP)                  	「  」
 
   # [keys.select.'space'.'p']	#Ⓢ ☰ⓟ TBD
 
