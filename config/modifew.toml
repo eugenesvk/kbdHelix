@@ -462,6 +462,11 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
 
+  [keys.	normal.'F1']            	#Ⓝ ☰? Help mode                                             	「  」	「」
+    'F2'	= ':tree-sitter-scopes' 	# 🌳 Tree sitter scopes (for theming and development)        	「  」	「」
+    'F3'	= ':tree-sitter-subtree'	# 🌳 Tree sitter subtree under cursor (for debugging queries)	「  」	「」
+    'c' 	= ':character-info'     	# 🔣ℹ Character info                                         	「  」	「」
+
   [keys. 	normal.'`']            	#Ⓝ ☰𝔸𝕒 Case conversion mode   	「   」	「switch_to_lowercase」
     '`'  	= 'switch_case'        	# 𝕒⇋𝔸 (selection)             	「⇧ `」	「」
     'j'  	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)              	「  `」	「」
