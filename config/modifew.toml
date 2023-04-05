@@ -152,8 +152,6 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '0'  	= 'univeral_arg'                   	# ∀* number prefix to treat all the following numbers as # of repeats	「  」       	「0」  !!!missing ∀*
     # 'C-j'	= ['page_down','align_view_center']	# ⇟ Move      page down                                              	   「 ⎈d」   	「」
     # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ⎈u」   	「」
-    # 'C-r'	= 'yank_joined_to_register'        	# Control-q → typable command :q! (:quit!)
-    # 'C-r'	= 'yank_joined'                    	# Control-q → typable command :q! (:quit!)
 
     'C-l'  	= 'suspend'    	# 💤 Suspend job      	「⎈z」    	「」
     # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ⎈u」	「」
@@ -217,7 +215,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'C-j'	= 'page_down'           	# ⇟ Move      page down         	   「 ⎈d」	「」
     'C-k'	= 'page_up'             	# ⇞ Move      page up           	   「 ⎈u」	「」
     'a'  	= 'extend_to_line_start'	# ⭰▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
-    'A'  	= 'extend_to_line_end'  	# ⭲▋ Move    line end   + select	「ⓈEnd」  	「append_to_line」  # goto_line_end
+    'A'  	= 'extend_to_line_end'  	# ⭲▋ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
 
 
     #Ⓝ          	Compat with non-modal editors
@@ -406,8 +404,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '.'	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
     # 'i'	= 'insert_mode'           	# ⁁⤸ Insert before selection                                	「  i」 	「insert_mode」
     'o'  	= 'append_mode'           	# ⤹⎀ Insert after selection (append)                        	「  a」 	「open_above」
-    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「prepend_to_line」
-    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「append_to_line」
+    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
+    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「insert_at_line_end」
     'u'  	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「undo mode」
     'y'  	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「yank」
     'U'  	= 'earlier'               	# 🕘 Move backward in history   <i class='fa fa-history'></i>	「⇧ ⎇u」	「redo」
@@ -418,8 +416,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'V'  	= 'paste_before'          	# ⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹	「⇧ p」 	「」
     'C-z'	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「」
     'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
-    # 'I'	= 'prepend_to_line'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「prepend_to_line」
-    # 'A'	= 'append_to_line'        	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「append_to_line」
+    # 'I'	= 'insert_at_line_start'  	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
+    # 'A'	= 'insert_at_line_end'    	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
 
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
     '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward      	「⇧⎇9」	「rotate_selections_backward」
@@ -1229,8 +1227,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '.'	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
     # 'i'	= 'insert_mode'           	# ⁁⤸ Insert before selection                                	「  i」 	「insert_mode」
     'o'  	= 'append_mode'           	# ⤹⎀ Insert after selection (append)                        	「  a」 	「open_above」
-    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「prepend_to_line」
-    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「append_to_line」
+    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
+    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「insert_at_line_end」
     'u'  	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「undo mode」
     'y'  	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「yank」
     'U'  	= 'earlier'               	# 🕘 Move backward in history   <i class='fa fa-history'></i>	「⇧ ⎇u」	「redo」
@@ -1241,8 +1239,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'V'  	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」 	「」
     'C-z'	= 'suspend'               	# ⎌ Undo change                                             	「  u」 	「」
     'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
-    # 'I'	= 'prepend_to_line'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「prepend_to_line」
-    # 'A'	= 'append_to_line'        	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「append_to_line」
+    # 'I'	= 'insert_at_line_start'       	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
+    # 'A'	= 'insert_at_line_end'    	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
 
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
     '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward	「⇧⎇9」	「rotate_selections_backward」
@@ -1692,14 +1690,14 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
     #ⓘ   	Cursor@Home
-    'A-j'	= 'move_line_down'      	# ▼                              	「ⓘ ⎈n」	「move_line_down」
-    'A-k'	= 'move_line_up'        	# ▲                              	「ⓘ ⎈p」	「move_line_up」
-    'A-l'	= 'move_char_left'      	# ◀                              	「ⓘ ⎈b」	「move_char_right」
-    'A-;'	= 'move_char_right'     	# ▶                              	「ⓘ ⎈f」	「collapse_selection」
-    'A-m'	= 'half_page_down'      	# ⤈ Move half page down          	「Ⓝ ⎈d」	「☰🧩」
-    'A-,'	= 'half_page_up'        	# ⤉ Move half page up            	「Ⓝ ⎈u」	「keep_primary_selection」
+    'A-j'	= 'move_line_down'      	# ▼                              	「ⓘ ⎈n」 	「move_line_down」
+    'A-k'	= 'move_line_up'        	# ▲                              	「ⓘ ⎈p」 	「move_line_up」
+    'A-l'	= 'move_char_left'      	# ◀                              	「ⓘ ⎈b」 	「move_char_right」
+    'A-;'	= 'move_char_right'     	# ▶                              	「ⓘ ⎈f」 	「collapse_selection」
+    'A-m'	= 'half_page_down'      	# ⤈ Move half page down          	「Ⓝ ⎈d」 	「☰🧩」
+    'A-,'	= 'half_page_up'        	# ⤉ Move half page up            	「Ⓝ ⎈u」 	「keep_primary_selection」
     'A-a'	= 'extend_to_line_start'	# ⭰▋ Move     line start + select	「ⓈHome」	「append_mode」 # goto_line_start
-    'A-A'	= 'extend_to_line_end'  	# ⭲▋ Move     line end   + select	「ⓈEnd」  「append_to_line」 # goto_line_end
+    'A-A'	= 'extend_to_line_end'  	# ⭲▋ Move     line end   + select	「ⓈEnd」  「insert_at_line_end」 # goto_line_end
 
     #ⓘ           	Compat with non-modal editors
     'C-home'     	= 'goto_file_start'            	# ⇱ line number `<n>` else file start	「  g」	「」
@@ -1861,18 +1859,18 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'A-Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧Ⓝ q」 replay_macro]
     'A-"'  	= 'select_register'	# ®  Select a register to copy/paste from                 	「Ⓝ  '<reg>」	「select_register」
 
-    'A-I'	= 'open_above'           	# ⭡␤ Open new line above selection	「⇧Ⓝ o」	「prepend_to_line」
-    'A-O'	= 'open_below'           	# ⭣␤ Open new line below selection	「Ⓝ  o」	「append_to_line」
-    'A-u'	= 'undo'                 	# ⎌ Undo change                   	「Ⓝ  u」	「undo mode」
-    'A-y'	= 'redo'                 	# ↷ Redo change                   	「Ⓝ⇧ u」	「yank」
+    'A-I'	= 'open_above'           	# ⭡␤ Open new line above selection	「⇧Ⓝ o」 	「insert_at_line_start」
+    'A-O'	= 'open_below'           	# ⭣␤ Open new line below selection	「Ⓝ  o」 	「insert_at_line_end」
+    'A-u'	= 'undo'                 	# ⎌ Undo change                   	「Ⓝ  u」 	「undo mode」
+    'A-y'	= 'redo'                 	# ↷ Redo change                   	「Ⓝ⇧ u」 	「yank」
     'A-U'	= 'earlier'              	# 🕘 Move backward in history      	「⇧Ⓝ ⎇u」	「redo」 <i class='fa fa-history'></i>
-    'A-Y'	= 'later'                	# 🕒 Move forward in history ⏱     	「⇧Ⓝ⎇u」	「」 <i class='fa fa-clock-o'></i>
-    'C-y'	= 'redo'                 	# ↷ Redo change                   	「Ⓝ⇧ u」	「」
-    'A-v'	= 'paste_after'          	# 📋⤹ Paste after selection        	「Ⓝ  p」	「select_mode」 ⤹<i class='fa fa-copy'></i>
-    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after selection        	「Ⓝ␣ p」	「」  <i class='fa fa-copy'></i>⤹
-    'A-V'	= 'paste_before'         	# ⤸📋 Paste before selection       	「Ⓝ⇧ p」	「」  <i class='fa fa-clipboard'></i>⤹
-    'C-z'	= 'undo'                 	# ⎌ Undo change                   	「Ⓝ  u」	「」
-    'C-Z'	= 'redo'                 	# ↷ Redo change !!!fail           	「⇧Ⓝ u」	「」
+    'A-Y'	= 'later'                	# 🕒 Move forward in history ⏱     	「⇧Ⓝ⎇u」 	「」 <i class='fa fa-clock-o'></i>
+    'C-y'	= 'redo'                 	# ↷ Redo change                   	「Ⓝ⇧ u」 	「」
+    'A-v'	= 'paste_after'          	# 📋⤹ Paste after selection        	「Ⓝ  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
+    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after selection        	「Ⓝ␣ p」 	「」  <i class='fa fa-copy'></i>⤹
+    'A-V'	= 'paste_before'         	# ⤸📋 Paste before selection       	「Ⓝ⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
+    'C-z'	= 'undo'                 	# ⎌ Undo change                   	「Ⓝ  u」 	「」
+    'C-Z'	= 'redo'                 	# ↷ Redo change !!!fail           	「⇧Ⓝ u」 	「」
 
     #ⓘ   	Select manipulation ————————————————————————————————————————————————————————————————————
     'A-('	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward                       	「⇧Ⓝ⎇9」	「rotate_selections_backward」
