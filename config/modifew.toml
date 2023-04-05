@@ -721,36 +721,50 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
     'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
 
-  [    	keys.normal.'space'.'f'.'q']	#Ⓝ ☰␜☰× Close mode in File mode in Space mode
-    'x'	= ':buffer-close'           	# ×b buffer current
-    'f'	= ':buffer-close'           	# ×b buffer current
-    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
-    'd'	= ':quit'                   	# ×v view   current
-    'e'	= ':quit!'                  	# 🕱v view   current
-    'a'	= ':quit-all'               	# ×∀v view  all
-    'q'	= ':quit-all!'              	# 🕱∀v view  all
-    's'	= ':write-quit'             	# 💾×v view current
-    'w'	= ':write-quit!'            	# 💾🕱v view current
-    'j'	= ':write-quit'             	# 💾×v view current
-    'u'	= ':write-quit!'            	# 💾🕱v view current
-    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
-    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
-    ';'	= ':cquit'                  	# Quit with exit code (default 1)
-  [    	keys.normal.'space'.'f'.'x']	#Ⓝ ☰␜☰× Close mode in File mode in Space mode !!!missing alias
-    'x'	= ':buffer-close'           	# ×b buffer current
-    'f'	= ':buffer-close'           	# ×b buffer current
-    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
-    'd'	= ':quit'                   	# ×v view   current
-    'e'	= ':quit!'                  	# 🕱v view   current
-    'a'	= ':quit-all'               	# ×∀v view  all
-    'q'	= ':quit-all!'              	# 🕱∀v view  all
-    's'	= ':write-quit'             	# 💾×v view current
-    'w'	= ':write-quit!'            	# 💾🕱v view current
-    'j'	= ':write-quit'             	# 💾×v view current
-    'u'	= ':write-quit!'            	# 💾🕱v view current
-    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
-    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
-    ';'	= ':cquit'                  	# Quit with exit code (default 1)
+  [keys.	normal.'space'.'f'.'q']    	#Ⓝ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all'      	# ×b buffer all
+    'f' 	= ':buffer-close'          	# ×b buffer current
+    'v' 	= ':buffer-close-others'   	# ×b buffer others
+    'e' 	= ':quit-all'              	# ×∀v view  all
+    'd' 	= ':quit'                  	# ×v view   current
+    'w' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    's' 	= ':write-quit'            	# 💾×v view current
+    'u' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    'j' 	= ':write-quit'            	# 💾×v view current
+    ';' 	= ':cquit'                 	# Quit with exit code (default 1)
+  [keys.	normal.'space'.'f'.'q'.'q']	#Ⓝ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all!'     	# 🕱b buffer all (kill unsaved)
+    'f' 	= ':buffer-close!'         	# 🕱b buffer current (kill unsaved)
+    'v' 	= ':buffer-close-others!'  	# 🕱b buffer others (kill unsaved)
+    'e' 	= ':quit-all!'             	# 🕱∀v view  all
+    'd' 	= ':quit!'                 	# 🕱v view   current
+    'w' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    's' 	= ':write-quit!'           	# 💾🕱v view current
+    'u' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    'j' 	= ':write-quit!'           	# 💾🕱v view current
+    ';' 	= ':cquit!'                	# Quit with exit code (default 1)
+  [keys.	normal.'space'.'f'.'x']    	#Ⓝ ☰␜☰× Close mode in File mode in Space mode !!!missing alias
+    'r' 	= ':buffer-close-all'      	# ×b buffer all
+    'f' 	= ':buffer-close'          	# ×b buffer current
+    'v' 	= ':buffer-close-others'   	# ×b buffer others
+    'e' 	= ':quit-all'              	# ×∀v view  all
+    'd' 	= ':quit'                  	# ×v view   current
+    'w' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    's' 	= ':write-quit'            	# 💾×v view current
+    'u' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    'j' 	= ':write-quit'            	# 💾×v view current
+    ';' 	= ':cquit'                 	# Quit with exit code (default 1)
+  [keys.	normal.'space'.'f'.'x'.'x']	#Ⓝ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all!'     	# 🕱b buffer all (kill unsaved)
+    'f' 	= ':buffer-close!'         	# 🕱b buffer current (kill unsaved)
+    'v' 	= ':buffer-close-others!'  	# 🕱b buffer others (kill unsaved)
+    'e' 	= ':quit-all!'             	# 🕱∀v view  all
+    'd' 	= ':quit!'                 	# 🕱v view   current
+    'w' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    's' 	= ':write-quit!'           	# 💾🕱v view current
+    'u' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    'j' 	= ':write-quit!'           	# 💾🕱v view current
+    ';' 	= ':cquit!'                	# Quit with exit code (default 1)
 
   [keys.normal.'space'.'i'] #Ⓝ ☰®  Register/copy/paste etc.
     'i'  	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
@@ -1673,36 +1687,50 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
     'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
 
-  [    	keys.select.'space'.'f'.'q']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
-    'x'	= ':buffer-close'           	# ×b buffer current
-    'f'	= ':buffer-close'           	# ×b buffer current
-    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
-    'd'	= ':quit'                   	# ×v view   current
-    'e'	= ':quit!'                  	# 🕱v view   current
-    'a'	= ':quit-all'               	# ×∀v view  all
-    'q'	= ':quit-all!'              	# 🕱∀v view  all
-    's'	= ':write-quit'             	# 💾×v view current
-    'w'	= ':write-quit!'            	# 💾🕱v view current
-    'j'	= ':write-quit'             	# 💾×v view current
-    'u'	= ':write-quit!'            	# 💾🕱v view current
-    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
-    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
-    ';'	= ':cquit'                  	# Quit with exit code (default 1)
-  [    	keys.select.'space'.'f'.'x']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
-    'x'	= ':buffer-close'           	# ×b buffer current
-    'f'	= ':buffer-close'           	# ×b buffer current
-    'r'	= ':buffer-close!'          	# 🕱b buffer current (kill unsaved)
-    'd'	= ':quit'                   	# ×v view   current
-    'e'	= ':quit!'                  	# 🕱v view   current
-    'a'	= ':quit-all'               	# ×∀v view  all
-    'q'	= ':quit-all!'              	# 🕱∀v view  all
-    's'	= ':write-quit'             	# 💾×v view current
-    'w'	= ':write-quit!'            	# 💾🕱v view current
-    'j'	= ':write-quit'             	# 💾×v view current
-    'u'	= ':write-quit!'            	# 💾🕱v view current
-    'k'	= ':write-quit-all'         	# 💾∀v view all, ×∀v view all
-    'i'	= ':write-quit-all!'        	# 💾∀v view all, 🕱∀v view all
-    ';'	= ':cquit'                  	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'q']    	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all'      	# ×b buffer all
+    'f' 	= ':buffer-close'          	# ×b buffer current
+    'v' 	= ':buffer-close-others'   	# ×b buffer others
+    'e' 	= ':quit-all'              	# ×∀v view  all
+    'd' 	= ':quit'                  	# ×v view   current
+    'w' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    's' 	= ':write-quit'            	# 💾×v view current
+    'u' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    'j' 	= ':write-quit'            	# 💾×v view current
+    ';' 	= ':cquit'                 	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'q'.'q']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all!'     	# 🕱b buffer all (kill unsaved)
+    'f' 	= ':buffer-close!'         	# 🕱b buffer current (kill unsaved)
+    'v' 	= ':buffer-close-others!'  	# 🕱b buffer others (kill unsaved)
+    'e' 	= ':quit-all!'             	# 🕱∀v view  all
+    'd' 	= ':quit!'                 	# 🕱v view   current
+    'w' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    's' 	= ':write-quit!'           	# 💾🕱v view current
+    'u' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    'j' 	= ':write-quit!'           	# 💾🕱v view current
+    ';' 	= ':cquit!'                	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'x']    	#Ⓢ ☰␜☰× Close mode in File mode in Space mode !!!missing alias
+    'r' 	= ':buffer-close-all'      	# ×b buffer all
+    'f' 	= ':buffer-close'          	# ×b buffer current
+    'v' 	= ':buffer-close-others'   	# ×b buffer others
+    'e' 	= ':quit-all'              	# ×∀v view  all
+    'd' 	= ':quit'                  	# ×v view   current
+    'w' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    's' 	= ':write-quit'            	# 💾×v view current
+    'u' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    'j' 	= ':write-quit'            	# 💾×v view current
+    ';' 	= ':cquit'                 	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'x'.'x']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all!'     	# 🕱b buffer all (kill unsaved)
+    'f' 	= ':buffer-close!'         	# 🕱b buffer current (kill unsaved)
+    'v' 	= ':buffer-close-others!'  	# 🕱b buffer others (kill unsaved)
+    'e' 	= ':quit-all!'             	# 🕱∀v view  all
+    'd' 	= ':quit!'                 	# 🕱v view   current
+    'w' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    's' 	= ':write-quit!'           	# 💾🕱v view current
+    'u' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    'j' 	= ':write-quit!'           	# 💾🕱v view current
+    ';' 	= ':cquit!'                	# Quit with exit code (default 1)
 
   [keys.select.'space'.'i'] #Ⓢ ☰®  Register/copy/paste etc.
     'i'  	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
