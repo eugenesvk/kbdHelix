@@ -202,7 +202,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   #Ⓝ Shell 	                 	 
     # '|'  	= 'shell_pipe'   	# |   Pipe each selection through shell command, replacing with output	「⇧ \」	「shell_pipe」
-    "A-\\" 	= 'shell_pipe_to'	# |to Pipe each selection into    shell command, ignoring       output	「 ⎇\」	「」
+    "A-\\" 	= 'shell_pipe_to'	# |× Pipe each selection into    shell command, ignoring       output 	「 ⎇\」	「」
     # 'A-|'	= 'shell_pipe_to'	#   Pipe each selection into    shell command, ignoring       output  	「⇧⎇\」	「shell_pipe_to」
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
@@ -343,13 +343,13 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-A'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	⇧[ ⎇;」	「」
     'A-l'  	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (← with many columns)	「⇧ 9」 	「」
     'A-;'  	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
-    'A-m'  	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (↓ with many lines)  	「⇧ 0」 	「」
-    'A-,'  	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
-    'A-u'  	= 'remove_primary_selection'  	# ×         the primary selection                       	「 ⎇,」 	「earlier」
-    'A-i'  	= 'keep_primary_selection'    	# ×∀ all but the primary selection (keep only)          	「  ,」 	「」
-    'A-U'  	= 'no_op'                     	# ×× undo remove selection (!!!missing)             	「⇧ ⎇,」	「earlier」
+    #'A-m' 	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (↓ with many lines)  	「⇧ 0」 	「」
+    #'A-,' 	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
+    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary selection                       	「 ⎇,」 	「earlier」
+    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary selection (keep only)          	「  ,」 	「」
+    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove selection (!!!missing)                 	「⇧ ⎇,」	「earlier」
     'K'    	= 'keep_selections'           	# ᵏ𝖗 selections not matching the regex (keep)           	「⇧ k」 	「keep_selections」
-    'L'    	= 'remove_selections'         	# ×𝖗 selections     matching the regex                  	「⇧⎇k」 	「」
+    'L'    	= 'remove_selections'         	# ᵡ𝖗 selections     matching the regex                  	「⇧⎇k」 	「」
     # 'A-:'	= 'ensure_selections_forward' 	# ???                                                   	「⇧⎇;」 	「」
 
     'minus'	= 'trim_selections'             	# ✁Trim whitespace from the selection                    	「⇧ -」 	「」
@@ -360,42 +360,42 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
   #Ⓝ Change ——————————————————————————————————————————————————————————————————————
     #            	Compat with non-modal editors
     'A-del'      	= ['extend_next_word_end',       	# ⌦w                              	「   」	「」
-                 	   'delete_selection']           	# × word →                        	 
+                 	   'delete_selection']           	# ᵡ word →                        	 
     'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                              	「   」	「」
-                 	   'delete_selection']           	# × Word →                        	 
+                 	   'delete_selection']           	# ᵡ Word →                        	 
     'A-backspace'	= ['extend_prev_word_start',     	# ⌫w                              	「   」	「」
-                 	   'delete_selection']           	# × word ←                        	 
+                 	   'delete_selection']           	# ᵡ word ←                        	 
     'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                              	「   」	「」
-                 	   'delete_selection']           	# × Word ←                        	 
-    # 'del'      	= 'delete_selection'             	# ×▋                              	「  d」	「」
+                 	   'delete_selection']           	# ᵡ Word ←                        	 
+    # 'del'      	= 'delete_selection'             	# ᵡ▋                              	「  d」	「」
     'S-del'      	= 'delete_selection_noyank'      	# 🕱▋                              	「 ⎇d」	「」
     'S-ret'      	= ['open_below','normal_mode']   	# ⭣␤ Open new line below selection	「  o」	「」
     'ret'        	= ['open_above','normal_mode']   	# ⭡␤ Open new line above selection	「⇧ o」	「」
-    'C-ret'      	= ':reflow'                      	# ䷖w Hard-wrap selected lines     	「   」	「」
+    'C-ret'      	= ':reflow'                      	# ↪ Hard-wrap selected lines ䷖↪   	「   」	「」
 
     # '.'      	= 'N/A'                              	# ∞ Repeat last change            	「.」  	「n/a」
     '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	「 ⌦」 	「<5>」
-    'x'        	= 'delete_selection'                 	# ×▋                              	「  d」	「extend_line」
+    'x'        	= 'delete_selection'                 	# ᵡ▋                              	「  d」	「extend_line」
     'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)         	「 ⎇d」	「」
     # 'A-c'    	= 'change_selection'                 	# Δ                               	「  c」	「change_selection_noyank」
-    'h'        	= 'delete_char_backward'             	# ⌫c × char ←                     	「⌫」  	「move_char_left」
-    'H'        	= 'delete_char_forward'              	# ⌦c × char →                     	「⇧⌦」 	「」
+    'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                     	「⌫」  	「move_char_left」
+    'H'        	= 'delete_char_forward'              	# ⌦c ᵡ char →                     	「⇧⌦」 	「」
     'A-h'      	= ['move_prev_word_start',           	# ⌫w                              	「   」	「」
-               	   'delete_selection']               	# × word ←                        	 
+               	   'delete_selection']               	# ᵡ word ←                        	 
     'A-H'      	= ['move_next_word_end',             	# ⌦w                              	「   」	「」
-               	   'delete_selection']               	# × word →                        	 
+               	   'delete_selection']               	# ᵡ word →                        	 
     'C-h'      	= ['move_prev_long_word_start',      	# ⌫W                              	「   」	「」
-               	   'delete_selection']               	# × Word ←                        	 
+               	   'delete_selection']               	# ᵡ Word ←                        	 
     'C-x'      	= ['yank_main_selection_to_clipboard'	                                  	,
                	   'delete_selection']               	#                                 	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
     'backspace'	= 'delete_char_backward'             	# ⌫                               	「I.bs」	「」
-    'X'        	= 'join_selections'                  	# ×␤ ⨝ Join lines inside selection	「⇧ j」 	「extend_to_line_bounds」
-    'A-X'      	= 'join_selections_space'            	# ×␤+␠ Join lines+select space    	「⇧⎇ j」	「」
+    'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection	「⇧ j」 	「extend_to_line_bounds」
+    'A-X'      	= 'join_selections_space'            	# ᵡ␤,␠ Join lines,select space    	「⇧⎇ j」	「」
 
-    # 'backspace'	= 'delete_char_backward'	# ⌫c × char ←	「backspace」	「delete_char_backward」
-    # 'C-h'      	= 'delete_char_backward'	# ⌫c × char ←	「C-h」      	「delete_char_backward」
-    'del'        	= 'delete_char_forward' 	# ⌦c × char →	「delete」   	「delete_char_forward」
-    # 'C-d'      	= 'delete_char_forward' 	# ⌦c × char →	「C-d」      	「delete_char_forward」
+    # 'backspace'	= 'delete_char_backward'	# ⌫c ᵡ char ←	「backspace」	「delete_char_backward」
+    # 'C-h'      	= 'delete_char_backward'	# ⌫c ᵡ char ←	「C-h」      	「delete_char_backward」
+    'del'        	= 'delete_char_forward' 	# ⌦c ᵡ char →	「delete」   	「delete_char_forward」
+    # 'C-d'      	= 'delete_char_forward' 	# ⌦c ᵡ char →	「C-d」      	「delete_char_forward」
 
     't'  	= 'replace'                          	# 🗘c  Replace with a character               	   「  r」	「find_till_char」
     'T'  	= 'replace_with_yanked'              	# 🗘📋 Replace with copied text                	「⇧ r」   	「till_prev_char」  <i class='fa fa-copy'></i>
@@ -585,7 +585,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     '/'	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS)                  	「  」 	「」 !!!missing
     'i'	= 'surround_add'            	# (+)  Surround current selection with <char>        	「  s」	「」
     't'	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>    	「  r」	「」
-    'x'	= 'surround_delete'         	# (×)  Delete  surround character <char>             	「  d」	「」
+    'x'	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>             	「  d」	「」
     'e'	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                      	「  a」	「」
     'a'	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                      	「  i」	「」
 
@@ -639,7 +639,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # Home   	row                                 	                                                  	 
     'j'      	= 'extend_line'                     	# ⮒ Select current/next(if selected) line         	「  x」   	「」
     'k'      	= 'keep_selections'                 	# ᵏ𝖗 selections not matching the regex (keep)     	   「⇧ k」	「」
-    'l'      	= 'remove_selections'               	# ×𝖗 selections     matching the regex            	   「⇧⎇k」	「」
+    'l'      	= 'remove_selections'               	# ᵡ𝖗 selections     matching the regex            	   「⇧⎇k」	「」
     ';'      	= 'command_mode'                    	# Ⓒ Enter command mode                            	「⇧ ;」   	「」
     'F'      	= 'file_picker_in_current_directory'	# 🗁 Open file   picker@curdir                     	「␣⇧ f」  	「file_picker_in_current_directory」
     # 'f'    	= 'mode_file'                       	# ☰␜ File mode                                    	「   」   	「file_picker」 !!!missing_aliases
@@ -753,7 +753,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '3'	= 'copy_to_register 2'               	# ®2🗐 x
     # '4'	= 'paste_from_register 2'            	# ®2📋 x
     't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「␣⇧r」 <i class='fa fa-clipboard'></i>▋
-    'x'  	= 'join_selections'                  	# ×␤ ⨝ Join lines inside selection                	「Ⓝ⇧j」
+    'x'  	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection                	「Ⓝ⇧j」
     'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「␣⇧p」 ⤸<i class='fa fa-clipboard'></i>
     'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「␣ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
     # 'a'	= ':clipboard-yank'                  	# Copy main   sel to system         clipboard
@@ -1283,7 +1283,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'S-del'      	= 'delete_selection_noyank'      	# 🕱▋                              	「 ⎇d」	「」
     'S-ret'      	= 'open_below'                   	# ⭣␤ Open new line below selection	「  o」	「」
     'ret'        	= 'open_above'                   	# ⭡␤ Open new line above selection	「⇧ o」	「」
-    'C-ret'      	= ':reflow'                      	# ䷖w Hard-wrap selected lines     	「   」	「」
+    'C-ret'      	= ':reflow'                      	# ↪ Hard-wrap selected lines ䷖↪   	「   」	「」
 
     # '.'      	= 'N/A'                              	# ∞ Repeat last change            	「.」  	「n/a」
     '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	「 ⌦」 	「<5>」
@@ -1301,12 +1301,12 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'C-x'      	= ['yank_main_selection_to_clipboard'	                                  	,
                	   'delete_selection']               	#                                 	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
     'backspace'	= 'delete_char_backward'             	# ⌫                               	「I.bs」	「」
-    'X'        	= 'join_selections'                  	# ×␤ ⨝ Join lines inside selection	「⇧ j」 	「extend_to_line_bounds」
+    'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection	「⇧ j」 	「extend_to_line_bounds」
 
     # 'backspace'	= 'delete_char_backward'	# ⌫c × char ←	「backspace」	「delete_char_backward」
-    # 'C-h'      	= 'delete_char_backward'	# ⌫c × char ←	「C-h」	「delete_char_backward」
-    'del'        	= 'delete_char_forward' 	# ⌦c × char →	「delete」	「delete_char_forward」
-    # 'C-d'      	= 'delete_char_forward' 	# ⌦c × char →	「C-d」	「delete_char_forward」
+    # 'C-h'      	= 'delete_char_backward'	# ⌫c × char ←	「C-h」      	「delete_char_backward」
+    'del'        	= 'delete_char_forward' 	# ⌦c × char →	「delete」   	「delete_char_forward」
+    # 'C-d'      	= 'delete_char_forward' 	# ⌦c × char →	「C-d」      	「delete_char_forward」
 
     't'	= 'replace'            	# 🗘  Replace with a character	「  r」	「find_till_char」
     'T'	= 'replace_with_yanked'	# 🗘ʸ Replace with yanked text	「⇧ r」	「till_prev_char」
@@ -1648,7 +1648,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # '3'	= 'copy_to_register 2'               	# ®2🗐 x
     # '4'	= 'paste_from_register 2'            	# ®2📋 x
     't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「␣⇧r」 <i class='fa fa-clipboard'></i>▋
-    'x'  	= 'join_selections'                  	# ×␤ ⨝ Join lines inside selection                	「Ⓝ⇧j」
+    'x'  	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection                	「Ⓝ⇧j」
     'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「␣⇧p」 ⤸<i class='fa fa-clipboard'></i>
     'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「␣ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
     # 'a'	= ':clipboard-yank'                  	# Copy main   sel to system         clipboard
@@ -1752,11 +1752,11 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     ';'  	= 'goto_next_diag'                 	# 🛠🢖  Diagnostic next     (LSP) !!! make these sticky	「⧚ d」
     '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic first    in document (LSP)           	「⧛⇧d」
     '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last     in document (LSP)           	「⧚⇧d」
-    '\'  	= ':lsp-restart'                   	# 🔄 Restart (LSP)                                    	「  」
-    'x'  	= ':lsp-stop'                      	# ⏹ Stop (LSP)                                       	「  」
+    '\'  	= ':lsp-restart'                   	# 🔄🄻 Restart (LSP)                                   	「  」
+    'x'  	= ':lsp-stop'                      	# ⏹🄻 Stop (LSP)                                      	「  」
     'c'  	= ':lsp-workspace-command'         	# 🄲🗍 workspace command picker (LSP)                  	「  」
     'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints (LSP)                         	「  」
-    'p'  	= 'dap_restart'                    	# 🔄 Restart (DAP)                                    	「  」
+    'p'  	= 'dap_restart'                    	# 🔄🄳 Restart (DAP)                                   	「  」
     't'  	= ':reset-diff-change'             	# ×Δ Reset diff hunk                                 	「  」
     'd'  	= ':character-info'                	# 🔣ℹ Character info                                  	「  」
 
@@ -1875,10 +1875,10 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「Ⓝ ⎇.」	「replace」
 
     #ⓘ   	Find
-    'A-w'	= 'find_next_char'  	# 🔎   Find       next     char           	「Ⓝ  f」	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'A-W'	= 'find_prev_char'  	# 🔍   Find       previous char           	「⇧Ⓝ f」	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-S'	= 'rsearch'         	# 🔍𝖗 for previous regex pattern          	「Ⓝ⇧ /」	「split_selection」
-    'A-s'	= 'search'          	# 🔎𝖗 for          regex pattern          	「⇧Ⓝ  /」	「select_regex」
+    'A-w'	= 'find_next_char'  	# 🔎   Find       next     char           	「Ⓝ  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'A-W'	= 'find_prev_char'  	# 🔍   Find       previous char           	「⇧Ⓝ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    'A-S'	= 'rsearch'         	# 🔍𝖗 for previous regex pattern          	「Ⓝ⇧ /」   	「split_selection」
+    'A-s'	= 'search'          	# 🔎𝖗 for          regex pattern          	「⇧Ⓝ  /」  	「select_regex」
     'A-.'	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	   「Ⓝ⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
     'A-/'	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   「Ⓝ  n」	「search」
     'A-8'	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	   「Ⓝ⇧ 8」	「<8>」   !!! blocked by ∀*
@@ -1889,7 +1889,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # Compat with non-modal editors
     # 'C-a'  	= ['save_selection','select_all']	# 🖈∀▋                                                       	「Ⓝ⇧ 5」  「increment」 ???better than ⭰× × to line ⭰
     'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy selection onto the next     line (add cursor below)	「Ⓝ⇧ c」  「」
-    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
+    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」 	「」
     'S-left' 	= 'extend_char_left'             	#                                                           	「Ⓢh/◀」	「」
     'S-down' 	= 'extend_line_down'             	#                                                           	「Ⓢj/▼」	「」
     'S-up'   	= 'extend_line_up'               	#                                                           	「Ⓢk/▲」	「」
@@ -1900,7 +1900,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
 
     'A-E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)	「⇧Ⓝ  x」	「move_next_long_word_end」
-    'C-e'  	= ['select_mode'           	# w₌ "Extend" selection to same word                     	「   」  	「goto_line_end_newline」
+    'C-e'  	= ['select_mode'           	# =w "Extend" selection to same word w₌                  	「   」  	「goto_line_end_newline」
       ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,    	 'move_prev_word_start'    	#
       ,    	 'search_selection'        	#
@@ -1966,24 +1966,25 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-x'        	= 'delete_selection'                  	# ×▋                              	「Ⓝ  d」 	「extend_line」
     'del'        	= 'delete_selection'                  	# ×▋                              	「Ⓝd」   	「delete_char_forward」 ??? might be better to delete word/till line ends after selection
     'S-del'      	= 'delete_selection_noyank'           	# 🕱▋                              	  「 ⎇d」	「」
-    'A-X'        	= 'join_selections'                   	# ×␤ ⨝ Join lines inside selection	「⇧ j」  	「extend_to_line_bounds」
+    'A-X'        	= 'join_selections'                   	# ᵡ␤ ⨝ Join lines inside selection	「⇧ j」  	「extend_to_line_bounds」
     'C-x'        	= ['yank_main_selection_to_clipboard',	#                                 	×📋     	「   」	「completion」
                  	   'delete_selection']                	#                                 	cut to clipboard <i class='fa fa-clipboard'></i>
 
     'A-t'	= 'replace'            	# 🗘c  Replace with a character	「Ⓝ  r」	「find_till_char」
     'A-T'	= 'replace_with_yanked'	# 🗘📋 Replace with copied text 	「⇧Ⓝ r」	「till_prev_char」  <i class='fa fa-copy'></i>
 
-    #ⓘ     	Misc               	                                             	 
-    'C-/'  	= 'toggle_comments'	# un-/comment the selections                 	「 ⎈c」	「」 !!!fail
-    'C-m'  	= 'decrement'      	# ⊖ o̠ Decrement object (number) under cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
-    'C-,'  	= 'increment'      	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
-    # 'C-r'	= 'insert_register'	# 📋r Paste register                          	「ⓘ ⎈r」	「insert_register」
-    'C-i'  	= 'completion'     	# ⎁ Autocomplete                             	「   」	「」
+    #ⓘ     	Misc                        	                                             	 
+    'A-R'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「⇧ r」 	「replace_with_yanked」
+    'C-/'  	= 'toggle_comments'         	# un-/comment the selections                 	「 ⎈c」 	「」 !!!fail
+    'C-m'  	= 'decrement'               	# ⊖ o̠ Decrement object (number) under cursor	「 ⎈x」 	「」 <span class='cd'>o&#800;</span>
+    'C-,'  	= 'increment'               	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」 	「」 <span class='cd'>o&#799;</span> !!!fails
+    # 'C-r'	= 'insert_register'         	# 📋r Paste register                          	「ⓘ ⎈r」	「insert_register」
+    'C-i'  	= 'completion'              	# ⎁ Autocomplete                             	「   」 	「」
 
-    #'A-`'	= ''                   	# ☰𝔸𝕒 Case conversion mode	「Ⓝ  」	「switch_to_lowercase」 !!!missing aliases
-    'A-⎈' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「Ⓝ ⎇`」	「」
+    #'A-`'	= ''                   	# ☰𝔸𝕒 Case conversion mode	「Ⓝ  」  	「switch_to_lowercase」 !!!missing aliases
+    'A-⎈' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「Ⓝ ⎇`」 	「」
     'A-B' 	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	「⇧Ⓝ  `」	「」
-    'C-b' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「Ⓝ ⎇`」	「」
+    'C-b' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「Ⓝ ⎇`」 	「」
 
     # 'A-q'	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register   	「Ⓝ  q」	「record_macro」
     # 'A-Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧Ⓝ q」 replay_macro]
