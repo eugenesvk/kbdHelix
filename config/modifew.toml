@@ -241,13 +241,13 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist              	「 ⎈i」	「」
 
     #Ⓝ       	word
-    'd'      	= 'move_prev_word_start'       	# 🢔w  Move this word start                           	「  b」	「delete_selection」
-    'f'      	= 'move_next_word_end'         	# w🢖  Move this word end                             	「  e」	「find_next_char」
-    'A-d'    	= 'move_prev_word_end'         	# ⤝w Move prev word end   (this start + ␣)           	「ⓘ⎇b」	「delete_selection_noyank」
-    'A-f'    	= 'move_next_word_start'       	# w⤞ Move next word start (this end   + ␣)           	「  w」	「」
+    'd'      	= 'move_prev_word_start'       	# 🢔ω  Move this word start                           	「  b」	「delete_selection」
+    'f'      	= 'move_next_word_end'         	# ω🢖  Move this word end                             	「  e」	「find_next_char」
+    'A-d'    	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␣)           	「ⓘ⎇b」	「delete_selection_noyank」
+    'A-f'    	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␣)           	「  w」	「」
     'D'      	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                           	「⇧ b」	「」
     'F'      	= 'move_next_long_word_end'    	# W🢖  Move this WORD end                             	「⇧ e」	「find_prev_char」
-    # 'f'    	= 'move_next_word_start'       	# w⤞ Move next word start (this end + ␣)             	「  w」	「find_next_char」
+    # 'f'    	= 'move_next_word_start'       	# ω⤞ Move next word start (this end + ␣)             	「  w」	「find_next_char」
     'A-D'    	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                           	「⇧ b」	「」
     'A-F'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)             	「⇧ w」	「find_prev_char」
     'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev WORD end                             	「⇧ b」	「half_page_down」
@@ -259,8 +259,8 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'G'    	= 'goto_line'                  	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧ g」   	「goto_line」
     'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                           	   「⇧ b」	「」
     'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)             	「⇧ w」   	「」
-    'A-left' 	= 'move_prev_word_end'         	# ⤝w Move prev word end   (this start + ␣)           	「ⓘ⎇◀」   	「」
-    'A-right'	= 'move_next_word_start'       	# w⤞ Move next word start (this end   + ␣)           	「ⓘ⎇▶」   	「」
+    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␣)           	「ⓘ⎇◀」   	「」
+    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␣)           	「ⓘ⎇▶」   	「」
 
     #Ⓝ      	Line
     # ':'   	= 'command_mode'   	# Ⓒ Enter command mode         	「⇧ ;」 	「command_mode」
@@ -319,7 +319,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
     'J'  	= 'extend_line'            	# ⮒ Select current line/extend to next line if selected  	「⇧  x」	「join_selections」
     'E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)	「⇧  x」	「move_next_long_word_end」
-    'A-e'	= ['select_mode'           	# w₌ "Extend" selection to same word                     	「   」 	「」
+    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                     	「   」 	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,  	 'move_prev_word_start'    	#
       ,  	 'search_selection'        	#
@@ -359,11 +359,11 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   #Ⓝ Change ——————————————————————————————————————————————————————————————————————
     #            	Compat with non-modal editors
-    'A-del'      	= ['extend_next_word_end',       	# ⌦w                              	「   」	「」
+    'A-del'      	= ['extend_next_word_end',       	# ⌦ω                              	「   」	「」
                  	   'delete_selection']           	# ᵡ word →                        	 
     'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                              	「   」	「」
                  	   'delete_selection']           	# ᵡ Word →                        	 
-    'A-backspace'	= ['extend_prev_word_start',     	# ⌫w                              	「   」	「」
+    'A-backspace'	= ['extend_prev_word_start',     	# ⌫ω                              	「   」	「」
                  	   'delete_selection']           	# ᵡ word ←                        	 
     'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                              	「   」	「」
                  	   'delete_selection']           	# ᵡ Word ←                        	 
@@ -380,9 +380,9 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'A-c'    	= 'change_selection'                 	# Δ                               	「  c」	「change_selection_noyank」
     'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                     	「⌫」  	「move_char_left」
     'H'        	= 'delete_char_forward'              	# ⌦c ᵡ char →                     	「⇧⌦」 	「」
-    'A-h'      	= ['move_prev_word_start',           	# ⌫w                              	「   」	「」
+    'A-h'      	= ['move_prev_word_start',           	# ⌫ω                              	「   」	「」
                	   'delete_selection']               	# ᵡ word ←                        	 
-    'A-H'      	= ['move_next_word_end',             	# ⌦w                              	「   」	「」
+    'A-H'      	= ['move_next_word_end',             	# ⌦ω                              	「   」	「」
                	   'delete_selection']               	# ᵡ word →                        	 
     'C-h'      	= ['move_prev_long_word_start',      	# ⌫W                              	「   」	「」
                	   'delete_selection']               	# ᵡ Word ←                        	 
@@ -889,7 +889,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'a'	= ':set auto-completion true'     	# ⎁  Auto pop up of auto-completion
     's'	= ':set search.smart-case true'   	# 𝖗𝕒  Smart case regex searching (case insensitive unless pattern contains upper case characters)
     'g'	= ':set indent-guides.render true'	# ┊ Indent guides
-    'z'	= ':set completion-replace true'  	# ⎁w completions replace word, not pre-cursor part
+    'z'	= ':set completion-replace true'  	# ⎁ω completions replace word, not pre-cursor part
     'c'	= ':set true-color true'          	# 🌈 Oerride auto detection of terminal truecolor
     'h'	= ':set cursorline true'          	# 🟨━ Highlight all lines   with a cursor
     'j'	= ':set cursorcolumn true'        	# 🟨┃ Highlight all columns with a cursor
@@ -943,7 +943,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'a'	= ':set auto-completion false'     	# ⎁  Auto pop up of auto-completion
     's'	= ':set search.smart-case false'   	# 𝖗𝕒  Smart case regex searching (case insensitive unless pattern contains upper case characters)
     'g'	= ':set indent-guides.render false'	# ┊ Indent guides
-    'z'	= ':set completion-replace false'  	# ⎁w completions replace word, not pre-cursor part
+    'z'	= ':set completion-replace false'  	# ⎁ω completions replace word, not pre-cursor part
     'c'	= ':set false-color false'         	# 🌈 Oerride auto detection of terminal falsecolor
     'h'	= ':set cursorline false'          	# 🟨━ Highlight all lines   with a cursor
     'j'	= ':set cursorcolumn false'        	# 🟨┃ Highlight all columns with a cursor
@@ -1030,25 +1030,25 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
   #   'Enter' 	= "Open selected"	# Open selected	≝「$!」	「Open selected」
 
   #   #⧁ Move ——————————————————————————————————————————————————————————————————————
-  #   #        	Char                         	                                                	 
-  #   'A-l'    	= 'move_prev_char'           	# 🢔c Move   prev char                           	「⎈ b」	「」
-  #   'A-;'    	= 'move_next_char'           	# c🢖 Move   next char                           	「⎈ f」	「」
-  #   #        	Word                         	                                                	 
-  #   'A-d'    	= 'move_prev_word_start'     	# 🢔w Move   this word start                     	「⎇ d」	「delete next word」
-  #   'A-f'    	= 'move_next_word_end'       	# w🢖 Move   this word end                       	≝「⎇ f」	「Forward a word」
-  #   'A-D'    	= 'move_prev_long_word_start'	# 🢔W Move   this WORD start                     	「⇧ b」	「」
-  #   'A-F'    	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␣)  	「⇧ w」	「」
-  #   'C-left' 	= 'move_prev_long_word_start'	# 🢔W Move   this WORD start                     	「⇧ b」	「」
-  #   'C-right'	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␣)  	「⇧ w」	「」
-  #   'Left'   	= "move_prev_char"           	# 🢔c Move   prev char                           	「  ◀」	「」
-  #   'Right'  	= "move_next_char"           	# c🢖 Move   next char                           	「  ▶」	「」
-  #   'A-left' 	= 'move_prev_word_end'       	# ⤝w Move   prev word end   (this start + ␣)	「⎇◀」	「」
-  #   'A-right'	= 'move_next_word_start'     	# w⤞ Move   next word start (this end   + ␣)	「⎇▶」	「」
-  #   #        	Line                         	                                                	 
-  #   'A-a'    	= 'move_to_prompt_start'     	# ⭰▋ Move   line start                          	「⭰」	「Move prompt start」
-  #   'A-A'    	= 'move_to_prompt_end'       	# ⭲▋ Move   line end                            	「⭲」	「Move prompt end」
-  #   'End'    	= "Move prompt end"          	# ⭰▋ Move   line start                          	≝「⭰」	「Move prompt start」
-  #   'Home'   	= "Move prompt start"        	# ⭲▋ Move   line end                            	≝「⭲」	「Move prompt end」
+  #   #        	Char                         	                                            	 
+  #   'A-l'    	= 'move_prev_char'           	# 🢔c Move   prev char                       	「⎈ b」	「」
+  #   'A-;'    	= 'move_next_char'           	# c🢖 Move   next char                       	「⎈ f」	「」
+  #   #        	Word                         	                                            	 
+  #   'A-d'    	= 'move_prev_word_start'     	# 🢔ω Move   this word start                 	「⎇ d」 	「delete next word」
+  #   'A-f'    	= 'move_next_word_end'       	# ω🢖 Move   this word end                   	≝「⎇ f」	「Forward a word」
+  #   'A-D'    	= 'move_prev_long_word_start'	# 🢔W Move   this WORD start                 	「⇧ b」 	「」
+  #   'A-F'    	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␣)  	「⇧ w」 	「」
+  #   'C-left' 	= 'move_prev_long_word_start'	# 🢔W Move   this WORD start                 	「⇧ b」 	「」
+  #   'C-right'	= 'move_next_long_word_start'	# W⤞ Move   next WORD end   (this end + ␣)  	「⇧ w」 	「」
+  #   'Left'   	= "move_prev_char"           	# 🢔c Move   prev char                       	「  ◀」 	「」
+  #   'Right'  	= "move_next_char"           	# c🢖 Move   next char                       	「  ▶」 	「」
+  #   'A-left' 	= 'move_prev_word_end'       	# ⤝ω Move   prev word end   (this start + ␣)	「⎇◀」  	「」
+  #   'A-right'	= 'move_next_word_start'     	# ω⤞ Move   next word start (this end   + ␣)	「⎇▶」  	「」
+  #   #        	Line                         	                                            	 
+  #   'A-a'    	= 'move_to_prompt_start'     	# ⭰▋ Move   line start                      	「⭰」 	「Move prompt start」
+  #   'A-A'    	= 'move_to_prompt_end'       	# ⭲▋ Move   line end                        	「⭲」 	「Move prompt end」
+  #   'End'    	= "Move prompt end"          	# ⭰▋ Move   line start                      	≝「⭰」	「Move prompt start」
+  #   'Home'   	= "Move prompt start"        	# ⭲▋ Move   line end                        	≝「⭲」	「Move prompt end」
 
   #   #⧁ Change ——————————————————————————————————————————————————————————————————————
   #   'A-x'      	= 'delete_selection'       	# ×▋                     	「  」	「」
@@ -1152,10 +1152,10 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'C-k'	= 'page_up'          	# ⇞ Move      page up  	「 ⎈u」	「」
 
     #Ⓢ        	word
-    'd'       	= 'extend_prev_word_start'     	# 🢔w Extend   this word start                 	   「  b」	「」
-    'f'       	= 'extend_next_word_end'       	# w🢖 Extend   this word end                   	   「  e」	「extend_next_char」
-    'A-d'     	= 'extend_prev_word_end'       	# ⤝w Extend   prev word end   (this start + ␣)	「   」   	「」
-    'A-f'     	= 'extend_next_word_start'     	# w⤞ Extend   next word start (this end   + ␣)	「  w」   	「」
+    'd'       	= 'extend_prev_word_start'     	# 🢔ω Extend   this word start                 	   「  b」	「」
+    'f'       	= 'extend_next_word_end'       	# ω🢖 Extend   this word end                   	   「  e」	「extend_next_char」
+    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␣)	「   」   	「」
+    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␣)	「  w」   	「」
     'D'       	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
     'F'       	= 'extend_next_long_word_end'  	# W🢖 Extend   this WORD end                   	  「⇧ e」 	「extend_prev_char」
     'A-D'     	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
@@ -1166,14 +1166,14 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␣)  	「⇧ w」   	「」
     'C-left'  	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	   「⇧ b」	「」
     'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␣)  	「⇧ w」   	「」
-    # 'A-left'	= 'extend_prev_word_end'       	# ⤝w Extend   prev word end   (this start + ␣)	「   」   	「」
-    'A-right' 	= 'extend_next_word_start'     	# w⤞ Extend   next word start (this end   + ␣)	「  w」   	「」
+    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␣)	「   」   	「」
+    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␣)	「  w」   	「」
 
     #Ⓢ      	Line
     # 'home'	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「home」	「extend_to_line_start」
-    # 'end' 	= 'extend_to_line_end'  	# ▋⭲ Extend     line end	「end」	「extend_to_line_end」
+    # 'end' 	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「end」 	「extend_to_line_end」
     'a'     	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「Home」	「」
-    'A'     	= 'extend_to_line_end'  	# ▋⭲ Extend     line end	「End」	「」
+    'A'     	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「End」 	「」
 
     #Ⓢ   	Paragraph
     # '>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「」
@@ -1235,7 +1235,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
     'J'  	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
     'E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)        	「⇧ x」 	「move_next_long_word_end」
-    'A-e'	= ['select_mode'           	# w₌ "Extend" selection to same word                             	「   」 	「」
+    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」 	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,  	 'move_prev_word_start'    	#
       ,  	 'search_selection'        	#
@@ -1271,11 +1271,11 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
   #Ⓢ Change ——————————————————————————————————————————————————————————————————————
     #            	Compat with non-modal editors
-    'A-del'      	= ['extend_next_word_end',       	# ⌦w                              	「   」	「」
+    'A-del'      	= ['extend_next_word_end',       	# ⌦ω                              	「   」	「」
                  	   'delete_selection']           	# × word →                        	 
     'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                              	「   」	「」
                  	   'delete_selection']           	# × Word →                        	 
-    'A-backspace'	= ['extend_prev_word_start',     	# ⌫w                              	「   」	「」
+    'A-backspace'	= ['extend_prev_word_start',     	# ⌫ω                              	「   」	「」
                  	   'delete_selection']           	# × word ←                        	 
     'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                              	「   」	「」
                  	   'delete_selection']           	# × Word ←                        	 
@@ -1292,9 +1292,9 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     # 'A-c'    	= 'change_selection'                 	# Δ                               	「  c」	「change_selection_noyank」
     'h'        	= 'delete_char_backward'             	# ⌫c × char ←                     	「⌫」  	「move_char_left」
     'H'        	= 'delete_char_forward'              	# ⌦c × char →                     	「⇧⌦」 	「」
-    'A-h'      	= ['extend_prev_word_start',         	# ⌫w                              	「   」	「」
+    'A-h'      	= ['extend_prev_word_start',         	# ⌫ω                              	「   」	「」
                	   'delete_selection']               	# × word ←                        	 
-    'A-H'      	= ['extend_next_word_end',           	# ⌦w                              	「   」	「」
+    'A-H'      	= ['extend_next_word_end',           	# ⌦ω                              	「   」	「」
                	   'delete_selection']               	# × word →                        	 
     'C-h'      	= ['extend_prev_long_word_start',    	# ⌫W                              	「   」	「」
                	   'delete_selection']               	# × Word ←                        	 
@@ -1830,9 +1830,9 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-pagedown' 	= 'jump_forward'               	# ⎘̡                                 	「   」 	「」
     # 'C-left'   	= 'move_prev_long_word_start'  	#                                    	「   」 	「」
     # 'C-right'  	= 'move_next_long_word_start'  	#                                    	「   」 	「」
-    'S-A-left'   	= 'extend_prev_word_start'     	# w← Extend previous word start      	「Ⓢ  b」	「」
-    'S-A-right'  	= 'extend_next_word_end'       	# w⇥ Extend next     word end        	「Ⓢ  e」	「」
-    # 'S-A-right'	= 'extend_next_word_start'     	# w→ Extend next     word start      	「Ⓢ  w」	「」
+    'S-A-left'   	= 'extend_prev_word_start'     	# ω← Extend previous word start      	「Ⓢ  b」	「」
+    'S-A-right'  	= 'extend_next_word_end'       	# ω⇥ Extend next     word end        	「Ⓢ  e」	「」
+    # 'S-A-right'	= 'extend_next_word_start'     	# ω→ Extend next     word start      	「Ⓢ  w」	「」
     'S-C-left'   	= 'extend_prev_long_word_start'	# W← Extend previous WORD start      	「Ⓢ ⇧b」	「」
     'S-C-right'  	= 'extend_next_long_word_start'	# W→ Extend next     WORD start      	「Ⓢ ⇧W」	「」
     # 'S-C-right'	= 'extend_next_long_word_end'  	# W⇥ Extend next    WORD end         	「Ⓢ ⇧E」	「」
@@ -1846,22 +1846,22 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	   「Ⓝ⎈i」	「」
 
     #ⓘ       	Word
-    'A-d'    	= 'move_prev_word_start'       	# 🢔w  Move this word start                	   「Ⓝ b」	「delete_word_forward」
-    'A-f'    	= 'move_next_word_end'         	# w🢖  Move this word end                  	   「Ⓝ e」	「move_next_word_start」
+    'A-d'    	= 'move_prev_word_start'       	# 🢔ω  Move this word start                	   「Ⓝ b」	「delete_word_forward」
+    'A-f'    	= 'move_next_word_end'         	# ω🢖  Move this word end                  	   「Ⓝ e」	「move_next_word_start」
     'A-D'    	= 'move_prev_long_word_start'  	# 🢔W Move   this WORD start               	  「⇧Ⓝ b」	「」
     'A-F'    	= 'move_next_long_word_end'    	# W🢖 Move   this WORD end                 	  「⇧Ⓝ e」	「」
-    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev WORD end                  	「⇧ b」	「half_page_down」
+    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev WORD end                  	「⇧ b」   	「half_page_down」
              	   'extend_prev_word_start',   	#                                         	 
              	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing      	 
     'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␣)  	「⇧ w」	「page_down」
     # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next WORD end   (this end + ␣)  	「⇧ w」	「page_down」
     #        	   'extend_next_long_word_end']	#                                         	 
     'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                	   「⇧ b」	「」
-    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end   + ␣)	「⇧ w」	「」
-    'A-left' 	= 'move_prev_word_end'         	# ⤝w Move prev word end   (this start + ␣)	≝「ⓘ⎇◀」	「move_prev_word_end」
-    'A-right'	= 'move_next_word_start'       	# w⤞ Move next word start (this end   + ␣)	≝「ⓘ⎇▶」	「move_next_word_start」
-    # 'A-d'  	= 'move_prev_word_end'         	# ⤝w Move   prev word end (this start + ␣)	「ⓘ⎇b」	「」
-    # 'A-f'  	= 'move_next_word_start'       	# w⤞ Move   next word start (this end + ␣)	「ⓘ⎇f」	「」
+    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end   + ␣)	「⇧ w」   	「」
+    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␣)	≝「ⓘ⎇◀」  	「move_prev_word_end」
+    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␣)	≝「ⓘ⎇▶」  	「move_next_word_start」
+    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move   prev word end (this start + ␣)	「ⓘ⎇b」   	「」
+    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move   next word start (this end + ␣)	「ⓘ⎇f」   	「」
 
     #ⓘ     	Line
     # 'A-G'	= 'goto_line'   	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧Ⓝ g」	「」
@@ -1900,7 +1900,7 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
 
 
     'A-E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)	「⇧Ⓝ  x」	「move_next_long_word_end」
-    'C-e'  	= ['select_mode'           	# =w "Extend" selection to same word w₌                  	「   」  	「goto_line_end_newline」
+    'C-e'  	= ['select_mode'           	# =ω "Extend" selection to same word w₌                  	「   」  	「goto_line_end_newline」
       ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,    	 'move_prev_word_start'    	#
       ,    	 'search_selection'        	#
@@ -1943,20 +1943,20 @@ theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/hel
     'A-H'        	= 'delete_char_forward' 	# ⌦c × char →    	「⇧ ⌦」	「」
     #ⓘ           	word                    	                 	 
     #            	Compat with non-modal editors
-    # 'A-del'    	= 'delete_word_forward'          	# ⌦w × word →   	「⎇ d」	「」 !!!ignores newlines
-    'A-del'      	= ['extend_next_word_end',       	# ⌦w            	「   」	「」
+    # 'A-del'    	= 'delete_word_forward'          	# ⌦ω × word →   	「⎇ d」	「」 !!!ignores newlines
+    'A-del'      	= ['extend_next_word_end',       	# ⌦ω            	「   」	「」
                  	   'delete_selection']           	# × word →      	 
     'C-del'      	= ['extend_next_long_word_end',  	# ⌦W            	「   」	「」
                  	   'delete_selection']           	# × Word →      	 
-    'A-backspace'	= ['extend_prev_word_start',     	# ⌫w            	「   」	「」
+    'A-backspace'	= ['extend_prev_word_start',     	# ⌫ω            	「   」	「」
                  	   'delete_selection']           	# × word ←      	 
     'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W            	「   」	「」
                  	   'delete_selection']           	# × Word ←      	 
     #            	                                 	                	 
     'C-h'        	= ['extend_prev_long_word_start',	# ⌫W            	「   」	「delete_char_backward」
                  	   'delete_selection']           	#               	 × Word ←
-    # 'A-h'      	= 'delete_word_backward'         	# ⌫w × word ←   	「 ⎈w」	「」 !!!ignores newlines
-    'A-h'        	= ['extend_prev_word_start',     	# ⌫w            	「   」	「」
+    # 'A-h'      	= 'delete_word_backward'         	# ⌫ω × word ←   	「 ⎈w」	「」 !!!ignores newlines
+    'A-h'        	= ['extend_prev_word_start',     	# ⌫ω            	「   」	「」
                  	   'delete_selection']           	#               	× word ←
     'C-a'        	= 'kill_to_line_start'           	# ⭰× × to line ⭰	「ⓘ ⎈u」	「goto_line_start」  ??? better than ∀▋select_all
     'C-A'        	= 'kill_to_line_end'             	# ×⭲ × to line ⭲	「ⓘ ⎈k」	「」
