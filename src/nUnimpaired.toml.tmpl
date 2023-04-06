@@ -1,0 +1,146 @@
+# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
+#◊/* key     	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -◊
+  [keys.     	'#◊.m◊'.'#◊.k1◊']         	##◊.i◊ ☰⧛ Unimpaired
+    'j'      	= 'goto_prev_change'      	# 🢔Δ Change            	previous       	「  g」 	「」
+    # 'G'    	= 'goto_first_change'     	# ⭰Δ Change            	1st            	≝「⇧ g」	「goto_first_change」
+    'h'      	= 'goto_first_change'     	# ⭰Δ Change            	1st            	「⇧ g」 	「」
+    # 'd'    	= 'goto_prev_diag'        	# 🢔🛠 Diagnostic        	previous  (LSP)	≝「  d」	「goto_prev_diag」
+    # 'D'    	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	≝「⇧ d」	「goto_first_diag」
+    'g'      	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	「⇧ d」 	「goto_prev_change」
+    # 'f'    	= 'goto_prev_function'    	# 🢔ƒ Function          	previous (TS)  	≝「  f」	「goto_prev_function」
+    's'      	= 'goto_prev_class'       	# 🢔τ Type definition   	previous (TS)  	「  t」 	「」
+    # 'a'    	= 'goto_prev_parameter'   	# 🢔α Argument/parameter	previous (TS)  	≝「  a」	「goto_prev_parameter」
+    # 'c'    	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	≝「  c」	「goto_prev_comment」
+    '/'      	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
+    'z'      	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
+    # 'T'    	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	≝「⇧ t」	「goto_prev_test」
+    't'      	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	「⇧ t」 	「goto_prev_class」
+    # 'p'    	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	≝「  p」	「goto_prev_paragraph」
+    '['      	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
+    '.'      	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
+    # 'space'	= 'add_newline_above'     	# ⭡␤ Add newline above 	               	≝「  ␠」	「add_newline_above」
+    'm'      	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines above it
+      ,      	  'delete_selection'      	# !!!missing n
+      ,      	  'move_line_up'          	#
+      ,      	  'paste_before']         	#
+
+  [keys.	'#◊.m◊'.'#◊.k1◊'.'c']             	##◊.i◊ ☰⧛ℂ Unimpaired Config toggle ON
+    'q' 	= ':set auto-save true'           	# 💾🙈 save focus lost
+    'w' 	= ':set auto-format true'         	# ℱ💾 auto formatting on save
+    'e' 	= ':set line-number absolute'     	# №⭳  Line number display: absolute #⭳
+    'r' 	= ':set soft-wrap true'           	# ↪ Soft wrap lines
+    't' 	= ':set search.wrap-around true'  	# 🔎↪  search should wrap after depleting the matches
+    'a' 	= ':set auto-completion true'     	# ⎁  Auto pop up of auto-completion
+    's' 	= ':set search.smart-case true'   	# 𝖗𝕒  Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'g' 	= ':set indent-guides.render true'	# ┊ Indent guides
+    'z' 	= ':set completion-replace true'  	# ⎁ω completions replace word, not pre-cursor part
+    'c' 	= ':set true-color true'          	# 🌈 Oerride auto detection of terminal truecolor
+    'h' 	= ':set cursorline true'          	# 🟨━ Highlight all lines   with a cursor
+    'j' 	= ':set cursorcolumn true'        	# 🟨┃ Highlight all columns with a cursor
+    'd' 	= ':set auto-pairs true'          	# ⟪⟫  Auto insertion of pairs to parentheses, brackets, etc
+    'i' 	= ':set auto-info true'           	# 🛈  Display infoboxes
+    'v' 	= ':set middle-click-paste true'  	# 🖰📋 Middle click paste support
+    'm' 	= ':set mouse true'               	# 🖰 Mouse mode
+    'u' 	= ':set undercurl true'           	# ‗ Override auto detection of terminal undercurl support
+    'p' 	= ':set color-modes true'         	# 🚦 Color mode indicator depending on the mode itself
+    'o' 	= ':config-open'                  	# 🧬 Config open   		「  」	「」
+    'l' 	= ':config-reload'                	# 🧬🗘 Config reload		「  」	「」
+
+  [keys. 	'#◊.m◊'.'#◊.k1◊'.'c'.' ']             	##◊.i◊ ☰⧛ℂ␠ Unimpaired Config toggle ON sub-space mode
+    ' '  	= ':set whitespace.render.space all'  	# · show space
+    'b'  	= ':set whitespace.render.nbsp all'   	# ⍽ show nbsp
+    'tab'	= ':set whitespace.render.tab all'    	# ⇥ show tab
+    't'  	= ':set whitespace.render.tab all'    	# ⇥ show tab
+    'n'  	= ':set whitespace.render.newline all'	# ⏎ show newline
+    'ret'	= ':set whitespace.render.newline all'	# ⏎ show newline
+
+  [keys.	'#◊.m◊'.'#◊.k1◊'.'c'.'.']            	##◊.i◊ ☰⧛ℂ🙈 Unimpaired Config toggle ON hidden mode
+    '.' 	= ':set file-picker.hidden true'     	# Ignore hidden files
+    ',' 	= ':set file-picker.ignore true'     	# Read .ignore files
+    'p' 	= ':set file-picker.parents true'    	# Read  ignore files from parent directories
+    'i' 	= ':set file-picker.git-ignore true' 	# gi Read .gitignore files
+    'g' 	= ':set file-picker.git-global true' 	# ggi Read global .gitignore (path: core.excludefile option of git's config)
+    'e' 	= ':set file-picker.git-exclude true'	# ge Read .git/info/exclude files
+    'l' 	= ':set follow-links true'           	# Follow symlinks instead of ignoring them
+    'k' 	= ':set deduplicate-links true'      	# Ignore symlinks that point at files already shown in the picker
+
+  [keys.	'#◊.m◊'.'#◊.k1◊'.'c'.'y']                    	##◊.i◊ ☰⧛ℂ🄻 Unimpaired Config toggle ON LSP mode
+    'k' 	= ':set lsp.enable true'                     	# False will completely disable language servers regardless of language settings
+    'p' 	= ':set lsp.display-messages true'           	# LSP progress messages below statusline
+    'i' 	= ':set lsp.auto-signature-help true'        	# Enable automatic popup of signature help (parameter hints)
+    'h' 	= ':set lsp.display-inlay-hints true'        	# 💡 Inlay hints
+    'd' 	= ':set lsp.display-signature-help-docs true'	# Docs under signature help popup
+    's' 	= ':set lsp.snippets true'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+
+
+  [keys.     	'#◊.m◊'.'#◊.k0◊']         	##◊.i◊ ☰⧚
+    'j'      	= 'goto_next_change'      	# Δ🢖 Change            	next            	「  g」 	「」
+    # 'G'    	= 'goto_last_change'      	# Δ⭲ Change            	last            	≝「⇧ g」	「goto_last_change」
+    'h'      	= 'goto_last_change'      	# Δ⭲ Change            	last            	「⇧ g」 	「」
+    # 'd'    	= 'goto_next_diag'        	# 🛠🢖 Diagnostic        	next  (LSP)     	≝「  d」	「goto_next_diag」
+    # 'D'    	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	≝「⇧ d」	「goto_last_diag」
+    'g'      	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	「⇧ d」 	「goto_next_change」
+    # 'f'    	= 'goto_next_function'    	# ƒ🢖 Function          	next (TS)       	≝「  f」	「goto_next_function」
+    's'      	= 'goto_next_class'       	# τ🢖 Type definition   	next (TS)       	「  t」 	「」
+    # 'a'    	= 'goto_next_parameter'   	# α🢖 Argument/parameter	next (TS)       	≝「  a」	「goto_next_parameter」
+    # 'c'    	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	≝「  c」	「goto_next_comment」
+    '/'      	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
+    'z'      	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
+    # 'T'    	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	≝「⇧ t」	「goto_next_test」
+    't'      	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	「⇧ t」 	「goto_next_class」
+    # 'p'    	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「goto_next_paragraph」
+    ']'      	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
+    '.'      	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
+    # 'space'	= 'add_newline_below'     	# ⭣␤ Add newline below 	                	≝「  ␠」	「add_newline_below」
+    'm'      	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines below it
+      ,      	  'delete_selection'      	# !!!missing n
+      ,      	  'goto_line_end'         	#
+      ,      	  'paste_after']          	#
+
+  [keys. 	'#◊.m◊'.'#◊.k0◊'.'c']                         	##◊.i◊ ☰⧚ℂ Unimpaired Config toggle OFF
+    'q'  	= ':set auto-save false'                      	# 💾🙈 save focus lost
+    'w'  	= ':set auto-format false'                    	# ℱ💾 auto formatting on save
+    'e'  	= ':set line-number relative'                 	# №⭳  Line number display: absolute #
+    'r'  	= ':set soft-wrap false'                      	# ↪ Soft wrap lines
+    't'  	= ':set search.wrap-around false'             	# 🔎↪  search should wrap after depleting the matches
+    'a'  	= ':set auto-completion false'                	# ⎁  Auto pop up of auto-completion
+    's'  	= ':set search.smart-case false'              	# 𝖗𝔸  Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'g'  	= ':set indent-guides.render false'           	# ┊ Indent guides
+    'z'  	= ':set completion-replace false'             	# ⎁ω completions replace word, not pre-cursor part
+    'c'  	= ':set false-color false'                    	# 🌈 Oerride auto detection of terminal falsecolor
+    'h'  	= ':set cursorline false'                     	# 🟨━ Highlight all lines   with a cursor
+    'j'  	= ':set cursorcolumn false'                   	# 🟨┃ Highlight all columns with a cursor
+    'd'  	= ':set auto-pairs false'                     	# ⟪⟫  Auto insertion of pairs to parentheses, brackets, etc
+    'i'  	= ':set auto-info false'                      	# 🛈  Display infoboxes
+    'v'  	= ':set middle-click-paste false'             	# 🖰📋 Middle click paste support
+    'm'  	= ':set mouse false'                          	# 🖰 Mouse mode
+    'u'  	= ':set undercurl false'                      	# ‗ Override auto detection of terminal undercurl support
+    'p'  	= ':set color-modes false'                    	# 🚦 Color mode indicator depending on the mode itself
+    'o'  	= ':config-open'                              	# 🧬 Config open   		「  」	「」
+    'l'  	= ':config-reload'                            	# 🧬🗘 Config reload		「  」	「」
+
+  [keys. 	'#◊.m◊'.'#◊.k0◊'.'c'.' ']              	##◊.i◊ ☰⧚ℂ␠ Unimpaired Config toggle OFFN sub-space mode
+    ' '  	= ':set whitespace.render.space none'  	# · show space
+    'b'  	= ':set whitespace.render.nbsp none'   	# ⍽ show nbsp
+    'tab'	= ':set whitespace.render.tab none'    	# ⇥ show tab
+    't'  	= ':set whitespace.render.tab none'    	# ⇥ show tab
+    'n'  	= ':set whitespace.render.newline none'	# ⏎ show newline
+    'ret'	= ':set whitespace.render.newline none'	# ⏎ show newline
+
+  [keys.	'#◊.m◊'.'#◊.k0◊'.'c'.'.']             	##◊.i◊ ☰⧚ℂ🙈 Unimpaired Config toggle OFF hidden mode
+    '.' 	= ':set file-picker.hidden false'     	# Ignore hidden files
+    ',' 	= ':set file-picker.ignore false'     	# Read .ignore files
+    'p' 	= ':set file-picker.parents false'    	# Read  ignore files from parent directories
+    'i' 	= ':set file-picker.git-ignore false' 	# gi Read .gitignore files
+    'g' 	= ':set file-picker.git-global false' 	# ggi Read global .gitignore (path: core.excludefile option of git's config)
+    'e' 	= ':set file-picker.git-exclude false'	# ge Read .git/info/exclude files
+    'l' 	= ':set follow-links false'           	# Follow symlinks instead of ignoring them
+    'k' 	= ':set deduplicate-links false'      	# Ignore symlinks that point at files already shown in the picker
+
+  [keys.	'#◊.m◊'.'#◊.k0◊'.'c'.'y']                     	##◊.i◊ ☰⧚ℂ🄻 Unimpaired Config toggle OFF LSP mode
+    'k' 	= ':set lsp.enable false'                     	# False will completely disable language servers regardless of language settings
+    'p' 	= ':set lsp.display-messages false'           	# LSP progress messages below statusline
+    'i' 	= ':set lsp.auto-signature-help false'        	# Enable automatic popup of signature help (parameter hints)
+    'h' 	= ':set lsp.display-inlay-hints false'        	# 💡 Inlay hints
+    'd' 	= ':set lsp.display-signature-help-docs false'	# Docs under signature help popup
+    's' 	= ':set lsp.snippets false'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
