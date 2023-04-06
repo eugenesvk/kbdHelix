@@ -314,11 +314,6 @@
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
 
-  [keys.	normal.'F1']            	#Ⓝ ☰? Help mode                                             	「  」	「」
-    'F2'	= ':tree-sitter-scopes' 	# 🌳 Tree sitter scopes (for theming and development)        	「  」	「」
-    'F3'	= ':tree-sitter-subtree'	# 🌳 Tree sitter subtree under cursor (for debugging queries)	「  」	「」
-    'c' 	= ':character-info'     	# 🔣ℹ Character info                                         	「  」	「」
-
   [keys. 	normal.'`']            	#Ⓝ ☰𝔸𝕒 Case conversion mode   	「   」	「switch_to_lowercase」
     '`'  	= 'switch_case'        	# 𝕒⇋𝔸 (selection)             	「⇧ `」	「」
     'j'  	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)              	「  `」	「」
@@ -490,6 +485,7 @@
     'up'     	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「▲」    	「jump_view_up」
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
+  #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰?" "k" "F1" "cfg" $cfg) ◊
 
   [keys.     	normal.'space']                     	#Ⓝ ☰␠  Space mode                                 	Ⓝ「 ␠」 	「」
     # 'space'	= 'insert_mode'                     	# ⁁⤸ Insert before selection                      	「  i」 	「」 !!!panick! !!!missing

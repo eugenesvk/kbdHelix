@@ -410,6 +410,8 @@
     'up'     	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「▲」    	「jump_view_up」
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
+  #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" $cfg) ◊
+
 
   [keys.   	insert.'A-space']  	#ⓘ ☰␠  Space mode   	「$!」	「」
     'right'	= 'jump_view_right'	# 🗗▶ Move to Split →	≝「▶」	「jump_view_right」
