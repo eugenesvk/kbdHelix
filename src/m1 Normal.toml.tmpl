@@ -47,7 +47,7 @@
   # 'C-S-s'  	= 'Save As'                          	# ???                      	「⇧⎈s」  	「」
   'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」  	「」
   # 'C-S-t'  	= 'open-last-closed'                 	# ???                      	「⇧⎈t」  	「」
-  # 'C-plus' 	= 'zoom-in'                          	# ??? 🔎⨭                   	「 ⎈+」  	「」
+  # 'C-+'    	= 'zoom-in'                          	# ??? 🔎⨭                   	「 ⎈+」  	「」
   # 'C-minus'	= 'zoom-out'                         	# ??? 🔎−                   	「 ⎈-」  	「」
 
   #Ⓝ   	Copy                                	 
@@ -57,9 +57,9 @@
   'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」 	「change_selection_noyank」
 
   #Ⓝ Shell 	                 	 
-    # '|'  	= 'shell_pipe'   	# |   Pipe each selection through shell command, replacing with output	「⇧ \」	「shell_pipe」
-    "A-\\" 	= 'shell_pipe_to'	# |ᵡ Pipe each selection into    shell command, ignoring       output 	「 ⎇\」	「」
-    # 'A-|'	= 'shell_pipe_to'	#   Pipe each selection into    shell command, ignoring       output  	「⇧⎇\」	「shell_pipe_to」
+    # '|'  	= 'shell_pipe'   	# |   Pipe each selection through shell command, replacing with output	≝「⇧ \」	「shell_pipe」
+    "A-\\" 	= 'shell_pipe_to'	# |ᵡ Pipe each selection into    shell command, ignoring       output 	「⇧⎇\」 	「」
+    # 'A-|'	= 'shell_pipe_to'	#   Pipe each selection into    shell command, ignoring       output  	≝「⇧⎇\」	「shell_pipe_to」
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
     #    	Cursor@Home
@@ -169,11 +169,12 @@
     'S-right'	= 'extend_char_right'            	#                                                       	「Ⓢl/▶」	「」
 
 
-    'A-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
-    'C-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
-    'G'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
+    'A-g'	= 'jumplist_picker'	# ☰🖈 List jumplist          	「☰␠ j」	「」
+    'C-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「」
+    'G'  	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「goto_line」
 
-    'J'  	= 'extend_line'            	# ⮒ Select current line/extend to next line if selected   	「⇧  x」	「join_selections」
+    'J'  	= 'extend_line_below'      	# ⮒ Select current line/extend to next    if selected     	「  x」 	「join_selections」
+    'A-r'	= 'extend_line'            	# ⭿ Select current line/extend to another if selected     	「  」  	「」
     'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯	「⇧  x」	「move_next_long_word_end」
     'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                      	「   」 	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
@@ -234,7 +235,7 @@
 
     # '.'      	= 'N/A'                              	# ∞ Repeat last change            	「.」     	「n/a」
     '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	「 ⌦」    	「<5>」
-    'x'        	= 'delete_selection'                 	# ᵡ▋                              	「  d」   	「extend_line」
+    'x'        	= 'delete_selection'                 	# ᵡ▋                              	「  d」   	「extend_line_below」
     'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)         	「 ⎇d」   	「」
     # 'A-c'    	= 'change_selection'                 	# Δ                               	「  c」   	「change_selection_noyank」
     'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                     	「⌫」     	「move_char_left」
@@ -390,37 +391,77 @@
 
   #   'C-v'	= 'paste_before'	# ⤸📋 Paste before selection <i class='fa fa-clipboard'></i>⤹	「⎈ s」	「」
 
-  #   #⧁ Select ——————————————————————————————————————————————————————————————————————
-  #   'A-a'    	= 'extend_to_line_start'           	# ⭰▋ Move     line start + select	「   」	「」
-  #   'A-A'    	= 'extend_to_line_end'             	# ⭲▋ Move     line end   + select	「   」	「」
-  #   'A-j'    	= "Select next history"            	# Select next history            	「⎈ n」	「」
-  #   'A-k'    	= "Select previous history"        	# Select previous history        	「⎈ p」	「」
-  #   'Down'   	= "Select next history"            	# Select next history            	≝「 ▼」	「」
-  #   'Up'     	= "Select previous history"        	# Select previous history        	≝「 ▲」	「」
-  #   'Tab'    	= "Select next completion item"    	# Select next completion item    	≝「 ⭾」	「」
-  #   'BackTab'	= "Select previous completion item"	# Select previous completion item	≝「⇧$!」	「」
+  # [keys              	.prompt]                	#Ⓝ ⧁ Prompt !!! Remapping no supported
+    # 'C-n'            	= 'no_op'               	#                            	「」    	「History next」
+    # 'C-p'            	= 'no_op'               	#                            	「」    	「History previous」
+    # 'C-b'            	= 'no_op'               	#                            	「」    	「move char backward」
+    # 'C-f'            	= 'no_op'               	#                            	「」    	「move char forward」
+    # 'C-a'            	= 'no_op'               	#                            	「」    	「move prompt start」
+    # 'C-e'            	= 'no_op'               	#                            	「」    	「move prompt end」
+    # 'C-w'            	= 'no_op'               	#                            	「」    	「del word left」
+    # 'A-d'            	= 'no_op'               	#                            	「」    	「del word right」
+    # 'C-h'            	= 'no_op'               	#                            	「」    	「del char left」
+    # 'C-d'            	= 'no_op'               	#                            	「」    	「del char right」
+    # 'C-u'            	= 'no_op'               	#                            	「」    	「del line start」
+    # 'A-a'            	= 'extend_to_line_start'	# ⭰▋ Move line start + select	「   」 	「」
+    # 'A-A'            	= 'extend_to_line_end'  	# ⭲▋ Move line end   + select	「   」 	「」
+    # 'A-j'            	= 'N/A'                 	# 📜🢖 History next            	「⎈ n」 	「」
+    # 'A-k'            	= 'N/A'                 	# 🢔📜 History previous        	「⎈ p」 	「」
+    # 'Down'           	= 'N/A'                 	# 📜🢖 History next            	≝「 ▼」 	「History next」
+    # 'Up'             	= 'N/A'                 	# 🢔📜 History previous        	≝「 ▲」 	「History previous」
+    # 'Tab'            	= 'N/A'                 	# ⎁🢖 Completion next         	≝「 ⭾」 	「Completion next」
+    # 'BackTab'        	= 'N/A'                 	# 🢔⎁ Completion previous     	≝「⇧$!」	「Completion previous」
+    # 'Escape'         	= 'N/A'                 	# ⎋⧁ Close prompt            	≝「⎋」  	「Close prompt」
+    # 'Enter'          	= 'N/A'                 	# Open selected              	≝「⏎」  	「Open selected」
+    # 'C-c'            	= 'N/A'                 	# ⎋⧁ Close prompt            	≝「⎈ c」	「Close prompt」
+    # 'A-b'            	= 'N/A'                 	# 🢔ω word backward           	≝「⎇b」 	「move word backward」
+    # 'A-f'            	= 'N/A'                 	# ω🢖 word forward            	≝「⎇f」 	「move word forward」
+    # 'C-left'         	= 'N/A'                 	# 🢔ω word backward           	≝「⎈◀」 	「move word backward」
+    # 'C-Right'        	= 'N/A'                 	# ω🢖 word forward            	≝「⎈▶」 	「move word forward」
+    # 'Left'           	= 'N/A'                 	# ◀ Backward a char          	≝「◀」  	「move char backward」
+    # 'Right'          	= 'N/A'                 	# ▶ Forward a char           	≝「▶」  	「move char forward」
+    # 'Home'           	= 'N/A'                 	# ⭰⧁ prompt start            	≝「⇤」  	「move prompt start」
+    # 'End'            	= 'N/A'                 	# ⧁⭲ prompt end              	≝「⇥」  	「move prompt end」
+    # 'Backspace'      	= 'N/A'                 	# ⌫ ᵡ char                   	≝「␈」  	「del char left」
+    # 'Shift-Backspace'	= 'N/A'                 	# ⌫ ᵡ char                   	≝「⇧␈」 	「del char left」
+    # 'C-l'            	= 'N/A'                 	# ⌫ ᵡ char                   	「⎈h」  	「」
+    # 'C-;'            	= 'N/A'                 	# ⌦ ᵡ char                   	「⎈d」  	「」
+    # 'Delete'         	= 'N/A'                 	# ⌦ ᵡ char                   	≝「␡」  	「del char right」
+    # 'C-Backspace'    	= 'N/A'                 	# ⌫ω ᵡ word                  	≝「⎈␈」 	「del word left」
+    # 'A-h'            	= 'N/A'                 	# ⌫ω ᵡ word                  	≝「⎈w」 	「del word left」
+    # 'A-Backspace'    	= 'N/A'                 	# ⌫ω ᵡ word                  	≝「⎇␈」 	「del word left」
+    # 'A-H'            	= 'N/A'                 	# ⌦ω ᵡ word                  	「⎇d」  	「」
+    # 'A-del'          	= 'N/A'                 	# ⌦ω ᵡ word                  	≝「⎇␡」 	「del word right」
+    # 'C-del'          	= 'N/A'                 	# ⌦ω ᵡ word                  	≝「⎈␡」 	「del word right」
+    # 'C-j'            	= 'N/A'                 	# ⌫━⭰ ᵡ line start           	≝「⎈u」 	「del line start」
+    # 'C-k'            	= 'N/A'                 	# ⌦━⭲ ᵡ line end             	≝「⎈d」 	「del line end」
+    # 'C-s'            	= 'N/A'                 	# Insert a word under doc cursor, may be changed to C-r C-w later
+    # 'C-r'            	= 'N/A'                 	# Insert the content of the register selected by following input char
 
 
-  # [keys.picker] #Ⓝ 🅟 Picker
-  # !!! Remapping currently not supported
-  #   'Escape'	= "Close picker"	# Close picker	≝「$!」	「Close picker」
-  #   'C-c'   	= "Close picker"	# Close picker	≝「⎈ c」	「Close picker」
-  #   'C-k'   	= "no_op"       	#             	「   」	「Previous entry」
-  #   'C-j'   	= "no_op"       	#             	「   」	「Next entry」
-  #   'C-p'   	= "no_op"       	#             	「   」	「Previous entry」
-  #   'C-n'   	= "no_op"       	#             	「   」	「Next entry」
-  #   'C-s'   	= "no_op"       	#             	「   」	「Open horizontally」
-  #   'C-v'   	= "no_op"       	#             	「   」	「Open vertically」
-
-  #   'Down' 	= "N/A"	# Select Next entry    	≝「 ▼」	「」
-  #   'Up'   	= "N/A"	# Select Previous entry	≝「 ▲」	「」
-  #   'A-j'  	= "N/A"	# Select Next entry    	「⎈ j」	「」
-  #   'A-k'  	= "N/A"	# Select Previous entry	「⎈ k」	「」
-  #   # 'A-f'	= "N/A"	# Select Next entry    	「⎈ p」	「」
-  #   # 'A-d'	= "N/A"	# Select Previous entry	「⎈ n」	「」
-
-  #   'A-f'	= 'vsplit'	#  🗗→ Open right  (Vertical) 	「⎈ v」	「」
-  #   'A-m'	= 'hsplit'	# 🗗↓ Open bottom (Horizontal)	「⎈ s」	「」
-
-  #   'C-space'	= "N/A"	# Filter options	≝「⎈ ␠」	「Filter options」
-  #   'Enter'  	= "N/A"	# Open selected 	≝「  ⏎」	「Open selected」
+  # [keys        	.picker] 	#Ⓝ 🅟 Picker !!! Remapping no supported
+    # 'C-k'      	= "no_op"	#                            	「   」 	「Previous entry」
+    # 'C-p'      	= "no_op"	#                            	「   」 	「Previous entry」
+    # 'C-j'      	= "no_op"	#                            	「   」 	「Next entry」
+    # 'C-n'      	= "no_op"	#                            	「   」 	「Next entry」
+    # 'C-s'      	= "no_op"	#                            	「   」 	「Open horizontally」
+    # 'C-v'      	= "no_op"	#                            	「   」 	「Open vertically」
+    # 'Escape'   	= "close"	# Close picker               	≝「$!」 	「Close picker」
+    # 'C-c'      	= "close"	# Close picker               	≝「⎈ c」	「Close picker」
+    # 'Down'     	= 'N/A'  	# i🢖 Entry Next              	≝「 ▼」 	「」
+    # 'Up'       	= 'N/A'  	# 🢔i Entry Previous          	≝「 ▲」 	「」
+    # 'A-j'      	= 'N/A'  	# i🢖 Entry Next              	「⎈ j」 	「」
+    # 'A-k'      	= 'N/A'  	# 🢔i Entry Previous          	「⎈ k」 	「」
+    # 'A-f'      	= 'N/A'  	# i🢖 Entry Next              	「⎈ p」 	「」
+    # 'A-d'      	= 'N/A'  	# 🢔i Entry Previous          	「⎈ n」 	「」
+    # 'A-f'      	= 'N/A'  	#  🗗→ Open right  (Vertical) 	「⎈ v」 	「」
+    # 'A-m'      	= 'N/A'  	# 🗗↓ Open bottom (Horizontal)	「⎈ s」 	「」
+    # 'C-t'      	= 'N/A'  	# Toggle preview
+    # 'C-space'  	= 'N/A'  	# Filter options	≝「⎈ ␠」	「Filter options」
+    # 'Enter'    	= 'N/A'  	# Open selected 	≝「  ⏎」	「Open selected」
+    # 'Shift-Tab'	= 'N/A'  	# Previous entry	#'Up' 'C-p'
+    # 'Tab'      	= 'N/A'  	# Next entry    	#'Down' 'C-n'
+    # 'PageUp'   	= 'N/A'  	# Page up       	#'C-u'
+    # 'PageDown' 	= 'N/A'  	# Page down     	#'C-d'
+    # 'Home'     	= 'N/A'  	# Go to first entry
+    # 'End'      	= 'N/A'  	# Go to last entry
