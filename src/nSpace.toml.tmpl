@@ -1,0 +1,233 @@
+# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
+#◊/* key     	= command                           	# Icon Comment                                    	≝「key」	「	cmd」 */ -◊
+  [keys.     	'#◊.m◊'.'#◊.k◊']                    	##◊.i◊ ☰␠  Space mode                             	Ⓝ「 ␠」 	「」
+    # 'space'	= 'insert_mode'                     	# ⁁⤸ Insert before selection                      	「  i」 	「」 !!!panick! !!!missing
+    'ret'    	= 'command_mode'                    	# Ⓒ Enter command mode                            	「  ⎋」 	「」
+    'P'      	= 'no_op'                           	#                                                 	「⇧   」	「paste_clipboard_before」
+    'Y'      	= 'no_op'                           	#                                                 	「   」 	「yank_main_selection_to_clipboard」
+    'S'      	= 'no_op'                           	#                                                 	「⇧   」	「workspace_symbol_picker」
+    # Home   	row                                 	                                                  	 
+    'j'      	= 'extend_line'                     	# ⮒ Select current/next(if selected) line         	「  x」   	「」
+    'k'      	= 'keep_selections'                 	# ᵏ𝖗 selections not matching the regex (keep)     	   「⇧ k」	「」
+    'l'      	= 'remove_selections'               	# ᵡ𝖗 selections     matching the regex            	   「⇧⎇k」	「」
+    ';'      	= 'command_mode'                    	# Ⓒ Enter command mode                            	「⇧ ;」   	「」
+    'F'      	= 'file_picker_in_current_directory'	# 🗁 Open file   picker@curdir                     	「☰␠⇧ f」 	「file_picker_in_current_directory」
+    # 'f'    	= 'mode_file'                       	# ☰␜ File mode                                    	「   」   	「file_picker」 !!!missing_aliases
+    # 'd'    	= 'mode_bracket'                    	# ☰⟪ Insert various brackets                      	「   」   	「」 !!!missing_aliases
+    's'      	= 'select_regex'                    	# 𝖗▋ Select all regex matches inside selections   	   「  s」	「symbol_picker」
+    'a'      	= ['save_selection',                	# 🖈∀▋                                             	「⇧ 5」   	「」
+             	   'select_all']                    	# Save current position, select everything        	 
+    'h'      	= ['kill_to_line_start',            	# ᵡ⎯                                              	「   」	「」
+             	   'kill_to_line_end']              	# Delete this line                                	 
+    'g'      	= 'save_selection'                  	# 🖈 Save the current selection to the jumplist    	「  ⎈s」	「」
+    # Upper  	row                                 	                                                  	 
+    # 'u'    	= 'mode_U'                          	# ☰u TBD LSPs? or list_kills like z               	「   」	「」  !!!missing_aliases
+    # 'i'    	= 'mode_Register'                   	# ☰® Register/copy/paste etc.                     	「   」	「」
+    'o'      	= 'hover'                           	# ? Show documentation for item under cursor (LSP)	「  k」	「」
+    # 'p'    	= 'mode_P'                          	# ☰p TBD                                          	「」「paste_clipboard_after」 !!!missing_aliases
+    'R'      	= 'rename_symbol'                   	# ✎ Rename symbol (LSP)                           	「  r」 	「replace_selections_with_clipboard」
+    'r'      	= 'command_palette'                 	# ☰Ⓒ Command Palette                              	「   」 	「rename_symbol]
+    'e'      	= 'extend_to_line_bounds'           	# ━ Extend selection to line bounds ⎯             	「  x」 	「」
+    #'w'     	= 'mode_window'                     	# ☰🗔 Window mode                                  	「☰␠ w」	「mode_window」 !!!missing_aliases
+    # 'q'    	= '???'                             	#                                                 	「  q」 	「」
+    'y'      	= 'code_action'                     	# Ⓐ Apply code action (LSP)                       	「☰␠ a」	「yank_joined_to_clipboard」
+    't'      	= 'replace_with_yanked'             	# 🗘📋 Replace with copied text                     	「⇧ r」 	「」  <i class='fa fa-copy'></i>
+    # Lower  	row                                 	                                                  	 
+    'm'      	= 'symbol_picker'                   	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ        	「☰␠ s」	「」
+    ','      	= 'workspace_symbol_picker'         	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ        	「☰␠⇧s」	「」
+
+    '/'      	= 'global_search'                     	# 🔎🗁 Global search in workspace folder           	≝「☰␠ /」	「global_search」
+    'v'      	= 'paste_clipboard_after'             	# 📋⤹ Paste after selections                      	「☰␠ p」 	「」
+    'c'      	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main selection into system clipboard   	「☰␠ ⇧y」 	「」 <i class='fa fa-clipboard'></i>▋
+    'x'      	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                                           	「   」  	「」 <i class='fa fa-clipboard'></i>
+             	   'delete_selection']                	# cut to clipboard                               	「   」  	「」  create a new buffer and paste a buffer there !!! not available yet
+    # 'z'    	= 'list_kills'                        	# 🕱☰ new buffer with clipboard content           	「   」  	「」	 !!!missing
+    'n'      	= 'split_selection'                   	# ䷖𝖗 on regex matches                            	「⇧ s」  	「」
+    'b'      	= 'switch_to_lowercase'               	# 𝔸𝕒  (selection)                                	「  `」  	「buffer_picker」
+    "'"      	= 'flip_selections'                   	# ⮀ Flip selection cursor and anchor             	「 ⎇;」  	「」
+    '\'      	= 'shell_pipe'                        	# Pipe selections thru shell, replace with output	「⇧ \」  	「」
+    # Numbers	row                                   	                                                 	 
+    # "'"    	= 'last_picker'                       	# ☰☾ ∞Open last fuzzy picker                     	「  」 	「」
+    '6'      	= 'switch_to_uppercase'               	# 𝕒𝔸 (selection)                                 	「⇧⎇`」	「」 !!! change to Sentence Case
+    # '7'    	= 'toggle_spellcheck'                 	# ⇝ spell check                                  	「   」	「」  !!!missing
+
+  [keys. 	'#◊.m◊'.'#◊.k◊'.'f']        	##◊.i◊ ☰␜ File mode in Space mode                       	「☰␠ f」		「」
+    'j'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'k'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    # 'l'	= 'open file at cursor'    	# ❚␜ open file at cursor                            	「  」  	「  」
+    'f'  	= 'buffer_picker'          	# ☰b Open buffer picker                             	「  b」 	「file_picker」
+    # 'd'	= 'show in desktop'        	# show in desktop                                   	「  」  	「  」
+    's'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'S'  	= ['commit_undo_checkpoint'	# 💾∀v all views                                     	「  」  	「  」
+      ,  	  ':write-all']            	                                                    	      	#
+    'A-s'	= ':update'                	# 💾Δ save file if modified                          	「  」  	「  」
+    'a'  	= 'goto_last_accessed_file'	# 🕮 file last accessed/alternate                    	「ⓖ a」 	「  」
+    # 'g'	= 'bookmark bmenu list'    	# ☰🖈bookmark bmenu list                             	「  」  	「  」
+    # 'h'	= 'bookmark set'           	# 🖈 bookmark set                                    	「  」  	「  」
+    # 'u'	= 'open last closed'       	# open last closed                                  	「  」  	「  」
+    # 'o'	= 'open file fast'         	# prompt toopen a file from bookmark                	「  」  	「  」
+    # 'r'	= 'rename_file'            	# ✎ rename current file                             	「  」  	「  」
+    # 'e'	= 'open in external app'   	# open in external app                              	「  」  	「  」
+    # 'w'	= 'find_file'              	# 🔎 Find file  <i class='mss mss-Search-3'></i>     	「  」  	「  」
+    # 'q'	= 'mode_fs_close'          	# ☰× Close buffers/files saved/unsaved              	「  」  	「  」
+    'v'  	= 'goto_last_modified_file'	# ✎ file last modified/alternate                    	「ⓖ m」 	「  」
+    # 'c'	= 'copy file path'         	# 📋C:\ copy file path <i class='fa fa-clipboard'>C:\	「  」  	「  」
+    # 't'	= 'list recently closed'   	# list recently closed                              	「  」  	「  」
+    # 'y'	= 'open recently closed'   	# open recently closed                              	「  」  	「  」
+    'o'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    'n'  	= ':new'                   	# 🗋 new empty buffer                                	Ⓝ「⎈n」 	「  」
+    # 'b'	= 'recentf open files'     	# recentf open files                                	「  」  	「  」
+    # '\'	= 'open in terminal'       	# open in terminal                                  	「  」  	「  」
+    '`'  	= ':reload'                	# 🗘 Discard, Reload from source                     	「  」  	「  」
+    '~'  	= ':reload-all'            	# 🗘∀ Discard, Reload all from source                	「  」  	「  」
+    'p'  	= ':config-open-workspace' 	# 🛠🗋 Open workspace config file                     	「  」  	「  」
+
+    ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+    'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+
+  #◊ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "q") ◊
+  #◊ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "x") ◊
+
+  [keys.'#◊.m◊'.'#◊.k◊'.'i'] ##◊.i◊ ☰®  Register/copy/paste etc.
+    'i'  	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
+    # '7'	= 'append_to_register 1'             	# ®1⎀ Append current line/selection to reg 1
+    # '8'	= 'clear_register 1'                 	# ®1× x
+    # '9'	= 'copy_to_register 1'               	# ®1🗐 x
+    # '0'	= 'paste_from_register 1'            	# ®1📋 x
+    # '1'	= 'append_to_register 2'             	# ®2⎀ Append current line/selection to reg 2
+    # '2'	= 'clear_register 2'                 	# ®2× x
+    # '3'	= 'copy_to_register 2'               	# ®2🗐 x
+    # '4'	= 'paste_from_register 2'            	# ®2📋 x
+    't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「☰␠⇧r」 <i class='fa fa-clipboard'></i>▋
+    'x'  	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection                	Ⓝ「⇧j」
+    'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「☰␠⇧p」 ⤸<i class='fa fa-clipboard'></i>
+    'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「☰␠ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
+    # 'a'	= ':clipboard-yank'                  	# Copy main   sel to system         clipboard
+    # 'a'	= ':clipboard-yank-join'             	# Copy joined sel to system         clipboard with sep \n
+    # 'a'	= ':primary-clipboard-yank'          	# Copy main   sel to system primary clipboard
+    # 'a'	= ':primary-clipboard-yank-join'     	# Copy joined sel to system primary clipboard with sep \n
+    # 'a'	= ':clipboard-paste-after'           	# Paste system  clipboard after   selections
+    # 'a'	= ':clipboard-paste-before'          	# Paste system  clipboard before  selections
+    # 'a'	= ':clipboard-paste-replace'         	# Paste system  clipboard replace selections
+    # 'a'	= ':primary-clipboard-paste-after'   	# Paste primary clipboard after   selections
+    # 'a'	= ':primary-clipboard-paste-before'  	# Paste primary clipboard before  selections
+    # 'a'	= ':primary-clipboard-paste-replace' 	# Paste primary clipboard replace selections
+    # 'a'	= ':show-clipboard-provider'         	# Show clipboard provider name in status bar
+    'j'  	= ':sort'                            	# 𝕒🢖𝕫 Sort ranges in selection 𝟙𝟚𝟛
+    'k'  	= ':rsort'                           	# 𝕫🢖𝕒 Sort ranges in selection in reverse order 𝟛𝟚𝟙
+    # 'd'	='list-matching-lines'               	# !!!missing
+    # 'f'	='delete-matching-lines'             	# !!!missing
+    # 'g'	='delete-non-matching-lines'         	# !!!missing
+    # 't'	='delete-duplicate-lines'            	# !!!missing
+    # 'n'	='reformat-to-sentence-lines'        	# !!!missing
+    # 'o'	='copy-rectangle-to-register'        	# !!!missing
+    # 'r'	='query-replace-regexp'              	# !!!missing
+    # 'h'	='mark-defun'                        	# !!!missing
+    # ';'	='escape-quotes'                     	# Add \ before " in current line/selection
+
+  # [keys.'#◊.m◊'.'#◊.k◊'.'d'] ##◊.i◊ ☰⟪ Bracket mode in Space mode (place cursor in between)
+    # 'RET'	= 'insert char'   	#
+    # 'SPC'	= 'insert unicode'	#
+    # 'd'  	= '()'            	# () parenthesis
+    # 'f'  	= '[]'            	# [] square bracket
+    # 'j'  	= '{}'            	# {} brace
+    # 'k'  	= '""'            	# "" regular double quote
+    # 'l'  	= "''"            	# '' regular single quote
+    # 'r'  	= '‹›'            	# ‹› single angle quote (single chevrons)
+    # 't'  	= '«»'            	# «» double angle quote (double chevrons)
+    # 'n'  	= '【】'            	# 【】 black lenticular bracket
+    # 'm'  	= '「」'            	# 「」 corner bracket
+    # 'o'  	= '〔〕'            	# 〔〕 tortoise shell bracket
+    # ','  	= '〈〉'            	# 〈〉 angle bracket or math ⟨⟩
+    # '.'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+    # '<'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+    # 'g'  	= '‘’'            	# ‘’ curly single quote
+    # 'h'  	= '“”'            	# “” double curly quote
+    # 'y'  	= "`'"            	# `' emacs quote
+    # ';'  	= '=""'           	# ="" string assignment
+    # 'z'  	= '⸨⸩'            	# ⸨⸩ Double Parenthesis
+    # 'c'  	= 'date'          	# 📆📅current date
+    # 'p'  	= 'u+000C'        	# ␌ formfeed
+
+  [keys.     	'#◊.m◊'.'#◊.k◊'.'w']    	##◊.i◊ ☰🗔  Window mode in Space mode       	Ⓝ「⎈ w」  	「」
+    's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'v'      	= 'no_op'              	#                                      	   「  」 	「vsplit」
+    'C-v'    	= 'no_op'              	#                                      	   「  」 	「vsplit」
+    'F'      	= 'no_op'              	#                                      	  「⇧  」 	「goto_file」
+    'j'      	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「  j」  	「jump_view_down」
+    'k'      	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「  k」  	「jump_view_up」
+    'l'      	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「  h」   	「jump_view_right」
+    ';'      	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「  l」   	「」
+    'C-j'    	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「 ⎈j」  	「jump_view_down」
+    'C-k'    	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「 ⎈k」  	「jump_view_up」
+    'C-l'    	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「 ⎈h」   	「jump_view_right」
+    'C-;'    	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「 ⎈l」   	「」 #!!!fails
+    'C-down' 	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	「▼」     	「」
+    'C-up'   	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	「▲」     	「」
+    'C-left' 	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「◀」     	「」
+    'C-right'	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「▶」     	「」
+    'w'      	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「  w」  	「rotate_view」
+    'C-w'    	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「 ⎈w」  	「rotate_view」
+    'e'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
+    'f'      	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「  v」	「vsplit」
+    'C-f'    	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「 ⎈v」	「vsplit」
+    'm'      	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「  s」	「」
+    'C-m'    	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「 ⎈s」	「」
+    'h'      	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
+    'C-h'    	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
+    'g'      	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
+    'C-g'    	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
+    'q'      	= 'wclose'             	# ×🗔  Close         current window     	「  q」   	「wclose」
+    'C-q'    	= 'wclose'             	# ×🗔  Close         current window     	「 ⎈q」   	「wclose」
+    'o'      	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「  o」  	「wonly」
+    'C-o'    	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「 ⎈o」  	「wonly」
+    'x'      	= 'wonly'              	# ×∀🗔 Close all but current window     	「  o」   	「」
+    'C-x'    	= 'wonly'              	# ×∀🗔 Close all but current window     	「 ⎈o」   	「」
+    'down'   	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「▼」    	「jump_view_down」
+    'up'     	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「▲」    	「jump_view_up」
+    'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
+    'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
+
+  [keys.	'#◊.m◊'.'#◊.k◊'.'u']           	##◊.i◊ 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
+    'u'  	= 'remove_primary_selection'       	# ×          primary sel            	「 ⎇,」
+    'i'  	= 'keep_primary_selection'         	# ×∀ all but primary sel (keep only)	「  ,」
+    'o'  	= ':character-info'                	# 🔣ℹ Character info                 	「  」
+    #Δ   	                                   	                                    	 
+    'j'  	= 'goto_next_change'               	# Δ🢖 Change            next         	「⧚  g」	「」 !!!→sticky
+    'k'  	= 'goto_prev_change'               	# 🢔Δ Change            previous     	「⧛  g」	「」 !!!→sticky
+    'l'  	= 'goto_first_change'              	# ⭰Δ Change             1st         	「⧛⇧ g」	「」 !!!→sticky
+    ';'  	= 'goto_last_change'               	# Δ⭲ Change            last         	「⧚⇧ g」	「」 !!!→sticky
+    'b'  	= ':reset-diff-change'             	# ×Δ Reset diff hunk                	「  」
+    #🌳TS 	                                   	                                    	 
+    'a'  	= 'goto_prev_parameter'            	# 🢔α Argument/parameter previous    	「⧛  a」	「」 !!!→sticky
+    's'  	= 'goto_next_parameter'            	# α🢖 Argument/parameter next        	「⧚  a」	「」 !!!→sticky
+    'd'  	= 'goto_prev_function'             	# 🢔ƒ Function           previous    	「⧛  f」	「」 !!!→sticky
+    'f'  	= 'goto_next_function'             	# ƒ🢖 Function           next        	「⧚  f」	「」 !!!→sticky
+    'z'  	= 'goto_prev_comment'              	# 🢔ↄ Comment            previous    	「⧛  c」	「」 !!!→sticky
+    'x'  	= 'goto_next_comment'              	# ↄ🢖 Comment            next        	「⧚  c」	「」 !!!→sticky
+    'c'  	= 'goto_prev_class'                	# 🢔τ Type definition    previous    	「⧛  t」	「」 !!!→sticky
+    'v'  	= 'goto_next_class'                	# τ🢖 Type definition    next        	「⧛  t」	「」!!!→sticky
+    't'  	= 'goto_prev_test'                 	# 🢔🧪 Test               previous    	「⧛⇧ t」	「」 !!!→sticky
+    'y'  	= 'goto_next_test'                 	# 🧪🢖 Test               next        	「⧚⇧ t」	「」 !!!→sticky
+    #🄻LSP	                                   	                                    	 
+    'm'  	= 'goto_next_diag'                 	# 🛠🢖 Diagnostic next                	「⧚  d」	「」 !!!→sticky
+    ','  	= 'goto_prev_diag'                 	# 🢔🛠 Diagnostic previous            	「⧛  d」	「」 !!!→sticky
+    '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic 1st @ doc           	「⧛⇧ d」	「」 !!!→sticky
+    '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last @ doc          	「⧚⇧ d」	「」 !!!→sticky
+    'e'  	= 'symbol_picker'                  	# 🅂🗋 Document  symbol picker ⚛Ⓢ     	「☰␠ s」
+    'r'  	= 'workspace_symbol_picker'        	# 🅂🗍 Workspace symbol picker ⚛Ⓢ     	「☰␠⇧s」
+    "'"  	= ':format'                        	# ℱ∀ Format the file                	「  」
+    'q'  	= 'format_selections'              	# ℱ  Format selection               	「  =」
+    'g'  	= 'code_action'                    	# Ⓐ  Apply code action              	「☰␠ a」
+    'n'  	= 'rename_symbol'                  	# ✎  Rename symbol                  	「☰␠ r」
+    'w'  	= ':lsp-workspace-command'         	# 🄲🗍 Workspace command picker       	「  」
+    'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints              	「  」
+    'p'  	= ':lsp-stop'                      	# ⏹🄻 Stop                           	「  」
+    ']'  	= ':lsp-restart'                   	# 🔄🄻 Restart                        	「  」
+    #🄳DAP	                                   	                                    	 
+    '['  	= 'dap_restart'                    	# 🔄🄳 Restart (DAP)                  	「  」
+
+  # [keys.'#◊.m◊'.'#◊.k◊'.'p']	##◊.i◊ ☰ⓟ TBD

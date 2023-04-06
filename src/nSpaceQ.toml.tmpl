@@ -1,0 +1,24 @@
+# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
+#◊/*'key'	= 'command'              	# Icon Comment 「default key for this command」	「default command for this key」 */ -◊
+  [keys. 	'#◊.m◊'.'#◊.k◊'.'f'.     	'#◊.q◊'] ##◊.i◊ ☰␜☰× Close mode in File mode in Space mode
+    'r'  	= ':buffer-close-all'    	# ×b buffer all
+    'f'  	= ':buffer-close'        	# ×b buffer current
+    'v'  	= ':buffer-close-others' 	# ×b buffer others
+    'e'  	= ':quit-all'            	# ×∀v view  all
+    'd'  	= ':quit'                	# ×v view   current
+    'w'  	= ':write-quit-all'      	# 💾∀v view all, ×∀v view all
+    's'  	= ':write-quit'          	# 💾×v view current
+    'u'  	= ':write-quit-all'      	# 💾∀v view all, ×∀v view all
+    'j'  	= ':write-quit'          	# 💾×v view current
+    ';'  	= ':cquit'               	# Quit with exit code (default 1)
+  [keys. 	'#◊.m◊'.'#◊.k◊'.'f'.     	'#◊.q◊'.'#◊.q◊'] ##◊.i◊ ☰␜☰× Close mode in File mode in Space mode
+    'r'  	= ':buffer-close-all!'   	# 🕱b buffer all (kill unsaved)
+    'f'  	= ':buffer-close!'       	# 🕱b buffer current (kill unsaved)
+    'v'  	= ':buffer-close-others!'	# 🕱b buffer others (kill unsaved)
+    'e'  	= ':quit-all!'           	# 🕱∀v view  all
+    'd'  	= ':quit!'               	# 🕱v view   current
+    'w'  	= ':write-quit-all!'     	# 💾∀v view all, 🕱∀v view all
+    's'  	= ':write-quit!'         	# 💾🕱v view current
+    'u'  	= ':write-quit-all!'     	# 💾∀v view all, 🕱∀v view all
+    'j'  	= ':write-quit!'         	# 💾🕱v view current
+    ';'  	= ':cquit!'              	# Quit with exit code (default 1)

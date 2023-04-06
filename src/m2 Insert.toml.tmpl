@@ -1,5 +1,6 @@
 # chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊/* 'key'	= 'command'	# Icon Comment 「default key for this command」	「default command for this key」 */ -◊
+#◊ $cfg := "./private_dot_config/helix" -◊
+#◊/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -◊
 [keys.insert] #ⓘ
   ';'	= {j='normal_mode' }	# Maps `;k` to exit insert mode !!!flashes dialog during typing
   #ⓘ Test ——————————————————————————————————————————————————————————————————————
@@ -413,7 +414,6 @@
   #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" $cfg) ◊
 
 
-  [keys.   	insert.'A-space']  	#ⓘ ☰␠  Space mode   	「$!」	「」
-    'right'	= 'jump_view_right'	# 🗗▶ Move to Split →	≝「▶」	「jump_view_right」
+  #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nUnimpaired.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k1" "A-[" "k0" "A-]" "cfg" $cfg) ◊
