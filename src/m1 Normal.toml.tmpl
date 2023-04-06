@@ -315,16 +315,6 @@
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
 
-  [keys.	normal.'n']                 	#Ⓝ ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」 	「」
-    'n' 	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                  	「  m」	「」
-    '.' 	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS)                  	「  」 	「」 !!!missing
-    '/' 	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS)                  	「  」 	「」 !!!missing
-    'i' 	= 'surround_add'            	# (+)  Surround current selection with <char>        	「  s」	「」
-    't' 	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>    	「  r」	「」
-    'x' 	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>             	「  d」	「」
-    'e' 	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                      	「  a」	「」
-    'a' 	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                      	「  i」	「」
-
   [keys.     	normal.'C-w']          	#Ⓝ ☰🗔  Window mode                     	Ⓝ「⎈ w」  	「」
     's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
     'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
@@ -374,6 +364,8 @@
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "Z" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nGoTo.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ⓖ☰⮊" "k" "g" "cfg" $cfg) ◊
+
+  #◊ includeTemplate (joinPath $cfg "nMatch.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰🧩" "k" "n" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k" "space" "cfg" $cfg) ◊
 
