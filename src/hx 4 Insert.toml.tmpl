@@ -117,8 +117,8 @@
     # 'A-G'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	Ⓝ「  ⎈s」	「」
 
 
-    'A-E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)	「⇧Ⓝ  x」	「move_next_long_word_end」
-    'C-e'  	= ['select_mode'           	# =ω "Extend" selection to same word ω₌ ω≡               	「   」  	「goto_line_end_newline」
+    'A-E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯	「⇧Ⓝ  x」	「move_next_long_word_end」
+    'C-e'  	= ['select_mode'           	# =ω "Extend" selection to same word ω₌ ω≡                	「   」  	「goto_line_end_newline」
       ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,    	 'move_prev_word_start'    	#
       ,    	 'search_selection'        	#
@@ -411,7 +411,8 @@
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
 
-  # [keys.	insert.'A-space']	#ⓘ ☰␠  Space mode	「$!」	「」 !!!fails, A-space blocked by system
+  [keys.   	insert.'A-space']  	#ⓘ ☰␠  Space mode   	「$!」	「」
+    'right'	= 'jump_view_right'	# 🗗▶ Move to Split →	≝「▶」	「jump_view_right」
 
   [keys.insert.'A-['] #ⓘ Ⓝ[ ☰⧛ Unimpaired
     'j'      	= 'goto_prev_change'      	# 🢔Δ Change            	previous       	「  g」 	「」
