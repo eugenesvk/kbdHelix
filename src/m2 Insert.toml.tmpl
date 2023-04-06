@@ -8,14 +8,13 @@
   #ⓘ Free ——————————————————————————————————————————————————————————————————————
     'C-p'  	= 'no_op'	# move to previous line  	「   」	「move_line_up」
     'A-b'  	= 'no_op'	#                        	「   」	「move_prev_word_end」
-    'C-u'  	= 'no_op'	#                        	「   」	「kill_to_line_start」
     # 'C-a'	= ''     	# ???useful vs selections	「C-a」	「goto_line_start」
 
   #ⓘ   	Compat with non-modal editors        	 
-  'C-o'	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
-  'C-O'	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
-  'C-s'	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」	「commit_undo_checkpoint」
-  'C-n'	= ':new'                             	# 🗋 new buffer             	「 ⎈n」 	「」
+  'C-o'	= 'file_picker'                      	# 🗁 File picker       	「☰␠  f」	「jump_backward」
+  'C-O'	= 'file_picker_in_current_directory' 	# 🗁 File picker@curdir	「☰␠⇧ f」	「」
+  'C-s'	= ['commit_undo_checkpoint',':write']	# 💾 save file         	「  ⎈s」 	「commit_undo_checkpoint」
+  'C-n'	= ':new'                             	# 🗋 new buffer        	「 ⎈n」  	「」
 
   #ⓘ   	Copy                                	 
   'A-c'	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」  	「change_selection」
@@ -126,7 +125,7 @@
       ,    	 'extend_search_next'      	#
       ,    	 'insert_mode'             	#
       ]    	                           	# = Sublime's find_under_expand
-    'A-J'  	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	Ⓝ「  x」	「join_selections」
+    'A-J'  	= 'extend_line_below'      	# ⮒ Select current line, if already selected, extend to next line	Ⓝ「  x」	「join_selections」
     # 'A-5'	= 'select_paragraph'       	# ¶▋ Select this paragraph                                       	Ⓝ「   」	「<5>」  !!!missing ∀* !!!missing command
     'A-%'  	= 'select_all'             	# ∀▋ Select entire file                                          	「⇧Ⓝ 5」	「select_all」
 
@@ -233,6 +232,7 @@
   #ⓘ Misc ——————————————————————————————————————————————————————————————————————
     'A-R' 	= 'command_palette'         	# ☰Ⓒ Command Palette  	「⇧ /」	「」
     "A-\\"	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap	「  」 	「」
+    'C-u' 	= 'signature_help'          	# α﹖ Signature help 🄻 	「   」	「kill_to_line_start」ƒα﹖
 
   ### ☰Minor modes
   #◊ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" .cfg) ◊
