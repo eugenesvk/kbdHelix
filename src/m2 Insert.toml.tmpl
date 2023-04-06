@@ -234,85 +234,6 @@
 
 
   ### ☰Minor modes
-  [keys.	insert.'A-p']   	#ⓘ ☰👁 View mode: scroll/manipulate w/o Δselection	「$!」  	「paste_after」
-    'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」 	「」
-    'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」 	「」
-    'n'       	= 'align_view_center'	# 🗔·| Align line to center (vertically)          	「  z」 	「align_view_center」
-    'h'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」 	「align_view_middle」
-    'l'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」 	「」
-    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                                     	「down」	「scroll_down」
-    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                                     	「up」   [scroll_up」
-    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                                     	「  j」     	「scroll_down」
-    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                                     	「  k」     	「scroll_up」
-    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓                             	「  d」     	「align_view_middle」
-    ','       	= 'half_page_up'     	# ⤉ Move half page ↑                             	「  u」     	「」
-    'J'       	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
-    'K'       	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
-    'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
-    'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
-    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                             	「pageup」  	「page_down」
-    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                             	「pagedown」	「page_up」
-    'z'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
-    'c'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
-    't'       	= 'no_op'            	#                                                	「   」     	「align_view_top」
-    'b'       	= 'no_op'            	#                                                	「   」     	「align_view_bottom」
-    'C-d'     	= 'no_op'            	#                                                	「   」     	「half_page_down」
-    'C-u'     	= 'no_op'            	#                                                	「   」     	「half_page_up」
-    'C-f'     	= 'no_op'            	#                                                	「   」     	「page_down」
-    'C-b'     	= 'no_op'            	#                                                	「   」     	「page_up」
-  [keys.	insert.'A-P']   	#ⓘ ☰👁ₛ 'sticky', persistent                      	「⇧$!」     	「paste_before」
-    'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」     	「」
-    'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」     	「」
-    'n'       	= 'align_view_center'	# 🗔·| Align line to center (vertically)          	「  z」     	「align_view_center」
-    'h'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「align_view_middle」
-    'l'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「」
-    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                                     	「down」    	「scroll_down」
-    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                                     	「up」   [scroll_up」
-    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                                     	「  j」     	「scroll_down」
-    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                                     	「  k」     	「scroll_up」
-    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓                             	「  d」     	「align_view_middle」
-    ','       	= 'half_page_up'     	# ⤉ Move half page ↑                             	「  u」     	「」
-    'J'       	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
-    'K'       	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
-    'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
-    'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
-    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                             	「pageup」  	「page_down」
-    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                             	「pagedown」	「page_up」
-    'z'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
-    'c'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
-    't'       	= 'no_op'            	#                                                	「   」     	「align_view_top」
-    'b'       	= 'no_op'            	#                                                	「   」     	「align_view_bottom」
-    'C-d'     	= 'no_op'            	#                                                	「   」     	「half_page_down」
-    'C-u'     	= 'no_op'            	#                                                	「   」     	「half_page_up」
-    'C-f'     	= 'no_op'            	#                                                	「   」     	「page_down」
-    'C-b'     	= 'no_op'            	#                                                	「   」     	「page_up」
-  [keys.	insert.'A-Z']   	#ⓘ ☰👁ₛ View 'sticky', persistent                 	「⇧Ⓝ z」    	「paste_before」
-    'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」     	「」
-    'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」     	「」
-    'n'       	= 'align_view_center'	# 🗔·| Align line to center (vertically)          	「  z」     	「align_view_center」
-    'h'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「align_view_middle」
-    'l'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「」
-    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                                     	「down」    	「scroll_down」
-    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                                     	「up」   [scroll_up」
-    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                                     	「  j」     	「scroll_down」
-    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                                     	「  k」     	「scroll_up」
-    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓                             	「  d」     	「align_view_middle」
-    ','       	= 'half_page_up'     	# ⤉ Move half page ↑                             	「  u」     	「」
-    'J'       	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
-    'K'       	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
-    'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
-    'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
-    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                             	「pageup」  	「page_down」
-    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                             	「pagedown」	「page_up」
-    'z'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
-    'c'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
-    't'       	= 'no_op'            	#                                                	「   」     	「align_view_top」
-    'b'       	= 'no_op'            	#                                                	「   」     	「align_view_bottom」
-    'C-d'     	= 'no_op'            	#                                                	「   」     	「half_page_down」
-    'C-u'     	= 'no_op'            	#                                                	「   」     	「half_page_up」
-    'C-f'     	= 'no_op'            	#                                                	「   」     	「page_down」
-    'C-b'     	= 'no_op'            	#                                                	「   」     	「page_up」
-
   [keys.	insert.'A-g']          	#ⓘ ⓖ☰⮊ Goto mode Jumps to various locations	「$!」  	「」
     'b'  	= 'no_op'                   	#                                          	「   」 	「goto_window_bottom」
     'h'  	= 'no_op'                   	#                                          	「   」 	「goto_line_start」
@@ -407,6 +328,12 @@
 
   #◊ includeTemplate (joinPath $cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-`" "cfg" $cfg) ◊
     'A-`'	= 'switch_case'	# 𝕒⇋𝔸 (selection)	「⇧ `」	「」
+
+  #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰👁" "k" "A-p" "cfg" $cfg) ◊
+    # 'p'  	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
+    # 'A-p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
+  #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-P" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-Z" "cfg" $cfg) ◊
 
 
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" $cfg) ◊
