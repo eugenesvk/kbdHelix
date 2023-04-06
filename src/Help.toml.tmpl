@@ -61,3 +61,35 @@
   # Insert            	'ins'
   # Null              	'null'
   # Keys can be disabled by binding them to the no_op command
+
+  #Unimpaired help
+    # [n                      Go to the previous SCM conflict marker or diff/patch hunk Try d[n inside a conflict
+    # ]n                      Go to the next     SCM conflict marker or diff/patch hunk Try d]n inside a conflict
+    # ENCODING AND DECODING
+    # Each of these operations has a map that takes a motion, a map that targets [count] lines, and a visual mode map.  The linewise variant integrates with repeat.vim.
+    # Mnemonic: encoding always comes before decoding; "[" always comes before "]".
+    # [x{motion}              XML encode.  *[x* *[xx* *v_[x*
+    # [xx                     <foo bar="baz"> => &lt;foo bar=&quot;baz&quot;&gt;
+    # {Visual}[x
+    # ]x{motion}              XML decode.  HTML entities are handled as well. *]x* *]xx* *v_]x*
+    # ]xx
+    # {Visual}]x
+    # [u{motion}              URL encode. *[u* *[uu* *v_[u*
+    # [uu                     foo bar => foo%20bar
+    # {Visual}[u
+    # ]u{motion}              URL decode. *]u* *]uu* *v_]u*
+    # ]uu
+    # {Visual}]u
+    # [y{motion}              C String encode.  Backslash escape control *[y* *[yy* *v_[y* *[C* *[CC* *v_[C*
+    # [yy                     characters, quotation marks, and backslashes.
+    # {Visual}[y
+    # [C{motion}
+    # [CC
+    # {Visual}[C
+    #                                         *]y* *]yy* *v_]y* *]C* *]CC* *v_]C*
+    # ]y{motion}              C String decode.
+    # ]yy
+    # {Visual}]y
+    # ]C{motion}
+    # ]CC
+    # {Visual}]C
