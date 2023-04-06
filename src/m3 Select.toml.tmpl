@@ -262,45 +262,6 @@
   ##Ⓢ ☰Minor modes
   #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" $cfg) ◊
 
-  [keys.     	select.'C-w']          	#Ⓢ ☰🗔  Window mode                     	Ⓝ「⎈ w」  	「」
-    's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
-    'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
-    'v'      	= 'no_op'              	#                                      	   「  」 	「vsplit」
-    'C-v'    	= 'no_op'              	#                                      	   「  」 	「vsplit」
-    'F'      	= 'no_op'              	#                                      	  「⇧  」 	「goto_file」
-    'j'      	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「  j」  	「jump_view_down」
-    'k'      	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「  k」  	「jump_view_up」
-    'l'      	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「  h」   	「jump_view_right」
-    ';'      	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「  l」   	「」
-    'C-j'    	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「 ⎈j」  	「jump_view_down」
-    'C-k'    	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「 ⎈k」  	「jump_view_up」
-    'C-l'    	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「 ⎈h」   	「jump_view_right」
-    'C-;'    	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「 ⎈l」   	「」 #!!!fails
-    'C-down' 	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	「▼」     	「」
-    'C-up'   	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	「▲」     	「」
-    'C-left' 	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「◀」     	「」
-    'C-right'	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「▶」     	「」
-    'w'      	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「  w」  	「rotate_view」
-    'C-w'    	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「 ⎈w」  	「rotate_view」
-    'e'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
-    'f'      	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「  v」	「vsplit」
-    'C-f'    	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「 ⎈v」	「vsplit」
-    'm'      	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「  s」	「」
-    'C-m'    	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「 ⎈s」	「」
-    'h'      	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
-    'C-h'    	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
-    'g'      	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
-    'C-g'    	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
-    'q'      	= 'wclose'             	# ×🗔  Close         current window     	「  q」   	「wclose」
-    'C-q'    	= 'wclose'             	# ×🗔  Close         current window     	「 ⎈q」   	「wclose」
-    'o'      	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「  o」  	「wonly」
-    'C-o'    	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「 ⎈o」  	「wonly」
-    'x'      	= 'wonly'              	# ×∀🗔 Close all but current window     	「  o」   	「」
-    'C-x'    	= 'wonly'              	# ×∀🗔 Close all but current window     	「 ⎈o」   	「」
-    'down'   	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「▼」    	「jump_view_down」
-    'up'     	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「▲」    	「jump_view_up」
-    'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
-    'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰👁" "k" "p" "cfg" $cfg) ◊
     # 'p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "P" "cfg" $cfg) ◊
@@ -310,6 +271,7 @@
 
   #◊ includeTemplate (joinPath $cfg "nMatch.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🧩" "k" "n" "cfg" $cfg) ◊
 
+  #◊ includeTemplate (joinPath $cfg "nWindow.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🗔" "k" "C-w" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k" "space" "cfg" $cfg) ◊
 
