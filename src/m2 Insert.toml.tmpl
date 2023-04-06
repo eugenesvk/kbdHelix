@@ -1,5 +1,4 @@
 # chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊ $cfg := "./private_dot_config/helix" -◊
 #◊/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -◊
 [keys.insert] #ⓘ
   ';'	= {j='normal_mode' }	# Maps `;k` to exit insert mode !!!flashes dialog during typing
@@ -236,23 +235,23 @@
     "A-\\"	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap	「  」 	「」
 
   ### ☰Minor modes
-  #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" .cfg) ◊
 
-  #◊ includeTemplate (joinPath $cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-`" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-`" "cfg" .cfg) ◊
     'A-`'	= 'switch_case'	# 𝕒⇋𝔸 (selection)	「⇧ `」	「」
 
-  #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰👁" "k" "A-p" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰👁" "k" "A-p" "cfg" .cfg) ◊
     # 'p'  	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
     # 'A-p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
-  #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-P" "cfg" $cfg) ◊
-  #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-Z" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-P" "cfg" .cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-Z" "cfg" .cfg) ◊
 
-  #◊ includeTemplate (joinPath $cfg "nGoTo.toml.tmpl") (dict "m" "insert" "i" "ⓘ ⓖ☰⮊" "k" "A-g" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "insert" "i" "ⓘ ⓖ☰⮊" "k" "A-g" "cfg" .cfg) ◊
 
-  #◊ includeTemplate (joinPath $cfg "nMatch.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🧩" "k" "A-n" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🧩" "k" "A-n" "cfg" .cfg) ◊
 
-  #◊ includeTemplate (joinPath $cfg "nWindow.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🗔" "k" "C-w" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ◊
 
-  #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" .cfg) ◊
 
-  #◊ includeTemplate (joinPath $cfg "nUnimpaired.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k1" "A-[" "k0" "A-]" "cfg" $cfg) ◊
+  #◊ includeTemplate (joinPath .cfg "nUnimpaired.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k1" "A-[" "k0" "A-]" "cfg" .cfg) ◊
