@@ -23,10 +23,10 @@
   'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
   'A-C'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」  	「」
 
-  #ⓘ Shell 	                 	 
-    'A-|'  	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧Ⓝ \」	「shell_pipe」
-    "A-\\" 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	Ⓝ「 ⎇\」	「」
-    # 'A-|'	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧Ⓝ⎇\」	「shell_pipe_to」
+  #ⓘ Shell  	                 	 
+    'A-|'   	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧Ⓝ \」	「shell_pipe」
+    # "A-\\"	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	Ⓝ「 ⎇\」	「」
+    # 'A-|' 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧Ⓝ⎇\」	「shell_pipe_to」
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
     #ⓘ           	Cursor@Home
@@ -189,13 +189,12 @@
     'A-t'	= 'replace'            	# 🗘c  Replace with a character	Ⓝ「  r」	「find_till_char」
     'A-T'	= 'replace_with_yanked'	# 🗘📋 Replace with copied text 	「⇧Ⓝ r」	「till_prev_char」  <i class='fa fa-copy'></i>
 
-    #ⓘ     	Misc                        	                                             	 
-    'A-R'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「⇧ r」 	「replace_with_yanked」
-    'C-/'  	= 'toggle_comments'         	# un-/comment the selections                 	「 ⎈c」 	「」 !!!fail
-    'C-m'  	= 'decrement'               	# ⊖ o̠ Decrement object (number) under cursor	「 ⎈x」 	「」 <span class='cd'>o&#800;</span>
-    'C-,'  	= 'increment'               	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」 	「」 <span class='cd'>o&#799;</span> !!!fails
-    # 'C-r'	= 'insert_register'         	# 📋r Paste register                          	ⓘ「 ⎈r」	「insert_register」
-    'C-i'  	= 'completion'              	# ⎁ Autocomplete                             	「   」 	「」
+    #ⓘ     	Misc               	                                           	 
+    'C-/'  	= 'toggle_comments'	# un-/comment the selections               	「 ⎈c」 	「」
+    'C-m'  	= 'decrement'      	# ⊖ o̠ Decrement object/number under cursor	「 ⎈x」 	「」 <span class='cd'>o&#800;</span>
+    'C-,'  	= 'increment'      	# ⊕ o̟ Increment object/number under cursor	「 ⎈a」 	「」 <span class='cd'>o&#799;</span> !!!fails
+    # 'C-r'	= 'insert_register'	# 📋r Paste register                        	ⓘ「 ⎈r」	「insert_register」
+    'C-i'  	= 'completion'     	# ⎁ Autocomplete                           	「   」 	「」
 
     #'A-`'	= ''                   	# ☰𝔸𝕒 Case conversion mode	Ⓝ「  」  	「switch_to_lowercase」 !!!missing aliases
     'A-⎈' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
@@ -232,6 +231,9 @@
     'A-!'	= 'shell_insert_output'	# 🢔$ Run shell command, inserting output before each selection	「⇧$!」	「shell_insert_output」
     'A-@'	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection	「⇧$!」	「」
 
+  #ⓘ Misc ——————————————————————————————————————————————————————————————————————
+    'A-R' 	= 'command_palette'         	# ☰Ⓒ Command Palette  	「⇧ /」	「」
+    "A-\\"	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap	「  」 	「」
 
   ### ☰Minor modes
   #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" $cfg) ◊
