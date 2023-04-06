@@ -262,40 +262,6 @@
   ##Ⓢ ☰Minor modes
   #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" $cfg) ◊
 
-  [keys. 	select.'g']                 	#Ⓢ ☰ Goto mode Jumps to various locations 	「$!」     	「goto」
-    'b'  	= 'no_op'                   	#                                         	   「   」 	「goto_window_bottom」
-    'p'  	= 'no_op'                   	#                                         	   「   」 	「goto_previous_buffer」
-    'a'  	= 'goto_first_nonwhitespace'	# 𝕒⭰ line start 1ₛₜ non-whitespace char ¬␣	   「  s」 	「goto_last_accessed_file」
-    's'  	= 'goto_line_end'           	# ⭲ line end                              	   「  l」 	「goto_first_nonwhitespace」
-    'h'  	= 'goto_line_start'         	# ⭰ line start                            	   ≝「  h」	「goto_line_start」
-    # 'g'	= 'goto_file_start'         	# ━№⇱ line number `<n>` else file start ⎯⭱	   ≝「  g」	「goto_file_start」
-    'j'  	= 'goto_last_line'          	# ⇲ file end   ⭳                          	   「  e」 	「」
-    'k'  	= 'goto_file_start'         	# ━№⇱ line number `<n>` else file start ⎯⭱	   「  g」 	「goto_line_end」
-    'l'  	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph start                 	「]p 」    	「goto_line_end」
-    ';'  	= 'goto_next_paragraph'     	# ¶🢖 Move paragraph end                   	「[p 」    	「」
-    '.'  	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph start                 	「[p  」   	「goto_last_modification」
-    '/'  	= 'goto_next_paragraph'     	# ¶🢖 Move paragraph end                   	「]p  」   	「」
-    # 'f'	= 'goto_file'               	# files in the selection                  	   ≝「  f」	「goto_file」
-    'm'  	= 'goto_window_bottom'      	# 🗔⭳ screen bottom                        	「  b」    	「goto_last_modified_file」
-    ','  	= 'goto_window_top'         	# 🗔⭱ screen top                           	「  t」    	「」
-    'n'  	= 'goto_window_center'      	# 🗔· screen middle                        	「  c」    	「goto_next_buffer」
-    # 'D'	= 'goto_declaration'        	# 🆔 declaration (LSP)                     	「⇧  d」   	「goto_declaration」
-    # 'd'	= 'goto_definition'         	# ≝ definition (LSP)                      	   ≝「  d」	「goto_definition」
-    'F12'	= 'goto_definition'         	# ≝ definition (LSP)                      	   「  d」 	「」
-    # 'i'	= 'goto_implementation'     	# 🄸 implementation (LSP)                  	   ≝「  i」	「goto_implementation」
-    't'  	= 'goto_implementation'     	# 🄸 implementation (LSP)                  	   「  i」 	「goto_window_top」
-    # 'r'	= 'goto_reference'          	# 🅁※ references (LSP)                     	≝「  r」   	「goto_reference」
-    'e'  	= 'goto_type_definition'    	# τ≝ type definition (LSP)                	   「  y」 	「goto_last_line」
-    # 'y'	= 'goto_type_definition'    	# τ≝ type definition (LSP)                	   ≝「  y」	「goto_type_definition」
-    'c'  	= 'goto_last_accessed_file' 	# 🕮␜ file last accessed/alternate         	「  a」    	「goto_window_center」
-    'v'  	= 'goto_last_modified_file' 	# ✎␜ file last modified/alternate         	「  m」    	「」
-    '1'  	= 'goto_previous_buffer'    	# buffer previous                         	   「  p」 	「」 !!!missing ∀*
-    '2'  	= 'goto_next_buffer'        	# buffer next                             	   「  n」 	「」 !!!missing ∀*
-    '3'  	= 'jump_backward'           	# ⎗̡ Jump backward on the jumplist        	   「   」 	「」 !!!missing ∀*
-    '4'  	= 'jump_forward'            	# ⎘̡ Jump forward  on the jumplist        	   「   」 	「」 !!!missing ∀*
-    'u'  	= 'goto_last_modification'  	# 🕘 last modification in current file     	「  .」    	「goto_line_start」 <i class='fa fa-history'></i>
-    # "'"	= 'goto-char#'              	# c#                                      	   「   」 	「」 !!! not available
-
   [keys.	select.'n']                 	#Ⓢ ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」 	「」
     'n' 	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                  	「  m」	「」
     '.' 	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS)                  	「  」 	「」 !!!missing
@@ -350,8 +316,10 @@
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "P" "cfg" $cfg) ◊
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "Z" "cfg" $cfg) ◊
 
+  #◊ includeTemplate (joinPath $cfg "nGoTo.toml.tmpl") (dict "m" "select" "i" "Ⓢ ⓖ☰⮊" "k" "g" "cfg" $cfg) ◊
+
+
+
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k" "space" "cfg" $cfg) ◊
-
-
 
   #◊ includeTemplate (joinPath $cfg "nUnimpaired.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k1" "[" "k0" "]" "cfg" $cfg) ◊

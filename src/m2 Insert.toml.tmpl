@@ -234,39 +234,6 @@
 
 
   ### ☰Minor modes
-  [keys.	insert.'A-g']          	#ⓘ ⓖ☰⮊ Goto mode Jumps to various locations	「$!」  	「」
-    'b'  	= 'no_op'                   	#                                          	「   」 	「goto_window_bottom」
-    'h'  	= 'no_op'                   	#                                          	「   」 	「goto_line_start」
-    'p'  	= 'no_op'                   	#                                          	「   」 	「goto_previous_buffer」
-    'j'  	= 'goto_last_line'          	# ⇲ file end                               	「  e」 	「」
-    'k'  	= 'goto_file_start'         	# ⇱ line number `<n>` else file start      	「  g」 	「goto_line_end」
-    # 'g'	= 'goto_file_start'         	# ⇱ line number `<n>` else file start      	「  g」 	「goto_file_start」
-    # 's'	= 'goto_first_nonwhitespace'	# line start 1ₛₜ non-whitespace char       	「  s」 	「goto_first_nonwhitespace」
-    'a'  	= 'goto_first_nonwhitespace'	# line start 1ₛₜ non-whitespace char       	「  s」 	「goto_last_accessed_file」
-    'l'  	= 'goto_line_start'         	# line start ⭰                             	「  h」 	「」 !!! change to 🢔¶ when implemented
-    ';'  	= 'goto_line_end'           	# line end   ⭲                             	「  l」 	「」 !!! change to ¶🢖 when implemented
-    # 'f'	= 'goto_file'               	# files in the selection                   	「  f」 	「goto_file」
-    'm'  	= 'goto_window_bottom'      	# 🗔⭳ screen bottom                         	「  b」 	「goto_last_modified_file」
-    ','  	= 'goto_window_top'         	# 🗔⭱ screen top                            	「  t」 	「」
-    'n'  	= 'goto_window_center'      	# 🗔· screen middle                         	「  c」 	「goto_next_buffer」
-    # 'd'	= 'goto_definition'         	# ≝      definition (LSP)                  	「  d」 	「goto_definition」
-    'F12'	= 'goto_definition'         	# ≝      definition (LSP)                  	「  d」 	「」
-    'D'  	= 'goto_declaration'        	# 🆔       declaration (LSP)                	「⇧  d」	「goto_declaration」
-    'e'  	= 'goto_type_definition'    	# ≝ type definition (LSP)                  	「  y」 	「goto_last_line」
-    # 'y'	= 'goto_type_definition'    	# ≝ type definition (LSP)                  	「  y」 	「goto_type_definition」
-    # 'r'	= 'goto_reference'          	# 🅁※ references (LSP)                      	「  r」 	「goto_reference」
-    # 'i'	= 'goto_implementation'     	# 🄸 implementation (LSP)                   	「  i」 	「goto_implementation」
-    't'  	= 'goto_implementation'     	# 🄸 implementation (LSP)                   	「  i」 	「goto_window_top」
-    'c'  	= 'goto_last_accessed_file' 	# 🕮␜ file last accessed/alternate          	「  a」 	「goto_window_center」
-    'v'  	= 'goto_last_modified_file' 	# ✎␜ file last modified/alternate          	「  m」 	「」
-    '1'  	= 'goto_previous_buffer'    	# buffer previous                          	「  p」 	「」 !!! blocked by ∀* universal argument
-    '2'  	= 'goto_next_buffer'        	# buffer next                              	「  n」 	「」 !!! blocked by ∀* universal argument
-    '3'  	= 'jump_backward'           	# ⎗̡ Jump backward on the jumplist         	「   」 	「」 !!!missing ∀*
-    '4'  	= 'jump_forward'            	# ⎘̡ Jump forward  on the jumplist         	「   」 	「」 !!!missing ∀*
-    'u'  	= 'goto_last_modification'  	# 🕘 last modification in current file      	「.」   	「」 <i class='fa fa-history'></i>
-    # '.'	= 'goto_last_modification'  	# 🕘 last modification in current file      	「.」   	「goto_last_modification」 <i class='fa fa-history'></i>
-    # "'"	= 'goto-char#'              	# c#                                       	「   」 	「」 !!! not available
-
   [keys.	insert.'A-n']          	#ⓘ ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」 	「」
     'n'  	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                  	「  m」	「」
     '.'  	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS) !!!missing       	「  」 	「」
@@ -335,6 +302,7 @@
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-P" "cfg" $cfg) ◊
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-Z" "cfg" $cfg) ◊
 
+  #◊ includeTemplate (joinPath $cfg "nGoTo.toml.tmpl") (dict "m" "insert" "i" "ⓘ ⓖ☰⮊" "k" "A-g" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" $cfg) ◊
 
