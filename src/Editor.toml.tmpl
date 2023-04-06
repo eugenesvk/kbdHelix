@@ -1,17 +1,17 @@
 # chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
 [editor]
   #◊/* 'key'                	= 'value'    	# |def|oth¦	  Comment */ -◊
-  # 'scrolloff'             	= 3          	#|5        	| Number of lines of padding around the edge of the screen when scrolling.
+  # 'scrolloff'             	= 3          	#|5        	| Number of lines of padding around the edge of the screen when scrolling
   # 'mouse'                 	= true       	#|true     	| Enable mouse mode
-  # 'middle-click-paste'    	= true       	#|true     	| Middle click paste support.
-  'scroll-lines'            	= 2          	#|3        	| Number of lines to scroll per scroll wheel step.
-  'shell'                   	= ['nu','-c']	#|'sh','-c'	| Shell to use when running external commands.
+  # 'middle-click-paste'    	= true       	#|true     	| Middle click paste support
+  'scroll-lines'            	= 2          	#|3        	| Number of lines to scroll per scroll wheel step
+  'shell'                   	= ['nu','-c']	#|'sh','-c'	| Shell to use when running external commands
   'line-number'             	= 'relative' 	#|absolute 	| Line number display (absolute¦relative(=absⓘ))
   #Completion               	             	#          	#
   # 'auto-completion'       	= true       	#|true     	| Auto pop up of auto-completion
   # 'completion-trigger-len'	= 2          	#|2        	| min-length of word under cursor to trigger autocompletion
   'completion-replace'      	= false      	#|false    	| completions replace word, not pre-cursor part
-  # 'idle-timeout'          	= 400        	#|400      	| Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.
+  # 'idle-timeout'          	= 400        	#|400      	| Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant
   # 'auto-info'             	= true       	#|true     	| Display infoboxes
   'cursorline'              	= false      	#|false    	| Highlight all lines   with a cursor
   'cursorcolumn'            	= false      	#|false    	| Highlight all columns with a cursor
@@ -26,7 +26,7 @@
   'bufferline'              	= 'multiple' 	#|never    	| Line@top with open buffers ¦always|never¦multiple (only shown if more than one buffer is in use)
 
 
-  # 'auto-pairs'	= true	#|true	|	 Auto insertion of pairs to parentheses, brackets, etc
+  # 'auto-pairs'	= true	#|true	|  Auto insertion of pairs to parentheses, brackets, etc
   [editor.auto-pairs]
     '"' = '"'
     '`' = '`'
@@ -72,9 +72,9 @@
     # spacer   	Inserts a space between elements (multiple/contiguous spacers may be specified)
 
   [editor.soft-wrap]    	       	# Options for soft wrapping lines that exceed the view width:
-    'enable'            	= false	#|false	|	Enabled
-    'max-wrap'          	= 20   	#|20   	|	Max free space left at line end, ↑to ↓ forced mid-word wrapping
-    'max-indent-retain' 	= 40   	#|40   	|	Max indentation to carry over when soft wrapping a line
+    'enable'            	= false	#|false	| Enabled
+    'max-wrap'          	= 20   	#|20   	| Max free space left at line end, ↑to ↓ forced mid-word wrapping
+    'max-indent-retain' 	= 40   	#|40   	| Max indentation to carry over when soft wrapping a line
     'wrap-indicator'    	= "↪"  	#|↪    	| Text before soft wrapped lines, highlighted with ui.virtual.wrap
     'wrap-at-text-width'	= false	#|false	| Soft wrap at text-width instead of using the full viewport size
 
@@ -103,8 +103,8 @@
     skip-levels	= 1   	#|0    	|
 
   [editor.search]
-    'smart-case' 	= false	#|true	|	 Smart case regex searching (case insensitive unless pattern contains upper case characters)
-    'wrap-around'	= false	#|true	|	Whether the search should wrap after depleting the matches
+    'smart-case' 	= false	#|true	| Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'wrap-around'	= false	#|true	| Whether the search should wrap after depleting the matches
 
   [editor.gutters]
     layout	= ["diagnostics","spacer","line-numbers","spacer","diff"]	# |diagnostics spacer line-numbers spacer diff|
@@ -132,7 +132,7 @@
   [editor.lsp]
     # 'enable'                     	=	true 	# | true 	| False will completely disable language servers regardless of language settings
     # 'display-messages'           	=	false	# | false	| LSP progress messages below statusline
-    # 'auto-signature-help'        	=	true 	# | true 	| Enable automatic popup of signature help (parameter hints)
+    # 'auto-signature-help'        	=	true 	# | true 	| Auto popup of signature help (parameter hints)
     'display-inlay-hints'          	=	true 	# | false	| Inlay hints
     # 'display-signature-help-docs'	=	true 	# | true 	| Docs under signature help popup
-    # 'snippets'                   	=	true 	# | true 	| Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+    # 'snippets'                   	=	true 	# | true 	| Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set
