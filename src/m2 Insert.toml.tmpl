@@ -234,14 +234,6 @@
 
 
   ### ☰Minor modes
-  [keys.	insert.'A-`']     	#ⓘ ☰𝔸𝕒 Case conversion mode
-    'A-`'	= 'switch_case'        	# 𝕒⇋𝔸 (selection)             	「⇧ `」	「」
-    '`'  	= 'switch_case'        	# 𝕒⇋𝔸 (selection)             	「⇧ `」	「」
-    'j'  	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)              	「  `」	「」
-    'k'  	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)              	「 ⎇`」	「」
-    # 'l'	= 'switch_to_sentence' 	# 𝔸𝕒 𝔹𝕓 (selection) !!!missing	「 」  	「」
-    # ';'	= 'switch_to_camel'    	# ℂ𝕒𝕄𝕖𝕝 (selection) !!!missing	「 」  	「」
-
   [keys.	insert.'A-p']   	#ⓘ ☰👁 View mode: scroll/manipulate w/o Δselection	「$!」  	「paste_after」
     'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」 	「」
     'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」 	「」
@@ -412,6 +404,9 @@
     'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
     'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
   #◊ includeTemplate (joinPath $cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" $cfg) ◊
+
+  #◊ includeTemplate (joinPath $cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-`" "cfg" $cfg) ◊
+    'A-`'	= 'switch_case'	# 𝕒⇋𝔸 (selection)	「⇧ `」	「」
 
 
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" $cfg) ◊
