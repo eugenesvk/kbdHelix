@@ -26,18 +26,19 @@
   #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
     # 'i'	= 'insert_mode' 	# ⁁⤸ Insert before selection                  	「  i」	「insert_mode」
     # 'e'	= 'select_mode' 	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web)	「  v」	「move_next_word_end」  <i class='fa fa-arrows'></i>
-    # ':'	= 'command_mode'	# Ⓒ Enter command mode                        	「⇧ ;」	「command_mode」
   #Ⓝ Minor modes / menu dialogs ———————————————————————————————————————————————————————
-    # 'p'    	 #☰👁 View mode            	Ⓝ「  z」  	「paste_after」
-    # 'P'    	 #☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
-    # 'Z'    	 #☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
-    # 'g'    	 #ⓖ☰⮊ Goto mode           	  Ⓝ「  g」	「」
-    # 'n'    	 #☰🧩  Match mode          	Ⓝ「  m」  	「」 ☰<i class='fa fa-puzzle-piece'></i>
-    # 'C-w'  	#☰🗔  Window mode          	  Ⓝ「 ⎈w」	「」
-    # 'space'	#☰␠  Space mode           	  Ⓝ「  ␠」	「」
-    # '['    	#☰⧛ Unimpaired            	  Ⓝ「  ]」	「」
-    # ']'    	#☰⧚                       	  Ⓝ「  [」	「」
-    # '`'    	#☰𝔸𝕒 Case conversion      	  Ⓝ「  」 	「switch_to_lowercase」
+    #'p'    	                   	 ☰👁 View mode            	Ⓝ「  z」  	「paste_after」
+    #'P'    	                   	 ☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
+    #'Z'    	                   	 ☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
+    #'g'    	                   	 ⓖ☰⮊ Goto mode           	  Ⓝ「  g」	「」
+    #'n'    	                   	 ☰🧩  Match mode          	Ⓝ「  m」  	「」 ☰<i class='fa fa-puzzle-piece'></i>
+    #'C-w'  	                   	 ☰🗔  Window mode         	  Ⓝ「 ⎈w」	「」
+    #'space'	                   	 ☰␠  Space mode          	  Ⓝ「  ␠」	「」
+    #'['    	                   	 ☰⧛ Unimpaired           	  Ⓝ「  ]」	「」
+    #']'    	                   	 ☰⧚                      	  Ⓝ「  [」	「」
+    #'`'    	                   	 ☰𝔸𝕒 Case conversion     	  Ⓝ「  」 	「switch_to_lowercase」
+    #':'    	= 'command_mode'   	# Ⓒ Enter command mode   	「⇧ ;」   	「command_mode」
+    'R'     	= 'command_palette'	# ☰Ⓒ Command Palette     	「⇧ /」   	「replace_with_yanked」
 
   #Ⓝ         	Compat with non-modal editors        	 
   'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
@@ -172,9 +173,9 @@
     'C-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
     'G'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
 
-    'J'  	= 'extend_line'            	# ⮒ Select current line/extend to next line if selected  	「⇧  x」	「join_selections」
-    'E'  	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds (line-wise selection)	「⇧  x」	「move_next_long_word_end」
-    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                     	「   」 	「」
+    'J'  	= 'extend_line'            	# ⮒ Select current line/extend to next line if selected   	「⇧  x」	「join_selections」
+    'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯	「⇧  x」	「move_next_long_word_end」
+    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                      	「   」 	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,  	 'move_prev_word_start'    	#
       ,  	 'search_selection'        	#
@@ -299,7 +300,7 @@
   'C-/'	= 'toggle_comments'         	# un-/comment the selections                 	「 ⎈c」	「」 !!!fail
   'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
   'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
-  'R'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「⇧ r」 	「replace_with_yanked」
+  '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「」   	「」
 
   # '$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each selection into shell command, keep selections where command returned 0	Ⓝ「⇧ 4」	「shell_keep_pipe」
 
@@ -495,7 +496,6 @@
     'ret'    	= 'command_mode'                    	# Ⓒ Enter command mode                            	「  ⎋」 	「」
     'P'      	= 'no_op'                           	#                                                 	「⇧   」	「paste_clipboard_before」
     'Y'      	= 'no_op'                           	#                                                 	「   」 	「yank_main_selection_to_clipboard」
-    'R'      	= 'no_op'                           	#                                                 	「⇧   」	「replace_selections_with_clipboard」
     'S'      	= 'no_op'                           	#                                                 	「⇧   」	「workspace_symbol_picker」
     # Home   	row                                 	                                                  	 
     'j'      	= 'extend_line'                     	# ⮒ Select current/next(if selected) line         	「  x」   	「」
@@ -516,8 +516,9 @@
     # 'i'    	= 'mode_Register'                   	# ☰® Register/copy/paste etc.                     	「   」	「」
     'o'      	= 'hover'                           	# ? Show documentation for item under cursor (LSP)	「  k」	「」
     # 'p'    	= 'mode_P'                          	# ☰p TBD                                          	「」「paste_clipboard_after」 !!!missing_aliases
-    'r'      	= 'rename_symbol'                   	# ✎ Rename symbol (LSP)                           	≝「   」	「rename_symbol]
-    'e'      	= 'extend_to_line_bounds'           	# ⎯ Extend selection to line bounds               	「  x」 	「」
+    'R'      	= 'rename_symbol'                   	# ✎ Rename symbol (LSP)                           	「  r」 	「replace_selections_with_clipboard」
+    'r'      	= 'command_palette'                 	# ☰Ⓒ Command Palette                              	「   」 	「rename_symbol]
+    'e'      	= 'extend_to_line_bounds'           	# ━ Extend selection to line bounds ⎯             	「  x」 	「」
     #'w'     	= 'mode_window'                     	# ☰🗔 Window mode                                  	「☰␠ w」	「mode_window」 !!!missing_aliases
     # 'q'    	= '???'                             	#                                                 	「  q」 	「」
     'y'      	= 'code_action'                     	# Ⓐ Apply code action (LSP)                       	「☰␠ a」	「yank_joined_to_clipboard」

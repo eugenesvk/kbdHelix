@@ -130,7 +130,7 @@
     'G'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
 
     'J'  	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
-    'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection) ⎯      	「⇧ x」 	「move_next_long_word_end」
+    'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯       	「⇧ x」 	「move_next_long_word_end」
     'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」 	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,  	 'move_prev_word_start'    	#
@@ -429,7 +429,6 @@
     'ret'    	= 'command_mode'           	# Ⓒ Enter command mode                            	「  ⎋」 	「」
     'P'      	= 'no_op'                  	#                                                 	「⇧   」	「paste_clipboard_before」
     'Y'      	= 'no_op'                  	#                                                 	「   」 	「yank_main_selection_to_clipboard」
-    'R'      	= 'no_op'                  	#                                                 	「⇧   」	「replace_selections_with_clipboard」
     'S'      	= 'no_op'                  	#                                                 	「⇧   」	「workspace_symbol_picker」
     # Home   	row                        	                                                  	 
     'j'      	= 'extend_line'            	# ⮒ Select current/next(if selected) line         	「  x」   	「」
@@ -449,8 +448,9 @@
     # 'i'    	= 'mode_Register'          	# ☰® Register/copy/paste etc.                     	「   」	「」
     'o'      	= 'hover'                  	# ? Show documentation for item under cursor (LSP)	「  k」	「」
     # 'p'    	= 'mode_P'                 	# ☰p TBD                                          	「」「paste_clipboard_after」 !!!missing_aliases
-    'r'      	= 'rename_symbol'          	# ✎ Rename symbol (LSP)                           	≝「   」	「rename_symbol」
-    'e'      	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds               	「  x」 	「」
+    'R'      	= 'rename_symbol'          	# ✎ Rename symbol (LSP)                           	「  r」 	「replace_selections_with_clipboard」
+    'r'      	= 'command_palette'        	# ☰Ⓒ Command Palette                              	「   」 	「rename_symbol]
+    'e'      	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds ⎯             	「  x」 	「」
     #'w'     	= 'mode_window'            	# ☰🗔 Window mode                                  	「☰␠ w」	「mode_window」 !!!missing_aliases
     # 'q'    	= '???'                    	#                                                 	「  q」 	「」
     'y'      	= 'code_action'            	# Ⓐ Apply code action (LSP)                       	「☰␠ a」	「yank_joined_to_clipboard」
