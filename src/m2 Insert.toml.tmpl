@@ -234,24 +234,6 @@
 
 
   ### ☰Minor modes
-  [keys.	insert.'A-n']          	#ⓘ ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」 	「」
-    'n'  	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                  	「  m」	「」
-    '.'  	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS) !!!missing       	「  」 	「」
-    '/'  	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS) !!!missing       	「  」 	「」
-    'i'  	= 'surround_add'            	# (+)  Surround current selection with <char>        	「  s」	「」
-    't'  	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>    	「  r」	「」
-    'x'  	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>             	「  d」	「」
-    'e'  	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                      	「  a」	「」
-    'a'  	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                      	「  i」	「」
-    'A-n'	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                  	「  m」	「」
-    'A-.'	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS) !!!missing       	「  」 	「」
-    'A-/'	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS) !!!missing       	「  」 	「」
-    'A-i'	= 'surround_add'            	# (+)  Surround current selection with <char>        	「  s」	「」
-    'A-t'	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>    	「  r」	「」
-    'A-x'	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>             	「  d」	「」
-    'A-e'	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                      	「  a」	「」
-    'A-a'	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                      	「  i」	「」
-
   [keys.	insert.'C-w']     	#ⓘ ☰🗔  Window mode                     	Ⓝ「⎈ w」  	「」
     's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
     'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
@@ -303,6 +285,8 @@
   #◊ includeTemplate (joinPath $cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ 👁ₛ" "k" "A-Z" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nGoTo.toml.tmpl") (dict "m" "insert" "i" "ⓘ ⓖ☰⮊" "k" "A-g" "cfg" $cfg) ◊
+
+  #◊ includeTemplate (joinPath $cfg "nMatch.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🧩" "k" "A-n" "cfg" $cfg) ◊
 
   #◊ includeTemplate (joinPath $cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" $cfg) ◊
 
