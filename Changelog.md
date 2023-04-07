@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
-[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.2.0...HEAD
+[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.3.0...HEAD
 ## [Unreleased]
   <!-- - __Added__ -->
    <!-- + :sparkles: ??? -->
@@ -21,6 +21,9 @@ All notable changes to this project will be documented in this file
   <!-- - __Security__ -->
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
+
+[0.3.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.3.0
+## [0.3.0]
 
 [0.2.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.2.0
 ## [0.2.0]
