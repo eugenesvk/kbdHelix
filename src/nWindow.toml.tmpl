@@ -1,11 +1,10 @@
 # chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
 #◊/* key     	= command              	# Icon Comment                         	≝「key」  	「	cmd」 */ -◊
   [keys.     	'#◊.m◊'.'#◊.k◊'#◊.ksp◊]	##◊.i◊  Window mode                    	Ⓝ「⎈ w」  	「」
-    's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
-    'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
     'v'      	= 'no_op'              	#                                      	   「  」 	「vsplit」
-    'C-v'    	= 'no_op'              	#                                      	   「  」 	「vsplit」
     'F'      	= 'no_op'              	#                                      	  「⇧  」 	「goto_file」
+    'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'C-v'    	= 'no_op'              	#                                      	   「  」 	「vsplit」
     'j'      	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「  j」  	「jump_view_down」
     'k'      	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「  k」  	「jump_view_up」
     'l'      	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「  h」   	「jump_view_right」
@@ -18,9 +17,12 @@
     'C-up'   	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	「▲」     	「」
     'C-left' 	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「◀」     	「」
     'C-right'	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「▶」     	「」
+    'e'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
+    'C-e'    	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
+    'a'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
     'w'      	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「  w」  	「rotate_view」
     'C-w'    	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「 ⎈w」  	「rotate_view」
-    'e'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
+    's'      	= 'rotate_view'        	# 🗗⟳ Switch to window next             	 「  w」  	「hsplit」
     'f'      	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「  v」	「vsplit」
     'C-f'    	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「 ⎈v」	「vsplit」
     'm'      	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「  s」	「」
