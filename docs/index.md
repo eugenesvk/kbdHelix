@@ -23,6 +23,7 @@ title: "🧬Helix Keymap modiƒew"
     - [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
     - [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
     - [Helix Keymap modiƒew Unimpaired](#helix-keymap-modiew-unimpaired)
+- [Install](#install)
 
 <div id=buttons>
   Change keyboard layout to:
@@ -184,3 +185,14 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
+
+#### Install
+
+1. Simple, but inflexible: copy the content of the __modiƒew__ [config keymap file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) to your own Helix `~/.config/helix/config.toml` below your `[editor]` section
+2. More complicated, but more flexible (makes it easier to change)
+    - install [chezmoi config file manager](https://www.chezmoi.io/)
+    - copy all template files from [modifew/src](https://github.com/eugenesvk/kbdHelix/tree/modifew/src) to your `~/.local/share/chezmoi/private_dot_config/helix` folder
+    - replace theme and `[editor]` sections of the `Editor.toml.tmpl` file with your preferred settings
+    - build the actual full Helix `config.toml` with `chezmoi apply -v --interactive`
+
+    Now you can edit individual template files for each major/minor mode and build the config with `chezmoi` instead of drowning in one huge config. You can also add a single line to include repeated minor modes in various major modes (and even pass different keybinds as input parametes to those templates) instead of having to copy&paste them manually on every single change!
