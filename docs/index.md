@@ -39,7 +39,7 @@ title: "🧬Helix Keymap modiƒew"
 ### Overview
 
 
-This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^1] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆🏻 (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
+This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^mnem] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆🏻[^finger] (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
 It also attempts to convert most of the commands requiring modifiers into a chainable key sequence, hence its name: "few modifiers based on frequency" (__ƒ__ for frequency) or __modiƒew__
 
 This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍🏻👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the bottom
@@ -89,7 +89,8 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - <span style="color: orange">⚠</span> (lacking sufficient frequency data) little optimization was applied to the top vs. bottom row placement of commands
   - <span style="color: orange">⚠</span> number row-base commands don't work pending implementation of this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use the version with modifiers
 
-[^1]: re. mnemonics: in such a complex keybind system such as Helix's I don't find them all that useful as they don't offer intuitive predictability due to said complexity since there are several alternatives to most of the keys, e.g., should <kbd>c</kbd> stand for Cut/Copy/Change/Collapse/Comment/Char/Command/Case/...?
+[^mnem]: re. mnemonics: in such a complex keybind system such as Helix's I don't find them all that useful as they don't offer intuitive predictability due to said complexity since there are several alternatives to most of the keys, e.g., should <kbd>c</kbd> stand for Cut/Copy/Change/Collapse/Comment/Char/Command/Case/...?
+[^finger]: fingers are denoted with emojis: left‹🤙💍🖕☝️👍 and 👍🏻👆🏻🖕🏻💍🤙🏻›right
 [^2]: hopefully Helix will introduce a way to translate keycap labels to an arbitrary layout without having to rebind every single key (maybe as a solution to [this issue](https://github.com/helix-editor/helix/issues/133))
 [^3]: for example, instead of placing the 2nd most frequent command <span class="keyMove">▲</span> (15.5%) on a non-home row <kbd lyt=q>i</kbd> it uses the home row <kbd lyt=q>k</kbd>
 [^4]: this breaks the 'sticky' `select_mode` pending implementation of [this feature request](https://github.com/helix-editor/helix/issues/1487)
