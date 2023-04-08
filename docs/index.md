@@ -18,6 +18,7 @@ title: "🧬Helix Keymap modiƒew"
 - [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
 - [Helix Keymap modiƒew View](#helix-keymap-modiew-view)
 - [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
+- [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
 
 
 ### Overview
@@ -134,6 +135,15 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
 #### Helix Keymap modiƒew Match
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-match.png?raw=true)
+
+<div id=keyboard tabindex=0 style="display: inline-flex;">
+</div>
+
+
+
+#### Helix Keymap modiƒew Window
+
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-window.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
