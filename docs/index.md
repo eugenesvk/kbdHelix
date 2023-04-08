@@ -16,6 +16,7 @@ title: "🧬Helix Keymap modiƒew"
 - [Helix Keymap modiƒew Insert](#helix-keymap-modiew-insert)
 - [Helix Keymap modiƒew Select](#helix-keymap-modiew-select)
 - [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
+- [Helix Keymap modiƒew Space](#helix-keymap-modiew-space)
 - [Helix Keymap modiƒew View](#helix-keymap-modiew-view)
 - [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
 - [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
@@ -36,7 +37,7 @@ Below is a summary of some of the design decisions followed up by detailed keyma
 
   - __Home__ row is __safe__: a lot of the movement commands happen to be the most frequent, enough to utilize the 8 home row keys, so as a side effect you get safety — to modify a buffer move your fingers elsewhere!
   - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the sames keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
-  - (to do) convert most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
+  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly moves <kbd>^</kbd> and/or <kbd>⇧</kbd>, but via submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
         + Strongest non-thumb fingers on the __right__ hand:<br>
@@ -121,6 +122,16 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
+
+
+
+#### Helix Keymap modiƒew Space
+
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-space.png?raw=true). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix
+
+<div id=keyboard tabindex=0 style="display: inline-flex;">
+</div>
+
 
 
 
