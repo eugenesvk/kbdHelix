@@ -1,9 +1,8 @@
 [
   {
     "backcolor": "#dbdbdb",
-    "name": "🧬Helix 0.6 ⌨modiƒew 0.3☰⧛⧚",
-    "radii": "6px 6px 12px 12px / 18px 18px 12px 12px",
-    "css": ".keytop {\n  margin-top \t: -3px           \t; /*0px*/\n  margin-left\t: -5px           \t; /*0px*/\n  width      \t: 52px !important\t; /*42px → 52*/\n  height     \t: 45px !important\t; /*42px → 46*/\n}\n.keylabel0, .keylabel3, .keylabel6 { margin-left\t: -6px;} /* left */\n.keylabel2, .keylabel5, .keylabel8 { margin-left\t:  6px;} /* right */\n.keylabel0, .keylabel1, .keylabel2 { margin-top \t: -4px;} /* top */\n.keylabel3, .keylabel4, .keylabel5 { margin-top \t: -1px;} /* center */\n.keylabel6, .keylabel7, .keylabel8 { margin-top \t:  1px;} /* bottom */\n/*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */\n.keylabel9 { margin-left : -0.6em;}\n.keylabel11 { margin-left : 0.6em;}\n\n"
+    "name": "🧬Helix ⌨modiƒew ⧛☰⧚",
+    "radii": "6px 6px 12px 12px / 18px 18px 12px 12px"
   },
   [
     {
@@ -102,71 +101,92 @@
     },
     "\n\n\n\n⭾",
     {
-      "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000",
-      "a": 3,
+      "t": "#000000",
+      "a": 1,
       "fa": [
-        0,
+        6,
         0,
         0,
         0,
         5
       ]
     },
-    "\n\n\n\n▶\n\n\n\n\n\n\nQ",
+    "💾🙈\n\n\n\n▶\n\n\n\n\n\n\nQ",
     {
-      "t": "#800080\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
+      "t": "#000000\n\n\n\n#006400",
       "p": "R2",
       "fa": [
-        0,
+        6,
         0,
         0,
         0,
         6
       ]
     },
-    "\n\n\n\n<i class='mss mss-Search-3'></i>\n\n\n\n\n\n\nW",
+    "ℱ💾\n\n\n\n<i class='mss mss-Search-3'></i>\n\n\n\n\n\n\nW",
     {
-      "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000",
+      "t": "#800080\n\n\n\n\n\n\n\n#000000\n\n\n#000000",
       "a": 0,
       "fa": [
         6,
         0,
         6,
         0,
+        6,
+        0,
+        0,
+        0,
         6
       ]
     },
-    "#⭳\n\n#⭥\n\nⓈ\n\n\n\n\n\n\nE",
+    "⭳\n\n⭥\n\nⓈ\n\n\n\n№\n\n\nE",
     {
-      "t": "#ff0000\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
-      "a": 3
+      "t": "#000000\n\n\n\n#006400",
+      "a": 1
     },
-    "\n\n\n\n∞\n\n\n\n\n\n\nR",
+    "↪\n\n\n\n∞\n\n\n\n\n\n\nR",
     {
-      "t": "#ff0000\n\n\n\n\n\n\n\n\n\n\n#000000"
+      "t": "#ff0000\n#006400\n\n#006400\n\n\n\n\n#000000\n\n#000000\n#000000",
+      "a": 0,
+      "fa": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        0,
+        0,
+        0,
+        6,
+        0,
+        6
+      ]
     },
-    "\n\n\n\n🗘\n\n\n\n\n\n\nT",
-    "\n\n\n\n↷\n\n\n\n\n\n\nY",
-    "\n\n\n\n⎌\n\n\n\n\n\n\nU",
+    "\n🢔\n\n🢖\n🗘\n\n\n\n🔎↪\n\n🧪\nT",
     {
-      "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000",
+      "t": "#800080\n\n\n\n\n\n\n\n#000000\n\n\n#000000"
+    },
+    "⧛\n\n⧚\n\n↷\n\n\n\nℂ🄻\n\n\nY",
+    {
+      "t": "#000000",
+      "a": 1
+    },
+    "‗\n\n\n\n⎌\n\n\n\n\n\n\nU",
+    "🛈\n\n\n\n⁁⤸\n\n\n\n\n\n\nI",
+    {
+      "t": "#800080\n\n\n\n#ff0000\n\n\n\n\n\n\n#000000"
+    },
+    "🧬\n\n\n\n⤹⎀\n\n\n\n\n\n\nO",
+    {
+      "t": "#800080\n#006400\n\n#006400\n\n\n\n\n#000000\n\n#000000\n#000000",
       "a": 0
     },
-    "🛈\n\n🛈\n\n⁁⤸\n\n\n\n\n\n\nI",
-    {
-      "t": "#800080\n\n\n\n#ff0000\n\n\n\n\n\n\n#000000",
-      "a": 3
-    },
-    "\n\n\n\n⤹⎀\n\n\n\n\n\n\nO",
-    {
-      "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000"
-    },
-    "\n\n\n\n☰👁\n\n\n\n\n\n\nP",
+    "\n🢔\n\n🢖\n☰👁\n\n\n\n🚦\n\n¶\nP",
     {
       "t": "#006400\n\n\n\n#800080\n\n\n\n\n\n\n#000000"
     },
-    "\n\n\n\n☰⧛\n\n\n\n\n\n\n[",
-    "\n\n\n\n☰⧚\n\n\n\n\n\n\n]",
+    "\n🢔¶\n\n\n⧛☰\n\n\n\n\n\n\n[",
+    "\n\n\n¶🢖\n☰⧚\n\n\n\n\n\n\n]",
     {
       "t": "#ff0000\n\n\n\n#000000",
       "a": 7,
@@ -182,76 +202,82 @@
     },
     "\n\n\n\n⇪",
     {
-      "t": "#800080\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
+      "t": "#800080\n#006400\n\n#006400\n#006400\n\n\n\n#000000\n\n#000000\n#000000",
       "p": "R2",
       "a": 0,
       "fa": [
         6,
+        6,
+        6,
+        6,
+        0,
+        0,
+        0,
+        0,
+        6,
         0,
         6
       ]
     },
-    "⎁\n\n⎁\n\n⭰\n\n\n\n\n\n\nA",
+    "\n🢔\n\n🢖\n⭰\n\n\n\n⎁\n\nα\nA",
     {
       "p": "R3"
     },
-    "𝖗𝕒\n\n𝖗𝔸\n\n<i class='mss mss-Search-3'></i>\n\n\n\n\n\n\nS",
+    "𝕒\n🢔\n𝔸\n🢖\n<i class='mss mss-Search-3'></i>\n\n\n\n𝖗\n\nτ\nS",
+    "\n🢔\n\n🢖\n🢔ω\n\n\n\n⟪⟫\n\n🛠\nD",
     {
-      "t": "#800080\n\n\n\n#006400\n\n\n\n\n\n#000000\n#000000",
+      "t": "#800080\n#006400\n\n#006400\n#006400\n\n\n\n\n\n#000000\n#000000",
+      "n": true
+    },
+    "\n🢔\n\n🢖\nω🢖\n\n\n\n\n\nƒ\nF",
+    "\n⭰\n\n⭲\n☰⮊\n\n\n\n\n\n🛠\nG",
+    {
+      "t": "#ff0000\n#006400\n\n#006400\n\n\n\n\n#000000\n\n#000000\n#000000",
       "fa": [
         6,
         6,
         6,
         6,
+        5,
         0,
         0,
         0,
-        0,
-        0,
+        5,
         0,
         6
       ]
     },
-    "⟪⟫\n🢔\n⟪\n🢖\n🢔w\n\n\n\n\n\n🛠\nD",
+    "\n⭰\n\n⭲\n⌫\n\n\n\n🟨━\n\nΔ\nH",
     {
-      "n": true
-    },
-    "\n⭰\n\n⭲\nw🢖\n\n\n\n\n\n🛠\nF",
-    {
-      "t": "#800080\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
-      "a": 3
-    },
-    "\n\n\n\n☰⮊\n\n\n\n\n\n\nG",
-    {
-      "t": "#ff0000\n\n\n\n\n\n\n\n\n\n\n#000000",
+      "t": "#800080\n#006400\n\n#006400\n#006400\n\n\n\n#000000\n\n#000000\n#000000",
       "fa": [
         6,
         6,
         6,
+        7,
+        3,
+        0,
+        0,
+        0,
         6,
-        5
+        0,
+        6
       ]
     },
-    "\n\n\n\n⌫\n\n\n\n\n\n\nH",
+    "\n🢔\n\n🢖\n▼\n\n\n\n🟨┃\n\nΔ\nJ",
     {
       "t": "#006400\n\n\n\n\n\n\n\n\n\n\n#000000",
-      "fa": [
-        6,
-        6,
-        6,
-        6,
-        3
-      ]
+      "a": 3
     },
-    "\n\n\n\n▼\n\n\n\n\n\n\nJ",
     "\n\n\n\n▲\n\n\n\n\n\n\nK",
     {
-      "t": "#377bb5\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
+      "t": "#800080\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
+      "a": 1,
       "n": true
     },
-    "\n\n\n\n◀\n\n\n\n\n\n\nL",
+    "🧬🗘\n\n\n\n◀\n\n\n\n\n\n\nL",
     {
-      "t": "#800080\n\n\n\n#006400\n\n\n\n\n\n\n#000000"
+      "a": 3
     },
     "\n\n\n\n▶\n\n\n\n\n\n\n;",
     {
@@ -260,7 +286,7 @@
         6,
         6,
         6,
-        6,
+        7,
         6
       ]
     },
@@ -275,25 +301,50 @@
   [
     {
       "x": 2.25,
-      "p": "R4"
-    },
-    "\n\n\n\n//\n\n\n\n\n\n\nZ",
-    "\n\n\n\n×\n\n\n\n\n\n\nX",
-    {
-      "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000",
+      "t": "#ff0000\n#006400\n\n#006400\n\n\n\n\n#000000\n\n#000000\n#000000",
+      "p": "R4",
       "a": 0,
       "fa": [
         6,
         6,
         6,
         6,
-        5
+        6,
+        0,
+        0,
+        0,
+        6,
+        0,
+        6
       ]
     },
-    "\nℂ\n\nℂ\n<i class='fa fa-copy'></i>\n\n\n\n\n\n\nC",
+    "\n🢔\n\n🢖\n//\n\n\n\n⎁ω\n\nↄ\nZ",
     {
       "t": "#ff0000\n\n\n\n\n\n\n\n\n\n\n#000000",
-      "a": 3,
+      "a": 3
+    },
+    "\n\n\n\nᵡ\n\n\n\n\n\n\nX",
+    {
+      "t": "#800080\n\n\n\n\n\n\n\n#000000\n\n\n#000000",
+      "a": 0,
+      "fa": [
+        6,
+        6,
+        6,
+        6,
+        5,
+        0,
+        0,
+        0,
+        6,
+        0,
+        6
+      ]
+    },
+    "\n⧛\n\n⧚\n<i class='fa fa-copy'></i>\n\n\n\n🌈\n\nℂ\nC",
+    {
+      "t": "#000000\n\n\n\n#ff0000",
+      "a": 1,
       "fa": [
         6,
         6,
@@ -302,8 +353,10 @@
         4
       ]
     },
-    "\n\n\n\n<i class='fa fa-copy'></i>⤹\n\n\n\n\n\n\nV",
+    "🖰📋\n\n\n\n<i class='fa fa-copy'></i>⤹\n\n\n\n\n\n\nV",
     {
+      "t": "#ff0000\n\n\n\n\n\n\n\n\n\n\n#000000",
+      "a": 3,
       "fa": [
         6,
         6,
@@ -325,7 +378,8 @@
     },
     "\n\n\n\n☰<i class='fa fa-puzzle-piece'></i>\n\n\n\n\n\n\nN",
     {
-      "t": "#ff0000\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
+      "t": "#000000\n\n\n\n#006400",
+      "a": 1,
       "fa": [
         6,
         6,
@@ -334,44 +388,83 @@
         6
       ]
     },
-    "\n\n\n\n⤈\n\n\n\n\n\n\nM",
+    "🖰\n\n\n\n⤈\n\n\n\n\n\n\nM",
+    {
+      "t": "#ff0000\n\n\n\n#006400\n\n\n\n\n\n\n#000000",
+      "a": 3
+    },
     "\n\n\n\n⤉\n\n\n\n\n\n\n,",
     {
-      "t": "#006400\n\n\n\n\n\n\n\n\n\n\n#000000"
+      "t": "#800080\n\n\n\n\n\n\n\n#000000\n\n#000000\n#000000",
+      "a": 0,
+      "fa": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        0,
+        0,
+        0,
+        6,
+        0,
+        6
+      ]
     },
-    "\n\n\n\n🢔◎\n\n\n\n\n\n\n.",
+    "⧛\n🢔\n⧚\n🢖\n🢔◎\n\n\n\nℂ🙈\n\n¶\n.",
     {
-      "t": "#ff0000\n\n\n\n#006400\n\n\n\n\n\n\n#000000"
+      "t": "#ff0000\n#006400\n\n#006400\n#006400\n\n\n\n\n\n#000000\n#000000",
+      "fa": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
     },
-    "\n\n\n\n◎🢖\n\n\n\n\n\n\n/"
+    "\n🢔\n\n🢖\n◎🢖\n\n\n\n\n\nↄ\n/"
   ],
   [
     {
       "t": "#000000",
       "p": "R5 LONG",
-      "a": 0,
       "f": 6,
+      "fa": [
+        0,
+        9,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ],
       "w": 1.75
     },
-    "⧛ℂ\n☰⧛\n⧚ℂ\n☰⧚\nⓃ\n\n\n\n\n\n∀\nmods",
+    "⧛ℂ\n⧛☰\nℂ⧚\n☰⧚\nⓃ\n\n\n\n∀\n\n∀\nmods",
     {
       "x": 2.5,
-      "t": "#006400\n#ff0000\n\n#ff0000\n#800080\n\n\n\n\n\n\n#000000",
+      "t": "#800080\n#ff0000\n\n#ff0000\n\n\n\n\n\n\n\n#000000",
       "p": "SPACE LONG",
       "f": 2,
       "fa": [
-        0,
+        6,
+        4,
+        6,
         4,
         0,
-        4,
         0,
         0,
-        0,
+        6,
         6
       ],
       "w": 5.25
     },
-    "\n⭡␤\n\n⭣␤\n☰␣\n\n\n<font color=\"#006400\"> Move </font> <font color=\"#377bb5\"> Select </font> <font color=\"#ff0000\"> Change </font> <font color=\"#800080\"> Other </font>\n\n\n\n␣",
+    "⧛\n⭡␤\n⧚\n⭣␤\n☰␠\n\n\n<font color=\"#006400\"> Move </font> <font color=\"#377bb5\"> Select </font> <font color=\"#ff0000\"> Change </font> <font color=\"#800080\"> Other </font>\nℂ␠\n\n\n␠",
     {
       "x": 3,
       "t": "#800080\n\n\n\n#000000\n#000000",
@@ -380,6 +473,6 @@
       "w": 2.5,
       "d": true
     },
-    "\n\n\n\n🧬0.6\nmodiƒew 0.3☰⧛⧚ <i class='fa fa-keyboard-o'></i>"
+    "\n\n\n\n🧬23.03\nmodiƒew 0.4⧛☰⧚ <i class='fa fa-keyboard-o'></i>"
   ]
 ]
