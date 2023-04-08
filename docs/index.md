@@ -14,6 +14,7 @@ title: "🧬Helix Keymap modiƒew"
 - [Overview](#overview)
 - [Helix Keymap modiƒew Normal](#helix-keymap-modiew-normal)
 - [Helix Keymap modiƒew Insert](#helix-keymap-modiew-insert)
+- [Helix Keymap modiƒew Select](#helix-keymap-modiew-select)
 - [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
 - [Helix Keymap modiƒew View](#helix-keymap-modiew-view)
 - [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
@@ -97,6 +98,15 @@ Below are __modiƒew__ __Cheat Sheets__ (the main layer as well as additional "m
 #### Helix Keymap modiƒew Insert
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-insert.png?raw=true)
+
+<div id=keyboard tabindex=0 style="display: inline-flex;">
+</div>
+
+
+
+#### Helix Keymap modiƒew Select
+
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-select.png?raw=true). Only commands that differ from Normal mode are shown, the rest are copied
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
