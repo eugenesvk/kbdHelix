@@ -93,11 +93,11 @@ Below is a summary of some of the design decisions followed up by detailed keyma
 [^3]: for example, instead of placing the 2nd most frequent command <span class="keyMove">▲</span> (15.5%) on a non-home row <kbd lyt=q>i</kbd> it uses the home row <kbd lyt=q>k</kbd>
 [^4]: this breaks the 'sticky' `select_mode` pending implementation of [this feature request](https://github.com/helix-editor/helix/issues/1487)
 
-Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to Keyboard Layout Editor so you could fit the cheat sheet to a modified keymap
+Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to Keyboard Layout Editor so you could fit the cheat sheet to a modified keymap
 
   |    | Modifier key legend	| Example of <kbd>j</kbd> |
   | :- | :-----------------:	| :---------------------: |
-  | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
+  | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/modifew/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/modifew/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
 
 
 
@@ -105,7 +105,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Normal
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/main/helper/config_modifew.toml)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m1NOR.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -114,7 +114,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Insert
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-insert.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m2INS.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -123,7 +123,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Select
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-select.png?raw=true). Only commands that differ from Normal mode are shown, the rest are copied
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m3SEL.png?raw=true). Only commands that differ from Normal mode are shown, the rest are copied
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -134,7 +134,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew GoTo
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-goto.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nGoTo.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -143,7 +143,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Space
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-space.png?raw=true). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nSpace.png?raw=true). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -153,7 +153,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew View
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/94d728fc74d61af4de9ed17ff7d8566d), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-view.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/94d728fc74d61af4de9ed17ff7d8566d), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nView.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -162,7 +162,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Match
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-match.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nMatch.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -171,7 +171,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Window
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-window.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nWindow.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
@@ -180,7 +180,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 #### Helix Keymap modiƒew Unimpaired
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/b885c21cc83ae06108b3da6728148191), [image](https://github.com/eugenesvk/kbdHelix/blob/main/img/helix-keymap-modifew-menu-unimpaired.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/b885c21cc83ae06108b3da6728148191), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nUnimpaired.png?raw=true)
 
 <div id=keyboard tabindex=0 style="display: inline-flex;">
 </div>
