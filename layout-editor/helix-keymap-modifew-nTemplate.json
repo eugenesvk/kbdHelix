@@ -1,9 +1,8 @@
 [
   {
     "backcolor": "#dbdbdb",
-    "name": "🧬Helix 0.6 ⌨modiƒew 0.1☰",
-    "radii": "6px 6px 12px 12px / 18px 18px 12px 12px",
-    "css": ".keytop {\n  margin-top \t: -3px           \t; /*0px*/\n  margin-left\t: -5px           \t; /*0px*/\n  width      \t: 52px !important\t; /*42px → 52*/\n  height     \t: 45px !important\t; /*42px → 46*/\n}\n.keylabel0, .keylabel3, .keylabel6 { margin-left\t: -6px;} /* left */\n.keylabel2, .keylabel5, .keylabel8 { margin-left\t:  6px;} /* right */\n.keylabel0, .keylabel1, .keylabel2 { margin-top \t: -4px;} /* top */\n.keylabel3, .keylabel4, .keylabel5 { margin-top \t: -1px;} /* center */\n.keylabel6, .keylabel7, .keylabel8 { margin-top \t:  1px;} /* bottom */\n/*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */\n.keylabel9 { margin-left : -0.6em;}\n.keylabel11 { margin-left : 0.6em;}\n\n"
+    "name": "🧬Helix ⌨modiƒew ☰",
+    "radii": "6px 6px 12px 12px / 18px 18px 12px 12px"
   },
   [
     {
@@ -151,7 +150,7 @@
     {
       "t": "#006400\n\n\n\n#800080\n\n\n\n\n\n\n#000000"
     },
-    "\n\n\n\n☰⧛\n\n\n\n\n\n\n[",
+    "\n\n\n\n⧛☰\n\n\n\n\n\n\n[",
     "\n\n\n\n☰⧚\n\n\n\n\n\n\n]",
     {
       "t": "#ff0000\n\n\n\n#000000",
@@ -251,7 +250,7 @@
       "p": "R4"
     },
     "\n\n\n\n//\n\n\n\n\n\n\nZ",
-    "\n\n\n\n×\n\n\n\n\n\n\nX",
+    "\n\n\n\nᵡ\n\n\n\n\n\n\nX",
     {
       "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000",
       "fa": [
@@ -347,6 +346,6 @@
       "w": 2.5,
       "d": true
     },
-    "\n\n\n\n🧬0.6\nmodiƒew 0.1☰ <i class='fa fa-keyboard-o'></i>"
+    "\n\n\n\n🧬23.03\nmodiƒew 0.4☰ <i class='fa fa-keyboard-o'></i>"
   ]
 ]
