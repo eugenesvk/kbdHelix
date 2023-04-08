@@ -1,5 +1,35 @@
 # 🧬Helix 0.6, ⌨ modiƒew 0.3
 
+theme	= 'SolarGold'	#'ingrid' # 'bogster' 'gruvbox' 'monokai_pro' github.com/helix-editor/helix/wiki/Themes
+
+[editor]
+  # 'scrolloff'              = 3           	# 「3」   	Number of lines of padding around the edge of the screen when scrolling.
+  # 'mouse'                  = true        	# 「true」	Enable mouse mode
+  # 'middle-click-paste'     = true        	# 「true」	Middle click paste support.
+  'scroll-lines'             = 2           	# 「3」   	Number of lines to scroll per scroll wheel step.
+  # 'shell'                  = ['sh', '-c']	# Shell to use when running external commands.
+  # 'line-number'            = 'absolute'  	# 「absolute」	Line number display (absolute, relative)
+  # 'smart-case'             = false       	# 「true」    	Smart case regex searching (case insensitive unless pattern contains upper case characters)
+  # 'auto-pairs'             = true        	# 「true」    	Auto insertion of pairs to parentheses, brackets, etc
+  # 'auto-completion'        = true        	# 「true」    	Auto pop up of auto-completion
+  # 'idle-timeout'           = 400         	# 「400」     	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.
+  # 'completion-trigger-len' = 2           	# 「2」       	The min-length of word under cursor to trigger autocompletion
+  # 'auto-info'              = true        	# 「3」       	Whether to display infoboxes
+
+  # [editor.'file-picker'] #
+  #   'hidden'      = true	# 「true」	Ignore hidden files
+  #   'parents'     = true	# 「true」	Read ignore files from parent directories
+  #   'ignore'      = true	# 「true」	Read .ignore files
+  #   'git-ignore'  = true	# 「true」	Read .gitignore files
+  #   'git-global'  = true	# 「true」	Read global .gitignore (path: core.excludefile option of git's config)
+  #   'git-exclude' = true	# 「true」	Read .git/info/exclude files
+
+  # [editor.cursor-shape]
+  #   normal	= "block"    	# 「block」 # PR merged 2022-01-23, post v0.6
+  #   insert	= "bar"      	# 「block」
+  #   select	= "underline"	# 「block」
+
+
 # 'key'	= 'command'	# Icon Comment 「default key for this command」 「default command for this key」
 # —————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -7,9 +37,16 @@
 
 [keys.normal] #Ⓝ
   #Ⓝ Test ——————————————————————————————————————————————————————————————————————
-    'C-q'	= ':quit!'            	# Control-q → typable command :q! (:quit!)
-    # 'G'	= 'move_prev_word_end'	# Backward a word                                                    	⇧「I.⌥b, ⌥◀」 「goto_line」
-    # '0'	= 'univeral_arg'      	# ∀* number prefix to treat all the following numbers as # of repeats	「  」 「0」  !!!missing ∀*
+    'C-q'  	= ':quit!'                         	# Control-q → typable command :q! (:quit!)
+    # 'G'  	= 'move_prev_word_end'             	# Backward a word                                                    	⇧「I.⌥b, ⌥◀」 「goto_line」
+    # '0'  	= 'univeral_arg'                   	# ∀* number prefix to treat all the following numbers as # of repeats	「  」 「0」  !!!missing ∀*
+    # 'C-j'	= ['page_down','align_view_center']	# ⇟ Move      page down                                              	   「 ^d」 「」
+    # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ^u」 「」
+    # 'C-r'	= 'yank_joined_to_register'        	# Control-q → typable command :q! (:quit!)
+    # 'C-r'	= 'yank_joined'                    	# Control-q → typable command :q! (:quit!)
+
+    # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ^u」 「」
+
   #Ⓝ Free ——————————————————————————————————————————————————————————————————————
     'C-u'	= 'no_op'           	#                        	 「   」 「half_page_up」
     'A-C'	= 'no_op'           	#                        	⇧「   」 「copy_selection_on_prev_line」
@@ -74,6 +111,7 @@
     'C-k'	= 'page_up'             	# ⇞ Move      page up           	   「 ^u」 「」
     'a'  	= 'extend_to_line_start'	# ⭰▋ Move    line start + select	 「ⓈHome」 「append_mode」  # goto_line_start
     'A'  	= 'extend_to_line_end'  	# ⭲▋ Move    line end   + select	 「ⓈEnd」 「append_to_line」  # goto_line_end
+
 
     #Ⓝ          	Compat with non-modal editors
     'C-home'    	= 'goto_file_start'     	# ⇱ line number `<n>` else file start	 「  g」 「」
@@ -215,7 +253,7 @@
     '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	 「 ⌦」 「<5>」
     'x'        	= 'delete_selection'                 	# ×▋                              	 「  d」 「extend_line」
     'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)         	 「 ⌥d」 「」
-    'A-c'      	= 'change_selection'                 	# Δ                               	 「  c」 「change_selection_noyank」
+    # 'A-c'    	= 'change_selection'                 	# Δ                               	 「  c」 「change_selection_noyank」
     'h'        	= 'delete_char_backward'             	# ⌫c × char ←                     	 「⌫」 「move_char_left」
     'H'        	= 'delete_char_forward'              	# ⌦c × char →                     	⇧「⌦」 「」
     'A-h'      	= ['move_prev_word_start',           	# ⌫w                              	 「   」 「」
@@ -883,7 +921,7 @@
   'C-,'	= 'increment'      	# ⊕ Increment object (number) under cursor	「 ^a」 「」  o̟ <span class='cd'>o&#799;</span> !!!fails
 
   #Ⓢ   	Copy                                	 
-  'c'  	= 'yank'                            	# 🗐 Copy selection <i class='fa fa-copy'></i>                                     	 「  c」 「change_selection」
+  'c'  	= 'yank'                            	# 🗐 Copy selection <i class='fa fa-copy'></i>                                     	 「  y」 「change_selection」
   'C-c'	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	 「␣⇧y」 「toggle_comments」
   'C'  	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	⇧「␣⇧y」 「copy_selection_on_next_line」
   'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋📋 Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i>	 「␣ y」 「」
@@ -986,7 +1024,7 @@
     'G'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	 「  ^s」 「goto_line」
 
     'J'  	= 'extend_line'          	# ⮒ Select current line, if already selected, extend to next line       	⇧「  x」 「join_selections」
-    'E'  	= 'extend_to_line_bounds'	# ⎯ Extend selection to line bounds (line-wise selection)               	⇧「  x」 「move_next_long_word_end」
+    'E'  	= 'extend_to_line_bounds'	# ⎯ Extend selection to line bounds (line-wise selection)               	⇧「⇧ x」 「move_next_long_word_end」
     'A-e'	= 'extend_to_line_bounds'	# ⎯ Extend selection to line bounds (line-wise selection)               	 「⇧ x」 「」
     # "" 	= 'expand_selection'     	# Expand selection to parent syntax node TODO: pick a key (**TS**)      	「   」 「expand_selection」
     # '5'	= 'select_paragraph'     	# ¶▋ Select this paragraph !!!missing ∀* !!! command not implemented yet	 「  」 「<5>」
@@ -1034,7 +1072,7 @@
     '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	 「 ⌦」 「<5>」
     'x'        	= 'delete_selection'                 	# ×▋                              	 「  d」 「extend_line」
     'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without yanking)         	 「 ⌥d」 「」
-    'A-c'      	= 'change_selection'                 	# Δ                               	 「  c」 「change_selection_noyank」
+    # 'A-c'    	= 'change_selection'                 	# Δ                               	 「  c」 「change_selection_noyank」
     'h'        	= 'delete_char_backward'             	# ⌫c × char ←                     	 「⌫」 「move_char_left」
     'H'        	= 'delete_char_forward'              	# ⌦c × char →                     	⇧「⌦」 「」
     'A-h'      	= ['extend_prev_word_start',         	# ⌫w                              	 「   」 「」
