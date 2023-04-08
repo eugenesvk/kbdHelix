@@ -6,7 +6,7 @@ const layout_string = {
   'workman'   	: String.raw`\`-=`+`qdrwbjfup;[]`+`ashtgyneoi'`+`zxmcvkl,./` + `!@#$%^&*()_+`+`QDRWBJFUPP{}ASHTGYNEOI"ZXMCVKL<>?'`,
   'asset'     	: String.raw`\`-=`+`qwjfgypul;[]`+`asetdhnior'`+`zxcvbkm,./` + `!@#$%^&*()_+`+`QWJFGYPUL;{}ASETDHNIO:"ZXCVBKM<>?'`,
   'colemak_dh'	: String.raw`\`-=`+`qwfpbjluy;[]`+`arstgkneio'`+`zxcdvmh,./` + `!@#$%^&*()_+`+`QWFPBJLUY:{}ARSTGKNEIO"ZXCDVMH<>?'`,
-  'neo2'      	: String.raw`^-=` +`xvlcwkhgfqß]`+`uiaeosnrtdy`+`üöäpzbm,.j` + `!@#$%^&*()_+`+`QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'`,
+  'neo2'      	: String.raw`^-\`` +`xvlcwkhgfqß´`+`uiaeosnrtdy`+`üöäpzbm,.j` + `°§ℓ»«$€„“”—¸`+`XVLCWKHGFQẞ˜UIAEOSNRTDYÜÖÄPZBM–•J`,
 };
 const lyt = {
   'q':'qwerty','w':'workman','d':'dvorak','c':'colemak','a':'asset','cdh':'colemak_dh','n':'neo2',
@@ -41,8 +41,11 @@ const changeKLELayoutTo = ((layoutFrom,layoutTo) => { // change labels of the KL
   for (let el of document.querySelectorAll("div.keylabel.keylabel10.textsize2 > div")) {
     if (layoutFrom === layoutTo) {
     } else {
-      const thisLbl 	= el.textContent;
-      el.textContent	= convert(thisLbl.toLowerCase(), lyt[layoutFrom], lyt[layoutTo]).toUpperCase() || thisLbl;
+      const thisLbl	= el.textContent;
+      let conv_l = (thisLbl === 'ẞ' ? 'ß' : thisLbl.toLowerCase())
+      let conv   = convert(conv_l, lyt[layoutFrom], lyt[layoutTo])
+      let conv_u = (conv === 'ß' ? 'ẞ' : conv.toUpperCase())
+      el.textContent	= conv_u || thisLbl;
     }
   }
 });
