@@ -1,0 +1,836 @@
+# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
+#◊/* 'key'	= 'command'	# Icon Comment 「default key for this command」	「default command for this key」 */ -◊
+[keys.select] #Ⓢ Select/Extend mode
+  #'esc'	= 'exit_select_mode'	#	「  ⎋」	「exit_select_mode」
+  'e'   	= 'normal_mode'     	#	「  v」	「extend_next_word_end」
+  #Ⓢ Test ——————————————————————————————————————————————————————————————————————
+  #Ⓢ Free ——————————————————————————————————————————————————————————————————————
+
+  # 'A'	= ['save_selection','select_all']	# 🖈∀▋	「⇧   」	「」
+
+
+  #Ⓢ           	Compat with non-modal editors        	 
+    'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
+    'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
+    'C-s'      	= ['commit_undo_checkpoint',':write']	# save file                	「  ⎈s」	「save_selection」 <i class='fa fa-save'></i>
+    # 'C-S-s'  	= 'Save As'                          	# ???                      	⇧[⇧⎈s」	「」
+    'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」 	「」
+    # 'C-S-t'  	= 'open-last-closed'                 	# ???                      	⇧[⇧⎈t」	「」
+    # 'C-plus' 	= 'zoom-in'                          	# ??? 🔎⨭                   	「 ⎈+」 	「」
+    # 'C-minus'	= 'zoom-out'                         	# ??? 🔎−                   	「 ⎈-」 	「」
+
+  #Ⓢ   	Misc               	 
+  'z'  	= 'toggle_comments'	# un-/comment the selections              	「 ⎈c」	「☰👁」
+  'C-/'	= 'toggle_comments'	# un-/comment the selections              	「 ⎈c」	「」 !!!fail
+  'C-m'	= 'decrement'      	# ⊖ Decrement object (number) under cursor	「 ⎈x」	「」  o̠ <span class='cd'>o&#800;</span>
+  'C-,'	= 'increment'      	# ⊕ Increment object (number) under cursor	「 ⎈a」	「」  o̟ <span class='cd'>o&#799;</span> !!!fails
+
+  #Ⓢ   	Copy                                	 
+  'c'  	= 'yank'                            	# 🗐 Copy selection <i class='fa fa-copy'></i>                                     	「  y」	「change_selection」
+  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	「☰␠⇧y」	「toggle_comments」
+  'C'  	= 'yank_main_selection_to_clipboard'	# 📋 Copy main selection into system clipboard <i class='fa fa-clipboard'></i>     	「☰␠⇧y」	「copy_selection_on_next_line」
+  'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋📋 Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i>	「☰␠ y」	「」
+
+  #Ⓢ Shell 	                 	 
+    # '|'  	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧ \」	「shell_pipe」
+    "A-\\" 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「 ⎇\」	「」
+    # 'A-|'	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧⎇\」	「shell_pipe_to」
+
+  #Ⓢ Move ——————————————————————————————————————————————————————————————————————
+    #Ⓢ Cursor@Home
+    'j'  	= 'extend_line_down' 	# ▼                    	「  h」	「extend_line_down」
+    'k'  	= 'extend_line_up'   	# ▲                    	「  j」	「extend_line_up」
+    'l'  	= 'extend_char_left' 	# ◀                    	「  k」	「extend_char_right」
+    ';'  	= 'extend_char_right'	# ▶                    	「  l」	「」
+    'm'  	= 'half_page_down'   	# ⤈ Move half page down	「 ⎈d」	「☰🧩」
+    ','  	= 'half_page_up'     	# ⤉ Move half page up  	「 ⎈u」	「keep_primary_selection」
+    'C-j'	= 'page_down'        	# ⇟ Move      page down	「 ⎈d」	「」
+    'C-k'	= 'page_up'          	# ⇞ Move      page up  	「 ⎈u」	「」
+
+    #Ⓢ        	word
+    'd'       	= 'extend_prev_word_start'     	# 🢔ω Extend   this word start                 	   「  b」	「」
+    'f'       	= 'extend_next_word_end'       	# ω🢖 Extend   this word end                   	   「  e」	「extend_next_char」
+    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␠)	「   」   	「」
+    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␠)	「  w」   	「」
+    'D'       	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
+    'F'       	= 'extend_next_long_word_end'  	# W🢖 Extend   this WORD end                   	  「⇧ e」 	「extend_prev_char」
+    'A-D'     	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
+    'A-F'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␠)  	「⇧ w」   	「」
+    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    # 'R'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
+    'C-left'  	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	   「⇧ b」	「」
+    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␠)  	「⇧ w」   	「」
+    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␠)	「   」   	「」
+    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␠)	「  w」   	「」
+
+    #Ⓢ      	Line
+    # 'home'	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「home」	「extend_to_line_start」
+    # 'end' 	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「end」 	「extend_to_line_end」
+    'a'     	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「Home」	「」
+    'A'     	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「End」 	「」
+
+    #Ⓢ   	Paragraph
+    # '>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「」
+    # '?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「」
+    # !!! remove after .Repeat can be rebound
+    '{'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」	「」
+    '}'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」	「」
+    '>'	= 'extend_search_prev' 	# 🢔◎ ◎͔ Extend previous search match	「⇧ n」 	「」
+    '?'	= 'extend_search_next' 	# ◎🢖 ◎͕ Extend next     search match	「  n」 	「」
+
+    'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
+
+    #Ⓢ   	Search
+    'w'  	= 'extend_next_char'     	# 🔍   Extend       next     char                               	「  f」 	「extend_next_word_start」
+    'W'  	= 'extend_prev_char'     	# 🔎   Extend       previous char                               	「⇧ f」 	「extend_next_long_word_start」
+    'A-w'	= 'extend_till_char'     	# 🔍₋₁ Extend 'till next     char                               	「  t」 	「」
+    'A-W'	= 'extend_till_prev_char'	# 🔎₋₁ Extend 'till previous char                               	「⇧ t」 	「」
+    'S'  	= 'rsearch'              	# 🔍𝖗 for previous regex pattern                                	「⇧ /」 	「split_selection」
+    's'  	= 'search'               	# 🔎𝖗 for          regex pattern                                	「⇧  /」	「select_regex」
+    '.'  	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend previous search match                           	「⇧ n」 	「goto_last_modification!!!」
+    '/'  	= 'extend_search_next'   	# ◎🢖 ◎͕ Extend next     search match                           	「  n」 	「search」
+    '8'  	= 'search_selection'     	# 𝖗🢔▋ Use current selection as the search pattern !!!missing ∀*	「⇧ 8」 	「<8>」
+
+    #Ⓢ          	Compat with non-modal editors
+    'C-home'    	= 'goto_file_start'     	# ⇱ line number `<n>` else file start	「  g」	「」
+    'C-end'     	= 'goto_last_line'      	# ⇲ file end                         	「  e」	「」
+    'C-S-tab'   	= 'goto_previous_buffer'	# ⎗                                  	⇧[ⓖp」	「」 !!!fail
+    'C-tab'     	= 'goto_next_buffer'    	# ⎘                                  	「ⓖn」	「」 !!!fail
+    'C-pageup'  	= 'goto_previous_buffer'	# ⎗                                  	「   」	「」
+    'C-pagedown'	= 'goto_next_buffer'    	# ⎘                                  	「   」	「」
+    'A-pageup'  	= 'jump_backward'       	# ⎗̡                                 	「   」	「」
+    'A-pagedown'	= 'jump_forward'        	# ⎘̡                                 	「   」	「」
+    # 'C-j'     	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist   	「 ⎈o」	「」
+    # 'C-;'     	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist   	「 ⎈i」	「」  !!!fail
+
+    '1'  	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                               	「ⓖp」	「<1>」
+    '2'  	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                               	「ⓖn」	「<2>」
+    'A-1'	= 'goto_previous_buffer'	# ⎗                                             	「ⓖp」	「」
+    'A-2'	= 'goto_next_buffer'    	# ⎘                                             	「ⓖn」	「」
+    '3'  	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist !!!missing ∀*	「 ⎈o」	「<3>」
+    '4'  	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist !!!missing ∀*	「 ⎈i」	「<4>」
+    'A-3'	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist              	「 ⎈o」	「」
+    'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist              	「 ⎈i」	「」
+
+  #Ⓢ Select ——————————————————————————————————————————————————————————————————————
+    #Ⓢ       	Compat with non-modal editors    	 
+    'C-a'    	= ['save_selection','select_all']	# 🖈, ∀▋                                                     	「⇧ 5」	「increment」
+    'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
+    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
+    'S-left' 	= 'extend_char_left'             	#                                                           	「Ⓢh/◀」	「」
+    'S-down' 	= 'extend_line_down'             	#                                                           	「Ⓢj/▼」	「」
+    'S-up'   	= 'extend_line_up'               	#                                                           	「Ⓢk/▲」	「」
+    'S-right'	= 'extend_char_right'            	#                                                           	「Ⓢl/▶」	「」
+
+
+    'A-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
+    'C-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
+    'G'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
+
+    'J'  	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
+    'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection) ⎯      	「⇧ x」 	「move_next_long_word_end」
+    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」 	「」
+      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,  	 'move_prev_word_start'    	#
+      ,  	 'search_selection'        	#
+      ,  	 'make_search_word_bounded'	#
+      ,  	 'extend_search_next'      	#
+      ]  	                           	# = Sublime's find_under_expand
+    # "" 	= 'expand_selection'       	# Expand selection to parent syntax node TODO: pick a key (**TS**)      	「   」	「expand_selection」
+    # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!! command not implemented yet	「  」 	「<5>」
+    # '%'	= 'select_all'             	# ∀▋ Select entire file                                                 	「⇧ 5」	「select_all」
+
+    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
+    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
+    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「flip_selections」
+    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
+    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「split_selection_on_newline」
+    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧ s」	「search_prev」
+    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                                   	「 ⎇s」	「」
+
+    "'"    	= 'collapse_selection'        	# 🢖🢔 Collapse selection onto a single cursor            	「  ;」 	「」
+    "A-'"  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「 ⎇;」 	「」
+    'A-a'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「⇧ ⎇;」	「」
+    'A-A'  	= 'flip_selections'           	# ⮀ Flip selection cursor and anchor                    	「⇧ ⎇;」	「」
+    'A-p'  	= 'ensure_selections_forward' 	# ↠ Flip selection forward: cursor after anchor         	「⇧⎇;」 	「」
+    # 'A-:'	= 'ensure_selections_forward' 	# ↠ Flip selection forward: cursor after anchor         	「⇧⎇;」 	「」
+    #'A-l' 	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (← with many columns)	「⇧ 9」 	「」
+    #'A-;' 	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
+    'A-m'  	= 'rotate_selections_forward' 	# ⟳ Rotate main selection forward  (↓ with many lines)  	「⇧ 0」 	「」
+    'A-,'  	= 'rotate_selections_backward'	# ⟲ Rotate main selection backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
+    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary selection                       	「 ⎇,」 	「earlier」
+    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary selection (keep only)          	「  ,」 	「」
+    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove selection                              	「⇧ ⎇,」	「earlier」 !!!missing
+    'K'    	= 'keep_selections'           	# ᵏ𝖗 selections not matching the regex (keep)           	「⇧ k」 	「keep_selections」
+    'L'    	= 'remove_selections'         	# ᵡ𝖗 selections     matching the regex                  	「⇧⎇k」 	「」
+
+    'minus'	= 'trim_selections'             	# ✁Trim whitespace from the selection                    	「⇧ -」 	「」
+    '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive selections ⨝                       	「⇧⎇ -」	「trim_selections」
+    # '+'  	= 'dupe_selections'             	# 🗐Duplicate selection (currently nonfunctional/disabled)	「⇧ =」 	「dupe_selections」
+
+  #Ⓢ Change ——————————————————————————————————————————————————————————————————————
+    #            	Compat with non-modal editors
+    'A-del'      	= 'delete_word_forward'          	# ⌦ω ᵡ word →                     	 ⓘ「  ⎇d」	「」
+    'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                              	「   」   	「」
+                 	   'delete_selection']           	# ᵡ Word →                        	 
+    'A-backspace'	= 'delete_word_backward'         	# ⌫ω ᵡ word ←                     	ⓘ「 ⎈w」	「」
+    'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                              	「   」 	「」
+                 	   'delete_selection']           	# ᵡ Word ←                        	 
+    # 'del'      	= 'delete_selection'             	# ᵡ▋                              	「  d」	「」
+    'S-del'      	= 'delete_selection_noyank'      	# 🕱▋                              	「 ⎇d」	「」
+    'S-ret'      	= 'open_below'                   	# ⭣␤ Open new line below selection	「  o」	「」
+    'ret'        	= 'open_above'                   	# ⭡␤ Open new line above selection	「⇧ o」	「」
+    'C-ret'      	= ':reflow'                      	# ↪ Hard-wrap selected lines ䷖↪   	「   」	「」
+
+    # '.'      	= 'N/A'                              	# ∞ Repeat last change            	「.」     	「n/a」
+    '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	「 ⌦」    	「<5>」
+    'x'        	= 'delete_selection'                 	# ᵡ▋                              	「  d」   	「extend_line」
+    'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without yanking)         	「 ⎇d」   	「」
+    # 'A-c'    	= 'change_selection'                 	# Δ                               	「  c」   	「change_selection_noyank」
+    'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                     	「⌫」     	「move_char_left」
+    'H'        	= 'delete_char_forward'              	# ⌦c ᵡ char →                     	「⇧⌦」    	「」
+    'A-h'      	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                     	ⓘ「 ⎈w」  	「」
+    'A-H'      	= 'delete_word_forward'              	# ⌦ω ᵡ word →                     	 ⓘ「  ⎇d」	「」
+    'C-h'      	= ['extend_prev_long_word_start',    	# ⌫W                              	「   」   	「」
+               	   'delete_selection']               	# ᵡ Word ←                        	 
+    'C-x'      	= ['yank_main_selection_to_clipboard'	                                  	,
+               	   'delete_selection']               	#                                 	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
+    'backspace'	= 'delete_char_backward'             	# ⌫                               	「I.bs」	「」
+    'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection	「⇧ j」 	「extend_to_line_bounds」
+
+    # 'backspace'	= 'delete_char_backward'	# ⌫c ᵡ char ←	「backspace」	「delete_char_backward」
+    # 'C-h'      	= 'delete_char_backward'	# ⌫c ᵡ char ←	「C-h」      	「delete_char_backward」
+    'del'        	= 'delete_char_forward' 	# ⌦c ᵡ char →	「delete」   	「delete_char_forward」
+    # 'C-d'      	= 'delete_char_forward' 	# ⌦c ᵡ char →	「C-d」      	「delete_char_forward」
+
+    't'	= 'replace'            	# 🗘  Replace with a character	「  r」	「find_till_char」
+    'T'	= 'replace_with_yanked'	# 🗘ʸ Replace with yanked text	「⇧ r」	「till_prev_char」
+
+    'B'  	= 'switch_case'        	# 𝕒⇋𝔸 (selection)	「⇧ `」	「move_prev_long_word_start」
+    'C-b'	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)	「⇧⎇`」	「」
+    # '~'	= 'switch_case'        	# 𝕒⇋𝔸 (selection)	「⇧ `」	「switch_case」
+    # '`'	= 'switch_to_lowercase'	# 𝕒𝔸  (selection)	「  `」	「switch_to_lowercase」
+    # '`'	= 'switch_case'        	# 𝕒⇋𝔸 (selection)	「⇧ `」	「switch_to_lowercase」
+    # '~'	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)	「⇧⎇`」	「switch_case」
+    '⎈'  	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)	「⇧⎇`」	「」
+    'A-`'	= 'switch_to_lowercase'	# 𝔸𝕒  (selection)	「   `」	「switch_to_uppercase」
+
+    'A-.'	= 'unindent'	# ⇚ (selection)	「⇧,」	「repeat_last_motion」
+    'A-/'	= 'indent'  	# ⇛ (selection)	「⇧.」	「」
+
+    # 'q'	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register	「  q」	「record_macro」
+    # 'Q'	= 'replay_macro'   	#⇧[⇧ q] replay_macro]                                  	▶  Play back a recorded macro from the selected register
+    # '"'	= 'select_register'	# ®  Select a register to yank to or paste from        	「  '<reg>」	「select_register」
+
+    # 'b'	= 'N/Arepeat_last_change' 	# ∞ Repeat last change !!! no command yet                   	「⇧  .」	「move_prev_word_start」
+    # '.'	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
+    # 'i'	= 'insert_mode'           	# ⁁⤸ Insert before selection                                	「  i」 	「insert_mode」
+    'o'  	= 'append_mode'           	# ⤹⎀ Insert after selection (append)                        	「  a」 	「open_above」
+    'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
+    'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「insert_at_line_end」
+    'u'  	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「undo mode」
+    'y'  	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「yank」
+    'U'  	= 'earlier'               	# 🕘 Move backward in history   <i class='fa fa-history'></i>	「⇧ ⎇u」	「redo」
+    'Y'  	= 'later'                 	# 🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i> 	「⇧⎇u」 	「」
+    'C-y'	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「」
+    'v'  	= 'paste_after'           	# 📋⤹ Paste after selection                                  	「  p」 	「select_mode」
+    'C-v'	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection                                  	「☰␠ p」	「」
+    'V'  	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」 	「」
+    'C-z'	= 'suspend'               	# ⎌ Undo change                                             	「  u」 	「」
+    'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
+    # 'I'	= 'insert_at_line_start'  	# ⁁⭰ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
+    # 'A'	= 'insert_at_line_end'    	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
+
+  #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
+    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward	「⇧⎇9」	「rotate_selections_backward」
+    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward	「⇧⎇0」	「rotate_selections_forward」
+    '7'  	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*	「⇧ 7」	「<7>」
+    # '&'	= 'align_selections'                  	# ⥂ Align selection in columns	「⇧ 7」	「align_selections」
+    # '='	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	「  =」	「format_selections」
+
+  #Ⓢ Shell	#                      	#
+  # '!'   	= 'shell_insert_output'	# 🢔$ Run shell command, inserting output before each selection	「⇧  1」	「shell_insert_output」
+  '@'     	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection	「⇧⎇1」	「」
+  # 'A-!' 	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection	「⇧⎇1」	「shell_append_output」
+
+
+  ##Ⓢ ☰Minor modes
+
+  [keys.      	select.'p']          	#Ⓢ ☰👁 View mode: scroll/manipulate w/o Δselection	「$!」      	「paste_after」
+    'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」     	「」
+    'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」     	「」
+    'n'       	= 'align_view_center'	# 🗔·| Align line to center (vertically)          	「  z」     	「align_view_center」
+    'h'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「align_view_middle」
+    'l'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「」
+    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                                     	「down」    	「scroll_down」
+    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                                     	「up」      	「scroll_up」
+    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                                     	「  j」     	「scroll_down」
+    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                                     	「  k」     	「scroll_up」
+    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓                             	「  d」     	「align_view_middle」
+    ','       	= 'half_page_up'     	# ⤉ Move half page ↑                             	「  u」     	「」
+    'J'       	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
+    'K'       	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
+    'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
+    'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                             	「pageup」  	「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                             	「pagedown」	「page_up」
+    'z'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
+    'c'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
+    't'       	= 'no_op'            	#                                                	「   」     	「align_view_top」
+    'b'       	= 'no_op'            	#                                                	「   」     	「align_view_bottom」
+    'C-d'     	= 'no_op'            	#                                                	「   」     	「half_page_down」
+    'C-u'     	= 'no_op'            	#                                                	「   」     	「half_page_up」
+    'C-f'     	= 'no_op'            	#                                                	「   」     	「page_down」
+    'C-b'     	= 'no_op'            	#                                                	「   」     	「page_up」
+  [keys.      	select.'P']          	#Ⓢ ☰👁ₛ 'sticky', persistent                      	「$!」      	「paste_before」
+    'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」     	「」
+    'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」     	「」
+    'n'       	= 'align_view_center'	# 🗔·| Align line to center (vertically)          	「  z」     	「align_view_center」
+    'h'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「align_view_middle」
+    'l'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「」
+    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                                     	「down」    	「scroll_down」
+    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                                     	「up」      	「scroll_up」
+    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                                     	「  j」     	「scroll_down」
+    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                                     	「  k」     	「scroll_up」
+    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓                             	「  d」     	「align_view_middle」
+    ','       	= 'half_page_up'     	# ⤉ Move half page ↑                             	「  u」     	「」
+    'J'       	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
+    'K'       	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
+    'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
+    'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                             	「pageup」  	「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                             	「pagedown」	「page_up」
+    'z'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
+    'c'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
+    't'       	= 'no_op'            	#                                                	「   」     	「align_view_top」
+    'b'       	= 'no_op'            	#                                                	「   」     	「align_view_bottom」
+    'C-d'     	= 'no_op'            	#                                                	「   」     	「half_page_down」
+    'C-u'     	= 'no_op'            	#                                                	「   」     	「half_page_up」
+    'C-f'     	= 'no_op'            	#                                                	「   」     	「page_down」
+    'C-b'     	= 'no_op'            	#                                                	「   」     	「page_up」
+  [keys.      	select.'Z']          	#Ⓢ ☰👁ₛ 'sticky', persistent                      	「⇧$!」     	「paste_before」
+    'u'       	= 'align_view_bottom'	# 🗔⭳ Align line to Screen bottom                 	「  b」     	「」
+    'i'       	= 'align_view_top'   	# 🗔⭱ Align line to Screen top                    	「  t」     	「」
+    'n'       	= 'align_view_center'	# 🗔·| Align line to center (vertically)          	「  z」     	「align_view_center」
+    'h'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「align_view_middle」
+    'l'       	= 'align_view_middle'	# 🗔·⎯ Align line to Screen middle (horizontally) 	「  m」     	「」
+    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                                     	「down」    	「scroll_down」
+    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                                     	「up」      	「scroll_up」
+    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                                     	「  j」     	「scroll_down」
+    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                                     	「  k」     	「scroll_up」
+    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓                             	「  d」     	「align_view_middle」
+    ','       	= 'half_page_up'     	# ⤉ Move half page ↑                             	「  u」     	「」
+    'J'       	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
+    'K'       	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
+    'C-j'     	= 'page_down'        	# ⇟ Move      page ↓                             	「  f」     	「」
+    'C-k'     	= 'page_up'          	# ⇞ Move      page ↑                             	「  b」     	「」
+    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓                             	「pageup」  	「page_down」
+    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑                             	「pagedown」	「page_up」
+    'z'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
+    'c'       	= 'no_op'            	#                                                	「   」     	「align_view_center」
+    't'       	= 'no_op'            	#                                                	「   」     	「align_view_top」
+    'b'       	= 'no_op'            	#                                                	「   」     	「align_view_bottom」
+    'C-d'     	= 'no_op'            	#                                                	「   」     	「half_page_down」
+    'C-u'     	= 'no_op'            	#                                                	「   」     	「half_page_up」
+    'C-f'     	= 'no_op'            	#                                                	「   」     	「page_down」
+    'C-b'     	= 'no_op'            	#                                                	「   」     	「page_up」
+
+
+  [keys. 	select.'g']                 	#Ⓢ ☰ Goto mode Jumps to various locations 	「$!」     	「goto」
+    'b'  	= 'no_op'                   	#                                         	   「   」 	「goto_window_bottom」
+    'p'  	= 'no_op'                   	#                                         	   「   」 	「goto_previous_buffer」
+    'a'  	= 'goto_first_nonwhitespace'	# 𝕒⭰ line start 1ₛₜ non-whitespace char ¬␣	   「  s」 	「goto_last_accessed_file」
+    's'  	= 'goto_line_end'           	# ⭲ line end                              	   「  l」 	「goto_first_nonwhitespace」
+    'h'  	= 'goto_line_start'         	# ⭰ line start                            	   ≝「  h」	「goto_line_start」
+    # 'g'	= 'goto_file_start'         	# ━№⇱ line number `<n>` else file start ⎯⭱	   ≝「  g」	「goto_file_start」
+    'j'  	= 'goto_last_line'          	# ⇲ file end   ⭳                          	   「  e」 	「」
+    'k'  	= 'goto_file_start'         	# ━№⇱ line number `<n>` else file start ⎯⭱	   「  g」 	「goto_line_end」
+    'l'  	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph start                 	「]p 」    	「goto_line_end」
+    ';'  	= 'goto_next_paragraph'     	# ¶🢖 Move paragraph end                   	「[p 」    	「」
+    '.'  	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph start                 	「[p  」   	「goto_last_modification」
+    '/'  	= 'goto_next_paragraph'     	# ¶🢖 Move paragraph end                   	「]p  」   	「」
+    # 'f'	= 'goto_file'               	# files in the selection                  	   ≝「  f」	「goto_file」
+    'm'  	= 'goto_window_bottom'      	# 🗔⭳ screen bottom                        	「  b」    	「goto_last_modified_file」
+    ','  	= 'goto_window_top'         	# 🗔⭱ screen top                           	「  t」    	「」
+    'n'  	= 'goto_window_center'      	# 🗔· screen middle                        	「  c」    	「goto_next_buffer」
+    # 'D'	= 'goto_declaration'        	# 🆔 declaration (LSP)                     	「⇧  d」   	「goto_declaration」
+    # 'd'	= 'goto_definition'         	# ≝ definition (LSP)                      	   ≝「  d」	「goto_definition」
+    'F12'	= 'goto_definition'         	# ≝ definition (LSP)                      	   「  d」 	「」
+    # 'i'	= 'goto_implementation'     	# 🄸 implementation (LSP)                  	   ≝「  i」	「goto_implementation」
+    't'  	= 'goto_implementation'     	# 🄸 implementation (LSP)                  	   「  i」 	「goto_window_top」
+    # 'r'	= 'goto_reference'          	# 🅁※ references (LSP)                     	≝「  r」   	「goto_reference」
+    'e'  	= 'goto_type_definition'    	# τ≝ type definition (LSP)                	   「  y」 	「goto_last_line」
+    # 'y'	= 'goto_type_definition'    	# τ≝ type definition (LSP)                	   ≝「  y」	「goto_type_definition」
+    'c'  	= 'goto_last_accessed_file' 	# 🕮␜ file last accessed/alternate         	「  a」    	「goto_window_center」
+    'v'  	= 'goto_last_modified_file' 	# ✎␜ file last modified/alternate         	「  m」    	「」
+    '1'  	= 'goto_previous_buffer'    	# buffer previous                         	   「  p」 	「」 !!!missing ∀*
+    '2'  	= 'goto_next_buffer'        	# buffer next                             	   「  n」 	「」 !!!missing ∀*
+    '3'  	= 'jump_backward'           	# ⎗̡ Jump backward on the jumplist        	   「   」 	「」 !!!missing ∀*
+    '4'  	= 'jump_forward'            	# ⎘̡ Jump forward  on the jumplist        	   「   」 	「」 !!!missing ∀*
+    'u'  	= 'goto_last_modification'  	# 🕘 last modification in current file     	「  .」    	「goto_line_start」 <i class='fa fa-history'></i>
+    # "'"	= 'goto-char#'              	# c#                                      	   「   」 	「」 !!! not available
+
+  [keys.	select.'n']                 	#Ⓢ ☰🧩  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」 	「」
+    'n' 	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                  	「  m」	「」
+    '.' 	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS)                  	「  」 	「」 !!!missing
+    '/' 	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS)                  	「  」 	「」 !!!missing
+    'i' 	= 'surround_add'            	# (+)  Surround current selection with <char>        	「  s」	「」
+    't' 	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>    	「  r」	「」
+    'x' 	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>             	「  d」	「」
+    'e' 	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                      	「  a」	「」
+    'a' 	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                      	「  i」	「」
+
+  [keys.     	select.'C-w']          	#Ⓢ ☰🗔  Window mode                     	Ⓝ「⎈ w」  	「」
+    's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'v'      	= 'no_op'              	#                                      	   「  」 	「vsplit」
+    'C-v'    	= 'no_op'              	#                                      	   「  」 	「vsplit」
+    'F'      	= 'no_op'              	#                                      	  「⇧  」 	「goto_file」
+    'j'      	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「  j」  	「jump_view_down」
+    'k'      	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「  k」  	「jump_view_up」
+    'l'      	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「  h」   	「jump_view_right」
+    ';'      	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「  l」   	「」
+    'C-j'    	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「 ⎈j」  	「jump_view_down」
+    'C-k'    	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「 ⎈k」  	「jump_view_up」
+    'C-l'    	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「 ⎈h」   	「jump_view_right」
+    'C-;'    	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「 ⎈l」   	「」 #!!!fails
+    'C-down' 	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	「▼」     	「」
+    'C-up'   	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	「▲」     	「」
+    'C-left' 	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「◀」     	「」
+    'C-right'	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「▶」     	「」
+    'w'      	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「  w」  	「rotate_view」
+    'C-w'    	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「 ⎈w」  	「rotate_view」
+    'e'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
+    'f'      	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「  v」	「vsplit」
+    'C-f'    	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「 ⎈v」	「vsplit」
+    'm'      	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「  s」	「」
+    'C-m'    	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「 ⎈s」	「」
+    'h'      	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
+    'C-h'    	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
+    'g'      	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
+    'C-g'    	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
+    'q'      	= 'wclose'             	# ×🗔  Close         current window     	「  q」   	「wclose」
+    'C-q'    	= 'wclose'             	# ×🗔  Close         current window     	「 ⎈q」   	「wclose」
+    'o'      	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「  o」  	「wonly」
+    'C-o'    	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「 ⎈o」  	「wonly」
+    'x'      	= 'wonly'              	# ×∀🗔 Close all but current window     	「  o」   	「」
+    'C-x'    	= 'wonly'              	# ×∀🗔 Close all but current window     	「 ⎈o」   	「」
+    'down'   	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「▼」    	「jump_view_down」
+    'up'     	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「▲」    	「jump_view_up」
+    'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
+    'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
+
+  [keys.     	select.'space']            	#Ⓢ ☰␠  Space mode                                 	Ⓝ「 ␠」 	「」
+    # 'space'	= 'insert_mode'            	# ⁁⤸ Insert before selection                      	「  i」 	「」 !!!panick! !!!missing
+    'ret'    	= 'command_mode'           	# Ⓒ Enter command mode                            	「  ⎋」 	「」
+    'P'      	= 'no_op'                  	#                                                 	「⇧   」	「paste_clipboard_before」
+    'Y'      	= 'no_op'                  	#                                                 	「   」 	「yank_main_selection_to_clipboard」
+    'R'      	= 'no_op'                  	#                                                 	「⇧   」	「replace_selections_with_clipboard」
+    'S'      	= 'no_op'                  	#                                                 	「⇧   」	「workspace_symbol_picker」
+    # Home   	row                        	                                                  	 
+    'j'      	= 'extend_line'            	# ⮒ Select current/next(if selected) line         	「  x」   	「」
+    'k'      	= 'keep_selections'        	# ᵏ𝖗 selections not matching the regex (keep)     	   「⇧ k」	「」
+    'l'      	= 'remove_selections'      	# ᵡ𝖗 selections     matching the regex            	   「⇧⎇k」	「」
+    ';'      	= 'command_mode'           	# Ⓒ Enter command mode                            	「⇧ ;」   	「」
+    # 'f'    	= 'mode_file'              	# ☰␜ File mode                                    	「   」   	「file_picker」 !!!missing_aliases
+    # 'd'    	= 'mode_bracket'           	# ☰⟪ Insert various brackets                      	「   」   	「」 !!!missing_aliases
+    's'      	= 'select_regex'           	# 𝖗▋ Select all regex matches inside selections   	   「  s」	「symbol_picker」
+    'a'      	= ['save_selection',       	# 🖈∀▋                                             	「⇧ 5」   	「」
+             	   'select_all']           	# Save current position, select everything        	 
+    'h'      	= ['kill_to_line_start',   	# ᵡ⎯                                              	「   」	「」
+             	   'kill_to_line_end']     	# Delete this line                                	 
+    'g'      	= 'save_selection'         	# 🖈 Save the current selection to the jumplist    	「  ⎈s」	「」
+    # Upper  	row                        	                                                  	 
+    # 'u'    	= 'mode_U'                 	# ☰u TBD LSPs? or list_kills like z               	「   」	「」  !!!missing_aliases
+    # 'i'    	= 'mode_Register'          	# ☰® Register/copy/paste etc.                     	「   」	「」
+    'o'      	= 'hover'                  	# ? Show documentation for item under cursor (LSP)	「  k」	「」
+    # 'p'    	= 'mode_P'                 	# ☰p TBD                                          	「」「paste_clipboard_after」 !!!missing_aliases
+    'r'      	= 'rename_symbol'          	# ✎ Rename symbol (LSP)                           	≝「   」	「rename_symbol」
+    'e'      	= 'extend_to_line_bounds'  	# ⎯ Extend selection to line bounds               	「  x」 	「」
+    #'w'     	= 'mode_window'            	# ☰🗔 Window mode                                  	「☰␠ w」	「mode_window」 !!!missing_aliases
+    # 'q'    	= '???'                    	#                                                 	「  q」 	「」
+    'y'      	= 'code_action'            	# Ⓐ Apply code action (LSP)                       	「☰␠ a」	「yank_joined_to_clipboard」
+    't'      	= 'replace_with_yanked'    	# 🗘📋 Replace with copied text                     	「⇧ r」 	「」  <i class='fa fa-copy'></i>
+    # Lower  	row                        	                                                  	 
+    'm'      	= 'symbol_picker'          	# 🅂🗋 Open document  symbol picker (LSP) ⚛Ⓢ        	「☰␠ s」	「」
+    ','      	= 'workspace_symbol_picker'	# 🅂🗍 Open workspace symbol picker (LSP) ⚛Ⓢ        	「☰␠⇧s」	「」
+
+    '/'      	= 'global_search'                     	# 🔎🗁 Global search in workspace folder           	≝「☰␠ /」	「global_search」
+    'v'      	= 'paste_clipboard_after'             	# 📋⤹ Paste after selections                      	「☰␠ p」 	「」
+    'c'      	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main selection into system clipboard   	「☰␠ ⇧y」  <i class='fa fa-clipboard'></i>▋
+    'x'      	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                                           	「   」	「」 <i class='fa fa-clipboard'></i>
+             	   'delete_selection']                	# cut to clipboard                               	「   」	「」  create a new buffer and paste a buffer there !!! not available yet
+    # 'z'    	= 'list_kills'                        	# 🕱☰ new buffer with clipboard content           	「   」	「」	 !!!missing
+    'n'      	= 'split_selection'                   	# ䷖𝖗 on regex matches                            	「⇧ s」	「」
+    'b'      	= 'switch_to_lowercase'               	# 𝔸𝕒  (selection)                                	「  `」	「buffer_picker」
+    "'"      	= 'flip_selections'                   	# ⮀ Flip selection cursor and anchor             	「 ⎇;」	「」
+    '\'      	= 'shell_pipe'                        	# Pipe selections thru shell, replace with output	「⇧ \」	「」
+    # Numbers	row                                   	                                                 	 
+    # "'"    	= 'last_picker'                       	# ☰☾ ∞Open last fuzzy picker                     	「  」 	「」
+    '6'      	= 'switch_to_uppercase'               	# 𝕒𝔸 (selection)                                 	「⇧⎇`」	「」 !!! change to Sentence Case
+    # '7'    	= 'toggle_spellcheck'                 	# ⇝ spell check                                  	「   」	「」  !!!missing
+
+  [keys. 	select.'space'.'f']        	#Ⓢ ☰␜ File mode in Space mode                       	「☰␠ f」		「」
+    'j'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'k'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    # 'l'	= 'open file at cursor'    	# ❚␜ open file at cursor                            	「  」  	「  」
+    'f'  	= 'buffer_picker'          	# ☰b Open buffer picker                             	「  b」 	「file_picker」
+    # 'd'	= 'show in desktop'        	# show in desktop                                   	「  」  	「  」
+    's'  	= ['commit_undo_checkpoint'	# 💾 save file                                       	「  」  	「  」
+      ,  	  ':write']                	                                                    	      	#
+    'S'  	= ['commit_undo_checkpoint'	# 💾∀v all views                                     	「  」  	「  」
+      ,  	  ':write-all']            	                                                    	      	#
+    'A-s'	= ':update'                	# 💾Δ save file if modified                          	「  」  	「  」
+    'a'  	= 'goto_last_accessed_file'	# 🕮 file last accessed/alternate                    	「ⓖ a」 	「  」
+    # 'g'	= 'bookmark bmenu list'    	# ☰🖈bookmark bmenu list                             	「  」  	「  」
+    # 'h'	= 'bookmark set'           	# 🖈 bookmark set                                    	「  」  	「  」
+    # 'u'	= 'open last closed'       	# open last closed                                  	「  」  	「  」
+    # 'o'	= 'open file fast'         	# prompt toopen a file from bookmark                	「  」  	「  」
+    # 'r'	= 'rename_file'            	# ✎ rename current file                             	「  」  	「  」
+    # 'e'	= 'open in external app'   	# open in external app                              	「  」  	「  」
+    # 'w'	= 'find_file'              	# 🔎 Find file  <i class='mss mss-Search-3'></i>     	「  」  	「  」
+    # 'q'	= 'mode_fs_close'          	# ☰× Close buffers/files saved/unsaved              	「  」  	「  」
+    'v'  	= 'goto_last_modified_file'	# ✎ file last modified/alternate                    	「ⓖ m」 	「  」
+    # 'c'	= 'copy file path'         	# 📋C:\ copy file path <i class='fa fa-clipboard'>C:\	「  」  	「  」
+    # 't'	= 'list recently closed'   	# list recently closed                              	「  」  	「  」
+    # 'y'	= 'open recently closed'   	# open recently closed                              	「  」  	「  」
+    'o'  	= 'file_picker'            	# 🗁 Open file   picker                              	「☰␠ f」	「  」
+    'n'  	= ':new'                   	# 🗋 new empty buffer                                	Ⓝ「⎈n」 	「  」
+    # 'b'	= 'recentf open files'     	# recentf open files                                	「  」  	「  」
+    # '\'	= 'open in terminal'       	# open in terminal                                  	「  」  	「  」
+    '`'  	= ':reload'                	# 🗘 Discard, Reload from source                     	「  」  	「  」
+    '~'  	= ':reload-all'            	# 🗘∀ Discard, Reload all from source                	「  」  	「  」
+    'p'  	= ':config-open-workspace' 	# 🛠🗋 Open workspace config file                     	「  」  	「  」
+
+    ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+    'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+
+  [keys.	select.'space'.'f'.'q']    	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all'      	# ×b buffer all
+    'f' 	= ':buffer-close'          	# ×b buffer current
+    'v' 	= ':buffer-close-others'   	# ×b buffer others
+    'e' 	= ':quit-all'              	# ×∀v view  all
+    'd' 	= ':quit'                  	# ×v view   current
+    'w' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    's' 	= ':write-quit'            	# 💾×v view current
+    'u' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    'j' 	= ':write-quit'            	# 💾×v view current
+    ';' 	= ':cquit'                 	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'q'.'q']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all!'     	# 🕱b buffer all (kill unsaved)
+    'f' 	= ':buffer-close!'         	# 🕱b buffer current (kill unsaved)
+    'v' 	= ':buffer-close-others!'  	# 🕱b buffer others (kill unsaved)
+    'e' 	= ':quit-all!'             	# 🕱∀v view  all
+    'd' 	= ':quit!'                 	# 🕱v view   current
+    'w' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    's' 	= ':write-quit!'           	# 💾🕱v view current
+    'u' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    'j' 	= ':write-quit!'           	# 💾🕱v view current
+    ';' 	= ':cquit!'                	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'x']    	#Ⓢ ☰␜☰× Close mode in File mode in Space mode !!!missing alias
+    'r' 	= ':buffer-close-all'      	# ×b buffer all
+    'f' 	= ':buffer-close'          	# ×b buffer current
+    'v' 	= ':buffer-close-others'   	# ×b buffer others
+    'e' 	= ':quit-all'              	# ×∀v view  all
+    'd' 	= ':quit'                  	# ×v view   current
+    'w' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    's' 	= ':write-quit'            	# 💾×v view current
+    'u' 	= ':write-quit-all'        	# 💾∀v view all, ×∀v view all
+    'j' 	= ':write-quit'            	# 💾×v view current
+    ';' 	= ':cquit'                 	# Quit with exit code (default 1)
+  [keys.	select.'space'.'f'.'x'.'x']	#Ⓢ ☰␜☰× Close mode in File mode in Space mode
+    'r' 	= ':buffer-close-all!'     	# 🕱b buffer all (kill unsaved)
+    'f' 	= ':buffer-close!'         	# 🕱b buffer current (kill unsaved)
+    'v' 	= ':buffer-close-others!'  	# 🕱b buffer others (kill unsaved)
+    'e' 	= ':quit-all!'             	# 🕱∀v view  all
+    'd' 	= ':quit!'                 	# 🕱v view   current
+    'w' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    's' 	= ':write-quit!'           	# 💾🕱v view current
+    'u' 	= ':write-quit-all!'       	# 💾∀v view all, 🕱∀v view all
+    'j' 	= ':write-quit!'           	# 💾🕱v view current
+    ';' 	= ':cquit!'                	# Quit with exit code (default 1)
+
+  [keys. 	select.'space'.'i']                  	#Ⓢ ☰®  Register/copy/paste etc
+    'i'  	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
+    # '7'	= 'append_to_register 1'             	# ®1⎀ Append current line/selection to reg 1
+    # '8'	= 'clear_register 1'                 	# ®1× x
+    # '9'	= 'copy_to_register 1'               	# ®1🗐 x
+    # '0'	= 'paste_from_register 1'            	# ®1📋 x
+    # '1'	= 'append_to_register 2'             	# ®2⎀ Append current line/selection to reg 2
+    # '2'	= 'clear_register 2'                 	# ®2× x
+    # '3'	= 'copy_to_register 2'               	# ®2🗐 x
+    # '4'	= 'paste_from_register 2'            	# ®2📋 x
+    't'  	= 'replace_selections_with_clipboard'	# 🗘▋📋 Replace selections by clipboard contents    	「☰␠⇧r」 <i class='fa fa-clipboard'></i>▋
+    'x'  	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection                	Ⓝ「⇧j」
+    'v'  	= 'paste_clipboard_before'           	# ⤸📋 Paste after  selections                      	「☰␠⇧p」 ⤸<i class='fa fa-clipboard'></i>
+    'c'  	= 'yank_joined_to_clipboard'         	# 📋∀▋ Copy all selections to clipboard (joined) ⨝📋	「☰␠ y」 <i class='fa fa-clipboard'></i> ∀❚ ∀▋
+    # 'a'	= ':clipboard-yank'                  	# Copy main   sel to system         clipboard
+    # 'a'	= ':clipboard-yank-join'             	# Copy joined sel to system         clipboard with sep \n
+    # 'a'	= ':primary-clipboard-yank'          	# Copy main   sel to system primary clipboard
+    # 'a'	= ':primary-clipboard-yank-join'     	# Copy joined sel to system primary clipboard with sep \n
+    # 'a'	= ':clipboard-paste-after'           	# Paste system  clipboard after   selections
+    # 'a'	= ':clipboard-paste-before'          	# Paste system  clipboard before  selections
+    # 'a'	= ':clipboard-paste-replace'         	# Paste system  clipboard replace selections
+    # 'a'	= ':primary-clipboard-paste-after'   	# Paste primary clipboard after   selections
+    # 'a'	= ':primary-clipboard-paste-before'  	# Paste primary clipboard before  selections
+    # 'a'	= ':primary-clipboard-paste-replace' 	# Paste primary clipboard replace selections
+    # 'a'	= ':show-clipboard-provider'         	# Show clipboard provider name in status bar
+    'j'  	= ':sort'                            	# 𝕒🢖𝕫 Sort ranges in selection 𝟙𝟚𝟛
+    'k'  	= ':rsort'                           	# 𝕫🢖𝕒 Sort ranges in selection in reverse order 𝟛𝟚𝟙
+    # 'd'	='list-matching-lines'               	# !!!missing
+    # 'f'	='delete-matching-lines'             	# !!!missing
+    # 'g'	='delete-non-matching-lines'         	# !!!missing
+    # 't'	='delete-duplicate-lines'            	# !!!missing
+    # 'n'	='reformat-to-sentence-lines'        	# !!!missing
+    # 'o'	='copy-rectangle-to-register'        	# !!!missing
+    # 'r'	='query-replace-regexp'              	# !!!missing
+    # 'h'	='mark-defun'                        	# !!!missing
+    # ';'	='escape-quotes'                     	# Add \ before " in current line/selection
+
+  # [keys.select.'space'.'d'] #Ⓢ ☰⟪ Bracket mode in Space mode (place cursor in between) !!!todo
+    # 'RET'	= 'insert char'   	#
+    # 'SPC'	= 'insert unicode'	#
+    # 'd'  	= '()'            	# () parenthesis
+    # 'f'  	= '[]'            	# [] square bracket
+    # 'j'  	= '{}'            	# {} brace
+    # 'k'  	= '""'            	# "" regular double quote
+    # 'l'  	= "''"            	# '' regular single quote
+    # 'r'  	= '‹›'            	# ‹› single angle quote (single chevrons)
+    # 't'  	= '«»'            	# «» double angle quote (double chevrons)
+    # 'n'  	= '【】'            	# 【】 black lenticular bracket
+    # 'm'  	= '「」'            	# 「」 corner bracket
+    # 'o'  	= '〔〕'            	# 〔〕 tortoise shell bracket
+    # ','  	= '〈〉'            	# 〈〉 angle bracket or math ⟨⟩
+    # '.'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+    # '<'  	= '⟪⟫'            	# ⟪⟫ double angle bracket
+    # 'g'  	= '‘’'            	# ‘’ curly single quote
+    # 'h'  	= '“”'            	# “” double curly quote
+    # 'y'  	= "`'"            	# `' emacs quote
+    # ';'  	= '=""'           	# ="" string assignment
+    # 'z'  	= '⸨⸩'            	# ⸨⸩ Double Parenthesis
+    # 'c'  	= 'date'          	# 📆📅current date
+    # 'p'  	= 'u+000C'        	# ␌ formfeed
+
+  [keys.     	select.'space'.'w']    	#Ⓢ ☰🗔  Window mode in Space mode       	Ⓝ「⎈ w」  	「」
+    's'      	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'C-s'    	= 'no_op'              	#                                      	   「  」 	「hsplit」
+    'v'      	= 'no_op'              	#                                      	   「  」 	「vsplit」
+    'C-v'    	= 'no_op'              	#                                      	   「  」 	「vsplit」
+    'F'      	= 'no_op'              	#                                      	  「⇧  」 	「goto_file」
+    'j'      	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「  j」  	「jump_view_down」
+    'k'      	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「  k」  	「jump_view_up」
+    'l'      	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「  h」   	「jump_view_right」
+    ';'      	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「  l」   	「」
+    'C-j'    	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「 ⎈j」  	「jump_view_down」
+    'C-k'    	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「 ⎈k」  	「jump_view_up」
+    'C-l'    	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「 ⎈h」   	「jump_view_right」
+    'C-;'    	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「 ⎈l」   	「」 #!!!fails
+    'C-down' 	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	「▼」     	「」
+    'C-up'   	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	「▲」     	「」
+    'C-left' 	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	「◀」     	「」
+    'C-right'	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	「▶」     	「」
+    'w'      	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「  w」  	「rotate_view」
+    'C-w'    	= 'rotate_view'        	# 🗗⟳ Switch to window next             	≝「 ⎈w」  	「rotate_view」
+    'e'      	= 'rotate_view_reverse'	# 🗗⟲ Switch to window previous         	 「  」   	「」
+    'f'      	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「  v」	「vsplit」
+    'C-f'    	= 'vsplit'             	# 🗗→ Split →  (Vertical)               	  ≝「 ⎈v」	「vsplit」
+    'm'      	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「  s」	「」
+    'C-m'    	= 'hsplit'             	# 🗗↓ Split ↓ (Horizontal)              	   「 ⎈s」	「」
+    'h'      	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
+    'C-h'    	= 'goto_file_hsplit'   	# ⮋❚␜ Go to files@selection in splits ↓	   「  f」	「jump_view_left」
+    'g'      	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
+    'C-g'    	= 'goto_file_vsplit'   	# ⮊❚␜ Go to files@selection in splits →	   「⇧f」 	「」
+    'q'      	= 'wclose'             	# ×🗔  Close         current window     	「  q」   	「wclose」
+    'C-q'    	= 'wclose'             	# ×🗔  Close         current window     	「 ⎈q」   	「wclose」
+    'o'      	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「  o」  	「wonly」
+    'C-o'    	= 'wonly'              	# ×∀🗔 Close all but current window     	≝「 ⎈o」  	「wonly」
+    'x'      	= 'wonly'              	# ×∀🗔 Close all but current window     	「  o」   	「」
+    'C-x'    	= 'wonly'              	# ×∀🗔 Close all but current window     	「 ⎈o」   	「」
+    'down'   	= 'jump_view_down'     	# 🗗▼ Move to Split ↓                   	≝「▼」    	「jump_view_down」
+    'up'     	= 'jump_view_up'       	# 🗗▲ Move to Split ↑                   	≝「▲」    	「jump_view_up」
+    'left'   	= 'jump_view_left'     	# 🗗◀ Move to Split ←                   	≝「◀」    	「jump_view_left」
+    'right'  	= 'jump_view_right'    	# 🗗▶ Move to Split →                   	≝「▶」    	「jump_view_right」
+
+  [keys. 	select.'space'.'u']                	#Ⓢ 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
+    'u'  	= 'remove_primary_selection'       	# ×          primary sel            	「 ⎇,」
+    'i'  	= 'keep_primary_selection'         	# ×∀ all but primary sel (keep only)	「  ,」
+    'o'  	= ':character-info'                	# 🔣ℹ Character info                 	「  」
+    #Δ   	                                   	                                    	 
+    'j'  	= 'goto_next_change'               	# Δ🢖 Change            next         	「⧚  g」	「」 !!!→sticky
+    'k'  	= 'goto_prev_change'               	# 🢔Δ Change            previous     	「⧛  g」	「」 !!!→sticky
+    'l'  	= 'goto_first_change'              	# ⭰Δ Change             1st         	「⧛⇧ g」	「」 !!!→sticky
+    ';'  	= 'goto_last_change'               	# Δ⭲ Change            last         	「⧚⇧ g」	「」 !!!→sticky
+    'b'  	= ':reset-diff-change'             	# ×Δ Reset diff hunk                	「  」
+    #🌳TS 	                                   	                                    	 
+    'a'  	= 'goto_prev_parameter'            	# 🢔α Argument/parameter previous    	「⧛  a」	「」 !!!→sticky
+    's'  	= 'goto_next_parameter'            	# α🢖 Argument/parameter next        	「⧚  a」	「」 !!!→sticky
+    'd'  	= 'goto_prev_function'             	# 🢔ƒ Function           previous    	「⧛  f」	「」 !!!→sticky
+    'f'  	= 'goto_next_function'             	# ƒ🢖 Function           next        	「⧚  f」	「」 !!!→sticky
+    'z'  	= 'goto_prev_comment'              	# 🢔ↄ Comment            previous    	「⧛  c」	「」 !!!→sticky
+    'x'  	= 'goto_next_comment'              	# ↄ🢖 Comment            next        	「⧚  c」	「」 !!!→sticky
+    'c'  	= 'goto_prev_class'                	# 🢔τ Type definition    previous    	「⧛  t」	「」 !!!→sticky
+    'v'  	= 'goto_next_class'                	# τ🢖 Type definition    next        	「⧛  t」	「」!!!→sticky
+    't'  	= 'goto_prev_test'                 	# 🢔🧪 Test               previous    	「⧛⇧ t」	「」 !!!→sticky
+    'y'  	= 'goto_next_test'                 	# 🧪🢖 Test               next        	「⧚⇧ t」	「」 !!!→sticky
+    #🄻LSP	                                   	                                    	 
+    'm'  	= 'goto_next_diag'                 	# 🛠🢖 Diagnostic next                	「⧚  d」	「」 !!!→sticky
+    ','  	= 'goto_prev_diag'                 	# 🢔🛠 Diagnostic previous            	「⧛  d」	「」 !!!→sticky
+    '.'  	= 'goto_first_diag'                	# ⭰🛠 Diagnostic 1st @ doc           	「⧛⇧ d」	「」 !!!→sticky
+    '/'  	= 'goto_last_diag'                 	# 🛠⭲ Diagnostic last @ doc          	「⧚⇧ d」	「」 !!!→sticky
+    'e'  	= 'symbol_picker'                  	# 🅂🗋 Document  symbol picker ⚛Ⓢ     	「☰␠ s」
+    'r'  	= 'workspace_symbol_picker'        	# 🅂🗍 Workspace symbol picker ⚛Ⓢ     	「☰␠⇧s」
+    "'"  	= ':format'                        	# ℱ∀ Format the file                	「  」
+    'q'  	= 'format_selections'              	# ℱ  Format selection               	「  =」
+    'g'  	= 'code_action'                    	# Ⓐ  Apply code action              	「☰␠ a」
+    'n'  	= 'rename_symbol'                  	# ✎  Rename symbol                  	「☰␠ r」
+    'w'  	= ':lsp-workspace-command'         	# 🄲🗍 Workspace command picker       	「  」
+    'h'  	= ':toggle lsp.display-inlay-hints'	# 💡 toggle inlay hints              	「  」
+    'p'  	= ':lsp-stop'                      	# ⏹🄻 Stop                           	「  」
+    ']'  	= ':lsp-restart'                   	# 🔄🄻 Restart                        	「  」
+    #🄳DAP	                                   	                                    	 
+    '['  	= 'dap_restart'                    	# 🔄🄳 Restart (DAP)                  	「  」
+
+  # [keys	.select.'space'.'p']	#Ⓢ ☰ⓟ TBD
+
+
+
+  [keys.     	select.'['] #Ⓢ Ⓝ[ ☰⧛ Unimpaired
+    'j'      	= 'goto_prev_change'      	# 🢔Δ Change            	previous       	「  g」 	「」
+    # 'G'    	= 'goto_first_change'     	# ⭰Δ Change            	1st            	≝「⇧ g」	「goto_first_change」
+    'h'      	= 'goto_first_change'     	# ⭰Δ Change            	1st            	「⇧ g」 	「」
+    # 'd'    	= 'goto_prev_diag'        	# 🢔🛠 Diagnostic        	previous  (LSP)	≝「  d」	「goto_prev_diag」
+    # 'D'    	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	≝「⇧ d」	「goto_first_diag」
+    'g'      	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	「⇧ d」 	「goto_prev_change」
+    # 'f'    	= 'goto_prev_function'    	# 🢔ƒ Function          	previous (TS)  	≝「  f」	「goto_prev_function」
+    's'      	= 'goto_prev_class'       	# 🢔τ Type definition   	previous (TS)  	「  t」 	「」
+    # 'a'    	= 'goto_prev_parameter'   	# 🢔α Argument/parameter	previous (TS)  	≝「  a」	「goto_prev_parameter」
+    # 'c'    	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	≝「  c」	「goto_prev_comment」
+    '/'      	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
+    'z'      	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
+    # 'T'    	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	≝「⇧ t」	「goto_prev_test」
+    't'      	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	「⇧ t」 	「goto_prev_class」
+    # 'p'    	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	≝「  p」	「goto_prev_paragraph」
+    '['      	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
+    '.'      	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
+    # 'space'	= 'add_newline_above'     	# ⭡␤ Add newline above 	               	≝「  ␠」	「add_newline_above」
+    'm'      	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines above it
+      ,      	  'delete_selection'      	# !!!missing n
+      ,      	  'move_line_up'          	#
+      ,      	  'paste_before']         	#
+  [keys.     	select.'['.'c'] #Ⓢ Ⓝ] ☰⧛ℂ Unimpaired Config toggle ON
+    'q'      	= ':set auto-save true'           	# 💾🙈 save focus lost
+    'w'      	= ':set auto-format true'         	# ℱ💾 auto formatting on save
+    'e'      	= ':set line-number absolute'     	# №⭳  Line number display: absolute #⭳
+    'r'      	= ':set soft-wrap true'           	# ↪ Soft wrap lines
+    't'      	= ':set search.wrap-around true'  	# 🔎↪  search should wrap after depleting the matches
+    'a'      	= ':set auto-completion true'     	# ⎁  Auto pop up of auto-completion
+    's'      	= ':set search.smart-case true'   	# 𝖗𝕒  Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'g'      	= ':set indent-guides.render true'	# ┊ Indent guides
+    'z'      	= ':set completion-replace true'  	# ⎁ω completions replace word, not pre-cursor part
+    'c'      	= ':set true-color true'          	# 🌈 Oerride auto detection of terminal truecolor
+    'h'      	= ':set cursorline true'          	# 🟨━ Highlight all lines   with a cursor
+    'j'      	= ':set cursorcolumn true'        	# 🟨┃ Highlight all columns with a cursor
+    'd'      	= ':set auto-pairs true'          	# ⟪⟫  Auto insertion of pairs to parentheses, brackets, etc
+    'i'      	= ':set auto-info true'           	# 🛈  Display infoboxes
+    'v'      	= ':set middle-click-paste true'  	# 🖰📋 Middle click paste support
+    'm'      	= ':set mouse true'               	# 🖰 Mouse mode
+    'u'      	= ':set undercurl true'           	# ‗ Override auto detection of terminal undercurl support
+    'p'      	= ':set color-modes true'         	# 🚦 Color mode indicator depending on the mode itself
+    'o'      	= ':config-open'                  	# 🧬 Config open   		「  」	「」
+    'l'      	= ':config-reload'                	# 🧬🗘 Config reload		「  」	「」
+  [keys.     	select.'['.'c'.' '] #Ⓢ Ⓝ] ☰⧛ℂ␠ Unimpaired Config toggle ON sub-space mode
+    ' '      	= ':set whitespace.render.space all'  	# · show space
+    'b'      	= ':set whitespace.render.nbsp all'   	# ⍽ show nbsp
+    'tab'    	= ':set whitespace.render.tab all'    	# ⇥ show tab
+    't'      	= ':set whitespace.render.tab all'    	# ⇥ show tab
+    'n'      	= ':set whitespace.render.newline all'	# ⏎ show newline
+    'ret'    	= ':set whitespace.render.newline all'	# ⏎ show newline
+  [keys.     	select.'['.'c'.'.'] #Ⓢ Ⓝ] ☰⧛ℂ🙈 Unimpaired Config toggle ON hidden mode
+    '.'      	= ':set file-picker.hidden true'     	# Ignore hidden files
+    ','      	= ':set file-picker.ignore true'     	# Read .ignore files
+    'p'      	= ':set file-picker.parents true'    	# Read  ignore files from parent directories
+    'i'      	= ':set file-picker.git-ignore true' 	# gi Read .gitignore files
+    'g'      	= ':set file-picker.git-global true' 	# ggi Read global .gitignore (path: core.excludefile option of git's config)
+    'e'      	= ':set file-picker.git-exclude true'	# ge Read .git/info/exclude files
+    'l'      	= ':set follow-links true'           	# Follow symlinks instead of ignoring them
+    'k'      	= ':set deduplicate-links true'      	# Ignore symlinks that point at files already shown in the picker
+  [keys.     	select.'['.'c'.'y'] #Ⓢ Ⓝ] ☰⧛ℂ🄻 Unimpaired Config toggle ON LSP mode
+    'k'      	= ':set lsp.enable true'                     	# False will completely disable language servers regardless of language settings
+    'p'      	= ':set lsp.display-messages true'           	# LSP progress messages below statusline
+    'i'      	= ':set lsp.auto-signature-help true'        	# Enable automatic popup of signature help (parameter hints)
+    'h'      	= ':set lsp.display-inlay-hints true'        	# 💡 Inlay hints
+    'd'      	= ':set lsp.display-signature-help-docs true'	# Docs under signature help popup
+    's'      	= ':set lsp.snippets true'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+
+  [keys.     	select.']'] #Ⓢ Ⓝ ☰⧚
+    'j'      	= 'goto_next_change'      	# Δ🢖 Change            	next            	「  g」 	「」
+    # 'G'    	= 'goto_last_change'      	# Δ⭲ Change            	last            	≝「⇧ g」	「goto_last_change」
+    'h'      	= 'goto_last_change'      	# Δ⭲ Change            	last            	「⇧ g」 	「」
+    # 'd'    	= 'goto_next_diag'        	# 🛠🢖 Diagnostic        	next  (LSP)     	≝「  d」	「goto_next_diag」
+    # 'D'    	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	≝「⇧ d」	「goto_last_diag」
+    'g'      	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	「⇧ d」 	「goto_next_change」
+    # 'f'    	= 'goto_next_function'    	# ƒ🢖 Function          	next (TS)       	≝「  f」	「goto_next_function」
+    's'      	= 'goto_next_class'       	# τ🢖 Type definition   	next (TS)       	「  t」 	「」
+    # 'a'    	= 'goto_next_parameter'   	# α🢖 Argument/parameter	next (TS)       	≝「  a」	「goto_next_parameter」
+    # 'c'    	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	≝「  c」	「goto_next_comment」
+    '/'      	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
+    'z'      	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
+    # 'T'    	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	≝「⇧ t」	「goto_next_test」
+    't'      	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	「⇧ t」 	「goto_next_class」
+    # 'p'    	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「goto_next_paragraph」
+    ']'      	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
+    '.'      	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
+    # 'space'	= 'add_newline_below'     	# ⭣␤ Add newline below 	                	≝「  ␠」	「add_newline_below」
+    'm'      	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines below it
+      ,      	  'delete_selection'      	# !!!missing n
+      ,      	  'goto_line_end'         	#
+      ,      	  'paste_after']          	#
+  [keys.     	select.']'.'c'] #Ⓢ Ⓝ] ☰⧚ℂ Unimpaired Config toggle OFF
+    'q'      	= ':set auto-save false'           	# 💾🙈 save focus lost
+    'w'      	= ':set auto-format false'         	# ℱ💾 auto formatting on save
+    'e'      	= ':set line-number relative'      	# №⭳  Line number display: absolute #
+    'r'      	= ':set soft-wrap false'           	# ↪ Soft wrap lines
+    't'      	= ':set search.wrap-around false'  	# 🔎↪  search should wrap after depleting the matches
+    'a'      	= ':set auto-completion false'     	# ⎁  Auto pop up of auto-completion
+    's'      	= ':set search.smart-case false'   	# 𝖗𝕒  Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    'g'      	= ':set indent-guides.render false'	# ┊ Indent guides
+    'z'      	= ':set completion-replace false'  	# ⎁ω completions replace word, not pre-cursor part
+    'c'      	= ':set false-color false'         	# 🌈 Oerride auto detection of terminal falsecolor
+    'h'      	= ':set cursorline false'          	# 🟨━ Highlight all lines   with a cursor
+    'j'      	= ':set cursorcolumn false'        	# 🟨┃ Highlight all columns with a cursor
+    'd'      	= ':set auto-pairs false'          	# ⟪⟫  Auto insertion of pairs to parentheses, brackets, etc
+    'i'      	= ':set auto-info false'           	# 🛈  Display infoboxes
+    'v'      	= ':set middle-click-paste false'  	# 🖰📋 Middle click paste support
+    'm'      	= ':set mouse false'               	# 🖰 Mouse mode
+    'u'      	= ':set undercurl false'           	# ‗ Override auto detection of terminal undercurl support
+    'p'      	= ':set color-modes false'         	# 🚦 Color mode indicator depending on the mode itself
+    'o'      	= ':config-open'                   	# 🧬 Config open   		「  」	「」
+    'l'      	= ':config-reload'                 	# 🧬🗘 Config reload		「  」	「」
+  [keys.     	select.']'.'c'.' '] #Ⓢ Ⓝ] ☰⧚ℂ␠ Unimpaired Config toggle OFFN sub-space mode
+    ' '      	= ':set whitespace.render.space none'  	# · show space
+    'b'      	= ':set whitespace.render.nbsp none'   	# ⍽ show nbsp
+    'tab'    	= ':set whitespace.render.tab none'    	# ⇥ show tab
+    't'      	= ':set whitespace.render.tab none'    	# ⇥ show tab
+    'n'      	= ':set whitespace.render.newline none'	# ⏎ show newline
+    'ret'    	= ':set whitespace.render.newline none'	# ⏎ show newline
+  [keys.     	select.']'.'c'.'.'] #Ⓢ Ⓝ] ☰⧚ℂ🙈 Unimpaired Config toggle OFF hidden mode
+    '.'      	= ':set file-picker.hidden false'     	# Ignore hidden files
+    ','      	= ':set file-picker.ignore false'     	# Read .ignore files
+    'p'      	= ':set file-picker.parents false'    	# Read  ignore files from parent directories
+    'i'      	= ':set file-picker.git-ignore false' 	# gi Read .gitignore files
+    'g'      	= ':set file-picker.git-global false' 	# ggi Read global .gitignore (path: core.excludefile option of git's config)
+    'e'      	= ':set file-picker.git-exclude false'	# ge Read .git/info/exclude files
+    'l'      	= ':set follow-links false'           	# Follow symlinks instead of ignoring them
+    'k'      	= ':set deduplicate-links false'      	# Ignore symlinks that point at files already shown in the picker
+  [keys.     	select.']'.'c'.'y'] #Ⓢ Ⓝ] ☰⧚ℂ🄻 Unimpaired Config toggle OFF LSP mode
+    'k'      	= ':set lsp.enable false'                     	# False will completely disable language servers regardless of language settings
+    'p'      	= ':set lsp.display-messages false'           	# LSP progress messages below statusline
+    'i'      	= ':set lsp.auto-signature-help false'        	# Enable automatic popup of signature help (parameter hints)
+    'h'      	= ':set lsp.display-inlay-hints false'        	# 💡 Inlay hints
+    'd'      	= ':set lsp.display-signature-help-docs false'	# Docs under signature help popup
+    's'      	= ':set lsp.snippets false'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
