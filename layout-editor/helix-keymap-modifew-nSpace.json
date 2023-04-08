@@ -124,19 +124,14 @@
     },
     "\n\n\n\n⭾",
     {
-      "t": "#800080\n\n\n\n\n\n\n\n\n#800080\n\n#000000",
+      "t": "#800080\n\n\n\n\n\n\n\n\n\n\n#000000",
       "a": 0,
       "fa": [
         6,
         6,
         0,
         6,
-        5,
-        0,
-        0,
-        0,
-        0,
-        0
+        5
       ]
     },
     "☰×\n\n\n\n▶\n\n\n\n\n\n\nQ",
@@ -148,12 +143,7 @@
         4,
         0,
         6,
-        6,
-        0,
-        0,
-        0,
-        0,
-        0
+        6
       ]
     },
     "<i class='mss mss-Search-3'></i>\n☰🗔\n\n\n<i class='mss mss-Search-3'></i>\n\n\n\n\n\n\nW",
@@ -651,6 +641,6 @@
       "w": 2.5,
       "d": true
     },
-    "\n\n\n\n🧬23.03\nmodiƒew 0.4 ☰␣<i class='fa fa-keyboard-o'></i>"
+    "\n\n\n\n🧬23.03\nmodiƒew 0.4 ☰␠<i class='fa fa-keyboard-o'></i>"
   ]
 ]
