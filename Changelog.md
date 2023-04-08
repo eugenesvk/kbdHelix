@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
-[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.3.0...HEAD
+[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.4.0...HEAD
 ## [Unreleased]
   <!-- - __Added__ -->
    <!-- + :sparkles: ??? -->
@@ -22,6 +22,8 @@ All notable changes to this project will be documented in this file
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
 
+[0.4.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.4.0
+## [0.4.0]
   - __Added__
     + :sparkles: [chezmoi](chezmoi.io/) templates to generate config to avoid repeating sections like Space mode and edit each mode in a smaller separate config file instead of one huge config
     + :sparkles: F1 help mode stub
