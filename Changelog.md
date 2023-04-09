@@ -22,6 +22,54 @@ All notable changes to this project will be documented in this file
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
 
+  - __Added__
+    + :sparkles: [chezmoi](chezmoi.io/) templates to generate config to avoid repeating sections like Space mode and edit each mode in a smaller separate config file instead of one huge config
+    + :sparkles: F1 help mode stub
+    + :sparkles: new commands added to helix in versions 22.08, 22.12, 23.03
+        - Ⓝ<kbd>⎈</kbd><kbd>l</kbd> ⏾Suspend job (`suspend`)
+        - Ⓝ<kbd>⎇</kbd><kbd>e</kbd> Sublime's `find_under_expand`
+        - Ⓝ<kbd>⇧</kbd><kbd>⎇</kbd><kbd>x</kbd> ×␤+␠ Join lines+select space                                   	    (`join_selections_space`)
+        - Ⓝ<kbd>⇧</kbd><kbd>e</kbd>  ━ Extend sel to line bounds (line-wise sel)⎯                              	    (`extend_to_line_bounds`)
+        - Ⓝ<kbd>⇧</kbd><kbd>⎇</kbd><kbd>j</kbd> ⮒ Select current line, if already selected, extend to next line	    (`extend_line`)
+        - Ⓝ<kbd>⇧</kbd><kbd>-</kbd>   ⛙ Merge consecutive selections ⨝                                         	    (`merge_consecutive_selections`)
+        - Ⓝ<kbd>⎈</kbd><kbd>⏎</kbd>  ䷖w Hard-wrap selected lines                                               	    (`:reflow`)
+        - Ⓝ<kbd>.</kbd>   🢔¶ Move paragraph start                                                              	    (`goto_prev_paragraph`)
+        - Ⓝ<kbd>/</kbd>   ¶🢖 Move paragraph end                                                                	    (`goto_next_paragraph`)
+        - Ⓝ<kbd>⎇</kbd><kbd>g</kbd> ☰🖈 List jumplist                                                           	(`jumplist_picker`)
+        - Ⓝ<kbd>⎇</kbd><kbd>l</kbd> 🢔⸙ Select previous sibling node in syntax tree 🌳TS                         	(`select_prev_sibling`)
+        - Ⓝ<kbd>⎇</kbd><kbd>;</kbd> ⸙🢖 Select next     sibling node in syntax tree 🌳TS                         	(`select_next_sibling`)
+        - Ⓝ<kbd>⎇</kbd><kbd>⇧</kbd><kbd>m</kbd> ⸙− Shrink syntax tree object sel 🌳TS                           	(`shrink_selection`)
+        - Ⓝ<kbd>⎇</kbd><kbd>⇧</kbd><kbd>,</kbd> ⸙₊ Expand sel to parent syntax node 🌳TS                        	(`expand_selection`)
+        - Ⓝ<kbd>⎇</kbd><kbd>r</kbd> ⭿ Select current line/extend to another if selected                        	(`extend_line`)
+        - Ⓝ<kbd>\</kbd> ↪   toggle soft wrap                                                                   	(`:toggle soft-wrap.enable`)
+        - Ⓝ☰🗔  Window mode
+            - <kbd>e</kbd> 🗗⟲ Switch to window previous	(`rotate_view_reverse`)
+        - Ⓝ☰␠ Space mode
+            - <kbd>⇧</kbd><kbd>f</kbd> 🗁 Open file   picker @ curdir (`file_picker_in_current_directory`)
+        - Ⓝ☰⮊ GoTo mode
+            - <kbd>b</kbd> ☰🖈 List jumplist          	(`jumplist_picker`)
+            - ⇧d 🆔 declaration (LSP)                 	(`goto_declaration`)
+            - h ⭰ line start                         	(`goto_line_start`)
+        - ⓘ<kbd>⎈</kbd><kbd>u</kbd> α﹖ Signature help	🄻 (`signature_help`)
+        - various 🄻LSP/🌳TS/other commands
+    + new combo commands added
+        - Ⓝ<kbd>⇧</kbd><kbd>⎇</kbd><kbd>z</kbd> 🢖∀🢔 collapse everything to a single cursor		(`keep_primary_selection collapse_selection`)
+        - Ⓢ same as ↑, but also exit select mode
+        - Ⓝ<kbd>⇧</kbd><kbd>⎇</kbd><kbd>i</kbd> ⭰䷖ Line: split & insert @ start	(`split_selection_on_newline insert_at_line_start`)
+        - Ⓝ<kbd>⇧</kbd><kbd>⎇</kbd><kbd>o</kbd> ䷖⭲ Line: split & insert @ end  	(`split_selection_on_newline insert_at_line_end`)
+  - __Changed__
+    - command names to match newer helix versions 22.08, 22.12, 23.03
+    - config/image/layout file names/locations
+    - save command to add `commit_undo_checkpoint`
+    - some command locations, e.g.
+        - Ⓝ☰⮊ GoTo mode
+            - a 𝕒⭰ line start 1ₛₜ non-whitespace char	(`goto_first_nonwhitespace`)
+    - Layout symbols
+      - w to ω
+      - × to ᵡ
+  - __Fixed__
+    - <kbd>⇟</kbd> mapped to <kbd>⇞</kbd> and vice versa
+
 [0.3.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.3.0
 ## [0.3.0]
 
