@@ -49,18 +49,18 @@ It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoema
 Below is a summary of some of the design decisions followed up by detailed keymap Cheat Sheets for the various modes:
 
   - ⌂__Home__ keys are __safe__: all 8 of the home keys are movement commands, so to modify a buffer your fingers need to leave __⌂__!
-  - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the sames keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
-  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>^</kbd> or <kbd>⇧</kbd> in the Normal mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
+  - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the same keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
+  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>⎈</kbd> or <kbd>⇧</kbd> in the Normal mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
         + Strongest non-thumb fingers on the __right__ hand:<br>
           move by __line__ 👆🏻down/🖕🏻up <kbd lyt=q>j</kbd><span class="keyMove">▼</span> <kbd lyt=q>k</kbd><span class="keyMove">▲</span>
         + Strongest non-thumb fingers on the __left__ hand:<br>
-          move by __word__ 👆left/🖕right <kbd lyt=q>d</kbd><span class="keyMove">🢔w</span> <kbd lyt=q>f</kbd><span class="keyMove">w🢖</span>
+          move by __word__ 👆left/🖕right <kbd lyt=q>d</kbd><span class="keyMove">🢔ω</span> <kbd lyt=q>f</kbd><span class="keyMove">ω🢖</span>
         + Rest of the home row on the __right__ for the next most frequent commands:<br>
           move by __char__ 💍left/🤙🏻right <kbd lyt=q>l</kbd><span class="keyMove">◀</span> <kbd lyt=q>;</kbd><span class="keyMove">▶</span>
         + Repeat the 👆🏻down/🖕🏻up right hand mnemonic:
-            + for the less frequent commands: decrement/increment object (number) under cursor <kbd>^</kbd><kbd lyt=q>m</kbd><span class="keyChange">⊖</span> <kbd>^</kbd><kbd lyt=q>,</kbd><span class="keyChange">⊕</span>
+            + for the less frequent commands: decrement/increment object (number) under cursor <kbd>⎈</kbd><kbd lyt=q>m</kbd><span class="keyChange">⊖</span> <kbd>⎈</kbd><kbd lyt=q>,</kbd><span class="keyChange">⊕</span>
             + in the lower row: move half page down/up <kbd lyt=q>m</kbd><span class="keyMove">⤈</span> <kbd lyt=q>,</kbd><span class="keyMove">⤉</span>
             + for the minor modes: (in <span class="keyOther">☰👁</span> View mode) <kbd lyt=q>u</kbd><span class="keyOther">🗔⭳</span> <kbd lyt=q>i</kbd><span class="keyOther">🗔⭱</span>
         + Repeat the 💍left/🤙🏻right right hand mnemonic in the lower row: select previous/next search match <kbd lyt=q>.</kbd><span class="keyMove">🢔◎</span> <kbd lyt=q>/</kbd><span class="keyMove">◎🢖</span> (broken pending fixing [this issue](https://github.com/helix-editor/helix/issues/1488), at the moment requires <kbd>⇧</kbd>)
@@ -69,23 +69,23 @@ Below is a summary of some of the design decisions followed up by detailed keyma
     + __Single-press__ paired keybinds can remain with the opposite direction <kbd>⇧</kbd>’ed, e.g. move to the beginning/end of a line <kbd lyt=q>a</kbd><span class="keyMove">⭰</span> <kbd>⇧</kbd><kbd lyt=q>a</kbd><span class="keyMove">⭲</span>
   - It's ok to use (or even hold😲) <kbd>⌥</kbd> when you don't need to move by word (like in the <span class="keySelect">Ⓢ</span> Select mode), so the multi-cursor selection/manipulation is done with <kbd>⌥</kbd>+cursor:
       - select down/up <kbd>⌥</kbd><kbd lyt=q>j</kbd><span class="keySelect">🠷</span> <kbd>⌥</kbd><kbd lyt=q>k</kbd><span class="keySelect">🠵</span> (`copy_selection_on_next_line`/`copy_selection_on_prev_line`) 
-      - shift selection back/forward <kbd>⌥</kbd><kbd lyt=q>l</kbd><span class="keySelect">⟲</span> <kbd>⌥</kbd><kbd lyt=q>;</kbd><span class="keySelect">⟳</span> (`rotate_selections_backward`/`rotate_selections_forward`)
-      - quick selection correction without releasing the modifier: "soft undo" once <kbd>⌥</kbd><kbd lyt=q>u</kbd><span class="keySelect">×</span> and all <kbd>⌥</kbd><kbd lyt=q>i</kbd><span class="keySelect">×∀</span> (`remove_primary_selection`/`keep_primary_selection`)
-  - Bonus: the `Cut`/`Copy`/`Paste` commands' frequencies seem to allow having them together under 💍🖕👆 left hand bottom row with the common <kbd lyt=q>x</kbd><kbd lyt=q>c</kbd><kbd lyt=q>v</kbd>, though `Undo` is too frequent to be left at a 🤙<kbd lyt=q>z</kbd> (however, with <kbd>^</kbd> they all maintain the	<kbd lyt=q>z</kbd><kbd lyt=q>x</kbd><kbd lyt=q>c</kbd><kbd lyt=q>v</kbd> compatibility) [^4]
+      - shift selection back/forward <kbd>⌥</kbd><kbd lyt=q>m</kbd><span class="keySelect">⟲</span> <kbd>⌥</kbd><kbd lyt=q>,</kbd><span class="keySelect">⟳</span> (`rotate_selections_backward`/`rotate_selections_forward`)
+      - quick selection correction without releasing the modifier: "soft undo" once <kbd>⌥</kbd><kbd lyt=q>u</kbd><span class="keySelect">ᵡ</span> and all <kbd>⌥</kbd><kbd lyt=q>i</kbd><span class="keySelect">ᵡ∀</span> (`remove_primary_selection`/`keep_primary_selection`)
+  - Bonus: the `Cut`/`Copy`/`Paste` commands' frequencies seem to allow having them together under 💍🖕👆 left hand bottom row with the common <kbd lyt=q>x</kbd><kbd lyt=q>c</kbd><kbd lyt=q>v</kbd>, though `Undo` is too frequent to be left at a 🤙<kbd lyt=q>z</kbd> (however, with <kbd>⎈</kbd> they all maintain the	<kbd lyt=q>z</kbd><kbd lyt=q>x</kbd><kbd lyt=q>c</kbd><kbd lyt=q>v</kbd> compatibility) [^4]
   - Turn <kbd lyt=q>h</kbd> into a combo <kbd>⌫</kbd>/<kbd>⌦</kbd> key
-  - (lacking sufficient frequency data) Group various inserts together: insert/append at <kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span> <kbd lyt=q>o</kbd><span class="keyChange">⤹⎀</span> and `open_below`/`open_above` at <kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⭡␤</span> <kbd>⇧</kbd><kbd lyt=q>o</kbd><span class="keyChange">⭣␤</span> (`prepend_to_line`/`append_to_line` are removed as there is a stand alone command to move to the beginning of a line, so <kbd lyt=q>a</kbd><span class="keyMove">⭰</span><kbd lyt=q>i</kbd><kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span> is easier than the old <kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⁁⭰</span>)
+  - (lacking sufficient frequency data) Group various inserts together: insert/append at <kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span> <kbd lyt=q>o</kbd><span class="keyChange">⤹⎀</span> and `open_below`/`open_above` at <kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⭡␤</span> <kbd>⇧</kbd><kbd lyt=q>o</kbd><span class="keyChange">⭣␤</span> (`prepend_to_line`/`append_to_line` are removed as there is a stand alone command to move to the beginning of a line, so <kbd lyt=q>a</kbd><span class="keyMove">⭰</span><kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span> is easier than the old <kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⁁⭰</span>)
   - Add a few keybinds to make it similar to non-modal editors to help with transition
     - <kbd>⏎</kbd><span class="keyChange">⭣␤</span> <kbd>⇧</kbd><kbd>⏎</kbd><span class="keyChange">⭡␤</span> Insert a new line below/above (`open_below`/`open_above`)
-    - <kbd>^</kbd><kbd lyt=q>a</kbd><span class="keySelect">∀▋</span> Select all (`select_all`)
-    - <kbd>^</kbd><kbd lyt=q>o</kbd><span class="keyOther">☰␜</span> Open (`file_picker`)
-    - <kbd>^</kbd><kbd lyt=q>s</kbd><span class="keyOther"><i class="fa fa-save"></i></span> Save (`:write`)
-    - <kbd>^</kbd><kbd lyt=q>z</kbd><span class="keyChange">⎌</span> Undo (`undo`)
-    - <kbd>^</kbd><kbd lyt=q>y</kbd><span class="keyChange">↷</span> Redo (`redo`)
-    - <kbd>^</kbd><kbd lyt=q>x</kbd><span class="keyChange">×</span> Cut (`yank_main_selection_to_clipboard`, `delete_selection`)
-    - <kbd>^</kbd><kbd lyt=q>c</kbd><span class="keyOther"><i class="fa fa-copy"></i></span> Copy (`yank_main_selection_to_clipboard`)
-    - <kbd>^</kbd><kbd lyt=q>v</kbd><span class="keyChange"><i class="fa fa-copy"></i>⤹</span> Paste (`paste_clipboard_after`)
-    - <kbd>⌥</kbd>/<kbd>^</kbd>+<kbd>⌫</kbd>/<kbd>⌦</kbd> to delete a w/Word left/right
-    - <kbd>^</kbd><kbd>⇞</kbd>/<kbd>⇟</kbd> to navigate files (`goto_previous_buffer`/`goto_next_buffer`)
+    - <kbd>⎈</kbd><kbd lyt=q>a</kbd><span class="keySelect">∀▋</span> Select all (`select_all`)
+    - <kbd>⎈</kbd><kbd lyt=q>o</kbd><span class="keyOther">☰␜</span> Open (`file_picker`)
+    - <kbd>⎈</kbd><kbd lyt=q>s</kbd><span class="keyOther"><i class="fa fa-save"></i></span> Save (`:write`)
+    - <kbd>⎈</kbd><kbd lyt=q>z</kbd><span class="keyChange">⎌</span> Undo (`undo`)
+    - <kbd>⎈</kbd><kbd lyt=q>y</kbd><span class="keyChange">↷</span> Redo (`redo`)
+    - <kbd>⎈</kbd><kbd lyt=q>x</kbd><span class="keyChange">ᵡ</span> Cut (`yank_main_selection_to_clipboard`, `delete_selection`)
+    - <kbd>⎈</kbd><kbd lyt=q>c</kbd><span class="keyOther"><i class="fa fa-copy"></i></span> Copy (`yank_main_selection_to_clipboard`)
+    - <kbd>⎈</kbd><kbd lyt=q>v</kbd><span class="keyChange"><i class="fa fa-copy"></i>⤹</span> Paste (`paste_clipboard_after`)
+    - <kbd>⌥</kbd>/<kbd>⎈</kbd>+<kbd>⌫</kbd>/<kbd>⌦</kbd> to delete a w/Word left/right
+    - <kbd>⎈</kbd><kbd>⇞</kbd>/<kbd>⇟</kbd> to navigate files (`goto_previous_buffer`/`goto_next_buffer`)
   - <span style="color: orange">⚠</span> (lacking sufficient frequency data) little optimization was applied to the top vs. bottom row placement of commands
   - <span style="color: orange">⚠</span> number row-base commands don't work pending implementation of this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use the version with modifiers
 
