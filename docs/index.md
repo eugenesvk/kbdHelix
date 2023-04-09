@@ -99,7 +99,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
   |    | Modifier key legend	| Example of <kbd>l</kbd> |
   | :- | :-----------------:	| :---------------------: |
-  | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/modifew/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/modifew/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
+  | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
 
 
 
