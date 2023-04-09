@@ -289,6 +289,11 @@
     # 'I'	= 'insert_at_line_start' 	# ⁁⭰ Insert at line start     	「⇧ i」 	「insert_at_line_start」
     # 'A'	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	「⇧ a」 	「insert_at_line_end」
 
+    'A-I'	=["split_selection_on_newline"	# ⭰䷖ Line: split & insert @ start	「」	「」
+     ,   	  "insert_at_line_start"]     	#                                	  	 
+    'A-O'	=["split_selection_on_newline"	# ䷖⭲ Line: split & insert @ end  	「」	「」
+     ,   	  "insert_at_line_end"]       	#                                	  	 
+
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
     '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate sel contents backward      	「⇧⎇9」	「rotate_selections_backward」
     ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate sel contents forward       	「⇧⎇0」	「rotate_selections_forward」
