@@ -18,14 +18,6 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 [extra] # Your own data
 +++
 
-<meta charset=utf-8>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel=stylesheet type=text/css href=css/bootstrap.css media=screen>
-<link rel=stylesheet type=text/css href=css/font-awesome.min.css>
-<link rel=stylesheet type=text/css href=css/kb.css>
-<link rel=stylesheet type=text/css href=css/kbd-webfont.css>
-<link rel=stylesheet type=text/css href=css/kbd-custom.css>
-
 <div id=buttons>
   Change keyboard layout to:
   <button class="btn" id=btn_qwerty    	type=button style=margin:5px>QWERTY</button>
@@ -35,7 +27,6 @@ in_search_index	= true         	# add section pages to search (if `build_search_
   <button class="btn" id=btn_workman   	type=button style=margin:5px>Workman</button>
   <button class="btn" id=btn_neo2      	type=button style=margin:5px>Neo2</button>
 </div>
-<script defer src=js/layout-convert.js></script>
 
 ### Overview
 
