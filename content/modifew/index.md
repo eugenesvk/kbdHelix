@@ -1,6 +1,22 @@
---- 
-title: "🧬Helix Keymap modiƒew"
----
++++
+title      	= "modiƒew"
+description	= "maps most frequent commands to the best keys and reduces the need for modifiers by replacing them with key chords"
+date       	= 2023-03-10
+#updated   	= # last updated date of the post
+
+draft          	= false        	# only loaded if the `--drafts` is passed to `zola build`/`serve`/`check`
+#template      	= "keymap.html"	# template to render this section page
+weight         	= 1            	# used by parent to order its subsections (↓val=↑higher priority)
+#slug          	= ""           	# use instead of the filename to make the URL
+#path          	= ""           	# overrides both `slug` and the filename, sections' path won't be used
+#authors       	= []           	# used as the page's author in the default feed template.
+in_search_index	= true         	# add section pages to search (if `build_search_index`)
+#aliases       	= []           	# when moving content but want to redirect previous URLs to the  current one.  array of paths, not URLs
+
+[taxonomies] # keys need to match `config.toml`, values=array[String objects], e.g. #tags = ["rust", "web"]
+
+[extra] # Your own data
++++
 
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width, initial-scale=1">
