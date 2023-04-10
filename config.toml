@@ -1,0 +1,79 @@
+base_url                   	= "https://eugenesvk.github.io/kbdHelix/"
+highlight_theme            	= true      	# enable syntax highlighting in a theme
+title                      	= ""        	# used in feeds
+description                	= ""        	# used in feeds
+default_language           	= "en"      	# used in feeds
+compile_sass               	= true      	# auto compile all Sass files in the sass directory
+build_search_index         	= false     	# build a search index to be used later on by a JavaScript library
+# theme                    	= ""        	#
+output_dir                 	= "docs"    	# default output directory `public`
+preserve_dotfiles_in_output	= true      	# dotfiles @ output dir. Prevents the dir deletion on rebuilds
+minify_html                	= false     	#
+ignored_content            	= ['*.tmpl']	# glob pattern list to ignore assets
+generate_feed              	= false     	# When set to "true", a feed is automatically generated.
+feed_filename              	= "atom.xml"	# |atom¦rss¦ used as the template filename, too
+# feed_limit               	= 20        	#	№ articles to include in the feedб ∞ if not set
+hard_link_static           	= false     	# `static` dir files are hard-linked (helps with large files)
+taxonomies                 	= []        	# feed taxonomies and their defaults
+  #[{name="tags"           	,           	#each tag will have its own feed
+  #  feed=true}            	            	 
+  # {name="tags"}          	,           	# you can have taxonomies with the same name in multiple languages
+  # {name="categories"     	,           	# 5 items per page for a term
+  #  paginate_by= 5}       	,           	 
+  # {name="authors"}       	,           	# Basic definition: no feed or pagination ]#
+
+[markdown]
+highlight_code             	= true                     	# enable code blocks' syntax highlighting
+extra_syntaxes_and_themes  	= ["themes/code_highlight"]	# dir to search for extra `.sublime-syntax` `.tmTheme`
+highlight_theme            	= "css"                    	# code highlighting theme
+highlight_themes_css       	= [                        	#
+ {theme="solarized-light"  	, filename="css/syntax-theme-light.css" },
+ {theme="solarized-dark"   	, filename="css/syntax-theme-dark.css"  },]
+render_emoji               	= false	# :smile: => 😄
+external_links_target_blank	= false	# open external links in a new tab
+external_links_no_follow   	= false	# set rel="nofollow"   for all external links
+external_links_no_referrer 	= false	# set rel="noreferrer" for all external links
+smart_punctuation          	= false	# ...→… ""→“” etc.
+
+[link_checker]
+skip_prefixes           	= [      	# Skip link   checking for external URLs that start with these prefixes
+  "http://[2001:db8::]/"	,        	#
+  ]                     	         	#
+skip_anchor_prefixes    	= [      	# Skip anchor checking for external URLs that start with these prefixes
+  "https://caniuse.com/"	,        	#
+  ]                     	         	#
+internal_level          	= "error"	# |error¦warn¦ Treat internal link problems
+external_level          	= "error"	# |error¦warn¦ Treat external link problems
+
+[slugify] # Defaults to everything being a slug
+paths           	= "safe"
+taxonomies      	= "on"
+anchors         	= "off"
+paths_keep_dates	= false	# remove date prefixes for page path slugs
+  #true         	content/posts/2016-10-08_a-post-with-dates.md => posts/a-post-with-dates
+  #false        	content/posts/2016-10-08_a-post-with-dates.md => posts/2016-10-08-a-post-with-dates
+
+[search]
+include_title            	= true 	# include in the index: page/section title
+include_description      	= false	# ... description
+include_path             	= false	# ... path
+include_content          	= true 	# ... rendered
+# truncate_content_length	= 100  	# char№ to truncate the content to (if a lot of pages and the index would become too big to load on the site)
+
+index_format	= "elasticlunr_javascript"	# |_javascript¦_json¦ search index format
+
+[translations] # Optional translation object for the default language
+  # title	= "Un titre"	# if default_language="fr"
+
+[languages]	# Additional languages definition and language specific configs
+  # title, description, generate_feed, feed_filename, taxonomies, build_search_index as well as its own search configuration and translations
+  # [languages.fr]
+  # title             	= "Mon blog"
+  # generate_feed     	= true
+  # taxonomies        	= [
+  #    {name          	= "auteurs"},
+  #    {name          	= "tags"}, ]
+  # build_search_index	= false
+
+[extra] # custom variables {{ config.extra.VAR }} in templates
+highlight_theme	= true	# enable syntax highlighting in a theme
