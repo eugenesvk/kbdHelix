@@ -26,21 +26,6 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 <link rel=stylesheet type=text/css href=css/kbd-webfont.css>
 <link rel=stylesheet type=text/css href=css/kbd-custom.css>
 
-# Table of contents
-- [Overview](#overview)
-- [Major modes](#major-modes)
-    - [Helix Keymap modiƒew Normal](#helix-keymap-modiew-normal)
-    - [Helix Keymap modiƒew Insert](#helix-keymap-modiew-insert)
-    - [Helix Keymap modiƒew Select](#helix-keymap-modiew-select)
-- [Minor modes](#minor-modes)
-    - [Helix Keymap modiƒew GoTo](#helix-keymap-modiew-goto)
-    - [Helix Keymap modiƒew Space](#helix-keymap-modiew-space)
-    - [Helix Keymap modiƒew View](#helix-keymap-modiew-view)
-    - [Helix Keymap modiƒew Match](#helix-keymap-modiew-match)
-    - [Helix Keymap modiƒew Window](#helix-keymap-modiew-window)
-    - [Helix Keymap modiƒew Unimpaired](#helix-keymap-modiew-unimpaired)
-- [Install](#install)
-
 <div id=buttons>
   Change keyboard layout to:
   <button class="btn" id=btn_qwerty    	type=button style=margin:5px>QWERTY</button>
