@@ -1,6 +1,22 @@
---- 
-title: "🧬Helix Keymap ZXCV"
----
++++
+title      	= "zxcv"
+description	= "Helix editor keymap: zxcv"
+date       	= 2023-03-10
+#updated   	= # last updated date of the post
+
+draft          	= false        	# only loaded if the `--drafts` is passed to `zola build`/`serve`/`check`
+#template      	= "keymap.html"	# template to render this section page
+weight         	= 10           	# used by parent to order its subsections (↓val=↑higher priority)
+#slug          	= ""           	# use instead of the filename to make the URL
+#path          	= ""           	# overrides both `slug` and the filename, sections' path won't be used
+#authors       	= []           	# used as the page's author in the default feed template.
+in_search_index	= true         	# add section pages to search (if `build_search_index`)
+#aliases       	= []           	# when moving content but want to redirect previous URLs to the  current one.  array of paths, not URLs
+
+[taxonomies] # keys need to match `config.toml`, values=array[String objects], e.g. #tags = ["rust", "web"]
+
+[extra]		# Your own data
++++
 
 <meta charset=utf-8>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +25,6 @@ title: "🧬Helix Keymap ZXCV"
 <link rel=stylesheet type=text/css href=css/kb.css>
 <link rel=stylesheet type=text/css href=css/kbd-webfont.css>
 <link rel=stylesheet type=text/css href=css/kbd-custom.css>
-
-# Table of contents
-- [Overview](#overview)
-- [Helix Keymap ZXCV](#helix-keymap-zxcv)
-- [Helix Keymap Default](#helix-keymap-default)
-- [Helix Keymap Refactor](#helix-keymap-refactor)
-
 
 ### Overview
 
