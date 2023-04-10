@@ -58,3 +58,8 @@ Thumbs.db
 *.dll
 *.lib
 *.sbr
+
+# Zola build dirs
+public
+docs
+!docs/.nojekyll
