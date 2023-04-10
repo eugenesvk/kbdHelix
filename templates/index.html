@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">{{ section.title }}</h1>
+<ul>
+  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+  {% for subsection_path in section.subsections %}
+  {% set subsection = get_section(path=subsection_path) %}
+  <li><a href="{{ subsection.path | safe }}">{{ subsection.title }}</a> — {{ subsection.description }}</li>
+  {% endfor %}
+</ul>
+{% endblock content %}
