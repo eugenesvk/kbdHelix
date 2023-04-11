@@ -111,13 +111,9 @@ modifew_modes.map(m => {
         let tt_div          	= document.createElement('div');
         let tt_table        	= document.createElement('table');
         const tooltip_header	= `${modifew_mode_sym.get(m)} ${keyLbl}`
-        const columns       	= ['m','o','d','Key','Sym','Command']
-        let table_header    	= '<table class="styled-table"><thead><tr>'
-          columns.map(col   	=> {
-            table_header    	+= `<th>${col}</th>`});
-        table_header        	+= '</tr></thead><tbody>'
-        const table_footer  	= `</tbody></table>`
-        let tooltip_text    	= tooltip_header + table_header;
+        const table_header  	= ['m','o','d','Key','Sym','Command']
+        setTableHead(tt_table, table_header)
+        let tooltip_text	= tooltip_header;
         key_cap_id.map(lbl_id => {
           const lbl_id_s   	 = lbl_id.toString();
           const key_mod    	 = key_modi.get(lbl_id_s);
