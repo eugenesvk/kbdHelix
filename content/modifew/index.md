@@ -81,12 +81,6 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - <span style="color: orange">⚠</span> (lacking sufficient frequency data) little optimization was applied to the top vs. bottom row placement of commands
   - <span style="color: orange">⚠</span> number row-base commands don't work pending implementation of this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use the version with modifiers
 
-[^mnem]: re. mnemonics: in such a complex keybind system such as Helix's I don't find them all that useful as they don't offer intuitive predictability due to said complexity since there are several alternatives to most of the keys, e.g., should <kbd>c</kbd> stand for Cut/Copy/Change/Collapse/Comment/Char/Command/Case/...?
-[^finger]: fingers are denoted with emojis: left‹🤙💍🖕☝️👍 and 👍🏻👆🏻🖕🏻💍🤙🏻›right
-[^2]: hopefully Helix will introduce a way to translate keycap labels to an arbitrary layout without having to rebind every single key (maybe as a solution to [this issue](https://github.com/helix-editor/helix/issues/133))
-[^3]: for example, instead of placing the 2nd most frequent command <span class="keyMove">▲</span> (15.5%) on a non-home row <kbd lyt=q>i</kbd> it uses the home row <kbd lyt=q>k</kbd>
-[^4]: this breaks the 'sticky' `select_mode` pending implementation of [this feature request](https://github.com/helix-editor/helix/issues/1487)
-
 Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to Keyboard Layout Editor so you could fit the cheat sheet to a modified keymap
 
   |    | Modifier key legend	| Example of <kbd>l</kbd> |
@@ -198,3 +192,16 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
     - build the actual full Helix `config.toml` with `chezmoi apply -v --interactive`
 
     Now you can edit individual template files for each major/minor mode and build the config with `chezmoi` instead of drowning in one huge config. You can also add a single line to include repeated minor modes in various major modes (and even pass different keybinds as input parametes to those templates) instead of having to copy&paste them manually on every single change!
+
+<hr />
+
+[^mnem] re. mnemonics: in such a complex keybind system such as Helix's I don't find them all that useful as they don't offer intuitive predictability due to said complexity since there are several alternatives to most of the keys, e.g., should <kbd>c</kbd> stand for Cut/Copy/Change/Collapse/Comment/Char/Command/Case/...?
+
+[^finger] fingers are denoted with emojis: left‹🤙💍🖕☝️👍 and 👍🏻👆🏻🖕🏻💍🤙🏻›right
+
+[^2] hopefully Helix will introduce a way to translate keycap labels to an arbitrary layout without having to rebind every single key (maybe as a solution to [this issue](https://github.com/helix-editor/helix/issues/133))
+
+[^3] for example, instead of placing the 2nd most frequent command <span class="keyMove">▲</span> (15.5%) on a non-home row <kbd lyt=q>i</kbd> it uses the home row <kbd lyt=q>k</kbd>
+
+[^4] this breaks the 'sticky' `select_mode` pending implementation of [this feature request](https://github.com/helix-editor/helix/issues/1487)
+
