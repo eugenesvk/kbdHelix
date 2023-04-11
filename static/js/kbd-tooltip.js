@@ -69,6 +69,16 @@ const tooltip_1 = ((evt) => {
 const tooltip_0 = (() => {
   ttBox.style.visibility = "hidden" ; });
 const modi_list = ['⇧','⎈','⎇']; // add ◆ when it's supported
+function setTableHead(table, keys) {
+  let tHd	= table.createTHead();
+  let row	= tHd.insertRow();
+  keys.map(key => {
+    let th 	= document.createElement("th");
+    let txt	= document.createTextNode(key);
+    th.appendChild(txt);
+    row.appendChild(th);
+  });
+};
 //
 modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
