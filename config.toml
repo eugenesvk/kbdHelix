@@ -5,7 +5,7 @@ description                	= ""        	# used in feeds
 default_language           	= "en"      	# used in feeds
 compile_sass               	= true      	# auto compile all Sass files in the sass directory
 build_search_index         	= false     	# build a search index to be used later on by a JavaScript library
-# theme                    	= ""        	#
+# theme                    	= "abridge" 	#
 output_dir                 	= "docs"    	# default output directory `public`
 preserve_dotfiles_in_output	= true      	# dotfiles @ output dir. Prevents the dir deletion on rebuilds
 minify_html                	= false     	#
@@ -77,3 +77,4 @@ index_format	= "elasticlunr_javascript"	# |_javascript¦_json¦ search index for
 
 [extra] # custom variables {{ config.extra.VAR }} in templates
 highlight_theme	= true	# enable syntax highlighting in a theme
+# uglyurls     	= true	#abridge +base_url=@index.html → local build
