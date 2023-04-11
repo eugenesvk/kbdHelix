@@ -52,19 +52,20 @@ const tooltip_1 = ((evt) => {
   ttBox.style.left	= `${X + 45}px`; // move tooltip to the hover element
   ttBox.style.top 	= `${Y + 45}px`;
   const ttt       	= evt.currentTarget.ttt;
-
-  let div = document.createElement('table');
-  div.innerHTML = ttt;
-  const x	= div.getElementsByClassName('styled-table'); //.rows;
-  console.log('type=¦',typeof(x), x);
-  console.log('type=¦',typeof(ttt), ttt);
-  // Array.from(x).forEach(function(row) {
-    // const cell_val = row.cells[3].innerHTML;
-    // row.cells[3].innerHTML = '××';
-    // console.log('cell_val=¦',convert(cell_val,'qwerty',lyt[gLyt.lbl]),'¦')
-  // });
-  // ttBox.innerHTML	= div.innerHTML;
-  ttBox.innerHTML   	= ttt;
+  const lbl       	= evt.currentTarget.lbl;
+  const cLytLbl   	= evt.currentTarget.cLytLbl;
+  const tr        	= ttt.getElementsByClassName('styled-table')[0].rows;
+  if (cLytLbl !== gLyt.lbl) {
+    // console.log('layout changed',cLytLbl,gLyt.lbl);
+    Array.from(tr).forEach(function(row,i) {
+      if (i === 0) { return; };
+      const cell_val = row.cells[3].innerHTML;
+      row.cells[3].innerHTML = convert(lbl,'qwerty',lyt[gLyt.lbl]);
+      // console.log('cell_val=¦',convert(ttt.lbl, cell_val,'qwerty',lyt[gLyt.lbl]),'¦')
+      evt.currentTarget.cLytLbl = gLyt.lbl;
+    });
+  }
+  ttBox.innerHTML	= ttt.innerHTML;
   ttBox.style.visibility = "visible"; });
 const tooltip_0 = (() => {
   ttBox.style.visibility = "hidden" ; });
@@ -107,40 +108,43 @@ modifew_modes.map(m => {
           });
           // console.log('stored keymap for',keylbl,'¦=¦',key_cap_sym.get(keylbl));
         };
-        // Generate tooltip text
-        let tt_div          	= document.createElement('div');
-        let tt_table        	= document.createElement('table');
+        // Generate tooltip table
+        let tt_div  	= document.createElement('div');
+        let tt_table	= document.createElement('table');
+        tt_table.classList.add('styled-table');
+        tt_div.appendChild(tt_table);
         const tooltip_header	= `${modifew_mode_sym.get(m)} ${keyLbl}`
         const table_header  	= ['m','o','d','Key','Sym','Command']
         setTableHead(tt_table, table_header)
         let tooltip_text	= tooltip_header;
+        const cLytLbl   	= gLyt.lbl;  // reads layout only at page load
         key_cap_id.map(lbl_id => {
           const lbl_id_s   	 = lbl_id.toString();
           const key_mod    	 = key_modi.get(lbl_id_s);
-          // const key_lbl 	 = ((keylbl) => {convert(keylbl,'qwerty',lyt[gLyt.lbl])});
-          // const key_lbl 	 = keylbl ; //+fn1();//+ lyt('q'); // layout_convert('q', 'qwerty', 'dvorak');
-          const key_lbl    	 = convert(keylbl,'qwerty',lyt[gLyt.lbl]);
+          const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
           const key_sym    	 = key_cap_sym.get(keylbl).get(lbl_id_s) || '';
           const key_command	 = keytest.get(    keylbl).get(lbl_id_s);
           if (key_command) {
-            tooltip_text     	+= `<tr>`;
-            modi_list.map(mod	=> {
-              if (key_mod.includes(mod)) {
-                tooltip_text	+= `<td>${mod}</td>`;
-              } else {
-                tooltip_text	+= `<td></td>`;
-              };
-              });
-            tooltip_text	+= `<td>${key_lbl}</td>`;
-            tooltip_text	+= `<td>${key_sym}</td>`;
-            tooltip_text	+= `<td>${key_command}</td>`;
-            tooltip_text	+= `</tr>`; };
+            let row     	= tt_table.insertRow();
+            let row_data	= []
+            modi_list.map(mod => {
+              if (key_mod.includes(mod))	{ row_data.push(mod);
+              } else                    	{ row_data.push(''); }; });
+            row_data.push(key_lbl);
+            row_data.push(key_sym);
+            row_data.push(key_command);
+            row_data.map(c	=> {
+              let cell = row.insertCell();
+              let txt = document.createTextNode(c);
+              cell.appendChild(txt);
+            });
+          };
         });
-        tooltip_text	+= table_footer;
 
         // add tooltip listeners
-        el.lbl                         	= keylbl           	; // add lbl to allow ↓ callback functions to us it
-        el.ttt                         	= tooltip_text     	; //
+        el.ttt                         	= tt_div           	; //
+        el.lbl                         	= keylbl           	; // add lbl/cLytLbl to allow ↓ callbacks to use it
+        el.cLytLbl                     	= cLytLbl             	; // current layout
         el.addEventListener("mouseover"	, tooltip_1, false)	; // show tooltip
         el.addEventListener("mouseout" 	, tooltip_0, false)	; // hide
         el.addEventListener("click"    	, tooltip_0, false)	; // disable on click
