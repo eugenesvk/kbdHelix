@@ -1,4 +1,4 @@
-"use strict"; {
+export let gLyt = { lbl: "q" };
 const layout_string = {
   'qwerty'    	: String.raw`\`-=`+`qwertyuiop[]`+`asdfghjkl;'`+`zxcvbnm,./` + `!@#$%^&*()_+`+`QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>?'`,
   'dvorak'    	: String.raw`\`[]`+`',.pyfgcrl/=`+`aoeuidhtns-`+`;qjkxbmwvz` + `!@#$%^&*(){}`+`"<>PYFGCRL?+AOEUIDHTNS_:QJKXBMWVZ'`,
@@ -8,7 +8,7 @@ const layout_string = {
   'colemak_dh'	: String.raw`\`-=`+`qwfpbjluy;[]`+`arstgkneio'`+`zxcdvmh,./` + `!@#$%^&*()_+`+`QWFPBJLUY:{}ARSTGKNEIO"ZXCDVMH<>?'`,
   'neo2'      	: String.raw`^-\`` +`xvlcwkhgfqß´`+`uiaeosnrtdy`+`üöäpzbm,.j` + `°§ℓ»«$€„“”—¸`+`XVLCWKHGFQẞ˜UIAEOSNRTDYÜÖÄPZBM–•J`,
 };
-const lyt = {
+export const lyt = {
   'q':'qwerty','w':'workman','d':'dvorak','c':'colemak','a':'asset','cdh':'colemak_dh','n':'neo2',
   'qwerty':'q','workman':'w','dvorak':'d','colemak':'c','asset':'a','colemak_dh':'cdh','neo2':'n'};
 const button_name   	= ["btn_qwerty","btn_dvorak","btn_colemak","btn_colemak_dh","btn_workman","btn_neo2",];
@@ -17,7 +17,7 @@ const buttons       	= document.getElementsByClassName("btn"); // get a list of 
 const class_clicked 	= 'layout_button_clicked'; // class that applies a colored border
 const btn_default   	= 'btn_qwerty'; // default layout before any button is clicked
 
-function convert(src, from, to) {
+export function convert(src, from, to) {
   let ret         	= '';
   const layoutFrom	= layout_string[from];
   const layoutTo  	= layout_string[to];
@@ -27,6 +27,7 @@ function convert(src, from, to) {
   return ret;
 }
 const changeElementLayoutTo = ((layoutTo) => { // change kbd elements (have layout attribute)
+  gLyt.lbl = layoutTo;
   for (let el of document.querySelectorAll("*[lyt]")) {
     const layoutFrom	= el.getAttribute("lyt");
     const thisKey   	= el.textContent;
@@ -70,5 +71,4 @@ button_name.forEach(((x) => { // x=button id, e.g., 'btn_qwerty'
     changeKLELayoutTo(layoutForm, layoutTo)
   }, false);
 }));
-changeElementLayoutTo("q");
-}
+changeElementLayoutTo(gLyt.lbl);
