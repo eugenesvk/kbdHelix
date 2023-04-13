@@ -1,4 +1,5 @@
 import { convert, gLyt, lyt } from "/js/layout-convert.js";
+import modifew               	from '../config/modifew.json' assert {type: 'json'};
 window.onload=function(){ // optional since it depends on the way in which you fire events
 const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
@@ -19,14 +20,40 @@ let getSiblings = function (e) {
 
 // const key_cap_id = range(0, 8); // top 9 key labels only
 const key_cap_id = [0,2,4,6,8]; // but we only need corners + center
-const modifew_modes_pre	= '#keyboard.modifew-'
-const modifew_modes    	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp']
-const modifew_mode_sym 	= new Map(Object.entries({'m1NOR':'Ⓝ','m2INS':'ⓘ','m3SEL':'Ⓢ'
-  ,                    	  'nGoTo':'☰⮊' ,'nMatch':'☰🧩' ,'nSpace':'☰␠','nUnimpaired':''
-  ,                    	  'nView':'☰👁','nWindow':'☰🗔','nHelp':'☰?'}))
-const keylabel_path    	= '#keyboard-bg .key .keycap .keylabels .keylabel'
-const key_lbl_class    	= 'keylabel10'
+const modifew_modes_pre	= '#keyboard.modifew-';
+const modifew_modes    	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
+const modifew_mode_sym 	= {
+  'm1NOR'              	: {'icon':'Ⓝ'  	, 'path':'keys.normal'},
+  'm2INS'              	: {'icon':'ⓘ'  	, 'path':'keys.insert'},
+  'm3SEL'              	: {'icon':'Ⓢ'  	, 'path':'keys.select'},
+  'nGoTo'              	: {'icon':'☰⮊' 	, 'path':'keys.normal.g'},
+  'nMatch'             	: {'icon':'☰🧩' 	, 'path':'keys.normal.n'},
+  'nSpace'             	: {'icon':'☰␠' 	, 'path':'keys.normal.space'},
+  'nUnimpaired'        	: {'icon':'⧛☰⧚'	, 'path':'keys.normal.['},
+  'nView'              	: {'icon':'☰👁' 	, 'path':'keys.normal.p'},
+  'nWindow'            	: {'icon':'☰🗔' 	, 'path':'keys.normal.C-w'},
+  'nHelp'              	: {'icon':'☰?' 	, 'path':'keys.normal.F1'}
+};                     	//
+const keylabel_path    	= '#keyboard-bg .key .keycap .keylabels .keylabel';
+const key_lbl_class    	= 'keylabel10';
 
+function getNestedPath(xpth, map=modifew_mode_sym){
+  const pth = xpth.split('.');
+  return pth.reduce((a, b) => a[b], map);
+}
+
+function _parse_key_user(key_user) { // replace key modifiers with symbols A-A → ⎇⇧a
+  const _key_symb	= new Map(Object.entries({
+    '⎈':'C-','⎇':'A-',}));
+
+  _key_symb.forEach((v, k) => { // replace with symbols
+    if (key_user.includes(v)) {
+      key_user = key_user.replace(v,k);}
+  });
+  key_user = key_user.replace(/[A-Z]/,'⇧'); // replace caps
+
+  return key_user
+}
 const key_modi = new Map(Object.entries({0:'⇧',2:'⇧⎇',4:'⎈',6:'',8:'⎇'}));
 // console.log(key_modi.get('0'));
 const keytest = new Map();
@@ -113,7 +140,7 @@ modifew_modes.map(m => {
         let tt_table	= document.createElement('table');
         tt_table.classList.add('styled-table');
         tt_div.appendChild(tt_table);
-        const tooltip_header	= `${modifew_mode_sym.get(m)} ${keyLbl}`
+        const tooltip_header	= `${modifew_mode_sym[m]['icon']} ${keyLbl}`
         const table_header  	= ['m','o','d','Key','Sym','Command']
         setTableHead(tt_table, table_header)
         let tooltip_text	= tooltip_header;
