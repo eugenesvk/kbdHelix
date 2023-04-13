@@ -16,27 +16,27 @@ let getSiblings = function (e) {
     sibling = sibling.nextSibling;
   }
   return siblings;
-}
+};
 
-// const key_cap_id = range(0, 8); // top 9 key labels only
-const key_cap_id = [0,2,4,6,8]; // but we only need corners + center
+// const keyCapLblIDs = range(0, 8); // top 9 key labels only
+const keyCapLblIDs = [0,2,4,6,8]; // but we only need corners + center
 const modifew_modes_pre	= '#keyboard.modifew-';
 const modifew_modes    	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
 const lbl_modi = new Map([[0,'⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
-const modifew_mode_sym	= {
-  'm1NOR'             	: {'icon':'Ⓝ'  	, 'path':'keys.normal'      	, 'modi':lbl_modi },
-  'm2INS'             	: {'icon':'ⓘ'  	, 'path':'keys.insert'      	, 'modi':lbl_modi },
-  'm3SEL'             	: {'icon':'Ⓢ'  	, 'path':'keys.select'      	, 'modi':lbl_modi },
-  'nGoTo'             	: {'icon':'☰⮊' 	, 'path':'keys.normal.g'    	, 'modi':lbl_modi },
-  'nMatch'            	: {'icon':'☰🧩' 	, 'path':'keys.normal.n'    	, 'modi':lbl_modi },
-  'nSpace'            	: {'icon':'☰␠' 	, 'path':'keys.normal.space'	, 'modi':lbl_modi },
-  'nUnimpaired'       	: {'icon':'⧛☰⧚'	, 'path':'keys.normal.['    	, 'modi':lbl_modi },
-  'nView'             	: {'icon':'☰👁' 	, 'path':'keys.normal.p'    	, 'modi':lbl_modi },
-  'nWindow'           	: {'icon':'☰🗔' 	, 'path':'keys.normal.C-w'  	, 'modi':lbl_modi },
-  'nHelp'             	: {'icon':'☰?' 	, 'path':'keys.normal.F1'   	, 'modi':lbl_modi}
-};                    	//
-const keylabel_path   	= '#keyboard-bg .key .keycap .keylabels .keylabel';
-const key_lbl_class   	= 'keylabel10';
+const modifew_mode_sym = {
+  'm1NOR'      	: {'icon':'Ⓝ'  	, 'path':'keys.normal'      	, 'modi':lbl_modi },
+  'm2INS'      	: {'icon':'ⓘ'  	, 'path':'keys.insert'      	, 'modi':lbl_modi },
+  'm3SEL'      	: {'icon':'Ⓢ'  	, 'path':'keys.select'      	, 'modi':lbl_modi },
+  'nGoTo'      	: {'icon':'☰⮊' 	, 'path':'keys.normal.g'    	, 'modi':lbl_modi },
+  'nMatch'     	: {'icon':'☰🧩' 	, 'path':'keys.normal.n'    	, 'modi':lbl_modi },
+  'nSpace'     	: {'icon':'☰␠' 	, 'path':'keys.normal.space'	, 'modi':lbl_modi },
+  'nUnimpaired'	: {'icon':'⧛☰⧚'	, 'path':'keys.normal.['    	, 'modi':lbl_modi },
+  'nView'      	: {'icon':'☰👁' 	, 'path':'keys.normal.p'    	, 'modi':lbl_modi },
+  'nWindow'    	: {'icon':'☰🗔' 	, 'path':'keys.normal.C-w'  	, 'modi':lbl_modi },
+  'nHelp'      	: {'icon':'☰?' 	, 'path':'keys.normal.F1'   	, 'modi':lbl_modi}
+};
+const keylabel_path	= '#keyboard-bg .key .keycap .keylabels .keylabel';
+const key_lbl_class	= 'keylabel10';
 
 function getNestedPath(xpth, map=modifew_mode_sym){
   const pth = xpth.split('.');
@@ -59,18 +59,39 @@ function _parse_key_user(key_user) { // replace key modifiers with symbols A-A �
     if (key_user.includes(v)) {
       key_user = key_user.replace(v,k);}
   });
-  key_user = key_user.replace(/[A-Z]/,'⇧'); // replace caps
+  key_user = key_user.replace(/([A-Z])/,'⇧$1').toLowerCase(); // replace caps
 
   return key_user;
 }
-const key_modi = new Map(Object.entries({0:'⇧',2:'⇧⎇',4:'⎈',6:'',8:'⎇'}));
-// console.log(key_modi.get('0'));
-const keytest = new Map();
-keytest.set('b', new Map(Object.entries({0:'⇧b',2:'⇧⎇b',4:'b4',6:'b6',8:'b8'})));
-// console.log(keytest.get('b'));
-const key_cap_sym = new Map();
-if (key_cap_sym.has('a')) {
-  console.log('not');
+
+
+function pt(...items) { // helper print var's type and var's value
+  for (const item of items) {
+    console.log(typeof(item),item);
+  }
+}
+function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
+  return new RegExp('(?<![a-z])'+letter+'$', 'i');
+}
+function getKeyCombo(k_in, keys, modi=lbl_modi) { // for 'b' get ⇧=>switch_to_lowercase, ⎈=>switch_to_uppercase ''=>no_op at each label respectively: {'0' => {…}, '4' => {…}, '6' => {…}}
+  // from {B:..lower, A-tab:move, C-b:...upper, b:no_op}
+  const k = k_in.toLowerCase();
+  let key_fmt, cmd;
+  let keyCombo = new Map();
+  function setKeyComboItem(modi,lbl_id) {
+    if (key_fmt === lbl_modi.get(lbl_id)) {
+      keyCombo.set(lbl_id,{'modi':key_fmt, 'cmd':cmd});
+    }
+  }
+  const reLastK = reLastLetter(k);
+  for (const key in keys) {
+    if (reLastK.test(key)) {
+      key_fmt	= _parse_key_user(key).replace(new RegExp(k+'$'),'');
+      cmd    	= keys[key];
+      lbl_modi.forEach(setKeyComboItem);
+    }
+  }
+  return keyCombo;
 }
 
 const reLblClass = new RegExp(String.raw`keylabel(\d{1,2})`);
@@ -117,17 +138,27 @@ function setTableHead(table, keys) {
   });
 }
 
+const key_cap_sym = new Map();
+// something is wrong with the loop, only nView gets looped to get the key
 modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
-  // console.log('mode=¦',m,'¦'); //dbg
-  key_cap_id.map(lbl_id => { // register hovers for the top 9 key labels only
+  // pt('mode=¦'+mode+'¦'); //dbg
+  keyCapLblIDs.map(lbl_id => { // register hovers for the top 9 key labels only
+    // TODO: find refactor, we know label ids, so instead of searhing for a sibling, ue it directly
+    //
+    //
+    //
+    // pt('lbl_id=¦'+lbl_id+'¦'); //dbg
     const lbl_id_s = lbl_id.toString();
     document.querySelectorAll(mode+' '+keylabel_path  + '.keylabel'+lbl_id_s).forEach((el, ind, listObj) => {
       const thisLbl 	= el.innerText;
       const siblings	= getSiblings(el);
-      let keyLbl    	= '';
-      siblings.map(x => { // find a key label
-        if (x.classList.contains(key_lbl_class)) { keyLbl = x.innerText; } });
+      // pt('mode=¦'+mode+'¦ lbl_id=¦'+lbl_id+'¦'); //dbg
+      let keyLbl	= '';
+      siblings.map(sibling => { // find a key label
+        if (sibling.classList.contains(key_lbl_class)) {
+          keyLbl = sibling.innerText;
+        } });
       if (keyLbl){        // now that we know key label, store all cap symbols for this key
         const keylbl = keyLbl[0].toLowerCase(); // take only the first label (number keys have duplicate 1!)
         if (key_cap_sym.has(keylbl)) { // avoid looping for cap symbols if we already have them
@@ -149,27 +180,30 @@ modifew_modes.map(m => {
         let tt_div           	= document.createElement('div');
         let tt_table         	= document.createElement('table');
         tt_table.classList.add('styled-table');
+        const tooltip_header	= `${keyIcon} ${keyLbl}`;
+        tt_div.innerHTML    	= tooltip_header;
+        const table_header  	= ['m','o','d','Key','Sym','Command'];
         tt_div.appendChild(tt_table);
-        const tooltip_header	= `${modifew_mode_sym[m]['icon']} ${keyLbl}`
-        const table_header  	= ['m','o','d','Key','Sym','Command']
-        setTableHead(tt_table, table_header)
-        let tooltip_text	= tooltip_header;
-        const cLytLbl   	= gLyt.lbl;  // reads layout only at page load
-        key_cap_id.map(lbl_id => {
-          const lbl_id_s   	 = lbl_id.toString();
-          const key_mod    	 = key_modi.get(lbl_id_s);
+        setTableHead(tt_table, table_header);
+        const cLytLbl  	= gLyt.lbl;  // reads layout only at page load
+        const key_combo	= getKeyCombo(keyLbl, keys); // {0:'⇧'=>'switch_to_lowercase'>..}
+        keyCapLblIDs.map(lbl_id => {
+          const lbl_id_s	 = lbl_id.toString();
+          if (!key_combo.has(lbl_id)) { return; } // break sequence as no combos for this label
+          const key_mod_cmd	 = key_combo.get(lbl_id);
+          const key_mod    	 = key_mod_cmd.modi;
+          const key_cmd    	 = key_mod_cmd.cmd;
           const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
           const key_sym    	 = key_cap_sym.get(keylbl).get(lbl_id_s) || '';
-          const key_command	 = keytest.get(    keylbl).get(lbl_id_s);
-          if (key_command) {
+          if (key_cmd) {
             let row     	= tt_table.insertRow();
             let row_data	= [];
             modi_list.map(mod => {
-              if (key_mod.includes(mod))	{ row_data.push(mod);
-              } else                    	{ row_data.push(''); } });
+              if (key_mod === mod)	{ row_data.push(mod);
+              } else              	{ row_data.push(''); } });
             row_data.push(key_lbl);
             row_data.push(key_sym);
-            row_data.push(key_command);
+            row_data.push(key_cmd);
             row_data.map(c	=> {
               let cell = row.insertCell();
               let txt = document.createTextNode(c);
