@@ -39,17 +39,27 @@ function getModeKeys(mode){
   return [keys,icon];
 }
 
-function _parse_key_user(key_user) { // replace key modifiers with symbols A-A → ⎇⇧a
-  const _key_symb	= new Map(Object.entries({
-    '⎈':'C-','⎇':'A-',}));
+const keySymbLblMod	= new Map([['⎈','C-'], ['⎇','A-']]);
+const keySymbLbl   	= new Map([['⏎','ret']]);
 
-  _key_symb.forEach((v, k) => { // replace with symbols
-    if (key_user.includes(v)) {
-      key_user = key_user.replace(v,k);}
+function keyLblToSymbMod(key_user) { // replace key modifiers with symbols A-A → ⎇⇧a
+  keySymbLblMod.forEach((v, k) => { // replace with symbols
+    const reV = RegExp(v, 'i');
+    if (reV.test(key_user)) {
+      key_user = key_user.replace(reV,k);}
   });
   key_user = key_user.replace(/([A-Z])/,'⇧$1').toLowerCase(); // replace caps
 
   return key_user;
+}
+function keySymbToLbl(key_symb) { // ⏎ to ret (keySymbLbl = ['⏎','ret']
+  keySymbLblMod.forEach((v, k) => {
+    const reK = RegExp(k, 'i');
+    if (reK.test(key_symb)) {key_symb = key_symb.replace(reK,v);} });
+  keySymbLbl.forEach((v, k) => {
+    const reK = RegExp(k+'$', 'i');
+    if (reK.test(key_symb)) {key_symb = key_symb.replace(reK,v);} });
+  return key_symb;
 }
 
 // my button
