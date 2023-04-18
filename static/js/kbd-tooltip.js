@@ -184,7 +184,7 @@ modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
-    const keyLbl    	= el.innerText;
+    const keyLbl    	= el.innerText.trim();
     const key_cap_el	= [];
 
     if (keyLbl) { // now that we know key label, store all cap symbols for this key
