@@ -194,8 +194,8 @@ function setTableHead(table, keys) {
   });
 }
 
-const key_cap_sym = new Map();
 modifew_modes.map(m => {
+  const key_cap_sym = new Map();
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
