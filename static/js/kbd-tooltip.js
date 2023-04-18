@@ -187,7 +187,7 @@ modifew_modes.map(m => {
     const keyLbl    	= el.innerText.trim();
     const key_cap_el	= [];
 
-    if (keyLbl) { // now that we know key label, store all cap symbols for this key
+    if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
       const keylbl 	= keyLbl[0].toLowerCase(); // take only the 1st label (number keys have duplicate 1!)
       const keyCaps	= getSiblingKeyCaps(el); // get all keycaps with valid labels and one of 5 valid positions
       // pp({mode},{keyCaps},{keylbl});
