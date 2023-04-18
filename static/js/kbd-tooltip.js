@@ -103,7 +103,7 @@ let getSiblingKeyCaps = function (e, ids) { // get only valid sibling keycap ele
   let sibling  = e.parentNode.firstChild;
   while (sibling) {
     if (sibling.nodeType === 1 && sibling !== e &&
-        sibling.innerText && // keycap label exists...
+        (sibling.innerText || sibling.innerHTML) && // keycap label exists...
         isValidLblPos(sibling, ids) ) { // ... and is one of the valid label positions
       siblings.push(sibling); }
     sibling = sibling.nextSibling;
@@ -217,7 +217,8 @@ modifew_modes.map(m => {
             if (reLblClass.test(xcl)) {
               lbl_cls = xcl.match(reLblClass)[1]; }
           });
-          key_cap_sym.get(keylbl).set(lbl_cls,x.innerText);
+          if        (x.innerText) { key_cap_sym.get(keylbl).set(lbl_cls,x.innerText);
+          } else if (x.innerHTML) { key_cap_sym.get(keylbl).set(lbl_cls,'�'       );}
         });
         // p('stored keymap for=¦',keylbl,'¦',key_cap_sym.get(keylbl));
       }
