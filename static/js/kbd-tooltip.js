@@ -213,6 +213,7 @@ modifew_modes.map(m => {
         const key_mod_cmd	 = key_combo.get(lbl_id);
         const key_mod    	 = key_mod_cmd.modi;
         const key_cmd    	 = key_mod_cmd.cmd;
+        if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
         const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
         const key_sym    	 = key_cap_sym.get(keylbl).get(lbl_id_s) || '';
         if (key_cmd) {
