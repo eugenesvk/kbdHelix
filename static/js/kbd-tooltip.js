@@ -39,8 +39,17 @@ function getModeKeys(mode){
   return [keys,icon];
 }
 
-const keySymbLblMod	= new Map([['⎈','C-'], ['⎇','A-']]);
-const keySymbLbl   	= new Map([['⏎','ret']]);
+const keySymbLblMod	= new Map([['⎈','C-'], ['⎇','A-'], ['⇧','S-']]);
+const keySymbLbl   	= new Map([['⏎','ret'],['↩','ret'],
+  ['␠','space'],['␣','space'],
+  ['⌦','del'],['␡','del'],
+  ['␈','backspace'],['⌫','backspace'],
+  ['▼','down'],['▲','up'],['◀','left'],['▶','right'],
+  ['⇟','pagedown'],['⇞','pageup'],
+  ['⇤','home'],['⭰','home'],['⤒','home'],['⇱','home'],['↖','home'],
+  ['⭲','end'],['⇥','end'],['⤓','end'],['⇲','end'],['↘','end'],
+]);
+
 
 function keyLblToSymbMod(key_user) { // replace key modifiers with symbols A-A → ⎇⇧a
   keySymbLblMod.forEach((v, k) => { // replace with symbols
