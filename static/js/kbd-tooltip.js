@@ -65,11 +65,18 @@ function _parse_key_user(key_user) { // replace key modifiers with symbols A-A �
 }
 
 
-function pt(...items) { // helper print var's type and var's value
+function p(...items) { // helper console log
+  console.log(...items); }
+function pp(...items) { // helper print var names, must be passed as {objects}
   for (const item of items) {
-    console.log(typeof(item),item);
-  }
-}
+    const [iName]	= Object.keys(item);
+    const iVal   	= item[iName];
+    const iT     	= typeof(iVal);
+    console.log(`${iName}(${iT})=¦`,iVal,'¦'); }
+ }
+function pt(...items) { // helper print var's type and var's value
+  for (const item of items) { console.log(typeof(item),item); } }
+
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
   return new RegExp('(?<![a-z])'+letter+'$', 'i');
 }
