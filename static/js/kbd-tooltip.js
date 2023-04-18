@@ -222,8 +222,8 @@ modifew_modes.map(m => {
         // p('stored keymap for=¦',keylbl,'¦',key_cap_sym.get(keylbl));
       }
       // Generate tooltip table
-      let tt_div           	= document.createElement('div');
-      let tt_table         	= document.createElement('table');
+      let tt_div  	= document.createElement('div');
+      let tt_table	= document.createElement('table');
       tt_table.classList.add('styled-table');
       const tooltip_header	= `${keyIcon} ${keyLbl}`;
       tt_div.innerHTML    	= tooltip_header;
@@ -231,8 +231,8 @@ modifew_modes.map(m => {
       tt_div.appendChild(tt_table);
       setTableHead(tt_table, table_header);
       const cLytLbl  	= gLyt.lbl;  // reads layout only at page load
-      let showTT     	= false; // hide empty tooltips (header without rows)
       const key_combo	= getKeyCombo(keylbl, keys, lbl_modis); // {0:'⇧'=>'switch_to_lowercase'>..}
+      let showTT	= false; // hide empty tooltips (header without rows)
       cap_ids.map(lbl_id => {
         const lbl_id_s	 = lbl_id.toString();
         if (!key_combo.has(lbl_id)) { return; } // break sequence as no combos for this label
