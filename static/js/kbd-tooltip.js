@@ -1,5 +1,6 @@
 import { convert, gLyt, lyt }	from "/js/layout-convert.js";
 import modifew               	from '../config/modifew.json' assert {type: 'json'}
+
 window.onload=function(){ // optional since it depends on the way in which you fire events
 const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
