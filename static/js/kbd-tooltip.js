@@ -6,24 +6,28 @@ const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
   (_, i) => start + (i * step));
 
-// const keyCapLblIDs = range(0, 8); // top 9 key labels only
-const keyCapLblIDs = [0,2,4,6,8]; // but we only need corners + center
-const keyCapLblIDs_ins = [0,1,2,4,6,8]; // and sometimes top
-const modifew_modes_pre	= '#keyboard.modifew-';
-const modifew_modes    	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
-const lbl_modi         	= new Map([[0,'⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
-const lbl_modi_ins     	= new Map([[0,'⇧'],[1,'⎈⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]);
+// const keyCapLblIDs   	= range(0, 8)  	; // top 9 key labels only
+const keyCapLblIDs      	= [0,  2,4,6,8]	; // but we only need corners + center
+const keyCapLblIDs_ins  	= [0,1,2,4,6,8]	; // and sometimes top
+const keyCapLblIDs_sp   	= [0,      6  ]	; // or just the main label
+const keyCapLblIDs_unimp	= [0,      6  ]	;
+const modifew_modes_pre 	= '#keyboard.modifew-';
+const modifew_modes     	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
+const lbl_modi          	= new Map([[0,'⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
+const lbl_modi_ins      	= new Map([[0,'⇧'],[1,'⎈⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]);
+const lbl_modi_sp       	= new Map([[0,'☰␜'],[6,'']]);
+const lbl_modi_unimp    	= new Map([[0,'⇧'],[6,'']]);
 const modifew_mode_sym = {
-  'm1NOR'      	: {'icon':'Ⓝ'  	, 'path':'keys.normal'      	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'm2INS'      	: {'icon':'ⓘ'  	, 'path':'keys.insert'      	, 'modi':lbl_modi_ins	, 'id':keyCapLblIDs_ins},
-  'm3SEL'      	: {'icon':'Ⓢ'  	, 'path':'keys.select'      	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nGoTo'      	: {'icon':'☰⮊' 	, 'path':'keys.normal.g'    	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nMatch'     	: {'icon':'☰🧩' 	, 'path':'keys.normal.n'    	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nSpace'     	: {'icon':'☰␠' 	, 'path':'keys.normal.space'	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nUnimpaired'	: {'icon':'⧛☰⧚'	, 'path':'keys.normal.['    	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nView'      	: {'icon':'☰👁' 	, 'path':'keys.normal.p'    	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nWindow'    	: {'icon':'☰🗔' 	, 'path':'keys.normal.C-w'  	, 'modi':lbl_modi    	, 'id':keyCapLblIDs},
-  'nHelp'      	: {'icon':'☰?' 	, 'path':'keys.normal.F1'   	, 'modi':lbl_modi    	, 'id':keyCapLblIDs}
+  'm1NOR'      	: {'icon':'Ⓝ'  	, 'path':'keys.normal'      	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+  'm2INS'      	: {'icon':'ⓘ'  	, 'path':'keys.insert'      	, 'modi':lbl_modi_ins  	, 'id':keyCapLblIDs_ins},
+  'm3SEL'      	: {'icon':'Ⓢ'  	, 'path':'keys.select'      	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+  'nGoTo'      	: {'icon':'☰⮊' 	, 'path':'keys.normal.g'    	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+  'nMatch'     	: {'icon':'☰🧩' 	, 'path':'keys.normal.n'    	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+  'nSpace'     	: {'icon':'☰␠' 	, 'path':'keys.normal.space'	, 'modi':lbl_modi_sp   	, 'id':keyCapLblIDs_sp},
+  'nUnimpaired'	: {'icon':'⧛☰⧚'	, 'path':'keys.normal.['    	, 'modi':lbl_modi_unimp	, 'id':keyCapLblIDs_unimp},
+  'nView'      	: {'icon':'☰👁' 	, 'path':'keys.normal.p'    	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+  'nWindow'    	: {'icon':'☰🗔' 	, 'path':'keys.normal.C-w'  	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+  'nHelp'      	: {'icon':'☰?' 	, 'path':'keys.normal.F1'   	, 'modi':lbl_modi      	, 'id':keyCapLblIDs}
 };
 const keylabel_path	= '#keyboard-bg .key .keycap .keylabels .keylabel';
 const key_lbl_class	= 'keylabel10';
