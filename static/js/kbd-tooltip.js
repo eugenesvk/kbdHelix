@@ -242,7 +242,7 @@ modifew_modes.map(m => {
         if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
         const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
         const key_sym    	 = key_cap_sym.get(keylbl).get(lbl_id_s) || '';
-        if (key_cmd) {
+        if (key_cmd && key_sym) {
           showTT      	= true;
           let row     	= tt_table.insertRow();
           let row_data	= [];
