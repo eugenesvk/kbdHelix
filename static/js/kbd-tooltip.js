@@ -125,7 +125,7 @@ function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' 
 }
 function getKeyCombo(k_in, keys, modi=lbl_modi) { // for 'b' get ⇧=>switch_to_lowercase, ⎈=>switch_to_uppercase ''=>no_op at each label respectively: {'0' => {…}, '4' => {…}, '6' => {…}}
   // from {B:..lower, A-tab:move, C-b:...upper, b:no_op}
-  const k = k_in.toLowerCase();
+  const k = keySymbToLbl(k_in).toLowerCase();
   let key_fmt, cmd;
   let keyCombo = new Map();
   function setKeyComboItem(modi,lbl_id) {
@@ -136,7 +136,7 @@ function getKeyCombo(k_in, keys, modi=lbl_modi) { // for 'b' get ⇧=>switch_to_
   const reLastK = reLastLetter(k);
   for (const key in keys) {
     if (reLastK.test(key)) {
-      key_fmt	= _parse_key_user(key).replace(new RegExp(escRe(k)+'$'),'');
+      key_fmt	= keyLblToSymbMod(key).replace(new RegExp(escRe(k)+'$'),'');
       cmd    	= keys[key];
       lbl_modi.forEach(setKeyComboItem);
     }
