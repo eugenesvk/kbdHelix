@@ -207,6 +207,7 @@ modifew_modes.map(m => {
       setTableHead(tt_table, table_header);
       const cLytLbl  	= gLyt.lbl;  // reads layout only at page load
       const key_combo	= getKeyCombo(keylbl, keys); // {0:'⇧'=>'switch_to_lowercase'>..}
+      let showTT     	= false; // hide empty tooltips (header without rows)
       keyCapLblIDs.map(lbl_id => {
         const lbl_id_s	 = lbl_id.toString();
         if (!key_combo.has(lbl_id)) { return; } // break sequence as no combos for this label
@@ -217,6 +218,7 @@ modifew_modes.map(m => {
         const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
         const key_sym    	 = key_cap_sym.get(keylbl).get(lbl_id_s) || '';
         if (key_cmd) {
+          showTT      	= true;
           let row     	= tt_table.insertRow();
           let row_data	= [];
           modi_list.map(mod => {
@@ -234,6 +236,7 @@ modifew_modes.map(m => {
       });
 
       // Add tooltip data/listeners to the whole key
+      if (!showTT) {return;}
       const keycap = el.closest(".keylabels").closest(".keycap"); // find the grandparent keycap element
       keycap.ttt    	= tt_div 	; // tooltip table div
       keycap.lbl    	= keylbl 	; // add lbl/cLytLbl to allow ↓ callbacks to use it
