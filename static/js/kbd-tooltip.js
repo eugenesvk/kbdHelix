@@ -86,6 +86,8 @@ let getSiblingKeyCaps = function (e) { // get only valid sibling keycap elements
 };
 
 
+function escRe  (string) { return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); } // $& = whole string
+function escRepl(string) { return string.replace(/\$/g                , '$$$$'); }
 function p(...items) { // helper console log
   console.log(...items); }
 function pp(...items) { // helper print var names, must be passed as {objects}
@@ -99,7 +101,7 @@ function pt(...items) { // helper print var's type and var's value
   for (const item of items) { console.log(typeof(item),item); } }
 
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
-  return new RegExp('(?<![a-z])'+letter+'$', 'i');
+  return new RegExp('(?<![a-z])'+escRe(letter)+'$', 'i');
 }
 function getKeyCombo(k_in, keys, modi=lbl_modi) { // for 'b' get ⇧=>switch_to_lowercase, ⎈=>switch_to_uppercase ''=>no_op at each label respectively: {'0' => {…}, '4' => {…}, '6' => {…}}
   // from {B:..lower, A-tab:move, C-b:...upper, b:no_op}
@@ -114,7 +116,7 @@ function getKeyCombo(k_in, keys, modi=lbl_modi) { // for 'b' get ⇧=>switch_to_
   const reLastK = reLastLetter(k);
   for (const key in keys) {
     if (reLastK.test(key)) {
-      key_fmt	= _parse_key_user(key).replace(new RegExp(k+'$'),'');
+      key_fmt	= _parse_key_user(key).replace(new RegExp(escRe(k)+'$'),'');
       cmd    	= keys[key];
       lbl_modi.forEach(setKeyComboItem);
     }
