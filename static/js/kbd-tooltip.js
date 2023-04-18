@@ -205,7 +205,7 @@ modifew_modes.map(m => {
       tt_div.appendChild(tt_table);
       setTableHead(tt_table, table_header);
       const cLytLbl  	= gLyt.lbl;  // reads layout only at page load
-      const key_combo	= getKeyCombo(keyLbl, keys); // {0:'⇧'=>'switch_to_lowercase'>..}
+      const key_combo	= getKeyCombo(keylbl, keys); // {0:'⇧'=>'switch_to_lowercase'>..}
       keyCapLblIDs.map(lbl_id => {
         const lbl_id_s	 = lbl_id.toString();
         if (!key_combo.has(lbl_id)) { return; } // break sequence as no combos for this label
