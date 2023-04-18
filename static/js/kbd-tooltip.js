@@ -241,8 +241,8 @@ modifew_modes.map(m => {
           let row     	= tt_table.insertRow();
           let row_data	= [];
           modi_list.map(mod => {
-            if (key_mod === mod)	{ row_data.push(mod);
-            } else              	{ row_data.push(''); } });
+            if (key_mod.includes(mod))	{ row_data.push(mod);
+            } else                    	{ row_data.push(''); } });
           row_data.push(key_lbl);
           row_data.push(key_sym);
           row_data.push(key_cmd);
