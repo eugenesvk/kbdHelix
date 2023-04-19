@@ -67,7 +67,7 @@ function getNestedPath(xpth, map){
   const pth = xpth.split('.');
   return pth.reduce((a, b) => a[b], map);
 }
-function getModeKeys(mode, mode_sym = modifew_mode_sym){
+function getModeKeys(mode, mode_sym = modifew_mode_sym, prefixNm = ''){
   const path2icon	= mode + '.icon';
   const path2path	= mode + '.path';
   const path2modi	= mode + '.modi';
@@ -77,7 +77,14 @@ function getModeKeys(mode, mode_sym = modifew_mode_sym){
   const icon     	= getNestedPath(path2icon,mode_sym);
   const modis    	= getNestedPath(path2modi,mode_sym);
   const ids      	= getNestedPath(path2id,mode_sym);
-  return [keys,icon,modis,ids];
+  let chord;
+  if (prefixNm) { //
+    const prefixNm_mirr = prefixNm.replace('[',']'); // fix for unimpaired having two [] keys
+    chord	= path2keys.replace(prefixNm,'').replace(prefixNm_mirr,'').strip('.');
+  } else {
+    chord	= '';
+  }
+  return [keys,icon,modis,ids, chord];
 }
 
 const keySymbLblMod	= new Map([['⎈','C-'], ['⎇','A-'], ['⇧','S-']]);
@@ -164,14 +171,15 @@ function pt(...items) { // helper print var's type and var's value
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
   return new RegExp('(?<![a-z])'+escRe(letter)+'$', 'i');
 }
-function getKeyCombo(k_in, keys, lbl_modis=lbl_modi) { // for 'b' get ⇧=>switch_to_lowercase, ⎈=>switch_to_uppercase ''=>no_op at each label respectively: {'0' => {…}, '4' => {…}, '6' => {…}}
-  // from {B:..lower, A-tab:move, C-b:...upper, b:no_op}
+function getKeyCombo(k_in, keys, lbl_modis=lbl_modi, chord='') { // for 'b' at each label id: {'0'=>{…},...
+  // from {B:..lower, A-tab:move, C-b:...upper, b:no_op} to
+  // get ⇧=>...lower,             ⎈=>...upper ''=>no_op
   const k = keySymbToLbl(k_in).toLowerCase();
   let key_fmt, cmd;
   let keyCombo = new Map();
   function setKeyComboItem(modi,lbl_id) {
     if (key_fmt === lbl_modis.get(lbl_id)) {
-      keyCombo.set(lbl_id,{'modi':key_fmt, 'cmd':cmd});
+      keyCombo.set(lbl_id,{'modi':key_fmt, 'cmd':cmd, 'chord':chord});
     }
   }
   const reLastK = reLastLetter(k);
@@ -246,8 +254,10 @@ function mergeSubmodes(m, keylbl) {
   let keyCombos = new Map();
   const subModes = modifew_mode_sub_sym[m];
   for (const [subNm, subMode] of Object.entries(subModes)) {
-    const [keymap, mIcon, lbl_modis, capIDs] = getModeKeys(subNm, subModes);
-    const keyCombo = getKeyCombo(keylbl, keymap, lbl_modis);
+    const path2path	= m +'.'+ 'path';
+    const prefix = getNestedPath(path2path,modifew_mode_sym);
+    const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(subNm, subModes, prefix);
+    const keyCombo = getKeyCombo(keylbl, keymap, lbl_modis, chord);
     keyCombos = new Map([...keyCombos, ...keyCombo]);
   }
   return keyCombos;
@@ -258,12 +268,11 @@ modifew_modes.map(m => {
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
     const keyLbl	= el.innerText.trim();
     if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
-      // pp({mode},{keyCaps},{keylbl});
-      const [keymap, mIcon, lbl_modis, capIDs] = getModeKeys(m);
+      const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(m);
       const keylbl   	= keyLbl[0].toLowerCase(); // take only the 1st label (number keys have duplicate 1!)
       const keyCaps  	= getSiblingKeyCaps(el, capIDs); // get all keycaps with valid labels in valid positions
       const keyCapSym	= storeKeyCap(keylbl, keyCaps); // store all valid keycap symbols
-      const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis); // {0:'⇧'=>'switch_to_lowercase'>..}
+      const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis, chord); // {0:'⇧'=>'switch_to_lowercase'>..}
 
       let keyCombo;
       if (m in modifew_mode_sub_sym) { // add submodes in place of modifiers
@@ -272,6 +281,7 @@ modifew_modes.map(m => {
       } else {
         keyCombo = keyComboM;
       }
+
       // Generate tooltip table
       let tt_div  	= document.createElement('div');
       let tt_table	= document.createElement('table');
@@ -288,6 +298,7 @@ modifew_modes.map(m => {
         const key_mod_cmd	 = keyCombo.get(lbl_id);
         const key_mod    	 = key_mod_cmd.modi;
         const key_cmd    	 = key_mod_cmd.cmd;
+        const key_chord  	 = key_mod_cmd.chord;
         if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
         const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
         const key_sym    	 = keyCapSym.get(keylbl).get(lbl_id) || '';
@@ -302,7 +313,9 @@ modifew_modes.map(m => {
             const modeSym = lbl_modis.get(lbl_id);
             if (modeSym)	{ row_data.push(modeSym);
             } else      	{ row_data.push(''  );}
-            row_data.push('');row_data.push('');
+            row_data.push('');
+            if (key_chord)	{ row_data.push(key_chord);
+            } else        	{ row_data.push(''  );}
           }
           row_data.push(key_lbl);
           row_data.push(key_sym);
