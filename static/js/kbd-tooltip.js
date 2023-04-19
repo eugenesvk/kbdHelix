@@ -1,5 +1,7 @@
-import { convert, gLyt, lyt }	from "/js/layout-convert.js";
-import modifew               	from '../config/modifew.json' assert {type: 'json'}
+import { gLyt, lyt, Case 	,
+  convert, convertCaseLyt	,
+  getCaseLyt }           	from "/js/layout-convert.js";
+import modifew           	from '../config/modifew.json' assert {type: 'json'}
 
 window.onload=function(){ // optional since it depends on the way in which you fire events
 const range = (start, stop, step=1) => Array.from(
@@ -103,7 +105,14 @@ function keyLblToSymbMod(key_user) { // replace key modifiers with symbols A-A �
     if (reV.test(key_user)) {
       key_user = key_user.replace(reV,k);}
   });
-  key_user = key_user.replace(/([A-Z])/,'⇧$1').toLowerCase(); // replace caps
+  const reLastChar	= new RegExp('(?<![a-z])(.)$', 'i');
+  if (reLastChar.test(key_user)) {
+    const lastChar = key_user.match(reLastChar)[1];
+    if (getCaseLyt(lastChar,'qwerty') === Case.U) { // replace caps
+      key_user = key_user.replace(reLastChar,'⇧'+convertCaseLyt(lastChar, 'qwerty', Case.l));
+    }
+  }
+  // key_user = key_user.replace(/([A-Z])/,'⇧$1').toLowerCase();
 
   return key_user;
 }
@@ -169,10 +178,11 @@ function pt(...items) { // helper print var's type and var's value
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
   return new RegExp('(?<![a-z])'+escRe(letter)+'$', 'i');
 }
-function getKeyCombo(k_in, keys, lbl_modis=lbl_modi, chord='') { // for 'b' at each label id: {'0'=>{…},...
+function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at each label id: {'0'=>{…},...
   // from {B:..lower, A-tab:move, C-b:...upper, b:no_op} to
   // get ⇧=>...lower,             ⎈=>...upper ''=>no_op
   const k = keySymbToLbl(k_in).toLowerCase();
+  const K = convertCaseLyt(k, 'qwerty', Case.U) || k; // test match for > when .
   let key_fmt, cmd;
   let keyCombo = new Map();
   function setKeyComboItem(modi,lbl_id) {
@@ -180,11 +190,12 @@ function getKeyCombo(k_in, keys, lbl_modis=lbl_modi, chord='') { // for 'b' at e
       keyCombo.set(lbl_id,{'modi':key_fmt, 'cmd':cmd, 'chord':chord});
     }
   }
-  const reLastK = reLastLetter(k);
-  for (const key in keys) {
-    if (reLastK.test(key)) {
-      key_fmt	= keyLblToSymbMod(key).replace(new RegExp(escRe(k)+'$'),'');
-      cmd    	= keys[key];
+  const reLastk	= reLastLetter(k);
+  const reLastK	= reLastLetter(K);
+  for (const key_from in keymap) {
+    if (reLastk.test(key_from) || reLastK.test(key_from)) { // match either > or .
+      key_fmt	= keyLblToSymbMod(key_from).replace(reLastk,'');
+      cmd    	= keymap[key_from];
       lbl_modis.forEach(setKeyComboItem);
     }
   }
