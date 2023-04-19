@@ -31,9 +31,7 @@ const lbl_modi_ins      	= new Map([[0,'⇧'],[1,'⎈⇧'],[2,'⎇⇧'],[4,'⎈'
 const lbl_modi_sp       	= new Map([[0,'☰␜'],         [2,'☰⟪'],[4,'🌐'],[6,''],[8,'☰®']]); // to a submode...
 const lbl_modi_unimp    	= new Map([[0,'⧛ℂ'],         [2,'ℂ⧚'],          [6,'⧛☰'],[8,'☰⧛']]);
 function lbl_modi_n(n)  	{
-  const mapn            	= new Map([[n,'']]);
-  return mapn;
-}
+  return                	 new Map([[n,'']]);}
 const modifew_mode_sym = {
   'm1NOR'      	: {'icon':'Ⓝ'  	, 'path':'keys.normal'      	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
   'm2INS'      	: {'icon':'ⓘ'  	, 'path':'keys.insert'      	, 'modi':lbl_modi_ins  	, 'id':keyCapLblIDs_ins},
