@@ -217,8 +217,21 @@ function setTableHead(table, keys) {
   });
 }
 
+function storeKeyCap(keylbl, keyCaps) {
+  let keyCapSym =       new Map() ;
+  keyCapSym.set(keylbl, new Map());
+  keyCaps.map(x => {
+    let lbl_cls;
+    x.classList.forEach(xcl => {
+      if (reLblClass.test(xcl)) {
+        lbl_cls = parseInt(xcl.match(reLblClass)[1]); } // get label ID from class name (6 from keylabel6)
+    });
+    if        (x.innerText) { keyCapSym.get(keylbl).set(lbl_cls,x.innerText);
+    } else if (x.innerHTML) { keyCapSym.get(keylbl).set(lbl_cls,'�'       );}
+  });
+  return keyCapSym;
+}
 modifew_modes.map(m => {
-  const key_cap_sym = new Map();
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
@@ -230,19 +243,9 @@ modifew_modes.map(m => {
       const keylbl 	= keyLbl[0].toLowerCase(); // take only the 1st label (number keys have duplicate 1!)
       const keyCaps	= getSiblingKeyCaps(el, cap_ids); // get all keycaps with valid labels and one of 5 valid positions
       // pp({mode},{keyCaps},{keylbl});
+      const keyCapSym	= storeKeyCap(keylbl, keyCaps); // store all valid keycap symbols
 
-      if (key_cap_sym.has(keylbl)) { // avoid looping for cap symbols if we already have them
       } else {
-        key_cap_sym.set(keylbl, new Map());
-        keyCaps.map(x => {
-          let lbl_cls	= '';
-          x.classList.forEach(xcl => {
-            if (reLblClass.test(xcl)) {
-              lbl_cls = xcl.match(reLblClass)[1]; }
-          });
-          if        (x.innerText) { key_cap_sym.get(keylbl).set(lbl_cls,x.innerText);
-          } else if (x.innerHTML) { key_cap_sym.get(keylbl).set(lbl_cls,'�'       );}
-        });
         // p('stored keymap for=¦',keylbl,'¦',key_cap_sym.get(keylbl));
       }
       // Generate tooltip table
