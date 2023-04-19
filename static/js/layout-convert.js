@@ -52,16 +52,18 @@ const changeKLELayoutTo = ((layoutFrom,layoutTo) => { // change labels of the KL
 });
 
 button_name.forEach(((x) => { // x=button id, e.g., 'btn_qwerty'
-  document.getElementById(x).addEventListener("click", function() {
+  const btn = document.getElementById(x);
+  if (btn) {
+    btn.addEventListener("click", function() {
     const layoutTo = lyt[x.slice(btn_prefix_len)];	// 'btn_Qwerty' → Q → Qwerty
-    changeElementLayoutTo(layoutTo);                  	// change kbd buttons to ↑
+    changeElementLayoutTo(layoutTo);              	// change kbd buttons to ↑
 
     let btn_active = btn_default;
     for (var i = 0; i < button_name.length; i++) {
-      let button_i = document.getElementsByClassName("btn")[i];
-      if (button_i.classList.contains(class_clicked)) {	// find last clicked button
-        btn_active = button_i.id;                      	// ...store its layout
-        button_i.classList.remove(class_clicked);      	// ...and remove its color border ()
+      let btn_i = document.getElementsByClassName("btn")[i];
+      if (btn_i && btn_i.classList.contains(class_clicked)) {	// find last clicked button
+        btn_active = btn_i.id;                               	// ...store its layout
+        btn_i.classList.remove(class_clicked);               	// ...and remove its color border ()
       }
     }
 
@@ -69,6 +71,6 @@ button_name.forEach(((x) => { // x=button id, e.g., 'btn_qwerty'
 
     const layoutForm = lyt[btn_active.slice(btn_prefix_len)];	// 'btn_Qwerty' → Q → Qwerty
     changeKLELayoutTo(layoutForm, layoutTo)
-  }, false);
+  }, false);}
 }));
 changeElementLayoutTo(gLyt.lbl);
