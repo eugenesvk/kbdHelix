@@ -194,6 +194,8 @@ function getKeyCombo(k_in, keys, lbl_modis=lbl_modi, chord='') { // for 'b' at e
 const reLblClass = new RegExp(String.raw`keylabel(\d{1,2})`);
 
 // Add tooltip scaffolding
+const table_header     	= ['m','o','d','Key','Sym','Command'];
+const ttKeyColI        	= table_header.indexOf('Key');
 const ttBox            	= document.createElement("div");
  ttBox.id              	= "keycap_tooltip_modi_cmd";
  ttBox.style.visibility	= "hidden"; // hide till mouse over
@@ -213,8 +215,9 @@ const tooltip_1 = ((evt) => {
     // console.log('layout changed',cLytLbl,gLyt.lbl);
     Array.from(tr).forEach(function(row,i) {
       if (i === 0) { return; }
-      const cell_val = row.cells[3].innerHTML;
-      row.cells[3].innerHTML = convert(lbl,'qwerty',lyt[gLyt.lbl]);
+      const cell_val = row.cells[ttKeyColI].innerHTML;
+
+      row.cells[ttKeyColI].innerHTML = convert(lbl,'qwerty',lyt[gLyt.lbl]);
       // console.log('cell_val=¦',convert(ttt.lbl, cell_val,'qwerty',lyt[gLyt.lbl]),'¦')
       evt.currentTarget.cLytLbl = gLyt.lbl;
     });
@@ -285,7 +288,6 @@ modifew_modes.map(m => {
       let tt_table	= document.createElement('table');
       tt_table.classList.add('styled-table');
       const tooltip_header	= `${mIcon} ${keyLbl}`;
-      const table_header  	= ['m','o','d','Key','Sym','Command'];
       tt_div.innerHTML    	= tooltip_header;
       tt_div.appendChild(tt_table);
       setTableHead(tt_table, table_header);
