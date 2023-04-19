@@ -270,9 +270,10 @@ modifew_modes.map(m => {
     const keyLbl	= el.innerText.trim();
     if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
       const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(m);
-      const keylbl   	= keyLbl[0].toLowerCase(); // take only the 1st label (number keys have duplicate 1!)
-      const keyCaps  	= getSiblingKeyCaps(el, capIDs); // get all keycaps with valid labels in valid positions
-      const keyCapSym	= storeKeyCap(keylbl, keyCaps); // store all valid keycap symbols
+      const cLytLbl  	= gLyt.lbl                     	; // reads layout only at page LOAD
+      const keylbl   	= keyLbl[0].toLowerCase()      	; // take only the 1st label (number keys have duplicate 1!)
+      const keyCaps  	= getSiblingKeyCaps(el, capIDs)	; // get all keycaps with valid labels in valid positions
+      const keyCapSym	= storeKeyCap(keylbl, keyCaps) 	; // store all valid keycap symbols
       const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis, chord); // {0:'⇧'=>'switch_to_lowercase'>..}
 
       let keyCombo;
@@ -291,8 +292,7 @@ modifew_modes.map(m => {
       tt_div.innerHTML    	= tooltip_header;
       tt_div.appendChild(tt_table);
       setTableHead(tt_table, table_header);
-      const cLytLbl	= gLyt.lbl;  // reads layout only at page load
-      let showTT   	= false; // hide empty tooltips (header without rows)
+      let showTT	= false; // hide empty tooltips (header without rows)
       capIDs.map(lbl_id => {
         if (!keyCombo.has(lbl_id)) { return; } // break sequence as no combos for this label
         const key_mod_cmd	 = keyCombo.get(lbl_id);
