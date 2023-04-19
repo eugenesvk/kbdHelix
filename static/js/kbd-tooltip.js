@@ -231,6 +231,16 @@ function storeKeyCap(keylbl, keyCaps) {
   });
   return keyCapSym;
 }
+function mergeSubmodes(m, keylbl) {
+  let keyCombos = new Map();
+  const subModes = modifew_mode_sub_sym[m];
+  for (const [subNm, subMode] of Object.entries(subModes)) {
+    const [keymap, mIcon, lbl_modis, capIDs] = getModeKeys(subNm, subModes);
+    const keyCombo = getKeyCombo(keylbl, keymap, lbl_modis);
+    keyCombos = new Map([...keyCombos, ...keyCombo]);
+  }
+  return keyCombos;
+}
 modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
@@ -245,8 +255,12 @@ modifew_modes.map(m => {
       // pp({mode},{keyCaps},{keylbl});
       const keyCapSym	= storeKeyCap(keylbl, keyCaps); // store all valid keycap symbols
 
+      let keyCombo;
+      if (m in modifew_mode_sub_sym) { // add submodes in place of modifiers
+        const keyCombos_sub = mergeSubmodes(m, keylbl);
+        keyCombo = new Map([...keyComboM, ...keyCombos_sub]);
       } else {
-        // p('stored keymap for=¦',keylbl,'¦',key_cap_sym.get(keylbl));
+        keyCombo = keyComboM;
       }
       // Generate tooltip table
       let tt_div  	= document.createElement('div');
