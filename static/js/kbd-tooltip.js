@@ -245,15 +245,14 @@ modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
-    const keyLbl    	= el.innerText.trim();
-    const key_cap_el	= [];
-
+    const keyLbl	= el.innerText.trim();
     if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
-      const [keys, keyIcon, lbl_modis, cap_ids] = getModeKeys(m);
-      const keylbl 	= keyLbl[0].toLowerCase(); // take only the 1st label (number keys have duplicate 1!)
-      const keyCaps	= getSiblingKeyCaps(el, cap_ids); // get all keycaps with valid labels and one of 5 valid positions
       // pp({mode},{keyCaps},{keylbl});
+      const [keymap, mIcon, lbl_modis, capIDs] = getModeKeys(m);
+      const keylbl   	= keyLbl[0].toLowerCase(); // take only the 1st label (number keys have duplicate 1!)
+      const keyCaps  	= getSiblingKeyCaps(el, capIDs); // get all keycaps with valid labels in valid positions
       const keyCapSym	= storeKeyCap(keylbl, keyCaps); // store all valid keycap symbols
+      const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis); // {0:'⇧'=>'switch_to_lowercase'>..}
 
       let keyCombo;
       if (m in modifew_mode_sub_sym) { // add submodes in place of modifiers
@@ -266,25 +265,23 @@ modifew_modes.map(m => {
       let tt_div  	= document.createElement('div');
       let tt_table	= document.createElement('table');
       tt_table.classList.add('styled-table');
-      const tooltip_header	= `${keyIcon} ${keyLbl}`;
-      tt_div.innerHTML    	= tooltip_header;
+      const tooltip_header	= `${mIcon} ${keyLbl}`;
       const table_header  	= ['m','o','d','Key','Sym','Command'];
+      tt_div.innerHTML    	= tooltip_header;
       tt_div.appendChild(tt_table);
       setTableHead(tt_table, table_header);
-      const cLytLbl  	= gLyt.lbl;  // reads layout only at page load
-      const key_combo	= getKeyCombo(keylbl, keys, lbl_modis); // {0:'⇧'=>'switch_to_lowercase'>..}
-      let showTT	= false; // hide empty tooltips (header without rows)
-      cap_ids.map(lbl_id => {
-        const lbl_id_s	 = lbl_id.toString();
-        if (!key_combo.has(lbl_id)) { return; } // break sequence as no combos for this label
-        const key_mod_cmd	 = key_combo.get(lbl_id);
+      const cLytLbl	= gLyt.lbl;  // reads layout only at page load
+      let showTT   	= false; // hide empty tooltips (header without rows)
+      capIDs.map(lbl_id => {
+        if (!keyCombo.has(lbl_id)) { return; } // break sequence as no combos for this label
+        const key_mod_cmd	 = keyCombo.get(lbl_id);
         const key_mod    	 = key_mod_cmd.modi;
         const key_cmd    	 = key_mod_cmd.cmd;
         if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
         const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
-        const key_sym    	 = key_cap_sym.get(keylbl).get(lbl_id_s) || '';
+        const key_sym    	 = keyCapSym.get(keylbl).get(lbl_id) || '';
         if (key_cmd && key_sym) {
-          showTT      	= true;
+          showTT      	= true; // tooltip not empty, show
           let row     	= tt_table.insertRow();
           let row_data	= [];
           modi_list.map(mod => {
