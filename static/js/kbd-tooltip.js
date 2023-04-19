@@ -284,9 +284,15 @@ modifew_modes.map(m => {
           showTT      	= true; // tooltip not empty, show
           let row     	= tt_table.insertRow();
           let row_data	= [];
-          modi_list.map(mod => {
+          if (key_mod) { modi_list.map(mod => {
             if (key_mod.includes(mod))	{ row_data.push(mod);
-            } else                    	{ row_data.push(''); } });
+            } else                    	{ row_data.push('' ); } });
+          } else                      	{
+            const modeSym = lbl_modis.get(lbl_id);
+            if (modeSym)	{ row_data.push(modeSym);
+            } else      	{ row_data.push(''  );}
+            row_data.push('');row_data.push('');
+          }
           row_data.push(key_lbl);
           row_data.push(key_sym);
           row_data.push(key_cmd);
