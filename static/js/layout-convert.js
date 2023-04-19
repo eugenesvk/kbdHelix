@@ -29,6 +29,47 @@ const buttons       	= document.getElementsByClassName("btn")	; // get a list of
 const class_clicked 	= 'layout_button_clicked'               	; // class that applies a colored border
 const btn_default   	= 'btn_qwerty'                          	; // default layout before any button is clicked
 
+export const Case = Object.freeze({
+  l	: Symbol("lower"),
+  U	: Symbol("upper"),
+});
+function isLowerCaseLyt(str,lyt) { return layout_string[lyt+'.low'].includes(str);}
+function isUpperCaseLyt(str,lyt) { return layout_string[lyt+'.upp'].includes(str);}
+export function getCaseLyt(str,lyt) {
+  if       	(isLowerCaseLyt(str,lyt))	{ return Case.l;
+  } else if	(isUpperCaseLyt(str,lyt))	{ return Case.U;
+  } else   	                         	{ return null;}
+}
+export function convertCaseLyt(char, lytNm='qwerty', CaseTo=null) {
+  let caseCurrent	= getCaseLyt(char, lytNm);
+  if (!caseCurrent) {return;}
+  let lyt_from, lyt_to;
+  switch (CaseTo) {
+    case Case.U: // to upper
+      lyt_from	= layout_string[lytNm+'.low'] ;
+      lyt_to  	= layout_string[lytNm+'.upp'] ;
+      break;
+    case Case.l: // to lower
+      lyt_from	= layout_string[lytNm+'.upp'] ;
+      lyt_to  	= layout_string[lytNm+'.low'] ;
+      break;
+    default: // swap case
+      switch (caseCurrent) {
+        case Case.U: // to lower
+          lyt_from	= layout_string[lytNm+'.upp'] ;
+          lyt_to  	= layout_string[lytNm+'.low'] ;
+          break;
+        case Case.l: // to upper
+          lyt_from	= layout_string[lytNm+'.low'] ;
+          lyt_to  	= layout_string[lytNm+'.upp'] ;
+          break;
+        default:
+          return;
+      }
+  }
+  return lyt_to.charAt(lyt_from.indexOf(char)) || char;
+}
+
 export function convert(src, from, to) {
   let ret         	= '';
   const layoutFrom	= layout_string[from];
