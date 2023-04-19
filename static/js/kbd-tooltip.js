@@ -6,17 +6,23 @@ const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
   (_, i) => start + (i * step));
 
+const modi_list         	= ['⇧','⎈','⎇']; // add ◆ when it's supported
+const mode_list         	= ['☰␜','☰⟪','🌐','☰®','⧛ℂ','ℂ⧚','⧛☰','☰⧛'];
 // const keyCapLblIDs   	= range(0, 8)  	; // top 9 key labels only
 const keyCapLblIDs      	= [0,  2,4,6,8]	; // but we only need corners + center
 const keyCapLblIDs_ins  	= [0,1,2,4,6,8]	; // and sometimes top
-const keyCapLblIDs_sp   	= [0,      6  ]	; // or just the main label
-const keyCapLblIDs_unimp	= [0,      6  ]	;
+const keyCapLblIDs_sp   	= [0,  2,4,6,8]	;
+const keyCapLblIDs_unimp	= [0,  2,  6,8]	;
 const modifew_modes_pre 	= '#keyboard.modifew-';
 const modifew_modes     	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
-const lbl_modi          	= new Map([[0,'⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
+const lbl_modi          	= new Map([[0,'⇧'],          [2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
 const lbl_modi_ins      	= new Map([[0,'⇧'],[1,'⎈⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]);
-const lbl_modi_sp       	= new Map([[0,'☰␜'],[6,'']]);
-const lbl_modi_unimp    	= new Map([[0,'⇧'],[6,'']]);
+const lbl_modi_sp       	= new Map([[0,'☰␜'],         [2,'☰⟪'],[4,'🌐'],[6,''],[8,'☰®']]); // to a submode...
+const lbl_modi_unimp    	= new Map([[0,'⧛ℂ'],         [2,'ℂ⧚'],          [6,'⧛☰'],[8,'☰⧛']]);
+function lbl_modi_n(n)  	{
+  const mapn            	= new Map([[n,'']]);
+  return mapn;
+}
 const modifew_mode_sym = {
   'm1NOR'      	: {'icon':'Ⓝ'  	, 'path':'keys.normal'      	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
   'm2INS'      	: {'icon':'ⓘ'  	, 'path':'keys.insert'      	, 'modi':lbl_modi_ins  	, 'id':keyCapLblIDs_ins},
@@ -27,25 +33,39 @@ const modifew_mode_sym = {
   'nUnimpaired'	: {'icon':'⧛☰⧚'	, 'path':'keys.normal.['    	, 'modi':lbl_modi_unimp	, 'id':keyCapLblIDs_unimp},
   'nView'      	: {'icon':'☰👁' 	, 'path':'keys.normal.p'    	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
   'nWindow'    	: {'icon':'☰🗔' 	, 'path':'keys.normal.C-w'  	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
-  'nHelp'      	: {'icon':'☰?' 	, 'path':'keys.normal.F1'   	, 'modi':lbl_modi      	, 'id':keyCapLblIDs}
+  'nHelp'      	: {'icon':'☰?' 	, 'path':'keys.normal.F1'   	, 'modi':lbl_modi      	, 'id':keyCapLblIDs},
+};
+const modifew_mode_sub_sym = {
+  'nSpace':{
+    'File'    	: {'icon':'☰␜'	, 'path':'keys.normal.space.f'	, 'modi':lbl_modi_n(0)	, 'id':[0]},
+    'Bracket' 	: {'icon':'☰⟪'	, 'path':'keys.normal.space.d'	, 'modi':lbl_modi_n(2)	, 'id':[2]},
+    'LSP'     	: {'icon':'🌐' 	, 'path':'keys.normal.space.u'	, 'modi':lbl_modi_n(4)	, 'id':[4]},
+    'Register'	: {'icon':'☰®'	, 'path':'keys.normal.space.r'	, 'modi':lbl_modi_n(8)	, 'id':[8]},
+  },
+  'nUnimpaired':{
+    'ConfigON'   	: {'icon':'⧛ℂ'	, 'path':'keys.normal.[.c'	, 'modi':lbl_modi_n(0)	, 'id':[0]},
+    'ConfigOFF'  	: {'icon':'ℂ⧚'	, 'path':'keys.normal.].c'	, 'modi':lbl_modi_n(2)	, 'id':[2]},
+    'UnimpairedL'	: {'icon':'⧛☰'	, 'path':'keys.normal.['  	, 'modi':lbl_modi_n(6)	, 'id':[6]},
+    'UnimpairedR'	: {'icon':'☰⧚'	, 'path':'keys.normal.]'  	, 'modi':lbl_modi_n(8)	, 'id':[8]},
+  }
 };
 const keylabel_path	= '#keyboard-bg .key .keycap .keylabels .keylabel';
 const key_lbl_class	= 'keylabel10';
 
-function getNestedPath(xpth, map=modifew_mode_sym){
+function getNestedPath(xpth, map){
   const pth = xpth.split('.');
   return pth.reduce((a, b) => a[b], map);
 }
-function getModeKeys(mode){
+function getModeKeys(mode, mode_sym = modifew_mode_sym){
   const path2icon	= mode + '.icon';
   const path2path	= mode + '.path';
   const path2modi	= mode + '.modi';
   const path2id  	= mode + '.id';
-  const path2keys	= getNestedPath(path2path,modifew_mode_sym);
+  const path2keys	= getNestedPath(path2path,mode_sym);
   const keys     	= getNestedPath(path2keys,modifew);
-  const icon     	= getNestedPath(path2icon,modifew_mode_sym);
-  const modis    	= getNestedPath(path2modi,modifew_mode_sym);
-  const ids      	= getNestedPath(path2id,modifew_mode_sym);
+  const icon     	= getNestedPath(path2icon,mode_sym);
+  const modis    	= getNestedPath(path2modi,mode_sym);
+  const ids      	= getNestedPath(path2id,mode_sym);
   return [keys,icon,modis,ids];
 }
 
@@ -186,7 +206,6 @@ const tooltip_1 = ((evt) => {
   ttBox.style.visibility = "visible"; });
 const tooltip_0 = (() => {
   ttBox.style.visibility = "hidden" ; });
-const modi_list = ['⇧','⎈','⎇']; // add ◆ when it's supported
 function setTableHead(table, keys) {
   let tHd	= table.createTHead();
   let row	= tHd.insertRow();
