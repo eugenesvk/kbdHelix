@@ -119,7 +119,7 @@
     'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␠)           	ⓘ「⎇▶」   	「」
 
     #Ⓝ      	Line
-    # ':'   	= 'command_mode'   	# Ⓒ Enter command mode         	「⇧ ;」 	「command_mode」
+    ':'     	= 'command_mode'   	# Ⓒ Enter command mode         	≝「⇧ ;」	「command_mode」
     # 'Home'	= 'goto_line_start'	# Move to the start of the line	「Home」	「goto_line_start」
     # 'End' 	= 'goto_line_end'  	# Move to the end of the line  	「End」 	「goto_line_end」
 
@@ -269,12 +269,12 @@
     'A-.'	= 'unindent'	# ⇚ (selection)	「⇧,」	「repeat_last_motion」
     'A-/'	= 'indent'  	# ⇛ (selection)	「⇧.」	「」
 
-    # 'q'	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register   	「  q」	「record_macro」
-    # 'Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧ q」 replay_macro]
-    # '"'	= 'select_register'	# ®  Select a register to copy/paste from                 	「  '<reg>」	「select_register」
+    'q'	= 'record_macro'   	# ⏺ Start/stop  macro recording to the selected register  	≝「  q」	「record_macro」
+    'Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	≝「⇧ q」 replay_macro]
+    '"'	= 'select_register'	# ®  Select a register to copy/paste from                 	≝「  '<reg>」	「select_register」
 
     # 'b'	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」 	「move_prev_word_start」 !!!missing
-    # 'i'	= 'insert_mode'          	# ⁁⤸ Insert before sel        	「  i」 	「insert_mode」
+    'i'  	= 'insert_mode'          	# ⁁⤸ Insert before sel        	≝「  i」	「insert_mode」
     'o'  	= 'append_mode'          	# ⤹⎀ Insert after sel (append)	「  a」 	「open_above」
     'I'  	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」 	「insert_at_line_start」
     'O'  	= 'open_below'           	# ⭣␤ Open new line below sel  	「  o」 	「insert_at_line_end」
@@ -288,8 +288,8 @@
     'V'  	= 'paste_before'         	# ⤸📋 Paste before sel         	「⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
     'C-z'	= 'undo'                 	# ⎌ Undo change               	「  u」 	「」
     'C-Z'	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「」!!!fail
-    # 'I'	= 'insert_at_line_start' 	# ⁁⭰ Insert at line start     	「⇧ i」 	「insert_at_line_start」
-    # 'A'	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	「⇧ a」 	「insert_at_line_end」
+    #'I' 	= 'insert_at_line_start' 	# ⁁⭰ Insert at line start     	≝「⇧ i」	「insert_at_line_start」
+    #'A' 	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	≝「⇧ a」	「insert_at_line_end」
 
     'A-I'	=["split_selection_on_newline"	# ⭰䷖ Line: split & insert @ start	「」	「」
      ,   	  "insert_at_line_start"]     	#                                	  	 
@@ -297,11 +297,11 @@
      ,   	  "insert_at_line_end"]       	#                                	  	 
 
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
-    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate sel contents backward      	「⇧⎇9」	「rotate_selections_backward」
-    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate sel contents forward       	「⇧⎇0」	「rotate_selections_forward」
-    '7'  	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」	「<7>」
-    # '&'	= 'align_selections'                  	# ⥂ Align sel in columns              	「⇧ 7」	「align_selections」
-    # '='	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	「  =」	「format_selections」
+    '('	= 'rotate_selection_contents_backward'	# ⟲ Rotate sel contents backward      	「⇧⎇9」 	「rotate_selections_backward」
+    ')'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate sel contents forward       	「⇧⎇0」 	「rotate_selections_forward」
+    '7'	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」 	「<7>」
+    '&'	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
+    '='	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
 
   #Ⓝ   	Misc                        	 
   'z'  	= 'toggle_comments'         	# un-/comment sels                           	「 ⎈c」	「☰👁」
@@ -310,15 +310,15 @@
   'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
   '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「」   	「」
 
-  # '$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	Ⓝ「⇧ 4」	「shell_keep_pipe」
+  '$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
 
   #Ⓝ space mode
   # "'"	= 'last_picker'	# 「collapse_selection」 Open last fuzzy picker
 
   #Ⓝ Shell	#                      	#
-  # '!'   	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel	「⇧  1」	「shell_insert_output」
+  '!'     	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel	「⇧  1」	≝「shell_insert_output」
   '@'     	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel	「⇧⎇1」 	「」
-  # 'A-!' 	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel	「⇧⎇1」 	「shell_append_output」
+  'A-!'   	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel	「⇧⎇1」 	≝「shell_append_output」
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
 

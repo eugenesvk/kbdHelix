@@ -1,28 +1,28 @@
 # chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊/* key     	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -◊
-  [keys.     	'#◊.m◊'.'#◊.k1◊']         	##◊.i◊ ☰⧛ Unimpaired
-    'j'      	= 'goto_prev_change'      	# 🢔Δ Change            	previous       	「  g」 	「」
-    # 'G'    	= 'goto_first_change'     	# ⭰Δ Change            	1st            	≝「⇧ g」	「goto_first_change」
-    'h'      	= 'goto_first_change'     	# ⭰Δ Change            	1st            	「⇧ g」 	「」
-    # 'd'    	= 'goto_prev_diag'        	# 🢔🛠 Diagnostic        	previous  (LSP)	≝「  d」	「goto_prev_diag」
-    # 'D'    	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	≝「⇧ d」	「goto_first_diag」
-    'g'      	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	「⇧ d」 	「goto_prev_change」
-    # 'f'    	= 'goto_prev_function'    	# 🢔ƒ Function          	previous (TS)  	≝「  f」	「goto_prev_function」
-    's'      	= 'goto_prev_class'       	# 🢔τ Type definition   	previous (TS)  	「  t」 	「」
-    # 'a'    	= 'goto_prev_parameter'   	# 🢔α Argument/parameter	previous (TS)  	≝「  a」	「goto_prev_parameter」
-    # 'c'    	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	≝「  c」	「goto_prev_comment」
-    '/'      	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
-    'z'      	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
-    # 'T'    	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	≝「⇧ t」	「goto_prev_test」
-    't'      	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	「⇧ t」 	「goto_prev_class」
-    # 'p'    	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	≝「  p」	「goto_prev_paragraph」
-    '['      	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
-    '.'      	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
-    # 'space'	= 'add_newline_above'     	# ⭡␤ Add newline above 	               	≝「  ␠」	「add_newline_above」
-    'm'      	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines above it
-      ,      	  'delete_selection'      	# !!!missing n
-      ,      	  'move_line_up'          	#
-      ,      	  'paste_before']         	#
+#◊/* key   	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -◊
+  [keys.   	'#◊.m◊'.'#◊.k1◊']         	##◊.i◊ ☰⧛ Unimpaired
+    'j'    	= 'goto_prev_change'      	# 🢔Δ Change            	previous       	「  g」 	「」
+    # 'G'  	= 'goto_first_change'     	# ⭰Δ Change            	1st            	≝「⇧ g」	「goto_first_change」
+    'h'    	= 'goto_first_change'     	# ⭰Δ Change            	1st            	「⇧ g」 	「」
+    'd'    	= 'goto_prev_diag'        	# 🢔🛠 Diagnostic        	previous  (LSP)	≝「  d」	「goto_prev_diag」
+    # 'D'  	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	≝「⇧ d」	「goto_first_diag」
+    'g'    	= 'goto_first_diag'       	# ⭰🛠 Diagnostic        	1st @ doc (LSP)	「⇧ d」 	「goto_prev_change」
+    'f'    	= 'goto_prev_function'    	# 🢔ƒ Function          	previous (TS)  	≝「  f」	「goto_prev_function」
+    's'    	= 'goto_prev_class'       	# 🢔τ Type definition   	previous (TS)  	「  t」 	「」
+    'a'    	= 'goto_prev_parameter'   	# 🢔α Argument/parameter	previous (TS)  	≝「  a」	「goto_prev_parameter」
+   #'c'    	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	≝「  c」	「goto_prev_comment」
+    '/'    	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
+    'z'    	= 'goto_prev_comment'     	# 🢔ↄ Comment           	previous (TS)  	「  c」 	「」
+    # 'T'  	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	≝「⇧ t」	「goto_prev_test」
+    't'    	= 'goto_prev_test'        	# 🢔🧪 Test              	previous (TS)  	「⇧ t」 	「goto_prev_class」
+    'p'    	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	≝「  p」	「goto_prev_paragraph」
+    '['    	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
+    '.'    	= 'goto_prev_paragraph'   	# 🢔¶ Paragraph         	previous       	「  p」 	「」
+    'space'	= 'add_newline_above'     	# ⭡␤ Add newline above 	               	≝「  ␠」	「add_newline_above」
+    'm'    	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines above it
+      ,    	  'delete_selection'      	# !!!missing n
+      ,    	  'move_line_up'          	#
+      ,    	  'paste_before']         	#
 
   [keys.	'#◊.m◊'.'#◊.k1◊'.'c']             	##◊.i◊ ☰⧛ℂ Unimpaired Config toggle ON
     'q' 	= ':set auto-save true'           	# 💾🙈 save focus lost
@@ -73,29 +73,29 @@
     's' 	= ':set lsp.snippets true'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
 
 
-  [keys.     	'#◊.m◊'.'#◊.k0◊']         	##◊.i◊ ☰⧚
-    'j'      	= 'goto_next_change'      	# Δ🢖 Change            	next            	「  g」 	「」
-    # 'G'    	= 'goto_last_change'      	# Δ⭲ Change            	last            	≝「⇧ g」	「goto_last_change」
-    'h'      	= 'goto_last_change'      	# Δ⭲ Change            	last            	「⇧ g」 	「」
-    # 'd'    	= 'goto_next_diag'        	# 🛠🢖 Diagnostic        	next  (LSP)     	≝「  d」	「goto_next_diag」
-    # 'D'    	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	≝「⇧ d」	「goto_last_diag」
-    'g'      	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	「⇧ d」 	「goto_next_change」
-    # 'f'    	= 'goto_next_function'    	# ƒ🢖 Function          	next (TS)       	≝「  f」	「goto_next_function」
-    's'      	= 'goto_next_class'       	# τ🢖 Type definition   	next (TS)       	「  t」 	「」
-    # 'a'    	= 'goto_next_parameter'   	# α🢖 Argument/parameter	next (TS)       	≝「  a」	「goto_next_parameter」
-    # 'c'    	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	≝「  c」	「goto_next_comment」
-    '/'      	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
-    'z'      	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
-    # 'T'    	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	≝「⇧ t」	「goto_next_test」
-    't'      	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	「⇧ t」 	「goto_next_class」
-    # 'p'    	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「goto_next_paragraph」
-    ']'      	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
-    '.'      	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
-    # 'space'	= 'add_newline_below'     	# ⭣␤ Add newline below 	                	≝「  ␠」	「add_newline_below」
-    'm'      	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines below it
-      ,      	  'delete_selection'      	# !!!missing n
-      ,      	  'goto_line_end'         	#
-      ,      	  'paste_after']          	#
+  [keys.   	'#◊.m◊'.'#◊.k0◊']         	##◊.i◊ ☰⧚
+    'j'    	= 'goto_next_change'      	# Δ🢖 Change            	next            	「  g」 	「」
+    # 'G'  	= 'goto_last_change'      	# Δ⭲ Change            	last            	≝「⇧ g」	「goto_last_change」
+    'h'    	= 'goto_last_change'      	# Δ⭲ Change            	last            	「⇧ g」 	「」
+    'd'    	= 'goto_next_diag'        	# 🛠🢖 Diagnostic        	next  (LSP)     	≝「  d」	「goto_next_diag」
+    # 'D'  	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	≝「⇧ d」	「goto_last_diag」
+    'g'    	= 'goto_last_diag'        	# 🛠⭲ Diagnostic        	last @ doc (LSP)	「⇧ d」 	「goto_next_change」
+    'f'    	= 'goto_next_function'    	# ƒ🢖 Function          	next (TS)       	≝「  f」	「goto_next_function」
+    's'    	= 'goto_next_class'       	# τ🢖 Type definition   	next (TS)       	「  t」 	「」
+    'a'    	= 'goto_next_parameter'   	# α🢖 Argument/parameter	next (TS)       	≝「  a」	「goto_next_parameter」
+   #'c'    	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	≝「  c」	「goto_next_comment」
+    '/'    	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
+    'z'    	= 'goto_next_comment'     	# ↄ🢖 Comment           	next (TS)       	「  c」 	「」
+    # 'T'  	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	≝「⇧ t」	「goto_next_test」
+    't'    	= 'goto_next_test'        	# 🧪🢖 Test              	next (TS)       	「⇧ t」 	「goto_next_class」
+    'p'    	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「goto_next_paragraph」
+    ']'    	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
+    '.'    	= 'goto_next_paragraph'   	# ¶🢖 Paragraph         	next            	≝「  p」	「」
+    'space'	= 'add_newline_below'     	# ⭣␤ Add newline below 	                	≝「  ␠」	「add_newline_below」
+    'm'    	= ['extend_to_line_bounds'	# Exchange the current line with [n] lines below it
+      ,    	  'delete_selection'      	# !!!missing n
+      ,    	  'goto_line_end'         	#
+      ,    	  'paste_after']          	#
 
   [keys. 	'#◊.m◊'.'#◊.k0◊'.'c']                         	##◊.i◊ ☰⧚ℂ Unimpaired Config toggle OFF
     'q'  	= ':set auto-save false'                      	# 💾🙈 save focus lost
