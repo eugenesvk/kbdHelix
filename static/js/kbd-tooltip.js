@@ -5,6 +5,17 @@ window.onload=function(){ // optional since it depends on the way in which you f
 const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
   (_, i) => start + (i * step));
+function strip(x, chars) {
+  let start	= 0;
+  let end  	= x.length - 1;
+  while (chars.indexOf(x[start]) >= 0) {start += 1;}
+  while (chars.indexOf(x[end  ]) >= 0) {end   -= 1;}
+  return x.substr(start, end - start + 1);
+}
+String.prototype.strip = function (chars) { return strip(this, chars); };
+function joinsep(sep,...strings) { // join non-empty strings with a separator
+  return Array.prototype.slice.call(strings).filter(Boolean).join(sep);
+}
 
 const modi_list         	= ['⇧','⎈','⎇']; // add ◆ when it's supported
 const mode_list         	= ['☰␜','☰⟪','🌐','☰®','⧛ℂ','ℂ⧚','⧛☰','☰⧛'];
