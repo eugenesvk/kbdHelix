@@ -36,6 +36,7 @@ body .markdown-body {
   line-height: 1;
   margin-left: -20px;
   padding-right: 4px;
+  visibility: hidden;
 }
 
 .markdown-body .anchor:focus {
@@ -60,6 +61,7 @@ body .markdown-body {
 .markdown-body h5:hover .anchor,
 .markdown-body h6:hover .anchor {
   text-decoration: none;
+  visibility: visible;
 }
 
 .markdown-body h1:hover .anchor .octicon-link,
