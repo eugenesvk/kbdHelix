@@ -234,7 +234,9 @@ const tooltip_1 = ((el) => {
   ttBox.style.left	= `${X + 5}px`; // move tooltip to the hover element
   ttBox.style.top 	= `${Y + 5}px`;
   const tr        	= ttBox.getElementsByClassName('styled-table')[0].rows;
+  const hd_lbl    	= ttBox.getElementsByClassName('styled-table-header-label')[0];
   if (ttBox.curLytLbl !== gLyt.lbl) { // layout changed, convert table elements
+    hd_lbl.innerHTML = convert(ttBox.keyLbl,'qwerty',lyt[gLyt.lbl]);
     Array.from(tr).forEach(function(row,i) {
       if (i === 0) { return; } // skip table header
       row.cells[ttKeyColI].innerHTML = convert(ttBox.keylbl,'qwerty',lyt[gLyt.lbl]);
@@ -320,11 +322,17 @@ modifew_modes.map(m => {
       }
 
       // Generate tooltip table
-      let tt_div  	= document.createElement('div');
-      let tt_table	= document.createElement('table');
-      tt_table.classList.add('styled-table');
-      const tooltip_header	= `${mIcon} ${keyLbl}`;
-      tt_div.innerHTML    	= tooltip_header;
+      let tt_div    	= document.createElement('div');
+      let tt_headIcn	= document.createElement('span');
+      let tt_headLbl	= document.createElement('span');
+      let tt_table  	= document.createElement('table');
+      tt_headIcn.classList.add('styled-table-header-icon');
+      tt_headLbl.classList.add('styled-table-header-label');
+      tt_table .classList.add('styled-table');
+      tt_headIcn.innerHTML	= mIcon + ' ';
+      tt_headLbl.innerHTML	= keyLbl;
+      tt_div.appendChild(tt_headIcn);
+      tt_div.appendChild(tt_headLbl);
       tt_div.appendChild(tt_table);
       setTableHead(tt_table, table_header);
       let showTT	= false; // hide empty tooltips (header without rows)
@@ -371,8 +379,9 @@ modifew_modes.map(m => {
        ttBox.classList.add(	'keycap_tooltip_modi_cmd')     	;
        ttBox.innerHTML     	= tt_div.innerHTML             	; // make tooltip show our table
        ttBox.style.display 	= 'none'                       	; // hide till mouse over
-       ttBox.keylbl        	= keylbl                       	; // add lbl/cLytLbl to allow ↓ callbacks to use it
-       ttBox.curLytLbl     	= curLytLbl                    	; // current layout label
+       ttBox.keyLbl        	= keyLbl                       	; // add label/layout data to allow dynamic changes
+       ttBox.keylbl        	= keylbl                       	; //
+       ttBox.curLytLbl     	= curLytLbl                    	; //
       keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
       // add tooltip listeners (once)
       timerIdMap.set(keycap         	, 0          	       ); // store timer
