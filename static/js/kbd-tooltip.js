@@ -378,7 +378,6 @@ modifew_modes.map(m => {
        // ttBox.id         	= `tt:${mode}:${keyLbl}`       	;
        ttBox.classList.add(	'keycap_tooltip_modi_cmd')     	;
        ttBox.innerHTML     	= tt_div.innerHTML             	; // make tooltip show our table
-       ttBox.style.display 	= 'none'                       	; // hide till mouse over
        ttBox.keyLbl        	= keyLbl                       	; // add label/layout data to allow dynamic changes
        ttBox.keylbl        	= keylbl                       	; //
        ttBox.curLytLbl     	= curLytLbl                    	; //
