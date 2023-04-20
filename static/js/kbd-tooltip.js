@@ -220,52 +220,45 @@ function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at
 const reLblClass = new RegExp(String.raw`keylabel(\d{1,2})`);
 
 // Add tooltip scaffolding
-const delayShow        	= 500          	; // show tooltip after this ms has passed     hovering
-const delayHide        	= 500          	; // hide tooltip after this ms has passed not hovering
-const timerIdMap       	= new WeakMap()	; // store keycap tooltip timers
-const table_header     	= ['m','o','d','Key','Sym','Command'];
-const ttKeyColI        	= table_header.indexOf('Key');
-const ttBox            	= document.createElement("div");
- ttBox.id              	= "keycap_tooltip_modi_cmd";
- ttBox.style.visibility	= "hidden"; // hide till mouse over
-document.body.appendChild(ttBox);
+const delayShow   	= 500          	; // show tooltip after this ms has passed     hovering
+const delayHide   	= 500          	; // hide tooltip after this ms has passed not hovering
+const timerIdMap  	= new WeakMap()	; // store keycap tooltip timers
+const table_header	= ['m','o','d','Key','Sym','Command'];
+const ttKeyColI   	= table_header.indexOf('Key');
 
-const tooltip_1 = ((evt, elAttached) => {
-  const type         	= evt.type;
-  // const elAttached	= evt.currentTarget	; // el to which the event handler has been attached
-  const elOccured    	= evt.target       	; // el on which the event occurred and which may be its descendant
-  const boundBox     	= elOccured.getBoundingClientRect(); // get hover element position
-  const X            	= boundBox.right;
-  const Y            	= boundBox.bottom;
-  ttBox.style.left   	= `${X + 5}px`; // move tooltip to the hover element
-  ttBox.style.top    	= `${Y + 5}px`;
-  const ttt          	= elAttached.ttt;
-  const lbl          	= elAttached.lbl;
-  const cLytLbl      	= elAttached.cLytLbl;
-  const tr           	= ttt.getElementsByClassName('styled-table')[0].rows;
-  if (cLytLbl !== gLyt.lbl) { // layout changed
+const tooltip_1 = ((el) => {
+  const ttBox     	= el.querySelector(".keycap_tooltip_modi_cmd");
+  const boundBox  	= el.getBoundingClientRect(); // get hover element position
+  const X         	= boundBox.right;
+  const Y         	= boundBox.bottom;
+  ttBox.style.left	= `${X + 5}px`; // move tooltip to the hover element
+  ttBox.style.top 	= `${Y + 5}px`;
+  const tr        	= ttBox.getElementsByClassName('styled-table')[0].rows;
+  if (ttBox.curLytLbl !== gLyt.lbl) { // layout changed, convert table elements
     Array.from(tr).forEach(function(row,i) {
       if (i === 0) { return; } // skip table header
-      row.cells[ttKeyColI].innerHTML = convert(lbl,'qwerty',lyt[gLyt.lbl]);
-      evt.currentTarget.cLytLbl = gLyt.lbl;
+      row.cells[ttKeyColI].innerHTML = convert(ttBox.keylbl,'qwerty',lyt[gLyt.lbl]);
+      ttBox.curLytLbl = gLyt.lbl;
     });
   }
-  ttBox.innerHTML	= ttt.innerHTML;
-  ttBox.style.visibility = "visible";
+  ttBox.style.display = 'block';
 });
-const tooltip_0 = (() => {ttBox.style.visibility = "hidden"; });
+const tooltip_0 = ((el) => {
+  const ttBox = el.querySelector(".keycap_tooltip_modi_cmd");
+  ttBox.style.display = 'none';
+});
 function getMouseEventHandler(evtHandler, delay) {
   return (evt) => { // ({target: el})
-    const elOccured 	= evt.target;
-    const elAttached	= evt.currentTarget; //currentTarget is only available while the event is being handled, so if we pass evt, it won't be available downstream
+    const elAttached	= evt.currentTarget	; // el to which the event handler has been attached; currentTarget  only available while the event is being handled, so if we pass evt, it won't be available downstream
+    const elOccured 	= evt.target       	; // el on which the event occurred and which may be its descendant
     let timerId = timerIdMap.get(elOccured) ?? 0;
     clearTimeout(timerId);
-    timerId = setTimeout(() => evtHandler(evt, elAttached), delay);
+    timerId = setTimeout(()=>evtHandler(elAttached), delay);
     timerIdMap.set(elOccured, timerId);
   };
 }
-const ttShowDelay	= getMouseEventHandler(tooltip_1, delayShow); //showTooltip
-const ttHideDelay	= getMouseEventHandler(tooltip_0, delayHide); //hideTooltip
+const ttShowDelay	= getMouseEventHandler(tooltip_1, delayShow);
+const ttHideDelay	= getMouseEventHandler(tooltip_0, delayHide);
 const ttHide     	= getMouseEventHandler(tooltip_0, 0);
 
 function setTableHead(table, keys) {
@@ -312,7 +305,7 @@ modifew_modes.map(m => {
     const keyLbl	= el.innerText.trim();
     if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
       const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(m);
-      const cLytLbl  	= gLyt.lbl                     	; // reads layout only at page LOAD
+      const curLytLbl	= gLyt.lbl                     	; // reads layout only at page LOAD
       const keylbl   	= keyLbl[0].toLowerCase()      	; // take only the 1st label (number keys have duplicate 1!)
       const keyCaps  	= getSiblingKeyCaps(el, capIDs)	; // get all keycaps with valid labels in valid positions
       const keyCapSym	= storeKeyCap(keylbl, keyCaps) 	; // store all valid keycap symbols
@@ -342,7 +335,7 @@ modifew_modes.map(m => {
         const key_cmd    	 = key_mod_cmd.cmd;
         const key_chord  	 = key_mod_cmd.chord;
         if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
-        const key_lbl    	 = convert(keylbl,'qwerty',lyt[cLytLbl]);
+        const key_lbl    	 = convert(keylbl,'qwerty',lyt[curLytLbl]);
         const key_sym    	 = keyCapSym.get(keylbl).get(lbl_id) || '';
         if (key_cmd && key_sym) {
           showTT      	= true; // tooltip not empty, show
@@ -372,10 +365,15 @@ modifew_modes.map(m => {
 
       // Add tooltip data/listeners to the whole key
       if (!showTT) {return;}
-      const keycap  	= el.closest(".keylabels"); // find the labels group
-      keycap.ttt    	= tt_div 	; // tooltip table div
-      keycap.lbl    	= keylbl 	; // add lbl/cLytLbl to allow ↓ callbacks to use it
-      keycap.cLytLbl	= cLytLbl	; // current layout
+      const keycap         	= el.closest(".keylabels"); // find the labels group
+      const ttBox          	= document.createElement("div")	; // create tooltip box
+       // ttBox.id         	= `tt:${mode}:${keyLbl}`       	;
+       ttBox.classList.add(	'keycap_tooltip_modi_cmd')     	;
+       ttBox.innerHTML     	= tt_div.innerHTML             	; // make tooltip show our table
+       ttBox.style.display 	= 'none'                       	; // hide till mouse over
+       ttBox.keylbl        	= keylbl                       	; // add lbl/cLytLbl to allow ↓ callbacks to use it
+       ttBox.curLytLbl     	= curLytLbl                    	; // current layout label
+      keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
       // add tooltip listeners (once)
       timerIdMap.set(keycap         	, 0          	       ); // store timer
       addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
