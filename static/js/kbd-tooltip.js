@@ -223,8 +223,8 @@ const reLblClass = new RegExp(String.raw`keylabel(\d{1,2})`);
 const delayShow   	= 500          	; // show tooltip after this ms has passed     hovering
 const delayHide   	= 300          	; // hide tooltip after this ms has passed not hovering
 const timerIdMap  	= new WeakMap()	; // store keycap tooltip timers
-const table_header	= ['m','o','d','Key','Sym','Command'];
-const ttKeyColI   	= table_header.indexOf('Key');
+const table_header	= ['m','o','d','K⃣','Sym','Command'];
+const ttKeyColI   	= table_header.indexOf('K⃣');
 
 const tooltip_1 = ((el) => {
   const ttBox     	= el.querySelector(".keycap_tooltip_modi_cmd");
