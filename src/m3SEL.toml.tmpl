@@ -48,22 +48,22 @@
     'C-k'	= 'page_up'          	# ⇞ Move      page up  	「 ⎈u」	「」
 
     #Ⓢ        	word
-    'd'       	= 'extend_prev_word_start'     	# 🢔ω Extend   this word start                 	   「  b」	「」
-    'f'       	= 'extend_next_word_end'       	# ω🢖 Extend   this word end                   	   「  e」	「extend_next_char」
-    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␠)	「   」   	「」
-    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␠)	「  w」   	「」
-    'D'       	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
-    'F'       	= 'extend_next_long_word_end'  	# W🢖 Extend   this WORD end                   	  「⇧ e」 	「extend_prev_char」
-    'A-D'     	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	  「⇧ b」 	「」
-    'A-F'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␠)  	「⇧ w」   	「」
-    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
-    # 'R'     	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
-    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
-    # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD start (this end + ␠)  	「⇧ w」   	「」
-    'C-left'  	= 'extend_prev_long_word_start'	# 🢔W Extend   this WORD start                 	   「⇧ b」	「」
-    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend   next WORD end   (this end + ␠)  	「⇧ w」   	「」
-    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend   prev word end   (this start + ␠)	「   」   	「」
-    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend   next word start (this end   + ␠)	「  w」   	「」
+    'd'       	= 'extend_prev_word_start'     	# 🢔ω Extend prev beg of word	   「  b」	「」
+    'f'       	= 'extend_next_word_end'       	# ω🢖 Extend next end of word	   「  e」	「extend_next_char」
+    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend prev end of word	「   」   	「」
+    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend next beg of word	「  w」   	「」
+    'D'       	= 'extend_prev_long_word_start'	# 🢔W Extend prev beg of WORD	  「⇧ b」 	「」
+    'F'       	= 'extend_next_long_word_end'  	# W🢖 Extend next end of WORD	  「⇧ e」 	「extend_prev_char」
+    'A-D'     	= 'extend_prev_long_word_start'	# 🢔W Extend prev beg of WORD	  「⇧ b」 	「」
+    'A-F'     	= 'extend_next_long_word_start'	# W⤞ Extend next end of WORD	「⇧ w」   	「」
+    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
+    # 'R'     	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
+    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
+    # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
+    'C-left'  	= 'extend_prev_long_word_start'	# 🢔W Extend prev beg of WORD	   「⇧ b」	「」
+    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend next end of WORD	「⇧ w」   	「」
+    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend prev end of word	「   」   	「」
+    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend next beg of word	「  w」   	「」
 
     #Ⓢ      	Line
     # 'home'	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「home」	「extend_to_line_start」
@@ -138,9 +138,9 @@
       ,  	 'make_search_word_bounded'	#
       ,  	 'extend_search_next'      	#
       ]  	                           	# = Sublime's find_under_expand
-    # "" 	= 'expand_selection'       	# Expand selection to parent syntax node TODO: pick a key (**TS**)      	「   」	「expand_selection」
-    # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!! command not implemented yet	「  」 	「<5>」
-    # '%'	= 'select_all'             	# ∀▋ Select entire file                                                 	「⇧ 5」	「select_all」
+    # "" 	= 'expand_selection'       	# Expand selection to parent syntax node !!!pick a key 🌳TS 	「   」	「expand_selection」
+    # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!!not implemented	「  」 	「<5>」
+    # '%'	= 'select_all'             	# ∀▋ Select entire file                                    	「⇧ 5」	「select_all」
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
