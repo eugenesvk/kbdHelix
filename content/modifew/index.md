@@ -28,7 +28,7 @@ in_search_index	= true         	# add section pages to search (if `build_search_
   <button class="btn" id=btn_neo2      	type=button style=margin:5px>Neo2</button>
 </div>
 
-### Overview {#overview}
+## Overview {#overview}
 
 
 This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^mnem] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆🏻[^finger] (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
@@ -90,9 +90,9 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 <span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
 
 
-### Major modes {#major}
+## Major modes {#major}
 
-#### Helix Keymap modiƒew Normal {#m-normal}
+### Helix Keymap modiƒew Normal {#m-normal}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m1NOR.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml)
 
@@ -102,7 +102,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew Insert {#m-insert}
+### Helix Keymap modiƒew Insert {#m-insert}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m2INS.png?raw=true)
 
@@ -112,7 +112,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew Select {#m-select}
+### Helix Keymap modiƒew Select {#m-select}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m3SEL.png?raw=true). Only commands that differ from Normal mode are shown, the rest are copied
 
@@ -122,9 +122,9 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-### Minor modes {#minor}
+## Minor modes {#minor}
 
-#### Helix Keymap modiƒew GoTo {#n-goto}
+### Helix Keymap modiƒew GoTo {#n-goto}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nGoTo.png?raw=true)
 
@@ -134,7 +134,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew Space {#n-space}
+### Helix Keymap modiƒew Space {#n-space}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nSpace.png?raw=true). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix
 
@@ -145,7 +145,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew View {#n-view}
+### Helix Keymap modiƒew View {#n-view}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/94d728fc74d61af4de9ed17ff7d8566d), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nView.png?raw=true)
 
@@ -155,7 +155,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew Match {#n-match}
+### Helix Keymap modiƒew Match {#n-match}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nMatch.png?raw=true)
 
@@ -165,7 +165,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew Window {#n-window}
+### Helix Keymap modiƒew Window {#n-window}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nWindow.png?raw=true)
 
@@ -175,7 +175,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 
 
-#### Helix Keymap modiƒew Unimpaired {#n-unimpaired}
+### Helix Keymap modiƒew Unimpaired {#n-unimpaired}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/b885c21cc83ae06108b3da6728148191), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nUnimpaired.png?raw=true)
 
@@ -183,7 +183,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
   {{ include_file_coloc (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl") }}
 </div>
 
-#### Install
+### Install
 
 1. Simple, but inflexible: copy the content of the __modiƒew__ [config keymap file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) to your own Helix `~/.config/helix/config.toml` below your `[editor]` section
 2. More complicated, but more flexible (makes it easier to change)
