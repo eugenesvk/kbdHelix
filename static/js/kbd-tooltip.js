@@ -227,11 +227,8 @@ const tooltip_1 = ((evt) => {
   if (cLytLbl !== gLyt.lbl) {
     // console.log('layout changed',cLytLbl,gLyt.lbl);
     Array.from(tr).forEach(function(row,i) {
-      if (i === 0) { return; }
-      const cell_val = row.cells[ttKeyColI].innerHTML;
-
+      if (i === 0) { return; } // skip table header
       row.cells[ttKeyColI].innerHTML = convert(lbl,'qwerty',lyt[gLyt.lbl]);
-      // console.log('cell_val=¦',convert(ttt.lbl, cell_val,'qwerty',lyt[gLyt.lbl]),'¦')
       evt.currentTarget.cLytLbl = gLyt.lbl;
     });
   }
