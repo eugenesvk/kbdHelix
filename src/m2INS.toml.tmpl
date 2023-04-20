@@ -63,22 +63,22 @@
     'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	   Ⓝ「⎈i」	「」
 
     #ⓘ       	Word
-    'A-d'    	= 'move_prev_word_start'       	# 🢔ω  Move this word start                	   Ⓝ「 b」	「delete_word_forward」
-    'A-f'    	= 'move_next_word_end'         	# ω🢖  Move this word end                  	   Ⓝ「 e」	「move_next_word_start」
-    'A-D'    	= 'move_prev_long_word_start'  	# 🢔W Move   this WORD start               	  「⇧Ⓝ b」	「」
-    'A-F'    	= 'move_next_long_word_end'    	# W🢖 Move   this WORD end                 	  「⇧Ⓝ e」	「」
-    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev WORD end                  	「⇧ b」   	「half_page_down」
-             	   'extend_prev_word_start',   	#                                         	 
-             	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing      	 
-    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end + ␠)  	「⇧ w」	「page_down」
-    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next WORD end   (this end + ␠)  	「⇧ w」	「page_down」
-    #        	   'extend_next_long_word_end']	#                                         	 
-    'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move this WORD start                	   「⇧ b」	「」
-    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next WORD end   (this end   + ␠)	「⇧ w」   	「」
-    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev word end   (this start + ␠)	≝ⓘ「⎇◀」  	「move_prev_word_end」
-    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next word start (this end   + ␠)	≝ⓘ「⎇▶」  	「move_next_word_start」
-    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move   prev word end (this start + ␠)	ⓘ「⎇b」   	「」
-    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move   next word start (this end + ␠)	ⓘ「⎇f」   	「」
+    'A-d'    	= 'move_prev_word_start'       	# 🢔ω  Move prev beg of word         	   Ⓝ「 b」	「delete_word_forward」
+    'A-f'    	= 'move_next_word_end'         	# ω🢖  Move next end of word         	   Ⓝ「 e」	「move_next_word_start」
+    'A-D'    	= 'move_prev_long_word_start'  	# 🢔W Move prev beg of WORD          	  「⇧Ⓝ b」	「」
+    'A-F'    	= 'move_next_long_word_end'    	# W🢖 Move next end of WORD          	  「⇧Ⓝ e」	「」
+    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev end of WORD         	「⇧ b」   	「half_page_down」
+             	   'extend_prev_word_start',   	#                                   	 
+             	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing	 
+    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next end of WORD          	「⇧ w」	「page_down」
+    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD          	「⇧ w」	「page_down」
+    #        	   'extend_next_long_word_end']	#                                   	 
+    'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move prev beg of WORD         	   「⇧ b」	「」
+    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next end of WORD          	「⇧ w」   	「」
+    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev end of word          	≝ⓘ「⎇◀」  	「move_prev_word_end」
+    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next beg of word          	≝ⓘ「⎇▶」  	「move_next_word_start」
+    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move prev end of word          	ⓘ「⎇b」   	「」
+    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move next beg of word          	ⓘ「⎇f」   	「」
 
     #ⓘ     	Line
     # 'A-G'	= 'goto_line'   	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧Ⓝ g」	「」
