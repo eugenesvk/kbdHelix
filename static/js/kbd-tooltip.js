@@ -18,6 +18,8 @@ String.prototype.strip = function (chars) { return strip(this, chars); };
 function joinsep(sep,...strings) { // join non-empty strings with a separator
   return Array.prototype.slice.call(strings).filter(Boolean).join(sep);
 }
+function sortAZ(str) { return [...str].sort((a, b) => a.localeCompare(b)).join(''); }
+String.prototype.sort = function () { return sortAZ(this); };
 
 const modi_list         	= ['⇧','⎈','⎇']; // add ◆ when it's supported
 const mode_list         	= ['☰␜','☰⟪','🌐','☰®','⧛ℂ','ℂ⧚','⧛☰','☰⧛'];
@@ -186,7 +188,7 @@ function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at
   let key_fmt, cmd;
   let keyCombo = new Map();
   function setKeyComboItem(modi,lbl_id) {
-    if (key_fmt === lbl_modis.get(lbl_id)) {
+    if (key_fmt.sort() === lbl_modis.get(lbl_id).sort()) {
       keyCombo.set(lbl_id,{'modi':key_fmt, 'cmd':cmd, 'chord':chord});
     }
   }
