@@ -3,6 +3,19 @@ import { gLyt, lyt, Case 	,
   getCaseLyt }           	from "/js/layout-convert.js";
 import modifew           	from '../config/modifew.json' assert {type: 'json'}
 
+export const addEvtLis = // addEvtLis(domElement, 'click', this.myfunction.bind(this));
+  (   el,   evtNm, callback, opts=false) => {
+  if (el && evtNm){
+    const lisNm = 'listener:' + evtNm;
+    const isAttached =           el.getAttribute(lisNm       );
+    if (isAttached !== 'true') { el.setAttribute(lisNm,'true');
+      el.addEventListener(evtNm, (evt) => {callback(evt);}, opts);
+  }}};
+export const rmEvtLis = // rmEvtLis(domElement, 'click', this.myfunction);
+  (   el,   evtNm, callback) => {
+  if (el && evtNm) {
+    el.removeEventListener(evtNm, callback);}};
+
 window.onload=function(){ // optional since it depends on the way in which you fire events
 const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
@@ -207,6 +220,9 @@ function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at
 const reLblClass = new RegExp(String.raw`keylabel(\d{1,2})`);
 
 // Add tooltip scaffolding
+const delayShow        	= 500          	; // show tooltip after this ms has passed     hovering
+const delayHide        	= 500          	; // hide tooltip after this ms has passed not hovering
+const timerIdMap       	= new WeakMap()	; // store keycap tooltip timers
 const table_header     	= ['m','o','d','Key','Sym','Command'];
 const ttKeyColI        	= table_header.indexOf('Key');
 const ttBox            	= document.createElement("div");
@@ -214,18 +230,20 @@ const ttBox            	= document.createElement("div");
  ttBox.style.visibility	= "hidden"; // hide till mouse over
 document.body.appendChild(ttBox);
 
-const tooltip_1 = ((evt) => {
-  const boundBox  	= evt.target.getBoundingClientRect(); // get hover element position
-  const X         	= boundBox.left;
-  const Y         	= boundBox.top;
-  ttBox.style.left	= `${X + 45}px`; // move tooltip to the hover element
-  ttBox.style.top 	= `${Y + 45}px`;
-  const ttt       	= evt.currentTarget.ttt;
-  const lbl       	= evt.currentTarget.lbl;
-  const cLytLbl   	= evt.currentTarget.cLytLbl;
-  const tr        	= ttt.getElementsByClassName('styled-table')[0].rows;
-  if (cLytLbl !== gLyt.lbl) {
-    // console.log('layout changed',cLytLbl,gLyt.lbl);
+const tooltip_1 = ((evt, elAttached) => {
+  const type         	= evt.type;
+  // const elAttached	= evt.currentTarget	; // el to which the event handler has been attached
+  const elOccured    	= evt.target       	; // el on which the event occurred and which may be its descendant
+  const boundBox     	= elOccured.getBoundingClientRect(); // get hover element position
+  const X            	= boundBox.right;
+  const Y            	= boundBox.bottom;
+  ttBox.style.left   	= `${X + 5}px`; // move tooltip to the hover element
+  ttBox.style.top    	= `${Y + 5}px`;
+  const ttt          	= elAttached.ttt;
+  const lbl          	= elAttached.lbl;
+  const cLytLbl      	= elAttached.cLytLbl;
+  const tr           	= ttt.getElementsByClassName('styled-table')[0].rows;
+  if (cLytLbl !== gLyt.lbl) { // layout changed
     Array.from(tr).forEach(function(row,i) {
       if (i === 0) { return; } // skip table header
       row.cells[ttKeyColI].innerHTML = convert(lbl,'qwerty',lyt[gLyt.lbl]);
@@ -233,9 +251,23 @@ const tooltip_1 = ((evt) => {
     });
   }
   ttBox.innerHTML	= ttt.innerHTML;
-  ttBox.style.visibility = "visible"; });
-const tooltip_0 = (() => {
-  ttBox.style.visibility = "hidden" ; });
+  ttBox.style.visibility = "visible";
+});
+const tooltip_0 = (() => {ttBox.style.visibility = "hidden"; });
+function getMouseEventHandler(evtHandler, delay) {
+  return (evt) => { // ({target: el})
+    const elOccured 	= evt.target;
+    const elAttached	= evt.currentTarget; //currentTarget is only available while the event is being handled, so if we pass evt, it won't be available downstream
+    let timerId = timerIdMap.get(elOccured) ?? 0;
+    clearTimeout(timerId);
+    timerId = setTimeout(() => evtHandler(evt, elAttached), delay);
+    timerIdMap.set(elOccured, timerId);
+  };
+}
+const ttShowDelay	= getMouseEventHandler(tooltip_1, delayShow); //showTooltip
+const ttHideDelay	= getMouseEventHandler(tooltip_0, delayHide); //hideTooltip
+const ttHide     	= getMouseEventHandler(tooltip_0, 0);
+
 function setTableHead(table, keys) {
   let tHd	= table.createTHead();
   let row	= tHd.insertRow();
@@ -340,14 +372,15 @@ modifew_modes.map(m => {
 
       // Add tooltip data/listeners to the whole key
       if (!showTT) {return;}
-      const keycap = el.closest(".keylabels").closest(".keycap"); // find the grandparent keycap element
+      const keycap  	= el.closest(".keylabels"); // find the labels group
       keycap.ttt    	= tt_div 	; // tooltip table div
       keycap.lbl    	= keylbl 	; // add lbl/cLytLbl to allow ↓ callbacks to use it
       keycap.cLytLbl	= cLytLbl	; // current layout
-      // add tooltip listeners
-      keycap.addEventListener("mouseover"	, tooltip_1, false)	; // show tooltip
-      keycap.addEventListener("mouseout" 	, tooltip_0, false)	; // hide
-      keycap.addEventListener("click"    	, tooltip_0, false)	; // disable on click
+      // add tooltip listeners (once)
+      timerIdMap.set(keycap         	, 0          	       ); // store timer
+      addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
+      addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
+      addEvtLis(keycap, 'click'     	, ttHide     	, false); // disable on click
       }
     });
   });
