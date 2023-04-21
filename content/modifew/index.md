@@ -87,6 +87,8 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 | :- | :-----------------: | :---------------------: |
 | Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-1Labels.png?raw=true" alt="Key Modifier Labels" width="125"/> | <img src="https://github.com/eugenesvk/kbdHelix/blob/main/img/KeyInfo-2Example.png?raw=true" alt="Key Example" width="149"/>|
 
+<span style="color: green">⚠</span> Cheat sheets are best used in a supporting role after you have some basic familiarity with the config, so you might want to start learning by reading through the config's sections, e.g., `#Ⓝ Move` in [Normal mode](https://github.com/eugenesvk/kbdHelix/blob/d366b2382e7b08cae45c7990c917d3516dbacfc9/src/m1NOR.toml.tmpl#L64) and having a cheat sheet side-by-side. Later if you need to look up just a single icon/button you might use tooltips by hovering over a button on this page
+
 <span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
 
 
