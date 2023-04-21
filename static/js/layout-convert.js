@@ -123,7 +123,7 @@ button_name.forEach(((x) => { // x=button id, e.g., 'btn_qwerty'
     this.classList.add(class_clicked); // add color border to the clicked button
 
     const layoutForm = lyt[btn_active.slice(btn_prefix_len)];	// 'btn_Qwerty' → Q → Qwerty
-    changeKLELayoutTo(layoutForm, layoutTo)
+    changeKLELayoutTo(layoutForm, layoutTo);
   }, false);}
 }));
 changeElementLayoutTo(gLyt.lbl);
