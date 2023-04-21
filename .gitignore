@@ -64,4 +64,5 @@ public
 docs
 !docs/.nojekyll
 www
-themes
+themes/*
+!themes/code_highlight
