@@ -1,0 +1,28 @@
+name: Publish Zola site on GitHub Pages
+
+on:
+ push:
+  branches:
+   - main
+
+jobs:
+  build:
+    name: Publish site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout main
+      uses: actions/checkout@v3.0.0
+    - name: Build and deploy
+      uses: shalzz/zola-deploy-action@master
+      env:
+        GITHUB_TOKEN      : ${{ secrets.GITHUB_TOKEN }} # same repo, use auto token; Settings > Actions > General: Workflow permissions: Read and Write
+        PAGES_BRANCH      : gh-pages                    # push static files to this branch
+        # REPOSITORY      : GITHUB_REPOSITORY           # push to current repo
+        BUILD_THEMES      : false                       # |true| fetch themes submodules
+        OUT_DIR           : www                         # |public| build output directory, should match output_dir in zola's config.toml
+        # BUILD_DIR       : .                           # |.| run zola from root
+        # BUILD_FLAGS     :                             # custom build flags
+        # BUILD_ONLY      :                             # don't deploy after build
+        # CHECK_LINKS     :                             # check links with zola check
+        # CHECK_FLAGS     :                             # zola check flags
+        # GITHUB_HOSTNAME :                             # Enterprise instances base URL≠github.com
