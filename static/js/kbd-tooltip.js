@@ -186,7 +186,7 @@ function pp(...items) { // helper print var names, must be passed as {objects}
     const iVal   	= item[iName];
     const iT     	= typeof(iVal);
     console.log(`${iName}(${iT})=¦`,iVal,'¦'); }
- }
+}
 function pt(...items) { // helper print var's type and var's value
   for (const item of items) { console.log(typeof(item),item); } }
 
