@@ -1,5 +1,6 @@
 {
   "name": "kbdHelix",
+  "type": "module",
   "packageManager": "yarn@3.5.0",
   "scripts": {
     "build": "rollup --config"
