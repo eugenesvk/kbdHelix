@@ -1,4 +1,10 @@
 {
   "name": "kbdHelix",
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "devDependencies": {
+    "rollup": "^3.20.7"
+  }
 }
