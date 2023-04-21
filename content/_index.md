@@ -4,7 +4,7 @@ description	= "Helix editor keymaps"
 
 draft              	= false        	# only loaded if the `--drafts` is passed to `zola build`/`serve`/`check`
 render             	= true         	# section homepage (false to use the section to organize pages)
-#redirect_to       	=              	# redirect when a user lands on the section, used to organize pages w/o `404`, e.g. "documentation/content/overview"
+redirect_to        	= "modifew"    	# redirect when a user lands on the section, used to organize pages w/o `404`, e.g. "documentation/content/overview"
 sort_by            	= "weight"     	# |none¦date¦update_date¦title¦title_bytes¦weight¦slug
 weight             	= 0            	# used by parent to order its subsections (↓val=↑higher priority)
 template           	= "index.html" 	# template to render this section page
