@@ -30,9 +30,12 @@
 }
 
 #buttons {
-  position        	: fixed;
-  bottom          	:  0;
-  background-color	: hsla(0, 0%, 100%, 1);
-  z-index         	: 99;
-  height          	: 1.7em;
+  /*position        	: fixed;*/
+  /*bottom          	:  0;*/
+  /*background-color	: hsla(0, 0%, 100%, 1);*/
+  /*z-index         	: 99;*/
+  margin            	: 0px 0px 2px 0px;
+}
+#buttons>button {
+  margin	: 0px 5px 0px 5px;
 }

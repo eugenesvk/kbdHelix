@@ -18,23 +18,13 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 [extra] # Your own data
 +++
 
-<div id=buttons>
-  Change keyboard layout to:
-  <button class="btn" id=btn_qwerty    	type=button style=margin:5px>QWERTY</button>
-  <button class="btn" id=btn_dvorak    	type=button style=margin:5px>Dvorak</button>
-  <button class="btn" id=btn_colemak   	type=button style=margin:5px>Colemak</button>
-  <button class="btn" id=btn_colemak_dh	type=button style=margin:5px>Colemak DH</button>
-  <button class="btn" id=btn_workman   	type=button style=margin:5px>Workman</button>
-  <button class="btn" id=btn_neo2      	type=button style=margin:5px>Neo2</button>
-</div>
-
 ## Overview {#overview}
 
 
 This is a draft of the __modiƒew__ keymap for the [Helix](https://helix-editor.com) text editor that tries to break the chains ⛓ of keycap-based mnemonics[^mnem] like __f__ for `find` and instead maps most __frequent commands__ to the __best keys__, so 👆🏻[^finger] (<kbd>f</kbd> in QWERTY) `moves forward by a word` instead of executing `find`<br>
 It also attempts to convert most of the commands requiring modifiers into a chainable key sequence, hence its name: "few modifiers based on frequency" (__ƒ__ for frequency) or __modiƒew__
 
-This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍🏻👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the bottom
+This keymap is based on a dumb standard staggered keyboard design, so if you use a better one with a thumb 👍🏻👍 key cluster, you might want to move some of the more frequent commands there instead. The config file is based on the standard US-based __QWERTY__ layout[^2], though this document supports multiple layouts via buttons at the bottom of this overview
 
 It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoemacs_vi_mode.html) and uses Xah Lee's data on [Emacs command frequencies](http://xahlee.info/emacs/emacs/command-frequency.html), but is trying to outlfy the fly master :) by being more consistent in applying the basic frequent→best principle[^3]
 
@@ -91,6 +81,14 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 <span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
 
+<div id=buttons> Change keyboard layout to:
+  <button class="btn" id=btn_qwerty    	type=button>QWERTY</button>
+  <button class="btn" id=btn_dvorak    	type=button>Dvorak</button>
+  <button class="btn" id=btn_colemak   	type=button>Colemak</button>
+  <button class="btn" id=btn_colemak_dh	type=button>Colemak DH</button>
+  <button class="btn" id=btn_workman   	type=button>Workman</button>
+  <button class="btn" id=btn_neo2      	type=button>Neo2</button>
+</div>
 
 ## Major modes {#major}
 
