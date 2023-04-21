@@ -1,6 +1,6 @@
 import { gLyt, lyt, Case 	,
   convert, convertCaseLyt	,
-  getCaseLyt }           	from "/js/layout-convert.js";
+  getCaseLyt }           	from "./layout-convert.js";
 import modifew           	from '../config/modifew.json' assert {type: 'json'}
 
 export const addEvtLis = // addEvtLis(domElement, 'click', this.myfunction.bind(this));
