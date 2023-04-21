@@ -63,3 +63,22 @@ Thumbs.db
 www
 themes/*
 !themes/code_highlight
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# no zero-installs (yarnpkg.com/features/zero-installs)
+#!.yarn/cache
+.pnp.*
+
+node_modules
+npm-debug.log
+debug.log
+yarn-error.log
+coverage
+package-lock.json
