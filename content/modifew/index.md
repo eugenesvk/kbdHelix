@@ -30,7 +30,7 @@ It's inspired by the [Emacs: Xah Fly Keys](http://xahlee.info/emacs/misc/ergoema
 
 Below is a summary of some of the design decisions followed up by detailed keymap Cheat Sheets for the various modes:
 
-  - ⌂__Home__ keys are __safe__: all 8 of the home keys are movement commands, so to modify a buffer your fingers need to leave __⌂__!
+  - ⌂ __Home__ keys are __safe__: all 8 of the home keys are movement commands, so to modify a buffer your fingers need to leave __⌂__!
   - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the same keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
   - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>⎈</kbd> or <kbd>⇧</kbd> in the Normal mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
