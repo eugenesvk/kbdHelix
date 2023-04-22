@@ -90,6 +90,16 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
   <button class="btn" id=btn_neo2      	type=button>Neo2</button>
 </div>
 
+(or load a page with a given layout by including its name as a url `#hash`
+{{ url_hash (name="#qwerty"    	, url="@/modifew/index.md" , hash="#qwerty") }}
+{{ url_hash (name="#dvorak"    	, url="@/modifew/index.md" , hash="#dvorak") }}
+{{ url_hash (name="#colemak"   	, url="@/modifew/index.md" , hash="#colemak") }}
+{{ url_hash (name="#colemak_dh"	, url="@/modifew/index.md" , hash="#colemak_dh") }}
+{{ url_hash (name="#workman"   	, url="@/modifew/index.md" , hash="#workman") }}
+{{ url_hash (name="#neo2"      	, url="@/modifew/index.md" , hash="#neo2") }}
+{{ url_hash (name="#asset"     	, url="@/modifew/index.md" , hash="#asset") }}
+)
+
 ## Major modes {#major}
 
 ### Helix Keymap modiƒew Normal {#m-normal}
