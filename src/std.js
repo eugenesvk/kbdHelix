@@ -12,7 +12,7 @@ export function regexp(strings, ...vars) { // write regex without \\, with white
   // Reconstruct the original string
   let strings_raw	= strings.raw; // .raw allows use of \d instead of \\d)
   let str_orig   	= strings_raw[0];
-  for (i = 0; i < vars.length; i++) { // vars get ${var} inerpolation values
+  for (let i = 0; i < vars.length; i++) { // vars get ${var} inerpolation values
     str_orig += vars[i] + strings_raw[i+1];
   }
   const comment_beg	= '【'; // 【comment】, alternatives? 〈comment〉「comment」 ‹comment›
