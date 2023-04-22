@@ -1,4 +1,11 @@
+import * as std	from './std.js';
+
 export let gLyt = { lbl: "q" };
+
+const p 	= std.p 	; // helper console log
+const pp	= std.pp	; // helper print var names, must be passed as {objects}
+const pt	= std.pt	; // helper print var's type and var's value
+
 const layout_string = {
   'qwerty.low'    	: String.raw`${"`"}1234567890-=`     +`qwertyuiop[]`+`asdfghjkl;'`+`zxcvbnm,./`,
   'qwerty.upp'    	: String.raw     `~!@#$%^&*()_+`     +`QWERTYUIOP{}`+`ASDFGHJKL:"`+`ZXCVBNM<>?`,
