@@ -191,6 +191,9 @@ let getSiblingKeyCaps = function (e, ids) { // get only valid sibling keycap ele
   return siblings;
 };
 
+const p 	= std.p 	; // helper console log
+const pp	= std.pp	; // helper print var names, must be passed as {objects}
+const pt	= std.pt	; // helper print var's type and var's value
 
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
   const rePattern = std.regexp`
