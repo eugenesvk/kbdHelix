@@ -249,21 +249,48 @@ function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at
 const reLblClass = new RegExp(String.raw`keylabel(\d{1,2})`);
 
 // Add tooltip scaffolding
-const delayShow   	= 500          	; // show tooltip after this ms has passed     hovering
-const delayHide   	= 300          	; // hide tooltip after this ms has passed not hovering
+let delayShow, delayHide;
+if (isMobile)     	{
+  delayShow       	= 0	; // show tooltip right away, there is no hovering
+  delayHide       	= 0	; //
+} else            	{
+  delayShow       	= 500	; // show tooltip after this ms has passed     hovering
+  delayHide       	= 300	; // hide tooltip after this ms has passed not hovering
+}                 	//
 const timerIdMap  	= new WeakMap()	; // store keycap tooltip timers
 const table_header	= ['m','o','d','K⃣','Sym','Command'];
 const ttKeyColI   	= table_header.indexOf('K⃣');
 
+function hideAllTooltips() {
+  document.querySelectorAll(".keycap_tooltip_modi_cmd").forEach((el, ind, listObj) => {
+    el.style.display = 'none';
+  });
+}
+if (isMobile) { // phones don't auto hide tooltips, so hide previous tooltips on any click
+  document.addEventListener("touchstart", function(evt) {
+    const elOccured = evt.target;
+    let inKeyboard = false;
+    document.querySelectorAll("#keyboard").forEach((el, ind, listObj) => {
+      if (el.contains(elOccured)) {inKeyboard = true; }
+    });
+    if (inKeyboard === false ) { hideAllTooltips(); }
+  });
+}
+
 const tooltip_1 = ((el) => {
-  const ttBox     	= el.querySelector(".keycap_tooltip_modi_cmd");
-  const boundBox  	= el.getBoundingClientRect(); // get hover element position
-  const X         	= boundBox.right;
-  const Y         	= boundBox.bottom;
-  ttBox.style.left	= `${X + 5}px`; // move tooltip to the hover element
-  ttBox.style.top 	= `${Y + 5}px`;
-  const tr        	= ttBox.getElementsByClassName('styled-table')[0].rows;
-  const hd_lbl    	= ttBox.getElementsByClassName('styled-table-header-label')[0];
+  if (isMobile) { hideAllTooltips(); } // phones don't auto hide tooltips, so hide previous tooltips
+  const ttBox       	= el.querySelector(".keycap_tooltip_modi_cmd");
+  const boundBox    	= el.getBoundingClientRect(); // get hover element position
+  const X           	= boundBox.right;
+  const Y           	= boundBox.bottom;
+  if (isMobile)     	{
+    ttBox.style.left	= `0px`; // move tooltip to the hover, but don't waste space to the left
+  } else            	{
+    ttBox.style.left	= `${X + 5}px`; // move tooltip to the hover element
+  }                 	//
+  ttBox.style.top   	= `${Y + 5}px`;
+  const tr          	= ttBox.getElementsByClassName('styled-table')[0].rows;
+  const hd_lbl      	= ttBox.getElementsByClassName('styled-table-header-label')[0];
   if (ttBox.curLytLbl !== gLyt.lbl) { // layout changed, convert table elements
     hd_lbl.innerHTML = convert(ttBox.keyLbl,'qwerty',lyt[gLyt.lbl]);
     Array.from(tr).forEach(function(row,i) {
@@ -412,10 +439,12 @@ modifew_modes.map(m => {
        ttBox.curLytLbl     	= curLytLbl                    	; //
       keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
       // add tooltip listeners (once)
-      timerIdMap.set(keycap         	, 0          	       ); // store timer
-      addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
-      addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
-      addEvtLis(keycap, 'click'     	, ttHide     	, false); // disable on click
+      timerIdMap.set(keycap           	, 0          	       ); // store timer
+      addEvtLis  (keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
+      if (!isMobile)                  	{            	// permashow on a phone unless clicked elsewhere
+        addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
+        addEvtLis(keycap, 'click'     	, ttHide     	, false); // disable on click
+      }
       }
     });
   });
