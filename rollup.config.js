@@ -7,7 +7,7 @@ const pT   	= isDev ? false : true 	; // pT = production True
 const pF   	= isDev ? true  : false	;
 
 export default [{
-  input         	: ["src/kbd-tooltip.js", "src/layout-convert.js"],
+  input         	: ["src/kbdHelix.js"],
   output        	: [{dir:"static/js"}],
   plugins       	: [urlResolve(), ViteToml(),
     swc(        	{
