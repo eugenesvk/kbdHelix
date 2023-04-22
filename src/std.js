@@ -48,3 +48,16 @@ export function extendProtos() {
   RegExp.esc     = escRe;
   RegExp.escrepl = escRepl;
 }
+
+
+export function p(...items) { // helper console log
+  console.log(...items); }
+export function pp(...items) { // helper print var names, must be passed as {objects}
+  for (const item of items) {
+    const [iName]	= Object.keys(item);
+    const iVal   	= item[iName];
+    const iT     	= typeof(iVal);
+    console.log(`${iName}(${iT})=¦`,iVal,'¦'); }
+}
+export function pt(...items) { // helper print var's type and var's value
+  for (const item of items) { console.log(typeof(item),item); } }
