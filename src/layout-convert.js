@@ -34,7 +34,16 @@ for (const [lytName, lytAbbrv] of Object.entries(layouts)) {
 const btn_prefix_len	= "btn_".length;
 const buttons       	= document.getElementsByClassName("btn")	; // get a list of buttons to style later
 const class_clicked 	= 'layout_button_clicked'               	; // class that applies a colored border
-const btn_default   	= 'btn_qwerty'                          	; // default layout before any button is clicked
+let btn_default     	= 'btn_qwerty'                          	; // default layout before any button is clicked
+
+// Check if default layout should be changed based on user's url hash
+const { search, hash } = window.location;
+for (const [layout, lyt] of Object.entries(layouts)) {
+  if (hash.includes(layout)) {
+    gLyt.lbl   	= lyt;
+    btn_default	= `btn_${layout}`;
+  }
+}
 
 export const Case = Object.freeze({
   l	: Symbol("lower"),
@@ -134,3 +143,6 @@ button_name.forEach(((x) => { // x=button id, e.g., 'btn_qwerty'
   }, false);}
 }));
 changeElementLayoutTo(gLyt.lbl);
+if (gLyt.lbl !== 'q') {
+  changeKLELayoutTo('q',gLyt.lbl);
+}
