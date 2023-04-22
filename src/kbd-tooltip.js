@@ -116,20 +116,32 @@ const keySymbLbl   	= new Map([['⏎','ret'],['↩','ret'],
 ]);
 
 
+function reLastChar() { // get the regex that matches last char, but not word
+  const rePattern = std.regexp`
+    (?<lookbehind>[a-z])? 【matches 'tab' for 'b', so ignore the next match】
+    (?<lastchar>.)
+    $`;
+  return new RegExp(rePattern,'i');
+}
 function keyLblToSymbMod(key_user) { // replace key modifiers with symbols A-A → ⎇⇧a
   keySymbLblMod.forEach((v, k) => { // replace with symbols
     const reV = RegExp(v, 'i');
     if (reV.test(key_user)) {
       key_user = key_user.replace(reV,k);}
   });
-  const reLastChar	= new RegExp('(?<![a-z])(.)$', 'i');
-  if (reLastChar.test(key_user)) {
-    const lastChar = key_user.match(reLastChar)[1];
-    if (getCaseLyt(lastChar,'qwerty') === Case.U) { // replace caps
-      key_user = key_user.replace(reLastChar,'⇧'+convertCaseLyt(lastChar, 'qwerty', Case.l));
+  const reLastCh	= reLastChar();
+  const matchCh 	= key_user.match(reLastCh);
+  if (matchCh) {
+    const gch     	= matchCh.groups;
+    const gch_pre 	= gch.lookbehind;
+    const gch_last	= gch.lastchar;
+    if (( gch ) && // match last char
+        (gch_pre === undefined)) { // but only if it's not part of a word
+      if (getCaseLyt(gch_last,'qwerty') === Case.U) { // replace caps
+        key_user = key_user.replace(reLastCh,'⇧'+convertCaseLyt(gch_last, 'qwerty', Case.l));
+      }
     }
   }
-  // key_user = key_user.replace(/([A-Z])/,'⇧$1').toLowerCase();
 
   return key_user;
 }
@@ -190,7 +202,11 @@ function pt(...items) { // helper print var's type and var's value
   for (const item of items) { console.log(typeof(item),item); } }
 
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
-  return new RegExp('(?<![a-z])'+std.escRe(letter)+'$', 'i');
+  const rePattern = std.regexp`
+    (?<lookbehind>[a-z])? 【matches 'tab' for 'b', so ignore the next match】
+    (?<lastchar>${std.escRe(letter)})
+    $`;
+  return new RegExp(rePattern,'i');
 }
 function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at each label id: {'0'=>{…},...
   // from {B:..lower, A-tab:move, C-b:...upper, b:no_op} to
@@ -207,8 +223,20 @@ function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at
   const reLastk	= reLastLetter(k);
   const reLastK	= reLastLetter(K);
   for (const key_from in keymap) {
-    if (reLastk.test(key_from) || reLastK.test(key_from)) { // match either > or .
-      key_fmt	= keyLblToSymbMod(key_from).replace(reLastk,'');
+    const matchk	= key_from.match(reLastk);
+    const matchK	= key_from.match(reLastk);
+    let [gk,gK,gk_pre,gK_pre,gk_last,gK_last,] = [null,null,null,null,null,null];
+    if (matchk)	{
+      gk       	= matchk.groups;
+      gk_pre   	= gk.lookbehind;
+      gk_last  	= gk.lastchar;}
+    if (matchK)	{
+      gK       	= matchK.groups;
+      gK_pre   	= gK.lookbehind;
+      gK_last  	= gK.lastchar;}
+    if (( gk                   ||  gK   ) && // match either . or >
+        (gk_pre === undefined) && (gK_pre === undefined) ){ // but only if they're not part of a word
+      key_fmt	= keyLblToSymbMod(key_from).replace(reLastk,''); // and replace . (labels don't have >)
       cmd    	= keymap[key_from];
       lbl_modis.forEach(setKeyComboItem);
     }
