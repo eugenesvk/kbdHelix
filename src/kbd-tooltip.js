@@ -19,6 +19,8 @@ export const rmEvtLis = // rmEvtLis(domElement, 'click', this.myfunction);
     el.removeEventListener(evtNm, callback);}};
 
 window.onload=function(){ // optional since it depends on the way in which you fire events
+let isMobile = false;
+if (/Android|iPhone/i.test(navigator.userAgent)) { isMobile = true; }
 const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
   (_, i) => start + (i * step));
