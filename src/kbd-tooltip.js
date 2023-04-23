@@ -2,6 +2,8 @@ import { gLyt, lyt, Case 	,
   convert, convertCaseLyt	,
   getCaseLyt }           	from "./layout-convert.js";
 import modifew           	from 'https://raw.githubusercontent.com/eugenesvk/kbdHelix/modifew/config/modifew.toml';
+import * as std          	from './std.js';
+std.extendProtos();
 
 export const addEvtLis = // addEvtLis(domElement, 'click', this.myfunction.bind(this));
   (   el,   evtNm, callback, opts=false) => {
@@ -175,9 +177,6 @@ let getSiblingKeyCaps = function (e, ids) { // get only valid sibling keycap ele
   return siblings;
 };
 
-
-function escRe  (string) { return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); } // $& = whole string
-function escRepl(string) { return string.replace(/\$/g                , '$$$$'); }
 function p(...items) { // helper console log
   console.log(...items); }
 function pp(...items) { // helper print var names, must be passed as {objects}
@@ -191,7 +190,7 @@ function pt(...items) { // helper print var's type and var's value
   for (const item of items) { console.log(typeof(item),item); } }
 
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
-  return new RegExp('(?<![a-z])'+escRe(letter)+'$', 'i');
+  return new RegExp('(?<![a-z])'+std.escRe(letter)+'$', 'i');
 }
 function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at each label id: {'0'=>{…},...
   // from {B:..lower, A-tab:move, C-b:...upper, b:no_op} to
