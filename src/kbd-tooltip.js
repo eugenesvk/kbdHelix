@@ -120,8 +120,8 @@ const keySymbLbl   	= new Map([['⏎','ret'],['↩','ret'],
 
 function reLastChar() { // get the regex that matches last char, but not word
   const rePattern = std.regexp`
-    (?<lookbehind>[a-z])? 【matches 'tab' for 'b', so ignore the next match】
-    (?<lastchar>.)
+    ([a-z])?	【?<lookbehind> matches 'tab' for 'b', so ignore the next match】
+    (.)     	【?<lastchar>】
     $`;
   return new RegExp(rePattern,'i');
 }
@@ -134,11 +134,11 @@ function keyLblToSymbMod(key_user) { // replace key modifiers with symbols A-A �
   const reLastCh	= reLastChar();
   const matchCh 	= key_user.match(reLastCh);
   if (matchCh) {
-    const gch     	= matchCh.groups;
-    const gch_pre 	= gch.lookbehind;
-    const gch_last	= gch.lastchar;
-    if (( gch ) && // match last char
-        (gch_pre === undefined)) { // but only if it's not part of a word
+    // const gch  	= matchCh.groups;
+    const gch_pre 	= matchCh[1]; //gch.lookbehind;
+    const gch_last	= matchCh[2]; //gch.lastchar;
+    // if (( gch ) && // match last char
+    if (gch_pre === undefined) { // but only if it's not part of a word
       if (getCaseLyt(gch_last,'qwerty') === Case.U) { // replace caps
         key_user = key_user.replace(reLastCh,'⇧'+convertCaseLyt(gch_last, 'qwerty', Case.l));
       }
@@ -197,8 +197,8 @@ const pt	= std.pt	; // helper print var's type and var's value
 
 function reLastLetter(letter) { // get the regex that matches 'b' but not 'tab' for 'b' or 'B'
   const rePattern = std.regexp`
-    (?<lookbehind>[a-z])? 【matches 'tab' for 'b', so ignore the next match】
-    (?<lastchar>${std.escRe(letter)})
+    ([a-z])?              	【?<lookbehind> matches 'tab' for 'b', so ignore the next match】
+    (${std.escRe(letter)})	【?<lastchar>】
     $`;
   return new RegExp(rePattern,'i');
 }
@@ -221,14 +221,17 @@ function getKeyCombo(k_in, keymap, lbl_modis=lbl_modi, chord='') { // for 'b' at
     const matchK	= key_from.match(reLastk);
     let [gk,gK,gk_pre,gK_pre,gk_last,gK_last,] = [null,null,null,null,null,null];
     if (matchk)	{
-      gk       	= matchk.groups;
-      gk_pre   	= gk.lookbehind;
-      gk_last  	= gk.lastchar;}
+      // gk    	= matchk.groups;
+      gk_pre   	= matchk[1];// gk.lookbehind;
+      gk_last  	= matchk[2];// gk.lastchar;
+    }          	//
     if (matchK)	{
-      gK       	= matchK.groups;
-      gK_pre   	= gK.lookbehind;
-      gK_last  	= gK.lastchar;}
-    if (( gk                   ||  gK   ) && // match either . or >
+      // gK    	= matchK.groups;
+      gK_pre   	= matchK[1]; //gK.lookbehind;
+      gK_last  	= matchK[2]; //gK.lastchar;
+    }          	//
+    // if (( gk                   ||  gK   ) && // match either . or >
+    if ((matchk || matchK) && // match either . or >
         (gk_pre === undefined) && (gK_pre === undefined) ){ // but only if they're not part of a word
       key_fmt	= keyLblToSymbMod(key_from).replace(reLastk,''); // and replace . (labels don't have >)
       cmd    	= keymap[key_from];
