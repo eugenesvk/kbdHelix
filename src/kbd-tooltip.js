@@ -432,8 +432,10 @@ modifew_modes.map(m => {
       keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
       // add tooltip listeners (once)
       timerIdMap.set(keycap           	, 0          	       ); // store timer
-      addEvtLis  (keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
-      if (!isMobile)                  	{            	// permashow on a phone unless clicked elsewhere
+      if (isMobile)                   	{            	// permashow on a phone unless toched elsewhere
+        addEvtLis(keycap, 'touchstart'	, ttShowDelay	, false); // show tooltip
+      } else                          	{            	//
+        addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
         addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
         addEvtLis(keycap, 'click'     	, ttHide     	, false); // disable on click
       }
