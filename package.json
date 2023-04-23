@@ -3,7 +3,8 @@
   "type": "module",
   "packageManager": "yarn@3.5.0",
   "scripts": {
-    "build": "rollup --config"
+    "b": "rollup --config",
+    "build": "rollup --config",
   },
   "devDependencies": {
     "@swc/core": "^1.3.53",
