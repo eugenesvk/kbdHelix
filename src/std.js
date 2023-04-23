@@ -25,7 +25,7 @@ export function regexp(strings, ...vars) { // write regex without \\, with white
     [comment_beg]          	: [STX]        	, //  [ → control char
     [comment_end]          	: [ETX]        	,
   };
-  const reComment	= new RegExp(STX +`[^${ETX}]*` + ETX);
+  const reComment	= new RegExp(STX +`[^${ETX}]*` + ETX, 'g');
   return new RegExp(str_orig
     .mapRepl(deCommentMap)	// replace pairs with singles and singles with control chars that delimit comments
     .replace(reComment,'')	//
