@@ -272,8 +272,19 @@ if (isMobile) { // phones don't auto hide tooltips, so hide previous tooltips on
   });
 }
 
+let timeTouchBeg = new Date();
+function isTouchTap(dur=0.2) {
+  const timeTouchEnd = new Date();
+  const ms = 1000;
+  const timeTouchDiff = (timeTouchEnd - timeTouchBeg) / ms;
+  if (timeTouchDiff < dur) {return true;} else {return false;}
+}
 const tooltip_1 = ((el) => {
-  if (isMobile) { hideAllTooltips(); } // phones don't auto hide tooltips, so hide previous tooltips
+  if (isMobile) {
+    hideAllTooltips(); // phones don't auto hide tooltips, so hide previous tooltips
+    const isTap = isTouchTap(0.2);
+    if (!isTap) {return;} // only trigger on taps, not scrolls
+  }
   const ttBox       	= el.querySelector(".keycap_tooltip_modi_cmd");
   const boundBox    	= el.getBoundingClientRect(); // get hover element position
   const X           	= boundBox.right;
@@ -313,6 +324,9 @@ function getMouseEventHandler(evtHandler, delay) {
 const ttShowDelay	= getMouseEventHandler(tooltip_1, delayShow);
 const ttHideDelay	= getMouseEventHandler(tooltip_0, delayHide);
 const ttHide     	= getMouseEventHandler(tooltip_0, 0);
+function hTouchBeg(evt) {
+  timeTouchBeg = new Date();
+}
 
 function setTableHead(table, keys) {
   let tHd	= table.createTHead();
@@ -436,7 +450,8 @@ modifew_modes.map(m => {
       // add tooltip listeners (once)
       timerIdMap.set(keycap           	, 0          	       ); // store timer
       if (isMobile)                   	{            	// permashow on a phone unless toched elsewhere
-        addEvtLis(keycap, 'touchstart'	, ttShowDelay	, false); // show tooltip
+        addEvtLis(keycap, 'touchstart'	, hTouchBeg  	, false); // show tooltip
+        addEvtLis(keycap, 'touchend'  	, ttShowDelay	, false); // show tooltip
       } else                          	{            	//
         addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
         addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
