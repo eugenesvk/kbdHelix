@@ -261,6 +261,22 @@ function hideAllTooltips() {
     el.style.display = 'none';
   });
 }
+function tooltipToggle(el) { // accepts keycap elements
+  const ttBox	= el.querySelector(".keycap_tooltip_modi_cmd");
+  const currentStyle = ttBox.style.display;
+  if       	(currentStyle === 'block') { tooltip_0(el);
+  } else if	(currentStyle === 'none' ) { tooltip_1(el, 'key');
+  } else if	(currentStyle === ''     ) { tooltip_1(el, 'key');}
+}
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top   	>= 0                                                       	&&
+    rect.left  	>= 0                                                       	&&
+    rect.bottom	<= (window.innerHeight || document.documentel.clientHeight)	&&
+    rect.right 	<= (window.innerWidth  || document.documentel.clientWidth)
+  );
+}
 if (isMobile) { // phones don't auto hide tooltips, so hide previous tooltips on any click
   document.addEventListener("touchstart", function(evt) {
     const elOccured = evt.target;
@@ -269,6 +285,25 @@ if (isMobile) { // phones don't auto hide tooltips, so hide previous tooltips on
       if (el.contains(elOccured)) {inKeyboard = true; }
     });
     if (inKeyboard === false ) { hideAllTooltips(); }
+  });
+} else { // and non-phones can use keyboard to toggle tooltips
+  document.addEventListener("keydown", (evt) => {
+    if (evt.isComposing || evt.keyCode === 229 || evt.repeat) { hideAllTooltips(); return; }
+    const key_phys = evt.code;
+    const esc = ['Escape','Space'];
+    esc.map(esck => { if (key_phys === esck) { hideAllTooltips(); return; } });
+    const key_log = evt.key;
+    if (evt.shiftKey) {
+      const k = convertCaseLyt(key_log, lyt[gLyt.lbl], Case.l);
+      for (const mode of modifew_modes) {
+        const modeTTs = tooltips.get(mode);
+        if (modeTTs.has(k)) {
+          const elTT = modeTTs.get(k);
+          if (isInViewport(elTT))	{ tooltipToggle(elTT); break;
+          } else                 	{                      continue; }
+        }
+      }
+    }
   });
 }
 
@@ -279,9 +314,11 @@ function isTouchTap(dur=0.2) {
   const timeTouchDiff = (timeTouchEnd - timeTouchBeg) / ms;
   if (timeTouchDiff < dur) {return true;} else {return false;}
 }
-const tooltip_1 = ((el) => {
+const tooltip_1 = ((el, type='click') => {
+  if (isMobile || type==='key') { // phones/keyboards don't auto hide tooltips, so hide previous tooltips
+    hideAllTooltips();
+  }
   if (isMobile) {
-    hideAllTooltips(); // phones don't auto hide tooltips, so hide previous tooltips
     const isTap = isTouchTap(0.2);
     if (!isTap) {return;} // only trigger on taps, not scrolls
   }
@@ -365,9 +402,12 @@ function mergeSubmodes(m, keylbl) {
   }
   return keyCombos;
 }
+const tooltips = new Map(); // store all toolip divs here in a mode sub-map
+
 modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
+  tooltips.set(m, new Map());
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
     const keyLbl	= el.innerText.trim();
     if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
@@ -447,6 +487,7 @@ modifew_modes.map(m => {
        ttBox.keylbl        	= keylbl                       	; //
        ttBox.curLytLbl     	= curLytLbl                    	; //
       keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
+      tooltips.get(m)      	.set(keylbl, keycap)           	; // add keycap to global map to toggle with keyboard
       // add tooltip listeners (once)
       timerIdMap.set(keycap           	, 0          	       ); // store timer
       if (isMobile)                   	{            	// permashow on a phone unless toched elsewhere
