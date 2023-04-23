@@ -30,7 +30,7 @@ highlight_themes_css       	= [                        	#
  {theme="solarized-light"  	, filename="css/syntax-theme-light.css" },
  {theme="solarized-dark"   	, filename="css/syntax-theme-dark.css"  },]
 render_emoji               	= false	# :smile: => 😄
-external_links_target_blank	= false	# open external links in a new tab
+external_links_target_blank	= true 	# open external links in a new tab
 external_links_no_follow   	= false	# set rel="nofollow"   for all external links
 external_links_no_referrer 	= false	# set rel="noreferrer" for all external links
 smart_punctuation          	= false	# ...→… ""→“” etc.
