@@ -1,10 +1,7 @@
+{%-   if page    %}{%- set this = page    %}
+{%- elif section %}{%- set this = section %}{%- endif %}
 <!DOCTYPE html>
 <html lang="en">
-{%- if page %}
-  {%- set this = page    %}
-{%- elif section %}
-  {%- set this = section %}
-{%- endif %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
