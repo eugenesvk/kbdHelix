@@ -1,4 +1,4 @@
-base_url                   	= "https://eugenesvk.github.io/kbdHelix/"
+base_url                   	= "https://eugenesvk.github.io/kbdHelix"
 highlight_theme            	= true      	# enable syntax highlighting in a theme
 title                      	= ""        	# used in feeds
 description                	= ""        	# used in feeds
