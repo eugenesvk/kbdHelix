@@ -195,7 +195,7 @@ You can also load a page with just the cheat sheets using [these links](@/modife
   {{ include_file_coloc (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl") }}
 </div>
 
-### Install
+## Install {#install}
 
 1. Simple, but inflexible: copy the content of the __modiƒew__ [config keymap file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) to your own Helix `~/.config/helix/config.toml` below your `[editor]` section
 2. More complicated, but more flexible (makes it easier to change)
