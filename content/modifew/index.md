@@ -1,8 +1,8 @@
 +++
 title      	= "modiƒew"
-description	= "maps most frequent commands to the best keys and reduces the need for modifiers by replacing them with key chords"
+description	= "map the most frequent commands to the best keys; replace modifiers with key chords"
 date       	= 2023-03-10
-#updated   	= # last updated date of the post
+updated    	= 2023-04-24
 
 draft          	= false        	# only loaded if the `--drafts` is passed to `zola build`/`serve`/`check`
 #template      	= "keymap.html"	# template to render this section page
