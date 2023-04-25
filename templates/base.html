@@ -1,11 +1,19 @@
+{%- import 'macros/head.html'	as macros_head	%}
 {%-   if page    %}{%- set this = page    %}
 {%- elif section %}{%- set this = section %}{%- endif %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config.extra.language_code | default(value='en-US') }}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="L5kiDl-13W2rjaTemS2IV_etfpiQ_u4za0rufj5iFcg" />
+  <meta name="viewport"                             	content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification"             	content="L5kiDl-13W2rjaTemS2IV_etfpiQ_u4za0rufj5iFcg" />
+  <meta name="HandheldFriendly"                     	content="True" />
+  <meta name="mobile-web-app-capable"               	content="yes" />
+  <meta name="apple-mobile-web-app-capable"         	content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style"	content="default" />
+
+  {{- macros_head::stylesheets                                                        	(config=config) }}
+  {{- macros_head::js                                                                 	(config=config) }}
   <link rel=stylesheet type=text/css href={{get_url(path="css/github.css")}}>
   <link rel=stylesheet type=text/css href={{get_url(path="css/bootstrap.css")}} media=screen>
   <link rel=stylesheet type=text/css href={{get_url(path="css/font-awesome.min.css")}}>
@@ -22,6 +30,30 @@
 </head>
 
 <body>
+{%- block header %}
+  <header>
+    <nav>
+      <div>
+        <ul>
+          {%- if config.extra.js_theme -%}
+          <li class="js">
+            {%- if config.extra.icon_adjust -%}<i type="reset" id="mode" class="{{ config.extra.icon_adjust }}"></i>
+            {%- else -%}                       <i type="reset" id="mode" class="mode">&#9728;</i>{%- endif -%}
+          </li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </nav>
+    {%- if config.extra.sitedesc %}
+    {%- if config.description %}
+    <div>{{ config.description }}</div>
+    {%- endif %}
+    {%- endif %}
+    {%- if config.extra.headhr %}
+    <hr />
+    {%- endif %}
+  </header>
+{%- endblock header %}
   <section class="section">
     <div class="markdown-body">
       {% block content %} {% endblock %}
