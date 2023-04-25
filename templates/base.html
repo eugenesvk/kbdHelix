@@ -12,6 +12,7 @@
   <meta name="apple-mobile-web-app-capable"         	content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style"	content="default" />
 
+  {{- macros_head::theme                                                              	(config=config) }}
   {{- macros_head::stylesheets                                                        	(config=config) }}
   {{- macros_head::js                                                                 	(config=config) }}
   <link rel=stylesheet type=text/css href={{get_url(path="css/github.css")            	}}>
