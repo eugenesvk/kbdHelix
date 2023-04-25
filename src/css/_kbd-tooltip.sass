@@ -1,0 +1,27 @@
+@import "../../themes/abridge/sass/_variables.scss"
+
+:root
+  --fstt: 0.8rem /*font-size tooltip table*/
+  // Responsive typography
+  @if $enable-responsive-typography
+    @if map-get($breakpoints, "sm")
+      @media (min-width: map-get($breakpoints, "sm"))
+        --fstt: 0.8rem
+    @if map-get($breakpoints, "md")
+      @media (min-width: map-get($breakpoints, "md"))
+        --fstt: 0.832rem
+    @if map-get($breakpoints, "lg")
+      @media (min-width: map-get($breakpoints, "lg"))
+        --fstt: 0.864rem
+    @if map-get($breakpoints, "xl")
+      @media (min-width: map-get($breakpoints, "xl"))
+        --fstt: 0.896rem
+
+.keycap_tooltip_modi_cmd
+  font-size	: var(--fstt)
+
+.keycap_tooltip_modi_cmd table,
+.keycap_tooltip_modi_cmd tr,
+.keycap_tooltip_modi_cmd td,
+.keycap_tooltip_modi_cmd th
+  font-size	: var(--fstt)
