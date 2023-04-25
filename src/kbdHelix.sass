@@ -1,5 +1,6 @@
 // --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
 // @use "../themes/abridge/sass/abridge-blueshade-switcher.scss" // override theme color, but duplicates unless move all css to be managed here instead of in zola
+@use "_Solarized" as sol
 
 :root.light
   --kbg  	:	oklch(.87 0   90) 	/* Keymap background #dbdbdb	*/
@@ -8,6 +9,7 @@
   --kbred	:	oklch(.60 .23 32) 	/* Labels: red       #ff4223	*/
   --kbsel	:	oklch(.60 .11 249)	/* Labels: select    #5896d2	*/
   --kblbl	:	oklch(.10 0    0) 	/* Labels                   	*/
+  --tt-bg	:	#{sol.$bg_l}      	/* Tooltip: background      	*/
 
 :root:not(.light)
   --kbg  	:	oklch(.43 0    90)	/* Keymap background        	*/
@@ -16,3 +18,4 @@
   --kbred	:	oklch(.43 .18  32)	/* Labels: red       #ff4223	*/
   --kbsel	:	oklch(.52 .22 249)	/* Labels: select           	*/
   --kblbl	:	oklch(.75 0    0) 	/* Labels                   	*/
+  --tt-bg	:	#{sol.$bg_d}      	/* Tooltip: background      	*/
