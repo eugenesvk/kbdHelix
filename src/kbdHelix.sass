@@ -3,19 +3,23 @@
 @use "_Solarized" as sol
 
 :root.light
-  --kbg  	:	oklch(.87 0   90) 	/* Keymap background #dbdbdb	*/
-  --kbb  	:	oklch(.82 0   90) 	/* Keyborder         #cccccc	*/
-  --kbt  	:	oklch(.99 0   90) 	/* Keytop            #fcfcfc	*/
-  --kbred	:	oklch(.60 .23 32) 	/* Labels: red       #ff4223	*/
-  --kbsel	:	oklch(.60 .11 249)	/* Labels: select    #5896d2	*/
-  --kblbl	:	oklch(.10 0    0) 	/* Labels                   	*/
-  --tt-bg	:	#{sol.$bg_l}      	/* Tooltip: background      	*/
+  --kbg      	: oklch(.87 0   90)                                	/* Keymap background #dbdbdb	*/
+  --kbb      	: oklch(.82 0   90)                                	/* Keyborder         #cccccc	*/
+  --kbt      	: oklch(.99 0   90)                                	/* Keytop            #fcfcfc	*/
+  --kblbl    	: oklch(.10 0    0)                                	/* Labels                   	*/
+  --tt-bg    	: #{sol.$bg_l}                                     	/* Tooltip: background      	*/
+  --keyMove  	: oklch(43.6% 0.148 142.5)                         	/*#006400*/
+  --keySelect	: oklch(56.62% 0.113 247.24)                       	/* Labels: select #377bb5*/
+  --keyChange	: oklch(62.8% 0.25768330773615683 29.2338851923426)	/* Labels: edit  #ff0000*/
+  --keyOther 	: oklch(42.09% 0.193 328.36)                       	/*#800080*/
 
 :root:not(.light)
-  --kbg  	:	oklch(.43 0    90)	/* Keymap background        	*/
-  --kbb  	:	oklch(.50 0    90)	/* Keyborder                	*/
-  --kbt  	:	oklch(.66 0    90)	/* Keytop                   	*/
-  --kbred	:	oklch(.43 .18  32)	/* Labels: red       #ff4223	*/
-  --kbsel	:	oklch(.52 .22 249)	/* Labels: select           	*/
-  --kblbl	:	oklch(.75 0    0) 	/* Labels                   	*/
-  --tt-bg	:	#{sol.$bg_d}      	/* Tooltip: background      	*/
+  --kbg      	: oklch(.43 0    90)        	/* Keymap background  	*/
+  --kbb      	: oklch(.50 0    90)        	/* Keyborder          	*/
+  --kbt      	: oklch(.66 0    90)        	/* Keytop             	*/
+  --kblbl    	: oklch(.75 0    0)         	/* Labels             	*/
+  --tt-bg    	: #{sol.$bg_d}              	/* Tooltip: background	*/
+  --keyMove  	: oklch(43.6% 0.148 142.5)  	/*#006400*/
+  --keySelect	: oklch(.52 .22 249)        	/* Labels: select            	*/
+  --keyChange	: oklch(.43 .18  32)        	/* Labels: edit       #ff4223	*/
+  --keyOther 	: oklch(42.09% 0.193 328.36)	/*#800080*/
