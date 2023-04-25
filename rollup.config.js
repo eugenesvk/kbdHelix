@@ -2,6 +2,7 @@ import { swc }     	from 'rollup-plugin-swc3';
 import urlResolve  	from 'rollup-plugin-url-resolve';
 import { ViteToml }	from 'vite-plugin-toml';
 
+import postcss from 'rollup-plugin-postcss';
 const isDev	= true; // ↓ swap true/false in Dev to eg, avoid minification
 const pT   	= isDev ? false : true 	; // pT = production True
 const pF   	= isDev ? true  : false	;
@@ -22,7 +23,11 @@ export default [{
           jsx   	: false,
         }       	,
         minify  	: {compress:pT,mangle:pT},
-      },
-     }),]
+      }         	,
+     })         	,
+    postcss(    	{
+      plugins   	: []
+    }),
+  ]
 },
 ];
