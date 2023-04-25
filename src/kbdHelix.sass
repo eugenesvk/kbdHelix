@@ -1,18 +1,18 @@
-// --customProp: color // FAILS since SASS parsing is turned off in custom properties, so result contains //
+// --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
 // @use "../themes/abridge/sass/abridge-blueshade-switcher.scss" // override theme color, but duplicates unless move all css to be managed here instead of in zola
 
 :root.light
-  --kbg:  	oklch(.87 0   90) 	/* Keymap background #dbdbdb	*/
-  --kbb:  	oklch(.82 0   90) 	/* Keyborder         #cccccc	*/
-  --kbt:  	oklch(.99 0   90) 	/* Keytop            #fcfcfc	*/
-  --kbred:	oklch(.60 .23 32) 	/* Labels: red       #ff4223	*/
-  --kbsel:	oklch(.60 .11 249)	/* Labels: select    #5896d2	*/
-  --kblbl:	oklch(.10 0    0) 	/* Labels                   	*/
+  --kbg  	:	oklch(.87 0   90) 	/* Keymap background #dbdbdb	*/
+  --kbb  	:	oklch(.82 0   90) 	/* Keyborder         #cccccc	*/
+  --kbt  	:	oklch(.99 0   90) 	/* Keytop            #fcfcfc	*/
+  --kbred	:	oklch(.60 .23 32) 	/* Labels: red       #ff4223	*/
+  --kbsel	:	oklch(.60 .11 249)	/* Labels: select    #5896d2	*/
+  --kblbl	:	oklch(.10 0    0) 	/* Labels                   	*/
 
 :root:not(.light)
-  --kbg:  	oklch(.43 0    90)	/* Keymap background        	*/
-  --kbb:  	oklch(.50 0    90)	/* Keyborder                	*/
-  --kbt:  	oklch(.66 0    90)	/* Keytop                   	*/
-  --kbred:	oklch(.43 .18  32)	/* Labels: red       #ff4223	*/
-  --kbsel:	oklch(.52 .22 249)	/* Labels: select           	*/
-  --kblbl:	oklch(.75 0    0) 	/* Labels                   	*/
+  --kbg  	:	oklch(.43 0    90)	/* Keymap background        	*/
+  --kbb  	:	oklch(.50 0    90)	/* Keyborder                	*/
+  --kbt  	:	oklch(.66 0    90)	/* Keytop                   	*/
+  --kbred	:	oklch(.43 .18  32)	/* Labels: red       #ff4223	*/
+  --kbsel	:	oklch(.52 .22 249)	/* Labels: select           	*/
+  --kblbl	:	oklch(.75 0    0) 	/* Labels                   	*/
