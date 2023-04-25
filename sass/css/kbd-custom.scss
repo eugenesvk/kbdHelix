@@ -16,16 +16,16 @@ div:empty {
   background-color: var(--kbt) !important
 }
 [style*="#5896d2"] { // blue select icons
-  color: var(--kbsel) !important;
+  color: var(--keySelect) !important;
 }
 [style*="#ff4223"] { // red edit icons
-  color: var(--kbred) !important;
+  color: var(--keyChange) !important;
 }
 [style*="#ff0000"] { // red edit icons
-  color: var(--kbred) !important;
+  color: var(--keyChange) !important;
 }
 #keyboard-bg .key.SPACE.LONG .keylabels .keylabel.keylabel5.textsize6 > div > font:nth-child(3) {
-  color: var(--kbred) !important; // special snowflake space key
+  color: var(--keyChange) !important; // special snowflake space key
 }
 #keyboard-bg .keylabels > :is(.keylabel.keylabel9, .keylabel.keylabel10, .keylabel.keylabel11) { //.keylabel.keylabel8.textsize2
   color: var(--kblbl) !important
@@ -51,10 +51,10 @@ div:empty {
 .keylabel11                       	{ margin-left :  0.6em;} /* right label*/
 /*.keylabel9, .keylabel10, .keylabel11 { margin-top: 0px;}*/ /* labels */
 
-.keyMove  	{color	: #006400;}
-.keySelect	{color	: #377bb5;}
-.keyChange	{color	: #ff0000;}
-.keyOther 	{color	: #800080;}
+.keyMove  	{color	: var(--keyMove);}
+.keySelect	{color	: var(--keySelect);}
+.keyChange	{color	: var(--keyChange);}
+.keyOther 	{color	: var(--keyOther);}
 
 .layout_button_clicked {
   border: 2px solid green;
