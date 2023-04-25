@@ -1,8 +1,39 @@
+div:empty {
+  display: inherit;
+}
 #keyboard .key .keycap .keytop {
   margin-top 	: -3px           	; /*0px*/
   margin-left	: -5px           	; /*0px*/
   height     	: 45px !important	; /*42px → 46*/
 }
+#keyboard-bg {
+  background-color	: var(--kbg) !important	;
+}
+#keyboard-bg .keyborder {
+  background-color: var(--kbb) !important
+}
+#keyboard-bg .keytop {
+  background-color: var(--kbt) !important
+}
+[style*="#5896d2"] { // blue select icons
+  color: var(--kbsel) !important;
+}
+[style*="#ff4223"] { // red edit icons
+  color: var(--kbred) !important;
+}
+[style*="#ff0000"] { // red edit icons
+  color: var(--kbred) !important;
+}
+#keyboard-bg .key.SPACE.LONG .keylabels .keylabel.keylabel5.textsize6 > div > font:nth-child(3) {
+  color: var(--kbred) !important; // special snowflake space key
+}
+#keyboard-bg .keylabels > :is(.keylabel.keylabel9, .keylabel.keylabel10, .keylabel.keylabel11) { //.keylabel.keylabel8.textsize2
+  color: var(--kblbl) !important
+}
+#keyboard-bg > div:nth-child(43) > div > .keylabels > :is(.keylabel.keylabel6, .keylabel.keylabel8 ) {
+  color: var(--kblbl) !important // mod
+}
+
 #keyboard .key:not(.LONG) .keycap .keytop {
   width	: 52px !important	; /*42px → 52*/
 }
