@@ -18,7 +18,7 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 [extra] # Your own data
 +++
 
-<div id=buttons> Change keyboard layout to:
+<div id=buttons><span class="inline text">Change keyboard layout to:</span>
   <button class="btn" id=btn_qwerty    	type=button>QWERTY</button>
   <button class="btn" id=btn_dvorak    	type=button>Dvorak</button>
   <button class="btn" id=btn_colemak   	type=button>Colemak</button>

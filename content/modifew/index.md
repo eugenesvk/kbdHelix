@@ -81,7 +81,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 <span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
 
-<div id=buttons> Change keyboard layout to:
+<div id=buttons><span class="inline text">Change keyboard layout to:</span>
   <button class="btn" id=btn_qwerty    	type=button>QWERTY</button>
   <button class="btn" id=btn_dvorak    	type=button>Dvorak</button>
   <button class="btn" id=btn_colemak   	type=button>Colemak</button>
