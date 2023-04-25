@@ -1,25 +1,34 @@
 // --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
 // @use "../themes/abridge/sass/abridge-blueshade-switcher.scss" // override theme color, but duplicates unless move all css to be managed here instead of in zola
-@use "_Solarized" as sol
+@use "_Solarized"	as sol
+@use "_GitHub"   	as gh
 
 :root.light
-  --kbg      	: oklch(.87 0   90)                                	/* Keymap background #dbdbdb	*/
-  --kbb      	: oklch(.82 0   90)                                	/* Keyborder         #cccccc	*/
-  --kbt      	: oklch(.99 0   90)                                	/* Keytop            #fcfcfc	*/
-  --kblbl    	: oklch(.10 0    0)                                	/* Labels                   	*/
-  --tt-bg    	: #{sol.$bg_l}                                     	/* Tooltip: background      	*/
-  --keyMove  	: oklch(43.6% 0.148 142.5)                         	/*#006400*/
-  --keySelect	: oklch(56.62% 0.113 247.24)                       	/* Labels: select #377bb5*/
-  --keyChange	: oklch(62.8% 0.25768330773615683 29.2338851923426)	/* Labels: edit  #ff0000*/
-  --keyOther 	: oklch(42.09% 0.193 328.36)                       	/*#800080*/
+  --kbg        	: oklch(.87 0   90)                                	/* Keymap background #dbdbdb	*/
+  --kbb        	: oklch(.82 0   90)                                	/* Keyborder         #cccccc	*/
+  --kbt        	: oklch(.99 0   90)                                	/* Keytop            #fcfcfc	*/
+  --kblbl      	: oklch(.10 0    0)                                	/* Labels                   	*/
+  --tt-bg      	: #{sol.$bg_l}                                     	/* Tooltip: background      	*/
+  --keyMove    	: oklch(43.6% 0.148 142.5)                         	/*#006400*/
+  --keySelect  	: oklch(56.62% 0.113 247.24)                       	/* Labels: select #377bb5*/
+  --keyChange  	: oklch(62.8% 0.25768330773615683 29.2338851923426)	/* Labels: edit  #ff0000*/
+  --keyOther   	: oklch(42.09% 0.193 328.36)                       	/*#800080*/
+  --tbl-bg     	: oklch(100% 0 0)                                  	/* Table*/
+  --tbl-bg2nd  	: oklch(97.82% 0.003 247.86)                       	/* Table: 2nd row f6f8fa*/
+  --tbl-borderH	: none                                             	/*   border #dfe2e5 1px solid oklch(91.13% 0.005 247.88)*/
+  --tbl-border 	: none                                             	/*   border #c6cbd1 1px solid oklch(84% 0.01 252.82)    */
 
 :root:not(.light)
-  --kbg      	: oklch(.43 0    90)        	/* Keymap background  	*/
-  --kbb      	: oklch(.50 0    90)        	/* Keyborder          	*/
-  --kbt      	: oklch(.66 0    90)        	/* Keytop             	*/
-  --kblbl    	: oklch(.75 0    0)         	/* Labels             	*/
-  --tt-bg    	: #{sol.$bg_d}              	/* Tooltip: background	*/
-  --keyMove  	: oklch(43.6% 0.148 142.5)  	/*#006400*/
-  --keySelect	: oklch(.52 .22 249)        	/* Labels: select            	*/
-  --keyChange	: oklch(.43 .18  32)        	/* Labels: edit       #ff4223	*/
-  --keyOther 	: oklch(42.09% 0.193 328.36)	/*#800080*/
+  --kbg        	: oklch(.43 0    90)        	/* Keymap background  	*/
+  --kbb        	: oklch(.50 0    90)        	/* Keyborder          	*/
+  --kbt        	: oklch(.66 0    90)        	/* Keytop             	*/
+  --kblbl      	: oklch(.75 0    0)         	/* Labels             	*/
+  --tt-bg      	: #{sol.$bg_d}              	/* Tooltip: background	*/
+  --keyMove    	: oklch(43.6% 0.148 142.5)  	/*#006400*/
+  --keySelect  	: oklch(.52 .22 249)        	/* Labels: select            	*/
+  --keyChange  	: oklch(.43 .18  32)        	/* Labels: edit       #ff4223	*/
+  --keyOther   	: oklch(42.09% 0.193 328.36)	/*#800080*/
+  --tbl-bg     	: #{sol.$bg_d}              	/* Table*/
+  --tbl-bg2nd  	: #{sol.$bg2_d}             	/* Table: 2nd row f6f8fa*/
+  --tbl-borderH	: none                      	/*   border*/
+  --tbl-border 	: none                      	/*   border*/
