@@ -63,6 +63,7 @@ Thumbs.db
 www
 themes/*
 !themes/code_highlight
+!themes/abridge
 
 # yarn
 .yarn/*
