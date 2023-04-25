@@ -27,10 +27,13 @@ div:empty {
 #keyboard-bg .key.SPACE.LONG .keylabels .keylabel.keylabel5.textsize6 > div > font:nth-child(3) {
   color: var(--keyChange) !important; // special snowflake space key
 }
-#keyboard-bg .keylabels > :is(.keylabel.keylabel9, .keylabel.keylabel10, .keylabel.keylabel11) { //.keylabel.keylabel8.textsize2
+#keyboard-bg .keylabels > .keylabel.keylabel9,
+#keyboard-bg .keylabels > .keylabel.keylabel10
+#keyboard-bg .keylabels > .keylabel.keylabel11 { //.keylabel.keylabel8.textsize2
   color: var(--kblbl) !important
 }
-#keyboard-bg > div:nth-child(43) > div > .keylabels > :is(.keylabel.keylabel6, .keylabel.keylabel8 ) {
+#keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel6,
+#keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel8 {
   color: var(--kblbl) !important // mod
 }
 
