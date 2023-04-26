@@ -1,0 +1,27 @@
+$root: ".dark-theme" !default;
+$slateA1: hsla(0, 0%, 0%, 0) !default;
+$slateA2: hsla(181, 98.9%, 91.8%, 0.026) !default;
+$slateA3: hsla(182, 86.7%, 91.4%, 0.057) !default;
+$slateA4: hsla(209, 86.7%, 93.9%, 0.083) !default;
+$slateA5: hsla(200, 90.3%, 93.4%, 0.109) !default;
+$slateA6: hsla(209, 95.3%, 93.5%, 0.139) !default;
+$slateA7: hsla(204, 98.5%, 93.9%, 0.182) !default;
+$slateA8: hsla(209, 94.0%, 94.7%, 0.265) !default;
+$slateA9: hsla(207, 97.3%, 94.0%, 0.412) !default;
+$slateA10: hsla(209, 99.4%, 95.2%, 0.472) !default;
+$slateA11: hsla(208, 98.7%, 96.8%, 0.615) !default;
+$slateA12: hsla(211, 86.7%, 99.6%, 0.927) !default;
+#{$root} {
+  --slateA1: #{$slateA1};
+  --slateA2: #{$slateA2};
+  --slateA3: #{$slateA3};
+  --slateA4: #{$slateA4};
+  --slateA5: #{$slateA5};
+  --slateA6: #{$slateA6};
+  --slateA7: #{$slateA7};
+  --slateA8: #{$slateA8};
+  --slateA9: #{$slateA9};
+  --slateA10: #{$slateA10};
+  --slateA11: #{$slateA11};
+  --slateA12: #{$slateA12};
+}

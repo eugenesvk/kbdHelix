@@ -1,0 +1,27 @@
+$root: ".dark-theme" !default;
+$slate1: hsl(200, 7.0%, 8.8%) !default;
+$slate2: hsl(195, 7.1%, 11.0%) !default;
+$slate3: hsl(197, 6.8%, 13.6%) !default;
+$slate4: hsl(198, 6.6%, 15.8%) !default;
+$slate5: hsl(199, 6.4%, 17.9%) !default;
+$slate6: hsl(201, 6.2%, 20.5%) !default;
+$slate7: hsl(203, 6.0%, 24.3%) !default;
+$slate8: hsl(207, 5.6%, 31.6%) !default;
+$slate9: hsl(206, 6.0%, 43.9%) !default;
+$slate10: hsl(206, 5.2%, 49.5%) !default;
+$slate11: hsl(206, 6.0%, 63.0%) !default;
+$slate12: hsl(210, 6.0%, 93.0%) !default;
+#{$root} {
+  --slate1: #{$slate1};
+  --slate2: #{$slate2};
+  --slate3: #{$slate3};
+  --slate4: #{$slate4};
+  --slate5: #{$slate5};
+  --slate6: #{$slate6};
+  --slate7: #{$slate7};
+  --slate8: #{$slate8};
+  --slate9: #{$slate9};
+  --slate10: #{$slate10};
+  --slate11: #{$slate11};
+  --slate12: #{$slate12};
+}

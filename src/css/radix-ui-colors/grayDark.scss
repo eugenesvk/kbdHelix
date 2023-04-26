@@ -1,0 +1,27 @@
+$root: ".dark-theme" !default;
+$gray1: hsl(0, 0%, 8.5%) !default;
+$gray2: hsl(0, 0%, 11.0%) !default;
+$gray3: hsl(0, 0%, 13.6%) !default;
+$gray4: hsl(0, 0%, 15.8%) !default;
+$gray5: hsl(0, 0%, 17.9%) !default;
+$gray6: hsl(0, 0%, 20.5%) !default;
+$gray7: hsl(0, 0%, 24.3%) !default;
+$gray8: hsl(0, 0%, 31.2%) !default;
+$gray9: hsl(0, 0%, 43.9%) !default;
+$gray10: hsl(0, 0%, 49.4%) !default;
+$gray11: hsl(0, 0%, 62.8%) !default;
+$gray12: hsl(0, 0%, 93.0%) !default;
+#{$root} {
+  --gray1: #{$gray1};
+  --gray2: #{$gray2};
+  --gray3: #{$gray3};
+  --gray4: #{$gray4};
+  --gray5: #{$gray5};
+  --gray6: #{$gray6};
+  --gray7: #{$gray7};
+  --gray8: #{$gray8};
+  --gray9: #{$gray9};
+  --gray10: #{$gray10};
+  --gray11: #{$gray11};
+  --gray12: #{$gray12};
+}
