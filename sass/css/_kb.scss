@@ -25,28 +25,28 @@ html,body{
     height    	: 100%;
     margin    	: 0 auto -70px;
     padding   	: 0 0 60px}
-  #keyboard{
+  .keyboard{
     padding      	: 4px;
     border-radius	: 3px;
     margin-top   	: 10px;
     margin-bottom	: 10px;
     border       	: dashed 1px #ddd}
-  #keyboard #keyboard-bg{
+  .keyboard .keyboard-bg{
     position  	: inherit;
     border    	: solid 1px #ddd;
     padding   	: 9px;
     box-sizing	: content-box;
     min-width 	: 56px;
     min-height	: 56px}
-  #keyboard-bg div{
+  .keyboard-bg div{
     position     	: absolute;
     border-color 	: #000;
   box-sizing     	: border-box;
   background-clip	: padding-box}
-  #keyboard .keyborder{
+  .keyboard .keyborder{
     border-color	: #000;
     border-style	: solid}
-  #keyboard .decal .keyborder{
+  .keyboard .decal .keyborder{
     border-style	: none!important;
     background  	: transparent!important}
   .keylabel>div{
