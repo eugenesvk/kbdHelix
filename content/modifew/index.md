@@ -236,4 +236,4 @@ Direct links to pages with only the cheat cheets (custom layouts in a `#hash` al
 
 [^4] this breaks the 'sticky' `select_mode` pending implementation of [this feature request](https://github.com/helix-editor/helix/issues/1487)
 
-[^kbd_tooltip] (alphanumeric) characters produced as if you typed with a key are used to match cheat sheet labels, so this might not always match correctly the physical key layout. Press <kbd>⎋</kbd> or <kbd>␠</kbd> to remove hide
+[^kbd_tooltip] (alphanumeric) characters produced as if you typed with a key are used to match cheat sheet labels, so this might not always match correctly the physical key layout. Press <kbd>⎋</kbd> or <kbd>␠</kbd> to hide
