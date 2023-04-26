@@ -48,7 +48,11 @@ Below is a summary of some of the design decisions followed up by detailed keyma
         + Repeat the 💍left/🤙🏻right right hand mnemonic in the lower row: select previous/next search match <span style="white-space: nowrap;"><kbd lyt=q>.</kbd><span class="keyMove">🢔◎</span></span> <span style="white-space: nowrap;"><kbd lyt=q>/</kbd><span class="keyMove">◎🢖</span></span> (broken pending fixing [this issue](https://github.com/helix-editor/helix/issues/1488), at the moment requires <kbd>⇧</kbd>)
         + Repeat the 👆left/🖕right left hand mnemonic for jumplist ←→ navigation <span style="white-space: nowrap;"><kbd lyt=q>3</kbd><span class="keyMove">⎗̡</span></span> <span style="white-space: nowrap;"><kbd lyt=q>4</kbd><span class="keyMove">⎘̡</span></span> (pending adding this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use <kbd>⌥</kbd>)
         + `Undo`/`redo` isn't yet fully optimized in this way (they are on adjacent <span style="white-space: nowrap;"><kbd lyt=q>y</kbd><span class="keyChange">↷</span></span> <kbd lyt=q>u</kbd><span class="keyChange">⎌</span>, but on the same finger and in reverse order), some frequency data on the other Helix top row commands would help
-    + __Single-press__ paired keybinds can remain with the opposite direction <kbd>⇧</kbd>’ed, e.g. move to the beginning/end of a line <span style="white-space: nowrap;"><kbd lyt=q>a</kbd><span class="keyMove">⭰</span></span> <kbd>⇧</kbd><kbd lyt=q>a</kbd><span class="keyMove">⭲</span>
+    + __Single-press__ paired keybinds can remain with the opposite direction <kbd>⇧</kbd>’ed, e.g.,:
+      + {{k(m=""  ,k="a",t="keyMove",c="⭰")}} move to the beginning of a line
+      + {{k(m="⇧" ,k="a",t="keyMove",c="⭲")}} move to the end of a line 
+      + <span style="white-space: nowrap;"><kbd lyt=q>a</kbd><span class="keyMove">⭰</span></span> 
+      + <kbd>⇧</kbd><kbd lyt=q>a</kbd><span class="keyMove">⭲</span>
   - It's ok to use (or even hold😲) <kbd>⌥</kbd> when you don't need to move by word (like in the <span class="keySelect">Ⓢ</span> Select mode), so the multi-cursor selection/manipulation is done with <kbd>⌥</kbd>+cursor:
       - select down/up <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>j</kbd><span class="keySelect">🠷</span></span> <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>k</kbd><span class="keySelect">🠵</span></span> (`copy_selection_on_next_line`/`copy_selection_on_prev_line`) 
       - shift selection back/forward <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>m</kbd><span class="keySelect">⟲</span></span> <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>,</kbd><span class="keySelect">⟳</span></span> (`rotate_selections_backward`/`rotate_selections_forward`)
@@ -58,11 +62,10 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - (lacking sufficient frequency data) Group various inserts together: insert/append at <span style="white-space: nowrap;"><kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span></span> <span style="white-space: nowrap;"><kbd lyt=q>o</kbd><span class="keyChange">⤹⎀</span></span> and `open_below`/`open_above` at <span style="white-space: nowrap;"><kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⭡␤</span></span> <span style="white-space: nowrap;"><kbd>⇧</kbd><kbd lyt=q>o</kbd><span class="keyChange">⭣␤</span></span> (`prepend_to_line`/`append_to_line` are removed as there is a stand alone command to move to the beginning of a line, so <kbd lyt=q>a</kbd><span class="keyMove">⭰</span><span style="white-space: nowrap;"><kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span></span> is easier than the old <kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⁁⭰</span>)
   - Add a few keybinds to make it similar to non-modal editors to help with transition
     - {{k(m="" ,k="⏎",t="keyChange",c="⭣␤")}} {{k(m="⇧",k="⏎",t="keyChange",c="⭡␤")}} Insert a new line below/above (`open_below`/`open_above`)
-    - {{k(m="⎈",k="a",t="keySelect"	,c="∀▋")}} Select all (`select_all`)
-    - {{k(m="⎈",k="o",t="keyOther" 	,c="☰␜")}} Open (`file_picker`)
-    - {{k(m="⎈",k="s",t="keyOther" 	,c='<i class="fa fa-save"></i>')}} Save (`:write`)
-    - {{k(m="⎈",k="z",t="keyChange"	,c="⎌")}} Undo (`undo`)
-    - {{k(m="⎈",k="y",t="keyChange"	,c="↷")}} Redo (`redo`)
+    - {{k(m="⎈",k="a",t="keySelect"	,c="∀▋")}} Select all
+    - {{k(m="⎈",k="o",t="keyOther" 	,c="☰␜")}} Open `file_picker`
+    - {{k(m="⎈",k="s",t="keyOther" 	,c='<i class="fa fa-save"></i>')}} Save
+    - {{k(m="⎈",k="z",t="keyChange"	,c="⎌")}}/{{k(m="⎈",k="y",t="keyChange",c="↷")}} Undo/Redo
     - {{k(m="⎈",k="x",t="keyChange"	,c="ᵡ")}} Cut (`yank_main_selection_to_clipboard`, `delete_selection`)
     - {{k(m="⎈",k="c",t="keyOther" 	,c='<i class="fa fa-copy"></i>')}} Copy (`yank_main_selection_to_clipboard`)
     - {{k(m="⎈",k="v",t="keyChange"	,c='<i class="fa fa-copy"></i>⤹')}}  Paste (`paste_clipboard_after`)
