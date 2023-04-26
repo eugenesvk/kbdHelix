@@ -6,7 +6,7 @@ import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
 import purgecss            	from '@fullhuman/postcss-purgecss';
 
-const isDev	= false; // ↓ swap true/false in Dev to eg, avoid minification
+const isDev	= true; // ↓ swap true/false in Dev to eg, avoid minification
 const pT   	= isDev ? false : true 	; // pT = production True
 const pF   	= isDev ? true  : false	;
 
