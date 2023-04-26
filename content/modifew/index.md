@@ -76,7 +76,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 |    | Modifier key legend | Example of <kbd>l</kbd> |
 | :- | :-----------------: | :---------------------: |
-| Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="/img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125"/> | <img src="/img/KeyInfo-2Example.png" alt="Key Example" width="149"/>|
+| Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="../img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125"/> | <img src="../img/KeyInfo-2Example.png" alt="Key Example" width="149"/>|
 
 <span style="color: green">⚠</span> Cheat sheets are best used in a supporting role after you have some basic familiarity with the config, so you might want to start learning by reading through the config's sections, e.g., `#Ⓝ Move` in [Normal mode](https://github.com/eugenesvk/kbdHelix/blob/d366b2382e7b08cae45c7990c917d3516dbacfc9/src/m1NOR.toml.tmpl#L64) and having a cheat sheet side-by-side. Later if you need to look up just a single icon/button you might use tooltips by hovering over a button on this page or pressing <kbd>⇧</kbd><kbd>KEY</kbd>[^kbd_tooltip]
 
