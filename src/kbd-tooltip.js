@@ -45,7 +45,7 @@ const keyCapLblIDs      	= [0,  2,4,6,8]	; // but we only need corners + center
 const keyCapLblIDs_ins  	= [0,1,2,4,6,8]	; // and sometimes top
 const keyCapLblIDs_sp   	= [0,  2,4,6,8]	;
 const keyCapLblIDs_unimp	= [0,  2,  6,8]	;
-const modifew_modes_pre 	= '#keyboard.modifew-';
+const modifew_modes_pre 	= '.keyboard.modifew-';
 const modifew_modes     	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
 const lbl_modi          	= new Map([[0,'⇧'],          [2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
 const lbl_modi_ins      	= new Map([[0,'⇧'],[1,'⎈⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]);
@@ -79,7 +79,7 @@ const modifew_mode_sub_sym = {
     'UnimpairedR'	: {'icon':'☰⧚'	, 'path':'keys.normal.]'  	, 'modi':lbl_modi_n(8)	, 'id':[8]},
   }
 };
-const keylabel_path	= '#keyboard-bg .key .keycap .keylabels .keylabel';
+const keylabel_path	= '.keyboard-bg .key .keycap .keylabels .keylabel';
 const key_lbl_class	= 'keylabel10';
 
 function getNestedPath(xpth, map){
@@ -158,7 +158,7 @@ function keySymbToLbl(key_symb) { // ⏎ to ret (keySymbLbl = ['⏎','ret']
 }
 
 // my button
-// document.querySelectorAll('#keyboard #keyboard-bg .keylabels .keylabel10').forEach((el, ind, listObj) => {
+// document.querySelectorAll('.keyboard .keyboard-bg .keylabels .keylabel10').forEach((el, ind, listObj) => {
 let getSiblings = function (e) {
   let siblings = [];
   if(!e.parentNode) { return siblings; }
@@ -281,7 +281,7 @@ if (isMobile) { // phones don't auto hide tooltips, so hide previous tooltips on
   document.addEventListener("touchstart", function(evt) {
     const elOccured = evt.target;
     let inKeyboard = false;
-    document.querySelectorAll("#keyboard").forEach((el, ind, listObj) => {
+    document.querySelectorAll(".keyboard").forEach((el, ind, listObj) => {
       if (el.contains(elOccured)) {inKeyboard = true; }
     });
     if (inKeyboard === false ) { hideAllTooltips(); }
