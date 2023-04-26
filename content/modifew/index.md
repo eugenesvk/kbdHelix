@@ -36,11 +36,11 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
         + Strongest non-thumb fingers on the __right__ hand:<br>
-          move by __line__ 👆🏻down/🖕🏻up <span style="white-space: nowrap;"><kbd lyt=q>j</kbd><span class="keyMove">▼</span></span> <kbd lyt=q>k</kbd><span class="keyMove">▲</span>
+          move by __line__ 👆🏻down/🖕🏻up {{k(m="",k="j",t="keyMove",c="▼")}} {{k(m="",k="k",t="keyMove",c="▲")}}
         + Strongest non-thumb fingers on the __left__ hand:<br>
-          move by __word__ 👆left/🖕right <span style="white-space: nowrap;"><kbd lyt=q>d</kbd><span class="keyMove">🢔ω</span></span> <kbd lyt=q>f</kbd><span class="keyMove">ω🢖</span>
+          move by __word__ 👆left/🖕right {{k(m="",k="d",t="keyMove",c="🢔ω")}} {{k(m="",k="f",t="keyMove",c="ω🢖")}}
         + Rest of the home row on the __right__ for the next most frequent commands:<br>
-          move by __char__ 💍left/🤙🏻right <span style="white-space: nowrap;"><kbd lyt=q>l</kbd><span class="keyMove">◀</span></span> <kbd lyt=q>;</kbd><span class="keyMove">▶</span>
+          move by __char__ 💍left/🤙🏻right {{k(m="",k="l",t="keyMove",c="◀")}} {{k(m="",k=";",t="keyMove",c="▶")}}
         + Repeat the 👆🏻down/🖕🏻up right hand mnemonic:
             + for the less frequent commands: decrement/increment object (number) under cursor <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>m</kbd><span class="keyChange">⊖</span></span> <kbd>⎈</kbd><kbd lyt=q>,</kbd><span class="keyChange">⊕</span>
             + in the lower row: move half page down/up <span style="white-space: nowrap;"><kbd lyt=q>m</kbd><span class="keyMove">⤈</span></span> <kbd lyt=q>,</kbd><span class="keyMove">⤉</span>
@@ -51,8 +51,6 @@ Below is a summary of some of the design decisions followed up by detailed keyma
     + __Single-press__ paired keybinds can remain with the opposite direction <kbd>⇧</kbd>’ed, e.g.,:
       + {{k(m=""  ,k="a",t="keyMove",c="⭰")}} move to the beginning of a line
       + {{k(m="⇧" ,k="a",t="keyMove",c="⭲")}} move to the end of a line 
-      + <span style="white-space: nowrap;"><kbd lyt=q>a</kbd><span class="keyMove">⭰</span></span> 
-      + <kbd>⇧</kbd><kbd lyt=q>a</kbd><span class="keyMove">⭲</span>
   - It's ok to use (or even hold😲) <kbd>⌥</kbd> when you don't need to move by word (like in the <span class="keySelect">Ⓢ</span> Select mode), so the multi-cursor selection/manipulation is done with <kbd>⌥</kbd>+cursor:
       - select down/up <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>j</kbd><span class="keySelect">🠷</span></span> <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>k</kbd><span class="keySelect">🠵</span></span> (`copy_selection_on_next_line`/`copy_selection_on_prev_line`) 
       - shift selection back/forward <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>m</kbd><span class="keySelect">⟲</span></span> <span style="white-space: nowrap;"><kbd>⌥</kbd><kbd lyt=q>,</kbd><span class="keySelect">⟳</span></span> (`rotate_selections_backward`/`rotate_selections_forward`)
