@@ -57,15 +57,15 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - Turn <kbd lyt=q>h</kbd> into a combo <kbd>⌫</kbd>/<kbd>⌦</kbd> key
   - (lacking sufficient frequency data) Group various inserts together: insert/append at <span style="white-space: nowrap;"><kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span></span> <span style="white-space: nowrap;"><kbd lyt=q>o</kbd><span class="keyChange">⤹⎀</span></span> and `open_below`/`open_above` at <span style="white-space: nowrap;"><kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⭡␤</span></span> <span style="white-space: nowrap;"><kbd>⇧</kbd><kbd lyt=q>o</kbd><span class="keyChange">⭣␤</span></span> (`prepend_to_line`/`append_to_line` are removed as there is a stand alone command to move to the beginning of a line, so <kbd lyt=q>a</kbd><span class="keyMove">⭰</span><span style="white-space: nowrap;"><kbd lyt=q>i</kbd><span class="keyChange">⁁⤸</span></span> is easier than the old <kbd>⇧</kbd><kbd lyt=q>i</kbd><span class="keyChange">⁁⭰</span>)
   - Add a few keybinds to make it similar to non-modal editors to help with transition
-    - <span style="white-space: nowrap;"><kbd>⏎</kbd><span class="keyChange">⭣␤</span></span>  <span style="white-space: nowrap;"><kbd>⇧</kbd><kbd>⏎</kbd><span class="keyChange">⭡␤</span></span>  Insert a new line below/above (`open_below`/`open_above`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>a</kbd><span class="keySelect">∀▋</span></span> Select all (`select_all`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>o</kbd><span class="keyOther">☰␜</span></span> Open (`file_picker`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>s</kbd><span class="keyOther"><i class="fa fa-save"></i></span></span> Save (`:write`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>z</kbd><span class="keyChange">⎌</span></span> Undo (`undo`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>y</kbd><span class="keyChange">↷</span></span> Redo (`redo`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>x</kbd><span class="keyChange">ᵡ</span></span> Cut (`yank_main_selection_to_clipboard`, `delete_selection`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>c</kbd><span class="keyOther"><i class="fa fa-copy"></i></span></span> Copy (`yank_main_selection_to_clipboard`)
-    - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd lyt=q>v</kbd><span class="keyChange"><i class="fa fa-copy"></i>⤹</span></span> Paste (`paste_clipboard_after`)
+    - {{k(m="" ,k="⏎",t="keyChange",c="⭣␤")}} {{k(m="⇧",k="⏎",t="keyChange",c="⭡␤")}} Insert a new line below/above (`open_below`/`open_above`)
+    - {{k(m="⎈",k="a",t="keySelect"	,c="∀▋")}} Select all (`select_all`)
+    - {{k(m="⎈",k="o",t="keyOther" 	,c="☰␜")}} Open (`file_picker`)
+    - {{k(m="⎈",k="s",t="keyOther" 	,c='<i class="fa fa-save"></i>')}} Save (`:write`)
+    - {{k(m="⎈",k="z",t="keyChange"	,c="⎌")}} Undo (`undo`)
+    - {{k(m="⎈",k="y",t="keyChange"	,c="↷")}} Redo (`redo`)
+    - {{k(m="⎈",k="x",t="keyChange"	,c="ᵡ")}} Cut (`yank_main_selection_to_clipboard`, `delete_selection`)
+    - {{k(m="⎈",k="c",t="keyOther" 	,c='<i class="fa fa-copy"></i>')}} Copy (`yank_main_selection_to_clipboard`)
+    - {{k(m="⎈",k="v",t="keyChange"	,c='<i class="fa fa-copy"></i>⤹')}}  Paste (`paste_clipboard_after`)
     - <span style="white-space: nowrap;"><kbd>⌥</kbd>/<kbd>⎈</kbd>+<kbd>⌫</kbd>/<kbd>⌦</kbd></span>  to delete a w/Word left/right
     - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd>⇞</kbd>/<kbd>⇟</kbd></span>  to navigate files (`goto_previous_buffer`/`goto_next_buffer`)
   - <span style="color: orange">⚠</span> (lacking sufficient frequency data) little optimization was applied to the top vs. bottom row placement of commands
