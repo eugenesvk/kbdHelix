@@ -60,7 +60,7 @@ div:empty {
 .keyOther 	{color	: var(--keyOther);}
 
 .layout_button_clicked {
-  border: 2px solid green;
+  box-shadow:inset 0px 0px 0px 2px green;
 }
 
 #buttons {
