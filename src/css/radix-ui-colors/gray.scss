@@ -1,0 +1,27 @@
+$root: ":root" !default;
+$gray1: hsl(0, 0%, 99.0%) !default;
+$gray2: hsl(0, 0%, 97.3%) !default;
+$gray3: hsl(0, 0%, 95.1%) !default;
+$gray4: hsl(0, 0%, 93.0%) !default;
+$gray5: hsl(0, 0%, 90.9%) !default;
+$gray6: hsl(0, 0%, 88.7%) !default;
+$gray7: hsl(0, 0%, 85.8%) !default;
+$gray8: hsl(0, 0%, 78.0%) !default;
+$gray9: hsl(0, 0%, 56.1%) !default;
+$gray10: hsl(0, 0%, 52.3%) !default;
+$gray11: hsl(0, 0%, 43.5%) !default;
+$gray12: hsl(0, 0%, 9.0%) !default;
+#{$root} {
+  --gray1: #{$gray1};
+  --gray2: #{$gray2};
+  --gray3: #{$gray3};
+  --gray4: #{$gray4};
+  --gray5: #{$gray5};
+  --gray6: #{$gray6};
+  --gray7: #{$gray7};
+  --gray8: #{$gray8};
+  --gray9: #{$gray9};
+  --gray10: #{$gray10};
+  --gray11: #{$gray11};
+  --gray12: #{$gray12};
+}

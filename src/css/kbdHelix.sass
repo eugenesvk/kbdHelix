@@ -4,6 +4,11 @@
 @use "_GitHub"   	as gh
 @use "_kbd-tooltip"
 
+@use "radix-ui-colors/gray"     	with ($root:":root.light"      )
+@use "radix-ui-colors/grayDark" 	with ($root:":root:not(.light)")
+@use "radix-ui-colors/slate"    	with ($root:":root.light"      )
+@use "radix-ui-colors/slateDark"	with ($root:":root:not(.light)")
+
 :root.light
   --kbg        	: oklch(.87 0   90)                                	/* Keymap background #dbdbdb	*/
   --kbb        	: oklch(.82 0   90)                                	/* Keyborder         #cccccc	*/

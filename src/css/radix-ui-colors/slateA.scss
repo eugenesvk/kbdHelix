@@ -1,0 +1,27 @@
+$root: ":root" !default;
+$slateA1: hsla(210, 92.6%, 26.5%, 0.016) !default;
+$slateA2: hsla(210, 87.7%, 16.0%, 0.028) !default;
+$slateA3: hsla(210, 98.8%, 14.4%, 0.055) !default;
+$slateA4: hsla(210, 94.1%, 11.1%, 0.075) !default;
+$slateA5: hsla(216, 91.1%, 10.9%, 0.099) !default;
+$slateA6: hsla(206, 96.4%, 11.3%, 0.126) !default;
+$slateA7: hsla(210, 99.1%, 10.1%, 0.157) !default;
+$slateA8: hsla(205, 96.5%, 10.0%, 0.244) !default;
+$slateA9: hsla(206, 98.8%, 5.9%, 0.467) !default;
+$slateA10: hsla(206, 99.6%, 5.4%, 0.506) !default;
+$slateA11: hsla(206, 97.0%, 4.8%, 0.593) !default;
+$slateA12: hsla(202, 97.0%, 2.4%, 0.934) !default;
+#{$root} {
+  --slateA1: #{$slateA1};
+  --slateA2: #{$slateA2};
+  --slateA3: #{$slateA3};
+  --slateA4: #{$slateA4};
+  --slateA5: #{$slateA5};
+  --slateA6: #{$slateA6};
+  --slateA7: #{$slateA7};
+  --slateA8: #{$slateA8};
+  --slateA9: #{$slateA9};
+  --slateA10: #{$slateA10};
+  --slateA11: #{$slateA11};
+  --slateA12: #{$slateA12};
+}

@@ -1,0 +1,27 @@
+$root: ".dark-theme" !default;
+$grayA1: hsla(0, 0%, 100%, 0) !default;
+$grayA2: hsla(0, 0%, 100%, 0.026) !default;
+$grayA3: hsla(0, 0%, 100%, 0.056) !default;
+$grayA4: hsla(0, 0%, 100%, 0.077) !default;
+$grayA5: hsla(0, 0%, 100%, 0.103) !default;
+$grayA6: hsla(0, 0%, 100%, 0.129) !default;
+$grayA7: hsla(0, 0%, 100%, 0.172) !default;
+$grayA8: hsla(0, 0%, 100%, 0.249) !default;
+$grayA9: hsla(0, 0%, 100%, 0.386) !default;
+$grayA10: hsla(0, 0%, 100%, 0.446) !default;
+$grayA11: hsla(0, 0%, 100%, 0.592) !default;
+$grayA12: hsla(0, 0%, 100%, 0.923) !default;
+#{$root} {
+  --grayA1: #{$grayA1};
+  --grayA2: #{$grayA2};
+  --grayA3: #{$grayA3};
+  --grayA4: #{$grayA4};
+  --grayA5: #{$grayA5};
+  --grayA6: #{$grayA6};
+  --grayA7: #{$grayA7};
+  --grayA8: #{$grayA8};
+  --grayA9: #{$grayA9};
+  --grayA10: #{$grayA10};
+  --grayA11: #{$grayA11};
+  --grayA12: #{$grayA12};
+}

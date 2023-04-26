@@ -1,0 +1,27 @@
+$root: ":root" !default;
+$grayA1: hsla(0, 0%, 0%, 0.012) !default;
+$grayA2: hsla(0, 0%, 0%, 0.027) !default;
+$grayA3: hsla(0, 0%, 0%, 0.047) !default;
+$grayA4: hsla(0, 0%, 0%, 0.071) !default;
+$grayA5: hsla(0, 0%, 0%, 0.090) !default;
+$grayA6: hsla(0, 0%, 0%, 0.114) !default;
+$grayA7: hsla(0, 0%, 0%, 0.141) !default;
+$grayA8: hsla(0, 0%, 0%, 0.220) !default;
+$grayA9: hsla(0, 0%, 0%, 0.439) !default;
+$grayA10: hsla(0, 0%, 0%, 0.478) !default;
+$grayA11: hsla(0, 0%, 0%, 0.565) !default;
+$grayA12: hsla(0, 0%, 0%, 0.910) !default;
+#{$root} {
+  --grayA1: #{$grayA1};
+  --grayA2: #{$grayA2};
+  --grayA3: #{$grayA3};
+  --grayA4: #{$grayA4};
+  --grayA5: #{$grayA5};
+  --grayA6: #{$grayA6};
+  --grayA7: #{$grayA7};
+  --grayA8: #{$grayA8};
+  --grayA9: #{$grayA9};
+  --grayA10: #{$grayA10};
+  --grayA11: #{$grayA11};
+  --grayA12: #{$grayA12};
+}
