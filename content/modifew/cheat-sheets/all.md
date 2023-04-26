@@ -27,38 +27,38 @@ in_search_index	= true         	# add section pages to search (if `build_search_
   <button class="btn" id=btn_neo2      	type=button>Neo2</button>
 </div>
 
-<div id=keyboard class="modifew-m1NOR" tabindex=0 style="display: inline-flex;">
+<div id=modifew-m1NOR class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-m1NOR.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-m2INS" tabindex=0 style="display: inline-flex;">
+<div id=modifew-m2INS class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-m2INS.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-m3SEL" tabindex=0 style="display: inline-flex;">
+<div id=modifew-m3SEL class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-m3SEL.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-nGoTo" tabindex=0 style="display: inline-flex;">
+<div id=modifew-nGoTo class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nGoTo.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-nSpace" tabindex=0 style="display: inline-flex;">
+<div id=modifew-nSpace class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nSpace.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-nView" tabindex=0 style="display: inline-flex;">
+<div id=modifew-nView class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nView.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-nMatch" tabindex=0 style="display: inline-flex;">
+<div id=modifew-nMatch class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nMatch.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-nWindow" tabindex=0 style="display: inline-flex;">
+<div id=modifew-nWindow class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nWindow.html.tmpl") }}
 </div>
 
-<div id=keyboard class="modifew-nUnimpaired" tabindex=0 style="display: inline-flex;">
+<div id=modifew-nUnimpaired class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl") }}
 </div>
