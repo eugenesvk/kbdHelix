@@ -1,7 +1,8 @@
 import { gLyt, lyt, Case 	,
   convert, convertCaseLyt	,
   getCaseLyt }           	from "./layout-convert.js";
-import modifew           	from 'https://raw.githubusercontent.com/eugenesvk/kbdHelix/modifew/config/modifew.toml';
+import modifew           	from "../static/config/modifew.toml";
+// import modifew        	from 'https://raw.githubusercontent.com/eugenesvk/kbdHelix/modifew/config/modifew.toml';
 import * as std          	from './std.js';
 std.extendProtos();
 
