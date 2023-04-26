@@ -27,6 +27,6 @@ in_search_index	= true         	# add section pages to search (if `build_search_
   <button class="btn" id=btn_neo2      	type=button>Neo2</button>
 </div>
 
-<div id=keyboard class="modifew-nView" tabindex=0 style="display: inline-flex;">
+<div id="modifew-nView" class="keyboard" tabindex=0 style="display: inline-flex;">
   {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nView.html.tmpl") }}
 </div>
