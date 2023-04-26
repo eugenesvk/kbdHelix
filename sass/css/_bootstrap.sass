@@ -60,3 +60,9 @@ body
 
 @-ms-viewport
   width	: device-width
+
+@media (prefers-color-scheme: dark)
+  img
+    filter: brightness(.8) contrast(1.2)
+:root:not(.light) img
+  filter: brightness(.8) contrast(1.2)
