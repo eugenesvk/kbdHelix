@@ -1,6 +1,9 @@
-{%- import 'macros/head.html'	as macros_head	%}
+{%- import "macros/head.html"  	as macros_head  	%}
+{%- import "macros/social.html"	as social_macros	%}
+{%- import "macros/page.html"  	as page_macros  	%}
+{%- import "macros/macros.html"	as macros       	%}
 {%-   if page    %}{%- set this = page    %}
-{%- elif section %}{%- set this = section %}{%- endif %}
+{%- elif section %}{%- set this = section %}{%- endif -%}
 <!DOCTYPE html>
 <html lang="{{ config.extra.language_code | default(value='en-US') }}">
 <head>
