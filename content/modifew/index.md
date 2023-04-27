@@ -1,5 +1,5 @@
 +++
-title      	= "modiƒew"
+title      	= "Design overview"
 description	= "map the most frequent commands to the best keys; replace modifiers with key chords"
 date       	= 2023-03-10
 updated    	= 2023-04-24

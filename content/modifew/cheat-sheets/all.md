@@ -1,5 +1,5 @@
 +++
-title      	= "modiƒew cheat sheets"
+title      	= "All cheat sheets"
 description	= ""
 date       	= 2023-03-10
 #updated   	= # last updated date of the post

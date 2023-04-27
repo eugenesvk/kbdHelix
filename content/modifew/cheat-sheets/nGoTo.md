@@ -1,6 +1,6 @@
 +++
-title      	= "modiƒew cheat sheets"
-description	= "Minor mode: nGoTo"
+title      	= "Minor mode: nGoTo"
+description	= ""
 date       	= 2023-03-10
 #updated   	= # last updated date of the post
 
