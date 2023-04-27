@@ -1,6 +1,6 @@
 +++
-title      	= "modiƒew cheat sheets"
-description	= "Major mode: Insert"
+title      	= "Major mode: Insert"
+description	= ""
 date       	= 2023-03-10
 #updated   	= # last updated date of the post
 

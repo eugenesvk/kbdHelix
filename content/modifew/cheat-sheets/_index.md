@@ -1,6 +1,6 @@
 +++
-title      	= "🧬modiƒew cheat sheets"
-description	= ""
+title      	= "Cheat sheets"
+description	= "Cheat sheets only without design description"
 
 redirect_to	= "modifew/cheat-sheets/all"	# redirect when a user lands on the section, used to organize pages w/o `404`, e.g. "documentation/content/overview"
 
