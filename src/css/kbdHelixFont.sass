@@ -1,0 +1,6 @@
+// --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
+// importing core styling file, KLE uses v4.4.0, so use shims
+@use "fontawesome/v4-shims"   	with ($fa-font-path:"../../font")
+@use "fontawesome/regular"    	with ($fa-font-path:"../../font")
+@use "fontawesome/solid"      	with ($fa-font-path:"../../font")
+@use "fontawesome/fontawesome"	with ($fa-font-path:"../../font")
