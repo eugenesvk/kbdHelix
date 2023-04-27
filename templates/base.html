@@ -40,29 +40,20 @@
 </head>
 
 <body>
-{%- block header %}
-  <header>
-    <nav><div><ul>
-      {%- if config.extra.js_theme -%}<li class="js">
-        {%- if config.extra.icon_adjust -%}<i type="reset" id="mode" class="{{ config.extra.icon_adjust }}"></i>
-        {%- else -%}                       <i type="reset" id="mode" class="mode">&#9728;</i>{%- endif -%} </li>
-      {%- endif -%}
-    </ul></div></nav>
-    {%- if config.extra.sitedesc %}
-    {%- if config.description %}
-    <div>{{ config.description }}</div>
-    {%- endif %}
-    {%- endif %}
-    {%- if config.extra.headhr %}
-    <hr />
-    {%- endif %}
-  </header>
-{%- endblock header %}
-  <section class="section">
-    <div class="markdown-body">
-      {% block content %} {% endblock %}
-    </div>
-  </section>
+  {%- block header %}<header>
+  <nav><div><ul>
+    {%- if config.extra.js_theme -%}<li class="js">
+      {%- if config.extra.icon_adjust -%}<i type="reset" id="mode" class="{{ config.extra.icon_adjust }}"></i>
+      {%- else -%}                       <i type="reset" id="mode" class="mode">&#9728;</i>{%- endif -%} </li>
+    {%- endif -%}
+  </ul></div></nav>
+  {%- if config.extra.sitedesc %}{%- if config.description %}
+  <div>{{config.description}}</div>
+  {%- endif %}{%- endif %}
+  {%- if config.extra.headhr %}
+  <hr />
+  {%- endif %}
+  </header>{%- endblock header %}
+  <section class="section"><div class="markdown-body">{% block content %} {% endblock %}</div></section>
 </body>
-
 </html>
