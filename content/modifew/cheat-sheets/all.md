@@ -28,37 +28,37 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 </div>
 
 <div id=modifew-m1NOR class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-m1NOR.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-m1NOR.html.tmpl")}}
 </div>
 
 <div id=modifew-m2INS class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-m2INS.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-m2INS.html.tmpl")}}
 </div>
 
 <div id=modifew-m3SEL class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-m3SEL.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-m3SEL.html.tmpl")}}
 </div>
 
 <div id=modifew-nGoTo class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nGoTo.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nGoTo.html.tmpl")}}
 </div>
 
 <div id=modifew-nSpace class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nSpace.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nSpace.html.tmpl")}}
 </div>
 
 <div id=modifew-nView class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nView.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nView.html.tmpl")}}
 </div>
 
 <div id=modifew-nMatch class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nMatch.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nMatch.html.tmpl")}}
 </div>
 
 <div id=modifew-nWindow class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nWindow.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nWindow.html.tmpl")}}
 </div>
 
 <div id=modifew-nUnimpaired class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl")}}
 </div>

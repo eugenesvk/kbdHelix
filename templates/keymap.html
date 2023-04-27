@@ -14,7 +14,7 @@
 {%- if current_section	%}{%- set page_section = current_section %}
 {%- else              	%}{%- set page_section = "" %}{%- endif %}
 
-{{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section) }}
+{{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section)}}
 {%- endblock seo %}
 
 
@@ -24,13 +24,13 @@
 {% if page.toc %}
 <h1 class="title">Table of contents</h1><ul>
 {% for h1 in page.toc %}
-  <li><a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+  <li><a href="{{h1.permalink | safe}}">{{h1.title}}</a>
     {% if h1.children %}<ul>
       {% for h2 in h1.children %}
-        <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a></li>
+        <li><a href="{{h2.permalink | safe}}">{{h2.title}}</a></li>
       {% endfor %}
     </ul>{% endif %}
   </li>{% endfor %}</ul>
 {% endif %}
-{{ page.content | safe }}
+{{page.content | safe}}
 {% endblock content %}

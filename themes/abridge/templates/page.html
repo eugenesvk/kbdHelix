@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 
 {%- block seo %}
-  {{- super() }}
+  {{- super()}}
   {%- set title_addition = "" %}
   {%- if page.title and config.title %}
     {%- set title = page.title %}
@@ -27,27 +27,27 @@
     {%- set page_section = "" %}
   {%- endif %}
 
-  {{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section) }}
+  {{- macros_head::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section)}}
 {%- endblock seo %}
 
 {%- block content %}
     <article>
-    {{- macros::title_post(page=page, config=config) }}
+    {{- macros::title_post(page=page, config=config)}}
 
     {%- if config.extra.meta_post.position %}
     {%- if config.extra.meta_post.position == "top" or config.extra.meta_post.position == "both" %}
-    {{- macros::meta_post(page=page, config=config) }}
+    {{- macros::meta_post(page=page, config=config)}}
     {%- endif %}{%- endif %}
 
-    {{ page.content | safe }}
+    {{page.content | safe}}
 
     {%- if config.extra.meta_post.position %}
     {%- if config.extra.meta_post.position == "bottom" or config.extra.meta_post.position == "both" %}
-    {{- macros::meta_post(page=page, config=config) }}
+    {{- macros::meta_post(page=page, config=config)}}
     {%- endif %}{%- endif %}
 
     {%- block page_footer %}
-    {{- macros::footer(page=page) }}
+    {{- macros::footer(page=page)}}
     {%- endblock page_footer %}
     </article>
     {%- block toc %}
@@ -60,12 +60,12 @@
         <h3>Index</h3>
         {%- for h in toc %}
         <div class="toc-item">
-          <a class="subtext" href="{{h.permalink | safe}}">{{ h.title }}</a>
+          <a class="subtext" href="{{h.permalink | safe}}">{{h.title}}</a>
         </div>
         {%- if h.children %}
         {%- for h2 in h.children %}
         <div class="toc-item-child">
-          <a class="subtext" href="{{h2.permalink | safe}}"><small>- {{ h2.title }}</small></a>
+          <a class="subtext" href="{{h2.permalink | safe}}"><small>- {{h2.title}}</small></a>
         </div>
         {%- endfor %}
         {%- endif %}
@@ -82,7 +82,7 @@
 {%- if page.reading_time %}
 {%- if page.reading_time > 2 %}
 <span class="topout">
-<span class="topleft"> </span><a href="#" class="top" title="Back to Top">{%- if config.extra.icon_top %}<i class="{{ config.extra.icon_top }}"></i>{%- else %}&cuwed;{%- endif %}</a>
+<span class="topleft"> </span><a href="#" class="top" title="Back to Top">{%- if config.extra.icon_top %}<i class="{{config.extra.icon_top}}"></i>{%- else %}&cuwed;{%- endif %}</a>
 </span>
 {%- endif %}
 {%- endif %}
