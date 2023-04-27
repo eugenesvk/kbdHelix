@@ -10,30 +10,31 @@ const isDev	= true; // ↓ swap true/false in Dev to eg, avoid minification
 const pT   	= isDev ? false : true 	; // pT = production True
 const pF   	= isDev ? true  : false	;
 
-export default [{
-  input         	: ["src/kbdHelix.js"],
-  output        	: [{dir:"static/js"}],
-  plugins       	: [urlResolve(), ViteToml(),
-    swc(        	{
-      include   	: /\.[mc]?[jt]sx?$/	, //|/\.[mc]?[jt]sx?$/|
-      exclude   	: /node_modules/   	, //|/node_modules/   |
-      tsconfig  	: 'tsconfig.json'  	, //|'tsconfig.json'  |
-      jsc       	: {
-        target  	: "es5",
-        loose   	: false,
-        parser  	: {
-          syntax	: "ecmascript",
-          jsx   	: false,
-        }       	,
-        minify  	: {compress:pT,mangle:pT},
-      }         	,
-     })         	,
-    postcss(    	{
-      minimize  	: pT,
-      extract   	: path.resolve('static/js/css/kbdHelix.css'),
-      plugins   	: [postcssOKLabFunction()]
-    }),
-  ]},
+export default [
+// {
+  // input         	: ["src/kbdHelix.js"],
+  // output        	: [{dir:"static/js"}],
+  // plugins       	: [urlResolve(), ViteToml(),
+  //   swc(        	{
+  //     include   	: /\.[mc]?[jt]sx?$/	, //|/\.[mc]?[jt]sx?$/|
+  //     exclude   	: /node_modules/   	, //|/node_modules/   |
+  //     tsconfig  	: 'tsconfig.json'  	, //|'tsconfig.json'  |
+  //     jsc       	: {
+  //       target  	: "es5",
+  //       loose   	: false,
+  //       parser  	: {
+  //         syntax	: "ecmascript",
+  //         jsx   	: false,
+  //       }       	,
+  //       minify  	: {compress:pT,mangle:pT},
+  //     }         	,
+  //    })         	,
+  //   postcss(    	{
+  //     minimize  	: pT,
+  //     extract   	: path.resolve('static/js/css/kbdHelix.css'),
+  //     plugins   	: [postcssOKLabFunction()]
+  //   }),
+  // ]},
   {
   input       	: ["src/kbdHelixFont.js"],
   output      	: [{dir:"static/js"}],
