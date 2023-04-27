@@ -1,5 +1,5 @@
 +++
-title      	= "Minor mode: Window"
+title      	= "Minor mode: Window 🗔"
 description	= ""
 date       	= 2023-03-10
 #updated   	= # last updated date of the post
