@@ -19,6 +19,9 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 +++
 
 - <i class="fa fa-save"></i>  Save
+- <i class="fa-check-circle"></i> fa-check-circle
+- <i class="fa-check-circle"></i> fa-check-circle
+- <i class="fa fa-check-circle"></i> fa-check-circle
 - <i class="fa faUserAstronaut"></i> faUserAstronaut
 - <i class="fa fa-user-astronaut"></i> faUserAstronaut
 - <i class="fa fa-camera"></i> fa-camera
@@ -26,7 +29,6 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 - <i class="fa fa-times-circle"></i> fa-times-circle
 - <i class="fa-minus-circle"></i> fa-minus-circle
 - <i class="fa-times-circle"></i> fa-times-circle
-- <i class="fa-check-circle"></i> fa-check-circle
 - <i class="fa-question-circle"></i> fa-question-circle
 - <i class="fa-arrow-up"></i> fa-arrow-up
 - <i class="fa-arrow-down"></i> fa-arrow-down
