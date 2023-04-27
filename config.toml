@@ -27,11 +27,11 @@ taxonomies                 	= []        	# feed taxonomies and their defaults
 highlight_code             	= true                     	# enable code blocks' syntax highlighting
 extra_syntaxes_and_themes  	= ["themes/code_highlight"]	# dir to search for extra `.sublime-syntax` `.tmTheme`
 highlight_theme            	= "css"                    	# code highlighting theme
-render_emoji               	= false	# :smile: => 😄
-external_links_target_blank	= true 	# open external links in a new tab
-external_links_no_follow   	= false	# set rel="nofollow"   for all external links
-external_links_no_referrer 	= false	# set rel="noreferrer" for all external links
-smart_punctuation          	= false	# ...→… ""→“” etc.
+render_emoji               	= false                    	# :smile: => 😄
+external_links_target_blank	= true                     	# open external links in a new tab
+external_links_no_follow   	= false                    	# set rel="nofollow"   for all external links
+external_links_no_referrer 	= false                    	# set rel="noreferrer" for all external links
+smart_punctuation          	= false                    	# ...→… ""→“” etc.
 
 [link_checker]
 skip_prefixes           	= [      	# Skip link   checking for external URLs that start with these prefixes
