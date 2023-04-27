@@ -219,9 +219,22 @@ readers do not read off random characters that represent icons */
 }
 
 @font-face {
-  font-family: "Font-Awesome-6-Free";
-  src: url("../../font/Font-Awesome-6-Free.ttf?7tl05z") format("truetype"), url("../../font/Font-Awesome-6-Free.woff?7tl05z") format("woff"), url("../../font/Font-Awesome-6-Free.svg?7tl05z#Font-Awesome-6-Free") format("svg");
+  font-family: "aaa";
+  src: url("../../font/aaa.ttf?81bx8z") format("truetype"), url("../../font/aaa.woff?81bx8z") format("woff"), url("../../font/aaa.svg?81bx8z#aaa") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "aaa" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
