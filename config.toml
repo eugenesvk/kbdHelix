@@ -56,7 +56,7 @@ paths_keep_dates	= false	# remove date prefixes for page path slugs
 
 [search]
 include_title            	= true 	# include in the index: page/section title
-include_description      	= false	# ... description
+include_description      	= true 	# ... description
 include_path             	= false	# ... path
 include_content          	= true 	# ... rendered
 # truncate_content_length	= 100  	# char№ to truncate the content to (if a lot of pages and the index would become too big to load on the site)
