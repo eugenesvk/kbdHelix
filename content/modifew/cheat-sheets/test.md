@@ -18,6 +18,11 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 [extra] # Your own data
 +++
 
+- <i class="fa fa-save"></i>  Save
+- <i class="fa faUserAstronaut"></i> faUserAstronaut
+- <i class="fa fa-user-astronaut"></i> faUserAstronaut
+- <i class="fa fa-camera"></i> fa-camera
+
 <div id=buttons><span class="inline text">Change keyboard layout to:</span>
   <button class="btn" id=btn_qwerty    	type=button>QWERTY</button>
   <button class="btn" id=btn_dvorak    	type=button>Dvorak</button>
