@@ -1,7 +1,8 @@
-base_url                   	= "https://eugenesvk.github.io/kbdHelix"
+base_url   	= "https://eugenesvk.github.io/kbdHelix"
+title      	= "modifew" # used in feeds
+description	= "modifew is a text editor keymap that maps the most frequent commands to the best keys and replaces (hold) modifiers with (tap) key chords (Helix)" # used in feeds
+
 highlight_theme            	= true      	# enable syntax highlighting in a theme
-title                      	= ""        	# used in feeds
-description                	= ""        	# used in feeds
 default_language           	= "en"      	# used in feeds
 compile_sass               	= true      	# auto compile all Sass files in the sass directory
 build_search_index         	= false     	# build a search index to be used later on by a JavaScript library
