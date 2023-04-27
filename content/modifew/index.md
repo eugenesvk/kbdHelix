@@ -70,17 +70,24 @@ Below is a summary of some of the design decisions followed up by detailed keyma
     - <span style="white-space: nowrap;"><kbd>⌥</kbd>/<kbd>⎈</kbd>+<kbd>⌫</kbd>/<kbd>⌦</kbd></span>  to delete a w/Word left/right
     - <span style="white-space: nowrap;"><kbd>⎈</kbd><kbd>⇞</kbd>/<kbd>⇟</kbd></span>  to navigate files (`goto_previous_buffer`/`goto_next_buffer`)
   - <span style="color: orange">⚠</span> (lacking sufficient frequency data) little optimization was applied to the top vs. bottom row placement of commands
-  - <span style="color: orange">⚠</span> number row-base commands don't work pending implementation of this [feature request](https://github.com/helix-editor/helix/issues/1200), currently need to use the version with modifiers
+  - <span style="color: orange">⚠</span> commands bound to <kbd>1</kbd>–<kbd>0</kbd> keys don't work pending implementation of this [feature request](https://github.com/helix-editor/helix/issues/1200), use <kbd>mod</kbd><kbd>1</kbd>–<kbd>0</kbd>
 
-Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to Keyboard Layout Editor so you could adjust the cheat sheet to a modified keymap
+Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to [Keyboard Layout Editor](http:/keyboard-layout-editor.com) so you could adjust the cheat sheet to your modified keymap
 
 |    | Modifier key legend | Example of <kbd>l</kbd> |
 | :- | :-----------------: | :---------------------: |
-| Symbol's position match the modifier key legend<br>(`∀` applies to all others, e.g., `→` for direction)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="../img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125" height="72"/> | <img src="../img/KeyInfo-2Example.png" alt="Key Example" width="149" height="86"/>|
+| Symbol's position match the modifier key legend<br>(`∀` denotes a position for a meta-symbol that applies to all commands,<br>e.g.`ω` means all commands are word-based)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="../img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125" height="72"/> | <img src="../img/KeyInfo-2Example.png" alt="Key Example" width="149" height="86"/>|
 
-<span style="color: green">⚠</span> Cheat sheets are best used in a supporting role after you have some basic familiarity with the config, so you might want to start learning by reading through the config's sections, e.g., `#Ⓝ Move` in [Normal mode](https://github.com/eugenesvk/kbdHelix/blob/d366b2382e7b08cae45c7990c917d3516dbacfc9/src/m1NOR.toml.tmpl#L64) and having a cheat sheet side-by-side. Later if you need to look up just a single icon/button you might use tooltips by hovering over a button on this page or pressing <kbd>⇧</kbd><kbd>KEY</kbd>[^kbd_tooltip]
-
-<span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
+A few tips:
+- <span style="color: green">⚠</span> Cheat sheets are best used in a supporting role after you have some basic familiarity with the config, so you might want to start learning by reading through the config's sections, e.g.:
+    - Open config section `#Ⓝ Move` in [Normal mode](https://github.com/eugenesvk/kbdHelix/blob/d366b2382e7b08cae45c7990c917d3516dbacfc9/src/m1NOR.toml.tmpl#L64)
+    - Open [normal mode cheat sheet](@/modifew/cheat-sheets/m1NOR.md) side-by-side
+    - Read the config and compare to the visual cheat sheet
+  
+  Later if you need to look up just a single icon/button you can use tooltips by hovering over a button or pressing <kbd>⇧</kbd><kbd>KEY</kbd>[^kbd_tooltip]
+- <span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
+- You can also load a page with just the cheat sheets using [these links](@/modifew/index.md#misc)
+- ☰ is a menu icon
 
 <div id=buttons><span class="inline text">Change keyboard layout to:</span>
   <button class="btn" id=btn_qwerty    	type=button>QWERTY</button>
@@ -100,8 +107,6 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 {{url_hash (name="#neo2"      	, url="@/modifew/index.md" , hash="#neo2")}}
 {{url_hash (name="#asset"     	, url="@/modifew/index.md" , hash="#asset")}}
 )
-
-You can also load a page with just the cheat sheets using [these links](@/modifew/index.md#misc)
 
 ## Major modes {#major}
 
