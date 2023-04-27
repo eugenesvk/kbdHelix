@@ -4,6 +4,7 @@ import urlResolve          	from 'rollup-plugin-url-resolve';
 import { ViteToml }        	from 'vite-plugin-toml';
 import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
+import purgecss            	from '@fullhuman/postcss-purgecss';
 
 const isDev	= false; // ↓ swap true/false in Dev to eg, avoid minification
 const pT   	= isDev ? false : true 	; // pT = production True
@@ -32,6 +33,15 @@ export default [{
       extract   	: path.resolve('static/js/css/kbdHelix.css'),
       plugins   	: [postcssOKLabFunction()]
     }),
-  ]
-},
+  ]},
+  {
+  input       	: ["src/kbdHelixFont.js"],
+  output      	: [{dir:"static/js"}],
+  plugins     	: [
+    postcss(  	{
+      minimize	: pT,
+      extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
+      plugins 	: [purgecss({content:['./content/**/*.html.tmpl']})]
+    }),
+  ]},
 ];
