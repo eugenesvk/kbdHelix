@@ -12,6 +12,7 @@
 @use "radix-ui-colors/slateDarkA"	with ($root:":root:not(.light)")
 
 :root.light
+  --f1         	: #{var(--gray12)}                                 	/* make main text darker*/
   --kbg        	: oklch(.87 0   90)                                	/* Keymap background #dbdbdb	*/
   --kbb        	: oklch(.82 0   90)                                	/* Keyborder         #cccccc	*/
   --kbt        	: oklch(.99 0   90)                                	/* Keytop            #fcfcfc	*/
@@ -27,6 +28,7 @@
   --tbl-border 	: none                                             	/*   border #c6cbd1 1px solid oklch(84% 0.01 252.82)    */
 
 :root:not(.light)
+  --f1         	: #{var(--gray12)}          	/* make main text darker*/
   --kbg        	: oklch(.43 0    90)        	/* Keymap background  	*/
   --kbb        	: oklch(.50 0    90)        	/* Keyborder          	*/
   --kbt        	: oklch(.66 0    90)        	/* Keytop             	*/
