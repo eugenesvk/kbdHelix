@@ -92,108 +92,108 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 </div>
 
 (or load a page with a given layout by including its name as a url `#hash`
-{{ url_hash (name="#qwerty"    	, url="@/modifew/index.md" , hash="#qwerty") }}
-{{ url_hash (name="#dvorak"    	, url="@/modifew/index.md" , hash="#dvorak") }}
-{{ url_hash (name="#colemak"   	, url="@/modifew/index.md" , hash="#colemak") }}
-{{ url_hash (name="#colemak_dh"	, url="@/modifew/index.md" , hash="#colemak_dh") }}
-{{ url_hash (name="#workman"   	, url="@/modifew/index.md" , hash="#workman") }}
-{{ url_hash (name="#neo2"      	, url="@/modifew/index.md" , hash="#neo2") }}
-{{ url_hash (name="#asset"     	, url="@/modifew/index.md" , hash="#asset") }}
+{{url_hash (name="#qwerty"     	, url="@/modifew/index.md" , hash="#qwerty")}}
+{{url_hash (name="#dvorak"    	, url="@/modifew/index.md" , hash="#dvorak")}}
+{{url_hash (name="#colemak"   	, url="@/modifew/index.md" , hash="#colemak")}}
+{{url_hash (name="#colemak_dh"	, url="@/modifew/index.md" , hash="#colemak_dh")}}
+{{url_hash (name="#workman"   	, url="@/modifew/index.md" , hash="#workman")}}
+{{url_hash (name="#neo2"      	, url="@/modifew/index.md" , hash="#neo2")}}
+{{url_hash (name="#asset"     	, url="@/modifew/index.md" , hash="#asset")}}
 )
 
 You can also load a page with just the cheat sheets using [these links](@/modifew/index.md#misc)
 
 ## Major modes {#major}
 
-### Helix Keymap modiƒew Normal {#m-normal}
+### Normal {#m-normal}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m1NOR.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml)
 
 <div id=modifew-m1NOR class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-m1NOR.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-m1NOR.html.tmpl")}}
 </div>
 
 
 
-### Helix Keymap modiƒew Insert {#m-insert}
+### Insert {#m-insert}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m2INS.png?raw=true)
 
 <div id=modifew-m2INS class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-m2INS.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-m2INS.html.tmpl")}}
 </div>
 
 
 
-### Helix Keymap modiƒew Select {#m-select}
+### Select {#m-select}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m3SEL.png?raw=true). Only commands that differ from Normal mode are shown, the rest are copied
 
 <div id=modifew-m3SEL class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-m3SEL.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-m3SEL.html.tmpl")}}
 </div>
 
 
 
 ## Minor modes {#minor}
 
-### Helix Keymap modiƒew GoTo {#n-goto}
+### GoTo {#n-goto}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nGoTo.png?raw=true)
 
 <div id=modifew-nGoTo class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-nGoTo.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-nGoTo.html.tmpl")}}
 </div>
 
 
 
-### Helix Keymap modiƒew Space {#n-space}
+### Space {#n-space}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nSpace.png?raw=true). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix
 
 <div id=modifew-nSpace class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-nSpace.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-nSpace.html.tmpl")}}
 </div>
 
 
 
 
-### Helix Keymap modiƒew View {#n-view}
+### View {#n-view}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/94d728fc74d61af4de9ed17ff7d8566d), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nView.png?raw=true)
 
 <div id=modifew-nView class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-nView.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-nView.html.tmpl")}}
 </div>
 
 
 
-### Helix Keymap modiƒew Match {#n-match}
+### Match {#n-match}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nMatch.png?raw=true)
 
 <div id=modifew-nMatch class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-nMatch.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-nMatch.html.tmpl")}}
 </div>
 
 
 
-### Helix Keymap modiƒew Window {#n-window}
+### Window {#n-window}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nWindow.png?raw=true)
 
 <div id=modifew-nWindow class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-nWindow.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-nWindow.html.tmpl")}}
 </div>
 
 
 
-### Helix Keymap modiƒew Unimpaired {#n-unimpaired}
+### Unimpaired {#n-unimpaired}
 
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/b885c21cc83ae06108b3da6728148191), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nUnimpaired.png?raw=true)
 
 <div id=modifew-nUnimpaired class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl") }}
+  {{include_file_coloc (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl")}}
 </div>
 
 ## Install {#install}
@@ -213,16 +213,16 @@ Direct links to pages with only the cheat cheets (custom layouts in a `#hash` al
 
 |Layout→</br>Mode↓|qwerty|dvorak|colemak|colemak_dh|workman|neo2|asset|
 |:-|:-|:-|:-|:-|:-|:-|:-|
-|{{ url_hash (name="all"        	, url="@/modifew/cheat-sheets/all.md"        	, hash="") }}|{{ url_hash (name="link"            	, url="@/modifew/cheat-sheets/all.md"        	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#asset") }}|
-|{{ url_hash (name="m1NOR"      	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#m1NOR") }}|{{ url_hash (name="link"      	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#asset") }}|
-|{{ url_hash (name="m2INS"      	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#m2INS") }}|{{ url_hash (name="link"      	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#asset") }}|
-|{{ url_hash (name="m3SEL"      	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#m3SEL") }}|{{ url_hash (name="link"      	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#asset") }}|
-|{{ url_hash (name="nGoTo"      	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#nGoTo") }}|{{ url_hash (name="link"      	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#asset") }}|
-|{{ url_hash (name="nMatch"     	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#nMatch") }}|{{ url_hash (name="link"     	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#asset") }}|
-|{{ url_hash (name="nSpace"     	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#nSpace") }}|{{ url_hash (name="link"     	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#asset") }}|
-|{{ url_hash (name="nUnimpaired"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#nUnimpaired") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#asset") }}|
-|{{ url_hash (name="nView"      	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#nView") }}|{{ url_hash (name="link"      	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#asset") }}|
-|{{ url_hash (name="nWindow"    	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#nWindow") }}|{{ url_hash (name="link"    	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#qwerty") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#dvorak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#colemak") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#colemak_dh") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#workman") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#neo2") }}|{{ url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#asset") }}|
+|{{url_hash (name="all"        	, url="@/modifew/cheat-sheets/all.md"        	, hash="")}}|{{url_hash (name="link"            	, url="@/modifew/cheat-sheets/all.md"        	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/all.md"        	, hash="#asset")}}|
+|{{url_hash (name="m1NOR"      	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#m1NOR")}}|{{url_hash (name="link"      	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m1NOR.md"      	, hash="#asset")}}|
+|{{url_hash (name="m2INS"      	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#m2INS")}}|{{url_hash (name="link"      	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m2INS.md"      	, hash="#asset")}}|
+|{{url_hash (name="m3SEL"      	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#m3SEL")}}|{{url_hash (name="link"      	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/m3SEL.md"      	, hash="#asset")}}|
+|{{url_hash (name="nGoTo"      	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#nGoTo")}}|{{url_hash (name="link"      	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nGoTo.md"      	, hash="#asset")}}|
+|{{url_hash (name="nMatch"     	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#nMatch")}}|{{url_hash (name="link"     	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nMatch.md"     	, hash="#asset")}}|
+|{{url_hash (name="nSpace"     	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#nSpace")}}|{{url_hash (name="link"     	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nSpace.md"     	, hash="#asset")}}|
+|{{url_hash (name="nUnimpaired"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#nUnimpaired")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nUnimpaired.md"	, hash="#asset")}}|
+|{{url_hash (name="nView"      	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#nView")}}|{{url_hash (name="link"      	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nView.md"      	, hash="#asset")}}|
+|{{url_hash (name="nWindow"    	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#nWindow")}}|{{url_hash (name="link"    	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#qwerty")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#dvorak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#colemak")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#colemak_dh")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#workman")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#neo2")}}|{{url_hash (name="link"	, url="@/modifew/cheat-sheets/nWindow.md"    	, hash="#asset")}}|
 
 <hr />
 

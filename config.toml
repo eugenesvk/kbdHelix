@@ -76,7 +76,7 @@ index_format	= "elasticlunr_javascript"	# |_javascript¦_json¦ search index for
   #    {name          	= "tags"}, ]
   # build_search_index	= false
 
-[extra] # custom variables {{ config.extra.VAR }} in templates
+[extra] # custom variables {{config.extra.VAR}} in templates
 highlight_theme	= true   	# enable syntax highlighting in a theme
 # uglyurls     	= true   	# +base_url=@index.html → local build
 language_code  	= "en-US"	#

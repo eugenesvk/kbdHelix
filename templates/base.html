@@ -5,11 +5,11 @@
 {%-   if page    %}{%- set this = page    %}
 {%- elif section %}{%- set this = section %}{%- endif -%}
 <!DOCTYPE html>
-<html lang="{{ config.extra.language_code | default(value='en-US') }}">
+<html lang="{{config.extra.language_code | default(value='en-US')}}">
 <head>
   <link rel="icon" href="data:image/svg+xml,%3csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3e%3ctext%20y=%22.9em%22%20font-size=%2290%22%3e◆ƒ%3c/text%3e%3c/svg%3e">
-  {{- macros_head::theme      	(config=config) }}
-  {{- macros_head::stylesheets	(config=config) }}
+  {{- macros_head::theme      	(config=config)}}
+  {{- macros_head::stylesheets	(config=config)}}
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible"	content="ie=edge" />
   <meta name="viewport"             	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -18,12 +18,12 @@
   <link rel=stylesheet type=text/css href={{get_url(path="js/css/kbdHelix.css")       	}} media=screen>
   <link rel=stylesheet type=text/css href={{get_url(path="css/syntax-theme-dark.css") 	}} media="(prefers-color-scheme: dark)" />
   <link rel=stylesheet type=text/css href={{get_url(path="css/syntax-theme-light.css")	}} media="(prefers-color-scheme: light)" />
-  {{- macros_head::stylesheets_preload                                                	(config=config) }}
-  {{- macros_head::js                                                                 	(config=config) }}
+  {{- macros_head::stylesheets_preload                                                	(config=config)}}
+  {{- macros_head::js                                                                 	(config=config)}}
   <script defer src={{get_url(path="js/kbdHelix.js")}} type=module></script>
 
-  <meta name="base"                                 	content="{{ config.base_url | safe }}" />
-  {{- macros_head::feed(config=config) }}
+  <meta name="base"                                 	content="{{config.base_url | safe}}" />
+  {{- macros_head::feed(config=config)}}
   {%- block seo %}
     {%- if config.extra.title_separator	%}{%- set title_separator = " " ~ config.extra.title_separator ~ " " -%}
     {%- else                           	%}{%- set title_separator = " | " -%}{%- endif %}
@@ -34,10 +34,10 @@
   <meta name="apple-mobile-web-app-status-bar-style"	content="default"	/>
   <meta name="google-site-verification"             	content="L5kiDl-13W2rjaTemS2IV_etfpiQ_u4za0rufj5iFcg" />
 
-  {{- macros_head::security(config=config) }}
-  {{- macros_head::favicons(config=config) }}
+  {{- macros_head::security(config=config)}}
+  {{- macros_head::favicons(config=config)}}
   {%- if config.build_search_index %}
-  <noscript><link rel="stylesheet" href="{{ get_url(path='nojs.css', trailing_slash=false) | safe }}" /></noscript>
+  <noscript><link rel="stylesheet" href="{{get_url(path='nojs.css', trailing_slash=false) | safe}}" /></noscript>
   {%- endif %}
 </head>
 
@@ -45,7 +45,7 @@
   {%- block header %}<header>
   <nav><div><ul>
     {%- if config.extra.js_theme -%}<li class="js">
-      {%- if config.extra.icon_adjust -%}<i type="reset" id="mode" class="{{ config.extra.icon_adjust }}"></i>
+      {%- if config.extra.icon_adjust -%}<i type="reset" id="mode" class="{{config.extra.icon_adjust}}"></i>
       {%- else -%}                       <i type="reset" id="mode" class="mode">&#9728;</i>{%- endif -%} </li>
     {%- endif -%}
   </ul></div></nav>

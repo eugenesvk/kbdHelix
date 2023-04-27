@@ -29,5 +29,5 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 
 
 <div id="modifew-nUnimpaired" class="keyboard" tabindex=0 style="display: inline-flex;">
-  {{ include_file_coloc_sub (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl") }}
+  {{include_file_coloc_sub (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl")}}
 </div>
