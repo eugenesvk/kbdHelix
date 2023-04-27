@@ -285,7 +285,7 @@ if (isMobile) { // phones don't auto hide tooltips, so hide previous tooltips on
       if (el.contains(elOccured)) {inKeyboard = true; }
     });
     if (inKeyboard === false ) { hideAllTooltips(); }
-  });
+  },{capture:false,passive:true});
 } else { // and non-phones can use keyboard to toggle tooltips
   document.addEventListener("keydown", (evt) => {
     if (evt.isComposing || evt.keyCode === 229 || evt.repeat) { hideAllTooltips(); return; }
@@ -491,8 +491,8 @@ modifew_modes.map(m => {
       // add tooltip listeners (once)
       timerIdMap.set(keycap           	, 0          	       ); // store timer
       if (isMobile)                   	{            	// permashow on a phone unless toched elsewhere
-        addEvtLis(keycap, 'touchstart'	, hTouchBeg  	, false); // show tooltip
-        addEvtLis(keycap, 'touchend'  	, ttShowDelay	, false); // show tooltip
+        addEvtLis(keycap, 'touchstart'	, hTouchBeg  	, {capture:false,passive:true}); // show tooltip
+        addEvtLis(keycap, 'touchend'  	, ttShowDelay	, {capture:false,passive:true}); // show tooltip
       } else                          	{            	//
         addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
         addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
