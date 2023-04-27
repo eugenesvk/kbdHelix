@@ -13,6 +13,14 @@
   content: "\f017";
 }
 
+.fa.fa-mail-forward:before {
+  content: "\f064";
+}
+
+.fa.fa-expand:before {
+  content: "\f424";
+}
+
 .fa.fa-save {
   font-family: "Font Awesome 6 Free";
   font-weight: 400;
@@ -186,6 +194,14 @@
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
 
+.fa-minus-circle::before {
+  content: "\f056";
+}
+
+.fa-paste::before {
+  content: "\f0ea";
+}
+
 .fa-align-justify::before {
   content: "\f039";
 }
@@ -194,24 +210,64 @@ readers do not read off random characters that represent icons */
   content: "\f328";
 }
 
+.fa-check-circle::before {
+  content: "\f058";
+}
+
 .fa-puzzle-piece::before {
   content: "\f12e";
+}
+
+.fa-user-astronaut::before {
+  content: "\f4fb";
+}
+
+.fa-question-circle::before {
+  content: "\f059";
 }
 
 .fa-save::before {
   content: "\f0c7";
 }
 
+.fa-camera::before {
+  content: "\f030";
+}
+
+.fa-arrow-down::before {
+  content: "\f063";
+}
+
 .fa-search::before {
   content: "\f002";
+}
+
+.fa-arrow-up::before {
+  content: "\f062";
 }
 
 .fa-copy::before {
   content: "\f0c5";
 }
 
+.fa-expand::before {
+  content: "\f065";
+}
+
 .fa-history::before {
   content: "\f1da";
+}
+
+.fa-share::before {
+  content: "\f064";
+}
+
+.fa-mail-forward::before {
+  content: "\f064";
+}
+
+.fa-times-circle::before {
+  content: "\f057";
 }
 
 .fa-usd::before {
@@ -237,4 +293,40 @@ i {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-minus-circle:before {
+  content: "\f056";
+}
+
+.fa-times-circle:before {
+  content: "\f057";
+}
+
+.fa-check-circle:before {
+  content: "\f058";
+}
+
+.fa-question-circle:before {
+  content: "\f059";
+}
+
+.fa-arrow-up:before {
+  content: "\f062";
+}
+
+.fa-arrow-down:before {
+  content: "\f063";
+}
+
+.fa-mail-forward:before {
+  content: "\f064";
+}
+
+.fa-share:before {
+  content: "\f064";
+}
+
+.fa-expand:before {
+  content: "\f065";
 }
