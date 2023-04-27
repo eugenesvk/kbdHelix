@@ -42,7 +42,7 @@ export default [
     postcss(  	{
       minimize	: pT,
       extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
-      plugins 	: [purgecss({content:['./content/**/*.html.tmpl']})]
+      plugins 	: [purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
     }),
   ]},
 ];
