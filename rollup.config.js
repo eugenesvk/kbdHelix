@@ -5,6 +5,7 @@ import { ViteToml }        	from 'vite-plugin-toml';
 import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
 import purgecss            	from '@fullhuman/postcss-purgecss';
+import { nodeResolve }     	from '@rollup/plugin-node-resolve';
 
 const isDev	= true; // ↓ swap true/false in Dev to eg, avoid minification
 const pT   	= isDev ? false : true 	; // pT = production True
@@ -42,7 +43,9 @@ export default [
     postcss(  	{
       minimize	: pT,
       extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
-      plugins 	: [purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
+      plugins 	: [nodeResolve(),
+        purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})
+      ]
     }),
   ]},
 ];
