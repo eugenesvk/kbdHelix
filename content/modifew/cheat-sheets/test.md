@@ -18,15 +18,22 @@ in_search_index	= true         	# add section pages to search (if `build_search_
 [extra] # Your own data
 +++
 
-- <i class="fa fa-save"></i>  Save
+- <i class="fa fa-clock-o"></i>         	fa	<i class="fas fa-clock-o"></i>         	fas	<i class="far fa-clock-o"></i>         	far	fa-clock-o         
+- <i class="fa fa-clock"></i>           	fa	<i class="fas fa-clock"></i>           	fas	<i class="far fa-clock"></i>           	far	fa-clock           
+- <i class="fa fa-camera"></i>          	fa	<i class="fas fa-camera"></i>          	fas	<i class="far fa-camera"></i>          	far	fa-camera          
+- <i class="fa fa-camera-rotate"></i>   	fa	<i class="fas fa-camera-rotate"></i>   	fas	<i class="far fa-camera-rotate"></i>   	far	fa-camera-rotate   
+- <i class="fa fa-user-astronaut"></i>  	fa	<i class="fas fa-user-astronaut"></i>  	fas	<i class="far fa-user-astronaut"></i>  	far	fa-user-astronaut  
+- <i class="fa fa-user-astronaut-o"></i>	fa	<i class="fas fa-user-astronaut-o"></i>	fas	<i class="far fa-user-astronaut-o"></i>	far	fa-user-astronaut-o
+- <i class="fs fa-list-old-style"></i>  fs fa-list-old-style
+- <i class="fs fa-user-astronaut"></i> fa-user-astronaut-
+- <i class="fs fa-user-astronaut-o"></i> fa-user-astronaut-o
+- <i class="fs fa-save"></i>  Save
+- <i class="fs fa-clock"></i> fs fa-clock
+- <i class="fs fa-clock-o"></i> fs fa-clock-o
 - <i class="fa-check-circle"></i> fa-check-circle
-- <i class="fa-check-circle"></i> fa-check-circle
-- <i class="fa fa-check-circle"></i> fa-check-circle
-- <i class="fa faUserAstronaut"></i> faUserAstronaut
-- <i class="fa fa-user-astronaut"></i> faUserAstronaut
-- <i class="fa fa-camera"></i> fa-camera
+- <i class="fs fa-check-circle"></i> fs fa-check-circle
 - <i class="fa-times-circle"></i> fa-times-circle
-- <i class="fa fa-times-circle"></i> fa-times-circle
+- <i class="fs fa-times-circle"></i> fs fa-times-circle
 - <i class="fa-minus-circle"></i> fa-minus-circle
 - <i class="fa-times-circle"></i> fa-times-circle
 - <i class="fa-question-circle"></i> fa-question-circle
