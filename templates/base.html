@@ -20,6 +20,7 @@
   {{- macros_head::stylesheets_preload                                             	(config=config)}}
   {{- macros_head::js                                                              	(config=config)}}
   <script defer src={{get_url(path="js/kbdHelix.js")}} type=module></script>
+  <script defer src={{get_url(path="js/kbdHelixFont.js")}} type=module></script>
 
   <meta name="base"                                 	content="{{config.base_url | safe}}" />
   {{- macros_head::feed(config=config)}}
