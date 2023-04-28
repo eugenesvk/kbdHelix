@@ -9,14 +9,12 @@ console.log("@kbdHelixFont.js: empty message to suppress emtpy chunk warning");
 
 // const camera = icon({ prefix: 'fas', iconName: 'camera' })
 // var camera2 = window.FontAwesome.icon({ prefix: 'fas', iconName: 'camera' })
+// export { noAuto$1 as noAuto, config$1 as config, library$1 as library, dom$1 as dom, parse$1 as parse, findIconDefinition$1 as findIconDefinition, toHtml$1 as toHtml, icon, layer, text, counter, api };
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faUserAstronaut, faCamera, faCameraRotate} from '@fortawesome/free-solid-svg-icons'
-import * as foo from '@fortawesome/free-solid-svg-icons'
+// import { faUserAstronaut, faCamera, faCameraRotate} from '@fortawesome/free-solid-svg-icons'
+import * as faS from '@fortawesome/free-solid-svg-icons' // import everything to list an icon name only once in use
 
-// We are only using the user-astronaut icon
-library.add(faUserAstronaut, faCamera, foo.faCameraRotate)
+library.add(faS.faUserAstronaut,faS.faCamera) // tree shaker removes the unneded imports
 
-// Replace any existing <i> tags with <svg> and set up a MutationObserver to
-// continue doing this as the DOM changes.
-dom.watch()
+dom.watch() // replace existing <i> with <svg>; set up a MutationObserver to continue doing this as the DOM changes
