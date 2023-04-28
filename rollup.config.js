@@ -39,11 +39,11 @@ export default [
   {
   input       	: ["src/kbdHelixFont.js"],
   output      	: [{dir:"static/js"}],
-  plugins     	: [
+  plugins     	: [nodeResolve(),
     postcss(  	{
       minimize	: pT,
       extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
-      plugins 	: [nodeResolve(),
+      plugins 	: [
         purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})
       ]
     }),
