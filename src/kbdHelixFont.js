@@ -1,3 +1,3 @@
 import './css/kbdHelixFont.sass';
 
-console.log('suppress emtpy chunk warning');
+console.log("@kbdHelixFont.js: empty message to suppress emtpy chunk warning");
