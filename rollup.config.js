@@ -36,16 +36,37 @@ export default [
   //     plugins   	: [postcssOKLabFunction()]
   //   }),
   // ]},
+  // {
+  // input       	: ["src/kbdHelixFont.js"],
+  // output      	: [{dir:"static/js"}],
+  // context     	: 'window',
+  // plugins     	: [nodeResolve(),
+  //   postcss(  	{
+  //     minimize	: pT,
+  //     extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
+  //     plugins 	: [
+  //       purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})
+  //     ]
+  //   }),
+  // ]},
   {
-  input       	: ["src/kbdHelixFont.js"],
-  output      	: [{dir:"static/js"}],
-  plugins     	: [nodeResolve(),
-    postcss(  	{
-      minimize	: pT,
-      extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
-      plugins 	: [
-        purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})
-      ]
-    }),
+  input             	: ["src/kbdHelixFont.js"],
+  output            	: [{dir:"static/js"}],
+  context           	: 'window',
+  plugins           	: [nodeResolve(),
+    // swc(         	{
+    //   include    	: /\.[mc]?[jt]sx?$/	, //|/\.[mc]?[jt]sx?$/|
+    //   exclude    	: /node_modules/   	, //|/node_modules/   |
+    //   tsconfig   	: 'tsconfig.json'  	, //|'tsconfig.json'  |
+    //   jsc        	: {
+    //     target   	: "es5",
+    //     loose    	: false,
+    //     parser   	: {
+    //       syntax 	: "ecmascript",
+    //       jsx    	: false,
+    //     }        	,
+    //     // minify	: {compress:pT,mangle:pT}, // for some reason stop working
+    //   }          	,
+    //  })          	,
   ]},
 ];
