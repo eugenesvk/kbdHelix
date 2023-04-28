@@ -15,6 +15,6 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
 // import { faUserAstronaut, faCamera, faCameraRotate} from '@fortawesome/free-solid-svg-icons'
 import * as faS from '@fortawesome/free-solid-svg-icons' // import everything to list an icon name only once in use
 
-library.add(faS.faUserAstronaut,faS.faCamera) // tree shaker removes the unneded imports
+library.add(faS['faUserAstronaut'],faS.faCamera) // tree shaker removes the unneded imports
 
 dom.watch() // replace existing <i> with <svg>; set up a MutationObserver to continue doing this as the DOM changes
