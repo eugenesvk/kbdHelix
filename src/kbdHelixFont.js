@@ -15,7 +15,7 @@ import { faUserAstronaut, faCamera, faCameraRotate} from '@fortawesome/free-soli
 import * as foo from '@fortawesome/free-solid-svg-icons'
 
 // We are only using the user-astronaut icon
-library.add(faUserAstronaut, faCamera)
+library.add(faUserAstronaut, faCamera, foo.faCameraRotate)
 
 // Replace any existing <i> tags with <svg> and set up a MutationObserver to
 // continue doing this as the DOM changes.
