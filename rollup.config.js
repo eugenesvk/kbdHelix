@@ -35,13 +35,14 @@ export default [{
     }),
   ]},
   {
-  input       	: ["src/kbdHelixFont.js"],
-  output      	: [{dir:"static/js"}],
-  plugins     	: [
+  input       	: ["src/css/kbdHelixFont.sass"],
+  output      	: [{dir:"static/css"}],
+  plugins     	: [nodeResolve(),
     postcss(  	{
       minimize	: pT,
-      extract 	: path.resolve('static/js/css/kbdHelixFont.css'),
-      plugins 	: [purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
+      extract 	: path.resolve('static/css/kbdHelixFont.css'),
+      plugins 	: [
+        purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
     }),
   ]},
 ];
