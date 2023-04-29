@@ -1,3 +1,4 @@
+import {isDev, isProd}     	from './script/util'
 import path                	from 'path';
 import { swc }             	from 'rollup-plugin-swc3';
 import urlResolve          	from 'rollup-plugin-url-resolve';
@@ -6,10 +7,6 @@ import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
 import purgecss            	from '@fullhuman/postcss-purgecss';
 import {nodeResolve}       	from '@rollup/plugin-node-resolve'; // reference npm module files
-
-const isDev	= false; // ↓ swap true/false in Dev to eg, avoid minification
-const pT   	= isDev ? false : true 	; // pT = production True
-const pF   	= isDev ? true  : false	;
 
 export default [
   {
@@ -27,11 +24,11 @@ export default [
           syntax	: "ecmascript",
           jsx   	: false,
         }       	,
-        minify  	: {compress:pT,mangle:pT},
+        minify  	: {compress:isProd,mangle:isProd},
       }         	,
      })         	,
     postcss(    	{
-      minimize  	: pT,
+      minimize  	: isProd,
       extract   	: path.resolve('static/js/css/kbdHelix.css'),
       plugins   	: [postcssOKLabFunction()]
     }),
@@ -41,7 +38,7 @@ export default [
   output      	: [{dir:"static/css"}],
   plugins     	: [nodeResolve(),
     postcss(  	{
-      minimize	: pT,
+      minimize	: isProd,
       extract 	: path.resolve('static/css/kbdHelixFont.css'),
       plugins 	: [
         purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
