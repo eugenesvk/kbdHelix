@@ -1,0 +1,23 @@
+// --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
+// importing core styling file, KLE uses v4.4.0, so use shims
+@use "sass:meta"
+
+$font-path	: "../../font"
+
+// dynamic imports not supported, can't use ↓ as a variable, but can use meta.load-css
+// @use "path/to/scss"	with ($fa-font-path:$font-path)
+
+@use "fa-icomoon/style" with ($icomoon-font-path:$font-path)
+// ↑ conflicts with ↓, but we don't need ↓ since using smaller standalone icon file with generated styles
+
+// unlike @use
+  // - doesn’t make any members from the loaded module available in the current module.
+  // - can be used anywhere in a stylesheet, even nested
+  // - module URL can come from a variable and include interpolation
+// $fa-yarn	: "../../.yarn/unplugged/@fortawesome-fontawesome-free-npm-6.4.0-68881a27c1/node_modules/@fortawesome/fontawesome-free/scss"
+// $fa-cfg 	: ("fa-font-path":$font-path)
+
+// @include meta.load-css("#{$fa-yarn}/solid"      	, $with:$fa-cfg)
+// @include meta.load-css("#{$fa-yarn}/regular"    	, $with:$fa-cfg)
+// @include meta.load-css("#{$fa-yarn}/fontawesome"	, $with:$fa-cfg)
+// @include meta.load-css("#{$fa-yarn}/v4-shims"   	, $with:$fa-cfg)
