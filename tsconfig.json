@@ -1,0 +1,32 @@
+{"compilerOptions" 	: {
+  "baseUrl"        	: ".",
+  "module"         	: "ESNext",
+  "target"         	: "es2016",
+  "lib"            	: ["DOM","ESNext"],
+  "esModuleInterop"	: true,
+  "incremental"    	: false,
+  "skipLibCheck"   	: true,
+
+  //
+  "moduleResolution"             	: "bundler",
+  "noEmit"                       	: true,
+  // "allowImportingTsExtensions"	: true, // ts files can import each other with .ts, .mts, .tsx
+  "resolveJsonModule"            	: true,
+  "isolatedModules"              	: true, // make sure that your TypeScript code works across different compilers
+  "jsx"                          	: "preserve",
+
+  // Linting
+  "strict"                          	: true,
+  "noUnusedLocals"                  	: true,
+  "noUnusedParameters"              	: true,
+  "noFallthroughCasesInSwitch"      	: true,
+  "forceConsistentCasingInFileNames"	: true,
+  "noImplicitAny"                   	: false, // hide no declaration file for module 'rollup-plugin-url-resolve'
+
+  "types"	: ["node"],
+  "paths"	: {
+    "~/*"	: ["src/*"]
+  },
+},
+"exclude"	: ["dist","node_modules"]
+}
