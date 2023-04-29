@@ -3,9 +3,10 @@
   "type": "module",
   "packageManager": "yarn@3.5.0",
   "scripts": {
-    "d": "cross-env NODE_ENV=development rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "b": "cross-env NODE_ENV=production  rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "build": "rollup --config",
+    "d": "cross-env     NODE_ENV=development rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "dev": "cross-env   NODE_ENV=development rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "b": "cross-env     NODE_ENV=production  rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "build": "cross-env NODE_ENV=production  rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "serve": "zola serve",
     "s": "zola serve",
     "lan": "./zola.xsh"
