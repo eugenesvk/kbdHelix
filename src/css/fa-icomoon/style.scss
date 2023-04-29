@@ -1,0 +1,99 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?d9bcmq') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?d9bcmq') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?d9bcmq##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="fa-"], [class*=" fa-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-search {
+  &:before {
+    content: $fa-search; 
+  }
+}
+.fa-clock-o {
+  &:before {
+    content: $fa-clock-o; 
+  }
+}
+.fa-align-justify {
+  &:before {
+    content: $fa-align-justify; 
+  }
+}
+.fa-copy {
+  &:before {
+    content: $fa-copy; 
+  }
+}
+.fa-files-o {
+  &:before {
+    content: $fa-files-o; 
+  }
+}
+.fa-floppy-o {
+  &:before {
+    content: $fa-floppy-o; 
+  }
+}
+.fa-save {
+  &:before {
+    content: $fa-save; 
+  }
+}
+.fa-clipboard {
+  &:before {
+    content: $fa-clipboard; 
+  }
+}
+.fa-paste {
+  &:before {
+    content: $fa-paste; 
+  }
+}
+.fa-keyboard-o {
+  &:before {
+    content: $fa-keyboard-o; 
+  }
+}
+.fa-puzzle-piece {
+  &:before {
+    content: $fa-puzzle-piece; 
+  }
+}
+.fa-dollar {
+  &:before {
+    content: $fa-dollar; 
+  }
+}
+.fa-usd {
+  &:before {
+    content: $fa-usd; 
+  }
+}
+.fa-history {
+  &:before {
+    content: $fa-history; 
+  }
+}
+
