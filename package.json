@@ -29,5 +29,8 @@
     "tslib": "^2.5.0",
     "typescript": "^5.0.4",
     "vite-plugin-toml": "^0.5.0"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-symbols-2": "^4.5.11"
   }
 }
