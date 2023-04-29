@@ -11,7 +11,8 @@ const isDev	= false; // ↓ swap true/false in Dev to eg, avoid minification
 const pT   	= isDev ? false : true 	; // pT = production True
 const pF   	= isDev ? true  : false	;
 
-export default [{
+export default [
+  {
   input         	: ["src/kbdHelix.js"],
   output        	: [{dir:"static/js"}],
   plugins       	: [urlResolve(), ViteToml(),
