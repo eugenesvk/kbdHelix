@@ -1,5 +1,4 @@
-import {isDev, isProd}     	from './script/util'
-import path                	from 'path';
+import {isProd, r}         	from './script/util'
 import { swc }             	from 'rollup-plugin-swc3';
 import urlResolve          	from 'rollup-plugin-url-resolve';
 import { ViteToml }        	from 'vite-plugin-toml';
@@ -29,7 +28,7 @@ export default [
      })         	,
     postcss(    	{
       minimize  	: isProd,
-      extract   	: path.resolve('static/js/css/kbdHelix.css'),
+      extract   	: r('static/js/css/kbdHelix.css'),
       plugins   	: [postcssOKLabFunction()]
     }),
   ]},
@@ -39,7 +38,7 @@ export default [
   plugins     	: [nodeResolve(),
     postcss(  	{
       minimize	: isProd,
-      extract 	: path.resolve('static/css/kbdHelixFont.css'),
+      extract 	: r('static/css/kbdHelixFont.css'),
       plugins 	: [
         purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
     }),

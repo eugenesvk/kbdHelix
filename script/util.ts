@@ -1,5 +1,5 @@
-import { resolve }      	from 'path'
-import { bgCyan, black }	from 'kolorist'
+import {resolve}      	from 'node:path'
+import {bgCyan, black}	from 'kolorist'
 
 export const port  	= parseInt(process.env.PORT || '') || 1111
 export const r     	= (...args: string[]) => resolve(__dirname, '..', ...args)
