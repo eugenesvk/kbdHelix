@@ -59,7 +59,7 @@ Below is a summary of some of the design decisions followed up by detailed keyma
   - Turn <kbd lyt=q>h</kbd> into a combo <kbd>⌫</kbd>/<kbd>⌦</kbd> key
   - (lacking sufficient frequency data) Group various inserts together:<br/>
     <span style="white-space: nowrap;">{{kw(m="",k="i",t="keyChange",c="⁁⤸")}} {{kw(m="",k="o",t="keyChange",c="⤹⎀")}}</span> to insert/append and <br/>
-    <span style="white-space: nowrap;">{{kw(m="⇧",k="i",t="keyChange",c="⭡␤")}} {{kw(m="⇧",k="o",t="keyChange",c="⭣␤")}}</span> to `open_below`/`open_above` (`prepend_to_line`/`append_to_line` are removed as there is a standalone command to move to the beginning of a line, so <span style="white-space: nowrap;">{{kw(m="",k="a",t="keyChange",c="⭰")}} {{kw(m="⇧",k="i",t="keyChange",c="⁁⤸")}}</span> is easier than the old {{kw(m="",k="i",t="keyChange",c="⁁⭰")}})
+    <span style="white-space: nowrap;">{{kw(m="⇧",k="i",t="keyChange",c="⭡␤")}} {{kw(m="⇧",k="o",t="keyChange",c="⭣␤")}}</span> to `open_below`/`open_above` (`prepend_to_line`/`append_to_line` are removed as there is a standalone command to move to the beginning of a line, so <span style="white-space: nowrap;">{{kw(m="",k="a",t="keyMove",c="⭰")}} {{kw(m="⇧",k="i",t="keyChange",c="⁁⤸")}}</span> is easier than the old {{kw(m="",k="i",t="keyChange",c="⁁⭰")}})
   - Add a few keybinds to make it similar to non-modal editors to help with transition
     - {{k(m="" ,k="⏎",t="keyChange",c="⭣␤")}} {{k(m="⇧",k="⏎",t="keyChange",c="⭡␤")}} Insert a new line below/above (`open_below`/`open_above`)
     - {{k(m="⎈",k="a",t="keySelect"	,c="∀▋")}} Select all
