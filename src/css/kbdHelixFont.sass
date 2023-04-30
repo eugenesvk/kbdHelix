@@ -29,9 +29,9 @@ $font-path	: "../font"
 // $symbolsMap     	: ("symbols":$symbolsRange)
 // @include        	NotoSym2.fontFace($unicodeMap:$symbolsMap)
 NotoSym2.$defSubset	: "symbols"
-NotoSym2.$fontDir  	: "../font"
+NotoSym2.$fontDir  	: $font-path
 NotoSym.$defSubset 	: "symbols"
-NotoSym.$fontDir   	: "../font"
+NotoSym.$fontDir   	: $font-path
 @include NotoSym2.fontFaceCustom()
 @include NotoSym.fontFaceCustom()
 
