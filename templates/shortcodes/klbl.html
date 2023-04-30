@@ -1,0 +1,5 @@
+{% if t %}
+<span class="keylabels {{t|safe}}">{{c|safe}}</span>
+{%- else -%}
+<span class="keylabels">{{           c|safe}}</span>
+{%- endif %}
