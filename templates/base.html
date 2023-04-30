@@ -14,11 +14,9 @@
   <meta http-equiv="x-ua-compatible"	content="ie=edge" />
   <meta name="viewport"             	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link rel=stylesheet type=text/css href={{get_url(path="css/main.css")        	}} media=screen>
-  <link rel=stylesheet type=text/css href={{get_url(path="js/css/kbdHelix.css") 	}} media=screen>
-  <link rel=stylesheet type=text/css href={{get_url(path="css/kbdHelixFont.css")	}} media=screen>
-  {{- macros_head::stylesheets_preload                                          	(config=config)}}
-  {{- macros_head::js                                                           	(config=config)}}
+  <link rel=stylesheet type=text/css href={{get_url(path="css/main.css")	}} media=screen>
+  {{- macros_head::stylesheets_preload                                  	(config=config)}}
+  {{- macros_head::js                                                   	(config=config)}}
   <script defer src={{get_url(path="js/kbdHelix.js")}} type=module></script>
 
   <meta name="base"	content="{{config.base_url | safe}}" />
