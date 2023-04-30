@@ -5,7 +5,6 @@ import { ViteToml }        	from 'vite-plugin-toml';
 import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
 import purgecss            	from '@fullhuman/postcss-purgecss';
-import {nodeResolve}       	from '@rollup/plugin-node-resolve'; // reference npm module files
 import copy                	from 'rollup-plugin-copy'; // copy fonts
 
 export default [
@@ -36,7 +35,7 @@ export default [
   {
   input       	: ["src/css/kbdHelixFont.sass"],
   output      	: [{dir:"static/css"}],
-  plugins     	: [nodeResolve(),
+  plugins     	: [
     postcss(  	{
       minimize	: isProd,
       extract 	: r('static/css/kbdHelixFont.css'),
