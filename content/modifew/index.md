@@ -87,7 +87,6 @@ A few tips:
     - Read the config and compare to the visual cheat sheet
   
   Later if you need to look up just a single icon/button you can use tooltips by hovering over a button or pressing <kbd>⇧</kbd><kbd>KEY</kbd>[^kbd_tooltip]
-- <span style="color: orange">⚠</span> if you see many crossed boxes instead of icons in the cheatsheets below, try to set a font that has many symbols as a fallback (e.g., [Noto Symbols 2](https://fonts.google.com/noto/specimen/Noto+Sans+Symbols+2))
 - You can also load a page with just the cheat sheets using [these links](@/modifew/index.md#misc)
 - ☰ is a menu icon
 
