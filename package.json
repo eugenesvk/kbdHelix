@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-oklab-function": "^2.2.1",
+    "@fontsource/noto-sans-symbols": "^4.5.12",
     "@fontsource/noto-sans-symbols-2": "^4.5.11",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@rollup/plugin-typescript": "^11.1.0",
