@@ -1,5 +1,5 @@
 {% if m %}
-<span style="white-space: nowrap;"><kbd>{{m|safe}}</kbd><kbd lyt=q>{{k|safe}}</kbd><span class="{{t|safe}}">{{c|safe}}</span></span>
+<span style="white-space: nowrap;"><kbd>{{m|safe}}</kbd><kbd lyt=q>{{k|safe}}</kbd><span class="keylabels {{t|safe}}">{{c|safe}}</span></span>
 {%- else -%}
-<span style="white-space: nowrap;">                     <kbd lyt=q>{{k|safe}}</kbd><span class="{{t|safe}}">{{c|safe}}</span></span>
+<span style="white-space: nowrap;">                     <kbd lyt=q>{{k|safe}}</kbd><span class="keylabels {{t|safe}}">{{c|safe}}</span></span>
 {%- endif %}
