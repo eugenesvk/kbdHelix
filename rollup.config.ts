@@ -43,8 +43,10 @@ export default [
         purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']}),
       ]
     }),
-    copy({targets:[
+    copy({copyOnce:true, targets:[
       {src 	: [`${rr('@fontsource/noto-sans-symbols-2')}/../files/noto-sans-symbols-2-symbols-400-normal.woff2`],
+       dest	: 'static/font'},
+      {src 	: [`${rr('@fontsource/noto-sans-symbols')}/../files/noto-sans-symbols-symbols-400-normal.woff2`],
        dest	: 'static/font'}
       ]    	,
     })
