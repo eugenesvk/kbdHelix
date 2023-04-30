@@ -1,4 +1,4 @@
-import {isProd, r}         	from './script/util'
+import {isProd,r,rr}       	from './script/util'
 import { swc }             	from 'rollup-plugin-swc3';
 import urlResolve          	from 'rollup-plugin-url-resolve';
 import { ViteToml }        	from 'vite-plugin-toml';
@@ -6,6 +6,7 @@ import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
 import purgecss            	from '@fullhuman/postcss-purgecss';
 import {nodeResolve}       	from '@rollup/plugin-node-resolve'; // reference npm module files
+import copy                	from 'rollup-plugin-copy'; // copy fonts
 
 export default [
   {
@@ -42,5 +43,10 @@ export default [
       plugins 	: [
         purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
     }),
+    copy({targets:[
+      {src 	: [`${rr('@fontsource/noto-sans-symbols-2')}/../files/noto-sans-symbols-2-symbols-400-normal.woff2`],
+       dest	: 'static/font'}
+      ]    	,
+    })
   ]},
 ];
