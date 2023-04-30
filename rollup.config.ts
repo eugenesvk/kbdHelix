@@ -26,19 +26,24 @@ export default [
         minify  	: {compress:isProd,mangle:isProd},
       }         	,
      })         	,
-    postcss(    	{
-      minimize  	: isProd,
-      extract   	: r('static/js/css/kbdHelix.css'),
-      plugins   	: [postcssOKLabFunction()]
-    }),
   ]},
   {
-  input       	: ["src/css/kbdHelixFont.sass"],
-  output      	: [{dir:"static/css"}],
+  input       	: ["src/css/kbdHelix.sass"],
+  output      	: [{dir:"sass/css/build"}],
   plugins     	: [
     postcss(  	{
       minimize	: isProd,
-      extract 	: r('static/css/kbdHelixFont.css'),
+      extract 	: r('sass/css/build/_kbdHelix.css'),
+      plugins 	: [postcssOKLabFunction()]
+    })        	,
+  ]},
+  {
+  input       	: ["src/css/kbdHelixFont.sass"],
+  output      	: [{dir:"sass/css/build"}],
+  plugins     	: [
+    postcss(  	{
+      minimize	: isProd,
+      extract 	: r('sass/css/build/_kbdHelixFont.css'),
       plugins 	: [
         purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']}),
       ]
