@@ -41,7 +41,8 @@ export default [
       minimize	: isProd,
       extract 	: r('static/css/kbdHelixFont.css'),
       plugins 	: [
-        purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']})]
+        purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']}),
+      ]
     }),
     copy({targets:[
       {src 	: [`${rr('@fontsource/noto-sans-symbols-2')}/../files/noto-sans-symbols-2-symbols-400-normal.woff2`],
