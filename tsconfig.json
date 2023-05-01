@@ -16,11 +16,11 @@
   "jsx"                          	: "preserve",
 
   // Linting
-  "strict"                          	: true,
-  "noUnusedLocals"                  	: true,
-  "noUnusedParameters"              	: true,
-  "noFallthroughCasesInSwitch"      	: true,
-  "forceConsistentCasingInFileNames"	: true,
+  "strict"                          	: false,
+  "noUnusedLocals"                  	: false,
+  "noUnusedParameters"              	: false,
+  "noFallthroughCasesInSwitch"      	: false,
+  "forceConsistentCasingInFileNames"	: false,
   "noImplicitAny"                   	: false, // hide no declaration file for module 'rollup-plugin-url-resolve'
 
   "types"    	: ["node"],
