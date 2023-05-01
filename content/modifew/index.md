@@ -113,6 +113,7 @@ A few tips:
 
 ### Normal {{klbl(t="keyOther",c="Ⓝ")}} {#m-normal}
 
+<!-- ids must match modifew_modes_pre+modifew_modes vars in kbd-tooltip -->
 [@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m1NOR.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml)
 
 <div id=modifew-m1NOR class="keyboard" tabindex=0 style="display: inline-flex;">
