@@ -7,6 +7,7 @@
     "dev": "cross-env   NODE_ENV=development rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "b": "cross-env     NODE_ENV=production  rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "build": "cross-env NODE_ENV=production  rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "font-shake": "cross-env ENVIRONMENT_IS_NODE=true node --trace-uncaught ./script/font-woff2-shake.js ./static/font/t.woff2 ./static/font/t_out.woff2 ./src/font/subset.txt",
     "serve": "zola serve",
     "s": "zola serve",
     "lan": "./zola.xsh"
