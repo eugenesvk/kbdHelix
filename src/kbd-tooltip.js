@@ -404,101 +404,104 @@ function mergeSubmodes(m, keylbl) {
 }
 const tooltips = new Map(); // store all toolip divs here in a mode sub-map
 
+function addToolips(el, tooltips) {
+  const keyLbl	= el.innerText.trim();
+  if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
+    const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(m);
+    const curLytLbl	= gLyt.lbl                     	; // reads layout only at page LOAD
+    const keylbl   	= keyLbl[0].toLowerCase()      	; // take only the 1st label (number keys have duplicate 1!)
+    const keyCaps  	= getSiblingKeyCaps(el, capIDs)	; // get all keycaps with valid labels in valid positions
+    const keyCapSym	= storeKeyCap(keylbl, keyCaps) 	; // store all valid keycap symbols
+    const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis, chord); // {0:'⇧'=>'switch_to_lowercase'>..}
+
+    let keyCombo;
+    if (m in modifew_mode_sub_sym) { // add submodes in place of modifiers
+      const keyCombos_sub = mergeSubmodes(m, keylbl);
+      keyCombo = new Map([...keyComboM, ...keyCombos_sub]);
+    } else {
+      keyCombo = keyComboM;
+    }
+
+    // Generate tooltip table
+    let tt_div    	= document.createElement('div');
+    let tt_headIcn	= document.createElement('span');
+    let tt_headLbl	= document.createElement('span');
+    let tt_table  	= document.createElement('table');
+    tt_headIcn.classList.add('styled-table-header-icon');
+    tt_headLbl.classList.add('styled-table-header-label');
+    tt_table .classList.add('styled-table');
+    tt_headIcn.innerHTML	= mIcon + ' ';
+    tt_headLbl.innerHTML	= keyLbl;
+    tt_div.appendChild(tt_headIcn);
+    tt_div.appendChild(tt_headLbl);
+    tt_div.appendChild(tt_table);
+    setTableHead(tt_table, table_header);
+    let showTT	= false; // hide empty tooltips (header without rows)
+    capIDs.map(lbl_id => {
+      if (!keyCombo.has(lbl_id)) { return; } // break sequence as no combos for this label
+      const key_mod_cmd	 = keyCombo.get(lbl_id);
+      const key_mod    	 = key_mod_cmd.modi;
+      const key_cmd    	 = key_mod_cmd.cmd;
+      const key_chord  	 = key_mod_cmd.chord;
+      if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
+      const key_lbl    	 = convert(keylbl,'qwerty',lyt[curLytLbl]);
+      const key_sym    	 = keyCapSym.get(keylbl).get(lbl_id) || '';
+      if (key_cmd && key_sym) {
+        showTT      	= true; // tooltip not empty, show
+        let row     	= tt_table.insertRow();
+        let row_data	= [];
+        if (key_mod) { modi_list.map(mod => {
+          if (key_mod.includes(mod))	{ row_data.push(mod);
+          } else                    	{ row_data.push('' ); } });
+        } else                      	{
+          const modeSym = lbl_modis.get(lbl_id);
+          if (modeSym)	{ row_data.push(modeSym);
+          } else      	{ row_data.push(''  );}
+          row_data.push('');
+          if (key_chord)	{ row_data.push(key_chord);
+          } else        	{ row_data.push(''  );}
+        }
+        row_data.push(key_lbl);
+        row_data.push(key_sym);
+        row_data.push(key_cmd);
+        row_data.map(c	=> {
+          let cell = row.insertCell();
+          let txt = document.createTextNode(c);
+          cell.appendChild(txt);
+        });
+      }
+    });
+
+    // Add tooltip data/listeners to the whole key
+    if (!showTT) {return;}
+    const keycap         	= el.closest(".keylabels"); // find the labels group
+    const ttBox          	= document.createElement("div")	; // create tooltip box
+     // ttBox.id         	= `tt:${mode}:${keyLbl}`       	;
+     ttBox.classList.add(	'keycap_tooltip_modi_cmd')     	;
+     ttBox.innerHTML     	= tt_div.innerHTML             	; // make tooltip show our table
+     ttBox.keyLbl        	= keyLbl                       	; // add label/layout data to allow dynamic changes
+     ttBox.keylbl        	= keylbl                       	; //
+     ttBox.curLytLbl     	= curLytLbl                    	; //
+    keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
+    tooltips.get(m)      	.set(keylbl, keycap)           	; // add keycap to global map to toggle with keyboard
+    // add tooltip listeners (once)
+    timerIdMap.set(keycap           	, 0          	       ); // store timer
+    if (isMobile)                   	{            	// permashow on a phone unless toched elsewhere
+      addEvtLis(keycap, 'touchstart'	, hTouchBeg  	, {capture:false,passive:true}); // show tooltip
+      addEvtLis(keycap, 'touchend'  	, ttShowDelay	, {capture:false,passive:true}); // show tooltip
+    } else                          	{            	//
+      addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
+      addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
+      addEvtLis(keycap, 'click'     	, ttHide     	, false); // disable on click
+    }
+  }
+}
 modifew_modes.map(m => {
   const mode = modifew_modes_pre + m;
   // pt('mode=¦'+mode+'¦');
   tooltips.set(m, new Map());
   document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
-    const keyLbl	= el.innerText.trim();
-    if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
-      const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(m);
-      const curLytLbl	= gLyt.lbl                     	; // reads layout only at page LOAD
-      const keylbl   	= keyLbl[0].toLowerCase()      	; // take only the 1st label (number keys have duplicate 1!)
-      const keyCaps  	= getSiblingKeyCaps(el, capIDs)	; // get all keycaps with valid labels in valid positions
-      const keyCapSym	= storeKeyCap(keylbl, keyCaps) 	; // store all valid keycap symbols
-      const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis, chord); // {0:'⇧'=>'switch_to_lowercase'>..}
-
-      let keyCombo;
-      if (m in modifew_mode_sub_sym) { // add submodes in place of modifiers
-        const keyCombos_sub = mergeSubmodes(m, keylbl);
-        keyCombo = new Map([...keyComboM, ...keyCombos_sub]);
-      } else {
-        keyCombo = keyComboM;
-      }
-
-      // Generate tooltip table
-      let tt_div    	= document.createElement('div');
-      let tt_headIcn	= document.createElement('span');
-      let tt_headLbl	= document.createElement('span');
-      let tt_table  	= document.createElement('table');
-      tt_headIcn.classList.add('styled-table-header-icon');
-      tt_headLbl.classList.add('styled-table-header-label');
-      tt_table .classList.add('styled-table');
-      tt_headIcn.innerHTML	= mIcon + ' ';
-      tt_headLbl.innerHTML	= keyLbl;
-      tt_div.appendChild(tt_headIcn);
-      tt_div.appendChild(tt_headLbl);
-      tt_div.appendChild(tt_table);
-      setTableHead(tt_table, table_header);
-      let showTT	= false; // hide empty tooltips (header without rows)
-      capIDs.map(lbl_id => {
-        if (!keyCombo.has(lbl_id)) { return; } // break sequence as no combos for this label
-        const key_mod_cmd	 = keyCombo.get(lbl_id);
-        const key_mod    	 = key_mod_cmd.modi;
-        const key_cmd    	 = key_mod_cmd.cmd;
-        const key_chord  	 = key_mod_cmd.chord;
-        if (key_cmd      	=== 'no_op') { return; } // break sequence if an empty command
-        const key_lbl    	 = convert(keylbl,'qwerty',lyt[curLytLbl]);
-        const key_sym    	 = keyCapSym.get(keylbl).get(lbl_id) || '';
-        if (key_cmd && key_sym) {
-          showTT      	= true; // tooltip not empty, show
-          let row     	= tt_table.insertRow();
-          let row_data	= [];
-          if (key_mod) { modi_list.map(mod => {
-            if (key_mod.includes(mod))	{ row_data.push(mod);
-            } else                    	{ row_data.push('' ); } });
-          } else                      	{
-            const modeSym = lbl_modis.get(lbl_id);
-            if (modeSym)	{ row_data.push(modeSym);
-            } else      	{ row_data.push(''  );}
-            row_data.push('');
-            if (key_chord)	{ row_data.push(key_chord);
-            } else        	{ row_data.push(''  );}
-          }
-          row_data.push(key_lbl);
-          row_data.push(key_sym);
-          row_data.push(key_cmd);
-          row_data.map(c	=> {
-            let cell = row.insertCell();
-            let txt = document.createTextNode(c);
-            cell.appendChild(txt);
-          });
-        }
-      });
-
-      // Add tooltip data/listeners to the whole key
-      if (!showTT) {return;}
-      const keycap         	= el.closest(".keylabels"); // find the labels group
-      const ttBox          	= document.createElement("div")	; // create tooltip box
-       // ttBox.id         	= `tt:${mode}:${keyLbl}`       	;
-       ttBox.classList.add(	'keycap_tooltip_modi_cmd')     	;
-       ttBox.innerHTML     	= tt_div.innerHTML             	; // make tooltip show our table
-       ttBox.keyLbl        	= keyLbl                       	; // add label/layout data to allow dynamic changes
-       ttBox.keylbl        	= keylbl                       	; //
-       ttBox.curLytLbl     	= curLytLbl                    	; //
-      keycap.appendChild(  	  ttBox)                       	; // add tooltip to the keycap
-      tooltips.get(m)      	.set(keylbl, keycap)           	; // add keycap to global map to toggle with keyboard
-      // add tooltip listeners (once)
-      timerIdMap.set(keycap           	, 0          	       ); // store timer
-      if (isMobile)                   	{            	// permashow on a phone unless toched elsewhere
-        addEvtLis(keycap, 'touchstart'	, hTouchBeg  	, {capture:false,passive:true}); // show tooltip
-        addEvtLis(keycap, 'touchend'  	, ttShowDelay	, {capture:false,passive:true}); // show tooltip
-      } else                          	{            	//
-        addEvtLis(keycap, 'mouseenter'	, ttShowDelay	, false); // show tooltip
-        addEvtLis(keycap, 'mouseleave'	, ttHideDelay	, false); // hide
-        addEvtLis(keycap, 'click'     	, ttHide     	, false); // disable on click
-      }
-      }
+    addToolips(el, tooltips);
     });
   });
 };
