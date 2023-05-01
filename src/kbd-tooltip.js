@@ -45,7 +45,7 @@ const keyCapLblIDs      	= [0,  2,4,6,8]	; // but we only need corners + center
 const keyCapLblIDs_ins  	= [0,1,2,4,6,8]	; // and sometimes top
 const keyCapLblIDs_sp   	= [0,  2,4,6,8]	;
 const keyCapLblIDs_unimp	= [0,  2,  6,8]	;
-const modifew_modes_pre 	= '#modifew-';
+const modifew_modes_pre 	= 'modifew-';
 const modifew_modes     	= ['m1NOR','m2INS','m3SEL','nGoTo','nMatch','nSpace','nUnimpaired','nView','nWindow','nHelp'];
 const lbl_modi          	= new Map([[0,'⇧'],          [2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]); // maps key label ID to a modifier it represents
 const lbl_modi_ins      	= new Map([[0,'⇧'],[1,'⎈⇧'],[2,'⎇⇧'],[4,'⎈'],[6,''],[8,'⎇']]);
@@ -404,7 +404,8 @@ function mergeSubmodes(m, keylbl) {
 }
 const tooltips = new Map(); // store all toolip divs here in a mode sub-map
 
-function addToolips(el, tooltips) {
+function addToolips_Keycap(m, el) {
+  const mode = '#'+modifew_modes_pre + m;
   const keyLbl	= el.innerText.trim();
   if (keyLbl && keyLbl !== 'mods') { // now that we know key label, store all cap symbols for this key
     const [keymap, mIcon, lbl_modis, capIDs, chord] = getModeKeys(m);
@@ -496,12 +497,33 @@ function addToolips(el, tooltips) {
     }
   }
 }
-modifew_modes.map(m => {
-  const mode = modifew_modes_pre + m;
-  // pt('mode=¦'+mode+'¦');
-  tooltips.set(m, new Map());
-  document.querySelectorAll(mode+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
-    addToolips(el, tooltips);
+function addTooltips_Keymap(keymap) {
+  const keymap_id	= keymap.id;
+  const m        	= keymap_id.replace(modifew_modes_pre,'');
+  document.querySelectorAll('#'+keymap_id+' '+keylabel_path  + '.'+key_lbl_class).forEach((el, ind, listObj) => {
+    addToolips_Keycap(m, el);
     });
+}
+
+const obsAddToolips = (changes, observer) => {
+  changes.forEach(change => {
+    const target = change.target;
+    if ((change.intersectionRatio > 0)) {
+      addTooltips_Keymap(target);
+      observer.unobserve(target)
+    }
+  })
+}
+const observerCfg = {
+  root      	: null,
+  rootMargin	: "0%",
+  threshold 	: 0.1 // fire when 10% of the keymap is visible
+}
+const observer = new IntersectionObserver(obsAddToolips, observerCfg)
+modifew_modes.map(mode => {                  	// m1NOR m2INS m3SEL...
+  const keymap_id = modifew_modes_pre + mode;	// modifew-m1NOR
+  tooltips.set(mode, new Map());
+  const keymap = document.getElementById(keymap_id);
+  if (keymap) { observer.observe(keymap) }
   });
 };
