@@ -78,7 +78,7 @@ Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" 
 
 |    | Modifier key legend | Example of <kbd>l</kbd> |
 | :- | :-----------------: | :---------------------: |
-| Symbol's position match the modifier key legend<br>(`∀` denotes a position for a meta-symbol that applies to all commands,<br>e.g.`ω` means all commands are word-based)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="../img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125" height="72"/> | <img src="../img/KeyInfo-2Example.png" alt="Key Example" width="149" height="86"/>|
+| Symbol's position match the modifier key legend<br>(`∀` denotes a position for a meta-symbol that applies to all commands,<br>e.g.`ω` means all commands are word-based)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="../img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125" height="72" loading="lazy"/> | <img src="../img/KeyInfo-2Example.png" alt="Key Example" width="149" height="86" loading="lazy"/>|
 
 A few tips:
 - <span style="color: green">⚠</span> Cheat sheets are best used in a supporting role after you have some basic familiarity with the config, so you might want to start learning by reading through the config's sections, e.g.:
