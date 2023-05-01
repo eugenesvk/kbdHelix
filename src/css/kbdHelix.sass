@@ -1,8 +1,8 @@
 // --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
 // @use "../themes/abridge/sass/abridge-blueshade-switcher.scss" // override theme color, but duplicates unless move all css to be managed here instead of in zola
-@use "_Solarized"	as sol
-@use "_GitHub"   	as gh
-@use "_kbd-tooltip"
+@use "Solarized"	as sol
+@use "GitHub"   	as gh
+@use "kbd-tooltip"
 
 @use "radix-ui-colors/gray"      	with ($root:":root.light"      )
 @use "radix-ui-colors/grayDark"  	with ($root:":root:not(.light)")
