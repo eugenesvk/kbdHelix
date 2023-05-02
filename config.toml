@@ -144,9 +144,10 @@ js_theme         	= "theme.min.js"      	# Separate Always, comment out if using
 js_themeButton   	= "theme_button.js"   	# Bundleable
 
 # Switcher   	comment this block out if NOT using switcher
+stylesheets  	= [ ]                                                   	# Use manual import
 # stylesheets	= [ "abridge-switcher.css" ]                            	# Orange    Automatic Dark /Light Theme based on browser/system preference with switcher
 # stylesheets	= [ "abridge-blue-switcher.css" ]                       	# Blue      Automatic Night/Light Theme based on browser/system preference with switcher
-stylesheets  	= [ "abridge-blueshade-switcher.css" ]                  	# BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
+# stylesheets	= [ "abridge.css" ]                                     	# BlueShade Automatic Night/Light Theme based on browser/system preference with switcher
 #stylesheets 	= [ "abridge-switcher.css", "font.css" ]                	# include your own font!
 #stylesheets 	= [ "abridge-switcher.css", "iconfont.css" ]            	# include your own font icons!
 #stylesheets 	= [ "abridge-switcher.css", "font.css", "iconfont.css" ]	# include your own font, and font icons!
