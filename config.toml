@@ -124,18 +124,18 @@ menu_footer          	= [               	            	             	#
 
 # Resource Files
 #———————————————
-integrity  	= true	# false for dev
-js_bundle  	= true	# multiple javascript files combined into a single file
-js_switcher	= true	#
+integrity  	= true 	# false for dev
+js_bundle  	= false	# multiple javascript files combined into a single file
+js_switcher	= true 	#
 
-search_library  	= false               	# |false|elasticlunr¦tinysearch¦stork¦
-js_search_facade	= true                	# Do not load search until user interaction with search
-js_search_index 	= "search_index.en.js"	# Separate Always, generated each build
-js_prestyle     	= "prestyle.js"       	# Bundleable - used to preload: FontAwesome, Katex, external Google Fonts
-js_codecopy     	= "codecopy.js"       	# Bundleable
-js_email        	= "email.js"          	# Bundleable
-js_theme        	= "theme.min.js"      	# Separate Always, comment out if using -auto/-light/-dark stylesheet. (required for switcher)
-js_themeButton  	= "theme_button.js"   	# Bundleable
+search_library   	= false               	# |false|elasticlunr¦tinysearch¦stork¦
+js_search_facade 	= true                	# Do not load search until user interaction with search
+# js_search_index	= "search_index.en.js"	# Separate Always, generated each build
+# js_prestyle    	= "prestyle.js"       	# Bundleable - used to preload: FontAwesome, Katex, external Google Fonts
+js_codecopy      	= []                  	# |"codecopy.js"| Bundleable — copy code block to clipboard button
+js_email         	= "email.js"          	# Bundleable
+js_theme         	= "theme.min.js"      	# Separate Always, comment out if using -auto/-light/-dark stylesheet (required for switcher)
+js_themeButton   	= "theme_button.js"   	# Bundleable
 
 # Switcher   	comment this block out if NOT using switcher
 # stylesheets	= [ "abridge-switcher.css" ]                            	# Orange    Automatic Dark /Light Theme based on browser/system preference with switcher
