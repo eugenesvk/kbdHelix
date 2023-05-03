@@ -1,0 +1,15 @@
+@use "abridge-override"
+@forward "../../themes/abridge/sass/_variables" 	as var-*
+@use "../../themes/abridge/sass/abridge"        	as abridge
+// @use "../../themes/abridge/sass/abridge-auto"	as abridge
+@use "../../themes/abridge/sass/colors/blueshade"
+
+:root.light
+  @include blueshade.light
+:root:not(.light)
+  @include blueshade.dark
+// :root
+//   @include blueshade.dark
+// @media (prefers-color-scheme: light)
+//   :root
+//     @include blueshade.light
