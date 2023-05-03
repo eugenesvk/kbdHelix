@@ -1,4 +1,7 @@
-{# This Page Shows the Posts Grouped by Year: example.com/posts/ #}
+{#
+This Page Shows the Posts Grouped by Year: example.com/posts/
+This Template can also be used as the rendering template for Sections, eg: example.com/blog/  example.com/software/
+#}
 
 {% extends "base.html" %}
 
@@ -18,12 +21,47 @@
 {%- endblock seo %}
 
 {%- block content %}
-{%- set section_item = get_section(path="_index.md") %}
+    {#- The following line is checking if the template is being used for the posts page or a section #}
+    {%- if current_path is matching("^(/[[:alpha:]][[:alpha:]])?/posts/$") %}
+      {%- set sec = "" %}
+    {%- else %}
+      {%- set langpath = "/" %}
+      {%- if lang != config.default_language %}
+        {%- set langpath = "/" ~ lang ~ "/" %}
+      {%- endif %}
+
+      {%- set sec = current_path | trim_start_matches(pat=langpath) | split(pat="/page/") | slice(end=1) | join(sep="") | trim_end_matches(pat="/") %}
+      {%- set sec = sec ~ "/" %}
+    {%- endif %}
+
+    {%- if lang == config.default_language %}
+    {%- set section_item = get_section(path=sec ~ "_index.md") %}
+    {%- else %}
+    {%- set section_item = get_section(path=sec ~ "_index." ~ lang ~ ".md") %}
+    {%- endif %}
+    {%- if sec != "" %}
+      {#- the section always overrides the config -#}
+      {%- if section_item.extra and 'hide_section_dates' in section_item.extra -%}
+        {%- set hide_section_dates = section_item.extra.hide_section_dates -%}
+      {%- elif config.extra.hide_section_dates -%}
+        {%- set hide_section_dates = true -%}
+      {%- endif -%}
+    {%- endif %}
     <div>
+      {%- if section_item.title %}
+      <h2>{{ section_item.title }}</h2>
+      {%- endif %}
+      {{- section_item.content | safe }}
       {%- for year, posts in section_item.pages | group_by(attribute="year") %}
+      {%- if not hide_section_dates %}
+      {%- if section_item.title %}
+      <h3>{{ year }}</h3>
+      {%- else %}
       <h2>{{ year }}</h2>
+      {%- endif %}
+      {%- endif %}
       {%- for post in posts %}
-      <p><a href="{{ post.permalink | safe }}">{{ post.title }}</a> - <time datetime="{{ post.date }}">{{ post.date | date(format="%F") }}</time></p>
+      <p><a href="{{ post.permalink | safe }}{%- if config.extra.uglyurls %}index.html{%- endif %}">{{ post.title }}</a>{%- if not hide_section_dates %} - <time datetime="{{ post.date }}">{{ post.date | date(format="%F") }}</time>{%- endif %}</p>
       {%- endfor %}
       {%- endfor %}
     </div>
