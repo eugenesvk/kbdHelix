@@ -1,4 +1,4 @@
-base_url   	= "https://eugenesvk.github.io/kbdHelix"
+base_url   	= "https://modifew.netlify.app"
 title      	= "modifew" # used in feeds
 description	= "modifew is a text editor keymap that maps the most frequent commands to the best keys and replaces (hold) modifiers with (tap) key chords (Helix)" # used in feeds
 
