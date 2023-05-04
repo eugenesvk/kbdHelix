@@ -76,9 +76,11 @@ Below is a summary of some of the design decisions followed up by detailed keyma
 
 Below are __modiƒew__ __Cheat Sheets__ for the various major and minor "modes" in an html format to make it easier to copy/search for an icon here and in the [config file](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml) since not all icons are obvious enough, but also as separate images as well as links to [Keyboard Layout Editor](http:/keyboard-layout-editor.com) so you could adjust the cheat sheet to your modified keymap
 
-|    | Modifier key legend | Example of <kbd>l</kbd> |
-| :- | :-----------------: | :---------------------: |
-| Symbol's position match the modifier key legend<br>(`∀` denotes a position for a meta-symbol that applies to all commands,<br>e.g.`ω` means all commands are word-based)<br>(some key labels have a command frequency value in percent points)<br> <div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> | <img src="../img/KeyInfo-1Labels.png" alt="Key Modifier Labels" width="125" height="72" loading="lazy"/> | <img src="../img/KeyInfo-2Example.png" alt="Key Example" width="149" height="86" loading="lazy"/>|
+| Modifier key legend | Comment   |
+| :-----------------: | :-------- |
+|<div id=modifew-example-label class="keyboard" tabindex=0 style="display: inline-flex;">{{include_file_coloc (file="kle/helix-keymap-modifew-Label.html.tmpl")}}</div> | Symbols' positions match the modifier key legend<br>(`∀` denotes a position for a meta-symbol that applies to all commands,<br>e.g.`ω` means all commands are word-based)<br/>(some key labels have a command frequency value in percent points) |
+|<div id=modifew-example-key class="keyboard" tabindex=0 style="display: inline-flex;">{{include_file_coloc (file="kle/helix-keymap-modifew-LabelKey.html.tmpl")}}</div> | <kbd>l</kbd> example: top left corner matches the <kbd>⇧</kbd> label,<br/>so command {{klbl(t="keySelect",c="ᵡ𝖗")}}(remove selection) is run with <kbd>⇧</kbd><kbd>l</kbd><br/><div>Colors: <span class="keyMove">Move</span> <span class="keySelect">Select</span> <span class="keyChange">Change</span> <span class="keyOther">Other</span></div> |
+
 
 A few tips:
 - <span style="color: green">⚠</span> Cheat sheets are best used in a supporting role after you have some basic familiarity with the config, so you might want to start learning by reading through the config's sections, e.g.:
