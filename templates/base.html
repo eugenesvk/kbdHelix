@@ -66,10 +66,24 @@
   {%- if config.extra.sitedesc %}{%- if config.description %}
   <div>{{config.description}}</div>
   {%- endif %}{%- endif %}
-  {%- if config.extra.headhr %}
-  <hr />
-  {%- endif %}
+  {%- if config.extra.headhr %}<hr /> {%- endif %}
   </header>{%- endblock header %}
-  <section class="section"><div class="markdown-body">{% block content %} {% endblock %}</div></section>
+  <main><section class="section"><div class="markdown-body">{% block content %} {% endblock %}</div></section></main>
+  {%- block footer %}<footer>{%- if config.extra.foothr %}<hr />{%- endif %}<div class="c">
+  {%- if config.extra.menu_footer %}<nav><ul>
+    {%- for i in config.extra.menu_footer -%}
+    {%- if i.url != "sitemap.xml"	%}{%- set furl=get_url(path=i.url, lang=lang, trailing_slash=i.slash) %}
+    {%- else                     	%}{%- set furl=get_url(path=i.url,            trailing_slash=i.slash) %}{%- endif %}
+    <li{%- if config.extra.footer_size %} class="{{ config.extra.footer_size }}"{% endif %}> <a href="{{ furl }}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}"{% if i.blank %} target="_blank"{% endif %}> {% if lang != config.default_language -%} {{ trans(key=i.name | safe, lang=lang) }} {%- else -%} {{ i.name | safe }} {% endif %} </a> </li>
+    {%- endfor -%}</ul></nav>
+  {%- endif %}
+  {%- if config.extra.footer_credit | default(value=true) %}
+  {%- if config.extra.footer_credit_override	%}{{config.extra.footer_credit_override | safe}}
+  {%- else                                  	%}<p{%- if config.extra.footer_size %} class="{{config.extra.footer_size}}"{% endif %}>{%- if lang != config.default_language %} {{trans(key="Powered_by" | safe, lang=lang)}} {% else %} Powered by {% endif %} <a href="https://www.getzola.org/" target="_blank">Zola</a> {%- if lang != config.default_language %} {{trans(key="and" | safe, lang=lang)}} {% else %} and {% endif %} <a href="https://github.com/jieiku/abridge/" target="_blank">Abridge</a></p>
+  {%- endif %}
+  {%- endif %}
+  </div>
+  </footer>{%- endblock footer %}
+{%- block gotop %}{%- endblock gotop %}
 </body>
 </html>
