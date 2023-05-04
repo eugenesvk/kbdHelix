@@ -1,5 +1,5 @@
 // override vars since @use must be at the top, so can't @use abridge after dynamically changing variable module vars, can only do it in a separate file after useing this ↓
-@use "../../themes/abridge/sass/_variables"	as var
+@use "../../themes/abridge/sass/_variables"	as var with($syntax:false)
 @use "function"                            	as f
 
 $findFont-Main   	: "Segoe UI"
