@@ -414,6 +414,8 @@ function addToolips_Keycap(m, el) {
     const keyCaps  	= getSiblingKeyCaps(el, capIDs)	; // get all keycaps with valid labels in valid positions
     const keyCapSym	= storeKeyCap(keylbl, keyCaps) 	; // store all valid keycap symbols
     const keyComboM	= getKeyCombo(keylbl, keymap, lbl_modis, chord); // {0:'⇧'=>'switch_to_lowercase'>..}
+    // if (keyCaps.length === 0) { // hide keycaps with no keylabels
+      // if(el.parentNode && el.parentNode.parentNode) { el.parentNode.parentNode.style.display = 'none'; return;}}
 
     let keyCombo;
     if (m in modifew_mode_sub_sym) { // add submodes in place of modifiers
