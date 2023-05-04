@@ -1,0 +1,21 @@
+  <div id=modifew-Label-bg class="keyboard-bg" style="height:68px;width:95px;background-color:#ffffff00 !important;border-radius:6px 6px 12px 12px/18px 18px 12px 12px">
+    <div ng-repeat="key in keys()" class="key R5 LONG" ng-mouseover="hoveredKey=key" ng-mouseleave="hoveredKey=null" ng-class="{hover: hoveredKey==key, selected: selectedKeys.indexOf(key)>=0, HOMING:key.nub}" ng-bind-html=key.html>
+      <div class=keycap>
+        <div style=left:0px;top:13.5px;width:94.5px;height:54px;border-width:1px;border-radius:5px;background-color:#cccccc class=keyborder></div>
+        <div style=left:6px;top:16.5px;width:82.5px;height:42px;border-style:solid;border-width:1px;border-color:rgba(0,0,0,0.1);background-color:#fcfcfc;border-radius:3px class=keytop></div>
+        <div style=left:6px;top:16.5px;width:82.5px;height:42px;padding:3px class=keylabels>
+        <div class="keylabel keylabel0 textsize6" style=color:#080808;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>⇧</div></div>
+        <div class="keylabel keylabel2 textsize6" style=color:#080808;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>⇧⎇</div></div>
+        <div class="keylabel keylabel4 textsize6" style=color:#080808;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>⎈</div></div>
+        <div class="keylabel keylabel7 textsize6" style=color:#080808;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>∀</div></div>
+        <div class="keylabel keylabel8 textsize6" style=color:#080808;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>⎇</div></div>
+        <div class="keylabel keylabel9 textsize6" style=color:#000000;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>ƒ</div></div>
+        <div class="keylabel keylabel10 textsize6" style=color:#000000;width:76.5px;height:36px>
+        <div style=width:76.5px;max-width:76.5px;height:36px>mods</div></div></div></div></div>
+  </div>
