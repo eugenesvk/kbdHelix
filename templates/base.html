@@ -40,11 +40,28 @@
 
 <body>
   {%- block header %}<header>
-  <nav><div><ul>
-    {%- if config.extra.js_theme -%}<li class="js">
-      {%- if config.extra.icon_adjust -%}<i type="reset" id="mode" class="{{config.extra.icon_adjust}}"></i>
-      {%- else -%}                       <i type="reset" id="mode" class="mode">&#9728;</i>{%- endif -%} </li>
-    {%- endif -%}
+  <nav><div><ul>{%- set js_switcher=config.extra.js_switcher | default(value=true) -%}
+    {%- if config.extra.menu or js_switcher %}
+      {%- if config.extra.menu %}{%- for i in config.extra.menu -%}
+      <li> <h2><a href="{{get_url(path=i.url, lang=lang, trailing_slash=i.slash)}}{%- if i.slash and config.extra.uglyurls %}index.html{%- endif %}"{% if i.blank %} target="_blank"{% endif %}>
+      {%- if lang != config.default_language	-%}{{trans(key=i.name | safe, lang=lang)}}
+      {%- else                              	-%}{{          i.name | safe}}{%- endif -%}
+      </a></h2> </li>{%- endfor -%}{%- endif -%}
+    {%- set language_count = 1 -%}{%- for language_name, language in config.languages -%}{%- set_global language_count = language_count + 1 -%}{%- endfor -%}
+    {%- if  language_count > 1 %}
+    <li class="js"><div class="dropdown" type="Button"> {%- if lang != config.default_language %}{{ trans(key="flag" | safe, lang=lang) }}{% else %}{{ config.extra.flag.en }}{% endif %}
+      {%- if current_url %}<div class="dropdown-content">
+      {%- for lcode,flag in config.extra.flag -%}
+        {%- if lang != lcode -%}
+        {%- if lcode == config.default_language	-%}<a type="Button" href="{{current_url | replace(from=current_path | truncate(length=4, end=""), to="/") }}">{{flag}}</a><br/>
+        {%- else                               	-%}<a type="Button" href="{{current_url | replace(from=config.base_url, to=config.base_url ~ "/" ~ lcode) }}">{{flag}}</a><br/>
+      {%- endif -%}{%- endif -%}{%- endfor -%}
+      </div>{%- endif %}</div></li>{%- endif -%}
+
+    {%-if js_switcher-%}{%-set icon_adjust=config.extra.icon_adjust | default(value="svgs adjust")-%}<li class="js">
+      {%-if icon_adjust	-%}<i type="reset" id="mode" class="{{icon_adjust}}"></i>
+      {%-else          	-%}<i type="reset" id="mode" class="mode">&#9728;</i>{%-endif-%}</li>{%-endif-%}
+    {%-endif-%}
   </ul></div></nav>
   {%- if config.extra.sitedesc %}{%- if config.description %}
   <div>{{config.description}}</div>
