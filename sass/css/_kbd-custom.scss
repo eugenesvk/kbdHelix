@@ -1,20 +1,13 @@
-div:empty {
-  display: inherit;
-}
+div:empty {display: inherit;}
 .keyboard .key .keycap .keytop {
   margin-top 	: -3px           	; /*0px*/
   margin-left	: -5px           	; /*0px*/
   height     	: 45px !important	; /*42px → 46*/
 }
-.keyboard-bg {
-  background-color	: var(--kbg) !important	;
-}
-.keyboard-bg .keyborder {
-  background-color: var(--kbb) !important
-}
-.keyboard-bg .keytop {
-  background-color: var(--kbt) !important
-}
+.keyboard-bg           	{background-color: var(--kbg) !important;}
+.keyboard-bg .keyborder	{background-color: var(--kbb) !important;}
+.keyboard-bg .keytop   	{background-color: var(--kbt) !important;}
+
 [style*="#006400"]	{color: var(--keyMove  ) !important;}	// green  move
 [style*="#5896d2"]	{color: var(--keySelect) !important;}	// blue   select icons
 [style*="#ff4223"]	{color: var(--keyChange) !important;}	// red    edit
@@ -22,25 +15,16 @@ div:empty {
 [style*="#911e90"]	{color: var(--keyOther ) !important;}	// purple other
 
 .keyboard-bg .key.SPACE.LONG .keylabels .keylabel.keylabel5.textsize6 > div > font:nth-child(3) {
-  color: var(--keyChange) !important; // special snowflake space key
-}
-.keyboard-bg .keylabels > .keylabel.keylabel9,
-.keyboard-bg .keylabels > .keylabel.keylabel10
-.keyboard-bg .keylabels > .keylabel.keylabel11 { //.keylabel.keylabel8.textsize2
-  color: var(--kblbl) !important
-}
-.keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel6,
-.keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel8 {
-  color: var(--kblbl) !important // mod
-}
+  color: var(--keyChange) !important;} // special snowflake space key
+.keyboard-bg                             .keylabels > .keylabel.keylabel9 ,
+.keyboard-bg                             .keylabels > .keylabel.keylabel10, //.keylabel.keylabel8.textsize2
+.keyboard-bg                             .keylabels > .keylabel.keylabel11 {color: var(--kblbl) !important;}
+.keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel6 ,
+.keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel8  {color: var(--kblbl) !important} // mod
 
-.keyboard .key:not(.LONG) .keycap .keytop {
-  width	: 52px !important	; /*42px → 52*/
-}
-.keyboard .LONG .keycap .keytop {
-  width	: 92px !important	;
-}
-.keyboard .SPACE .keycap .keytop {width	: 281px !important	;}
+.keyboard .key:not(.LONG) .keycap .keytop	{width	:  52px !important;} /*42px → 52*/
+.keyboard          .LONG  .keycap .keytop	{width	:  92px !important;}
+.keyboard          .SPACE .keycap .keytop	{width	: 281px !important;}
 
 .keylabel0, .keylabel3, .keylabel6	{ margin-left	: -6px;} /* left */
 .keylabel2, .keylabel5, .keylabel8	{ margin-left	:  6px;} /* right */
