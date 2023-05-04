@@ -15,15 +15,12 @@ div:empty {
 .keyboard-bg .keytop {
   background-color: var(--kbt) !important
 }
-[style*="#5896d2"] { // blue select icons
-  color: var(--keySelect) !important;
-}
-[style*="#ff4223"] { // red edit icons
-  color: var(--keyChange) !important;
-}
-[style*="#ff0000"] { // red edit icons
-  color: var(--keyChange) !important;
-}
+[style*="#006400"]	{color: var(--keyMove  ) !important;}	// green  move
+[style*="#5896d2"]	{color: var(--keySelect) !important;}	// blue   select icons
+[style*="#ff4223"]	{color: var(--keyChange) !important;}	// red    edit
+[style*="#ff0000"]	{color: var(--keyChange) !important;}	// red    edit
+[style*="#911e90"]	{color: var(--keyOther ) !important;}	// purple other
+
 .keyboard-bg .key.SPACE.LONG .keylabels .keylabel.keylabel5.textsize6 > div > font:nth-child(3) {
   color: var(--keyChange) !important; // special snowflake space key
 }
