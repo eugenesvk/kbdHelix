@@ -18,7 +18,7 @@ div:empty {display: inherit;}
   color: var(--keyChange) !important;} // special snowflake space key
 .keyboard-bg                             .keylabels > .keylabel.keylabel9 ,
 .keyboard-bg                             .keylabels > .keylabel.keylabel10, //.keylabel.keylabel8.textsize2
-.keyboard-bg                             .keylabels > .keylabel.keylabel11 {color: var(--kblbl) !important;}
+.keyboard-bg                             .keylabels > .keylabel.keylabel11 {color: var(--kblbl);}
 .keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel6 ,
 .keyboard-bg > div:nth-child(43) > div > .keylabels > .keylabel.keylabel8  {color: var(--kblbl) !important} // mod
 
