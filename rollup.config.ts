@@ -28,33 +28,33 @@ export default [
       }         	,
      })         	,
   ]},
-  {
-  input       	: ["src/css/kbdHelix.sass"],
-  output      	: [{dir:"sass/css/build"}],
-  plugins     	: [
-    postcss(  	{
-      minimize	: isProd,
-      extract 	: r('sass/css/build/_kbdHelix.css'),
-      plugins 	: [postcssOKLabFunction()]
-    })        	,
-  ]},
-  {
-  input       	: ["src/css/kbdHelixFont.sass"],
-  output      	: [{dir:"sass/css/build"}],
-  plugins     	: [
-    postcss(  	{
-      minimize	: isProd,
-      extract 	: r('sass/css/build/_kbdHelixFont.css'),
-      plugins 	: [
-        purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']}),
-      ]
-    }),
-    copy({copyOnce:true, targets:[
-      {src 	: [`${rr('@fontsource/noto-sans-symbols-2')}/../files/noto-sans-symbols-2-symbols-400-normal.woff2`],
-       dest	: 'src/font'},
-      {src 	: [`${rr('@fontsource/noto-sans-symbols')}/../files/noto-sans-symbols-symbols-400-normal.woff2`],
-       dest	: 'src/font'}
-      ]    	,
-    })
-  ]},
+  // {
+  // input       	: ["src/css/kbdHelix.sass"],
+  // output      	: [{dir:"sass/css/build"}],
+  // plugins     	: [
+  //   postcss(  	{
+  //     minimize	: isProd,
+  //     extract 	: r('sass/css/build/_kbdHelix.css'),
+  //     plugins 	: [postcssOKLabFunction()]
+  //   })        	,
+  // ]},
+  // {
+  // input       	: ["src/css/kbdHelixFont.sass"],
+  // output      	: [{dir:"sass/css/build"}],
+  // plugins     	: [
+  //   postcss(  	{
+  //     minimize	: isProd,
+  //     extract 	: r('sass/css/build/_kbdHelixFont.css'),
+  //     plugins 	: [
+  //       purgecss({content:['./content/**/*.html.tmpl','./content/**/*.md']}),
+  //     ]
+  //   }),
+  //   copy({copyOnce:true, targets:[
+  //     {src 	: [`${rr('@fontsource/noto-sans-symbols-2')}/../files/noto-sans-symbols-2-symbols-400-normal.woff2`],
+  //      dest	: 'src/font'},
+  //     {src 	: [`${rr('@fontsource/noto-sans-symbols')}/../files/noto-sans-symbols-symbols-400-normal.woff2`],
+  //      dest	: 'src/font'}
+  //     ]    	,
+  //   })
+  // ]},
 ];
