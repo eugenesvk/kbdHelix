@@ -6,12 +6,13 @@ import postcss             	from 'rollup-plugin-postcss';
 import postcssOKLabFunction	from '@csstools/postcss-oklab-function';
 import purgecss            	from '@fullhuman/postcss-purgecss';
 import copy                	from 'rollup-plugin-copy'; // copy fonts
+import {nodeResolve}       	from '@rollup/plugin-node-resolve'; // reference npm module files
 
 export default [
   {
   input         	: ["src/kbdHelix.js"],
   output        	: [{dir:"static/js"}],
-  plugins       	: [urlResolve(), ViteToml(),
+  plugins       	: [urlResolve(), ViteToml(), nodeResolve(),
     swc(        	{
       include   	: /\.[mc]?[jt]sx?$/	, //|/\.[mc]?[jt]sx?$/|
       exclude   	: /node_modules/   	, //|/node_modules/   |
