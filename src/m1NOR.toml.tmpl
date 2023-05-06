@@ -62,16 +62,16 @@
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
     #    	Cursor@Home
-    'j'  	= 'move_line_down'      	# ▼                             	「h/◀」   	「move_line_down」
-    'k'  	= 'move_line_up'        	# ▲                             	「j/▼」   	「move_line_up」
-    'l'  	= 'move_char_left'      	# ◀                             	「k/▲」   	「move_char_right」
-    ';'  	= 'move_char_right'     	# ▶                             	「l/▶」   	「collapse_selection」
-    'm'  	= 'half_page_down'      	# ⤈ Move half page down         	   「 ⎈d」	「☰🧩」
-    ','  	= 'half_page_up'        	# ⤉ Move half page up           	   「 ⎈u」	「keep_primary_selection」
-    'C-j'	= 'page_down'           	# ⇟ Move      page down         	   「 ⎈d」	「」
-    'C-k'	= 'page_up'             	# ⇞ Move      page up           	   「 ⎈u」	「」
-    'a'  	= 'extend_to_line_start'	# ⭰▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
-    'A'  	= 'extend_to_line_end'  	# ⭲▋ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
+    'j'  	= 'move_visual_line_down'	# ▼                             	「h/◀」   	「move_visual_line_down」
+    'k'  	= 'move_visual_line_up'  	# ▲                             	「j/▼」   	「move_visual_line_up」
+    'l'  	= 'move_char_left'       	# ◀                             	「k/▲」   	「move_char_right」
+    ';'  	= 'move_char_right'      	# ▶                             	「l/▶」   	「collapse_selection」
+    'm'  	= 'half_page_down'       	# ⤈ Move half page down         	   「 ⎈d」	「☰🧩」
+    ','  	= 'half_page_up'         	# ⤉ Move half page up           	   「 ⎈u」	「keep_primary_selection」
+    'C-j'	= 'page_down'            	# ⇟ Move      page down         	   「 ⎈d」	「」
+    'C-k'	= 'page_up'              	# ⇞ Move      page up           	   「 ⎈u」	「」
+    'a'  	= 'extend_to_line_start' 	# ⭰▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
+    'A'  	= 'extend_to_line_end'   	# ⭲▋ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
 
 
     #Ⓝ          	Compat with non-modal editors
