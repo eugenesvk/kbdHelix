@@ -28,14 +28,14 @@
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
     #ⓘ           	Cursor@Home
-    'A-j'        	= 'move_line_down'      	# ▼                              	ⓘ「 ⎈n」 	「move_line_down」
-    'A-k'        	= 'move_line_up'        	# ▲                              	ⓘ「 ⎈p」 	「move_line_up」
-    'A-l'        	= 'move_char_left'      	# ◀                              	ⓘ「 ⎈b」 	「move_char_right」
-    'A-;'        	= 'move_char_right'     	# ▶                              	ⓘ「 ⎈f」 	「collapse_selection」
-    'A-m'        	= 'half_page_down'      	# ⤈ Move half page down          	Ⓝ「 ⎈d」 	「☰🧩」
-    'A-,'        	= 'half_page_up'        	# ⤉ Move half page up            	Ⓝ「 ⎈u」 	「keep_primary_selection」
-    'A-a'        	= 'extend_to_line_start'	# ⭰▋ Move     line start + select	「ⓈHome」	「append_mode」 # goto_line_start
-    'A-A'        	= 'extend_to_line_end'  	# ⭲▋ Move     line end   + select	「ⓈEnd」  「insert_at_line_end」 # goto_line_end
+    'A-j'        	= 'move_visual_line_down'	# ▼                              	ⓘ「 ⎈n」 	「move_visual_line_down」
+    'A-k'        	= 'move_visual_line_up'  	# ▲                              	ⓘ「 ⎈p」 	「move_visual_line_up」
+    'A-l'        	= 'move_char_left'       	# ◀                              	ⓘ「 ⎈b」 	「move_char_right」
+    'A-;'        	= 'move_char_right'      	# ▶                              	ⓘ「 ⎈f」 	「collapse_selection」
+    'A-m'        	= 'half_page_down'       	# ⤈ Move half page down          	Ⓝ「 ⎈d」 	「☰🧩」
+    'A-,'        	= 'half_page_up'         	# ⤉ Move half page up            	Ⓝ「 ⎈u」 	「keep_primary_selection」
+    'A-a'        	= 'extend_to_line_start' 	# ⭰▋ Move     line start + select	「ⓈHome」	「append_mode」 # goto_line_start
+    'A-A'        	= 'extend_to_line_end'   	# ⭲▋ Move     line end   + select	「ⓈEnd」  「insert_at_line_end」 # goto_line_end
     #ⓘ           	Compat with non-modal editors
     'C-home'     	= 'goto_file_start'            	# ⇱ line number `<n>` else file start	「  g」	「」
     'C-end'      	= 'goto_last_line'             	# ⇲ file end                         	「  e」	「」
