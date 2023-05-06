@@ -116,7 +116,7 @@ A few tips:
 ### Normal {{klbl(t="keyOther",c="Ⓝ")}} {#m-normal}
 
 <!-- ids must match modifew_modes_pre+modifew_modes vars in kbd-tooltip -->
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m1NOR.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/blob/modifew/config/modifew.toml)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/537c5fed0748cb2cf889bab3ff866667), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m1NOR.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/m1NOR.toml.tmpl)
 
 <div id=modifew-m1NOR class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-m1NOR.html.tmpl")}}
@@ -126,7 +126,7 @@ A few tips:
 
 ### Insert {{klbl(t="keyChange",c="ⓘ")}} {#m-insert}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m2INS.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/7a5ff7b6fb13e52ad1ae63445536ca4b), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m2INS.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/m2INS.toml.tmpl)
 
 <div id=modifew-m2INS class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-m2INS.html.tmpl")}}
@@ -136,7 +136,7 @@ A few tips:
 
 ### Select {{klbl(t="keySelect",c="Ⓢ")}} {#m-select}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m3SEL.png?raw=true). Only commands that differ from Normal mode are shown, the rest are copied
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/cd44f7fd307f22d52d59f74c0967faaf), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-m3SEL.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/m3SEL.toml.tmpl). Only commands that differ from Normal mode are shown, the rest are copied
 
 <div id=modifew-m3SEL class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-m3SEL.html.tmpl")}}
@@ -148,7 +148,7 @@ A few tips:
 
 ### GoTo {{klbl(t="keyMove",c="⮊")}} {#n-goto}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nGoTo.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/235396cdfbd07f19f6af1e26dff1e949), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nGoTo.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/nGoTo.toml.tmpl)
 
 <div id=modifew-nGoTo class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-nGoTo.html.tmpl")}}
@@ -158,7 +158,7 @@ A few tips:
 
 ### Space {{klbl(t="keyOther",c="␠")}} {#n-space}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nSpace.png?raw=true). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/476cb89ca592befe598617a4af733910), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nSpace.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/nSpace.toml.tmpl). Note that modifiers are replaced with sub-modes since Space mode strives to use sequential key presses instead of key combos. Also, not all actions are yet implemented in Helix 
 
 <div id=modifew-nSpace class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-nSpace.html.tmpl")}}
@@ -169,7 +169,7 @@ A few tips:
 
 ### View {{klbl(t="keyOther",c="👁")}} {#n-view}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/94d728fc74d61af4de9ed17ff7d8566d), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nView.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/94d728fc74d61af4de9ed17ff7d8566d), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nView.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/nView.toml.tmpl)
 
 <div id=modifew-nView class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-nView.html.tmpl")}}
@@ -179,7 +179,7 @@ A few tips:
 
 ### Match {{klbl(t="keyOther",c="🧩")}} {#n-match}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nMatch.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/1b083641d649a424a7edbf1a491aff75), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nMatch.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/nMatch.toml.tmpl)
 
 <div id=modifew-nMatch class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-nMatch.html.tmpl")}}
@@ -189,7 +189,7 @@ A few tips:
 
 ### Window {{klbl(t="keyOther",c="🗔")}} {#n-window}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nWindow.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/22a4426747d045cc828e0d125af3a540), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nWindow.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/nWindow.toml.tmpl)
 
 <div id=modifew-nWindow class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-nWindow.html.tmpl")}}
@@ -199,7 +199,7 @@ A few tips:
 
 ### {{klbl(t="keyOther",c="⧛")}}Unimpaired{{klbl(t="keyOther",c="⧚")}} {#n-unimpaired}
 
-[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/b885c21cc83ae06108b3da6728148191), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nUnimpaired.png?raw=true)
+[@KeyboardLayoutEditor](http://www.keyboard-layout-editor.com/#/gists/b885c21cc83ae06108b3da6728148191), [image](https://github.com/eugenesvk/kbdHelix/blob/modifew/img/helix-keymap-modifew-nUnimpaired.png?raw=true), [config](https://github.com/eugenesvk/kbdHelix/tree/modifew/src/nUnimpaired.toml.tmpl)
 
 <div id=modifew-nUnimpaired class="keyboard" tabindex=0 style="display: inline-flex;">
   {{include_file_coloc (file="kle/helix-keymap-modifew-nUnimpaired.html.tmpl")}}
