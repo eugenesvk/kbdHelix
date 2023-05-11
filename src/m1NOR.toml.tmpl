@@ -234,34 +234,36 @@
 
   #Ⓝ Change ——————————————————————————————————————————————————————————————————————
     #            	Compat with non-modal editors
-    'A-del'      	= 'delete_word_forward'          	# ⌦ω ᵡ word →                     	 ⓘ「  ⎇d」	「」
-    'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                              	「   」   	「」
-                 	   'delete_selection']           	# ᵡ Word →                        	 
-    'A-backspace'	= 'delete_word_backward'         	# ⌫ω ᵡ word ←                     	ⓘ「 ⎈w」	「」
-    'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                              	「   」 	「」
-                 	   'delete_selection']           	# ᵡ Word ←                        	 
-    # 'del'      	= 'delete_selection'             	# ᵡ▋                              	「  d」	「」
-    'S-del'      	= 'delete_selection_noyank'      	# 🕱▋                              	「 ⎇d」	「」
-    'S-ret'      	= ['open_below','normal_mode']   	# ⭣␤ Open new line below sel	「  o」	「」
-    'ret'        	= ['open_above','normal_mode']   	# ⭡␤ Open new line above sel	「⇧ o」	「」
-    'C-ret'      	= ':reflow'                      	# ↪ Hard-wrap selected lines ䷖↪   	「   」	「」
+    'A-del'      	= 'delete_word_forward'          	# ⌦ω ᵡ word →                  	 ⓘ「  ⎇d」	「」
+    'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                           	「   」   	「」
+                 	   'delete_selection']           	# ᵡ Word →                     	 
+    'A-backspace'	= 'delete_word_backward'         	# ⌫ω ᵡ word ←                  	ⓘ「 ⎈w」	「」
+    'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                           	「   」 	「」
+                 	   'delete_selection']           	# ᵡ Word ←                     	 
+    # 'del'      	= 'delete_selection'             	# ᵡ▋                           	「  d」	「」
+    'S-del'      	= 'delete_selection_noyank'      	# 🕱▋                           	「 ⎇d」	「」
+    'S-ret'      	= ['open_below','normal_mode']   	# ⭣␤ Open new line below sel   	「  o」	「」
+    'ret'        	= ['open_above','normal_mode']   	# ⭡␤ Open new line above sel   	「⇧ o」	「」
+    'C-ret'      	= ':reflow'                      	# ↪ Hard-wrap selected lines ䷖↪	「   」	「」
+    'C-/'        	= 'toggle_comments'              	# // un-/comment sels          	「 ⎈c」	「」 !!!fail
+    # 'C-?'      	= 'toggle_comments_block'        	# /* un-/comment sels (block)  	「 ⎈c」	「」 !!!missing
 
-    # '.'      	= 'N/A'                              	# ∞ Repeat last change            	「.」     	「n/a」
-    '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	「 ⌦」    	「<5>」
-    'x'        	= 'delete_selection'                 	# ᵡ▋                              	「  d」   	「extend_line_below」
-    'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)         	「 ⎇d」   	「」
-    # 'A-c'    	= 'change_selection'                 	# Δ                               	「  c」   	「change_selection_noyank」
-    'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                     	「⌫」     	「move_char_left」
-    'H'        	= 'delete_char_forward'              	# ⌦c ᵡ char →                     	「⇧⌦」    	「」
-    'A-h'      	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                     	ⓘ「 ⎈w」  	「」
-    'A-H'      	= 'delete_word_forward'              	# ⌦ω ᵡ word →                     	 ⓘ「  ⎇d」	「」
-    'C-h'      	= ['move_prev_long_word_start',      	# ⌫W                              	「   」   	「」
-               	   'delete_selection']               	# ᵡ Word ←                        	 
-    'C-x'      	= ['yank_main_selection_to_clipboard'	                                  	,
-               	   'delete_selection']               	#                                 	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
-    'backspace'	= 'delete_char_backward'             	# ⌫                               	「I.bs」	「」
-    'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside sel	「⇧ j」 	「extend_to_line_bounds」
-    'A-X'      	= 'join_selections_space'            	# ᵡ␤,␠ Join lines,select space    	「⇧⎇ j」	「」
+    # '.'      	= 'N/A'                              	# ∞ Repeat last change        	「.」     	「n/a」
+    '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*             	「 ⌦」    	「<5>」
+    'x'        	= 'delete_selection'                 	# ᵡ▋                          	「  d」   	「extend_line_below」
+    'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)     	「 ⎇d」   	「」
+    # 'A-c'    	= 'change_selection'                 	# Δ                           	「  c」   	「change_selection_noyank」
+    'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                 	「⌫」     	「move_char_left」
+    'H'        	= 'delete_char_forward'              	# ⌦c ᵡ char →                 	「⇧⌦」    	「」
+    'A-h'      	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                 	ⓘ「 ⎈w」  	「」
+    'A-H'      	= 'delete_word_forward'              	# ⌦ω ᵡ word →                 	 ⓘ「  ⎇d」	「」
+    'C-h'      	= ['move_prev_long_word_start',      	# ⌫W                          	「   」   	「」
+               	   'delete_selection']               	# ᵡ Word ←                    	 
+    'C-x'      	= ['yank_main_selection_to_clipboard'	                              	,
+               	   'delete_selection']               	#                             	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
+    'backspace'	= 'delete_char_backward'             	# ⌫                           	「I.bs」	「」
+    'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside sel  	「⇧ j」 	「extend_to_line_bounds」
+    'A-X'      	= 'join_selections_space'            	# ᵡ␤,␠ Join lines,select space	「⇧⎇ j」	「」
 
     # 'backspace'	= 'delete_char_backward'	# ⌫c ᵡ char ←	「backspace」	「delete_char_backward」
     # 'C-h'      	= 'delete_char_backward'	# ⌫c ᵡ char ←	「C-h」      	「delete_char_backward」
@@ -311,10 +313,10 @@
     '='	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
 
   #Ⓝ   	Misc                        	 
-  'z'  	= 'toggle_comments'         	# un-/comment sels                            	「 ⎈c」	「☰👁」
-  'C-/'	= 'toggle_comments'         	# un-/comment sels                            	「 ⎈c」	「」 !!!fail
+  'z'  	= 'toggle_comments'         	# // un-/comment sels                         	「 ⎈c」	「☰👁」
+  # 'Z'	= 'toggle_comments_block'   	# /* un-/comment sels (block)                 	「 」  	「」 !!!missing command
   'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under ‸cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
-  'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under ‸cursor 	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
+  'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under ‸cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
   '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                        	「」   	「」
   'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                              	「⎈z」 	「」
 
