@@ -162,13 +162,13 @@
     'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt「  v」	「move_next_word_end」 <i class='fa fa-arrows'></i>
 
     #Ⓝ       	Compat with non-modal editors    	 
-    'C-a'    	= ['save_selection','select_all']	# 🖈∀▋                                             	「⇧ 5」  「increment」
-    'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy sel onto the next     line (add cursor ↓)	「⇧ c」  「」
-    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy sel onto the previous line (add cursor ↑)	「⇧⎇c」 	「」
-    'S-left' 	= 'extend_char_left'             	#                                                 	「Ⓢh/◀」	「」
-    'S-down' 	= 'extend_line_down'             	#                                                 	「Ⓢj/▼」	「」
-    'S-up'   	= 'extend_line_up'               	#                                                 	「Ⓢk/▲」	「」
-    'S-right'	= 'extend_char_right'            	#                                                 	「Ⓢl/▶」	「」
+    'C-a'    	= ['save_selection','select_all']	# 🖈∀▋                                              	「⇧ 5」  「increment」
+    'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy sel onto the next     line (add ‸cursor ↓)	「⇧ c」  「」
+    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy sel onto the previous line (add ‸cursor ↑) 	「⇧⎇c」 	「」
+    'S-left' 	= 'extend_char_left'             	#                                                  	「Ⓢh/◀」	「」
+    'S-down' 	= 'extend_line_down'             	#                                                  	「Ⓢj/▼」	「」
+    'S-up'   	= 'extend_line_up'               	#                                                  	「Ⓢk/▲」	「」
+    'S-right'	= 'extend_char_right'            	#                                                  	「Ⓢl/▶」	「」
 
 
     'A-g'	= 'jumplist_picker'	# ☰🖈 List jumplist          	「☰␠ j」	「」
@@ -194,26 +194,25 @@
       ,  	 'extend_search_next'      	#
       ,  	 'normal_mode'             	#
       ]  	                           	# = Sublime's find_under_expand
-    # '' 	= 'expand_selection'       	# Expand sel to parent syntax node (TS)	「   」	「expand_selection」  TODO: pick a key
-    # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph             	「   」	「<5>」  !!!missing ∀* !!!missing command
-    # '%'	= 'select_all'             	# ∀▋ Select entire file                	「⇧ 5」	「select_all」
+    # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
+    # '%'	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
 
-    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add cursor below)  	「⇧ c」	「」
-    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add cursor above)  	「⇧⎇c」	「」
-    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
-    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「flip_selections」
-    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋	「⎇ i」	「」
-    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊	「⎇ o」	「」
-    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels               	「  s」	「split_selection_on_newline」
-    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
-    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                               	「 ⎇s」	「」
+    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below)	「⇧ c」	「」
+    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above)	「⇧⎇c」	「」
+    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS  	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS  	「⎇ m」	「flip_selections」
+    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋    	「⎇ i」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
+    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels             	「  s」	「split_selection_on_newline」
+    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                 	「⇧ s」	「search_prev」
+    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                             	「 ⎇s」	「」
 
-    "'"   	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single cursor            	「  ;」 	「」
-    "A-'" 	= 'flip_selections'           	# ⮀ Flip sel cursor and anchor                    	「 ⎇;」 	「」
-    'A-a' 	= 'flip_selections'           	# ⮀ Flip sel cursor and anchor                    	⇧[ ⎇;」	「」
-    'A-A' 	= 'flip_selections'           	# ⮀ Flip sel cursor and anchor                    	⇧[ ⎇;」	「」
-    'A-p' 	= 'ensure_selections_forward' 	# ↠ Flip sel forward: cursor after anchor         	「⇧⎇;」 	「」
-    #'A-:'	= 'ensure_selections_forward' 	# ↠ Flip sel forward: cursor after anchor         	「⇧⎇;」 	「」
+    "'"   	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single ‸cursor           	「  ;」 	「」
+    "A-'" 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	「 ⎇;」 	「」
+    'A-a' 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」
+    'A-A' 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」
+    'A-p' 	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
+    #'A-:'	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
     #'A-l'	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (← with many columns)	「⇧ 9」 	「」
     #'A-;'	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
     'A-m' 	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (↓ with many lines)  	「⇧ 0」 	「」
@@ -313,12 +312,12 @@
     '='	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
 
   #Ⓝ   	Misc                        	 
-  'z'  	= 'toggle_comments'         	# un-/comment sels                           	「 ⎈c」	「☰👁」
-  'C-/'	= 'toggle_comments'         	# un-/comment sels                           	「 ⎈c」	「」 !!!fail
-  'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
-  'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
-  '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「」   	「」
-  'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                             	「⎈z」 	「」
+  'z'  	= 'toggle_comments'         	# un-/comment sels                            	「 ⎈c」	「☰👁」
+  'C-/'	= 'toggle_comments'         	# un-/comment sels                            	「 ⎈c」	「」 !!!fail
+  'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under ‸cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
+  'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under ‸cursor 	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
+  '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                        	「」   	「」
+  'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                              	「⎈z」 	「」
 
   '$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
 
@@ -452,7 +451,7 @@
     # 'C-del'          	= 'N/A'                 	# ⌦ω ᵡ word                  	≝「⎈␡」 	「del word right」
     # 'C-j'            	= 'N/A'                 	# ⌫⤝━ ᵡ line start           	≝「⎈u」 	「del line start」
     # 'C-k'            	= 'N/A'                 	# ⌦━⭲ ᵡ line end             	≝「⎈d」 	「del line end」
-    # 'C-s'            	= 'N/A'                 	# Insert a word under doc cursor, may be changed to C-r C-w later
+    # 'C-s'            	= 'N/A'                 	# Insert a word under doc ‸cursor, may be changed to C-r C-w later
     # 'C-r'            	= 'N/A'                 	# Insert the content of the register selected by following input char
 
 
