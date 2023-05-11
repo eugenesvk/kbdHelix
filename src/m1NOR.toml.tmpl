@@ -163,11 +163,14 @@
     #Ⓝ       	Compat with non-modal editors    	 
     'C-a'    	= ['save_selection','select_all']	# 🖈∀▋                                              	「⇧ 5」  「increment」
     'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy sel onto the next     line (add ‸cursor ↓)	「⇧ c」  「」
-    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy sel onto the previous line (add ‸cursor ↑) 	「⇧⎇c」 	「」
+    'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy sel onto the previous line (add ‸cursor ↑)	「⇧⎇c」 	「」
     'S-left' 	= 'extend_char_left'             	#                                                  	「Ⓢh/◀」	「」
     'S-down' 	= 'extend_line_down'             	#                                                  	「Ⓢj/▼」	「」
     'S-up'   	= 'extend_line_up'               	#                                                  	「Ⓢk/▲」	「」
     'S-right'	= 'extend_char_right'            	#                                                  	「Ⓢl/▶」	「」
+    'C-z'    	= 'undo'                         	# ⎌ Undo change                                    	「  u」 	「」
+    'C-Z'    	= 'redo'                         	# ↷ Redo change                                    	「⇧ u」 	「」!!!fail
+    'C-y'    	= 'redo'                         	# ↷ Redo change                                    	「⇧ u」 	「」
 
 
     'A-g'	= 'jumplist_picker'	# ☰🖈 List jumplist          	「☰␠ j」	「」
@@ -289,12 +292,9 @@
     'y'  	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「yank」
     'U'  	= 'earlier'              	# 🕘 Move backward in history  	「⇧ ⎇u」	「redo」   <i class='fa fa-history'></i>
     'Y'  	= 'later'                	# 🕒 Move forward  in history  	「⇧⎇u」 	「」 ⏱ <i class='fa fa-clock-o'></i>
-    'C-y'	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「」
     'v'  	= 'paste_after'          	# 📋⤹ Paste after sel          	「  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
     'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after sel          	「☰␠ p」	「」  <i class='fa fa-copy'></i>⤹
     'V'  	= 'paste_before'         	# ⤸📋 Paste before sel         	「⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
-    'C-z'	= 'undo'                 	# ⎌ Undo change               	「  u」 	「」
-    'C-Z'	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「」!!!fail
     #'I' 	= 'insert_at_line_start' 	# ⎀⭰ Insert at line start     	≝「⇧ i」	「insert_at_line_start」
     #'A' 	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	≝「⇧ a」	「insert_at_line_end」
 
