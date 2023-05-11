@@ -1,5 +1,5 @@
-# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -◊
+# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+#‹/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -›
 [keys.select] #Ⓢ Select/Extend mode
   #'esc'	= 'exit_select_mode'	#	「  ⎋」	「exit_select_mode」
   'e'   	= 'normal_mode'     	#	「  v」	「extend_next_word_end」
@@ -262,19 +262,19 @@
 
 
   ##Ⓢ ☰Minor modes
-  #◊ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰👁" "k" "p" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰👁" "k" "p" "cfg" .cfg) ›
     # 'p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
-  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "P" "cfg" .cfg) ◊
-  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "Z" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "P" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "Z" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "select" "i" "Ⓢ ⓖ☰⮊" "k" "g" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "select" "i" "Ⓢ ⓖ☰⮊" "k" "g" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🧩" "k" "n" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🧩" "k" "n" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k" "space" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k" "space" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nUnimpaired.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k1" "[" "k0" "]" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nUnimpaired.toml.tmpl") (dict "m" "select" "i" "Ⓢ" "k1" "[" "k0" "]" "cfg" .cfg) ›

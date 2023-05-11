@@ -1,6 +1,6 @@
-# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊/* key   	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -◊
-  [keys.   	'#◊.m◊'.'#◊.k1◊']         	##◊.i◊ ☰⧛ Unimpaired
+# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+#‹/* key   	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -›
+  [keys.   	'#‹.m›'.'#‹.k1›']         	##‹.i› ☰⧛ Unimpaired
     'j'    	= 'goto_prev_change'      	# 🢔Δ Change            	previous       	「  g」 	「」
     # 'G'  	= 'goto_first_change'     	# ⭰Δ Change            	1st            	≝「⇧ g」	「goto_first_change」
     'h'    	= 'goto_first_change'     	# ⭰Δ Change            	1st            	「⇧ g」 	「」
@@ -24,7 +24,7 @@
       ,    	  'move_line_up'          	#
       ,    	  'paste_before']         	#
 
-  [keys.	'#◊.m◊'.'#◊.k1◊'.'c']             	##◊.i◊ ☰⧛ℂ Unimpaired Config toggle ON
+  [keys.	'#‹.m›'.'#‹.k1›'.'c']             	##‹.i› ☰⧛ℂ Unimpaired Config toggle ON
     'q' 	= ':set auto-save true'           	# 💾🙈 save focus lost
     'w' 	= ':set auto-format true'         	# ℱ💾 auto formatting on save
     'e' 	= ':set line-number absolute'     	# №⭳  Line number display: absolute #⭳
@@ -46,7 +46,7 @@
     'o' 	= ':config-open'                  	# 🧬 Config open   		「  」	「」
     'l' 	= ':config-reload'                	# 🧬🗘 Config reload		「  」	「」
 
-  [keys. 	'#◊.m◊'.'#◊.k1◊'.'c'.' ']             	##◊.i◊ ☰⧛ℂ␠ Unimpaired Config toggle ON sub-space mode
+  [keys. 	'#‹.m›'.'#‹.k1›'.'c'.' ']             	##‹.i› ☰⧛ℂ␠ Unimpaired Config toggle ON sub-space mode
     ' '  	= ':set whitespace.render.space all'  	# · show space
     'b'  	= ':set whitespace.render.nbsp all'   	# ⍽ show nbsp
     'tab'	= ':set whitespace.render.tab all'    	# ⇥ show tab
@@ -54,7 +54,7 @@
     'n'  	= ':set whitespace.render.newline all'	# ⏎ show newline
     'ret'	= ':set whitespace.render.newline all'	# ⏎ show newline
 
-  [keys.	'#◊.m◊'.'#◊.k1◊'.'c'.'.']            	##◊.i◊ ☰⧛ℂ🙈 Unimpaired Config toggle ON hidden mode
+  [keys.	'#‹.m›'.'#‹.k1›'.'c'.'.']            	##‹.i› ☰⧛ℂ🙈 Unimpaired Config toggle ON hidden mode
     '.' 	= ':set file-picker.hidden true'     	# Ignore hidden files
     ',' 	= ':set file-picker.ignore true'     	# Read .ignore files
     'p' 	= ':set file-picker.parents true'    	# Read  ignore files from parent directories
@@ -64,7 +64,7 @@
     'l' 	= ':set follow-links true'           	# Follow symlinks instead of ignoring them
     'k' 	= ':set deduplicate-links true'      	# Ignore symlinks that point at files already shown in the picker
 
-  [keys.	'#◊.m◊'.'#◊.k1◊'.'c'.'y']                    	##◊.i◊ ☰⧛ℂ🄻 Unimpaired Config toggle ON LSP mode
+  [keys.	'#‹.m›'.'#‹.k1›'.'c'.'y']                    	##‹.i› ☰⧛ℂ🄻 Unimpaired Config toggle ON LSP mode
     'k' 	= ':set lsp.enable true'                     	# False will completely disable language servers regardless of language settings
     'p' 	= ':set lsp.display-messages true'           	# LSP progress messages below statusline
     'i' 	= ':set lsp.auto-signature-help true'        	# Enable automatic popup of signature help (parameter hints)
@@ -73,7 +73,7 @@
     's' 	= ':set lsp.snippets true'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
 
 
-  [keys.   	'#◊.m◊'.'#◊.k0◊']         	##◊.i◊ ☰⧚
+  [keys.   	'#‹.m›'.'#‹.k0›']         	##‹.i› ☰⧚
     'j'    	= 'goto_next_change'      	# Δ🢖 Change            	next            	「  g」 	「」
     # 'G'  	= 'goto_last_change'      	# Δ⭲ Change            	last            	≝「⇧ g」	「goto_last_change」
     'h'    	= 'goto_last_change'      	# Δ⭲ Change            	last            	「⇧ g」 	「」
@@ -97,7 +97,7 @@
       ,    	  'goto_line_end'         	#
       ,    	  'paste_after']          	#
 
-  [keys. 	'#◊.m◊'.'#◊.k0◊'.'c']                         	##◊.i◊ ☰⧚ℂ Unimpaired Config toggle OFF
+  [keys. 	'#‹.m›'.'#‹.k0›'.'c']                         	##‹.i› ☰⧚ℂ Unimpaired Config toggle OFF
     'q'  	= ':set auto-save false'                      	# 💾🙈 save focus lost
     'w'  	= ':set auto-format false'                    	# ℱ💾 auto formatting on save
     'e'  	= ':set line-number relative'                 	# №⭳  Line number display: absolute #
@@ -119,7 +119,7 @@
     'o'  	= ':config-open'                              	# 🧬 Config open   		「  」	「」
     'l'  	= ':config-reload'                            	# 🧬🗘 Config reload		「  」	「」
 
-  [keys. 	'#◊.m◊'.'#◊.k0◊'.'c'.' ']              	##◊.i◊ ☰⧚ℂ␠ Unimpaired Config toggle OFFN sub-space mode
+  [keys. 	'#‹.m›'.'#‹.k0›'.'c'.' ']              	##‹.i› ☰⧚ℂ␠ Unimpaired Config toggle OFFN sub-space mode
     ' '  	= ':set whitespace.render.space none'  	# · show space
     'b'  	= ':set whitespace.render.nbsp none'   	# ⍽ show nbsp
     'tab'	= ':set whitespace.render.tab none'    	# ⇥ show tab
@@ -127,7 +127,7 @@
     'n'  	= ':set whitespace.render.newline none'	# ⏎ show newline
     'ret'	= ':set whitespace.render.newline none'	# ⏎ show newline
 
-  [keys.	'#◊.m◊'.'#◊.k0◊'.'c'.'.']             	##◊.i◊ ☰⧚ℂ🙈 Unimpaired Config toggle OFF hidden mode
+  [keys.	'#‹.m›'.'#‹.k0›'.'c'.'.']             	##‹.i› ☰⧚ℂ🙈 Unimpaired Config toggle OFF hidden mode
     '.' 	= ':set file-picker.hidden false'     	# Ignore hidden files
     ',' 	= ':set file-picker.ignore false'     	# Read .ignore files
     'p' 	= ':set file-picker.parents false'    	# Read  ignore files from parent directories
@@ -137,7 +137,7 @@
     'l' 	= ':set follow-links false'           	# Follow symlinks instead of ignoring them
     'k' 	= ':set deduplicate-links false'      	# Ignore symlinks that point at files already shown in the picker
 
-  [keys.	'#◊.m◊'.'#◊.k0◊'.'c'.'y']                     	##◊.i◊ ☰⧚ℂ🄻 Unimpaired Config toggle OFF LSP mode
+  [keys.	'#‹.m›'.'#‹.k0›'.'c'.'y']                     	##‹.i› ☰⧚ℂ🄻 Unimpaired Config toggle OFF LSP mode
     'k' 	= ':set lsp.enable false'                     	# False will completely disable language servers regardless of language settings
     'p' 	= ':set lsp.display-messages false'           	# LSP progress messages below statusline
     'i' 	= ':set lsp.auto-signature-help false'        	# Enable automatic popup of signature help (parameter hints)
