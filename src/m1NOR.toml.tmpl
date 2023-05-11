@@ -36,7 +36,7 @@
     #'['    	                   	 ☰⧛ Unimpaired           	  Ⓝ「  ]」	「」
     #']'    	                   	 ☰⧚                      	  Ⓝ「  [」	「」
     #'`'    	                   	 ☰𝔸𝕒 Case conversion     	  Ⓝ「  」 	「switch_to_lowercase」
-    #':'    	= 'command_mode'   	# Ⓒ Enter command mode   	「⇧ ;」   	「command_mode」
+    #':'    	= 'command_mode'   	# Ⓒ Enter command mode   	≝「⇧ ;」  	「command_mode」
     'R'     	= 'command_palette'	# ☰Ⓒ Command Palette     	「⇧ /」   	「replace_with_yanked」
 
   #Ⓝ         	Compat with non-modal editors        	 
@@ -121,9 +121,8 @@
     # 'G'    	= 'goto_line'                  	# ⮊⎯ go to line #<n> (Ⓒ<n>⏎)	「⇧ g」	「goto_line」
 
     #Ⓝ      	Line
-    ':'     	= 'command_mode'   	# Ⓒ Enter command mode         	≝「⇧ ;」	「command_mode」
-    # 'Home'	= 'goto_line_start'	# Move to the start of the line	「Home」	「goto_line_start」
-    # 'End' 	= 'goto_line_end'  	# Move to the end of the line  	「End」 	「goto_line_end」
+    # 'Home'	= 'goto_line_start'	# Move beg of line	「Home」	「goto_line_start」
+    # 'End' 	= 'goto_line_end'  	# Move end of line	「End」 	「goto_line_end」
 
     #Ⓝ   	Block
     # '>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
@@ -199,13 +198,13 @@
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below)	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above)	「⇧⎇c」	「」
-    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS  	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
-    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS  	「⎇ m」	「flip_selections」
-    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋    	「⎇ i」	「」
-    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
-    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels             	「  s」	「split_selection_on_newline」
-    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                 	「⇧ s」	「search_prev」
-    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                             	「 ⎇s」	「」
+    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS   	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS   	「⎇ m」	「flip_selections」
+    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋     	「⎇ i」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊     	「⎇ o」	「」
+    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels              	「  s」	「split_selection_on_newline」
+    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                  	「⇧ s」	「search_prev」
+    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                              	「 ⎇s」	「」
 
     "'"   	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single ‸cursor           	「  ;」 	「」
     "A-'" 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	「 ⎇;」 	「」
