@@ -48,27 +48,31 @@
     'C-k'	= 'page_up'                	# ⇞ Move      page up  	「 ⎈u」	「」
 
     #Ⓢ        	word
-    'd'       	= 'extend_prev_word_start'     	# 🢔ω Extend prev beg of word	   「  b」	「」
-    'f'       	= 'extend_next_word_end'       	# ω🢖 Extend next end of word	   「  e」	「extend_next_char」
-    'A-d'     	= 'extend_prev_word_end'       	# ⤝ω Extend prev end of word	「   」   	「」
-    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend next beg of word	「  w」   	「」
-    'D'       	= 'extend_prev_long_word_start'	# 🢔W Extend prev beg of WORD	  「⇧ b」 	「」
-    'F'       	= 'extend_next_long_word_end'  	# W🢖 Extend next end of WORD	  「⇧ e」 	「extend_prev_char」
-    'A-D'     	= 'extend_prev_long_word_start'	# 🢔W Extend prev beg of WORD	  「⇧ b」 	「」
-    'A-F'     	= 'extend_next_long_word_start'	# W⤞ Extend next end of WORD	「⇧ w」   	「」
-    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
-    # 'R'     	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
-    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
-    # 'A-R'   	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」   	「」
-    'C-left'  	= 'extend_prev_long_word_start'	# 🢔W Extend prev beg of WORD	   「⇧ b」	「」
-    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend next end of WORD	「⇧ w」   	「」
-    # 'A-left'	= 'extend_prev_word_end'       	# ⤝ω Extend prev end of word	「   」   	「」
-    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend next beg of word	「  w」   	「」
+    'f'       	= 'extend_next_word_end'         	# ω⭲ Extend next end of word  	   「  e」	「extend_next_char」
+    'A-f'     	= 'extend_next_word_start'       	# ω⤞ Extend next beg of word  	「  w」   	「」
+    'A-right' 	= 'extend_next_word_start'       	# ω⤞ Extend next beg of word  	「  w」   	「」
+    'd'       	= 'extend_prev_word_start'       	# ⤝ω Extend prev beg of word  	   「  b」	「」
+    'A-d'     	= 'extend_prev_word_end'         	# ⭰ω Extend prev end of word  	「   」   	「」
+    # 'A-left'	= 'extend_prev_word_end'         	# ⭰ω Extend prev end of word  	「   」   	「」
+    'F'       	= 'extend_next_long_word_end'    	# W⭲ Extend next end of WORD  	  「⇧ e」 	「extend_prev_char」
+    'A-F'     	= 'extend_next_long_word_start'  	# W⤞ Extend next beg of WORD  	「⇧ w」   	「」
+    'C-right' 	= 'extend_next_long_word_start'  	# W⤞ Extend next beg of WORD  	「⇧ w」   	「」
+    'D'       	= 'extend_prev_long_word_start'  	# ⤝W Extend prev beg of WORD  	  「⇧ b」 	「」
+    'A-D'     	= ['extend_prev_long_word_start',	# ⭰W Extend prev end of WORD  	「⇧ b」   	「」
+              	  'extend_prev_word_start',      	# !!!extend_prev_long_word_end	 
+              	  'extend_next_word_start',]     	#    missing                  	 
+    'C-left'  	= ['extend_prev_long_word_start',	# ⭰W Extend prev end of WORD  	   「⇧ b」	「」
+              	  'extend_prev_word_start',      	# !!!move_prev_long_word_end  	 
+              	  'extend_next_word_start',]     	#    extend_prev_long_word_end	 
+    # 'r'     	= 'extend_next_word_start'       	# W⤞ Extend next beg of WORD  	「⇧ w」	「」
+    # 'R'     	= 'extend_next_long_word_start'  	# W⤞ Extend next beg of WORD  	「⇧ w」	「」
+    # 'A-r'   	= 'extend_next_word_start'       	# W⤞ Extend next beg of WORD  	「⇧ w」	「」
+    # 'A-R'   	= 'extend_next_long_word_start'  	# W⤞ Extend next beg of WORD  	「⇧ w」	「」
 
     #Ⓢ      	Line
-    # 'home'	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「home」	「extend_to_line_start」
+    # 'home'	= 'extend_to_line_start'	# ⤝▋ Extend     line start	「home」	「extend_to_line_start」
     # 'end' 	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「end」 	「extend_to_line_end」
-    'a'     	= 'extend_to_line_start'	# ⭰▋ Extend     line start	「Home」	「」
+    'a'     	= 'extend_to_line_start'	# ⤝▋ Extend     line start	「Home」	「」
     'A'     	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「End」 	「」
 
     #Ⓢ   	Paragraph
@@ -245,8 +249,8 @@
     'V'  	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」 	「」
     'C-z'	= 'suspend'               	# ⎌ Undo change                                             	「  u」 	「」
     'C-Z'	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
-    # 'I'	= 'insert_at_line_start'  	# ⎀⭰ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
-    # 'A'	= 'insert_at_line_end'    	# ⭲⎀ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
+    # 'I'	= 'insert_at_line_start'  	# ⤝⎀ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
+    # 'A'	= 'insert_at_line_end'    	# ⎀⭲ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
 
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
     '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward	「⇧⎇9」	「rotate_selections_backward」
