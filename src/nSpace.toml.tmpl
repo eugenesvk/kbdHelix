@@ -1,6 +1,6 @@
-# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊/* key   	= command                             	# Icon Comment                     	≝「key」 	「	cmd」 */ -◊
-  [keys    	.'#◊.m◊'.'#◊.k◊']                     	##◊.i◊ ☰␠  Space mode              	Ⓝ「 ␠」  	「」
+# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+#‹/* key   	= command                             	# Icon Comment                     	≝「key」 	「	cmd」 */ -›
+  [keys    	.'#‹.m›'.'#‹.k›']                     	##‹.i› ☰␠  Space mode              	Ⓝ「 ␠」  	「」
    #'space'	= 'insert_mode'                       	# ⁁⤸ Insert before sel             	「  i」  	「」 !!!panick! !!!missing
     'ret'  	= 'command_mode'                      	# Ⓒ Enter command mode             	「  ⎋」  	「」
     'F'    	= 'file_picker_in_current_directory'  	# 🗁 Open file   picker@curdir      	「☰␠⇧ f」	「file_picker_in_current_directory」
@@ -52,15 +52,15 @@
    #'m'	= 'mode_symbol'          	# ☰🅂 Symbol mode                          	「   」 	「」
    #','	= 'mode_diag'            	# ☰🛠 Diagnostics mode                     	「   」 	「」
 
-  [keys	.'#◊.m◊'.'#◊.k◊'.'m']           	##◊.i◊ ☰🅂 Symbol mode in Space mode     	「☰␠ f」		「」
+  [keys	.'#‹.m›'.'#‹.k›'.'m']           	##‹.i› ☰🅂 Symbol mode in Space mode     	「☰␠ f」		「」
     'm'	= 'symbol_picker'               	# 🅂🗋 Document  symbols 🄻                	「☰␠ s」	「」 ⚛Ⓢ
     ','	= 'workspace_symbol_picker'     	# 🅂🗍 Workspace symbols 🄻                	「☰␠⇧s」	「」  ⚛Ⓢ
-  [keys	.'#◊.m◊'.'#◊.k◊'.',']           	##◊.i◊ ☰🛠 Diagnostics mode in Space mode	「☰␠ f」		「」
+  [keys	.'#‹.m›'.'#‹.k›'.',']           	##‹.i› ☰🛠 Diagnostics mode in Space mode	「☰␠ f」		「」
     ','	= 'diagnostics_picker'          	# 🛠🗋 Document  diagnostics picker 🄻     	「☰␠ d」	「」
     'm'	= 'workspace_diagnostics_picker'	# 🛠🗍 Workspace diagnostics picker 🄻     	「☰␠⇧d」	「」
 
 
-  [keys	.'#◊.m◊'.'#◊.k◊'.'f']      	##◊.i◊ ☰␜ File mode in Space mode          	「☰␠ f」		「」
+  [keys	.'#‹.m›'.'#‹.k›'.'f']      	##‹.i› ☰␜ File mode in Space mode          	「☰␠ f」		「」
     'j'	= ['commit_undo_checkpoint'	# 💾 save file                              	「  」  	「  」
       ,	  ':write']                	                                           	      	#
     'k'	= 'file_picker'            	# 🗁 Open file   picker                     	「☰␠ f」	「  」
@@ -96,10 +96,10 @@
     ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
     'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
 
-  #◊ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "q") ◊
-  #◊ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "x") ◊
+  #‹ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "q") ›
+  #‹ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "x") ›
 
-  [keys	.'#◊.m◊'.'#◊.k◊'.'i'] ##◊.i◊ ☰®  Register/copy/paste etc.
+  [keys	.'#‹.m›'.'#‹.k›'.'i'] ##‹.i› ☰®  Register/copy/paste etc.
     'i'	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
    #'7'	= 'append_to_register 1'             	# ®1⎀ Append current line/selection to reg 1
    #'8'	= 'clear_register 1'                 	# ®1× x
@@ -136,7 +136,7 @@
    #'h'	='mark-defun'                        	# !!!missing
    #';'	='escape-quotes'                     	# Add \ before " in current line/selection
 
-  #[keys 	.'#◊.m◊'.'#◊.k◊'.'d'] ##◊.i◊ ☰⟪ Bracket mode in Space mode (place cursor in between)
+  #[keys 	.'#‹.m›'.'#‹.k›'.'d'] ##‹.i› ☰⟪ Bracket mode in Space mode (place cursor in between)
    #'RET'	= 'insert char'   	#
    #'SPC'	= 'insert unicode'	#
    #'d'  	= '()'            	# () parenthesis
@@ -160,9 +160,9 @@
    #'c'  	= 'date'          	# 📆📅current date
    #'p'  	= 'u+000C'        	# ␌ formfeed
 
-  #◊ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" .m "i" (print .i " ☰🗔@☰␠") "k" .k "ksp" ".'w'" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" .m "i" (print .i " ☰🗔@☰␠") "k" .k "ksp" ".'w'" "cfg" .cfg) ›
 
-  [keys	.'#◊.m◊'.'#◊.k◊'.'u']       	##◊.i◊ 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
+  [keys	.'#‹.m›'.'#‹.k›'.'u']       	##‹.i› 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
     'q'	= 'no_op'                   	#                                   	「  」  	「」
     'w'	= 'no_op'                   	#                                   	「  」  	「」
     'u'	= 'remove_primary_selection'	# ×          primary sel            	「 ⎇,」 	「」
@@ -203,4 +203,4 @@
     #  	 🄳DAP                                       	                             	      	 
     '['	= 'dap_restart'                             	# 🔄🄳 Restart (DAP)           	「  」  	「」
 
-  # [keys.'#◊.m◊'.'#◊.k◊'.'p']	##◊.i◊ ☰ⓟ TBD
+  # [keys.'#‹.m›'.'#‹.k›'.'p']	##‹.i› ☰ⓟ TBD

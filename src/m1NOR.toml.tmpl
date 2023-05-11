@@ -1,5 +1,5 @@
-# chezmoi:template:left-delimiter="#◊" right-delimiter="◊"
-#◊/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -◊
+# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+#‹/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -›
 [keys.normal] #Ⓝ
   #Ⓝ Test ——————————————————————————————————————————————————————————————————————
     'C-q'  	= ':quit!'                         	# Control-q → typable command :q! (:quit!)
@@ -8,7 +8,6 @@
     # 'C-j'	= ['page_down','align_view_center']	# ⇟ Move      page down                                              	   「 ⎈d」   	「」
     # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ⎈u」   	「」
 
-    'C-l'  	= 'suspend'    	# 💤 Suspend job      	「⎈z」    	「」
     # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ⎈u」	「」
 
   #Ⓝ Free ——————————————————————————————————————————————————————————————————————
@@ -135,25 +134,25 @@
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
     #Ⓝ   	Find
-    'w'  	= 'find_next_char'    	# 🔎   Find       next     char           	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'W'  	= 'find_prev_char'    	# 🔍   Find       previous char           	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-w'	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char           	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
-    'A-W'	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char           	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
-    'S'  	= 'rsearch'           	# 🔍𝖗 for previous regex pattern          	「⇧ /」   	「split_selection」
-    's'  	= 'search'            	# 🔎𝖗 for          regex pattern          	「⇧  /」  	「select_regex」
-    '.'  	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match     	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    '/'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「search」
-    # 'N'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match     	  「⇧ n」 	「search_prev」
-    # 'n'	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match     	   「  n」	「search_next」
-    '8'  	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern      	   「⇧ 8」	「<8>」   !!! blocked by ∀*
-    # '*'	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern	  「⇧ 8」 	「search_selection」
-    '*'  	= ['select_mode'      	#
-      ,  	'move_prev_word_start'	#
-      ,  	'move_next_word_end'  	#
-      ,  	'search_selection'    	#
-      ,  	'extend_search_next'  	#
-      ,  	'exit_select_mode'    	#
-      ]  	                      	# = find_under_expand
+    'w'  	= 'find_next_char'    	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'W'  	= 'find_prev_char'    	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    'A-w'	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
+    'A-W'	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
+    'S'  	= 'rsearch'           	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「split_selection」
+    's'  	= 'search'            	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「select_regex」
+    '.'  	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
+    '/'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
+    # 'N'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
+    # 'n'	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
+    '8'  	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
+    '*'  	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
+    #'*' 	= ['select_mode'      	#
+    #  , 	'move_prev_word_start'	#
+    #  , 	'move_next_word_end'  	#
+    #  , 	'search_selection'    	#
+    #  , 	'extend_search_next'  	#
+    #  , 	'exit_select_mode'    	#
+    #  ] 	                      	# = find_under_expand
 
 
   #Ⓝ Select ——————————————————————————————————————————————————————————————————————
@@ -308,6 +307,7 @@
   'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
   'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
   '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                       	「」   	「」
+  'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                             	「⎈z」 	「」
 
   '$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
 
@@ -321,25 +321,25 @@
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
 
-  #◊ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰?" "k" "F1" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰?" "k" "F1" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰𝔸𝕒" "k" "`" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰𝔸𝕒" "k" "`" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰👁" "k" "p" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰👁" "k" "p" "cfg" .cfg) ›
     # 'p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
-  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "P" "cfg" .cfg) ◊
-  #◊ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "Z" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "P" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "Z" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ⓖ☰⮊" "k" "g" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ⓖ☰⮊" "k" "g" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰🧩" "k" "n" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰🧩" "k" "n" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ›
 
-  #◊ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k" "space" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k" "space" "cfg" .cfg) ›
 
 
-  #◊ includeTemplate (joinPath .cfg "nUnimpaired.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k1" "[" "k0" "]" "cfg" .cfg) ◊
+  #‹ includeTemplate (joinPath .cfg "nUnimpaired.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k1" "[" "k0" "]" "cfg" .cfg) ›
 
 
 
