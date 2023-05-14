@@ -1,8 +1,10 @@
 # chezmoi:template:left-delimiter="#‹" right-delimiter="›"
 #‹/* key	= command	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -›
 [keys.insert] #ⓘ
-  ';'	= {j='normal_mode' }	# Maps `;k` to exit insert mode !!!flashes dialog during typing
+  'A-}'	= 'normal_mode'     	# mapped to 🠿i⃣ in Karabiner
+  ';'  	= {j='normal_mode' }	# Maps `;k` to exit insert mode !!!flashes dialog during typing
   #ⓘ Test ——————————————————————————————————————————————————————————————————————
+    # 'j'     	= {f='normal_mode','j'={'f'=[':insert-output /bin/echo -n j','move_char_right','normal_mode']}}
     # 'Escape'	= 'normal_mode'	# Switch to normal mode	「Escape」
     # 'A-x'   	= 'normal_mode'	# Maps Alt-X to enter normal mode
   #ⓘ Free ——————————————————————————————————————————————————————————————————————
