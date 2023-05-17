@@ -15,7 +15,6 @@
     'A-C'	= 'no_op'           	#                        	「⇧   」	「copy_selection_on_prev_line」
     'A-('	= 'no_op'           	#                        	「⇧⎇9」 	「rotate_selection_contents_backward」
     'A-)'	= 'no_op'           	#                        	「⇧⎇0」 	「rotate_selection_contents_forward」
-    'A-K'	= 'no_op'           	#                        	「⇧   」	「remove_selections」
     'C-i'	= 'no_op'           	#                        	「   」 	「jump_forward」
     'b'  	= 'no_op'           	#                        	「⇧   」	「replace_with_yanked」
     '~'  	= "no_op"           	#                        	「⇧   」	「switch_case」
@@ -234,19 +233,26 @@
 
   #Ⓝ Change ——————————————————————————————————————————————————————————————————————
     #            	Compat with non-modal editors
-    'A-del'      	= 'delete_word_forward'          	# ⌦ω ᵡ word →                  	 ⓘ「  ⎇d」	「」
-    'C-del'      	= ['extend_next_long_word_end',  	# ⌦W                           	「   」   	「」
-                 	   'delete_selection']           	# ᵡ Word →                     	 
-    'A-backspace'	= 'delete_word_backward'         	# ⌫ω ᵡ word ←                  	ⓘ「 ⎈w」	「」
-    'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W                           	「   」 	「」
-                 	   'delete_selection']           	# ᵡ Word ←                     	 
-    # 'del'      	= 'delete_selection'             	# ᵡ▋                           	「  d」	「」
-    'S-del'      	= 'delete_selection_noyank'      	# 🕱▋                           	「 ⎇d」	「」
-    'S-ret'      	= ['open_below','normal_mode']   	# ⭣␤ Open new line below sel   	「  o」	「」
-    'ret'        	= ['open_above','normal_mode']   	# ⭡␤ Open new line above sel   	「⇧ o」	「」
-    'C-ret'      	= ':reflow'                      	# ↪ Hard-wrap selected lines ䷖↪	「   」	「」
-    'C-/'        	= 'toggle_comments'              	# // un-/comment sels          	「 ⎈c」	「」 !!!fail
-    # 'C-?'      	= 'toggle_comments_block'        	# /* un-/comment sels (block)  	「 ⎈c」	「」 !!!missing
+    'A-del'      	= 'delete_word_forward'              	# ⌦ω ᵡ word →                  	 ⓘ「  ⎇d」	「」
+    'C-del'      	= ['extend_next_long_word_end',      	# ⌦W                           	「   」   	「」
+                 	   'delete_selection']               	# ᵡ Word →                     	 
+    'A-backspace'	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                  	ⓘ「 ⎈w」	「」
+    'C-backspace'	= ['extend_prev_long_word_start',    	# ⌫W                           	「   」 	「」
+                 	   'delete_selection']               	# ᵡ Word ←                     	 
+    # 'del'      	= 'delete_selection'                 	# ᵡ▋                           	「  d」	「」
+    'S-del'      	= 'delete_selection_noyank'          	# 🕱▋                           	「 ⎇d」	「」
+    'S-ret'      	= ['open_below','normal_mode']       	# ⭣␤ Open new line below sel   	「  o」	「」
+    'ret'        	= ['open_above','normal_mode']       	# ⭡␤ Open new line above sel   	「⇧ o」	「」
+    'C-ret'      	= ':reflow'                          	# ↪ Hard-wrap selected lines ䷖↪	「   」	「」
+    'C-/'        	= 'toggle_comments'                  	# // un-/comment sels          	「 ⎈c」	「」 !!!fail
+    # 'C-?'      	= 'toggle_comments_block'            	# /* un-/comment sels (block)  	「 ⎈c」	「」 !!!missing
+    #            	line                                 	                               	     	 
+    'C-J'        	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓               	「 」  	「」!!! not implemented yet
+                 	   'delete_selection',               	#                              	     	 github.com/helix-editor/helix/issues/2245
+                 	   'paste_after']                    	#                              	     	 
+    'C-K'        	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑               	「 」  	「」
+                 	   'delete_selection','move_line_up',	#                              	     	 
+                 	   'paste_before']                   	#                              	     	 
 
     # '.'      	= 'N/A'                              	# ∞ Repeat last change        	「.」     	「n/a」
     '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*             	「 ⌦」    	「<5>」
