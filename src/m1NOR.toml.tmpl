@@ -198,15 +198,17 @@
     # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
     # '%'	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
 
-    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below)	「⇧ c」	「」
-    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above)	「⇧⎇c」	「」
-    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS   	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
-    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS   	「⎇ m」	「flip_selections」
-    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋     	「⎇ i」	「」
-    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊     	「⎇ o」	「」
-    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels              	「  s」	「split_selection_on_newline」
-    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                  	「⇧ s」	「search_prev」
-    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                              	「 ⎇s」	「」
+    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below) 	「⇧ c」	「」
+    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above) 	「⇧⎇c」	「」
+    'A-J'	= 'copy_selection_on_next_line'	# ᵡ🠷 Cut  sel from the previous line (del ‸cursor above)	「⇧ c」	「」 !!!not implemented
+    'A-K'	= 'copy_selection_on_prev_line'	# ᵡ🠵 Cut  sel from the next     line (del ‸cursor below)	「⇧⎇c」	「」
+    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「flip_selections」
+    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋      	「⎇ i」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
+    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels               	「  s」	「split_selection_on_newline」
+    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
+    'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                               	「 ⎇s」	「」
 
     "'"   	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single ‸cursor           	「  ;」 	「」
     "A-'" 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	「 ⎇;」 	「」
