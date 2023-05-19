@@ -71,6 +71,7 @@
     'C-k'	= 'page_up'              	# ⇞ Move      page up           	   「 ⎈u」	「」
     'a'  	= 'extend_to_line_start' 	# ⤝▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
     'A'  	= 'extend_to_line_end'   	# ▋⭲ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
+    'A-A'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel	「」      	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
 
 
     #Ⓝ          	Compat with non-modal editors
@@ -210,23 +211,23 @@
     'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                               	「 ⎇s」	「」
 
-    "'"   	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single ‸cursor           	「  ;」 	「」
-    "A-'" 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	「 ⎇;」 	「」
-    'A-a' 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」
-    'A-A' 	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」
-    'A-p' 	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
-    'A-:' 	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
-    #'A-l'	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (← with many columns)	「⇧ 9」 	「」
-    #'A-;'	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
-    'A-m' 	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (↓ with many lines)  	「⇧ 0」 	「」
-    'A-,' 	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
-    'A-u' 	= 'remove_primary_selection'  	# ᵡ         the primary sel                       	「 ⎇,」 	「earlier」
-    'A-i' 	= 'keep_primary_selection'    	# ᵡ∀ all but the primary sel (keep only)          	「  ,」 	「」
-    'A-U' 	= 'no_op'                     	# ᵡᵡ undo remove sel                              	「⇧ ⎇,」	「earlier」 !!!missing
-    'K'   	= 'keep_selections'           	# ᵏ𝖗 sels not matching the regex (keep)           	「⇧ k」 	「keep_selections」
-    'L'   	= 'remove_selections'         	# ᵡ𝖗 sels     matching the regex                  	「⇧⎇k」 	「」
-    'A-Z' 	=['keep_primary_selection'    	# 🢗🢔 collapse everything to a single cursor       	「  」  	「」		 
-      ,   	  'collapse_selection']       	                                                  	      	#
+    "'"    	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single ‸cursor           	「  ;」 	「」
+    "A-'"  	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	「 ⎇;」 	「」
+    'A-a'  	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」
+    # 'A-A'	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
+    'A-p'  	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
+    'A-:'  	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
+    #'A-l' 	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (← with many columns)	「⇧ 9」 	「」
+    #'A-;' 	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
+    'A-m'  	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (↓ with many lines)  	「⇧ 0」 	「」
+    'A-,'  	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
+    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary sel                       	「 ⎇,」 	「earlier」
+    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary sel (keep only)          	「  ,」 	「」
+    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove sel                              	「⇧ ⎇,」	「earlier」 !!!missing
+    'K'    	= 'keep_selections'           	# ᵏ𝖗 sels not matching the regex (keep)           	「⇧ k」 	「keep_selections」
+    'L'    	= 'remove_selections'         	# ᵡ𝖗 sels     matching the regex                  	「⇧⎇k」 	「」
+    'A-Z'  	=['keep_primary_selection'    	# 🢗🢔 collapse everything to a single cursor       	「  」  	「」		 
+      ,    	  'collapse_selection']       	                                                  	      	#
 
     'minus'	= 'trim_selections'             	# ✁Trim whitespace from the sel                    	「⇧ -」 	「」
     '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive sels ⨝                       	「⇧⎇ -」	「trim_selections」
