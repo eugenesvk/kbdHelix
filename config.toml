@@ -103,24 +103,24 @@ headhr               	= false	# show or hide horizontal rule below header
 foothr               	= false	# show or hide horizontal rule above footer
 
 menu = [ #blank=open@same tab
-  {url="/modifew/"                         	,name="⌂"         	,slash=true 	,blank=false}	,
-  # {url="/posts/"                         	,name="Posts"     	,slash=true 	,blank=false}	,
-  # {url="/categories/"                    	,name="Categories"	,slash=true 	,blank=false}	,
-  # {url="/tags/"                          	,name="Tags"      	,slash=true 	,blank=false}	,
-]                                          	                  	            	             	#
-menu_footer                                	= [               	            	             	#
-  {url="/modifew/"                         	,name="Design"    	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/all/"        	,name="All"       	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/m1NOR/"      	,name="Normal"    	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/m2INS/"      	,name="Insert"    	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/m3SEL/"      	,name="Select"    	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/nGoTo/"      	,name="GoTo"      	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/nSpace/"     	,name="Space"     	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/nView/"      	,name="Match"     	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/nMatch/"     	,name="View"      	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/nWindow/"    	,name="Window"    	,slash=true 	,blank=false}	,
-  {url="/modifew/cheat-sheets/nUnimpaired/"	,name="Space"     	,slash=true 	,blank=false}	,
-  {url="/sitemap.xml"                      	,name="Sitemap"   	,slash=false	,blank=true }	,
+  {url="/modifew/"                         	,name="⌂"          	,slash=true 	,blank=false}	,
+  # {url="/posts/"                         	,name="Posts"      	,slash=true 	,blank=false}	,
+  # {url="/categories/"                    	,name="Categories" 	,slash=true 	,blank=false}	,
+  # {url="/tags/"                          	,name="Tags"       	,slash=true 	,blank=false}	,
+]                                          	                   	            	             	#
+menu_footer                                	= [                	            	             	#
+  {url="/modifew/"                         	,name="Design"     	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/all/"        	,name="All"        	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/m1NOR/"      	,name="Normal"     	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/m2INS/"      	,name="Insert"     	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/m3SEL/"      	,name="Select"     	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/nGoTo/"      	,name="GoTo"       	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/nSpace/"     	,name="Space"      	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/nView/"      	,name="Match"      	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/nMatch/"     	,name="View"       	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/nWindow/"    	,name="Window"     	,slash=true 	,blank=false}	,
+  {url="/modifew/cheat-sheets/nUnimpaired/"	,name="nUnimpaired"	,slash=true 	,blank=false}	,
+  {url="/sitemap.xml"                      	,name="Sitemap"    	,slash=false	,blank=true }	,
 ]
 
 # Security Headers: most can only be set by your webserver (Nginx, Apache), but can load a few ↓ as meta tags
