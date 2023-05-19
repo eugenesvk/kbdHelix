@@ -64,13 +64,14 @@
     'l' 	= ':set follow-links true'           	# Follow symlinks instead of ignoring them
     'k' 	= ':set deduplicate-links true'      	# Ignore symlinks that point at files already shown in the picker
 
-  [keys.	'#‹.m›'.'#‹.k1›'.'c'.'y']                    	##‹.i› ☰⧛ℂ🄻 Unimpaired Config toggle ON LSP mode
-    'k' 	= ':set lsp.enable true'                     	# False will completely disable language servers regardless of language settings
-    'p' 	= ':set lsp.display-messages true'           	# LSP progress messages below statusline
-    'i' 	= ':set lsp.auto-signature-help true'        	# Enable automatic popup of signature help (parameter hints)
-    'h' 	= ':set lsp.display-inlay-hints true'        	# 💡 Inlay hints
-    'd' 	= ':set lsp.display-signature-help-docs true'	# Docs under signature help popup
-    's' 	= ':set lsp.snippets true'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+  [keys.	'#‹.m›'.'#‹.k1›'.'c'.'y']                           	##‹.i› ☰⧛ℂ🄻 Unimpaired Config toggle ON LSP mode
+    'k' 	= ':set lsp.enable true'                            	# False will completely disable language servers regardless of language settings
+    'p' 	= ':set lsp.display-messages true'                  	# LSP progress messages below statusline
+    'i' 	= ':set lsp.auto-signature-help true'               	# Enable automatic popup of signature help (parameter hints)
+    'h' 	= ':set lsp.display-inlay-hints true'               	# 💡 Inlay hints
+    'd' 	= ':set lsp.display-signature-help-docs true'       	# Docs under signature help popup
+    's' 	= ':set lsp.snippets true'                          	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+    'g' 	= ':set lsp.goto-reference-include-declaration true'	# Include declaration in the goto references popup
 
 
   [keys.   	'#‹.m›'.'#‹.k0›']         	##‹.i› ☰⧚
@@ -137,10 +138,11 @@
     'l' 	= ':set follow-links false'           	# Follow symlinks instead of ignoring them
     'k' 	= ':set deduplicate-links false'      	# Ignore symlinks that point at files already shown in the picker
 
-  [keys.	'#‹.m›'.'#‹.k0›'.'c'.'y']                     	##‹.i› ☰⧚ℂ🄻 Unimpaired Config toggle OFF LSP mode
-    'k' 	= ':set lsp.enable false'                     	# False will completely disable language servers regardless of language settings
-    'p' 	= ':set lsp.display-messages false'           	# LSP progress messages below statusline
-    'i' 	= ':set lsp.auto-signature-help false'        	# Enable automatic popup of signature help (parameter hints)
-    'h' 	= ':set lsp.display-inlay-hints false'        	# 💡 Inlay hints
-    'd' 	= ':set lsp.display-signature-help-docs false'	# Docs under signature help popup
-    's' 	= ':set lsp.snippets false'                   	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+  [keys.	'#‹.m›'.'#‹.k0›'.'c'.'y']                            	##‹.i› ☰⧚ℂ🄻 Unimpaired Config toggle OFF LSP mode
+    'k' 	= ':set lsp.enable false'                            	# False will completely disable language servers regardless of language settings
+    'p' 	= ':set lsp.display-messages false'                  	# LSP progress messages below statusline
+    'i' 	= ':set lsp.auto-signature-help false'               	# Enable automatic popup of signature help (parameter hints)
+    'h' 	= ':set lsp.display-inlay-hints false'               	# 💡 Inlay hints
+    'd' 	= ':set lsp.display-signature-help-docs false'       	# Docs under signature help popup
+    's' 	= ':set lsp.snippets false'                          	# Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set.
+    'g' 	= ':set lsp.goto-reference-include-declaration false'	# Exclude declaration from the goto references popup
