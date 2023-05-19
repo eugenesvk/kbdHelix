@@ -32,7 +32,7 @@ Below is a summary of some of the design decisions followed up by detailed keyma
 
   - ⌂ __Home__ keys are __safe__: all 8 of the home keys are movement commands, so to modify a buffer your fingers need to leave __⌂__!
   - __Insert mode__ has a copy of most of Normal mode commands (from <kbd>key</kbd> and <kbd>⇧</kbd><kbd>key</kbd>) on the same keys, but with an extra <kbd>⌥</kbd> — no need to switch modes for just a single command!
-  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>⎈</kbd> or <kbd>⇧</kbd> in the Normal mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution)
+  - __Space mode__ converts most of the commands requiring modifiers into a chainable key sequence with a "leader" key <kbd>Space</kbd> as the easiest to press. Its main layer mostly consists of commands that were assigned to <kbd>⎈</kbd> or <kbd>⇧</kbd> in the Normal mode, though via additional submodes any other command can also be chained (and if this [feature request](https://github.com/helix-editor/helix/issues/1499) is implemented, this approach could also work nicely with repeatable commands that would not close the menu dialog command list upon execution). Its <kbd>⇧</kbd> is mostly unused except for occasional shift of Normal mode's <kbd>⎇</kbd><kbd>⇧</kbd> commands
   - Differentiate between __repeatable__ and __single-press__ __paired__ keybinds (left/right, back/forward, earlier/later etc.)
     + __Repeatable__ keybinds should be on __separate__ __adjacent__ keys (just like <kbd>◀</kbd><kbd>▶</kbd>) instead of being on the same key with the second operation behind a <kbd>⇧</kbd>’ed status, so char/word/line-based movements and in-/decrement are together rather than being on separate rows by default. This greatly simplifies going back and forth:
         + Strongest non-thumb fingers on the __right__ hand:<br>
@@ -90,7 +90,7 @@ A few tips:
   
   Later if you need to look up just a single icon/button you can use tooltips by hovering over a button or pressing <kbd>⇧</kbd><kbd>KEY</kbd>[^kbd_tooltip]
 - You can also load a page with just the cheat sheets using [these links](@/modifew/index.md#misc)
-- ☰ is a menu icon
+- ☰ is a menu icon, ⬩ beginning (⤞ to the next beginning), ❘ end (⭲ to the next end)
 
 <div id=buttons><span class="inline text">Change keyboard layout to:</span>
   <button class="btn" id=btn_qwerty    	type=button>QWERTY</button>
