@@ -214,11 +214,11 @@ A few tips:
     - replace theme and `[editor]` sections of the `Editor.toml.tmpl` file with your preferred settings
     - build the actual full Helix `config.toml` with `chezmoi apply -v --interactive`
 
-    Now you can edit individual template files for each major/minor mode and build the config with `chezmoi` instead of drowning in one huge config. You can also add a single line to include repeated minor modes in various major modes (and even pass different keybinds as input parametes to those templates) instead of having to copy&paste them manually on every single change!
+    Now you can edit individual template files for each major/minor mode and build the config with `chezmoi` instead of drowning in one huge config. You can also add a single line to include repeated minor modes in various major modes (and even pass different keybinds as input parameters to those templates) instead of having to copy&paste them manually on every single change!
 
 ## Misc {#misc}
 
-Direct links to pages with only the cheat cheets (custom layouts in a `#hash` also work):
+Direct links to pages with only the cheat sheets (custom layouts in a `#hash` also work):
 
 |Layout→</br>Mode↓|qwerty|dvorak|colemak|colemak_dh|workman|neo2|asset|
 |:-|:-|:-|:-|:-|:-|:-|:-|
