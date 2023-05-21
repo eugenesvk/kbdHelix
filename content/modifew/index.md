@@ -212,7 +212,9 @@ A few tips:
     - install [chezmoi config file manager](https://www.chezmoi.io/)
     - copy all template files from [modifew/src](https://github.com/eugenesvk/kbdHelix/tree/modifew/src) to your `~/.local/share/chezmoi/private_dot_config/helix` folder
     - replace theme and `[editor]` sections of the `Editor.toml.tmpl` file with your preferred settings
-    - build the actual full Helix `config.toml` with `chezmoi apply -v --interactive`
+    - build the actual full Helix config with `chezmoi apply -v --interactive`:
+      - via the default `modify_config.toml.tmpl` (requires Python with `tomlkit` installed) that allows you to remap Helix to alternative keyboard layout (non-QWERTY or non-Latin; see instructions within that file)
+      - or via the QWERTY-only config without any Python dependencies by renaming `config_src.toml.tmpl` to `config.toml.tmpl` and deleting `modify_config.toml.tmpl`
 
     Now you can edit individual template files for each major/minor mode and build the config with `chezmoi` instead of drowning in one huge config. You can also add a single line to include repeated minor modes in various major modes (and even pass different keybinds as input parameters to those templates) instead of having to copy&paste them manually on every single change!
 
