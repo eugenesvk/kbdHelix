@@ -1,0 +1,124 @@
+# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+#!/usr/bin/env python3
+#‹ $S   	:= .chezmoi.sourceDir -›
+#‹ $cfgH	:= (print $S "/private_dot_config") -›
+#‹/*
+# Add support for non-QWERTY/non-Latin keymaps to Helix
+  # read Helix config generated from chezmoi templates and parse it as a TOML dict
+  # add a copy of the config with all keys replaced to user keymap
+  # merge two dictionaries by mode as Helix doesn't allow duplicate definitions of keys.MODE
+  # (the key order and formatting will be broken Python doesn't allow changing dictionary keys and tomlkit breaks structure on adding new keys)
+  # set keymap in getUserKeymap(keymap_len) @ layout_convert.py
+*/ -›
+isEnabled = True # disable appending alternative layouts
+
+import sys
+if __name__ == '__main__' and not __package__: # for manually adding tomlkit library in chezmoi's folder
+  sys.path.insert(0, "#‹$cfgH›/helix")
+
+import re
+import tomlkit
+from sys           	import stdin
+from pathlib       	import Path
+from configparser  	import ConfigParser as cfgParser
+from tomlkit       	import dumps
+from tomlkit       	import parse  # you can also use loads
+from layout_convert	import lyt, LayoutConverter # import local converter library
+
+# 1 read Helix config generated from chezmoi templates
+cfg_def_s	= r"""#‹- includeTemplate "./private_dot_config/helix/config_src.toml.tmpl" -›"""
+if not isEnabled:
+  print(cfg_def_s,end='')
+  sys.exit(0)
+
+cfg_def    	= parse(cfg_def_s)	# TOMLDocument instance that holds all the information about the TOML string and behaves like a standard dictionary with identical string generated with dumps(doc)
+cfg_def_alt	= parse(cfg_def_s)	# make a copy to store replacement keys
+
+nonkeys = ['theme','editor']
+for nonkey in nonkeys: # leave only 'keys' section
+  if nonkey in cfg_def_alt:
+    cfg_def_alt.pop(nonkey)
+
+reSp = re.compile(r'\s')
+reSingleKeySp     	= re.compile(r"""^[\s]*$"""             , re.X) # ' ' space
+reSingleKeySpecial	= re.compile(r"""^[\s]*[\w]{2,}[\s]*$""", re.X) # keys like 'space' and 'ret'
+reSingleKey       	= re.compile(r"""
+  (?P<pre>    ^[\s]*)   #
+  (?P<keycap> [^\s])    # ←
+  (?P<pos>     [\s]*$)  #
+  """, re.X)
+reLastKey = re.compile(r"""
+  (?P<pre>    ^.*-[\s]*) # up to and including the last -
+  (?P<keycap> [^\s])      # ←
+  (?P<pos>    [\s]*$)     #
+  """, re.X)
+
+class keyComboTransformer():
+  def __init__(self, lyt_from, lyt_to):
+    self.lyt_converter	= LayoutConverter()
+    self.isUser       	= self.lyt_converter.isUser
+    self.lyt_from_User	= self.lyt_converter.translations[lyt_from]
+    self.lyt_from     	= lyt_from
+    self.lyt_to       	= lyt_to
+
+  def remap(self, key_combo_raw):
+    if not self.isUser or not isinstance(key_combo_raw,str):
+      return None
+    key_combo_new = None
+    if   (reM := re.match(reSingleKeySpecial, key_combo_raw)):
+      key_combo_new	  = None
+    elif (reM := re.match(reSingleKeySp, key_combo_raw)):
+      keycap = ' '
+      key_combo_new	  = (self.lyt_converter.convert(keycap, self.lyt_from, self.lyt_to)).replace('\\','\\\\')
+    elif (reM := re.match(reSingleKey, key_combo_raw)):
+      if (keycap := reM.group('keycap')):
+        keycap_new   	= (self.lyt_converter.convert(keycap, self.lyt_from, self.lyt_to)).replace('\\','\\\\')
+        key_combo_new	= re.sub(reSingleKey, fr"\g<pre>{keycap_new}\g<pos>",key_combo_raw)
+    elif (reM := re.match(reLastKey  , key_combo_raw)):
+      if (keycap := reM.group('keycap')):
+        keycap_new   	= (self.lyt_converter.convert(keycap, self.lyt_from, self.lyt_to)).replace('\\','\\\\')
+        key_combo_new	= re.sub(reLastKey  , fr"\g<pre>{keycap_new}\g<pos>",key_combo_raw)
+    return key_combo_new if key_combo_new and not key_combo_new == key_combo_raw else None
+keyT = keyComboTransformer(lyt.qwerty, lyt.user)
+
+
+from copy import deepcopy
+def dictMergeDeep(dTo:dict, dFrom:dict) -> dict: # merge dFrom into dTo recursively
+  dMerged = deepcopy(dTo) # deepcopy to avoid storing references to chunks
+  for k_From, v_From in dFrom.items():
+    v_To = dMerged.get(k_From)
+    if isinstance(v_To  , dict) and\
+       isinstance(v_From, dict):
+      dMerged[k_From] = dictMergeDeep(v_To, v_From)
+    else:
+      dMerged[k_From] = deepcopy(v_From)
+  return dMerged
+
+from collections.abc import Mapping
+def dictIterDeep(d, k_parent=None, isAnyParentRemappable=None, iterLevel=1):
+  for k,v in d.copy().items():
+    if (key_combo_new := keyT.remap(k)):
+      d[key_combo_new]	= d[k]
+      if not isinstance(k, Mapping):
+        if not k_parent:                  # del if a top-level mapping
+          d.pop(k)
+        else:
+          if isAnyParentRemappable:       # del only if parent is remappable (so was remapped), ␠ mode needs both
+            if   (isinstance(d[k],dict)): # del a group of command
+              d.pop(k)
+            elif (isinstance(d[k],str) or\
+                  isinstance(d[k],list)): # but single commands→no_op to hide the defaults
+              d[k] = 'no_op'
+      isAnyParentRemappable = True if iterLevel > 1 else False
+    if isinstance(v, Mapping):
+      iterLevel += 1
+      dictIterDeep(v, k, isAnyParentRemappable, iterLevel)
+
+for mode in cfg_def_alt["keys"]:
+  dictIterDeep( cfg_def_alt["keys"][mode])
+
+for mode in cfg_def["keys"]:
+  cfg_def["keys"][mode] = dictMergeDeep(cfg_def["keys"][mode], cfg_def_alt["keys"][mode])
+
+print(dumps(cfg_def),end='')
+# print(dumps(cfg_def_alt),end='')
