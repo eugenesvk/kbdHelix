@@ -1,4 +1,4 @@
-// --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped
+// --customProp: color //comment FAILS since SASS parsing is turned off in custom properties, so // isn't stripped, use #{-customProp} interpolation
 // @use "../themes/abridge/sass/abridge-blueshade-switcher.scss" // override theme color, but duplicates unless move all css to be managed here instead of in zola
 @use "abridge"  	as theme
 @use "Solarized"	as sol
