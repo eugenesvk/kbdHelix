@@ -1,1 +1,82 @@
-@font-face{font-display:block;font-family:FA-icomoon;font-style:normal;font-weight:400;src:url(../font/FA-icomoon.ttf?d9bcmq) format("truetype"),url(../font/FA-icomoon.woff?d9bcmq) format("woff"),url(../font/FA-icomoon.svg?d9bcmq#FA-icomoon) format("svg")}[class*=" fa-"],[class^=fa-]{speak:never;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-family:FA-icomoon!important;font-style:normal;font-variant:normal;font-weight:400;line-height:1;text-transform:none}.fa-search:before{content:"\f002"}.fa-clock-o:before{content:"\f017"}.fa-align-justify:before{content:"\f039"}.fa-copy:before{content:"\f0c5"}.fa-save:before{content:"\f0c7"}.fa-clipboard:before,.fa-paste:before{content:"\f0ea"}.fa-keyboard-o:before{content:"\f11c"}.fa-puzzle-piece:before{content:"\f12e"}.fa-usd:before{content:"\f155"}.fa-history:before{content:"\f1da"}@font-face{font-display:swap;font-family:Noto Sans Symbols\ 2;font-style:normal;font-weight:400;src:url(../font/noto-sans-symbols-2-symbols-400-normal.woff2) format("woff2"),url(../font/noto-sans-symbols-2-symbols-400-normal.woff) format("woff")}@font-face{font-display:swap;font-family:Noto Sans Symbols;font-style:normal;font-weight:400;src:url(../font/noto-sans-symbols-symbols-400-normal.woff2) format("woff2"),url(../font/noto-sans-symbols-symbols-400-normal.woff) format("woff")}.keylabels{font-family:Helvetica,Arial,Noto Sans Symbols\ 2,Noto Sans Symbols,Segoe UI Symbol,Cambria,Cambria Math,sans-serif}
+@font-face {
+  font-family: "FA-icomoon";
+  src: url("../font/FA-icomoon.ttf?d9bcmq") format("truetype"), url("../font/FA-icomoon.woff?d9bcmq") format("woff"), url("../font/FA-icomoon.svg?d9bcmq#FA-icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=fa-], [class*=" fa-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "FA-icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-search:before {
+  content: "\f002";
+}
+
+.fa-clock-o:before {
+  content: "\f017";
+}
+
+.fa-align-justify:before {
+  content: "\f039";
+}
+
+.fa-copy:before {
+  content: "\f0c5";
+}
+
+.fa-save:before {
+  content: "\f0c7";
+}
+
+.fa-clipboard:before {
+  content: "\f0ea";
+}
+
+.fa-paste:before {
+  content: "\f0ea";
+}
+
+.fa-keyboard-o:before {
+  content: "\f11c";
+}
+
+.fa-puzzle-piece:before {
+  content: "\f12e";
+}
+
+.fa-usd:before {
+  content: "\f155";
+}
+
+.fa-history:before {
+  content: "\f1da";
+}
+
+@font-face {
+  font-family: "Noto Sans Symbols 2";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../font/noto-sans-symbols-2-symbols-400-normal.woff2") format("woff2"), url("../font/noto-sans-symbols-2-symbols-400-normal.woff") format("woff");
+}
+@font-face {
+  font-family: "Noto Sans Symbols";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../font/noto-sans-symbols-symbols-400-normal.woff2") format("woff2"), url("../font/noto-sans-symbols-symbols-400-normal.woff") format("woff");
+}
+.keylabels {
+  font-family: "Helvetica", "Arial", "Noto Sans Symbols 2", "Noto Sans Symbols", "Segoe UI Symbol", Cambria, "Cambria Math", sans-serif;
+}
