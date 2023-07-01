@@ -1,21 +1,22 @@
-@use "../../themes/abridge/sass/_variables.scss" as abridge-var
+@use '../../themes/abridge/sass/abridge' as abridge
 
+$fstt:0.8rem
 :root
-  --fstt: 0.8rem /*font-size tooltip table*/
+  #{--fstt}:               $fstt /*font-size tooltip table*/
   // Responsive typography
-  @if abridge-var.$enable-responsive-typography
-    @if map-get(abridge-var.$breakpoints, "sm")
-      @media (min-width: map-get(abridge-var.$breakpoints, "sm"))
-        --fstt: 0.8rem
-    @if map-get(abridge-var.$breakpoints, "md")
-      @media (min-width: map-get(abridge-var.$breakpoints, "md"))
-        --fstt: 0.832rem
-    @if map-get(abridge-var.$breakpoints, "lg")
-      @media (min-width: map-get(abridge-var.$breakpoints, "lg"))
-        --fstt: 0.864rem
-    @if map-get(abridge-var.$breakpoints, "xl")
-      @media (min-width: map-get(abridge-var.$breakpoints, "xl"))
-        --fstt: 0.896rem
+  @if abridge.$enable-responsive-typography
+    @if map-get(abridge.$breakpoints, "sm")
+      @media (min-width: map-get(abridge.$breakpoints, "sm"))
+        #{--fstt}:         $fstt
+    @if map-get(abridge.$breakpoints, "md")
+      @media (min-width: map-get(abridge.$breakpoints, "md"))
+        #{--fstt}:  1.04 * $fstt
+    @if map-get(abridge.$breakpoints, "lg")
+      @media (min-width: map-get(abridge.$breakpoints, "lg"))
+        #{--fstt}:  1.08 * $fstt
+    @if map-get(abridge.$breakpoints, "xl")
+      @media (min-width: map-get(abridge.$breakpoints, "xl"))
+        #{--fstt}:  1.12 * $fstt
 
 .keycap_tooltip_modi_cmd
   margin     	: 0.7rem 0
