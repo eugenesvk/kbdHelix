@@ -8,7 +8,7 @@ $syntax-mode	: "auto"    	,//Force syntax mode: auto, dark, light
 
 $color       	: "blueshade"	,//color template to use/override: orange, blue, blueshade
 $color-syntax	: "abridge"  	,//syntax color template to use/override: abridge	,
-$syntax      	: true       	,//syntax highlighting for Code Blocks.
+$syntax      	: false      	,//syntax highlighting for Code Blocks
 
 // see theme/abridge/sass/abridge.scss for the full font list
 $findFont-Main	: "Segoe UI"                                  	,// ← append custom MAIN font(s) AFTER this
