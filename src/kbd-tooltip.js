@@ -2,6 +2,7 @@ import { gLyt, lyt, Case 	,
   convert, convertCaseLyt	,
   getCaseLyt }           	from "./layout-convert.js";
 import modifew           	from 'https://raw.githubusercontent.com/eugenesvk/kbdHelix/modifew/config/modifew.toml';
+import Bowser            	from "bowser";
 import * as std          	from './std.js';
 std.extendProtos();
 
@@ -20,6 +21,13 @@ export const rmEvtLis = // rmEvtLis(domElement, 'click', this.myfunction);
 
 window.onload=function(){ // optional since it depends on the way in which you fire events
 let isMobile = false;
+const browser = Bowser.getParser(window.navigator.userAgent);
+const isOld_iPhone    = browser.satisfies({mobile :{safari:'<=10'  }});
+const isOld_IObserver = browser.satisfies({mobile :{safari:'<=12.0'}} // seems to work on 12.1 despite caniuse?
+  ,                                       {desktop:{safari:'<=12.0',chrome:'<=57'}});
+const isOld_LookBehind= browser.satisfies({mobile :{safari:'<=16.3'}}
+  ,                                       {desktop:{safari:'<=16.3',chrome:'<=61'}});
+
 if (/Android|iPhone/i.test(navigator.userAgent)) { isMobile = true; }
 const range = (start, stop, step=1) => Array.from(
   {length: (stop - start) / step + 1},
@@ -402,6 +410,20 @@ function mergeSubmodes(m, keylbl) {
   }
   return keyCombos;
 }
+
+const ttBox         	= document.createElement("div");
+ ttBox.id           	= "useragent";
+ ttBox.style.display	= "block"; // hide till mouse over
+ ttBox.style.left   	= `20px`; // move tooltip to the hover element
+ ttBox.style.top    	= `20px`;
+ ttBox.style.width  	= `100px`;
+ ttBox.style.height 	= `100px`;
+ ttBox.style.color  	= `red`;
+ // ttBox.innerText 	= navigator.userAgent
+ // ttBox.innerHTML 	= `<div>asflkjsal;fjsfl;</div>`
+ ttBox.style.color  	= `red`;
+document.body.appendChild(ttBox);
+
 const tooltips = new Map(); // store all toolip divs here in a mode sub-map
 
 function addToolips_Keycap(m, el) {
@@ -507,25 +529,35 @@ function addTooltips_Keymap(keymap) {
     });
 }
 
-const obsAddToolips = (changes, observer) => {
-  changes.forEach(change => {
-    const target = change.target;
-    if ((change.intersectionRatio > 0)) {
-      addTooltips_Keymap(target);
-      observer.unobserve(target)
-    }
-  })
-}
-const observerCfg = {
-  root      	: null,
-  rootMargin	: "0%",
-  threshold 	: 0.1 // fire when 10% of the keymap is visible
-}
-const observer = new IntersectionObserver(obsAddToolips, observerCfg)
-modifew_modes.map(mode => {                  	// m1NOR m2INS m3SEL...
-  const keymap_id = modifew_modes_pre + mode;	// modifew-m1NOR
-  tooltips.set(mode, new Map());
-  const keymap = document.getElementById(keymap_id);
-  if (keymap) { observer.observe(keymap) }
-  });
+if (isOld_IObserver) { // old devices without observer, add keymap right away
+  modifew_modes.map(mode => {                  	// m1NOR m2INS m3SEL...
+    const keymap_id = modifew_modes_pre + mode;	// modifew-m1NOR
+    tooltips.set(mode, new Map());
+    const keymap = document.getElementById(keymap_id);
+    if (keymap) { addTooltips_Keymap(keymap) }
+    });
+} else { // add keymap only after the keyboard is visible
+  const obsAddToolips = (changes, observer) => {
+    changes.forEach(change => {
+      const target = change.target;
+      if ((change.intersectionRatio > 0)) {
+        addTooltips_Keymap(target);
+        observer.unobserve(target)
+      }
+    })
+  }
+  const observerCfg = {
+    root      	: null,
+    rootMargin	: "0%",
+    threshold 	: 0.1 // fire when 10% of the keymap is visible
+  }
+  const observer = new IntersectionObserver(obsAddToolips, observerCfg)
+
+  modifew_modes.map(mode => {                  	// m1NOR m2INS m3SEL...
+    const keymap_id = modifew_modes_pre + mode;	// modifew-m1NOR
+    tooltips.set(mode, new Map());
+    const keymap = document.getElementById(keymap_id);
+    if (keymap) { observer.observe(keymap) }
+    });
+  }
 };
