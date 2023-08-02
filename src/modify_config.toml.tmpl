@@ -17,7 +17,12 @@ if __name__ == '__main__' and not __package__: # for manually adding tomlkit lib
   sys.path.insert(0, "#‹$cfgH›/helix")
 
 import re
-import tomlkit
+import importlib.util
+tomlkit_spec = importlib.util.find_spec("tomlkit")
+if tomlkit_spec is None:
+  print(f"@chezmoi helix: tomlkit missing, aborting")
+  exit()
+
 from sys           	import stdin
 from pathlib       	import Path
 from configparser  	import ConfigParser as cfgParser
