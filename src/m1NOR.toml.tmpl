@@ -38,26 +38,21 @@
     #':'    	= 'command_mode'   	# Ⓒ Enter command mode   	≝「⇧ ;」  	「command_mode」
     'R'     	= 'command_palette'	# ☰Ⓒ Command Palette     	「⇧ /」   	「replace_with_yanked」
 
-  #Ⓝ         	Compat with non-modal editors        	 
-  'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
-  'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
-  'C-s'      	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」 	「save_selection」
-  # 'C-S-s'  	= 'Save As'                          	# ???                      	「⇧⎈s」  	「」
-  'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」  	「」
-  # 'C-S-t'  	= 'open-last-closed'                 	# ???                      	「⇧⎈t」  	「」
-  # 'C-+'    	= 'zoom-in'                          	# ??? 🔎⨭                   	「 ⎈+」  	「」
-  # 'C-minus'	= 'zoom-out'                         	# ??? 🔎−                   	「 ⎈-」  	「」
+  #Ⓝ Compat    	with non-modal editors               	 
+    'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
+    'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
+    'C-s'      	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」 	「save_selection」
+    # 'C-S-s'  	= 'Save As'                          	# ???                      	「⇧⎈s」  	「」
+    'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」  	「」
+    # 'C-S-t'  	= 'open-last-closed'                 	# ???                      	「⇧⎈t」  	「」
+    # 'C-+'    	= 'zoom-in'                          	# ??? 🔎⨭                   	「 ⎈+」  	「」
+    # 'C-minus'	= 'zoom-out'                         	# ??? 🔎−                   	「 ⎈-」  	「」
 
-  #Ⓝ   	Copy                                	 
-  'c'  	= 'yank'                            	# 🗐▋ Copy main sel                      	「  c」  	「change_selection」 <i class='fa fa-copy'></i>
-  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main sel into sys clipboard   	「☰␠,⇧y」	「toggle_comments」 <i class='fa fa-clipboard'></i>
-  'C'  	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main sel into sys clipboard   	「⇧␠,y」 	「copy_selection_on_next_line」 <i class='fa fa-clipboard'></i>
-  'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all sels to clipboard (joined)	「☰␠ y」 	「change_selection_noyank」 ⨝📋 ∀❚ ∀▋ <i class='fa fa-clipboard'></i>
-
-  #Ⓝ Shell 	                 	 
-    # '|'  	= 'shell_pipe'   	# |   Pipe each sel through shell command, replacing with output    	≝「⇧ \」	「shell_pipe」
-    "A-\\" 	= 'shell_pipe_to'	# |ᵡ Pipe each sel into    shell command, ignoring       output     	「⇧⎇\」 	「」
-    # 'A-|'	= 'shell_pipe_to'	#   Pipe each sel into    shell command, ignoring       output	≝「⇧⎇\」	「shell_pipe_to」
+  #Ⓝ Copy	                                    	                                        	       	 
+    'c'  	= 'yank'                            	# 🗐▋ Copy main sel                      	「  c」  	「change_selection」 <i class='fa fa-copy'></i>
+    'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main sel into sys clipboard   	「☰␠,⇧y」	「toggle_comments」 <i class='fa fa-clipboard'></i>
+    'C'  	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main sel into sys clipboard   	「⇧␠,y」 	「copy_selection_on_next_line」 <i class='fa fa-clipboard'></i>
+    'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all sels to clipboard (joined)	「☰␠ y」 	「change_selection_noyank」 ⨝📋 ∀❚ ∀▋ <i class='fa fa-clipboard'></i>
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
     #    	Cursor@Home
@@ -72,28 +67,6 @@
     'a'  	= 'extend_to_line_start' 	# ⤝▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
     'A'  	= 'extend_to_line_end'   	# ▋⭲ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
     'A-A'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel	「」      	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
-
-
-    #Ⓝ          	Compat with non-modal editors
-    'C-home'    	= 'goto_file_start'     	# ⇱ line number `<n>` else file start	「  g」	「」
-    'C-end'     	= 'goto_last_line'      	# ⇲ file end                         	「  e」	「」
-    'C-S-tab'   	= 'goto_previous_buffer'	# ⎗                                  	「⇧ⓖp」「」  !!!fail
-    'C-tab'     	= 'goto_next_buffer'    	# ⎘                                  	「ⓖn」「」  !!!fail
-    'C-pageup'  	= 'goto_previous_buffer'	# ⎗                                  	「   」	「」
-    'C-pagedown'	= 'goto_next_buffer'    	# ⎘                                  	「   」	「」
-    'A-pageup'  	= 'jump_backward'       	# ⎗̡                                 	「   」	「」
-    'A-pagedown'	= 'jump_forward'        	# ⎘̡                                 	「   」	「」
-    # 'C-j'     	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist   	「 ⎈o」	「」
-    # 'C-;'     	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist   	「 ⎈i」	「」 !!!fail
-
-    '1'  	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                 	「ⓖp」 	「<1>」
-    '2'  	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                 	「ⓖn」 	「<2>」
-    'A-1'	= 'goto_previous_buffer'	# ⎗                               	「ⓖp」 	「」
-    'A-2'	= 'goto_next_buffer'    	# ⎘                               	「ⓖn」 	「」
-    '3'  	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「<3>」 !!!missing ∀*
-    '4'  	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「<4>」 !!!missing ∀*
-    'A-3'	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「」
-    'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「」
 
     #Ⓝ       	word !!! sometimes prev≠next by a space
     'f'      	= 'move_next_word_end'         	# ω⭲ Move next end of word  	「  e」	「find_next_char」
@@ -119,10 +92,15 @@
     # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD  	「⇧ w」	「page_down」
     #        	   'extend_next_long_word_end']	#                           	 
     # 'G'    	= 'goto_line'                  	# ⮊⎯ go to line #<n> (Ⓒ<n>⏎)	「⇧ g」	「goto_line」
+    #        	                               	                            	         
+    #        	                               	                            	         
+    #        	                               	                            	         
 
     #Ⓝ      	Line
     # 'Home'	= 'goto_line_start'	# Move beg of line	「Home」	「goto_line_start」
     # 'End' 	= 'goto_line_end'  	# Move end of line	「End」 	「goto_line_end」
+    #       	                   	                  	         
+    #       	                   	                  	         
 
     #Ⓝ   	Block
     # '>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
@@ -156,6 +134,27 @@
     #  , 	'exit_select_mode'    	#
     #  ] 	                      	# = find_under_expand
 
+
+    #Ⓝ          	Compat with non-modal editors
+    'C-home'    	= 'goto_file_start'     	# ⇱ line number `<n>` else file start	「  g」	「」
+    'C-end'     	= 'goto_last_line'      	# ⇲ file end                         	「  e」	「」
+    'C-S-tab'   	= 'goto_previous_buffer'	# ⎗                                  	「⇧ⓖp」「」  !!!fail
+    'C-tab'     	= 'goto_next_buffer'    	# ⎘                                  	「ⓖn」「」  !!!fail
+    'C-pageup'  	= 'goto_previous_buffer'	# ⎗                                  	「   」	「」
+    'C-pagedown'	= 'goto_next_buffer'    	# ⎘                                  	「   」	「」
+    'A-pageup'  	= 'jump_backward'       	# ⎗̡                                 	「   」	「」
+    'A-pagedown'	= 'jump_forward'        	# ⎘̡                                 	「   」	「」
+    # 'C-j'     	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist   	「 ⎈o」	「」
+    # 'C-;'     	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist   	「 ⎈i」	「」 !!!fail
+
+    '1'  	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                 	「ⓖp」 	「<1>」
+    '2'  	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                 	「ⓖn」 	「<2>」
+    'A-1'	= 'goto_previous_buffer'	# ⎗                               	「ⓖp」 	「」
+    'A-2'	= 'goto_next_buffer'    	# ⎘                               	「ⓖn」 	「」
+    '3'  	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「<3>」 !!!missing ∀*
+    '4'  	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「<4>」 !!!missing ∀*
+    'A-3'	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「」
+    'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「」
 
   #Ⓝ Select ——————————————————————————————————————————————————————————————————————
     'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt「  v」	「move_next_word_end」 <i class='fa fa-arrows'></i>
@@ -228,7 +227,8 @@
     'L'    	= 'remove_selections'         	# ᵡ𝖗 sels     matching the regex                  	「⇧⎇k」 	「」
     'A-Z'  	=['keep_primary_selection'    	# 🢗🢔 collapse everything to a single cursor       	「  」  	「」		 
       ,    	  'collapse_selection']       	                                                  	      	#
-
+    #    	                         	                                                               	         
+    #    	                         	                                                               	         
     'minus'	= 'trim_selections'             	# ✁Trim whitespace from the sel                    	「⇧ -」 	「」
     '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive sels ⨝                       	「⇧⎇ -」	「trim_selections」
     # '+'  	= 'dupe_selections'             	# 🗐Duplicate sel (currently nonfunctional/disabled)	「⇧ =」 	「dupe_selections」
@@ -286,6 +286,12 @@
     #'`' 	= ''                   	# ☰𝔸𝕒 Case conversion mode	「  」  	「switch_to_lowercase」 !!!missing aliases
     'B'  	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	「⇧  `」	「」
     'C-b'	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「 ⎇`」 	「」
+    #    	                       	                          	         
+    #    	                       	                          	         
+    #    	                       	                          	         
+    #    	                       	                          	         
+    #    	                       	                          	         
+    #    	                       	                          	         
 
     'A-.'	= 'unindent'	# ⇚ (selection)	「⇧,」	「repeat_last_motion」
     'A-/'	= 'indent'  	# ⇛ (selection)	「⇧.」	「」
@@ -294,7 +300,8 @@
     'Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	≝「⇧ q」 replay_macro]
     '"'	= 'select_register'	# ®  Select a register to copy/paste from                 	≝「  '<reg>」	「select_register」
 
-    # 'b'	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」 	「move_prev_word_start」 !!!missing
+    # 'b'	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」	「move_prev_word_start」 !!!missing
+    #    	                         	                              	         
     'i'  	= 'insert_mode'          	# ⤹⎀ Insert before sel        	≝「  i」	「insert_mode」
     'o'  	= 'append_mode'          	# ⎀⤸ Insert after sel (append)	「  a」 	「open_above」
     'I'  	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」 	「insert_at_line_start」
@@ -303,9 +310,12 @@
     'y'  	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「yank」
     'U'  	= 'earlier'              	# 🕘 Move backward in history  	「⇧ ⎇u」	「redo」   <i class='fa fa-history'></i>
     'Y'  	= 'later'                	# 🕒 Move forward  in history  	「⇧⎇u」 	「」 ⏱ <i class='fa fa-clock-o'></i>
+    #    	                         	                              	         
     'v'  	= 'paste_after'          	# 📋⤹ Paste after sel          	「  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
     'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after sel          	「☰␠ p」	「」  <i class='fa fa-copy'></i>⤹
     'V'  	= 'paste_before'         	# ⤸📋 Paste before sel         	「⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
+    #    	                         	                              	         
+    #    	                         	                              	         
     #'I' 	= 'insert_at_line_start' 	# ⎀⭰ Insert at line start     	≝「⇧ i」	「insert_at_line_start」
     #'A' 	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	≝「⇧ a」	「insert_at_line_end」
 
@@ -334,10 +344,14 @@
   #Ⓝ space mode
   # "'"	= 'last_picker'	# 「collapse_selection」 Open last fuzzy picker
 
-  #Ⓝ Shell	#                      	#
-  '!'     	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel	「⇧  1」	≝「shell_insert_output」
-  '@'     	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel	「⇧⎇1」 	「」
-  'A-!'   	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel	「⇧⎇1」 	≝「shell_append_output」
+  #Ⓝ Shell 	                       	 
+    # '|'  	= 'shell_pipe'         	# | Pipe each sel through shell command, replacing with output 	≝「⇧ \」	「shell_pipe」
+    "A-\\" 	= 'shell_pipe_to'      	# |ᵡ Pipe each sel into    shell command, ignoring       output	「⇧⎇\」 	「」
+    # 'A-|'	= 'shell_pipe_to'      	#   Pipe each sel into    shell command, ignoring       output 	≝「⇧⎇\」	「shell_pipe_to」
+    '!'    	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel           	「⇧  1」	≝「shell_insert_output」
+    '@'    	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	「」
+    'A-!'  	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	≝「shell_append_output」
+
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
   #‹- /* m=mode i=icon k=key */›
@@ -358,7 +372,6 @@
   #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k" "space" "cfg" .cfg) ›
-
 
   #‹ includeTemplate (joinPath .cfg "nUnimpaired.toml.tmpl") (dict "m" "normal" "i" "Ⓝ" "k1" "[" "k0" "]" "cfg" .cfg) ›
 
