@@ -186,14 +186,46 @@
     # 'A-+'  	= 'dupe_selections'             	# 🗐Duplicate selection (currently nonfunctional/disabled)	「⇧Ⓝ =」	「dupe_selections」
 
   #ⓘ Change ——————————————————————————————————————————————————————————————————————
-    # 'A-b'	= 'repeat_last_change'               	# ∞ Repeat last change	「⇧Ⓝ  .」	「move_prev_word_start」  !!!missing
-    #ⓘ     	line                                 	                      	       	 
-    'C-J'  	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓      	「 」    	「」!!! not implemented yet
-           	   'delete_selection',               	#                     	       	 github.com/helix-editor/helix/issues/2245
-           	   'paste_after']                    	#                     	       	 
-    'C-K'  	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑      	「 」    	「」
-           	   'delete_selection','move_line_up',	#                     	       	 
-           	   'paste_before']                   	#                     	       	 
+    # 'A-b'   	= 'repeat_last_change'               	# ∞ Repeat last change	「⇧Ⓝ  .」	「move_prev_word_start」  !!!missing
+    #ⓘ        	line                                 	                      	       	 
+    'C-J'     	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓      	「 」    	「」!!! not implemented yet
+              	   'delete_selection',               	#                     	       	 github.com/helix-editor/helix/issues/2245
+              	   'paste_after']                    	#                     	       	 
+    'C-K'     	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑      	「 」    	「」
+              	   'delete_selection','move_line_up',	#                     	       	 
+              	   'paste_before']                   	#                     	       	 
+    'A-i'     	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓      	「 」    	「」!!! not implemented yet
+              	   'delete_selection',               	#                     	       	 github.com/helix-editor/helix/issues/2245
+              	   'paste_after']                    	#                     	       	 
+    'A-o'     	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑      	「 」    	「」
+              	   'delete_selection','move_line_up',	#                     	       	 
+              	   'paste_before']                   	#                     	       	 
+    # 'A-i'   	= ['extend_line',                    	# ━⮃ swap line ↓      	       	 
+    #         	   'delete_selection',               	#                     	       	 
+    #         	   'paste_after',                    	#                     	       	 
+    #         	   'move_line_down']                 	#                     	「 」    	「」
+    # 'A-o'   	= ['extend_line',                    	# ━⮁ swap line ↑      	「 」    	「」
+    #         	   'yank',                           	#                     	       	 
+    #         	   'move_line_up',                   	#                     	       	 
+    #         	   'open_above',                     	#                     	       	 
+    #         	   'replace_with_yanked',            	#                     	       	 
+    #         	   'move_line_down','move_line_down',	#                     	       	 
+    #         	   'extend_line',                    	#                     	       	 
+    #         	   'delete_selection',               	#                     	       	 
+    #         	   'move_line_up','move_line_up']    	#                     	       	 
+    'C-A-down'	= ['extend_line',                    	# ━↓ dupe line ↓      	「 」    	「」!!! not implemented yet
+              	   'yank',                           	#                     	       	 
+              	   'move_line_down',                 	#                     	       	 
+              	   'open_above',                     	#                     	       	 
+              	   'normal_mode',                    	#                     	       	 
+              	   'replace_with_yanked',            	#                     	       	 
+              	   'insert_mode']                    	# ━↑ dupe line ↑      	「 」    	「」
+    'C-A-up'  	= ['extend_line',                    	#                     	       	 
+              	   'yank',                           	#                     	       	 
+              	   'open_above',                     	#                     	       	 
+              	   'normal_mode',                    	#                     	       	 
+              	   'replace_with_yanked',            	#                     	       	 
+              	   'insert_mode']                    	#
 
     'S-ret'	= 'open_below'            	# ⭣␤ Open new line below selection	「⇧  o」 	「」
     'A-ret'	= 'open_below'            	# ⭣␤ Open new line below selection	  「  o」	「insert_newline」
@@ -221,44 +253,11 @@
                  	   'delete_selection']           	#     ᵡ Word ←
     'A-h'        	= 'delete_word_backward'         	# ⌫ω ᵡ word ←   	ⓘ「 ⎈w」  	「」
     #'A-H'       	= 'delete_word_forward'          	# ⌦ω ᵡ word →   	 ⓘ「  ⎇d」	「」
+    #ⓘ           	line                             	                	        	 
     'C-a'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「goto_line_start」  ??? better than ∀▋select_all
     'C-A'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「」
     'C-j'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「insert_newline」
     'C-k'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「kill_to_line_end」
-
-    #ⓘ        	line                                 	                	   	 
-    'A-i'     	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓	「 」	「」!!! not implemented yet
-              	   'delete_selection',               	#               	   	 github.com/helix-editor/helix/issues/2245
-              	   'paste_after']                    	#               	   	 
-    'A-o'     	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑	「 」	「」
-              	   'delete_selection','move_line_up',	#               	   	 
-              	   'paste_before']                   	#               	   	 
-    # 'A-i'   	= ['extend_line',                    	# ━⮃ swap line ↓	   	 
-    #         	   'delete_selection',               	#               	   	 
-    #         	   'paste_after',                    	#               	   	 
-    #         	   'move_line_down']                 	#               	「 」	「」
-    # 'A-o'   	= ['extend_line',                    	# ━⮁ swap line ↑	「 」	「」
-    #         	   'yank',                           	#               	   	 
-    #         	   'move_line_up',                   	#               	   	 
-    #         	   'open_above',                     	#               	   	 
-    #         	   'replace_with_yanked',            	#               	   	 
-    #         	   'move_line_down','move_line_down',	#               	   	 
-    #         	   'extend_line',                    	#               	   	 
-    #         	   'delete_selection',               	#               	   	 
-    #         	   'move_line_up','move_line_up']    	#               	   	 
-    'C-A-down'	= ['extend_line',                    	# ━↓ dupe line ↓	「 」	「」!!! not implemented yet
-              	   'yank',                           	#               	   	 
-              	   'move_line_down',                 	#               	   	 
-              	   'open_above',                     	#               	   	 
-              	   'normal_mode',                    	#               	   	 
-              	   'replace_with_yanked',            	#               	   	 
-              	   'insert_mode']                    	# ━↑ dupe line ↑	「 」	「」
-    'C-A-up'  	= ['extend_line',                    	#               	   	 
-              	   'yank',                           	#               	   	 
-              	   'open_above',                     	#               	   	 
-              	   'normal_mode',                    	#               	   	 
-              	   'replace_with_yanked',            	#               	   	 
-              	   'insert_mode']                    	#
 
     #ⓘ     	selection                             	                                  	       	 
     'A-x'  	= 'delete_selection'                  	# ᵡ▋                              	Ⓝ「  d」 	「extend_line」
