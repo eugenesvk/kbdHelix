@@ -18,26 +18,97 @@
   'C-s'	= ['commit_undo_checkpoint',':write']	# 💾 save file         	「  ⎈s」 	「commit_undo_checkpoint」
   'C-n'	= ':new'                             	# 🗋 new buffer        	「 ⎈n」  	「」
 
-  #ⓘ   	Copy                                	 
-  'A-c'	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」  	「change_selection」
-  'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
-  'A-C'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」 	「」
 
-  #ⓘ Shell  	                 	 
-    'A-|'   	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧Ⓝ \」	「shell_pipe」
-    # "A-\\"	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	Ⓝ「 ⎇\」	「」
-    # 'A-|' 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧Ⓝ⎇\」	「shell_pipe_to」
+
+
+
+  #ⓘ     	Copy                                	 
+    'A-c'	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」  	「change_selection」
+    'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
+    'A-C'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」 	「」
+
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
-    #ⓘ           	Cursor@Home
-    'A-j'        	= 'move_visual_line_down'	# ▼                              	ⓘ「 ⎈n」 	「move_visual_line_down」
-    'A-k'        	= 'move_visual_line_up'  	# ▲                              	ⓘ「 ⎈p」 	「move_visual_line_up」
-    'A-l'        	= 'move_char_left'       	# ◀                              	ⓘ「 ⎈b」 	「move_char_right」
-    'A-;'        	= 'move_char_right'      	# ▶                              	ⓘ「 ⎈f」 	「collapse_selection」
-    'A-m'        	= 'half_page_down'       	# ⤈ Move half page down          	Ⓝ「 ⎈d」 	「☰🧩」
-    'A-,'        	= 'half_page_up'         	# ⤉ Move half page up            	Ⓝ「 ⎈u」 	「keep_primary_selection」
-    'A-a'        	= 'extend_to_line_start' 	# ⭰▋ Move     line start + select	「ⓈHome」	「append_mode」 # goto_line_start
-    'A-A'        	= 'extend_to_line_end'   	# ⭲▋ Move     line end   + select	「ⓈEnd」  「insert_at_line_end」 # goto_line_end
+    #ⓘ   	Cursor@Home
+    'A-j'	= 'move_visual_line_down'	# ▼                              	ⓘ「 ⎈n」 	「move_visual_line_down」
+    'A-k'	= 'move_visual_line_up'  	# ▲                              	ⓘ「 ⎈p」 	「move_visual_line_up」
+    'A-l'	= 'move_char_left'       	# ◀                              	ⓘ「 ⎈b」 	「move_char_right」
+    'A-;'	= 'move_char_right'      	# ▶                              	ⓘ「 ⎈f」 	「collapse_selection」
+    'A-m'	= 'half_page_down'       	# ⤈ Move half page down          	Ⓝ「 ⎈d」 	「☰🧩」
+    'A-,'	= 'half_page_up'         	# ⤉ Move half page up            	Ⓝ「 ⎈u」 	「keep_primary_selection」
+    #    	                         	                                 	       	 
+    #    	                         	                                 	       	 
+    'A-a'	= 'extend_to_line_start' 	# ⭰▋ Move     line start + select	「ⓈHome」	「append_mode」 # goto_line_start
+    'A-A'	= 'extend_to_line_end'   	# ⭲▋ Move     line end   + select	「ⓈEnd」 	「insert_at_line_end」 # goto_line_end
+    'A-A'    	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel       	「」      	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
+
+    #ⓘ       	Word
+    #        	                               	                                    	        	 
+    'A-f'    	= 'move_next_word_end'         	# ω🢖  Move next end of word         	   Ⓝ「 e」	「move_next_word_start」
+    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next beg of word          	≝ⓘ「⎇▶」  	「move_next_word_start」
+    #        	                               	                                    	        	 
+    'A-d'    	= 'move_prev_word_start'       	# 🢔ω  Move prev beg of word         	   Ⓝ「 b」	「delete_word_forward」
+    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev end of word          	≝ⓘ「⎇◀」  	「move_prev_word_end」
+    #        	                               	                                    	        	 
+    'A-F'    	= 'move_next_long_word_end'    	# W🢖 Move next end of WORD          	  「⇧Ⓝ e」	「」
+    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next end of WORD          	「⇧ w」   	「page_down」
+    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next end of WORD          	「⇧ w」   	「」
+    #        	                               	                                    	        	 
+    'A-D'    	= 'move_prev_long_word_start'  	# 🢔W Move prev beg of WORD          	  「⇧Ⓝ b」	「」
+    #        	                               	                                    	        	 
+    #        	                               	                                    	        	 
+    'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move prev beg of WORD         	   「⇧ b」	「」
+    #        	                               	                                    	        	 
+    #        	                               	                                    	        	 
+    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev end of WORD         	「⇧ b」   	「half_page_down」
+             	   'extend_prev_word_start',   	#                                   	 
+             	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing	 
+    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD          	「⇧ w」	「page_down」
+    #        	   'extend_next_long_word_end']	#                                   	 
+    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move prev end of word          	ⓘ「⎇b」	「」
+    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move next beg of word          	ⓘ「⎇f」	「」
+    #        	                               	                                    	     	 
+    #        	                               	                                    	     	 
+
+    #ⓘ     	Line
+    # 'A-G'	= 'goto_line'   	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧Ⓝ g」	「」
+    'A-G'  	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
+    'A-:'  	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
+    #        	                               	                                    	        	 
+
+    #ⓘ   	Block
+    'A->'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	Ⓝ「⇧ [」	「indent」
+    'A-?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	Ⓝ「⇧ ]」	「rsearch」
+
+
+
+
+
+
+    'A-r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	Ⓝ「 ⎇.」	「replace」
+
+    #ⓘ   	Find
+    'A-w'	= 'find_next_char'  	# 🔎   Find       next     char           	Ⓝ「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'A-W'	= 'find_prev_char'  	# 🔍   Find       previous char           	「⇧Ⓝ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    #    	                    	                                         	         	 
+    #    	                    	                                         	         	 
+    'A-S'	= 'rsearch'         	# 🔍𝖗 for previous regex pattern          	Ⓝ「⇧ /」   	「split_selection」
+    'A-s'	= 'search'          	# 🔎𝖗 for          regex pattern          	「⇧Ⓝ  /」  	「select_regex」
+    'A-.'	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	   Ⓝ「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
+    'A-/'	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   Ⓝ「  n」	「search」
+    #    	                    	                                         	         	 
+    #    	                    	                                         	         	 
+    'A-8'	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	   Ⓝ「⇧ 8」	「<8>」   !!! blocked by ∀*
+
+
+
+
+
+
+
+
+
+
     #ⓘ           	Compat with non-modal editors
     'C-home'     	= 'goto_file_start'            	# ⇱ line number `<n>` else file start	「  g」	「」
     'C-end'      	= 'goto_last_line'             	# ⇲ file end                         	「  e」	「」
@@ -64,44 +135,6 @@
     'A-3'	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	   Ⓝ「⎈o」	「」
     'A-4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	   Ⓝ「⎈i」	「」
 
-    #ⓘ       	Word
-    'A-d'    	= 'move_prev_word_start'       	# 🢔ω  Move prev beg of word         	   Ⓝ「 b」	「delete_word_forward」
-    'A-f'    	= 'move_next_word_end'         	# ω🢖  Move next end of word         	   Ⓝ「 e」	「move_next_word_start」
-    'A-D'    	= 'move_prev_long_word_start'  	# 🢔W Move prev beg of WORD          	  「⇧Ⓝ b」	「」
-    'A-F'    	= 'move_next_long_word_end'    	# W🢖 Move next end of WORD          	  「⇧Ⓝ e」	「」
-    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev end of WORD         	「⇧ b」   	「half_page_down」
-             	   'extend_prev_word_start',   	#                                   	 
-             	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing	 
-    'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next end of WORD          	「⇧ w」	「page_down」
-    # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD          	「⇧ w」	「page_down」
-    #        	   'extend_next_long_word_end']	#                                   	 
-    'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move prev beg of WORD         	   「⇧ b」	「」
-    'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next end of WORD          	「⇧ w」   	「」
-    'A-left' 	= 'move_prev_word_end'         	# ⤝ω Move prev end of word          	≝ⓘ「⎇◀」  	「move_prev_word_end」
-    'A-right'	= 'move_next_word_start'       	# ω⤞ Move next beg of word          	≝ⓘ「⎇▶」  	「move_next_word_start」
-    # 'A-d'  	= 'move_prev_word_end'         	# ⤝ω Move prev end of word          	ⓘ「⎇b」   	「」
-    # 'A-f'  	= 'move_next_word_start'       	# ω⤞ Move next beg of word          	ⓘ「⎇f」   	「」
-
-    #ⓘ     	Line
-    # 'A-G'	= 'goto_line'   	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧Ⓝ g」	「」
-    'A-G'  	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
-    'A-:'  	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
-
-    #ⓘ   	Block
-    'A->'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	Ⓝ「⇧ [」	「indent」
-    'A-?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	Ⓝ「⇧ ]」	「rsearch」
-
-    'A-r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	Ⓝ「 ⎇.」	「replace」
-
-    #ⓘ   	Find
-    'A-w'	= 'find_next_char'  	# 🔎   Find       next     char           	Ⓝ「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'A-W'	= 'find_prev_char'  	# 🔍   Find       previous char           	「⇧Ⓝ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-S'	= 'rsearch'         	# 🔍𝖗 for previous regex pattern          	Ⓝ「⇧ /」   	「split_selection」
-    'A-s'	= 'search'          	# 🔎𝖗 for          regex pattern          	「⇧Ⓝ  /」  	「select_regex」
-    'A-.'	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	   Ⓝ「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    'A-/'	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   Ⓝ「  n」	「search」
-    'A-8'	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	   Ⓝ「⇧ 8」	「<8>」   !!! blocked by ∀*
-
   #ⓘ Select ——————————————————————————————————————————————————————————————————————
     'A-e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web)	「  v」	「move_next_word_end」 <i class='fa fa-arrows'></i>
 
@@ -116,6 +149,13 @@
 
     'C-g'  	= 'save_selection'	# 🖈 Save the current selection to the jumplist	Ⓝ「  ⎈s」	「」
     # 'A-G'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	Ⓝ「  ⎈s」	「」
+
+
+
+
+
+
+
 
 
     'A-E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯	「⇧Ⓝ  x」	「move_next_long_word_end」
@@ -237,6 +277,11 @@
     'C-,'  	= 'increment'      	# ⊕ o̟ Increment object/number under cursor	「 ⎈a」 	「」 <span class='cd'>o&#799;</span> !!!fails
     # 'C-r'	= 'insert_register'	# 📋r Paste register                        	ⓘ「 ⎈r」	「insert_register」
     'C-i'  	= 'completion'     	# ⎁ Autocomplete                           	「   」 	「」
+
+    #ⓘ Shell	                 	 
+    'A-|'   	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧Ⓝ \」	「shell_pipe」
+    # "A-\\"	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	Ⓝ「 ⎇\」	「」
+    # 'A-|' 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧Ⓝ⎇\」	「shell_pipe_to」
 
     #'A-`'	= ''                   	# ☰𝔸𝕒 Case conversion mode	Ⓝ「  」  	「switch_to_lowercase」 !!!missing aliases
     'A-⎈' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
