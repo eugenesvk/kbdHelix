@@ -23,7 +23,8 @@ if tomlkit_spec is None:
   print(f"@chezmoi helix: tomlkit missing, aborting")
   exit()
 
-from sys           	import stdin
+from os            	import fdopen
+from sys           	import stdin,stdout
 from pathlib       	import Path
 from configparser  	import ConfigParser as cfgParser
 from tomlkit       	import dumps
@@ -125,5 +126,6 @@ for mode in cfg_def_alt["keys"]:
 for mode in cfg_def["keys"]:
   cfg_def["keys"][mode] = dictMergeDeep(cfg_def["keys"][mode], cfg_def_alt["keys"][mode])
 
-print(dumps(cfg_def),end='')
-# print(dumps(cfg_def_alt),end='')
+stdout = fdopen(stdout.fileno(),'w',buffering=1,newline='\n') # line_buffer
+stdout.write(dumps(cfg_def))
+# stdout.write(dumps(cfg_def_alt))
