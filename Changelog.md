@@ -21,6 +21,24 @@ All notable changes to this project will be documented in this file
   <!-- - __Security__ -->
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
+  - __Added__
+    + more case conversion commands
+    + block comment command
+    + add a more convenient way to exit insert mode on key hold (workaround with an external remapping tool)
+    + line swap commands
+    + cut selection stub commands
+    + new 23.05 commands
+    + new modify config script: allows converting config using custom keymap
+  - __Changed__
+    + uncomment default commands so that cheatsheets can still read them from a single config file
+    + replace default chezmoi template delimiters from `◊◊` to smaller `‹›`
+    + left/right insertion icons to symmetrical ⤹⎀ ⎀⤸
+    + ⤝start/end⭲ symbols
+    + line up/down commands to the new defaults using visual lines
+    + move physical line up/down (ignore wrap) to GoTo
+    + align normal and select mode files
+  - __Fixed__
+    + word move naming mistake
 
 [0.4.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.4.0
 ## [0.4.0]
