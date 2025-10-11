@@ -25,7 +25,7 @@ All notable changes to this project will be documented in this file
 [0.4.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.4.0
 ## [0.4.0]
   - __Added__
-    + :sparkles: [chezmoi](chezmoi.io/) templates to generate config to avoid repeating sections like Space mode and edit each mode in a smaller separate config file instead of one huge config
+    + :sparkles: [chezmoi](https://www.chezmoi.io) templates to generate config to avoid repeating sections like Space mode and edit each mode in a smaller separate config file instead of one huge config
     + :sparkles: F1 help mode stub
     + :sparkles: new commands added to helix in versions 22.08, 22.12, 23.03
         - Ⓝ<kbd>⎈</kbd><kbd>l</kbd> ⏾Suspend job (`suspend`)
