@@ -250,9 +250,9 @@
     'S-ret'      	= ['open_below','normal_mode']       	# ⭣␤ Open new line below sel   	「  o」	「」
     'ret'        	= ['open_above','normal_mode']       	# ⭡␤ Open new line above sel   	「⇧ o」	「」
     'C-ret'      	= ':reflow'                          	# ↪ Hard-wrap selected lines ䷖↪	「   」	「」
-    'C-/'        	= 'toggle_comments'                  	# // un-/comment sels          	「 ⎈c」	「」 !!!fail
-    # 'C-?'      	= 'toggle_comments_block'            	# /* un-/comment sels (block)  	「 ⎈c」	「」 !!!missing
-    #            	line                                 	                               	     	 
+    'C-/'        	= 'toggle_comments'                  	# // un-/comment sels          	「 ⎈c」	「」
+    'C-?'        	= 'toggle_block_comments'            	# /* un-/comment sels (block)  	「␠⇧c」	「」
+    'C-A-/'      	= 'toggle_line_comments'             	# /━ un-/comment sels (line )  	「␠⎇c」	「」
     'C-J'        	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓               	「 」  	「」!!! not implemented yet
                  	   'delete_selection',               	#                              	     	 github.com/helix-editor/helix/issues/2245
                  	   'paste_after']                    	#                              	     	 
@@ -337,7 +337,8 @@
 
   #Ⓝ   	Misc                        	 
   'z'  	= 'toggle_comments'         	# // un-/comment sels                         	「 ⎈c」	「☰👁」
-  # 'Z'	= 'toggle_comments_block'   	# /* un-/comment sels (block)                 	「 」  	「」 !!!missing command
+  'A-z'	= 'toggle_line_comments'    	# /━ un-/comment sels (line )                 	「␠⎇c」	「」
+  'Z'  	= 'toggle_block_comments'   	# /* un-/comment sels (block)                 	「␠⇧c」	「」
   'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under ‸cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
   'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under ‸cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
   '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                        	「」   	「」
