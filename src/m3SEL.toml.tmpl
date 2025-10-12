@@ -207,12 +207,12 @@
     #'5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!!not implemented	「  」 	「<5>」
     #'%' 	= 'select_all'             	# ∀▋ Select entire file                                    	「⇧ 5」	「select_all」
 
-    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
-    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
+    'A-k'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
+    'A-i'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
     #    	                               	                                                            	         
     #    	                               	                                                            	         
-    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
-    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「flip_selections」
+    'A-j'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-l'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「」
     'S-m'	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
     '<'  	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
     'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「split_selection_on_newline」
@@ -230,7 +230,7 @@
     'A-m'   	= 'rotate_selections_forward'   	# ⟳ Rotate main selection forward  (↓ with many lines)   	「⇧ 0」 	「」
     'A-,'   	= 'rotate_selections_backward'  	# ⟲ Rotate main selection backward (↑ with many lines)   	「⇧ 9」 	「remove_primary_selection」
     'A-u'   	= 'remove_primary_selection'    	# ᵡ         the primary selection                        	「 ⎇,」 	「earlier」
-    'A-i'   	= 'keep_primary_selection'      	# ᵡ∀ all but the primary selection (keep only)           	「  ,」 	「」
+    'A-;'  	= 'keep_primary_selection'      	# ᵡ∀ all but the primary selection (keep only)           	「  ,」 	「flip_selections」
     'A-U'   	= 'no_op'                       	# ᵡᵡ undo remove selection                               	「⇧ ⎇,」	「earlier」 !!!missing
     'S-k'   	= 'keep_selections'             	# ᵏ𝖗 selections not matching the regex (keep)            	「⇧ k」 	「keep_selections」
     'S-l'   	= 'remove_selections'           	# ᵡ𝖗 selections     matching the regex                   	「⇧⎇k」 	「」
