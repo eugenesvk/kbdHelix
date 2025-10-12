@@ -110,14 +110,14 @@
     'a'     	= 'extend_to_line_start'	# ⤝▋ Extend     line start	「Home」	「」
     'S-a'   	= 'extend_to_line_end'  	# ▋⭲ Extend     line end  	「End」 	「」
 
-    #Ⓢ   	Block
-    #'S-.'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「」
-    #'S-/'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「」
-    # !!! remove after .Repeat can be rebound
-    'S-['	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」	「」
-    'S-]'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」	「」
-    'S-.'	= 'extend_search_prev' 	# 🢔◎ ◎͔ Extend previous search match	「⇧ n」 	「」
-    'S-/'	= 'extend_search_next' 	# ◎🢖 ◎͕ Extend next     search match	「  n」 	「」
+    #Ⓢ    	Block
+    #'>'  	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「」
+    #'?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「」
+    #!!! remove after .Repeat can be rebound
+    '{'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」	「」
+    '}'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」	「」
+    '>'	= 'extend_search_prev' 	# 🢔◎ ◎͔ Extend previous search match	「⇧ n」 	「」
+    '?'	= 'extend_search_next' 	# ◎🢖 ◎͕ Extend next     search match	「  n」 	「」
 
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
@@ -184,28 +184,28 @@
     'C-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
     'S-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
 
-    'S-j' 	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
-    #     	                           	                                                                 	         
-    'S-e' 	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯       	「⇧ x」	「move_next_long_word_end」
-    '5'   	= 'merge_selections'       	# ▋&▋ Merge all selections into one with all ranges              	「⎇ -」	「」
-    'A-e' 	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」	「」
-      ,   	 'move_next_word_end'      	# 1st since word_start command might select previous word
-      ,   	 'move_prev_word_start'    	#
-      ,   	 'search_selection'        	#
-      ,   	 'make_search_word_bounded'	#
-      ,   	 'extend_search_next'      	#
-      ]   	                           	# = Sublime's find_under_expand
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #     	                           	                                                           	         
-    #""   	= 'expand_selection'       	# Expand selection to parent syntax node !!!pick a key 🌳TS 	「   」	「expand_selection」
-    #'5'  	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!!not implemented	「  」 	「<5>」
-    #'S-5'	= 'select_all'             	# ∀▋ Select entire file                                    	「⇧ 5」	「select_all」
+    'S-j'	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
+    #    	                           	                                                                 	         
+    'S-e'	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯       	「⇧ x」	「move_next_long_word_end」
+    '5'  	= 'merge_selections'       	# ▋&▋ Merge all selections into one with all ranges              	「⎇ -」	「」
+    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」	「」
+      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,  	 'move_prev_word_start'    	#
+      ,  	 'search_selection'        	#
+      ,  	 'make_search_word_bounded'	#
+      ,  	 'extend_search_next'      	#
+      ]  	                           	# = Sublime's find_under_expand
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #    	                           	                                                           	         
+    #""  	= 'expand_selection'       	# Expand selection to parent syntax node !!!pick a key 🌳TS 	「   」	「expand_selection」
+    #'5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!!not implemented	「  」 	「<5>」
+    #'%' 	= 'select_all'             	# ∀▋ Select entire file                                    	「⇧ 5」	「select_all」
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
@@ -214,7 +214,7 @@
     'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
     'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「flip_selections」
     'S-m'	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
-    'S-,'	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
     'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「split_selection_on_newline」
     'S-n'	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                                   	「 ⎇s」	「」
@@ -334,12 +334,12 @@
 
 
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
-    'S-9' 	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward                       	「⇧⎇9」	「rotate_selections_backward」
-    'S-0' 	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward                        	「⇧⎇0」	「rotate_selections_forward」
-    'C-9' 	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents                                     	「」   	「」
-    '7'   	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*                 	「⇧ 7」	「<7>」
-    #'S-7'	= 'align_selections'                  	# ⥂ Align selection in columns                               	「⇧ 7」	「align_selections」
-    #'='  	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	「  =」	「format_selections」
+    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward                       	「⇧⎇9」	「rotate_selections_backward」
+    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward                        	「⇧⎇0」	「rotate_selections_forward」
+    'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents                                     	「」   	「」
+    '7'  	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*                 	「⇧ 7」	「<7>」
+    #'&' 	= 'align_selections'                  	# ⥂ Align selection in columns                               	「⇧ 7」	「align_selections」
+    #'=' 	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	「  =」	「format_selections」
 
   #Ⓢ     	Misc                     	 
   'z'    	= 'toggle_comments'      	# // un-/comment sels        	「 ⎈c」	「☰👁」
@@ -362,9 +362,9 @@
     #'S-\\'  	= 'shell_pipe'         	# Pipe each selection through shell command, replacing with output	「⇧ \」 	「shell_pipe」
     "A-\\"   	= 'shell_pipe_to'      	# Pipe each selection into    shell command, ignoring       output	「 ⎇\」 	「」
     #'A-S-\\'	= 'shell_pipe_to'      	# Pipe each selection into    shell command, ignoring       output	「⇧⎇\」 	「shell_pipe_to」
-    #'S-1'   	= 'shell_insert_output'	# 🢔$ Run shell command, inserting output before each selection    	「⇧  1」	「shell_insert_output」
-    'S-2'    	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection    	「⇧⎇1」 	「」
-    #'A-S-1' 	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection    	「⇧⎇1」 	「shell_append_output」
+    #'!'     	= 'shell_insert_output'	# 🢔$ Run shell command, inserting output before each selection    	「⇧  1」	「shell_insert_output」
+    '@'    	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection    	「⇧⎇1」 	「」
+    #'A-!'   	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection    	「⇧⎇1」 	「shell_append_output」
 
 
   ##Ⓢ ☰Minor modes
