@@ -102,14 +102,14 @@
     #       	                   	                  	         
     #       	                   	                  	         
 
-    #Ⓝ    	Block
-    #'S-.'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
-    #'S-/'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「rsearch」
-    # !!! remove after .Repeat can be rebound
-    'S-['	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」  	「」
-    'S-]'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」  	「」
-    'S-.'	= 'search_prev'        	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「indent」
-    'S-/'	= 'search_next'        	# ◎🢖 ◎͕ Select next     search match	   「  n」	「rsearch」
+    #Ⓝ  	Block
+    #'>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
+    #'?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「rsearch」
+    #!!! remove after .Repeat can be rebound
+    '{'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」  	「」
+    '}'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」  	「」
+    '>'	= 'search_prev'        	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「indent」
+    '?'	= 'search_next'        	# ◎🢖 ◎͕ Select next     search match	   「  n」	「rsearch」
 
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
@@ -125,8 +125,8 @@
     #'S-n'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
     # 'n' 	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
     '8'   	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
-    'S-8' 	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
-    #'S-8'	= ['select_mode'      	#
+    '*'   	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
+    #'*'  	= ['select_mode'      	#
     #  ,  	'move_prev_word_start'	#
     #  ,  	'move_next_word_end'  	#
     #  ,  	'search_selection'    	#
@@ -176,27 +176,27 @@
     'C-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「」
     'S-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「goto_line」
 
-    'S-j' 	= 'extend_line_below'      	# ⮒ Select current line/extend to next    if selected	「  x」 	「join_selections」
-    'A-r' 	= 'extend_line'            	# ⭿ Select current line/extend to another if selected	「  」  	「」
-    'S-e' 	= 'extend_to_line_bounds'  	# ━ Extend sel to line bounds (line-wise sel)⎯       	「⇧  x」	「move_next_long_word_end」
-    'A-E' 	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev                 	「   」 	「」
-      ,   	 'move_next_word_end'      	# 1st since word_start command might select previous word
-      ,   	 'move_prev_word_start'    	#
-      ,   	 'search_selection'        	#
-      ,   	 'make_search_word_bounded'	#
-      ,   	 'extend_search_prev'      	#
-      ,   	 'normal_mode'             	#
-      ]   	                           	# = Sublime's find_under_expand
-    'A-e' 	= ['select_mode'           	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
-      ,   	 'move_next_word_end'      	# 1st since word_start command might select previous word
-      ,   	 'move_prev_word_start'    	#
-      ,   	 'search_selection'        	#
-      ,   	 'make_search_word_bounded'	#
-      ,   	 'extend_search_next'      	#
-      ,   	 'normal_mode'             	#
-      ]   	                           	# = Sublime's find_under_expand
-    #'5'  	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
-    #'S-5'	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
+    'S-j'	= 'extend_line_below'      	# ⮒ Select current line/extend to next    if selected	「  x」 	「join_selections」
+    'A-r'	= 'extend_line'            	# ⭿ Select current line/extend to another if selected	「  」  	「」
+    'S-e'	= 'extend_to_line_bounds'  	# ━ Extend sel to line bounds (line-wise sel)⎯       	「⇧  x」	「move_next_long_word_end」
+    'A-E'	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev                 	「   」 	「」
+      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,  	 'move_prev_word_start'    	#
+      ,  	 'search_selection'        	#
+      ,  	 'make_search_word_bounded'	#
+      ,  	 'extend_search_prev'      	#
+      ,  	 'normal_mode'             	#
+      ]  	                           	# = Sublime's find_under_expand
+    'A-e'	= ['select_mode'           	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,  	 'move_prev_word_start'    	#
+      ,  	 'search_selection'        	#
+      ,  	 'make_search_word_bounded'	#
+      ,  	 'extend_search_next'      	#
+      ,  	 'normal_mode'             	#
+      ]  	                           	# = Sublime's find_under_expand
+    #'5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
+    #'%' 	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below) 	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above) 	「⇧⎇c」	「」
@@ -205,7 +205,7 @@
     'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
     'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「flip_selections」
     'S-m'	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋      	「⎇ i」	「」
-    'S-,'	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
+    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
     'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels               	「  s」	「split_selection_on_newline」
     'S-n'	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                               	「 ⎇s」	「」
@@ -326,11 +326,11 @@
      ,   	  "insert_at_line_end"]       	#                                	  	 
 
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
-    'S-9'	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
-    'S-0'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
+    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
+    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
     'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents              	「」    	「」
     '7'  	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」 	「<7>」
-    'S-7'	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
+    '&'  	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
     '='  	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
 
   #Ⓝ   	Misc                        	 
@@ -342,7 +342,7 @@
   '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                        	「」   	「」
   'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                              	「⎈z」 	「」
 
-  'S-4' 	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
+  '$'   	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
   'C-F5'	= ':redraw'        	# ⎚ clear re-render the UI                                                	「」    	「」
 
   #Ⓝ space mode
@@ -352,9 +352,9 @@
     #'S-\\'  	= 'shell_pipe'         	# | Pipe each sel through shell command, replacing with output 	≝「⇧ \」	「shell_pipe」
     "A-\\"   	= 'shell_pipe_to'      	# |ᵡ Pipe each sel into    shell command, ignoring       output	「⇧⎇\」 	「」
     #'A-S-\\'	= 'shell_pipe_to'      	#   Pipe each sel into    shell command, ignoring       output 	≝「⇧⎇\」	「shell_pipe_to」
-    'S-1'    	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel           	「⇧  1」	≝「shell_insert_output」
-    'S-2'    	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	「」
-    'A-S-1'  	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	≝「shell_append_output」
+    '!'      	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel           	「⇧  1」	≝「shell_insert_output」
+    '@'      	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	「」
+    'A-!'    	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	≝「shell_append_output」
 
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
