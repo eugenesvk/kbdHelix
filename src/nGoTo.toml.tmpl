@@ -2,7 +2,7 @@
 #‹- /* m=mode i=icon k=key */ -›
 #‹/* key	= command                   	# Icon Comment                             	≝「key」 	「	cmd」 */ -›
   [keys.	'#‹.m›'.'#‹.k›']            	##‹.i› Goto mode Jumps to various locations	「$!」   	「」
-    'g' 	= 'goto_word'               	# 𝕒𝕓 label@word                            	  「  w」	「goto_file_start」
+    #'g'	= 'goto_word'               	# 𝕒𝕓 label@word                            	  「  w」	「goto_file_start」 needs extend_to_word in Select
     "'" 	= 'jumplist_picker'         	# ☰🖈 List jumplist                         	「☰␠j」  	「」
     't' 	= 'goto_file_start'         	# ━№⇱ line number `<n>` else file beg ⎯⭱   	  「  g」	「goto_window_top」
     'b' 	= 'goto_last_line'          	# ⇲ file end   ⭳                           	  「  e」	「goto_window_bottom」
