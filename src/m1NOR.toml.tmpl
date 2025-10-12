@@ -55,6 +55,12 @@
     'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all sels to clipboard (joined)	「☰␠ y」 	「change_selection_noyank」 ⨝📋 ∀❚ ∀▋ <i class='fa fa-clipboard'></i>
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
+    # '?'   = 'smart_tab'               # 🧠⭾
+    #                                       W␠ ⎀: insert ⭾ as normal
+    #                                   ‹nonW␠ ⎀: run `move_parent_node_end`
+    'tab'   = 'move_parent_node_end'    # 🧠⭾☋ Move to parent node's end 🌳TS 「」  「」
+    'S-tab' = 'move_parent_node_start'  # 🧠⭾☊                       beg 🌳TS 「」  「」
+
     #    	Cursor@Home
     'j'  	= 'move_visual_line_down'	# ▼                             	「h/◀」   	「move_visual_line_down」
     'k'  	= 'move_visual_line_up'  	# ▲                             	「j/▼」   	「move_visual_line_up」
