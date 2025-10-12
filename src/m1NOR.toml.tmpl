@@ -62,17 +62,18 @@
     'S-tab' = 'move_parent_node_start'  # 🧠⭾☊                       beg 🌳TS 「」  「」
 
     #    	Cursor@Home
-    'j'  	= 'move_visual_line_down'	# ▼                             	「h/◀」   	「move_visual_line_down」
-    'k'  	= 'move_visual_line_up'  	# ▲                             	「j/▼」   	「move_visual_line_up」
-    'l'  	= 'move_char_left'       	# ◀                             	「k/▲」   	「move_char_right」
-    ';'  	= 'move_char_right'      	# ▶                             	「l/▶」   	「collapse_selection」
+    'k'  	= 'move_visual_line_down'	# ▼                             	「h/◀」   	「move_visual_line_up」
+    'i'  	= 'move_visual_line_up'  	# ▲                             	「j/▼」   	「insert_mode」
+    'j'  	= 'move_char_left'       	# ◀                             	「k/▲」   	「move_visual_line_down」
+    'l'  	= 'move_char_right'      	# ▶                             	「l/▶」   	「move_char_right」
     'm'  	= 'half_page_down'       	# ⤈ Move half page down         	   「 ⎈d」	「☰🧩」
     ','  	= 'half_page_up'         	# ⤉ Move half page up           	   「 ⎈u」	「keep_primary_selection」
     'C-j'	= 'page_down'            	# ⇟ Move      page down         	   「 ⎈d」	「」
     'C-k'	= 'page_up'              	# ⇞ Move      page up           	   「 ⎈u」	「」
     'a'  	= 'extend_to_line_start' 	# ⤝▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
     'A'  	= 'extend_to_line_end'   	# ▋⭲ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
-    'A-A'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel	「」      	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
+    #    	 
+    'A-A'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel	「」	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
 
     #Ⓝ       	word !!! sometimes prev≠next by a space
     'f'      	= 'move_next_word_end'         	# ω⭲ Move next end of word  	「  e」	「find_next_char」
@@ -308,7 +309,7 @@
 
     # 'b'	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」	「move_prev_word_start」 !!!missing
     #    	                         	                              	         
-    'i'  	= 'insert_mode'          	# ⤹⎀ Insert before sel        	≝「  i」	「insert_mode」
+    ';'  	= 'insert_mode'          	# ⤹⎀ Insert before sel        	≝「  i」	「collapse_selection」
     'o'  	= 'append_mode'          	# ⎀⤸ Insert after sel (append)	「  a」 	「open_above」
     'I'  	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」 	「insert_at_line_start」
     'O'  	= 'open_below'           	# ⭣␤ Open new line below sel  	「  o」 	「insert_at_line_end」
