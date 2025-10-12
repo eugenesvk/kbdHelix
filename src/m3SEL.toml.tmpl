@@ -5,6 +5,23 @@
   'e'   	= 'normal_mode'     	#	「  v」	「extend_next_word_end」
   #Ⓢ Test ——————————————————————————————————————————————————————————————————————
   #Ⓢ Free ——————————————————————————————————————————————————————————————————————
+  # ; likely taken by fallthrough insert_mode from normal?
+  #          90 -=  ⇧   #     * ) _+
+  #             []  ⇧    R
+  #              \  ⇧
+  #     b           ⇧
+  #`12345 67890 -=  ⇧~!@#$% ^&*() _+   ⎇
+  # qwert yuiop []  ⇧ QWERT YUIOP      ⎇
+  # asdfg hjkl; '\  ⇧ ASDFG HJKL: "|   ⎇
+  # zxcvb nm,./     ⇧ ZX VB NM<>?      ⎇
+  #`12345 67890 -=  ⇧~!@#$% ^&*() _+  ⎈
+  # qwert yuiop []  ⇧ QWERT YUIOP     ⎈
+  # asdfg hjkl; '\  ⇧ ASDFG HJKL: "|  ⎈
+  # zxcvb nm,./     ⇧ ZX VB NM<>?     ⎈
+  #`12345 67890 -=  ⇧~!@#$% ^&*() _+  ⎈⎇
+  # qwert yuiop []  ⇧ QWERT YUIOP     ⎈⎇
+  # asdfg hjkl; '\  ⇧ ASDFG HJKL: "|  ⎈⎇
+  # zxcvb nm,./     ⇧ ZX VB NM<>?     ⎈⎇
 
   # 'A'	= ['save_selection','select_all']	# 🖈∀▋	「⇧   」	「」
 
