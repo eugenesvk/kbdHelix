@@ -95,19 +95,17 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
     insert	= "bar"      	# |block	|
     select	= "underline"	# |block	|
 
-  # [editor.whitespace]
-    # render = "all"
-  [editor.whitespace.render]
-    space  	= "none"	#|all¦none	|
-    tab    	= "none"	#|all¦none	|
-    newline	= "none"	#|all¦none	|
-    nbsp   	= "all" 	#|all¦none	|
+  [editor.whitespace.render] #≝none all or a table with the same
+    space  	= "none"	#
+    tab    	= "none"	#
+    newline	= "none"	#
+    nbsp   	= "all" 	#        no-break space
   [editor.whitespace.characters]
-    space  	= '·'	#|·|
-    nbsp   	= '⍽'	#|⍽|
-    tab    	= '⇥'	#|→|
-    newline	= '⏎'	#|⏎|
-    tabpad 	= '·'	#|·| Tabs will look like "→···" (depending on tab width)
+    space  	= '·'	#·
+    nbsp   	= '⍽'	#⍽
+    tab    	= '⇥'	#→
+    newline	= '⏎'	#⏎
+    tabpad 	= '·'	#· Tabs will look like "→···" (depending on tab width)
 
   [editor.indent-guides]
     render     	= true	#|false	|true
