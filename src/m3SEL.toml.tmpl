@@ -92,12 +92,8 @@
     #         	                                 	                              	         
     'C-right' 	= 'extend_next_long_word_start'  	# W⤞ Extend next beg of WORD  	「⇧ w」  	「」
     'D'       	= 'extend_prev_long_word_start'  	# ⤝W Extend prev beg of WORD  	  「⇧ b」	「」
-    'A-D'     	= ['extend_prev_long_word_start',	# ⭰W Extend prev end of WORD  	「⇧ b」  	「」
-              	  'extend_prev_word_start',      	# !!!extend_prev_long_word_end	 
-              	  'extend_next_word_start',]     	#    missing                  	 
-    'C-left'  	= ['extend_prev_long_word_start',	# ⭰W Extend prev end of WORD  	   「⇧ b」	「」
-              	  'extend_prev_word_start',      	# !!!move_prev_long_word_end  	 
-              	  'extend_next_word_start',]     	#    extend_prev_long_word_end	 
+    'A-D'     	= 'extend_prev_long_word_end'  	# ⭰W Extend prev end of WORD	「⇧ b」   	「」
+    'C-left'  	= 'extend_prev_long_word_end'  	# ⭰W Extend prev end of WORD	   「⇧ b」	「」
     #         	                                 	                              	         
     #         	                                 	                              	         
     #         	                                 	                              	         
