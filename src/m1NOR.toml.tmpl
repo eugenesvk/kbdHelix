@@ -238,6 +238,7 @@
     #    	                         	                                                               	         
     'minus'	= 'trim_selections'             	# ✁Trim whitespace from the sel                    	「⇧ -」 	「」
     '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive sels ⨝                       	「⇧⎇ -」	「trim_selections」
+    'A-minus'	= 'merge_selections'            	# ⛘ Merge all selections into one with all ranges  	「⎇ -」 	「」
     # '+'  	= 'dupe_selections'             	# 🗐Duplicate sel (currently nonfunctional/disabled)	「⇧ =」 	「dupe_selections」
 
 
@@ -332,8 +333,9 @@
      ,   	  "insert_at_line_end"]       	#                                	  	 
 
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
-    '('	= 'rotate_selection_contents_backward'	# ⟲ Rotate sel contents backward      	「⇧⎇9」 	「rotate_selections_backward」
-    ')'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate sel contents forward       	「⇧⎇0」 	「rotate_selections_forward」
+    '('	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
+    ')'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
+    'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents              	「」    	「」
     '7'	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」 	「<7>」
     '&'	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
     '='	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
