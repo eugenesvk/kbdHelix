@@ -30,10 +30,10 @@
     'S-tab' = 'extend_parent_node_start'  # 🧠⭾☊                         beg 🌳TS 「」  「」
 
     #Ⓢ   	Cursor@Home                	 
-    'j'  	= 'extend_visual_line_down'	# ▼                    	「  h」	「extend_visual_line_down」
-    'k'  	= 'extend_visual_line_up'  	# ▲                    	「  j」	「extend_visual_line_up」
-    'l'  	= 'extend_char_left'       	# ◀                    	「  k」	「extend_char_right」
-    ';'  	= 'extend_char_right'      	# ▶                    	「  l」	「」
+    'k'  	= 'extend_visual_line_down'	# ▼                    	「  h」	「extend_visual_line_up」
+    'i'  	= 'extend_visual_line_up'  	# ▲                    	「  j」	「insert_mode」
+    'j'  	= 'extend_char_left'       	# ◀                    	「  k」	「extend_visual_line_down」
+    'l'  	= 'extend_char_right'      	# ▶                    	「  l」	「extend_char_right」
     'm'  	= 'half_page_down'         	# ⤈ Move half page down	「 ⎈d」	「☰🧩」
     ','  	= 'half_page_up'           	# ⤉ Move half page up  	「 ⎈u」	「keep_primary_selection」
     'C-j'	= 'page_down'              	# ⇟ Move      page down	「 ⎈d」	「」
@@ -297,7 +297,7 @@
 
     # 'b'	= 'N/Arepeat_last_change' 	# ∞ Repeat last change !!! no command yet                   	「⇧  .」	「move_prev_word_start」
     # '.'	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
-    # 'i'	= 'insert_mode'           	# ⤹⎀ Insert before selection                                	「  i」 	「insert_mode」
+    # ';'	= 'insert_mode'           	# ⤹⎀ Insert before selection                                	「  i」 	「」
     'o'  	= 'append_mode'           	# ⎀⤸ Insert after selection (append)                        	「  a」 	「open_above」
     'I'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
     'O'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「insert_at_line_end」
