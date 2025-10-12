@@ -173,7 +173,6 @@
   #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" .m "i" (print .i " ☰🗔@☰␠") "k" .k "ksp" ".'w'" "cfg" .cfg) ›
 
   [keys	.'#‹.m›'.'#‹.k›'.'u']       	##‹.i› 🌐 ☰ⓤ 🌳TS, 🄻LSP, 🄳DAP, and various ones
-    'q'	= 'no_op'                   	#                                   	「  」  	「」
     'w'	= 'no_op'                   	#                                   	「  」  	「」
     'u'	= 'remove_primary_selection'	# ×          primary sel            	「 ⎇,」 	「」
     ';'	= 'keep_primary_selection'  	# ×∀ all but primary sel (keep only)	「  ,」 	「」
@@ -195,6 +194,7 @@
     'v'	= 'goto_next_class'         	# τ🢖 Type definition    next        	「⧛  t」	「」!!!→sticky
     't'	= 'goto_prev_test'          	# 🢔🧪 Test               previous    	「⧛⇧ t」	「」 !!!→sticky
     'y'	= 'goto_next_test'          	# 🧪🢖 Test               next        	「⧚⇧ t」	「」 !!!→sticky
+    'q'	=':tree-sitter-highlight-name' # 🔬ℹ theme scope name @ ⎀          「」  「」
     #  	 🄻LSP                       	                                    	      	 
     "'"	= ':format'                 	# ℱ∀ Format the file                	「  」  	「」
     'p'	= 'format_selections'       	# ℱ  Format sel                     	「  =」 	「」
