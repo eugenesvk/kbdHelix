@@ -20,14 +20,12 @@
     '~'  	= "no_op"           	#                        	「⇧   」	「switch_case」
     'A-`'	= "no_op"           	#                        	「   」 	「switch_to_uppercase」
     # 'X'	= 'change_selection'	# Δ (delete,enter Insert)	「⇧  c」	「extend_to_line_bounds」
-    # 'Z'	=  'N/A'            	# ☰👁ₛ                    	「   」 	「view mode sticky」
   #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
     # 'i'	= 'insert_mode'	# ⤹⎀ Insert before sel                        	「  i」	「insert_mode」
     # 'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web)	「  v」	「move_next_word_end」  <i class='fa fa-arrows'></i>
   #Ⓝ Minor modes / menu dialogs ———————————————————————————————————————————————————————
     #'p'    	                   	 ☰👁 View mode            	Ⓝ「  z」  	「paste_after」
     #'P'    	                   	 ☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
-    #'Z'    	                   	 ☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
     #'g'    	                   	 ⓖ☰⮊ Goto mode           	  Ⓝ「  g」	「」
     #'n'    	                   	 ☰🧩  Match mode          	Ⓝ「  m」  	「」 ☰<i class='fa fa-puzzle-piece'></i>
     #'C-w'  	                   	 ☰🗔  Window mode         	  Ⓝ「 ⎈w」	「」
@@ -369,7 +367,6 @@
   #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰👁" "k" "p" "cfg" .cfg) ›
     # 'p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
   #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "P" "cfg" .cfg) ›
-  #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ 👁ₛ" "k" "Z" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ⓖ☰⮊" "k" "g" "cfg" .cfg) ›
 
