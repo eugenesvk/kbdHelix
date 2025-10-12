@@ -139,3 +139,9 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
     # 'display-signature-help-docs'       	=	true 	# | true 	| Docs under signature help popup
     # 'snippets'                          	=	true 	# | true 	| Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set
     # 'goto-reference-include-declaration'	=	true 	# | true 	| Include declaration in the goto references popup
+
+  [editor.smart-tab] # navigating and editing using tab key
+    'enable'        	=  true 	#≝T  ⇧⭾ to explicitly insert ⭾
+    #               	        	    W␠ ⎀: insert ⭾ as normal
+    #               	        	‹nonW␠ ⎀: run `move_parent_node_end`
+    'supersede-menu'	=  false	#≝F block ⭾ for menu navigation, always use for smart tabs
