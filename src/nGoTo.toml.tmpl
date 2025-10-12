@@ -10,8 +10,8 @@
     's' 	= 'goto_line_end'           	# ⭲ line end                               	  「  l」	「goto_first_nonwhitespace」
     'i' 	= 'move_line_up'            	# ━▲ line up   (ignore wrap)               	  「  k」	「goto_implementation」
     'k' 	= 'move_line_down'          	# ━▼ line down (ignore wrap)               	  「  j」	「goto_line_end」
-    'j' 	= 'goto_line_start'         	# ⤝ line beg                               	  「  h」	「move_line_down」
-    'l' 	= 'goto_line_end'           	# ⭲ line end                               	  「  l」	「goto_line_end」
+    'j' 	= 'goto_line_start'         	# ⤝ line beg                               	  「  h」	「move_line_down」 !!!missing ∀* MoveBySentenceUp
+    'l' 	= 'goto_line_end'           	# ⭲ line end                               	  「  l」	「goto_line_end」 !!!missing ∀* MoveBySentenceDown
     'h' 	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph beg                    	  「 [p」	「goto_line_start」
     ';' 	= 'goto_next_paragraph'     	# ¶🢖 Move paragraph end                    	  「 ]p」	「」
     '.' 	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph beg                    	  「 [p」	「goto_last_modification」
