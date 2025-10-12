@@ -75,12 +75,12 @@
     #ⓘ     	Line
     # 'A-G'	= 'goto_line'   	# ⮊⎯ go to line # <n> (set <n> in advance), use Ⓒ<n>⏎	「⇧Ⓝ g」	「」
     'A-G'  	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
-    'A-:'  	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
-    #        	                               	                                    	        	 
+    'A-S-;'	= 'command_mode'	# Ⓒ Enter command mode                               	「⇧Ⓝ ;」	「」
+    #      	                	                                                     	      	 
 
-    #ⓘ   	Block
-    'A->'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	Ⓝ「⇧ [」	「indent」
-    'A-?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	Ⓝ「⇧ ]」	「rsearch」
+    #ⓘ     	Block
+    'A-S-.'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	Ⓝ「⇧ [」	「indent」
+    'A-?'  	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	Ⓝ「⇧ ]」	「rsearch」
 
 
 
@@ -170,11 +170,11 @@
       ,    	 'insert_mode'             	#
       ]    	                           	# = Sublime's find_under_expand
     'A-J'  	= 'extend_line_below'      	# ⮒ Select current line, if already selected, extend to next line	Ⓝ「  x」	「join_selections」
-    # 'A-5'	= 'select_paragraph'       	# ¶▋ Select this paragraph                                       	Ⓝ「   」	「<5>」  !!!missing ∀* !!!missing command
-    'A-%'  	= 'select_all'             	# ∀▋ Select entire file                                          	「⇧Ⓝ 5」	「select_all」
+    #'A-5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph                                       	Ⓝ「   」	「<5>」  !!!missing ∀* !!!missing command
+    'A-S-5'	= 'select_all'             	# ∀▋ Select entire file                                          	「⇧Ⓝ 5」	「select_all」
 
     'A-M'     	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection    🌳TS ⸙₋          	Ⓝ「 ⎇i」	「」
-    'A-<'     	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node 🌳TS ⸙₊          	Ⓝ「 ⎇o」	「」
+    'A-S-,'   	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node 🌳TS ⸙₊          	Ⓝ「 ⎇o」	「」
     'A-N'     	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧Ⓝ s」	「search_prev」
     'A-S-down'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	Ⓝ「⇧ c」	「」
     'A-S-up'  	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	Ⓝ「⇧⎇c」	「」
@@ -293,7 +293,7 @@
 
     # 'A-q'	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register   	Ⓝ「  q」	「record_macro」
     # 'A-Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧Ⓝ q」 replay_macro]
-    'A-"'  	= 'select_register'	# ®  Select a register to copy/paste from                 	Ⓝ「  '<reg>」	「select_register」
+    "A-S-'"	= 'select_register'	# ®  Select a register to copy/paste from                 	Ⓝ「  '<reg>」	「select_register」
 
     'A-I'	= 'open_above'           	# ⭡␤ Open new line above selection	「⇧Ⓝ o」 	「insert_at_line_start」
     'A-O'	= 'open_below'           	# ⭣␤ Open new line below selection	Ⓝ「  o」 	「insert_at_line_end」
@@ -308,18 +308,18 @@
     'C-z'	= 'undo'                 	# ⎌ Undo change                   	Ⓝ「  u」 	「」
     'C-Z'	= 'redo'                 	# ↷ Redo change !!!fail           	「⇧Ⓝ u」 	「」
 
-    #ⓘ   	Select manipulation ————————————————————————————————————————————————————————————————————
-    'A-('	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward                       	「⇧Ⓝ⎇9」	「rotate_selections_backward」
-    'A-)'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward                        	「⇧Ⓝ⎇0」	「rotate_selections_forward」
-    'A-7'	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*                 	Ⓝ「⇧ 7」	「<7>」
-    'A-&'	= 'align_selections'                  	# ⥂ Align selection in columns                               	「⇧Ⓝ 7」	「align_selections」
-    'A-='	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	Ⓝ「  =」	「format_selections」
+    #ⓘ     	Select manipulation ————————————————————————————————————————————————————————————————————
+    'A-S-9'	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward                       	「⇧Ⓝ⎇9」	「rotate_selections_backward」
+    'A-S-0'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward                        	「⇧Ⓝ⎇0」	「rotate_selections_forward」
+    'A-7'  	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*                 	Ⓝ「⇧ 7」	「<7>」
+    'A-S-7'	= 'align_selections'                  	# ⥂ Align selection in columns                               	「⇧Ⓝ 7」	「align_selections」
+    'A-='  	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	Ⓝ「  =」	「format_selections」
 
-    'A-$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each selection into shell command, keep selections where command returned 0	Ⓝ「⇧ 4」	「shell_keep_pipe」
+    'A-S-4'	= 'shell_keep_pipe'	# $ᵏ| Pipe each selection into shell command, keep selections where command returned 0	Ⓝ「⇧ 4」	「shell_keep_pipe」
 
-    #ⓘ   	Shell
-    'A-!'	= 'shell_insert_output'	# 🢔$ Run shell command, inserting output before each selection	「⇧$!」	「shell_insert_output」
-    'A-@'	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection	「⇧$!」	「」
+    #ⓘ     	Shell
+    'A-S-1'	= 'shell_insert_output'	# 🢔$ Run shell command, inserting output before each selection	「⇧$!」	「shell_insert_output」
+    'A-S-2'	= 'shell_append_output'	# $🢖 Run shell command, appending output after  each selection	「⇧$!」	「」
 
   #ⓘ Misc ——————————————————————————————————————————————————————————————————————
     'A-R' 	= 'command_palette'         	# ☰Ⓒ Command Palette  	「⇧ /」	「」
