@@ -142,10 +142,10 @@
     # 'C-j'     	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist   	「 ⎈o」	「」
     # 'C-;'     	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist   	「 ⎈i」	「」  !!!fail
 
-    '1'  	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                               	「ⓖp」	「<1>」
-    '2'  	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                               	「ⓖn」	「<2>」
-    'A-1'	= 'goto_previous_buffer'	# ⎗                                             	「ⓖp」	「」
-    'A-2'	= 'goto_next_buffer'    	# ⎘                                             	「ⓖn」	「」
+    '1'  	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                               	「ⓖp」 	「<1>」
+    '2'  	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                               	「ⓖn」 	「<2>」
+    'A-1'	= 'goto_previous_buffer'	# ⎗                                             	「ⓖp」 	「」
+    'A-2'	= 'goto_next_buffer'    	# ⎘                                             	「ⓖn」 	「」
     '3'  	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist !!!missing ∀*	「 ⎈o」	「<3>」
     '4'  	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist !!!missing ∀*	「 ⎈i」	「<4>」
     'A-3'	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist              	「 ⎈o」	「」
@@ -189,15 +189,15 @@
     #    	                           	                                                           	         
     #    	                           	                                                           	         
     #    	                           	                                                           	         
-    #    	                         	                                                               	         
+    #    	                           	                                                           	         
     # "" 	= 'expand_selection'       	# Expand selection to parent syntax node !!!pick a key 🌳TS 	「   」	「expand_selection」
     # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!!not implemented	「  」 	「<5>」
     # '%'	= 'select_all'             	# ∀▋ Select entire file                                    	「⇧ 5」	「select_all」
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
-    #    	                         	                                                               	         
-    #    	                         	                                                               	         
+    #    	                               	                                                            	         
+    #    	                               	                                                            	         
     'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS        	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
     'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「flip_selections」
     'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
@@ -268,7 +268,7 @@
                	   'delete_selection']               	#                                 	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
     'backspace'	= 'delete_char_backward'             	# ⌫                               	「I.bs」	「」
     'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside selection	「⇧ j」 	「extend_to_line_bounds」
-    #    	                         	                                                               	         
+    #          	                                     	                                  	         
 
     # 'backspace'	= 'delete_char_backward'	# ⌫c ᵡ char ←	「backspace」	「delete_char_backward」
     # 'C-h'      	= 'delete_char_backward'	# ⌫c ᵡ char ←	「C-h」      	「delete_char_backward」
@@ -321,11 +321,11 @@
 
 
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
-    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward	「⇧⎇9」	「rotate_selections_backward」
-    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward	「⇧⎇0」	「rotate_selections_forward」
-    'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents              	「」    	「」
-    '7'  	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*	「⇧ 7」	「<7>」
-    # '&'	= 'align_selections'                  	# ⥂ Align selection in columns	「⇧ 7」	「align_selections」
+    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward                       	「⇧⎇9」	「rotate_selections_backward」
+    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward                        	「⇧⎇0」	「rotate_selections_forward」
+    'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents                                     	「」   	「」
+    '7'  	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*                 	「⇧ 7」	「<7>」
+    # '&'	= 'align_selections'                  	# ⥂ Align selection in columns                               	「⇧ 7」	「align_selections」
     # '='	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	「  =」	「format_selections」
 
   #Ⓢ   	Misc               	 
