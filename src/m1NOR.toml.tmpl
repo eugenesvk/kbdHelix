@@ -217,29 +217,29 @@
     'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                               	「 ⎇s」	「」
 
-    "'"    	= 'collapse_selection'        	# 🢖🢔 Collapse sel onto a single ‸cursor           	「  ;」 	「」
-    "A-'"  	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	「 ⎇;」 	「」
-    'A-a'  	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」
-    # 'A-A'	= 'flip_selections'           	# ⮀ Flip sel          ‸cursor and   _anchor       	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
-    'A-p'  	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
-    'A-:'  	= 'ensure_selections_forward' 	# ↠ Flip sel forward: ‸cursor after _anchor       	「⇧⎇;」 	「」
-    #'A-l' 	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (← with many columns)	「⇧ 9」 	「」
-    #'A-;' 	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (→ with many columns)	「⇧ 0」 	「flip_selections」
-    'A-m'  	= 'rotate_selections_forward' 	# ⟳ Rotate main sel forward  (↓ with many lines)  	「⇧ 0」 	「」
-    'A-,'  	= 'rotate_selections_backward'	# ⟲ Rotate main sel backward (↑ with many lines)  	「⇧ 9」 	「remove_primary_selection」
-    'A-u'  	= 'remove_primary_selection'  	# ᵡ         the primary sel                       	「 ⎇,」 	「earlier」
-    'A-i'  	= 'keep_primary_selection'    	# ᵡ∀ all but the primary sel (keep only)          	「  ,」 	「」
-    'A-U'  	= 'no_op'                     	# ᵡᵡ undo remove sel                              	「⇧ ⎇,」	「earlier」 !!!missing
-    'K'    	= 'keep_selections'           	# ᵏ𝖗 sels not matching the regex (keep)           	「⇧ k」 	「keep_selections」
-    'L'    	= 'remove_selections'         	# ᵡ𝖗 sels     matching the regex                  	「⇧⎇k」 	「」
-    'A-Z'  	=['keep_primary_selection'    	# 🢗🢔 collapse everything to a single cursor       	「  」  	「」		 
-      ,    	  'collapse_selection']       	                                                  	      	#
-    #    	                         	                                                               	         
-    #    	                         	                                                               	         
-    'minus'	= 'trim_selections'             	# ✁Trim whitespace from the sel                    	「⇧ -」 	「」
-    '_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive sels ⨝                       	「⇧⎇ -」	「trim_selections」
+    "'"      	= 'collapse_selection'          	# 🢖🢔 Collapse sel onto a single ‸cursor            	「  ;」 	「」
+    "A-'"    	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	「 ⎇;」 	「」
+    'A-a'    	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」
+    # 'A-A'  	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
+    'A-p'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
+    'A-:'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
+    #'A-l'   	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (← with many columns) 	「⇧ 9」 	「」
+    #'A-;'   	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
+    'A-m'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (↓ with many lines)   	「⇧ 0」 	「」
+    'A-,'    	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (↑ with many lines)   	「⇧ 9」 	「remove_primary_selection」
+    'A-u'    	= 'remove_primary_selection'    	# ᵡ         the primary sel                        	「 ⎇,」 	「earlier」
+    'A-i'    	= 'keep_primary_selection'      	# ᵡ∀ all but the primary sel (keep only)           	「  ,」 	「」
+    'A-U'    	= 'no_op'                       	# ᵡᵡ undo remove sel                               	「⇧ ⎇,」	「earlier」 !!!missing
+    'K'      	= 'keep_selections'             	# ᵏ𝖗 sels not matching the regex (keep)            	「⇧ k」 	「keep_selections」
+    'L'      	= 'remove_selections'           	# ᵡ𝖗 sels     matching the regex                   	「⇧⎇k」 	「」
+    'A-Z'    	=['keep_primary_selection'      	# 🢗🢔 collapse everything to a single cursor        	「  」  	「」		 
+      ,      	  'collapse_selection']         	                                                   	      	#
+    #        	                                	                                                   	         
+    #        	                                	                                                   	         
+    'minus'  	= 'trim_selections'             	# ✁Trim whitespace from the sel                    	「⇧ -」 	「」
+    '_'      	= 'merge_consecutive_selections'	# ⛙ Merge consecutive sels ⨝                       	「⇧⎇ -」	「trim_selections」
     'A-minus'	= 'merge_selections'            	# ⛘ Merge all selections into one with all ranges  	「⎇ -」 	「」
-    # '+'  	= 'dupe_selections'             	# 🗐Duplicate sel (currently nonfunctional/disabled)	「⇧ =」 	「dupe_selections」
+    # '+'    	= 'dupe_selections'             	# 🗐Duplicate sel (currently nonfunctional/disabled)	「⇧ =」 	「dupe_selections」
 
 
   #Ⓝ Change ——————————————————————————————————————————————————————————————————————
@@ -287,8 +287,8 @@
     'del'        	= 'delete_char_forward' 	# ⌦c ᵡ char →	「delete」   	「delete_char_forward」
     # 'C-d'      	= 'delete_char_forward' 	# ⌦c ᵡ char →	「C-d」      	「delete_char_forward」
 
-    't'  	= 'replace'                          	# 🗘c  Replace with a character               	   「  r」	「find_till_char」
-    'T'  	= 'replace_with_yanked'              	# 🗘📋 Replace with copied text                	「⇧ r」   	「till_prev_char」  <i class='fa fa-copy'></i>
+    't'  	= 'replace'                          	# 🗘c  Replace with a character         	   「  r」	「find_till_char」
+    'T'  	= 'replace_with_yanked'              	# 🗘📋 Replace with copied text          	「⇧ r」   	「till_prev_char」  <i class='fa fa-copy'></i>
     'A-t'	= 'replace_selections_with_clipboard'	# 🗘📋 Replace sels by clipboard contents	「☰␠ ⇧r」 	「」 <i class='fa fa-clipboard'></i>
 
     #'`' 	= ''                   	# ☰𝔸𝕒 Case conversion mode	「  」  	「switch_to_lowercase」 !!!missing aliases
@@ -333,12 +333,12 @@
      ,   	  "insert_at_line_end"]       	#                                	  	 
 
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
-    '('	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
-    ')'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
+    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
+    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
     'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents              	「」    	「」
-    '7'	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」 	「<7>」
-    '&'	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
-    '='	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
+    '7'  	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」 	「<7>」
+    '&'  	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
+    '='  	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
 
   #Ⓝ   	Misc                        	 
   'z'  	= 'toggle_comments'         	# // un-/comment sels                         	「 ⎈c」	「☰👁」
@@ -401,9 +401,9 @@
   #   'C-p'	= "no_op"	#	「   」	「Select prev history」
   #   'C-n'	= "no_op"	#	「   」	「Select next history」
 
-  #   'Escape'	= "Close prompt" 	# Close prompt 	≝「$!」	「Close prompt」
+  #   'Escape'	= "Close prompt" 	# Close prompt 	≝「$!」 	「Close prompt」
   #   'C-c'   	= "Close prompt" 	# Close prompt 	≝「⎈ c」	「Close prompt]
-  #   'Enter' 	= "Open selected"	# Open selected	≝「$!」	「Open selected」
+  #   'Enter' 	= "Open selected"	# Open selected	≝「$!」 	「Open selected」
 
   #   #⧁ Move ——————————————————————————————————————————————————————————————————————
   #   #        	Char                         	                          	 
