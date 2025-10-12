@@ -174,6 +174,7 @@
     'J'  	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
     #    	                           	                                                                 	         
     'E'  	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯       	「⇧ x」	「move_next_long_word_end」
+    '5'  	= 'merge_selections'       	# ▋&▋ Merge all selections into one with all ranges              	「⎇ -」	「」
     'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」	「」
       ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,  	 'move_prev_word_start'    	#
@@ -322,6 +323,7 @@
   #Ⓢ Select manipulation ————————————————————————————————————————————————————————————————————
     '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate selection contents backward	「⇧⎇9」	「rotate_selections_backward」
     ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate selection contents forward	「⇧⎇0」	「rotate_selections_forward」
+    'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents              	「」    	「」
     '7'  	= 'align_selections'                  	# ⥂ Align selection in columns !!!missing ∀*	「⇧ 7」	「<7>」
     # '&'	= 'align_selections'                  	# ⥂ Align selection in columns	「⇧ 7」	「align_selections」
     # '='	= 'format_selections'                 	# ℱ Format selection (currently nonfunctional/disabled) (LSP)	「  =」	「format_selections」
