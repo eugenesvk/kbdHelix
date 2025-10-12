@@ -3,7 +3,7 @@
 [keys.normal] #Ⓝ
   #Ⓝ Test ——————————————————————————————————————————————————————————————————————
     'C-q'  	= ':quit!'                         	# Control-q → typable command :q! (:quit!)
-    # 'G'  	= 'move_prev_word_end'             	# Backward a word                                                    	「⇧I.⎇b, ⎇◀」	「goto_line」
+    # 'S-g'	= 'move_prev_word_end'             	# Backward a word                                                    	「⇧I.⎇b, ⎇◀」	「goto_line」
     # '0'  	= 'univeral_arg'                   	# ∀* number prefix to treat all the following numbers as # of repeats	「  」       	「0」  !!!missing ∀*
     # 'C-j'	= ['page_down','align_view_center']	# ⇟ Move      page down                                              	   「 ⎈d」   	「」
     # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ⎈u」   	「」
@@ -11,21 +11,21 @@
     # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ⎈u」	「」
 
   #Ⓝ Free ——————————————————————————————————————————————————————————————————————
-    'C-u'	= 'no_op'           	#                        	「   」 	「half_page_up」
-    'A-C'	= 'no_op'           	#                        	「⇧   」	「copy_selection_on_prev_line」
-    'A-('	= 'no_op'           	#                        	「⇧⎇9」 	「rotate_selection_contents_backward」
-    'A-)'	= 'no_op'           	#                        	「⇧⎇0」 	「rotate_selection_contents_forward」
-    'C-i'	= 'no_op'           	#                        	「   」 	「jump_forward」
-    'b'  	= 'no_op'           	#                        	「⇧   」	「replace_with_yanked」
-    '~'  	= "no_op"           	#                        	「⇧   」	「switch_case」
-    'A-`'	= "no_op"           	#                        	「   」 	「switch_to_uppercase」
-    # 'X'	= 'change_selection'	# Δ (delete,enter Insert)	「⇧  c」	「extend_to_line_bounds」
+    'C-u'  	= 'no_op'           	#                        	「   」 	「half_page_up」
+    'A-C'  	= 'no_op'           	#                        	「⇧   」	「copy_selection_on_prev_line」
+    'S-A-9'	= 'no_op'           	#                        	「⇧⎇9」 	「rotate_selection_contents_backward」
+    'S-A-0'	= 'no_op'           	#                        	「⇧⎇0」 	「rotate_selection_contents_forward」
+    'C-i'  	= 'no_op'           	#                        	「   」 	「jump_forward」
+    'b'    	= 'no_op'           	#                        	「⇧   」	「replace_with_yanked」
+    '~'    	= "no_op"           	#                        	「⇧   」	「switch_case」
+    'A-`'  	= "no_op"           	#                        	「   」 	「switch_to_uppercase」
+    # 'S-x'  	= 'change_selection'	# Δ (delete,enter Insert)	「⇧  c」	「extend_to_line_bounds」
   #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
     # 'i'	= 'insert_mode'	# ⤹⎀ Insert before sel                        	「  i」	「insert_mode」
     # 'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web)	「  v」	「move_next_word_end」  <i class='fa fa-arrows'></i>
   #Ⓝ Minor modes / menu dialogs ———————————————————————————————————————————————————————
     #'p'    	                   	 ☰👁 View mode            	Ⓝ「  z」  	「paste_after」
-    #'P'    	                   	 ☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
+    #'S-p'  	                   	 ☰👁ₛ 'sticky', persistent	Ⓝ「⇧ z」  	「paste_before」
     #'g'    	                   	 ⓖ☰⮊ Goto mode           	  Ⓝ「  g」	「」
     #'n'    	                   	 ☰🧩  Match mode          	Ⓝ「  m」  	「」 ☰<i class='fa fa-puzzle-piece'></i>
     #'C-w'  	                   	 ☰🗔  Window mode         	  Ⓝ「 ⎈w」	「」
@@ -33,8 +33,8 @@
     #'['    	                   	 ☰⧛ Unimpaired           	  Ⓝ「  ]」	「」
     #']'    	                   	 ☰⧚                      	  Ⓝ「  [」	「」
     #'`'    	                   	 ☰𝔸𝕒 Case conversion     	  Ⓝ「  」 	「switch_to_lowercase」
-    #':'    	= 'command_mode'   	# Ⓒ Enter command mode   	≝「⇧ ;」  	「command_mode」
-    'R'     	= 'command_palette'	# ☰Ⓒ Command Palette     	「⇧ /」   	「replace_with_yanked」
+    #'S-;'  	= 'command_mode'   	# Ⓒ Enter command mode   	≝「⇧ ;」  	「command_mode」
+    'S-r'   	= 'command_palette'	# ☰Ⓒ Command Palette     	「⇧ /」   	「replace_with_yanked」
 
   #Ⓝ Compat    	with non-modal editors               	 
     'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
@@ -50,7 +50,7 @@
   #Ⓝ Copy	                                    	                                        	       	 
     'c'  	= 'yank'                            	# 🗐▋ Copy main sel                      	「  c」  	「change_selection」 <i class='fa fa-copy'></i>
     'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main sel into sys clipboard   	「☰␠,⇧y」	「toggle_comments」 <i class='fa fa-clipboard'></i>
-    'C'  	= 'yank_joined'                     	# ®🗐▋   Copy main   sel to register     	「⇧␠,y」 	「copy_selection_on_next_line」
+    'S-c'  	= 'yank_joined'                     	# ®🗐▋   Copy main   sel to register     	「⇧␠,y」 	「copy_selection_on_next_line」
     'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all sels to clipboard (joined)	「☰␠ y」 	「change_selection_noyank」 ⨝📋 ∀❚ ∀▋ <i class='fa fa-clipboard'></i>
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
@@ -70,7 +70,7 @@
     'C-j'	= 'page_down'            	# ⇟ Move      page down         	   「 ⎈d」	「」
     'C-k'	= 'page_up'              	# ⇞ Move      page up           	   「 ⎈u」	「」
     'a'  	= 'extend_to_line_start' 	# ⤝▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
-    'A'  	= 'extend_to_line_end'   	# ▋⭲ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
+    'S-a'	= 'extend_to_line_end'   	# ▋⭲ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
     #    	 
     'A-A'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel	「」	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
 
@@ -81,17 +81,17 @@
     'd'      	= 'move_prev_word_start'       	# ⤝ω Move prev beg of word  	「  b」	「delete_selection」
     'A-d'    	= 'move_prev_word_end'         	# ⭰ω Move prev end of word  	ⓘ「⎇b」	「delete_selection_noyank」
     'A-left' 	= 'move_prev_word_end'         	# ⭰ω Move prev end of word  	ⓘ「⎇◀」	「」
-    'F'      	= 'move_next_long_word_end'    	# W⭲ Move next end of WORD  	「⇧ e」	「find_prev_char」
+    'S-f'    	= 'move_next_long_word_end'    	# W⭲ Move next end of WORD  	「⇧ e」	「find_prev_char」
     'A-F'    	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「find_prev_char」
     'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「page_down」
     'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「」
-    'D'      	= 'move_prev_long_word_start'  	# ⤝W Move prev beg of WORD  	「⇧ b」	「」
+    'S-d'    	= 'move_prev_long_word_start'  	# ⤝W Move prev beg of WORD  	「⇧ b」	「」
     'A-D'    	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「」
     'C-left' 	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「」
     'C-d'    	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「half_page_down」
     # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD  	「⇧ w」	「page_down」
     #        	   'extend_next_long_word_end']	#                           	 
-    # 'G'    	= 'goto_line'                  	# ⮊⎯ go to line #<n> (Ⓒ<n>⏎)	「⇧ g」	「goto_line」
+    # 'S-g'  	= 'goto_line'                  	# ⮊⎯ go to line #<n> (Ⓒ<n>⏎)	「⇧ g」	「goto_line」
     #        	                               	                            	         
     #        	                               	                            	         
     #        	                               	                            	         
@@ -102,37 +102,37 @@
     #       	                   	                  	         
     #       	                   	                  	         
 
-    #Ⓝ   	Block
-    # '>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
-    # '?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「rsearch」
+    #Ⓝ    	Block
+    #'S-.'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
+    #'S-/'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「rsearch」
     # !!! remove after .Repeat can be rebound
-    '{'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」  	「」
-    '}'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」  	「」
-    '>'	= 'search_prev'        	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「indent」
-    '?'	= 'search_next'        	# ◎🢖 ◎͕ Select next     search match	   「  n」	「rsearch」
+    'S-['	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」  	「」
+    'S-]'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」  	「」
+    'S-.'	= 'search_prev'        	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「indent」
+    'S-/'	= 'search_next'        	# ◎🢖 ◎͕ Select next     search match	   「  n」	「rsearch」
 
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
-    #Ⓝ   	Find
-    'w'  	= 'find_next_char'    	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'W'  	= 'find_prev_char'    	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-w'	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
-    'A-W'	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
-    'S'  	= 'rsearch'           	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「split_selection」
-    's'  	= 'search'            	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「select_regex」
-    '.'  	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    '/'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
-    # 'N'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
-    # 'n'	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
-    '8'  	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
-    '*'  	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
-    #'*' 	= ['select_mode'      	#
-    #  , 	'move_prev_word_start'	#
-    #  , 	'move_next_word_end'  	#
-    #  , 	'search_selection'    	#
-    #  , 	'extend_search_next'  	#
-    #  , 	'exit_select_mode'    	#
-    #  ] 	                      	# = find_under_expand
+    #Ⓝ    	Find
+    'w'   	= 'find_next_char'    	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'S-w' 	= 'find_prev_char'    	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    'A-w' 	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
+    'A-W' 	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
+    'S-s' 	= 'rsearch'           	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「split_selection」
+    's'   	= 'search'            	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「select_regex」
+    '.'   	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
+    '/'   	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
+    #'S-n'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
+    # 'n' 	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
+    '8'   	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
+    'S-8' 	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
+    #'S-8'	= ['select_mode'      	#
+    #  ,  	'move_prev_word_start'	#
+    #  ,  	'move_next_word_end'  	#
+    #  ,  	'search_selection'    	#
+    #  ,  	'extend_search_next'  	#
+    #  ,  	'exit_select_mode'    	#
+    #  ]  	                      	# = find_under_expand
 
 
     #Ⓝ          	Compat with non-modal editors
@@ -174,29 +174,29 @@
 
     'A-g'	= 'jumplist_picker'	# ☰🖈 List jumplist          	「☰␠ j」	「」
     'C-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「」
-    'G'  	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「goto_line」
+    'S-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「goto_line」
 
-    'J'  	= 'extend_line_below'      	# ⮒ Select current line/extend to next    if selected	「  x」 	「join_selections」
-    'A-r'	= 'extend_line'            	# ⭿ Select current line/extend to another if selected	「  」  	「」
-    'E'  	= 'extend_to_line_bounds'  	# ━ Extend sel to line bounds (line-wise sel)⎯       	「⇧  x」	「move_next_long_word_end」
-    'A-E'	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev                 	「   」 	「」
-      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
-      ,  	 'move_prev_word_start'    	#
-      ,  	 'search_selection'        	#
-      ,  	 'make_search_word_bounded'	#
-      ,  	 'extend_search_prev'      	#
-      ,  	 'normal_mode'             	#
-      ]  	                           	# = Sublime's find_under_expand
-    'A-e'	= ['select_mode'           	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
-      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
-      ,  	 'move_prev_word_start'    	#
-      ,  	 'search_selection'        	#
-      ,  	 'make_search_word_bounded'	#
-      ,  	 'extend_search_next'      	#
-      ,  	 'normal_mode'             	#
-      ]  	                           	# = Sublime's find_under_expand
-    # '5'	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
-    # '%'	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
+    'S-j' 	= 'extend_line_below'      	# ⮒ Select current line/extend to next    if selected	「  x」 	「join_selections」
+    'A-r' 	= 'extend_line'            	# ⭿ Select current line/extend to another if selected	「  」  	「」
+    'S-e' 	= 'extend_to_line_bounds'  	# ━ Extend sel to line bounds (line-wise sel)⎯       	「⇧  x」	「move_next_long_word_end」
+    'A-E' 	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev                 	「   」 	「」
+      ,   	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,   	 'move_prev_word_start'    	#
+      ,   	 'search_selection'        	#
+      ,   	 'make_search_word_bounded'	#
+      ,   	 'extend_search_prev'      	#
+      ,   	 'normal_mode'             	#
+      ]   	                           	# = Sublime's find_under_expand
+    'A-e' 	= ['select_mode'           	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+      ,   	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,   	 'move_prev_word_start'    	#
+      ,   	 'search_selection'        	#
+      ,   	 'make_search_word_bounded'	#
+      ,   	 'extend_search_next'      	#
+      ,   	 'normal_mode'             	#
+      ]   	                           	# = Sublime's find_under_expand
+    #'5'  	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
+    #'S-5'	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
 
     'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below) 	「⇧ c」	「」
     'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above) 	「⇧⎇c」	「」
@@ -204,10 +204,10 @@
     'A-K'	= 'copy_selection_on_prev_line'	# ᵡ🠵 Cut  sel from the next     line (del ‸cursor below)	「⇧⎇c」	「」
     'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
     'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「flip_selections」
-    'M'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋      	「⎇ i」	「」
-    '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
+    'S-m'	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋      	「⎇ i」	「」
+    'S-,'	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
     'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels               	「  s」	「split_selection_on_newline」
-    'N'  	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
+    'S-n'	= 'split_selection'            	# ䷖𝖗 on regex matches                                   	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                               	「 ⎇s」	「」
 
     "'"      	= 'collapse_selection'          	# 🢖🢔 Collapse sel onto a single ‸cursor            	「  ;」 	「」
@@ -215,7 +215,7 @@
     'A-a'    	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」
     # 'A-A'  	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
     'A-p'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
-    'A-:'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
+    'A-S-;'  	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
     #'A-l'   	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (← with many columns) 	「⇧ 9」 	「」
     #'A-;'   	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
     'A-m'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (↓ with many lines)   	「⇧ 0」 	「」
@@ -223,8 +223,8 @@
     'A-u'    	= 'remove_primary_selection'    	# ᵡ         the primary sel                        	「 ⎇,」 	「earlier」
     'A-i'    	= 'keep_primary_selection'      	# ᵡ∀ all but the primary sel (keep only)           	「  ,」 	「」
     'A-U'    	= 'no_op'                       	# ᵡᵡ undo remove sel                               	「⇧ ⎇,」	「earlier」 !!!missing
-    'K'      	= 'keep_selections'             	# ᵏ𝖗 sels not matching the regex (keep)            	「⇧ k」 	「keep_selections」
-    'L'      	= 'remove_selections'           	# ᵡ𝖗 sels     matching the regex                   	「⇧⎇k」 	「」
+    'S-k'    	= 'keep_selections'             	# ᵏ𝖗 sels not matching the regex (keep)            	「⇧ k」 	「keep_selections」
+    'S-l'    	= 'remove_selections'           	# ᵡ𝖗 sels     matching the regex                   	「⇧⎇k」 	「」
     'A-Z'    	=['keep_primary_selection'      	# 🢗🢔 collapse everything to a single cursor        	「  」  	「」		 
       ,      	  'collapse_selection']         	                                                   	      	#
     #        	                                	                                                   	         
@@ -264,7 +264,7 @@
     'A-x'      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)     	「 ⎇d」   	「」
     # 'A-c'    	= 'change_selection'                 	# Δ                           	「  c」   	「change_selection_noyank」
     'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                 	「⌫」     	「move_char_left」
-    'H'        	= 'delete_char_forward'              	# ⌦c ᵡ char →                 	「⇧⌦」    	「」
+    'S-h'      	= 'delete_char_forward'              	# ⌦c ᵡ char →                 	「⇧⌦」    	「」
     'A-h'      	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                 	ⓘ「 ⎈w」  	「」
     'A-H'      	= 'delete_word_forward'              	# ⌦ω ᵡ word →                 	 ⓘ「  ⎇d」	「」
     'C-h'      	= ['move_prev_long_word_start',      	# ⌫W                          	「   」   	「」
@@ -272,7 +272,7 @@
     'C-x'      	= ['yank_main_selection_to_clipboard'	                              	,
                	   'delete_selection']               	#                             	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
     'backspace'	= 'delete_char_backward'             	# ⌫                           	「I.bs」	「」
-    'X'        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside sel  	「⇧ j」 	「extend_to_line_bounds」
+    'S-x'      	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside sel  	「⇧ j」 	「extend_to_line_bounds」
     'A-X'      	= 'join_selections_space'            	# ᵡ␤,␠ Join lines,select space	「⇧⎇ j」	「」
 
     # 'backspace'	= 'delete_char_backward'	# ⌫c ᵡ char ←	「backspace」	「delete_char_backward」
@@ -281,11 +281,11 @@
     # 'C-d'      	= 'delete_char_forward' 	# ⌦c ᵡ char →	「C-d」      	「delete_char_forward」
 
     't'  	= 'replace'                          	# 🗘c  Replace with a character         	   「  r」	「find_till_char」
-    'T'  	= 'replace_with_yanked'              	# 🗘📋 Replace with copied text          	「⇧ r」   	「till_prev_char」  <i class='fa fa-copy'></i>
+    'S-t'	= 'replace_with_yanked'              	# 🗘📋 Replace with copied text          	「⇧ r」   	「till_prev_char」  <i class='fa fa-copy'></i>
     'A-t'	= 'replace_selections_with_clipboard'	# 🗘📋 Replace sels by clipboard contents	「☰␠ ⇧r」 	「」 <i class='fa fa-clipboard'></i>
 
     #'`' 	= ''                   	# ☰𝔸𝕒 Case conversion mode	「  」  	「switch_to_lowercase」 !!!missing aliases
-    'B'  	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	「⇧  `」	「」
+    'S-b'	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	「⇧  `」	「」
     'C-b'	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	「 ⎇`」 	「」
     #    	                       	                          	         
     #    	                       	                          	         
@@ -297,28 +297,28 @@
     'A-.'	= 'unindent'	# ⇚ (selection)	「⇧,」	「repeat_last_motion」
     'A-/'	= 'indent'  	# ⇛ (selection)	「⇧.」	「」
 
-    'q'	= 'record_macro'   	# ⏺ Start/stop  macro recording to the selected register  	≝「  q」	「record_macro」
-    'Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	≝「⇧ q」 replay_macro]
-    '"'	= 'select_register'	# ®  Select a register to copy/paste from                 	≝「  '<reg>」	「select_register」
+    'q'  	= 'record_macro'   	# ⏺ Start/stop  macro recording to the selected register  	≝「  q」	「record_macro」
+    'S-q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	≝「⇧ q」 replay_macro]
+    "S-'"	= 'select_register'	# ®  Select a register to copy/paste from                 	≝「  '<reg>」	「select_register」
 
-    # 'b'	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」	「move_prev_word_start」 !!!missing
-    #    	                         	                              	         
-    ';'  	= 'insert_mode'          	# ⤹⎀ Insert before sel        	≝「  i」	「collapse_selection」
-    'o'  	= 'append_mode'          	# ⎀⤸ Insert after sel (append)	「  a」 	「open_above」
-    'I'  	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」 	「insert_at_line_start」
-    'O'  	= 'open_below'           	# ⭣␤ Open new line below sel  	「  o」 	「insert_at_line_end」
-    'u'  	= 'undo'                 	# ⎌ Undo change               	「  u」 	「undo mode」
-    'y'  	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「yank」
-    'U'  	= 'earlier'              	# 🕘 Move backward in history  	「⇧ ⎇u」	「redo」   <i class='fa fa-history'></i>
-    'Y'  	= 'later'                	# 🕒 Move forward  in history  	「⇧⎇u」 	「」 ⏱ <i class='fa fa-clock-o'></i>
-    #    	                         	                              	         
-    'v'  	= 'paste_after'          	# 📋⤹ Paste after sel          	「  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
-    'C-v'	= 'paste_clipboard_after'	# 📋⤹ Paste after sel          	「☰␠ p」	「」  <i class='fa fa-copy'></i>⤹
-    'V'  	= 'paste_before'         	# ⤸📋 Paste before sel         	「⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
-    #    	                         	                              	         
-    #    	                         	                              	         
-    #'I' 	= 'insert_at_line_start' 	# ⎀⭰ Insert at line start     	≝「⇧ i」	「insert_at_line_start」
-    #'A' 	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	≝「⇧ a」	「insert_at_line_end」
+    # 'b' 	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」	「move_prev_word_start」 !!!missing
+    #     	                         	                              	         
+    ';'   	= 'insert_mode'          	# ⤹⎀ Insert before sel        	≝「  i」	「collapse_selection」
+    'o'   	= 'append_mode'          	# ⎀⤸ Insert after sel (append)	「  a」 	「open_above」
+    'S-i' 	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」 	「insert_at_line_start」
+    'S-o' 	= 'open_below'           	# ⭣␤ Open new line below sel  	「  o」 	「insert_at_line_end」
+    'u'   	= 'undo'                 	# ⎌ Undo change               	「  u」 	「undo mode」
+    'y'   	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「yank」
+    'S-u' 	= 'earlier'              	# 🕘 Move backward in history  	「⇧ ⎇u」	「redo」   <i class='fa fa-history'></i>
+    'S-y' 	= 'later'                	# 🕒 Move forward  in history  	「⇧⎇u」 	「」 ⏱ <i class='fa fa-clock-o'></i>
+    #     	                         	                              	         
+    'v'   	= 'paste_after'          	# 📋⤹ Paste after sel          	「  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
+    'C-v' 	= 'paste_clipboard_after'	# 📋⤹ Paste after sel          	「☰␠ p」	「」  <i class='fa fa-copy'></i>⤹
+    'S-v' 	= 'paste_before'         	# ⤸📋 Paste before sel         	「⇧ p」 	「」  <i class='fa fa-clipboard'></i>⤹
+    #     	                         	                              	         
+    #     	                         	                              	         
+    #'S-i'	= 'insert_at_line_start' 	# ⎀⭰ Insert at line start     	≝「⇧ i」	「insert_at_line_start」
+    #'S-a'	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	≝「⇧ a」	「insert_at_line_end」
 
     'A-I'	=["split_selection_on_newline"	# ⭰䷖ Line: split & insert @ start	「」	「」
      ,   	  "insert_at_line_start"]     	#                                	  	 
@@ -326,35 +326,35 @@
      ,   	  "insert_at_line_end"]       	#                                	  	 
 
   #Ⓝ Select manipulation ————————————————————————————————————————————————————————————————————
-    '('  	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
-    ')'  	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
+    'S-9'	= 'rotate_selection_contents_backward'	# ⟲ Rotate  sel contents backward     	「⇧⎇9」 	「rotate_selections_backward」
+    'S-0'	= 'rotate_selection_contents_forward' 	# ⟳ Rotate  sel contents forward      	「⇧⎇0」 	「rotate_selections_forward」
     'C-9'	= 'reverse_selection_contents'        	# 🔃 Reverse sel contents              	「」    	「」
     '7'  	= 'align_selections'                  	# ⥂ Align sel in columns !!!missing ∀*	「⇧ 7」 	「<7>」
-    '&'  	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
+    'S-7'	= 'align_selections'                  	# ⥂ Align sel in columns              	≝「⇧ 7」	「align_selections」
     '='  	= 'format_selections'                 	# ℱ Format sel (!!!missing) (LSP)     	≝「  =」	「format_selections」
 
   #Ⓝ   	Misc                        	 
   'z'  	= 'toggle_comments'         	# // un-/comment sels                         	「 ⎈c」	「☰👁」
   'A-z'	= 'toggle_line_comments'    	# /━ un-/comment sels (line )                 	「␠⎇c」	「」
-  'Z'  	= 'toggle_block_comments'   	# /* un-/comment sels (block)                 	「␠⇧c」	「」
+  'S-z'	= 'toggle_block_comments'   	# /* un-/comment sels (block)                 	「␠⇧c」	「」
   'C-m'	= 'decrement'               	# ⊖ o̠ Decrement object (number) under ‸cursor	「 ⎈x」	「」 <span class='cd'>o&#800;</span>
   'C-,'	= 'increment'               	# ⊕ o̟ Increment object (number) under ‸cursor	「 ⎈a」	「」 <span class='cd'>o&#799;</span> !!!fails
   '\'  	= ':toggle soft-wrap.enable'	# ↪   toggle soft wrap                        	「」   	「」
   'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                              	「⎈z」 	「」
 
-  '$'   	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
+  'S-4' 	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
   'C-F5'	= ':redraw'        	# ⎚ clear re-render the UI                                                	「」    	「」
 
   #Ⓝ space mode
-  # "'"	= 'last_picker'	# 「collapse_selection」 Open last fuzzy picker
+  #"'"	= 'last_picker'	# 「collapse_selection」 Open last fuzzy picker
 
-  #Ⓝ Shell 	                       	 
-    # '|'  	= 'shell_pipe'         	# | Pipe each sel through shell command, replacing with output 	≝「⇧ \」	「shell_pipe」
-    "A-\\" 	= 'shell_pipe_to'      	# |ᵡ Pipe each sel into    shell command, ignoring       output	「⇧⎇\」 	「」
-    # 'A-|'	= 'shell_pipe_to'      	#   Pipe each sel into    shell command, ignoring       output 	≝「⇧⎇\」	「shell_pipe_to」
-    '!'    	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel           	「⇧  1」	≝「shell_insert_output」
-    '@'    	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	「」
-    'A-!'  	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	≝「shell_append_output」
+  #Ⓝ Shell   	                       	 
+    #'S-\\'  	= 'shell_pipe'         	# | Pipe each sel through shell command, replacing with output 	≝「⇧ \」	「shell_pipe」
+    "A-\\"   	= 'shell_pipe_to'      	# |ᵡ Pipe each sel into    shell command, ignoring       output	「⇧⎇\」 	「」
+    #'A-S-\\'	= 'shell_pipe_to'      	#   Pipe each sel into    shell command, ignoring       output 	≝「⇧⎇\」	「shell_pipe_to」
+    'S-1'    	= 'shell_insert_output'	# 🢔$ Run shell cmd, inserting output before each sel           	「⇧  1」	≝「shell_insert_output」
+    'S-2'    	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	「」
+    'A-S-1'  	= 'shell_append_output'	# $🢖 Run shell cmd, appending output after  each sel           	「⇧⎇1」 	≝「shell_append_output」
 
 
   ###Ⓝ ☰Minor modes  Accessible from Normal mode, typically switch back to Normal mode after a command
