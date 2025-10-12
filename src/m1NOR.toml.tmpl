@@ -198,12 +198,12 @@
     #'5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph	「   」	「<5>」  !!!missing ∀* !!!missing command
     #'%' 	= 'select_all'             	# ∀▋ Select entire file   	「⇧ 5」	「select_all」
 
-    'A-j'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below) 	「⇧ c」	「」
-    'A-k'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above) 	「⇧⎇c」	「」
-    'A-J'	= 'copy_selection_on_next_line'	# ᵡ🠷 Cut  sel from the previous line (del ‸cursor above)	「⇧ c」	「」 !!!not implemented
-    'A-K'	= 'copy_selection_on_prev_line'	# ᵡ🠵 Cut  sel from the next     line (del ‸cursor below)	「⇧⎇c」	「」
-    'A-l'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
-    'A-;'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「flip_selections」
+    'A-k'	= 'copy_selection_on_next_line'	# 🠷 Copy sel onto the next     line (add ‸cursor below) 	「⇧ c」	「」
+    'A-i'	= 'copy_selection_on_prev_line'	# 🠵 Copy sel onto the previous line (add ‸cursor above) 	「⇧⎇c」	「」
+    'A-K'	= 'copy_selection_on_next_line'	# ᵡ🠷 Cut  sel from the previous line (del ‸cursor above)	「⇧ c」	「」 !!!not implemented
+    'A-I'	= 'copy_selection_on_prev_line'	# ᵡ🠵 Cut  sel from the next     line (del ‸cursor below)	「⇧⎇c」	「」
+    'A-j'	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
+    'A-l'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「」
     'S-m'	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋      	「⎇ i」	「」
     '<'  	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
     'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels               	「  s」	「split_selection_on_newline」
@@ -221,7 +221,7 @@
     'A-m'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (↓ with many lines)   	「⇧ 0」 	「」
     'A-,'    	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (↑ with many lines)   	「⇧ 9」 	「remove_primary_selection」
     'A-u'    	= 'remove_primary_selection'    	# ᵡ         the primary sel                        	「 ⎇,」 	「earlier」
-    'A-i'    	= 'keep_primary_selection'      	# ᵡ∀ all but the primary sel (keep only)           	「  ,」 	「」
+    'A-;'    	= 'keep_primary_selection'      	# ᵡ∀ all but the primary sel (keep only)           	「  ,」 	「flip_selections」
     'A-U'    	= 'no_op'                       	# ᵡᵡ undo remove sel                               	「⇧ ⎇,」	「earlier」 !!!missing
     'S-k'    	= 'keep_selections'             	# ᵏ𝖗 sels not matching the regex (keep)            	「⇧ k」 	「keep_selections」
     'S-l'    	= 'remove_selections'           	# ᵡ𝖗 sels     matching the regex                   	「⇧⎇k」 	「」
@@ -320,7 +320,7 @@
     #'S-i'	= 'insert_at_line_start' 	# ⎀⭰ Insert at line start     	≝「⇧ i」	「insert_at_line_start」
     #'S-a'	= 'insert_at_line_end'   	# ⭲⎀ Insert at line end       	≝「⇧ a」	「insert_at_line_end」
 
-    'A-I'	=["split_selection_on_newline"	# ⭰䷖ Line: split & insert @ start	「」	「」
+    'A-:'	=["split_selection_on_newline"	# ⭰䷖ Line: split & insert @ start	「」	「」
      ,   	  "insert_at_line_start"]     	#                                	  	 
     'A-O'	=["split_selection_on_newline"	# ䷖⭲ Line: split & insert @ end  	「」	「」
      ,   	  "insert_at_line_end"]       	#                                	  	 
