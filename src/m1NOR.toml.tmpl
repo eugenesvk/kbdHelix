@@ -42,6 +42,7 @@
     'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
     'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
     'C-s'      	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」 	「save_selection」
+    'S-C-A-s'  	= [':write-all!']                    	# 💾∀! force save all       	「」     	「」
     # 'C-S-s'  	= 'Save As'                          	# ???                      	「⇧⎈s」  	「」
     'C-n'      	= ':new'                             	# 🗋 new buffer             	「 ⎈n」  	「」
     # 'C-S-t'  	= 'open-last-closed'                 	# ???                      	「⇧⎈t」  	「」
@@ -349,6 +350,7 @@
   'C-l'	= 'suspend'                 	# ⏾ Suspend job💤                              	「⎈z」 	「」
 
   '$'	= 'shell_keep_pipe'	# $ᵏ| Pipe each sel into shell command, keep sels where command returned 0	≝「⇧ 4」	「shell_keep_pipe」
+  'C-F5'	= ':redraw'        	# ⎚ clear re-render the UI                                                	「」    	「」
 
   #Ⓝ space mode
   # "'"	= 'last_picker'	# 「collapse_selection」 Open last fuzzy picker
