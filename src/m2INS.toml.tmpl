@@ -252,10 +252,10 @@
     'A-S-h'      	= 'delete_char_forward' 	# ⌦c ᵡ char →    	「⇧ ⌦」	「」
     #ⓘ           	word                    	                 	 
     #            	Compat with non-modal editors
-    'A-del'      	= 'delete_word_forward'          	# ⌦ω ᵡ word →	 ⓘ「  ⎇d」	「」
+    'A-del'      	= 'delete_word_forward'          	# ⌦ω ᵡ word →	 ⓘ「  ⎇d」	「delete_word_forward」
     'C-del'      	= ['extend_next_long_word_end',  	# ⌦W         	「   」   	「」
                  	   'delete_selection']           	# ᵡ Word →   	 
-    'A-backspace'	= 'delete_word_backward'         	# ⌫ω ᵡ word ←	≝「 ⎈w」	「」
+    'A-backspace'	= 'delete_word_backward'         	# ⌫ω ᵡ word ←	≝「 ⎈w」	「delete_word_backward」
     'C-backspace'	= ['extend_prev_long_word_start',	# ⌫W         	「   」 	「」
                  	   'delete_selection']           	# ᵡ Word ←   	 
     #            	                                 	             	 
