@@ -269,8 +269,8 @@
     'C-x'  	= ['yank_main_selection_to_clipboard',	#                                 	×📋     	「   」	「completion」
            	   'delete_selection']                	#                                 	cut to clipboard <i class='fa fa-clipboard'></i>
 
-    'A-t'	= 'replace'            	# 🗘c  Replace with a character	Ⓝ「  r」	「find_till_char」
-    'A-T'	= 'replace_with_yanked'	# 🗘📋 Replace with copied text 	「⇧Ⓝ r」	「till_prev_char」  <i class='fa fa-copy'></i>
+    'A-t'  	= 'replace'            	# 🗘c  Replace with a character	Ⓝ「  r」	「find_till_char」
+    'A-S-t'	= 'replace_with_yanked'	# 🗘📋 Replace with copied text 	「⇧Ⓝ r」	「till_prev_char」  <i class='fa fa-copy'></i>
 
     #ⓘ     	Misc                     	                                  	 
     'C-/'  	= 'toggle_comments'      	# // un-/comment sels             	「 ⎈c」 	「」
@@ -286,10 +286,10 @@
     # "A-\\"	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	Ⓝ「 ⎇\」	「」
     # 'A-|' 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧Ⓝ⎇\」	「shell_pipe_to」
 
-    #'A-`'	= ''                   	# ☰𝔸𝕒 Case conversion mode	Ⓝ「  」  	「switch_to_lowercase」 !!!missing aliases
-    'A-⎈' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
-    'A-B' 	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	「⇧Ⓝ  `」	「」
-    'C-b' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
+    #'A-`' 	= ''                   	# ☰𝔸𝕒 Case conversion mode	Ⓝ「   」 	「switch_to_lowercase」 !!!missing aliases
+    'A-⎈'  	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
+    'A-S-b'	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	Ⓝ「⇧  `」	「」
+    'C-b'  	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
 
     # 'A-q'	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register   	Ⓝ「  q」	「record_macro」
     # 'A-Q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧Ⓝ q」 replay_macro]
