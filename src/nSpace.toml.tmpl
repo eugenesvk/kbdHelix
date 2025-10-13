@@ -22,7 +22,7 @@
     'S'	= 'no_op'                	#                                         	「⇧   」  	「workspace_symbol_picker」
     'r'	= 'command_palette'      	# ☰Ⓒ Command Palette                      	「   」   	「rename_symbol]
     ';'	= 'command_mode'         	# Ⓒ Enter command mode                    	「⇧ ;」   	「」
-    'j'	= 'extend_line'          	# 🠳━ Select cur/next(if selected) line     	「  x」   	「」
+    'j'	= 'extend_line'          	# 🠳━ Select cur/next(if selected) line    	「  x」   	「」
     'k'	= 'keep_selections'      	# ᵏ𝖗 sels not matching the Re (keep)      	   「⇧ k」	「」
     'l'	= 'remove_selections'    	# ᵡ𝖗 sels     matching the Re             	   「⇧⎇k」	「」
     's'	= 'select_regex'         	# 𝖗▋ Select all Re matches in sels        	   「  s」	「symbol_picker」
@@ -54,11 +54,12 @@
    #'u'	= 'mode_U'               	# ☰u TBD LSPs? or list_kills like z       	「   」	「」  !!!missing_aliases
    #'i'	= 'mode_Register'        	# ☰® Register/copy/paste etc.             	「   」	「」
    #'p'	= 'mode_P'               	# ☰p TBD                                  	「」「paste_clipboard_after」 !!!missing_aliases
-   #'w'	= 'mode_window'          	# ☰🗔 Window mode                          	「☰␠ w」	「mode_window」 !!!missing_aliases
-   #'f'	= 'mode_file'            	# ☰␜ File mode                            	「   」 	「file_picker」
-   #'d'	= 'mode_bracket'         	# ☰⟪ Insert various brackets              	「   」 	「」
-   #'m'	= 'mode_symbol'          	# ☰🅂 Symbol mode                          	「   」 	「」
-   #','	= 'mode_diag'            	# ☰🛠 Diagnostics mode                     	「   」 	「」
+   #'w'	= 'mode_window'          	# ☰🗔 Window mode                          	「☰␠ w」 	「mode_window」 !!!missing_aliases
+   #'f'	= 'mode_file'            	# ☰␜ File mode                            	「   」  	「file_picker」
+   #'d'	= 'mode_bracket'         	# ☰⟪ Insert various brackets              	「   」  	「」
+   #'m'	= 'mode_symbol'          	# ☰🅂 Symbol mode                          	「   」  	「」
+   #','	= 'mode_diag'            	# ☰🛠 Diagnostics mode                     	「   」  	「」
+   #'G'	= 'Debug'                	# ☰   Debug (experimental)                	≝「☰␠⇧g」	「dbg」 !!! no way to rebind yet
 
   [keys	.'#‹.m›'.'#‹.k›'.'m']           	##‹.i› ☰🅂 Symbol mode in Space mode     	「☰␠ f」		「」
     'm'	= 'symbol_picker'               	# 🅂🗋 Document  symbols 🄻                	「☰␠ s」	「」 ⚛Ⓢ
@@ -70,6 +71,12 @@
 
 
   [keys	.'#‹.m›'.'#‹.k›'.'f']      	##‹.i› ☰␜ File mode in Space mode          	「☰␠ f」		「」
+   #'i'	= 'no_op'                  	#                                          	「」    	「  」
+   #';'	= 'no_op'                  	#                                          	「」    	「  」
+   #"'"	= 'no_op'                  	#                                          	「」    	「  」
+   #'m'	= 'no_op'                  	#                                          	「」    	「  」
+   #'.'	= 'no_op'                  	#                                          	「」    	「  」
+   #'/'	= 'no_op'                  	#                                          	「」    	「  」
     'j'	= ['commit_undo_checkpoint'	# 💾 save file                              	「  」  	「  」
       ,	  ':write']                	                                           	      	#
     'k'	= 'file_picker'            	# 🗁 Open file   picker                     	「☰␠ f」	「  」
@@ -89,7 +96,6 @@
    #'r'	= 'rename_file'            	# ✎ rename current file                    	「  」  	「  」
    #'e'	= 'open in external app'   	# open in external app                     	「  」  	「  」
    #'w'	= 'find_file'              	# 🔎 Find file                              	「  」  	「  」<i class='mss mss-Search-3'></i>
-   #'q'	= 'mode_fs_close'          	# ☰× Close buffers/files un/saved          	「  」  	「  」
     'v'	= 'goto_last_modified_file'	# ✎ file last modified/alternate           	「ⓖ m」 	「  」
    #'c'	= 'copy file path'         	# 📋C:\ copy file path                      	「  」  	「  」 <i class='fa fa-clipboard'>C:\
    #'t'	= 'list recently closed'   	# list recently closed                     	「  」  	「  」
@@ -101,6 +107,9 @@
     '`'	= ':reload'                	# 🗘 Discard, Reload      from source       	「  」	「  」
     '~'	= ':reload-all'            	# 🗘∀ Discard, Reload all from source       	「  」	「  」
     'p'	= ':config-open-workspace' 	# 🛠🗋 Workspace config file                 	「  」	「  」
+    #  	Modes                      	                                           	 
+   #'q'	= 'mode_fs_close'          	# ☰× Close buffers/files un/saved          	「  」	「  」
+   #'x'	= nSpaceQ                  	# ☰␜☰ᵡ Close mode                          	「」  	「  」
 
     ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
     'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
