@@ -5,8 +5,8 @@
     'C-q'  	= ':quit!'                         	# Control-q → typable command :q! (:quit!)
     # 'S-g'	= 'move_prev_word_end'             	# Backward a word                                                    	「⇧I.⎇b, ⎇◀」	「goto_line」
     # '0'  	= 'univeral_arg'                   	# ∀* number prefix to treat all the following numbers as # of repeats	「  」       	「0」  !!!missing ∀*
-    # 'C-j'	= ['page_down','align_view_center']	# ⇟ Move      page down                                              	   「 ⎈d」   	「」
-    # 'C-k'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ⎈u」   	「」
+    # 'C-i'	= ['page_up','align_view_center']  	# ⇞ Move      page up                                                	   「 ⎈u」   	「」
+    # 'C-k'	= ['page_down','align_view_center']	# ⇟ Move      page down                                              	   「 ⎈d」   	「」
 
     # 'C-K'	= "insert_char"	# ⇞ Move      page up	   「 ⎈u」	「」
 
@@ -15,7 +15,7 @@
     'A-C'  	= 'no_op'           	#                        	「⇧   」	「copy_selection_on_prev_line」
     'S-A-9'	= 'no_op'           	#                        	「⇧⎇9」 	「rotate_selection_contents_backward」
     'S-A-0'	= 'no_op'           	#                        	「⇧⎇0」 	「rotate_selection_contents_forward」
-    'C-i'  	= 'no_op'           	#                        	「   」 	「jump_forward」
+    'C-j'  	= 'no_op'           	#                        	「   」 	「」
     'b'    	= 'no_op'           	#                        	「⇧   」	「replace_with_yanked」
     '~'    	= "no_op"           	#                        	「⇧   」	「switch_case」
     'A-`'  	= "no_op"           	#                        	「   」 	「switch_to_uppercase」
@@ -67,8 +67,8 @@
     'l'  	= 'move_char_right'      	# ▶                             	「l/▶」   	「move_char_right」
     'm'  	= 'half_page_down'       	# ⤈ Move half page down         	   「 ⎈d」	「☰🧩」
     ','  	= 'half_page_up'         	# ⤉ Move half page up           	   「 ⎈u」	「keep_primary_selection」
-    'C-j'	= 'page_down'            	# ⇟ Move      page down         	   「 ⎈d」	「」
-    'C-k'	= 'page_up'              	# ⇞ Move      page up           	   「 ⎈u」	「」
+    'C-k'	= 'page_down'            	# ⇟ Move      page down         	   「 ⎈d」	「」
+    'C-i'	= 'page_up'              	# ⇞ Move      page up           	   「 ⎈u」	「jump_forward」
     'a'  	= 'extend_to_line_start' 	# ⤝▋ Move    line start + select	「ⓈHome」 	「append_mode」  # goto_line_start
     'S-a'	= 'extend_to_line_end'   	# ▋⭲ Move    line end   + select	「ⓈEnd」  	「insert_at_line_end」  # goto_line_end
     #    	 
@@ -176,7 +176,8 @@
     'C-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「」
     'S-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「goto_line」
 
-    'S-j'  	= 'extend_line_below'      	# ⮒ Select current line/extend down    if sel   	「  x」	「join_selections」
+    'S-i'  	= 'select_line_above'      	# 🠱━ Select current line/extend up     if sel   	「   」	「insert_at_line_start」
+    'S-k'  	= 'extend_line_below'      	# 🠳━ Select current line/extend down   if sel   	「  x」	「keep_selections」
     'S-e'  	= 'extend_to_line_bounds'  	# 🢔━🢖 Extend sel to line bounds (line-wise sel)⎯	「⇧ x」	「move_next_long_word_end」
     'A-S-e'	= 'shrink_to_line_bounds'  	# 🢖━🢔 Shrink sel to line bounds (line-wise sel)⎯	「 ⎇x」	「」
     'A-r'  	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev            	「   」	「」
@@ -215,7 +216,7 @@
     'A-a'    	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」
     #'A-S-a' 	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
     'A-p'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
-    'A-:'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
+    'A-S-l'  	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
     #'A-l'   	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (← with many columns) 	「⇧ 9」 	「」
     #'A-;'   	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
     'A-m'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (↓ with many lines)   	「⇧ 0」 	「」
@@ -251,10 +252,10 @@
     'C-/'        	= 'toggle_comments'                  	# // un-/comment sels          	「 ⎈c」	「」
     'C-?'        	= 'toggle_block_comments'            	# /* un-/comment sels (block)  	「␠⇧c」	「」
     'C-A-/'      	= 'toggle_line_comments'             	# /━ un-/comment sels (line )  	「␠⎇c」	「」
-    'C-S-j'      	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓               	「 」  	「」!!! not implemented yet
+    'C-S-k'      	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓               	「 」  	「」!!! not implemented yet
                  	   'delete_selection',               	#                              	     	 github.com/helix-editor/helix/issues/2245
                  	   'paste_after']                    	#                              	     	 
-    'C-S-k'      	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑               	「 」  	「」
+    'C-S-i'      	= ['extend_to_line_bounds',          	# ━⮁ swap line ↑               	「 」  	「」
                  	   'delete_selection','move_line_up',	#                              	     	 
                  	   'paste_before']                   	#                              	     	 
 
