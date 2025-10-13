@@ -55,17 +55,17 @@
     'A-f'    	= 'move_next_word_end'       	# ω⭲ Move next end of word	「」	「」
     #        	                             	                          	  	 
     'A-right'	= 'move_next_word_start'     	# ω⤞ Move next beg of word	「」	「」
-    'A-d'    	= 'move_prev_word_start'     	# ⤝ω Move prev beg of word	「」	「delete_word_forward」
+    'A-s'    	= 'move_prev_word_start'     	# ⤝ω Move prev beg of word	「」	「」
     #        	                             	                          	  	 
     'A-left' 	= 'move_prev_word_end'       	# ⭰ω Move prev end of word	「」	「」
     'A-S-f'  	= 'move_next_long_word_end'  	# W⭲ Move next end of WORD	「」	「」
     #        	                             	                          	  	 
-    'C-f'    	= 'move_next_long_word_start'	# W⤞ Move next end of WORD	「」	「」
+    #'C-f'   	= 'move_next_long_word_start'	# W⤞ Move next end of WORD	「」	「」
     'C-right'	= 'move_next_long_word_start'	# W⤞ Move next end of WORD	「」	「」
-    'A-S-d'  	= 'move_prev_long_word_start'	# ⤝W Move prev beg of WORD	「」	「」
+    'A-S-s'  	= 'move_prev_long_word_start'	# ⤝W Move prev beg of WORD	「」	「」
     'C-left' 	= 'move_prev_long_word_start'	# ⤝W Move prev beg of WORD	「」	「」
     #        	                             	                          	  	 
-    'C-d'    	= 'move_prev_long_word_end'  	# ⭰W Move prev end of WORD	「」	「delete_char_forward」
+    #'C-s'   	= 'move_prev_long_word_end'  	# ⭰W Move prev end of WORD	「」	「delete_char_forward」
     #        	                             	                          	  	 
     #        	                             	                          	  	 
     #        	                             	                          	  	 
@@ -89,17 +89,17 @@
     'A-r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	Ⓝ「 ⎇.」	「replace」
 
     #ⓘ     	Find
-    'A-w'  	= 'find_next_char'  	# 🔎   Find       next     char           	Ⓝ「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'A-S-w'	= 'find_prev_char'  	# 🔍   Find       previous char           	「⇧Ⓝ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    #      	                    	                                         	         	 
-    #      	                    	                                         	         	 
-    'A-S-s'	= 'rsearch'         	# 🔍𝖗 for previous regex pattern          	Ⓝ「⇧ /」   	「split_selection」
-    'A-s'  	= 'search'          	# 🔎𝖗 for          regex pattern          	「⇧Ⓝ  /」  	「select_regex」
-    'A-.'  	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	   Ⓝ「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    'A-/'  	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	   Ⓝ「  n」	「search」
-    #      	                    	                                         	         	 
-    #      	                    	                                         	         	 
-    'A-8'  	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	   Ⓝ「⇧ 8」	「<8>」   !!! blocked by ∀*
+    'A-w'  	= 'find_next_char'  	# 🔎   Find       next     char           	「」	「」	<i class='mss mss-Search-3'></i>
+    'A-S-w'	= 'find_prev_char'  	# 🔍   Find       previous char           	「」	「」	<i class='fa fa-search'></i>
+    #      	                    	                                         	  	 
+    #      	                    	                                         	  	 
+    'A-S-d'	='rsearch'          	# 🔍𝖗 for previous regex pattern          	「」	「」
+    'A-d'  	= 'search'          	# 🔎𝖗 for          regex pattern          	「」	「」
+    'A-.'  	= 'search_prev'     	# 🢔◎ ◎͔ Select previous search match     	「」	「」   !!! blocked by .Repeat
+    'A-/'  	= 'search_next'     	# ◎🢖 ◎͕ Select next     search match     	「」	「」
+    #      	                    	                                         	  	 
+    #      	                    	                                         	  	 
+    'A-8'  	= 'search_selection'	# 𝖗🢔▋ Use selection as the search pattern	「」	「」   !!! blocked by ∀*
 
 
 
