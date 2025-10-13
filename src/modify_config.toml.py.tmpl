@@ -116,7 +116,7 @@ def dictIterDeep(d, k_parent=None, k_parent_lyt=None, isAnyParentRemappable=None
                   isinstance(d[k],list)): # but single commands→no_op to hide the defaults
               if k_parent and k_parent_lyt and not (k_parent == k_parent_lyt):
                 d[k] = 'no_op' # avoid nooping content of '␠'(lyt) that is merged with '␠'(en) due to the fact that the label is the same (not translated)
-      isAnyParentRemappable = True if iterLevel > 1 else False
+      isAnyParentRemappable = True if iterLevel > 0 else False
     if isinstance(v, Mapping):
       iterLevel += 1
       dictIterDeep(v, k,key_combo_new, isAnyParentRemappable, iterLevel)
