@@ -168,7 +168,15 @@
 
 
     'A-S-e'	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯	「⇧Ⓝ  x」	「move_next_long_word_end」
-    'C-e'  	= ['select_mode'           	# =ω "Extend" selection to same word ω₌ ω≡                	「   」  	「goto_line_end_newline」
+    'C-S-r'	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev                      	「   」  	「」
+      ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,    	 'move_prev_word_start'    	#
+      ,    	 'search_selection'        	#
+      ,    	 'make_search_word_bounded'	#
+      ,    	 'extend_search_prev'      	#
+      ,    	 'insert_mode'             	#
+      ]    	                           	# = Sublime's find_under_expand
+    'C-S-e'	= ['select_mode'           	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
       ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,    	 'move_prev_word_start'    	#
       ,    	 'search_selection'        	#
