@@ -83,29 +83,25 @@
 
 
 
-    #Ⓢ        	word
-    'f'       	= 'extend_next_word_end'       	# ω⭲ Extend next end of word	「  e」	「extend_next_char」
-    'A-f'     	= 'extend_next_word_start'     	# ω⤞ Extend next beg of word	「  w」	「」
-    'A-right' 	= 'extend_next_word_start'     	# ω⤞ Extend next beg of word	「  w」	「」
-    'd'       	= 'extend_prev_word_start'     	# ⤝ω Extend prev beg of word	「  b」	「」
-    'A-d'     	= 'extend_prev_word_end'       	# ⭰ω Extend prev end of word	「   」	「」
-    # 'A-left'	= 'extend_prev_word_end'       	# ⭰ω Extend prev end of word	「   」	「」
-    'S-f'     	= 'extend_next_long_word_end'  	# W⭲ Extend next end of WORD	「⇧ e」	「extend_prev_char」
-    'A-S-f'   	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」	「」
-    #         	                               	                            	         
-    'C-right' 	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」	「」
-    'S-d'     	= 'extend_prev_long_word_start'	# ⤝W Extend prev beg of WORD	「⇧ b」	「」
-    'A-S-d'   	= 'extend_prev_long_word_end'  	# ⭰W Extend prev end of WORD	「⇧ b」	「」
-    'C-left'  	= 'extend_prev_long_word_end'  	# ⭰W Extend prev end of WORD	「⇧ b」	「」
-    #         	                               	                            	         
-    #         	                               	                            	         
-    #         	                               	                            	         
-    #         	                               	                            	         
-    #         	                               	                            	         
-    # 'r'     	= 'extend_next_word_start'     	# W⤞ Extend next beg of WORD	「⇧ w」	「」
-    # 'S-r'   	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」	「」
-    # 'A-r'   	= 'extend_next_word_start'     	# W⤞ Extend next beg of WORD	「⇧ w」	「」
-    # 'A-S-r' 	= 'extend_next_long_word_start'	# W⤞ Extend next beg of WORD	「⇧ w」	「」
+    #Ⓢ       	word
+    'f'      	= 'extend_next_word_end'       	# ω⭲ Extend next end of word	「  e」	「extend_next_char」
+    'A-f'    	= 'extend_next_word_start'     	# ω⤞             beg of     	「  w」	「」
+    'A-right'	= 'extend_next_word_start'     	# ω⤞             beg of     	「  w」	「」
+    's'      	= 'extend_prev_word_start'     	# ⤝ω        prev beg of     	「  b」	「」
+    'A-s'    	= 'extend_prev_word_end'       	# ⭰ω             end of     	「   」	「」
+    #'A-left'	= 'extend_prev_word_end'       	# ⭰ω             end of     	「   」	「」
+    'S-f'    	= 'extend_next_long_word_end'  	# W⭲        next end of WORD	「⇧ e」	「extend_prev_char」
+    'A-S-f'  	= 'extend_next_long_word_start'	# W⤞             beg        	「⇧ w」	「」
+    #'C-f'   	= 'extend_next_long_word_start'	# W⤞             beg        	「⇧ w」	「」
+    'C-right'	= 'extend_next_long_word_start'	# W⤞             beg        	「⇧ w」	「」
+    'S-s'    	= 'extend_prev_long_word_start'	# ⤝W        prev beg        	「⇧ b」	「」
+    'C-left' 	= 'extend_prev_long_word_start'	# ⤝W             end        	「⇧ b」	「」
+    'A-S-s'  	= 'extend_prev_long_word_end'  	# ⭰W             end        	「⇧ b」	「」
+    #'C-s'   	= 'extend_prev_long_word_end'  	# ⭰W             end        	「⇧ b」	「half_page_down」
+    # 'r'    	= 'extend_next_word_start'     	# W⤞        next beg        	「⇧ w」	「」
+    # 'S-r'  	= 'extend_next_long_word_start'	# W⤞                        	「⇧ w」	「」
+    # 'A-r'  	= 'extend_next_word_start'     	# W⤞                        	「⇧ w」	「」
+    # 'A-S-r'	= 'extend_next_long_word_start'	# W⤞                        	「⇧ w」	「」
 
     #Ⓢ      	Line
     # 'home'	= 'extend_to_line_start'	# ⤝▋ Extend     line start	「home」	「extend_to_line_start」
@@ -125,17 +121,17 @@
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
     #Ⓢ     	Find
-    'w'    	= 'extend_next_char'     	# 🔍   Extend       next     char                               	「  f」 	「extend_next_word_start」
-    'S-w'  	= 'extend_prev_char'     	# 🔎   Extend       previous char                               	「⇧ f」 	「extend_next_long_word_start」
-    'A-w'  	= 'extend_till_char'     	# 🔍₋₁ Extend 'till next     char                               	「  t」 	「」
-    'A-S-w'	= 'extend_till_prev_char'	# 🔎₋₁ Extend 'till previous char                               	「⇧ t」 	「」
-    'S-s'  	= 'rsearch'              	# 🔍𝖗 for previous regex pattern                                	「⇧ /」 	「split_selection」
-    's'    	= 'search'               	# 🔎𝖗 for          regex pattern                                	「⇧  /」	「select_regex」
-    '.'    	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend previous search match                           	「⇧ n」 	「goto_last_modification!!!」
-    '/'    	= 'extend_search_next'   	# ◎🢖 ◎͕ Extend next     search match                           	「  n」 	「search」
-    #      	                         	                                                               	         
-    #      	                         	                                                               	         
-    '8'    	= 'search_selection'     	# 𝖗🢔▋ Use current selection as the search pattern !!!missing ∀*	「⇧ 8」	「<8>」
+    'w'    	= 'extend_next_char'     	# 🔍   Extend       next     char       	「  f」 	「extend_next_word_start」
+    'S-w'  	= 'extend_prev_char'     	# 🔎   Extend       previous char       	「⇧ f」 	「extend_next_long_word_start」
+    'A-w'  	= 'extend_till_char'     	# 🔍₋₁ Extend 'till next     char       	「  t」 	「」
+    'A-S-w'	= 'extend_till_prev_char'	# 🔎₋₁ Extend 'till previous char       	「⇧ t」 	「」
+    'S-d'  	='rsearch'               	# 🔍𝖗 for previous regex pattern        	「⇧ /」 	「」
+    'd'    	= 'search'               	# 🔎𝖗 for          regex pattern        	「⇧  /」	「delete_selection」
+    '.'    	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend previous search match   	「⇧ n」 	「goto_last_modification!!!」
+    '/'    	= 'extend_search_next'   	# ◎🢖 ◎͕ Extend next     search match   	「  n」 	「search」
+    #      	                         	                                       	         
+    #      	                         	                                       	         
+    '8'    	= 'search_selection'     	# 𝖗🢔▋ Use current sel as search pattern	「⇧ 8」	「<8>」 !!!missing ∀*
 
 
 
@@ -219,7 +215,7 @@
     'A-l'	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS        	「⎇ m」	「」
     'S-m'	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection          🌳TS ⸙₋    	「⎇ i」	「」
     '<'  	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node       🌳TS ⸙₊    	「⎇ o」	「」
-    'A-s'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「split_selection_on_newline」
+    'A-d'	= 'select_regex'               	# 𝖗▋ Select all regex matches inside selections             	「  s」	「delete_selection_noyank」
     'S-n'	= 'split_selection'            	# ䷖𝖗 on regex matches                                       	「⇧ s」	「search_prev」
     'A-n'	= 'split_selection_on_newline' 	# ䷖␤ (﹨␤)                                                   	「 ⎇s」	「」
 
