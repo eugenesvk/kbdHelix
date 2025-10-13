@@ -206,6 +206,8 @@
     'v'	= 'goto_next_class'         	# τ🢖 Type definition    next        	「⧛  t」	「」!!!→sticky
     't'	= 'goto_prev_test'          	# 🢔🧪 Test               previous    	「⧛⇧ t」	「」 !!!→sticky
     'y'	= 'goto_next_test'          	# 🧪🢖 Test               next        	「⧚⇧ t」	「」 !!!→sticky
+    '['	= 'goto_prev_entry'         	# ⟨𝕖,⟩ List-like element  prev (TS) 	≝「  e」	「」 🄧⟨𝕖⟩⟨𝕚⟩
+    ']'	= 'goto_next_entry'         	# ⟨𝕖,⟩ List-like element  next (TS) 	≝「  e」	「」 🄧⟨𝕖⟩⟨𝕚⟩
     'q'	=':tree-sitter-highlight-name' # 🔬ℹ theme scope name @ ⎀          「」  「」
     #  	 🄻LSP                     	                             	      	 
     "'"	= ':format'               	# ℱ∀ Format the file         	「  」  	「」
@@ -218,11 +220,11 @@
     'n'	= 'rename_symbol'         	# ✎  Rename symbol           	「☰␠ r」	「」
     'r'	= ':lsp-workspace-command'	# 🄲🗍 Workspace command picker	「  」  	「」
     '\'	= ':lsp-stop'             	# ⏹🄻 Stop                    	「  」  	「」
-    ']'	= ':lsp-restart'          	# 🔄🄻 Restart                 	「  」  	「」
+    '}'	= ':lsp-restart'          	# 🔄🄻 Restart                 	「  」  	「」
 
     'h'	= ':toggle lsp.display-inlay-hints'         	# 💡 toggle inlay hints       	「  」  	「」
     'e'	= 'select_references_to_symbol_under_cursor'	# =🅂 Select symbol references	「☰␠ h」	「」
     #  	 🄳DAP                                       	                             	      	 
-    '['	= 'dap_restart'                             	# 🔄🄳 Restart (DAP)           	「  」  	「」
+    '{'	= 'dap_restart'                             	# 🔄🄳 Restart (DAP)           	「  」  	「」
 
   # [keys.'#‹.m›'.'#‹.k›'.'p']	##‹.i› ☰ⓟ TBD
