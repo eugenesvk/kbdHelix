@@ -148,7 +148,7 @@
     'A-e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web)	「  v」	「move_next_word_end」 <i class='fa fa-arrows'></i>
 
     # Compat with non-modal editors
-    #'C-a'   	= ['save_selection','select_all']	# 🖈∀▋                                                       	Ⓝ「⇧ 5」  「increment」 ???better than ⭰× × to line ⭰
+    'C-a'    	= ['save_selection','select_all']	# 🖈∀▋                                                       	Ⓝ「⇧ 5」  「increment」 ???better than ⭰× × to line ⭰
     'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy selection onto the next     line (add cursor below)	Ⓝ「⇧ c」  「」
     'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」 	「」
     'S-left' 	= 'extend_char_left'             	#                                                           	「Ⓢh/◀」	「」
@@ -272,8 +272,8 @@
     'A-h'        	= 'delete_word_backward'         	# ⌫ω ᵡ word ←   	ⓘ「 ⎈w」  	「」
     #'A-S-h'     	= 'delete_word_forward'          	# ⌦ω ᵡ word →   	 ⓘ「  ⎇d」	「」
     #ⓘ           	line                             	                	        	 
-    'C-a'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「goto_line_start」  ??? better than ∀▋select_all
-    'C-S-a'      	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「」
+    #'C-a'       	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「⎈u」   	「」 ??? better vs ∀▋select_all
+    #'C-S-a'     	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「⎈k」   	「」
     'C-i'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「⎈u」   	「insert_newline」
     'C-k'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「⎈k」   	「kill_to_line_end」
 
