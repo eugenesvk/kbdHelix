@@ -368,7 +368,7 @@
 
 
   ##Ⓢ ☰Minor modes
-  #‹- /* m=mode i=icon k=key */›
+  #‹- /* m=mode i=icon k=key  NB! when changing update Macros like b='@naw' #*/›
 
   #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" .cfg) ›
 
@@ -379,7 +379,7 @@
   #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ 👁ₛ" "k" "P" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nGoTo.toml.tmpl") (dict "m" "select" "i" "Ⓢ ⓖ☰⮊" "k" "g" "cfg" .cfg) ›
-    'g'	= 'extend_to_word'	# 𝕒𝕓 label@word	  「  w」	「goto_file_start」
+    'g'	= 'extend_to_word'	# 𝕒𝕓 label@word	  「  w」	「goto_file_start」 #‹- /* command differs in Normal #*/›
 
   #‹ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🧩" "k" "n" "cfg" .cfg) ›
 
