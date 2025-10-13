@@ -4,15 +4,15 @@
   [keys    	.'#‹.m›'.'#‹.k›']                     	##‹.i› ☰␠  Space mode              	Ⓝ「 ␠」  	「」
    #'space'	= 'insert_mode'                       	# ⁁⤸ Insert before sel             	「  i」  	「」 !!!panick! !!!missing
     'ret'  	= 'command_mode'                      	# Ⓒ Enter command mode             	「  ⎋」  	「」
-    'F'    	= 'file_picker_in_current_directory'  	# 🗁 Open file   picker@curdir      	「☰␠⇧ f」	「file_picker_in_current_directory」
+    'S-f'  	= 'file_picker_in_current_directory'  	# 🗁 Open file   picker@curdir      	「☰␠⇧ f」	「file_picker_in_current_directory」
     'c'    	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main sel to sys clipboard	「☰␠ ⇧y」	「」 <i class='fa fa-clipboard'></i>▋
     'x'    	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                             	「   」  	「」 <i class='fa fa-clipboard'></i>
            	   'delete_selection']                	# cut to clipboard                 	「   」  	「」  create a new buffer and paste a buffer there !!! not available yet
     #      	line                                  	                                   	       	 
-    'J'    	= ['extend_to_line_bounds',           	# ━⮃ swap line ↓                   	「 」    	「」!!! not implemented yet
+    'S-k'  	= ['extend_to_line_bounds',           	# ━⮃ swap line ↓                   	「 」    	「」!!! not implemented yet
            	   'delete_selection',                	#                                  	       	 github.com/helix-editor/helix/issues/2245
            	   'paste_after']                     	#                                  	       	 
-    'K'    	= ['extend_to_line_bounds',           	# ━⮁ swap line ↑                   	「 」    	「」
+    'S-i'  	= ['extend_to_line_bounds',           	# ━⮁ swap line ↑                   	「 」    	「」
            	   'delete_selection','move_line_up', 	#                                  	       	 
            	   'paste_before']                    	#                                  	       	 
 
