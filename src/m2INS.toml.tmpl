@@ -176,9 +176,10 @@
       ,    	 'extend_search_next'      	#
       ,    	 'insert_mode'             	#
       ]    	                           	# = Sublime's find_under_expand
-    'A-S-j'	= 'extend_line_below'      	# 🠳━ Select current line, if already selected, extend to next line	Ⓝ「  x」	「join_selections」
-    #'A-5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph                                        	Ⓝ「   」	「<5>」  !!!missing ∀* !!!missing command
-    'A-%'  	= 'select_all'             	# ∀▋ Select entire file                                           	「⇧Ⓝ 5」	「select_all」
+    'A-S-i'	= 'select_line_above'      	# 🠱━ Select current line/extend up     if sel	「」    	「」
+    'A-S-k'	= 'extend_line_below'      	# 🠳━ Select current line/extend down   if sel	「」    	「」
+    #'A-5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph                   	Ⓝ「   」	「<5>」  !!!missing ∀* !!!missing command
+    'A-%'  	= 'select_all'             	# ∀▋ Select entire file                      	「⇧Ⓝ 5」	「select_all」
 
     'A-S-m'   	= 'shrink_selection'           	# ⸙− Shrink syntax tree object selection    🌳TS ⸙₋          	Ⓝ「 ⎇i」	「」
     'A-<'     	= 'expand_selection'           	# ⸙₊ Expand selection to parent syntax node 🌳TS ⸙₊          	Ⓝ「 ⎇o」	「」
@@ -186,9 +187,9 @@
     'A-S-down'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	Ⓝ「⇧ c」	「」
     'A-S-up'  	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	Ⓝ「⇧⎇c」	「」
 
-    "A-'"  	= 'collapse_selection'	# 🢖🢔 Collapse selection onto a single cursor 	Ⓝ「  ;」	「」
-    'A-S-k'	= 'keep_selections'   	# ᵏ𝖗 selections not matching the regex (keep)	「⇧Ⓝ k」	「keep_selections」
-    'A-S-l'	= 'remove_selections' 	# ᵡ𝖗 selections     matching the regex       	「⇧Ⓝ⎇k」	「」
+    "A-'"  	= 'collapse_selection'	# 🢖🢔 Collapse selection onto a single cursor 		 
+    'A-S-l'	= 'keep_selections'   	# ᵏ𝖗 selections not matching the regex (keep)		 
+    'A-S-j'	= 'remove_selections' 	# ᵡ𝖗 selections     matching the regex       		 
 
     'A-minus'	= 'trim_selections'             	# ✁Trim whitespace from the selection                    	Ⓝ「⇧ -」	「」
     'A-_'    	= 'merge_consecutive_selections'	# ⛙ Merge consecutive selections ⨝                       	「⇧⎇ -」	「trim_selections」
@@ -245,8 +246,8 @@
     #            	Delete
     #ⓘ           	char
     "backspace"  	= 'delete_char_backward'	# ⌫c ᵡ char ←    	≝「 ⌫」	「delete_char_backward」
-    'C-l'        	= 'delete_char_backward'	# ⌫c ᵡ char ←    	「 ⎈h」	「」
-    'C-;'        	= 'delete_char_forward' 	# ⌦c ᵡ char →    	「 ⎈d」	「」 !!!fails
+    'C-j'        	= 'delete_char_backward'	# ⌫c ᵡ char ←    	「 ⎈h」	「insert_newline」
+    'C-l'        	= 'delete_char_forward' 	# ⌦c ᵡ char →    	「 ⎈d」	「」 !!!fails
     'A-6'        	= 'delete_char_forward' 	# ⌦ !!!missing ∀*	Ⓝ「 ⌦」	「<5>」
     'A-S-h'      	= 'delete_char_forward' 	# ⌦c ᵡ char →    	「⇧ ⌦」	「」
     #ⓘ           	word                    	                 	 
@@ -265,8 +266,8 @@
     #ⓘ           	line                             	                	        	 
     'C-a'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「goto_line_start」  ??? better than ∀▋select_all
     'C-S-a'      	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「」
-    'C-j'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「 ⎈u」  	「insert_newline」
-    'C-k'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「 ⎈k」  	「kill_to_line_end」
+    'C-i'        	= 'kill_to_line_start'           	# ⭰ᵡ ᵡ to line ⭰	ⓘ「⎈u」   	「insert_newline」
+    'C-k'        	= 'kill_to_line_end'             	# ᵡ⭲ ᵡ to line ⭲	ⓘ「⎈k」   	「kill_to_line_end」
 
     #ⓘ     	selection                             	                                  	       	 
     'A-x'  	= 'delete_selection'                  	# ᵡ▋                              	Ⓝ「  d」 	「extend_line」
@@ -286,7 +287,7 @@
     'C-m'  	= 'decrement'            	# ⊖ o̠ Decrement object/number @ ⎀	「 ⎈x」 	「」 <span class='cd'>o&#800;</span>
     'C-,'  	= 'increment'            	# ⊕ o̟ Increment object/number @ ⎀	「 ⎈a」 	「」 <span class='cd'>o&#799;</span> !!!fails
     #'C-r' 	= 'insert_register'      	# 📋r Paste register               	ⓘ「 ⎈r」	「insert_register」
-    'C-i'  	= 'completion'           	# ⎁ Autocomplete                  	「   」 	「」
+    'C-;'  	= 'completion'           	# ⎁ Autocomplete                  	「   」 	「」
 
     #ⓘ Shell	                 	 
     'A-|'   	= 'shell_pipe'   	# Pipe each selection through shell command, replacing with output	「⇧Ⓝ \」	「shell_pipe」
@@ -301,7 +302,7 @@
     #'A-S-q'	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧Ⓝ q」 replay_macro]
     "A-S-'" 	= 'select_register'	# ®  Select a register to copy/paste from                 	Ⓝ「  '<reg>」	「select_register」
 
-    'A-S-i'	= 'open_above'           	# ⭡␤ Open new line above selection	「⇧Ⓝ o」 	「insert_at_line_start」
+    'A-S-;'	= 'open_above'           	# ⭡␤ Open new line above selection	「⇧Ⓝ o」 	「insert_at_line_start」
     'A-S-o'	= 'open_below'           	# ⭣␤ Open new line below selection	Ⓝ「  o」 	「insert_at_line_end」
     'A-u'  	= 'undo'                 	# ⎌ Undo change                   	Ⓝ「  u」 	「undo mode」
     'A-y'  	= 'redo'                 	# ↷ Redo change                   	Ⓝ「⇧ u」 	「yank」
