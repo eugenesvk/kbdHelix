@@ -176,10 +176,10 @@
     'C-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「」
     'S-g'	= 'save_selection' 	# 🖈 Save cur sel to jumplist	「  ⎈s」	「goto_line」
 
-    'S-j'  	= 'extend_line_below'      	# ⮒ Select current line/extend down    if sel        	「  x」	「join_selections」
-    'A-r'  	= 'extend_line'            	# ⭿ Select current line/extend to another if selected	「   」	「」
-    'S-e'  	= 'extend_to_line_bounds'  	# ━ Extend sel to line bounds (line-wise sel)⎯       	「⇧ x」	「move_next_long_word_end」
-    'A-S-e'	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev                 	「   」	「」
+    'S-j'  	= 'extend_line_below'      	# ⮒ Select current line/extend down    if sel   	「  x」	「join_selections」
+    'S-e'  	= 'extend_to_line_bounds'  	# 🢔━🢖 Extend sel to line bounds (line-wise sel)⎯	「⇧ x」	「move_next_long_word_end」
+    'A-S-e'	= 'shrink_to_line_bounds'  	# 🢖━🢔 Shrink sel to line bounds (line-wise sel)⎯	「 ⎇x」	「」
+    'A-r'  	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev            	「   」	「」
       ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
       ,    	 'move_prev_word_start'    	#
       ,    	 'search_selection'        	#
