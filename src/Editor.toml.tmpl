@@ -18,7 +18,6 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
   # 'auto-info'              	= true       	#T        	Display infoboxes
   'cursorline'               	= false      	#F        	Highlight all lines   with a cursor
   'cursorcolumn'             	= false      	#F        	Highlight all columns with a cursor
-  # 'auto-save'              	= false      	#F        	save focus lost (needs focus event support from your terminal)
   'auto-format'              	= false      	#T        	auto formatting on save
   'color-modes'              	= true       	#F        	Color mode indicator depending on the mode itself
   'text-width'               	= 120        	#80       	Max line length for the :reflow command and soft-wrap.wrap_at_text_width
@@ -155,3 +154,8 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
     #               	        	    W␠ ⎀: insert ⭾ as normal
     #               	        	‹nonW␠ ⎀: run `move_parent_node_end`
     'supersede-menu'	=  false	#≝F block ⭾ for menu navigation, always use for smart tabs
+
+  [editor.auto-save] #
+    'focus-lost'         	= false	#≝F needs focus event support from your terminal
+    'after-delay.enable' 	= false	#≝F after ...timeout ms since last edit
+    'after-delay.timeout'	= 3000 	#3000 ms since last edit
