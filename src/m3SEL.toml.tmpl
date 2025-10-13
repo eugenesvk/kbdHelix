@@ -184,28 +184,29 @@
     'C-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「」
     'S-g'	= 'save_selection'	# 🖈 Save the current selection to the jumplist	「  ⎈s」	「goto_line」
 
-    'S-j'	= 'extend_line'            	# ⮒ Select current line, if already selected, extend to next line	「⇧  x」	「join_selections」
-    #    	                           	                                                                 	         
-    'S-e'	= 'extend_to_line_bounds'  	# ━ Extend selection to line bounds (line-wise selection)⎯       	「⇧ x」	「move_next_long_word_end」
-    '5'  	= 'merge_selections'       	# ▋&▋ Merge all selections into one with all ranges              	「⎇ -」	「」
-    'A-e'	= ['select_mode'           	# ω₌ "Extend" selection to same word                             	「   」	「」
-      ,  	 'move_next_word_end'      	# 1st since word_start command might select previous word
-      ,  	 'move_prev_word_start'    	#
-      ,  	 'search_selection'        	#
-      ,  	 'make_search_word_bounded'	#
-      ,  	 'extend_search_next'      	#
-      ]  	                           	# = Sublime's find_under_expand
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #    	                           	                                                           	         
-    #""  	= 'expand_selection'       	# Expand selection to parent syntax node !!!pick a key 🌳TS 	「   」	「expand_selection」
-    #'5' 	= 'select_paragraph'       	# ¶▋ Select this paragraph !!!missing ∀* !!!not implemented	「  」 	「<5>」
-    #'%' 	= 'select_all'             	# ∀▋ Select entire file                                    	「⇧ 5」	「select_all」
+    'S-i'  	= 'select_line_above'      	# 🠱━ Select current line/extend up     if sel   	「   」	「insert_at_line_start」
+    'S-k'  	= 'extend_line_below'      	# 🠳━ Select current line/extend down   if sel   	「  x」	「keep_selections」
+    'S-e'  	= 'extend_to_line_bounds'  	# 🢔━🢖 Extend sel to line bounds (line-wise sel)⎯	「⇧ x」	「move_next_long_word_end」
+    'A-S-e'	= 'shrink_to_line_bounds'  	# 🢖━🢔 Shrink sel to line bounds (line-wise sel)⎯	「 ⎇x」	「」
+    'A-r'  	= ['select_mode'           	# 🢔ω₌ "Extend" sel to same word prev            	「   」	「」
+      ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,    	 'move_prev_word_start'    	#
+      ,    	 'search_selection'        	#
+      ,    	 'make_search_word_bounded'	#
+      ,    	 'extend_search_prev'      	#
+      #    	                           		         
+      ]    	                           	# = Sublime's find_under_expand
+    'A-e'  	= ['select_mode'           	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+      ,    	 'move_next_word_end'      	# 1st since word_start command might select previous word
+      ,    	 'move_prev_word_start'    	#
+      ,    	 'search_selection'        	#
+      ,    	 'make_search_word_bounded'	#
+      ,    	 'extend_search_next'      	#
+      #    	                           		         
+      ]    	                           	# = Sublime's find_under_expand
+    '5'    	= 'merge_selections'       	# ▋&▋ Merge all selections into one with all ranges       	「⎇ -」	「」
+    #""    	= 'expand_selection'       	# Expand selection to parent syntax node !!!pick a key 🌳TS	「   」	「expand_selection」
+    #'%'   	= 'select_all'             	# ∀▋ Select entire file                                   	「⇧ 5」	「select_all」
 
     'A-k'	= 'copy_selection_on_next_line'	# 🠷 Copy selection onto the next     line (add cursor below)	「⇧ c」	「」
     'A-i'	= 'copy_selection_on_prev_line'	# 🠵 Copy selection onto the previous line (add cursor above)	「⇧⎇c」	「」
@@ -232,8 +233,8 @@
     'A-u'   	= 'remove_primary_selection'    	# ᵡ         the primary selection                        	「 ⎇,」 	「earlier」
     'A-;'   	= 'keep_primary_selection'      	# ᵡ∀ all but the primary selection (keep only)           	「  ,」 	「flip_selections」
     'A-S-u' 	= 'no_op'                       	# ᵡᵡ undo remove selection                               	「⇧ ⎇,」	「earlier」 !!!missing
-    'S-k'   	= 'keep_selections'             	# ᵏ𝖗 selections not matching the regex (keep)            	「⇧ k」 	「keep_selections」
-    'S-l'   	= 'remove_selections'           	# ᵡ𝖗 selections     matching the regex                   	「⇧⎇k」 	「」
+    'S-l'   	= 'keep_selections'             	# ᵏ𝖗 selections not matching the regex (keep)            	「⇧ k」 	「」
+    'S-j'   	= 'remove_selections'           	# ᵡ𝖗 selections     matching the regex                   	「⇧⎇k」 	「join_selections」
     'A-S-z' 	=['keep_primary_selection'      	# 🢖∀🢔 collapse everything to a single cursor             	「  」  	「」		 
       ,     	  'collapse_selection'          	                                                         	      	#
       ,     	  'exit_select_mode']           	                                                         	      	#
@@ -313,7 +314,7 @@
     # '.'  	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
     # ';'  	= 'insert_mode'           	# ⤹⎀ Insert before selection                                	「  i」 	「」
     'o'    	= 'append_mode'           	# ⎀⤸ Insert after selection (append)                        	「  a」 	「open_above」
-    'S-i'  	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
+    ':'    	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
     'S-o'  	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「insert_at_line_end」
     'u'    	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「undo mode」
     'y'    	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「yank」
