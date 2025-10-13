@@ -29,7 +29,11 @@
 
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
-    'S-tab' = 'move_parent_node_start'  # 🧠⭾☊ Move to parent node's beg 🌳TS 「」  「」
+    ''      	= 'smart_tab'             	# 🧠⭾                                	≝「⭾」		「smart_tab」
+    #       	                          	    W␠ ⎀: insert ⭾ as normal        	    		 
+    #       	                          	‹nonW␠ ⎀: run `move_parent_node_end`	    		 
+    'S-tab' 	= 'insert_tab'            	# ⭾                                 	≝「⭾」	「insert_tab」
+    #'S-tab'	= 'move_parent_node_start'	# 🧠⭾☊                       beg 🌳TS 	「」  	「insert_tab」
 
     #ⓘ     	Cursor@Home
     'A-k'  	= 'move_visual_line_down'        	# ▼                              	ⓘ「 ⎈n」 	「move_visual_line_up」
