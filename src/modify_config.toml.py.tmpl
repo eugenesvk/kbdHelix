@@ -101,24 +101,25 @@ def dictMergeDeep(dTo:dict, dFrom:dict) -> dict: # merge dFrom into dTo recursiv
   return dMerged
 
 from collections.abc import Mapping
-def dictIterDeep(d, k_parent=None, isAnyParentRemappable=None, iterLevel=1):
+def dictIterDeep(d, k_parent=None, k_parent_lyt=None, isAnyParentRemappable=None, iterLevel=1):
   for k,v in d.copy().items():
     if (key_combo_new := keyT.remap(k)):
       d[key_combo_new]	= d[k]
       if not isinstance(k, Mapping):
         if not k_parent:                  # del if a top-level mapping
-          d.pop(k)
+          d.pop(k) # avoids content of 'й' replacing 'q'
         else:
           if isAnyParentRemappable:       # del only if parent is remappable (so was remapped), ␠ mode needs both
             if   (isinstance(d[k],dict)): # del a group of command
               d.pop(k)
             elif (isinstance(d[k],str ) or\
                   isinstance(d[k],list)): # but single commands→no_op to hide the defaults
-              d[k] = 'no_op'
+              if k_parent and k_parent_lyt and not (k_parent == k_parent_lyt):
+                d[k] = 'no_op' # avoid nooping content of '␠'(lyt) that is merged with '␠'(en) due to the fact that the label is the same (not translated)
       isAnyParentRemappable = True if iterLevel > 1 else False
     if isinstance(v, Mapping):
       iterLevel += 1
-      dictIterDeep(v, k, isAnyParentRemappable, iterLevel)
+      dictIterDeep(v, k,key_combo_new, isAnyParentRemappable, iterLevel)
 
 for mode in     cfg_def_alt["keys"]:
   dictIterDeep( cfg_def_alt["keys"][mode])
