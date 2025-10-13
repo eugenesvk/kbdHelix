@@ -19,7 +19,7 @@
     'b'    	= 'no_op'           	#                        	「⇧   」	「replace_with_yanked」
     '~'    	= "no_op"           	#                        	「⇧   」	「switch_case」
     'A-`'  	= "no_op"           	#                        	「   」 	「switch_to_uppercase」
-    # 'S-x'  	= 'change_selection'	# Δ (delete,enter Insert)	「⇧  c」	「extend_to_line_bounds」
+    #'S-x' 	= 'change_selection'	# Δ (delete,enter Insert)	「⇧  c」	「extend_to_line_bounds」
   #Ⓝ Major modes ——————————————————————————————————————————————————————————————————————
     # 'i'	= 'insert_mode'	# ⤹⎀ Insert before sel                        	「  i」	「insert_mode」
     # 'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web)	「  v」	「move_next_word_end」  <i class='fa fa-arrows'></i>
@@ -50,7 +50,7 @@
   #Ⓝ Copy	                                    	                                        	       	 
     'c'  	= 'yank'                            	# 🗐▋ Copy main sel                      	「  c」  	「change_selection」 <i class='fa fa-copy'></i>
     'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main sel into sys clipboard   	「☰␠,⇧y」	「toggle_comments」 <i class='fa fa-clipboard'></i>
-    'S-c'  	= 'yank_joined'                     	# ®🗐▋   Copy main   sel to register     	「⇧␠,y」 	「copy_selection_on_next_line」
+    'S-c'	= 'yank_joined'                     	# ®🗐▋   Copy main   sel to register     	「⇧␠,y」 	「copy_selection_on_next_line」
     'A-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all sels to clipboard (joined)	「☰␠ y」 	「change_selection_noyank」 ⨝📋 ∀❚ ∀▋ <i class='fa fa-clipboard'></i>
 
   #Ⓝ Move ——————————————————————————————————————————————————————————————————————
@@ -82,11 +82,11 @@
     'A-d'    	= 'move_prev_word_end'         	# ⭰ω Move prev end of word  	ⓘ「⎇b」	「delete_selection_noyank」
     'A-left' 	= 'move_prev_word_end'         	# ⭰ω Move prev end of word  	ⓘ「⎇◀」	「」
     'S-f'    	= 'move_next_long_word_end'    	# W⭲ Move next end of WORD  	「⇧ e」	「find_prev_char」
-    'A-S-f'    	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「find_prev_char」
+    'A-S-f'  	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「find_prev_char」
     'C-f'    	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「page_down」
     'C-right'	= 'move_next_long_word_start'  	# W⤞ Move next beg of WORD  	「⇧ w」	「」
     'S-d'    	= 'move_prev_long_word_start'  	# ⤝W Move prev beg of WORD  	「⇧ b」	「」
-    'A-S-d'    	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「」
+    'A-S-d'  	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「」
     'C-left' 	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「」
     'C-d'    	= 'move_prev_long_word_end'    	# ⭰W Move prev end of WORD  	「⇧ b」	「half_page_down」
     # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD  	「⇧ w」	「page_down」
@@ -113,26 +113,26 @@
 
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
-    #Ⓝ    	Find
-    'w'   	= 'find_next_char'    	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'S-w' 	= 'find_prev_char'    	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-w' 	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
-    'A-S-w' 	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
-    'S-s' 	= 'rsearch'           	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「split_selection」
-    's'   	= 'search'            	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「select_regex」
-    '.'   	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    '/'   	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
-    #'S-n'	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
-    # 'n' 	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
-    '8'   	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
-    '*'   	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
-    #'*'  	= ['select_mode'      	#
-    #  ,  	'move_prev_word_start'	#
-    #  ,  	'move_next_word_end'  	#
-    #  ,  	'search_selection'    	#
-    #  ,  	'extend_search_next'  	#
-    #  ,  	'exit_select_mode'    	#
-    #  ]  	                      	# = find_under_expand
+    #Ⓝ     	Find
+    'w'    	= 'find_next_char'    	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'S-w'  	= 'find_prev_char'    	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    'A-w'  	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
+    'A-S-w'	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
+    'S-s'  	= 'rsearch'           	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「split_selection」
+    's'    	= 'search'            	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「select_regex」
+    '.'    	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
+    '/'    	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
+    #'S-n' 	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
+    # 'n'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
+    '8'    	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
+    '*'    	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
+    #'*'   	= ['select_mode'      	#
+    #  ,   	'move_prev_word_start'	#
+    #  ,   	'move_next_word_end'  	#
+    #  ,   	'search_selection'    	#
+    #  ,   	'extend_search_next'  	#
+    #  ,   	'exit_select_mode'    	#
+    #  ]   	                      	# = find_under_expand
 
 
     #Ⓝ          	Compat with non-modal editors
@@ -304,14 +304,14 @@
 
     # 'b' 	= 'repeat_last_change'   	# ∞ Repeat last change        	「  .」	「move_prev_word_start」 !!!missing
     #     	                         	                              	         
-    ';'   	= 'insert_mode'          	# ⤹⎀ Insert before sel        	≝「  i」	「collapse_selection」
-    'o'   	= 'append_mode'          	# ⎀⤸ Insert after sel (append)	「  a」 	「open_above」
-    'S-i' 	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」 	「insert_at_line_start」
-    'S-o' 	= 'open_below'           	# ⭣␤ Open new line below sel  	「  o」 	「insert_at_line_end」
-    'u'   	= 'undo'                 	# ⎌ Undo change               	「  u」 	「undo mode」
-    'y'   	= 'redo'                 	# ↷ Redo change               	「⇧ u」 	「yank」
-    'S-u' 	= 'earlier'              	# 🕘 Move backward in history  	「⇧ ⎇u」	「redo」   <i class='fa fa-history'></i>
-    'S-y' 	= 'later'                	# 🕒 Move forward  in history  	「⇧⎇u」 	「」 ⏱ <i class='fa fa-clock-o'></i>
+    ';'   	= 'insert_mode'          	# ⤹⎀ Insert before sel        	「  i」	「command_mode」
+    'o'   	= 'append_mode'          	# ⎀⤸ Insert after sel (append)	「  a」	「open_above」
+    'S-i' 	= 'open_above'           	# ⭡␤ Open new line above sel  	「⇧ o」	「insert_at_line_start」
+    'S-o' 	= 'open_below'           	# ⭣␤ Open new line below sel  	「  o」	「insert_at_line_end」
+    'u'   	= 'undo'                 	# ⎌ Undo change               	「  u」	「undo mode」
+    'y'   	= 'redo'                 	# ↷ Redo change               	「⇧ u」	「yank」
+    'S-u' 	= 'earlier'              	# 🕘 Move backward in history  	「⇧⎇u」	「redo」   <i class='fa fa-history'></i>
+    'S-y' 	= 'later'                	# 🕒 Move forward  in history  	「⇧⎇u」	「」 ⏱ <i class='fa fa-clock-o'></i>
     #     	                         	                              	         
     'v'   	= 'paste_after'          	# 📋⤹ Paste after sel          	「  p」 	「select_mode」 ⤹<i class='fa fa-copy'></i>
     'C-v' 	= 'paste_clipboard_after'	# 📋⤹ Paste after sel          	「☰␠ p」	「」  <i class='fa fa-copy'></i>⤹
