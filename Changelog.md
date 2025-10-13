@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file
 
-[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.4.0...HEAD
+[unreleased]: https://github.com/eugenesvk/kbdHelix/compare/0.5.0...HEAD
 ## [Unreleased]
   <!-- - __Added__ -->
    <!-- + :sparkles: ??? -->
@@ -21,6 +21,9 @@ All notable changes to this project will be documented in this file
   <!-- - __Security__ -->
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
+
+[0.5.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.5.0
+## [0.5.0]
   - __Added__
     + ✨  ☰∀▋ **Select All** menu to <kbd>⎈</kbd><kbd>a</kbd>
     + ✨  ☰🔎 **Find** menu to <kbd>d</kbd> to use convenient rollover <kbd>s</kbd>←<kbd>d</kbd> and <kbd>d</kbd>→<kbd>f</kbd> motions instead of <kbd>⇧</kbd> for regex-based search and char find commands
