@@ -6,8 +6,8 @@
     # 'Escape'	= 'normal_mode'	# Switch to normal mode	「Escape」
     # 'A-x'   	= 'normal_mode'	# Maps Alt-X to enter normal mode
   #ⓘ Free ——————————————————————————————————————————————————————————————————————
-    'C-p'  	= 'no_op'	# move to previous line  	「   」	「move_line_up」
-    'A-b'  	= 'no_op'	#                        	「   」	「move_prev_word_end」
+    'C-p'	= 'no_op'	# move to previous line	「   」	「move_line_up」
+    'A-b'	= 'no_op'	#                      	「   」	「move_prev_word_end」
   #ⓘ Major modes ——————————————————————————————————————————————————————————————————————
   'A-}'	= 'normal_mode'     	# mapped to 🠿i⃣ in Karabiner
   ';'  	= {j='normal_mode' }	# Maps `;k` to exit insert mode !!!flashes dialog during typing
@@ -25,14 +25,14 @@
 
 
 
-  #ⓘ     	Copy                                	 
-    'A-c'	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」  	「change_selection」
-    'C-c'	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
+  #ⓘ       	Copy                                	 
+    'A-c'  	= 'yank'                            	# 🗐▋ Copy main selection <i class='fa fa-copy'></i>                                    	「  c」  	「change_selection」
+    'C-c'  	= 'yank_main_selection_to_clipboard'	# 📋▋ Copy main selection into system clipboard <i class='fa fa-clipboard'></i>         	「☰␠,⇧y」	「toggle_comments」
     'A-S-c'	= 'yank_joined_to_clipboard'        	# ∀▋ Copy all selections to clipboard (joined) ⨝📋 <i class='fa fa-clipboard'></i> ∀❚ ∀▋	「☰␠ y」 	「」
 
 
   #ⓘ Move ——————————————————————————————————————————————————————————————————————
-    ''      	= 'smart_tab'             	# 🧠⭾                                	≝「⭾」		「smart_tab」
+    #''     	= 'smart_tab'             	# 🧠⭾                                	≝「⭾」		「smart_tab」
     #       	                          	    W␠ ⎀: insert ⭾ as normal        	    		 
     #       	                          	‹nonW␠ ⎀: run `move_parent_node_end`	    		 
     'S-tab' 	= 'insert_tab'            	# ⭾                                 	≝「⭾」	「insert_tab」
