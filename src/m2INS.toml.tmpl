@@ -69,7 +69,7 @@
     'C-left' 	= 'move_prev_long_word_start'  	# 🢔W  Move prev beg of WORD         	   「⇧ b」	「」
     #        	                               	                                    	        	 
     #        	                               	                                    	        	 
-    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev end of WORD         	「⇧ b」   	「half_page_down」
+    'C-d'    	= ['move_prev_long_word_start',	# ⤝W  Move prev end of WORD         	「⇧ b」   	「delete_char_forward」
              	   'extend_prev_word_start',   	#                                   	 
              	   'extend_next_word_start']   	# !!!move_prev_long_word_end missing	 
     # 'C-f'  	= ['collapse_selection',       	# W⤞ Move next end of WORD          	「⇧ w」	「page_down」
@@ -348,7 +348,7 @@
 
   #‹ includeTemplate (joinPath .cfg "nMatch.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🧩" "k" "A-n" "cfg" .cfg) ›
 
-  #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nWindow.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🗔" "k" "C-w" "ksp" "" "cfg" .cfg) › #「」	「delete_word_backward」
 
   #‹ includeTemplate (joinPath .cfg "nSpace.toml.tmpl") (dict "m" "insert" "i" "ⓘ" "k" "A-space" "cfg" .cfg) ›
 
