@@ -41,7 +41,7 @@ cfg_def    	= parse(cfg_def_s)	# TOMLDocument instance that holds all the inform
 cfg_def_alt	= parse(cfg_def_s)	# make a copy to store replacement keys
 
 nonkeys = ['theme','editor']
-for nonkey in nonkeys: # leave only 'keys' section
+for  nonkey in nonkeys: # leave only 'keys' section
   if nonkey in cfg_def_alt:
     cfg_def_alt.pop(nonkey)
 
@@ -112,7 +112,7 @@ def dictIterDeep(d, k_parent=None, isAnyParentRemappable=None, iterLevel=1):
           if isAnyParentRemappable:       # del only if parent is remappable (so was remapped), ␠ mode needs both
             if   (isinstance(d[k],dict)): # del a group of command
               d.pop(k)
-            elif (isinstance(d[k],str) or\
+            elif (isinstance(d[k],str ) or\
                   isinstance(d[k],list)): # but single commands→no_op to hide the defaults
               d[k] = 'no_op'
       isAnyParentRemappable = True if iterLevel > 1 else False
@@ -120,7 +120,7 @@ def dictIterDeep(d, k_parent=None, isAnyParentRemappable=None, iterLevel=1):
       iterLevel += 1
       dictIterDeep(v, k, isAnyParentRemappable, iterLevel)
 
-for mode in cfg_def_alt["keys"]:
+for mode in     cfg_def_alt["keys"]:
   dictIterDeep( cfg_def_alt["keys"][mode])
 
 for mode in cfg_def["keys"]:
