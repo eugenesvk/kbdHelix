@@ -204,6 +204,8 @@
     'A-S-i'	= 'copy_selection_on_prev_line'	# ᵡ🠵 Cut  sel from the next     line (del ‸cursor below)	「⇧⎇c」	「」
     'A-j'  	= 'select_prev_sibling'        	# 🢔⸙ Select previous sibling node in syntax tree 🌳TS    	「⎇ p」	「」 🌳🌲🌴𐇲🎄⸙🌿
     'A-l'  	= 'select_next_sibling'        	# ⸙🢖 Select next     sibling node in syntax tree 🌳TS    	「⎇ m」	「」
+    'A-S-j'	= 'select_all_siblings'        	# ≈∀ Select all     sibling node in syntax tree 🌳TS     	「⎇ a」	「」
+    'A-S-l'	= 'select_all_children'        	# 🚸 Select all     children node in syntax tree 🌳TS     	「⎇⇧i」	「」
     'S-m'  	= 'shrink_selection'           	# ⸙− Shrink syntax tree object sel          🌳TS ⸙₋      	「⎇ i」	「」
     '<'    	= 'expand_selection'           	# ⸙₊ Expand sel to parent syntax node       🌳TS ⸙₊      	「⎇ o」	「」
     'A-d'  	= 'select_regex'               	# 𝖗▋ Select all regex matches inside sels               	「  s」	「delete_selection_noyank」
@@ -215,7 +217,6 @@
     'A-a'    	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」
     #'A-S-a' 	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
     'A-p'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
-    'A-S-l'  	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
     #'A-l'   	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (← with many columns) 	「⇧ 9」 	「」
     #'A-;'   	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
     'A-m'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (↓ with many lines)   	「⇧ 0」 	「」
