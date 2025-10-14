@@ -65,8 +65,8 @@
     'i'  	= 'move_visual_line_up'  	# ▲                             	「j/▼」  	「insert_mode」
     'j'  	= 'move_char_left'       	# ◀                             	「k/▲」  	「move_visual_line_down」
     'l'  	= 'move_char_right'      	# ▶                             	「l/▶」  	「move_char_right」
-    'm'  	= 'page_cursor_half_down'	# ⤈ Move half page down (screen)	   「 」 	「☰🧩」
-    ','  	= 'page_cursor_half_up'  	# ⤉           page up           	   「 」 	「keep_primary_selection」
+    'm'  	= 'page_cursor_half_up'  	# ⤉ Move half page up   (screen)	   「 」 	「☰🧩」
+    ','  	= 'page_cursor_half_down'	# ⤈           page down         	   「 」 	「keep_primary_selection」
     'C-k'	= 'page_cursor_down'     	# ⇟      full page down         	   「 」 	「」
     'C-i'	= 'page_cursor_up'       	# ⇞           page up           	   「 」 	「jump_forward」
     'a'  	= 'extend_to_line_start' 	# ⤝▋ Move    line start + select	「ⓈHome」	「append_mode」  # goto_line_start
@@ -219,8 +219,8 @@
     'A-p'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
     #'A-l'   	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (← with many columns) 	「⇧ 9」 	「」
     #'A-;'   	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
-    'A-m'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (↓ with many lines)   	「⇧ 0」 	「」
-    'A-,'    	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (↑ with many lines)   	「⇧ 9」 	「remove_primary_selection」
+    'A-m'    	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward  (↑ with many lines)  	「⇧ 9」 	「」
+    'A-,'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward   (↓ with many lines)  	「⇧ 0」 	「remove_primary_selection」
     'A-u'    	= 'remove_primary_selection'    	# ᵡ         the primary sel                        	「 ⎇,」 	「earlier」
     'A-;'    	= 'keep_primary_selection'      	# ᵡ∀ all but the primary sel (keep only)           	「  ,」 	「flip_selections」
     'A-S-u'  	= 'no_op'                       	# ᵡᵡ undo remove sel                               	「⇧ ⎇,」	「earlier」 !!!missing
