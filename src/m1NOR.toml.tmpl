@@ -37,8 +37,12 @@
     'S-r'   	= 'command_mode'   	#  Ⓒ Enter :command mode 	「⇧ ;」   	「replace_with_yanked」
 
   #Ⓝ Compat    	with non-modal editors               	 
-    'C-o'      	= 'file_picker'                      	# 🗁 Open file picker       	「☰␠  f」	「jump_backward」
-    'C-O'      	= 'file_picker_in_current_directory' 	# 🗁 Open file picker@curdir	「☰␠⇧ f」	「」
+    'C-o'  	= 'file_picker_in_current_buffer_directory'  	# 🗐  Open file picker  @file dir 	「☰␠⇧ f」	「」
+    'C-S-o'	= 'file_picker'                              	# 🗐                    @workspace	「☰␠  f」	「jump_backward」
+    'C-A-o'	= 'file_picker_in_current_directory'         	# 🗐                    @cur  dir 	「」     	「」
+    'C-p'  	= 'file_explorer_in_current_buffer_directory'	# 🗁 Open file explorer@file dir  	「☰␠⇧ e」	「」
+    'C-S-p'	= 'file_explorer'                            	# 🗁                   @workspace 	「☰␠  e」	「jump_backward」
+    'C-A-p'	= 'file_explorer_in_current_directory'       	# 🗁                   @cur  dir  	「」     	「」
     'C-s'      	= ['commit_undo_checkpoint',':write']	# 💾 save file              	「  ⎈s」 	「save_selection」
     'S-C-A-s'  	= [':write-all!']                    	# 💾∀! force save all       	「」     	「」
     # 'C-S-s'  	= 'Save As'                          	# ???                      	「⇧⎈s」  	「」
