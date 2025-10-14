@@ -1,0 +1,60 @@
+# chezmoi:template:left-delimiter=#‹ right-delimiter=›
+#‹- /* m=mode i=icon k=key k2=key
+  #`12345 67890 -=   ⇧~!@#$% ^&*() _+
+  # qw rt y     []   ⇧ QWERT YUIOP
+  #  s fg       '\   ⇧ ASDFG HJKL: "|
+  # zxcvb n          ⇧ ZX VB NM<>?
+#*/ -›
+#‹/* key 	= command                       	# Icon Comment        	≝「key」	「	cmd」 */ -›
+  [keys  	.'#‹.m›'.'#‹.k›#‹.k2›']         	##‹.i› Select All mode	「」    	「」
+    'j'  	= 'select_all_siblings'         	# ≈∀ Select all     sibling node in syntax tree ⸙TS
+    'l'  	= 'select_all_children'         	# 🚸 Select all    children node in syntax tree ⸙TS
+    'a'  	=['save_selection','select_all']	# 🖈∀▋ Select entire file
+    'p'  	= '@nap'                        	# ¶▋ Select this paragraph     !!!missing ∀* select_paragraph
+    '.'  	=['select_mode'                 	# 🢔¶▋ Select up to paragraph beg
+      ,  	  'goto_prev_paragraph'         	#
+      ,  	  '#‹.m›_mode'                  	#
+      ]  	                                	#
+    '/'  	=['select_mode'                 	# 🢔¶▋ Select up to paragraph end
+      ,  	  'goto_next_paragraph'         	#
+      ,  	  '#‹.m›_mode'                  	#
+      ]  	                                	#
+    ','  	= 'extend_to_file_start'        	# ∀🠱  Select all       up
+    'm'  	= 'extend_to_last_line'         	# ∀🠳  Select all       down
+    'u'  	= ['extend_to_line_bounds'      	# ∀━🠱 Select all lines up
+      ,  	   'extend_to_file_start']      	#
+    'o'  	= ['extend_to_line_bounds'      	# ∀━🠳 Select all lines down
+      ,  	   'extend_to_last_line']       	#
+    #    	   Convenience copy             	 
+    'i'  	= 'select_line_above'           	# 🠱━ Select current line/extend up     if sel
+    'k'  	= 'select_line_below'           	# 🠳━ Select current line/extend down   if sel
+    'h'  	= 'select_prev_sibling'         	# 🢔⸙ Select previous sibling node in syntax tree ⸙TS
+    ';'  	= 'select_next_sibling'         	# ⸙🢖 Select next     sibling node in syntax tree ⸙TS
+    'e'  	= 'select_textobject_around'    	# 🢔O🢖  Select around textobject
+    'd'  	= 'select_textobject_inner'     	# 🢖O🢔  Select inside textobject
+    #    	   Duplicates                   	 
+    #⎈   	   Duplicates                   	 
+    'C-j'	= 'select_all_siblings'
+    'C-l'	= 'select_all_children'
+    'C-a'	=['save_selection','select_all']
+    'C-p'	= '@nap'
+    'C-i'	= 'select_line_above'
+    'C-k'	= 'select_line_below'
+    'C-h'	= 'select_prev_sibling'
+    'C-;'	= 'select_next_sibling'
+    'C-e'	= 'select_textobject_around'
+    'C-d'	= 'select_textobject_inner'
+    'C-.'	=['select_mode'
+      ,  	  'goto_prev_paragraph'
+      ,  	  '#‹.m›_mode'
+      ]  	#
+    'C-/'	=['select_mode'
+      ,  	  'goto_next_paragraph'
+      ,  	  '#‹.m›_mode'
+      ]  	#
+    'C-,'	= 'extend_to_file_start'
+    'C-m'	= 'extend_to_last_line'
+    'C-u'	= ['extend_to_line_bounds'
+      ,  	   'extend_to_file_start']
+    'C-o'	= ['extend_to_line_bounds'
+      ,  	   'extend_to_last_line']
