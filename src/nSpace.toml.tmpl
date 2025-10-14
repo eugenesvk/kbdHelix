@@ -81,13 +81,14 @@
     'w'	= 'workspace_diagnostics_picker'	#
 
 
-  [keys	.'#‹.m›'.'#‹.k›'.'f']      	##‹.i› ☰␜ File mode in Space mode          	「☰␠ f」		「」
-   #'i'	= 'no_op'                  	#                                          	「」    	「  」
-   #';'	= 'no_op'                  	#                                          	「」    	「  」
-   #"'"	= 'no_op'                  	#                                          	「」    	「  」
-   #'m'	= 'no_op'                  	#                                          	「」    	「  」
-   #'.'	= 'no_op'                  	#                                          	「」    	「  」
-   #'/'	= 'no_op'                  	#                                          	「」    	「  」
+  [keys	.'#‹.m›'.'#‹.k›'.'f']                        	##‹.i› ☰␜ File mode in Space mode	「☰␠ f」 		「」
+    'p'	= 'file_picker_in_current_buffer_directory'  	# 🗐  Open file picker  @file dir 	「☰␠⇧ f」	「」
+    '['	= 'file_picker'                              	# 🗐                    @workspace	「☰␠  f」	「jump_backward」
+    ']'	= 'file_picker_in_current_directory'         	# 🗐                    @cur  dir 	「」     	「」
+    ';'	= 'file_explorer_in_current_buffer_directory'	# 🗁 Open file explorer@file dir  	「☰␠⇧ e」	「」
+    "'"	= 'file_explorer'                            	# 🗁                   @workspace 	「☰␠  e」	「jump_backward」
+    '\'	= 'file_explorer_in_current_directory'       	# 🗁                   @cur  dir  	「」     	「」
+
     'j'	= ['commit_undo_checkpoint'	# 💾 save file                              	「  」  	「  」
       ,	  ':write']                	                                           	      	#
     'k'	= 'file_picker'            	# 🗁 Open file   picker                     	「☰␠ f」	「  」
@@ -115,7 +116,7 @@
     'n'	= ':new'                   	# 🗋 new empty buffer                       	Ⓝ「⎈n」 	「  」
     'm'	= 'changed_file_picker'    	# VCS picker with Δs                       	「☰␠ g」	「  」
    #'b'	= 'recentf open files'     	# recentf open files                   「  」	「  」
-   #'\'	= 'open in terminal'       	# open in terminal                         	「  」	「  」
+   #'/'	= 'open in terminal'       	# open in terminal                         	「  」	「  」
     '`'	= ':reload'                	# 🗘 Discard, Reload      from source       	「  」	「  」
     '~'	= ':reload-all'            	# 🗘∀ Discard, Reload all from source       	「  」	「  」
     #  	Modes                      	                                           	 
