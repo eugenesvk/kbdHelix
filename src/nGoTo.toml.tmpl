@@ -1,46 +1,50 @@
 # chezmoi:template:left-delimiter="#‹" right-delimiter="›"
 #‹- /* m=mode i=icon k=key pre=prefix */ -›
-#‹/* key 	= command                   	# Icon Comment                             	≝「key」 	「	cmd」 */ -›
-  [keys. 	'#‹.m›'.'#‹.k›']            	##‹.i› Goto mode Jumps to various locations	「$!」   	「」
-    'g'  	= '#‹.pre›_word'            	# 𝕒𝕓 label@word                            	  「  w」	「goto_file_start」
-    "'"  	= 'jumplist_picker'         	# ☰🖈 List jumplist                         	「☰␠j」  	「」
-    't'  	= 'goto_file_start'         	# ━№⇱ line number `<n>` else file beg ⎯⭱   	  「  g」	「goto_window_top」
-    'b'  	= 'goto_last_line'          	# ⇲ file end   ⭳                           	  「  e」	「goto_window_bottom」
-    'a'  	= 'goto_first_nonwhitespace'	# 𝕒⤝ line beg 1ₛₜ non-whitespace char ¬␣   	  「  s」	「goto_last_accessed_file」
-    's'  	= 'goto_line_end'           	# ⭲ line end                               	  「  l」	「goto_first_nonwhitespace」
-    'i'  	= 'move_line_up'            	# ━▲ line up   (ignore wrap)               	  「  k」	「goto_implementation」
-    'k'  	= 'move_line_down'          	# ━▼ line down (ignore wrap)               	  「  j」	「goto_line_end」
-    'j'  	= 'goto_line_start'         	# ⤝ line beg                               	  「  h」	「move_line_down」 !!!missing ∀* MoveBySentenceUp
-    'l'  	= 'goto_line_end'           	# ⭲ line end                               	  「  l」	「goto_line_end」 !!!missing ∀* MoveBySentenceDown
-    'h'  	= 'goto_line_start'         	# ⤝ line beg                               	 ≝「  h」	「goto_line_start」
-    ';'  	= 'goto_line_end'           	# ⭲ line end                               	  「  l」	「」
-    '.'  	= 'goto_prev_paragraph'     	# 🢔¶ Move paragraph beg                    	  「 [p」	「goto_last_modification」
-    '/'  	= 'goto_next_paragraph'     	# ¶🢖 Move paragraph end                    	  「 ]p」	「」
-    'f'  	= 'goto_file'               	# files in the selection                   	 ≝「  f」	「goto_file」
-    'm'  	= 'goto_window_bottom'      	# 🗔⭳ screen bottom                         	  「  b」	「goto_last_modified_file」
-    ','  	= 'goto_window_top'         	# 🗔⭱ screen top                            	  「  t」	「」
-    'n'  	= 'goto_window_center'      	# 🗔· screen middle                         	  「  c」	「goto_next_buffer」
-    'S-d'	= 'goto_declaration'        	# 🆔 declaration     (LSP)                  	「⇧ d」  	「goto_declaration」
-    'd'  	= 'goto_definition'         	# ≝  definition      (LSP)                 	 ≝「  d」	「goto_definition」
-    'F9' 	= 'goto_definition'         	# ≝  definition      (LSP)                 	  「  d」	「」
-    'w'  	= 'goto_implementation'     	# 🄸  implementation  (LSP)                 	  「  i」	「goto_word」
-    'r'  	= 'goto_reference'          	# 🅁※ references     (LSP)                  	 ≝「  r」	「goto_reference」
-    'e'  	= 'goto_type_definition'    	# τ≝ type definition (LSP)                 	  「  y」	「goto_last_line」
-    'y'  	= 'goto_type_definition'    	# τ≝ type definition (LSP)                 	 ≝「  y」	「goto_type_definition」
-    'c'  	= 'goto_last_accessed_file' 	# 🕮␜ file last accessed/alternate          	「  a」  	「goto_window_center」
-    'v'  	= 'goto_last_modified_file' 	# ✎␜ file last modified/alternate          	  「  m」	「」
-    '1'  	= 'goto_previous_buffer'    	# buffer prev                              	  「  p」	「」 !!!missing ∀*
-    '2'  	= 'goto_next_buffer'        	# buffer next                              	  「  n」	「」 !!!missing ∀*
-    '3'  	= 'jump_backward'           	# ⎗̡ Jump backward on the jumplist         	  「   」	「」 !!!missing ∀*
-    '4'  	= 'jump_forward'            	# ⎘̡ Jump forward  on the jumplist         	  「   」	「」 !!!missing ∀*
-    'u'  	= 'goto_last_modification'  	# 🕘 last modification in current file      	「  .」  	「goto_line_start」 <i class= 'fa fa-history'></i>
-    'q'  	= 'no_op'                   	#                                          	  「   」	「」
-    'o'  	= 'no_op'                   	#                                          	  「   」	「」
-    'p'  	= 'no_op'                   	#                                          	  「   」	「goto_previous_buffer」
-    '['  	= 'no_op'                   	#                                          	  「   」	「」
-    ']'  	= 'no_op'                   	#                                          	  「   」	「」
-    '\'  	= 'no_op'                   	#                                          	  「   」	「」
-    'x'  	= 'no_op'                   	#                                          	  「   」	「」
-    'z'  	= 'no_op'                   	#                                          	  「   」	「」
+#‹/* key 	= command                      	# Icon Comment                             	≝「key」 	「	cmd」 */ -›
+  [keys. 	'#‹.m›'.'#‹.k›']               	##‹.i› Goto mode Jumps to various locations	「$!」   	「」
+    'g'  	= '#‹.pre›_word'               	# 𝕒𝕓 label@word                            	  「  w」	「goto_file_start」
+    "'"  	= 'jumplist_picker'            	# ☰🖈 List jumplist                         	「☰␠j」  	「」
+    't'  	= '#‹.pre›_file_start'         	# ━№⇱ line number `<n>` else file beg ⎯⭱   	  「  g」	「goto_window_top」
+    'b'  	= '#‹.pre›_file_end'           	# ⇲ file end   ⭳                           	  「  」 	「goto_window_bottom」
+    'S-b'	= '#‹.pre›_last_line'          	# ━⇲ file end   ⭳                          	  「  e」	「」
+    'a'  	= '#‹.pre›_first_nonwhitespace'	# 𝕒⤝ line beg 1ₛₜ non-whitespace char ¬␣   	  「  s」	「goto_last_accessed_file」
+    's'  	= '#‹.pre›_line_end'           	# ⭲ line end                               	  「  l」	「goto_first_nonwhitespace」
+    'h'  	= '#‹.pre›_column'             	# ┃№⭰ column number `<n>` else line beg ⭰  	 ≝「⇧ \」	「goto_line_start」
+    'i'  	= 'move_line_up'               	# ━▲ line up   (ignore wrap)               	  「  k」	「goto_implementation」
+    'k'  	= 'move_line_down'             	# ━▼ line down (ignore wrap)               	  「  j」	「goto_line_end」
+    'j'  	= '#‹.pre›_line_start'         	# ⭰ line beg                               	  「  h」	「move_line_down」 !!!missing ∀* MoveBySentenceUp
+    ';'  	= '#‹.pre›_line_end_newline'   	# ⤞␤ line end + ␤                          	  「   」	「」
+    '.'  	= 'goto_prev_paragraph'        	# 🢔¶ Move paragraph beg                    	  「 [p」	「goto_last_modification」
+    '/'  	= 'goto_next_paragraph'        	# ¶🢖 Move paragraph end                    	  「 ]p」	「」
+    'f'  	= 'goto_file'                  	# files in the selection                   	 ≝「  f」	「goto_file」
+    'm'  	= 'goto_window_top'            	# 🗔⭱ screen top                            	  「  t」	「goto_last_modified_file」
+    ','  	= 'goto_window_bottom'         	# 🗔⭳ screen bottom                         	  「  b」	「」
+    'n'  	= 'goto_window_center'         	# 🗔· screen middle                         	  「  c」	「goto_next_buffer」
+    'S-d'	= 'goto_declaration'           	# 🆔 declaration     (LSP)                  	「⇧ d」  	「goto_declaration」
+    'd'  	= 'goto_definition'            	# ≝  definition      (LSP)                 	 ≝「  d」	「goto_definition」
+    'F9' 	= 'goto_definition'            	# ≝  definition      (LSP)                 	  「  d」	「」
+    'w'  	= 'goto_implementation'        	# 🄸  implementation  (LSP)                 	  「  i」	「goto_word」
+    'r'  	= 'goto_reference'             	# 🅁※ references     (LSP)                  	 ≝「  r」	「goto_reference」
+    'e'  	= 'goto_type_definition'       	# τ≝ type definition (LSP)                 	  「  y」	「goto_last_line」
+    'y'  	= 'goto_type_definition'       	# τ≝ type definition (LSP)                 	 ≝「  y」	「goto_type_definition」
+    'c'  	= 'goto_last_accessed_file'    	# 🕮␜ file last accessed/alternate          	「  a」  	「goto_window_center」
+    'v'  	= 'goto_last_modified_file'    	# ✎␜ file last modified/alternate          	  「  m」	「」
+    '1'  	= 'goto_previous_buffer'       	# buffer prev                              	  「  p」	「」 !!!missing ∀*
+    '2'  	= 'goto_next_buffer'           	# buffer next                              	  「  n」	「」 !!!missing ∀*
+    '3'  	= 'jump_backward'              	# ⎗̡ Jump backward on the jumplist         	  「   」	「」 !!!missing ∀*
+    '4'  	= 'jump_forward'               	# ⎘̡ Jump forward  on the jumplist         	  「   」	「」 !!!missing ∀*
+    'u'  	= 'goto_last_modification'     	# 🕘 last modification in current file      	「  .」  	「goto_line_start」 <i class= 'fa fa-history'></i>
+   #     	   Duplicates                  	                                           	       	 
+    '|'  	= '#‹.pre›_column'             	# ┃№⭰ column number `<n>` else line beg ⭰  	 ≝「⇧ \」	「goto_column」
+    'l'  	= 'goto_line_end'              	# ⭲ line end                               	  「  l」	「goto_line_end」 !!!missing ∀* MoveBySentenceDown
+   #     	   Free                        	 
+    'q'  	= 'no_op'                      	#	  「   」	「」
+    'o'  	= 'no_op'                      	#	  「   」	「」
+    'p'  	= 'no_op'                      	#	  「   」	「goto_previous_buffer」
+    '['  	= 'no_op'                      	#	  「   」	「」
+    ']'  	= 'no_op'                      	#	  「   」	「」
+    '\'  	= 'no_op'                      	#	  「   」	「」
+    'x'  	= 'no_op'                      	#	  「   」	「」
+    'z'  	= 'no_op'                      	#	  「   」	「」
 
     'S-a'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Extend	━line start	「」	「」!!!delete after https://github.com/helix-editor/helix/issues/1486 is implemented
