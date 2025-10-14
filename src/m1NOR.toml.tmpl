@@ -122,8 +122,8 @@
     '/'    	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
     #'S-n' 	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
     # 'n'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
-    '8'    	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	   「⇧ 8」	「<8>」   !!! blocked by ∀*
-    '*'    	= 'search_selection'  	# 𝖗🢔▋ Use sel as the search pattern 	  「⇧ 8」 	「search_selection」
+    '8'    	= 'search_selection_detect_word_boundaries' # 𝖗🢔▋ω Use sel as \b search pattern  「⇧ 8」 「<8>」   !!! overrides blocked by ∀*
+    '*'    	= 'search_selection'                        # 𝖗🢔▋  Use sel as    search pattern  「⎇ 8」 「search_selection_detect_word_boundaries」
     #'*'   	= ['select_mode'      	#
     #  ,   	'move_prev_word_start'	#
     #  ,   	'move_next_word_end'  	#
