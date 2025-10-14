@@ -26,8 +26,8 @@
     'k'	= 'keep_selections'      	# ᵏ𝖗 sels not matching the Re (keep)      	   「⇧ k」	「」
     'l'	= 'remove_selections'    	# ᵡ𝖗 sels     matching the Re             	   「⇧⎇k」	「」
     's'	= 'select_regex'         	# 𝖗▋ Select all Re matches in sels        	   「  s」	「symbol_picker」
-    'a'	= ['save_selection',     	# 🖈∀▋                                     	「⇧ 5」   	「」
-       	   'select_all']         	# Save cur pos, select everything         	 
+   #'a'	=['save_selection',      	# 🖈∀▋                                     	「⇧ 5」   	「」
+   #   	  'select_all']          	# Save cur pos, select everything         	 
     'h'	= ['kill_to_line_start', 	# ᵡ⎯                                      	「   」	「」
        	   'kill_to_line_end']   	# Delete this line                        	 
     'g'	= 'save_selection'       	# 🖈 Save cur sel to the jumplist          	「  ⎈s」	「」
@@ -60,6 +60,8 @@
    #'m'	= 'mode_symbol'          	# ☰🅂 Symbol mode                          	「   」  	「」
    #','	= 'mode_diag'            	# ☰🛠 Diagnostics mode                     	「   」  	「」
    #'G'	= 'Debug'                	# ☰   Debug (experimental)                	≝「☰␠⇧g」	「dbg」 !!! no way to rebind yet
+  #‹ includeTemplate (joinPath .cfg "nSelectAll.toml.tmpl") (dict "m" .m "i" "☰∀▋" "k" .k "k2" "'.'a" "cfg" .cfg) ›
+  #‹- /* original: '#‹.k›#‹.k2›', so need to quote/dot manually "'.'a" */›
 
   [keys	.'#‹.m›'.'#‹.k›'.'m']           	##‹.i› ☰🅂 Symbol mode in Space mode     	「☰␠ f」		「」
     'm'	= 'symbol_picker'               	# 🅂🗋 Document  symbols 🄻                	「☰␠ s」	「」 ⚛Ⓢ
