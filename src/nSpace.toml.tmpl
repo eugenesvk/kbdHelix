@@ -122,7 +122,18 @@
 
   [keys	.'#‹.m›'.'#‹.k›'.'i'] ##‹.i› ☰®  Register/copy/paste etc.
     'i'	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
+    'q'	= 'no_op'                            	#
+    'w'	= 'no_op'                            	#
+    'e'	= 'no_op'                            	#
+    'y'	= 'no_op'                            	#
+    'u'	= 'no_op'                            	#
+    'p'	= 'no_op'                            	#
+    's'	= 'no_op'                            	#
+    'z'	= 'no_op'                            	#
+    'b'	= 'no_op'                            	#
     'm'	= 'copy_between_registers'           	# 🗘® Swap register content
+    ','	= 'no_op'                            	#
+    '.'	= 'no_op'                            	#
    #'7'	= 'append_to_register 1'             	# ®1⎀ Append current line/selection to reg 1
    #'8'	= 'clear_register 1'                 	# ®1× x
    #'9'	= 'copy_to_register 1'               	# ®1🗐 x
@@ -159,9 +170,9 @@
    #'t'	='delete-duplicate-lines'            	# !!!missing
    #'n'	='reformat-to-sentence-lines'        	# !!!missing
    #'o'	='copy-rectangle-to-register'        	# !!!missing
-   #'r'	='query-replace-regexp'              	# !!!missing
-   #'h'	='mark-defun'                        	# !!!missing
-   #';'	='escape-quotes'                     	# Add \ before " in current line/selection
+   #'r' ='query-replace-regexp'               # !!!missing
+   #'h'	='mark-defun'   	# !!!missing
+   #"'"	='escape-quotes'	# Add \ before " in current line/selection
 
   #[keys 	.'#‹.m›'.'#‹.k›'.'d'] ##‹.i› ☰⟪ Bracket mode in Space mode (place cursor in between)
    #'RET'	= 'insert char'   	#
