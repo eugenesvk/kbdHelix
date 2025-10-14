@@ -112,25 +112,25 @@
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion (f/t/m)	「 ⎇.」	「replace」
 
     #Ⓝ     	Find
-    'w'    	= 'find_next_char'    	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
-    'S-w'  	= 'find_prev_char'    	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
-    'A-w'  	= 'find_till_char'    	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
-    'A-S-w'	= 'till_prev_char'    	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
-    'S-d'  	='rsearch'            	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「」
-    'd'    	= 'search'            	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「delete_selection」
-    '.'    	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
-    '/'    	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
-    #'S-n' 	= 'search_prev'       	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
-    # 'n'  	= 'search_next'       	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
+    'w'    	= 'find_next_char'	# 🔎   Find       next     char      	「  f」   	「move_next_word_start」     	<i class='mss mss-Search-3'></i>
+    'S-w'  	= 'find_prev_char'	# 🔍   Find       previous char      	「⇧ f」   	「move_next_long_word_start」	<i class='fa fa-search'></i>
+    'A-w'  	= 'find_till_char'	# 🔎₋₁ Find 'till next     char      	「  t」   	「」                         	<i class='mss mss-Search-3'></i>₋
+    'A-S-w'	= 'till_prev_char'	# 🔍₋₁ Find 'till previous char      	「⇧ t」   	「」                         	<i class='fa fa-search'></i>₋
+    'S-d'  	='rsearch'        	# 🔍𝖗 for previous regex pattern     	「⇧ /」   	「」
+    'd'    	= 'search'        	# 🔎𝖗 for          regex pattern     	「⇧  /」  	「delete_selection」
+    '.'    	= 'search_prev'   	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
+    '/'    	= 'search_next'   	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search」
+    #'S-n' 	= 'search_prev'   	# 🢔◎ ◎͔ Select previous search match	  「⇧ n」 	「search_prev」
+    # 'n'  	= 'search_next'   	# ◎🢖 ◎͕ Select next     search match	   「  n」	「search_next」
     '8'    	= 'search_selection_detect_word_boundaries' # 𝖗🢔▋ω Use sel as \b search pattern  「⇧ 8」 「<8>」   !!! overrides blocked by ∀*
     '*'    	= 'search_selection'                        # 𝖗🢔▋  Use sel as    search pattern  「⎇ 8」 「search_selection_detect_word_boundaries」
-    #'*'   	= ['select_mode'      	#
-    #  ,   	'move_prev_word_start'	#
-    #  ,   	'move_next_word_end'  	#
-    #  ,   	'search_selection'    	#
-    #  ,   	'extend_search_next'  	#
-    #  ,   	'exit_select_mode'    	#
-    #  ]   	                      	# = find_under_expand
+    #'*'   	=['select_mode'         	#
+    #  ,   	  'move_prev_word_start'	#
+    #  ,   	  'move_next_word_end'  	#
+    #  ,   	  'search_selection'    	#
+    #  ,   	  'extend_search_next'  	#
+    #  ,   	  'exit_select_mode'    	#
+    #  ]   	                        	# = find_under_expand
 
 
     #Ⓝ          	Compat with non-modal editors
