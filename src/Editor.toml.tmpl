@@ -34,6 +34,8 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
   'jump-label-alphabet'      	='asdfghjkl;qwertyuiopzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM' #abcdefghijklmnopqrstuvwxyz   Chars used to generate two character jump labels (@beg used first)
   # UI                       	        		#
   #'popup-border'            	= 'none'	#≝none popup menu all   Draw border around
+  # Diagnostics              	        	#error warning info hint
+  'end-of-line-diagnostics'  	= 'hint'	#≝disable	Min severity of diagnostics to render @ line end
 
   # 'auto-pairs'	= true	#|true	|  Auto insertion of pairs to parentheses, brackets, etc
   [editor.auto-pairs]
@@ -160,3 +162,12 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
     'focus-lost'         	= false	#≝F needs focus event support from your terminal
     'after-delay.enable' 	= false	#≝F after ...timeout ms since last edit
     'after-delay.timeout'	= 3000 	#3000 ms since last edit
+
+  [editor.inline-diagnostic] # Rendering diagnostics inside text
+    # let s = some_var;
+    #         └─ no such value in this scope
+    'cursor-line'    	= 'warning'	#≝disable	min diag severity shown inline on line@primary⎀. No effect in ⓘ, works after 350ms post ⎀move
+    'other-lines'    	= 'error'  	#≝disable	min diag severity shown inline on line@no⎀
+    'prefix-len'     	=  1       	#≝ 1     	How many ─horizontal bars to show before diagnostic text
+    'max-wrap'       	= 10       	#≝20     	Max free space left at line end =editor.soft-wrap.max-wrap
+    'max-diagnostics'	=  5       	#≝10     	max № of diag to render inline for a given line
