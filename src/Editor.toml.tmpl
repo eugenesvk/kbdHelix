@@ -143,25 +143,25 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
 
 
   [editor.'file-picker']
-    'hidden'             	= true  	#|true	| Ignore hidden files
-    # 'ignore'           	= true  	#|true	| Read .ignore files
-    # 'parents'          	= true  	#|true	| Read  ignore files from parent directories
-    # 'git-ignore'       	= true  	#|true	| Read .gitignore files
-    # 'git-global'       	= true  	#|true	| Read global .gitignore (path: core.excludefile option of git's config)
-    # 'git-exclude'      	= true  	#|true	| Read .git/info/exclude files
-    # 'follow-links'     	= true  	#|true	| Follow symlinks instead of ignoring them
-    # 'deduplicate-links'	= true  	#|true	| Ignore symlinks that point at files already shown in the picker
-    # 'max-depth'        	= "None"	# Set with an integer value for maximum depth to recurse
+    'hidden'            	= true  	#|true	| Ignore hidden files
+    #'ignore'           	= true  	#|true	| Read .ignore files
+    #'parents'          	= true  	#|true	| Read  ignore files from parent directories
+    #'git-ignore'       	= true  	#|true	| Read .gitignore files
+    #'git-global'       	= true  	#|true	| Read global .gitignore (path: core.excludefile option of git's config)
+    #'git-exclude'      	= true  	#|true	| Read .git/info/exclude files
+    #'follow-links'     	= true  	#|true	| Follow symlinks instead of ignoring them
+    #'deduplicate-links'	= true  	#|true	| Ignore symlinks that point at files already shown in the picker
+    #'max-depth'        	= "None"	# Set with an integer value for maximum depth to recurse
 
-  [editor.lsp]
-    #'enable'                            	=	true 	#≝T False will completely disable language servers regardless of language settings
-    #'display-messages'                  	=	false	#≝F LSP messages with `window/showMessage` notification
-    #'display-progress-messages'         	=	false	#≝F LSP progress messages below statusline
-    #'auto-signature-help'               	=	true 	#≝T Auto popup of signature help (parameter hints)
-    'display-inlay-hints'                	=	true 	#≝F Inlay hints
-    #'display-signature-help-docs'       	=	true 	#≝T Docs under signature help popup
-    #'snippets'                          	=	true 	#≝T Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set
-    #'goto-reference-include-declaration'	=	true 	#≝T Include declaration in the goto references popup
+  [editor.lsp]                           	       	#≝
+    #'enable'                            	= true 	#T False will completely disable language servers regardless of language settings
+    #'display-messages'                  	= false	#F LSP messages with `window/showMessage` notification
+    #'display-progress-messages'         	= false	#F LSP progress messages below statusline
+    #'auto-signature-help'               	= true 	#T Auto popup of signature help (parameter hints)
+    'display-inlay-hints'                	= true 	#F Inlay hints
+    #'display-signature-help-docs'       	= true 	#T Docs under signature help popup
+    #'snippets'                          	= true 	#T Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set
+    #'goto-reference-include-declaration'	= true 	#T Include declaration in the goto references popup
     display-color-swatches               	= true 	#T Show color swatches next to colors
 
   [editor.smart-tab] # navigating and editing using tab key
