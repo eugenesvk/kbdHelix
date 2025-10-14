@@ -3,6 +3,7 @@
 #‹/* key   	= command                             	# Icon Comment                     	≝「key」 	「	cmd」 */ -›
   [keys    	.'#‹.m›'.'#‹.k›']                     	##‹.i› ☰␠  Space mode              	Ⓝ「 ␠」  	「」
    #'space'	= 'insert_mode'                       	# ⁁⤸ Insert before sel             	「  i」  	「」 !!!panick! !!!missing
+    ';'    	= 'no_op'                             	#                                  	「」     	「」
     'ret'  	= 'command_mode'                      	# Ⓒ Enter command mode             	「  ⎋」  	「」
     'S-f'  	= 'file_picker_in_current_directory'  	# 🗁 Open file   picker@curdir      	「☰␠⇧ f」	「file_picker_in_current_directory」
     'c'    	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main sel to sys clipboard	「☰␠ ⇧y」	「」 <i class='fa fa-clipboard'></i>▋
@@ -20,11 +21,11 @@
     'P'	= 'no_op'                	#                                         	≝「⇧ p」  	「paste_clipboard_before」
     'Y'	= 'no_op'                	#                                         	「   」   	「yank_main_selection_to_clipboard」
     'S'	= 'no_op'                	#                                         	「⇧   」  	「workspace_symbol_picker」
-    'r'	= 'command_palette'      	# ☰Ⓒ Command Palette                      	「   」   	「rename_symbol]
-    ';'	= 'command_mode'         	# Ⓒ Enter command mode                    	「⇧ ;」   	「」
-    'j'	= 'extend_line'          	# 🠳━ Select cur/next(if selected) line    	「  x」   	「」
-    'k'	= 'keep_selections'      	# ᵏ𝖗 sels not matching the Re (keep)      	   「⇧ k」	「」
-    'l'	= 'remove_selections'    	# ᵡ𝖗 sels     matching the Re             	   「⇧⎇k」	「」
+   #'r'	= 'command_palette'      	# ☰Ⓒ Command Palette                      	「   」   	「rename_symbol]
+    'r'	= 'command_mode'         	# Ⓒ Enter command mode                    	「⇧ ;」   	「」
+    'k'	= 'extend_line'          	# ⎀━ Select cur/next(if sel) line         	「  」    	「」 ⮒
+    'l'	= 'keep_selections'      	# ᵏ𝖗 sels not matching the Re (keep)      	   「⇧ k」	「」
+    'j'	= 'remove_selections'    	# ᵡ𝖗 sels     matching the Re             	   「⇧⎇k」	「」
     's'	= 'select_regex'         	# 𝖗▋ Select all Re matches in sels        	   「  s」	「symbol_picker」
    #'a'	=['save_selection',      	# 🖈∀▋                                     	「⇧ 5」   	「」
    #   	  'select_all']          	# Save cur pos, select everything         	 
