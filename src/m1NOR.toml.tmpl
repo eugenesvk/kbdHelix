@@ -218,9 +218,11 @@
     #'A-S-a' 	= 'flip_selections'             	# ⮀ Flip sel          ‸cursor and   _anchor        	⇧[ ⎇;」	「」  !!! revert after https://github.com/helix-editor/helix/issues/1486 is implemented
     'A-p'    	= 'ensure_selections_forward'   	# ↠ Flip sel forward: ‸cursor after _anchor        	「⇧⎇;」 	「」
     #'A-l'   	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward (← with many columns) 	「⇧ 9」 	「」
-    #'A-;'   	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
-    'A-m'    	= 'rotate_selections_backward'  	# ⟲ Rotate main sel backward  (↑ with many lines)  	「⇧ 9」 	「」
-    'A-,'    	= 'rotate_selections_forward'   	# ⟳ Rotate main sel forward   (↓ with many lines)  	「⇧ 0」 	「remove_primary_selection」
+    #'A-;'   	= 'rotate_selections_forward'   	# ⟳                 forward  (→ with many columns) 	「⇧ 0」 	「flip_selections」
+    'A-m'    	= 'rotate_selections_backward'  	# ⟲                 backward   ↑                   	「⇧ 9」 	「」
+    'A-,'    	= 'rotate_selections_forward'   	# ⟳                 forward    ↓                   	「⇧ 0」 	「remove_primary_selection」
+    'A-S-m'  	= 'rotate_selections_first'     	# ⟲⟲                backward   ↑                   	「」    	「」
+    'A-S-,'  	= 'rotate_selections_last'      	# ⟳⟳                forward   ↓                    	「」    	「」
     'A-u'    	= 'remove_primary_selection'    	# ᵡ         the primary sel                        	「 ⎇,」 	「earlier」
     'A-;'    	= 'keep_primary_selection'      	# ᵡ∀ all but the primary sel (keep only)           	「  ,」 	「flip_selections」
     'A-S-u'  	= 'no_op'                       	# ᵡᵡ undo remove sel                               	「⇧ ⎇,」	「earlier」 !!!missing
