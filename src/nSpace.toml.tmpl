@@ -64,13 +64,21 @@
   #‹ includeTemplate (joinPath .cfg "nSelectAll.toml.tmpl") (dict "m" .m "i" "☰∀▋" "k" .k "k2" "'.'a" "cfg" .cfg) ›
   #‹- /* original: '#‹.k›#‹.k2›', so need to quote/dot manually "'.'a" */›
 
-  [keys	.'#‹.m›'.'#‹.k›'.'m']           	##‹.i› ☰🅂 Symbol mode in Space mode     	「☰␠ f」		「」
-    'm'	= 'symbol_picker'               	# 🅂🗋 Document  symbols 🄻                	「☰␠ s」	「」 ⚛Ⓢ
-    ','	= 'workspace_symbol_picker'     	# 🅂🗍 Workspace symbols 🄻                	「☰␠⇧s」	「」  ⚛Ⓢ
-  [keys	.'#‹.m›'.'#‹.k›'.',']           	##‹.i› ☰🛠 Diagnostics mode in Space mode	「☰␠ f」		「」
-    ','	= 'diagnostics_picker'          	# 🛠🗋 Document  diagnostics picker 🄻     	「☰␠ d」	「」
-    'm'	= 'workspace_diagnostics_picker'	# 🛠🗍 Workspace diagnostics picker 🄻     	「☰␠⇧d」	「」
-    'c'	= ':yank-diagnostic'            	# 🛠📋® Copy diags @ ⎀  🄻                 	「」    	「」
+  [keys	.'#‹.m›'.'#‹.k›'.'m']           	##‹.i› ☰🅂 Symbol mode in Space mode               	「☰␠ f」		「」
+    'm'	= 'rotate_selections_first'     	# ⟲⟲ Rotate main sel backward  (↑ with many lines)	「」    	「」
+    'n'	= 'symbol_picker'               	# 🅂🗋 Document  symbols 🄻                          	「☰␠ s」	「」 ⚛Ⓢ
+    ','	= 'workspace_symbol_picker'     	# 🅂🗍 Workspace symbols 🄻                          	「☰␠⇧s」	「」  ⚛Ⓢ
+   #   	   Duplicates                   	 
+    'd'	= 'symbol_picker'               	#
+    'w'	= 'workspace_symbol_picker'     	#
+  [keys	.'#‹.m›'.'#‹.k›'.',']           	##‹.i› ☰🛠 Diagnostics mode in Space mode         	「☰␠ f」		「」
+    ','	= 'rotate_selections_last'      	# ⟳⟳ Rotate main sel forward  (↓ with many lines)	「」    	「」
+    'm'	= 'diagnostics_picker'          	# 🛠🗋 Document  diagnostics picker 🄻              	「☰␠ d」	「」
+    '.'	= 'workspace_diagnostics_picker'	# 🛠🗍 Workspace diagnostics picker 🄻              	「☰␠⇧d」	「」
+    'c'	= ':yank-diagnostic'            	# 🛠📋® Copy diags @ ⎀  🄻                          	「」    	「」
+   #   	   Duplicates                   	 
+    'd'	= 'diagnostics_picker'          	#
+    'w'	= 'workspace_diagnostics_picker'	#
 
 
   [keys	.'#‹.m›'.'#‹.k›'.'f']      	##‹.i› ☰␜ File mode in Space mode          	「☰␠ f」		「」
