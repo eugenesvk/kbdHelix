@@ -52,18 +52,18 @@
    #'A-S-a'	= 'extend_to_first_nonwhitespace'	# 𝕒⤝▋ Move   line start + sel    	「」     	「」!!!move to double tap a after https://github.com/helix-editor/helix/issues/1486 is implemented
 
     #ⓘ       	Word
+    'C-left' 	= 'move_prev_sub_word_start' 	# ⤝⍹ Move prev beg of sub_word	「」	「」 ⎈ 1‹␠, so "inner" movements
+    'C-right'	= 'move_next_sub_word_end'   	# ⍹⭲      next end            	「」	「」
+    'A-left' 	= 'move_prev_sub_word_end'   	# ⭰⍹      prev end            	「」	「」 ⎇ 2‹␠, so "outer" movements
+    'A-right'	= 'move_next_sub_word_start' 	# ⍹⤞      next beg            	「」	「」
     'A-f'    	= 'move_next_word_end'       	# ω⭲ Move next end of word	「」	「」
     #        	                             	                          	  	 
-    'A-right'	= 'move_next_word_start'     	# ω⤞ Move next beg of word	「」	「」
     'A-s'    	= 'move_prev_word_start'     	# ⤝ω Move prev beg of word	「」	「」
     #        	                             	                          	  	 
-    'A-left' 	= 'move_prev_word_end'       	# ⭰ω Move prev end of word	「」	「」
     'A-S-f'  	= 'move_next_long_word_end'  	# W⭲ Move next end of WORD	「」	「」
     #        	                             	                          	  	 
     #'C-f'   	= 'move_next_long_word_start'	# W⤞ Move next end of WORD	「」	「」
-    'C-right'	= 'move_next_long_word_start'	# W⤞ Move next end of WORD	「」	「」
     'A-S-s'  	= 'move_prev_long_word_start'	# ⤝W Move prev beg of WORD	「」	「」
-    'C-left' 	= 'move_prev_long_word_start'	# ⤝W Move prev beg of WORD	「」	「」
     #        	                             	                          	  	 
     #'C-s'   	= 'move_prev_long_word_end'  	# ⭰W Move prev end of WORD	「」	「delete_char_forward」
     #        	                             	                          	  	 
