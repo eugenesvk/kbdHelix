@@ -122,6 +122,7 @@
 
   [keys	.'#‹.m›'.'#‹.k›'.'i'] ##‹.i› ☰®  Register/copy/paste etc.
     'i'	= 'select_register'                  	# ®  Select a register to copy/paste from '<reg> ??? make sticky? for further reg ops or use the main layer
+    'm'	= 'copy_between_registers'           	# 🗘® Swap register content
    #'7'	= 'append_to_register 1'             	# ®1⎀ Append current line/selection to reg 1
    #'8'	= 'clear_register 1'                 	# ®1× x
    #'9'	= 'copy_to_register 1'               	# ®1🗐 x
@@ -148,8 +149,10 @@
    #'a'	= ':primary-clipboard-paste-before'  	# Paste primary clipboard before  sels
    #'a'	= ':primary-clipboard-paste-replace' 	# Paste primary clipboard replace sels
    #'a'	= ':show-clipboard-provider'         	# Show clipboard provider name in status bar
-    'j'	= ':sort'                            	# 𝕒🢖𝕫 Sort ranges in sel 𝟙𝟚𝟛
-    'k'	= ':sort --reverse'                  	# 𝕫🢖𝕒 Sort ranges in sel in reverse order 𝟛𝟚𝟙
+    'k'	= ':sort           --insensitive'    	# 𝕒🢖𝕫 𝟙𝟚𝟛 Sort ranges in sel
+    ';'	= ':sort --reverse --insensitive'    	# 𝕫🢖𝕒 𝟛𝟚𝟙 Sort ranges in sel in reverse order
+    'j'	= ':sort'                            	# 𝔸🢖𝕫 𝟙𝟚𝟛 Sort ranges in sel
+    'l'	= ':sort --reverse'                  	# 𝕫🢖𝔸 𝟛𝟚𝟙 Sort ranges in sel in reverse order
    #'d'	='list-matching-lines'               	# !!!missing
    #'f'	='delete-matching-lines'             	# !!!missing
    #'g'	='delete-non-matching-lines'         	# !!!missing
