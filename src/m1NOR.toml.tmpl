@@ -158,7 +158,7 @@
     'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt「  v」	「move_next_word_end」 <i class='fa fa-arrows'></i>
 
     #Ⓝ       	Compat with non-modal editors    	 
-    'C-a'    	= ['save_selection','select_all']	# 🖈∀▋                                              	「⇧ 5」  「increment」
+    #'C-a'   	= ['save_selection','select_all']	# 🖈∀▋                                              	「⇧ 5」  「increment」
     'A-down' 	= 'copy_selection_on_next_line'  	# 🠷 Copy sel onto the next     line (add ‸cursor ↓)	「⇧ c」  「」
     'A-up'   	= 'copy_selection_on_prev_line'  	# 🠵 Copy sel onto the previous line (add ‸cursor ↑)	「⇧⎇c」 	「」
     'S-left' 	= 'extend_char_left'             	#                                                  	「Ⓢh/◀」	「」
@@ -364,6 +364,8 @@
   #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰?" "k" "F1" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰𝔸𝕒" "k" "`" "cfg" .cfg) ›
+
+  #‹ includeTemplate (joinPath .cfg "nSelectAll.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰∀▋" "k" "C-a" "k2" "" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰👁" "k" "p" "cfg" .cfg) ›
     # 'p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
