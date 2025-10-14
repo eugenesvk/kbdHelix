@@ -38,6 +38,12 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
   # Diagnostics              	        	#error warning info hint
   'end-of-line-diagnostics'  	= 'hint'	#≝disable	Min severity of diagnostics to render @ line end
 
+
+  'atomic-save'             	= true 	#T use atomic operations to write documents to disk. Prevent data loss if editor is interrupted while saving, but may confuse some file watching/hot reloading programs
+  'insert-final-newline'    	= false	#T auto insert trailing line-ending on write if missing
+  'trim-final-newlines'     	= false	#F auto remove line-endings after the final one on write
+  'trim-trailing-whitespace'	= false	#F auto remove whitespace preceding line endings on write
+
   # 'auto-pairs'	= true	#|true	|  Auto insertion of pairs to parentheses, brackets, etc
   [editor.auto-pairs]
     '"' = '"'
