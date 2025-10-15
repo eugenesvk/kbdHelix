@@ -89,19 +89,19 @@
 
     #Ⓢ     	word
     C-left 	= 'extend_prev_sub_word_start' 	# ⤝⍹ Extend prev beg of sub_word	「」   	「」 ⎈ 1‹␠, so "inner" movements
-    C-right	= 'extend_next_sub_word_end'   	# ⍹⭲        next end            	「」   	「」
+    C-right	= 'extend_next_sub_word_end'   	# ⍹⤞        next end            	「」   	「」
     A-left 	= 'extend_prev_sub_word_end'   	# ⭰⍹        prev end            	「」   	「」 ⎇ 2‹␠, so "outer" movements
-    A-right	= 'extend_next_sub_word_start' 	# ⍹⤞        next beg            	「」   	「」
-    'f'    	= 'extend_next_word_end'       	# ω⭲ Extend next end of word    	「  e」	「extend_next_char」
-    A-f    	= 'extend_next_word_start'     	# ω⤞             beg of         	「  w」	「」
-    's'    	= 'extend_prev_word_start'     	# ⤝ω        prev beg of         	「  b」	「」
-    A-s    	= 'extend_prev_word_end'       	# ⭰ω             end of         	「   」	「」
-    S-f    	= 'extend_next_long_word_end'  	# W⭲        next end of WORD    	「⇧ e」	「extend_prev_char」
-    A-S-f  	= 'extend_next_long_word_start'	# W⤞             beg            	「⇧ w」	「」
-    #C-f   	= 'extend_next_long_word_start'	# W⤞             beg            	「⇧ w」	「」
-    S-s    	= 'extend_prev_long_word_start'	# ⤝W        prev beg            	「⇧ b」	「」
-    A-S-s  	= 'extend_prev_long_word_end'  	# ⭰W             end            	「⇧ b」	「」
+    A-right	= 'extend_next_sub_word_start' 	# ⍹⭲        next beg            	「」   	「」
+    's'    	= 'extend_prev_word_start'     	# ⤝ω        prev beg of    word 	「  b」	「」
+    'f'    	= 'extend_next_word_end'       	# ω⤞        next end            	「  e」	「extend_next_char」
+    S-s    	= 'extend_prev_word_end'       	# ⭰ω        prev end            	「   」	「」
+    S-f    	= 'extend_next_word_start'     	# ω⭲        next beg            	「  w」	「」
+    A-s    	= 'extend_prev_long_word_start'	# ⤝W        prev beg of    WORD 	「⇧ b」	「」
+    A-f    	= 'extend_next_long_word_end'  	# W⤞        next end            	「⇧ e」	「extend_prev_char」
+    A-S-s  	= 'extend_prev_long_word_end'  	# ⭰W        prev end            	「⇧ b」	「」
+    A-S-f  	= 'extend_next_long_word_start'	# W⭲        next beg            	「⇧ w」	「」
     #C-s   	= 'extend_prev_long_word_end'  	# ⭰W             end            	「⇧ b」	「half_page_down」
+    #C-f   	= 'extend_next_long_word_start'	# W⤞             beg            	「⇧ w」	「」
     # 'r'  	= 'extend_next_word_start'     	# W⤞        next beg            	「⇧ w」	「」
     # S-r  	= 'extend_next_long_word_start'	# W⤞                            	「⇧ w」	「」
     # A-r  	= 'extend_next_word_start'     	# W⤞                            	「⇧ w」	「」
