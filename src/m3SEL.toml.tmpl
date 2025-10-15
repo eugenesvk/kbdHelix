@@ -1,8 +1,12 @@
 # chezmoi:template:left-delimiter=#‹ right-delimiter=›
 [keys.select] #Ⓢ Select/Extend mode
-  #‹/*k	= command           	# Icon Comment	≝「key for ←cmd」	「	cmd ←←key」 */ -›
+  #Ⓢ Major modes ——————————————————————————————————————————————————————————————————————
+  #‹/*k	= command           	# Icon Comment	≝「key for ←cmd」	「cmd ←←key」 */ -›
   #esc 	= 'exit_select_mode'	#             	「  ⎋」          	「exit_select_mode」
   'e'  	= 'normal_mode'     	#             	「  v」          	「extend_next_word_end」
+  #Ⓢ Minor modes / menu dialogs ———————————————————————————————————————————————————————
+    #'`'		 ☰𝔸𝕒 Case conversion	  「  」	「switch_to_lowercase」
+    #'b'		 ☰𝔸𝕒 Case conversion	  「  」	「move_prev_word_start」
   #Ⓢ Test ——————————————————————————————————————————————————————————————————————
   #Ⓢ Free ——————————————————————————————————————————————————————————————————————
   # ; likely taken by fallthrough insert_mode from normal?
@@ -23,7 +27,7 @@
   # asdfg hjkl; '\  ⇧ ASDFG HJKL: "|  ⎈⎇
   # zxcvb nm,./     ⇧ ZX VB NM<>?     ⎈⎇
 
-  #S-a  	= ['save_selection','select_all']	# 🖈∀▋	「⇧   」	「」
+  #S-a	= ['save_selection','select_all']	# 🖈∀▋	「⇧   」	「」
 
 
   #Ⓢ Compat 	with non-modal editors                       	 
@@ -273,7 +277,6 @@
     #            	                                 	                                  	         
     #            	                                 	                                  	         
 
-    # '.'    	= 'N/A'                              	# ∞ Repeat last change            	「.」     	「n/a」
     '6'      	= 'delete_char_forward'              	# ⌦ !!!missing ∀*                 	「 ⌦」    	「<5>」
     'x'      	= 'delete_selection'                 	# ᵡ▋                              	「  d」   	「extend_line」
     A-x      	= 'delete_selection_noyank'          	# 🕱▋ (...without yanking)         	「 ⎇d」   	「」
@@ -299,25 +302,22 @@
     S-t  	= 'replace_with_yanked'	# 🗘ʸ Replace with yanked text	「⇧ r」	「till_prev_char」
     #    	                       	                             	         
 
-    #    	                       	                 	         
-    S-b  	= 'switch_case'        	# 𝕒⇋𝔸 (selection)	「⇧ `」 	「move_prev_long_word_start」
-    C-b  	= 'switch_to_uppercase'	# 𝕒𝔸 (selection) 	「⇧⎇`」 	「」
-    #'~' 	= 'switch_case'        	# 𝕒⇋𝔸 (selection)	「⇧ `」 	「switch_case」
-    #'`' 	= 'switch_to_lowercase'	# 𝕒𝔸  (selection)	「  `」 	「switch_to_lowercase」
-    #'`' 	= 'switch_case'        	# 𝕒⇋𝔸 (selection)	「⇧ `」 	「switch_to_lowercase」
-    #'~' 	= 'switch_to_uppercase'	# 𝕒𝔸 (selection) 	「⇧⎇`」 	「switch_case」
-    'C-`'	= 'switch_to_uppercase'	# 𝕒𝔸 (selection) 	「⇧⎇`」 	「」
-    'A-`'	= 'switch_to_lowercase'	# 𝔸𝕒  (selection)	「   `」	「switch_to_uppercase」
+    S-b  	= 'switch_case'        	# 𝕒⇋𝔸	(sel)	「⇧ `」 	「move_prev_long_word_start」
+    C-b  	= 'switch_to_uppercase'	# 𝕒𝔸 	(sel)	「⇧⎇`」 	「」
+    #'~' 	= 'switch_case'        	# 𝕒⇋𝔸	(sel)	「⇧ `」 	「switch_case」
+    #'`' 	= 'switch_to_lowercase'	# 𝕒𝔸 	(sel)	「  `」 	「switch_to_lowercase」
+    #'`' 	= 'switch_case'        	# 𝕒⇋𝔸	(sel)	「⇧ `」 	「switch_to_lowercase」
+    #'~' 	= 'switch_to_uppercase'	# 𝕒𝔸 	(sel)	「⇧⎇`」 	「switch_case」
+    'C-`'	= 'switch_to_uppercase'	# 𝕒𝔸 	(sel)	「⇧⎇`」 	「」
+    'A-`'	= 'switch_to_lowercase'	# 𝔸𝕒 	(sel)	「   `」	「switch_to_uppercase」
 
-    'A-.'	= 'unindent'	# ⇚ (selection)	「⇧,」	「repeat_last_motion」
-    'A-/'	= 'indent'  	# ⇛ (selection)	「⇧.」	「」
+    'A-.'	= 'unindent'	# ⇚ (sel)	「⇧,」	「repeat_last_motion」
+    'A-/'	= 'indent'  	# ⇛ (sel)	「⇧.」	「」
 
     # 'q' 	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register	「  q」	「record_macro」
     #S-q  	= 'replay_macro'   	#⇧[⇧ q] replay_macro]                                  	▶  Play back a recorded macro from the selected register
     #"S-'"	= 'select_register'	# ®  Select a register to yank to or paste from        	「  '<reg>」	「select_register」
 
-    #'b' 	= 'N/Arepeat_last_change' 	# ∞ Repeat last change 「⇧  .」       	「move_prev_word_start」 !!! no command yet
-    #'.' 	=  'N/Arepeat_last_change'	# ∞ Repeat last change              	「  .」 	「n/arepeat_last_change」
     ';'  	= 'insert_mode'           	# ⤹⎀ Insert before selection        	「  i」 	「」
     'o'  	= 'append_mode'           	# ⎀⤸ Insert after selection (append)	「  a」 	「open_above」
     ':'  	= 'open_above'            	# ⭡␤ Open new line above selection  	「⇧ o」 	「insert_at_line_start」
