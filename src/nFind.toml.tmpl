@@ -1,0 +1,39 @@
+# chezmoi:template:left-delimiter=#‹ right-delimiter=›
+#‹- /* m=mode i=icon k=key #*/ -›
+#‹- $p	:= "find"      	-›
+#‹- $o	:= "till"      	-›
+#‹- $r	:= "move"      	-›
+#‹- if	eq .m "select" 	-›
+#‹- $p	= "extend"     	-›
+#‹- $o	= "extend_till"	-›
+#‹- $r	= "extend"     	-›
+#‹- end -›
+#‹/*key  	= command          	# Icon Comments	≝「key」	「	cmd」 */ -›
+  [keys  	.'#‹.m›'.'#‹.k›']  	##‹.i› Find mode
+    's'  	='rsearch'         	# 🔍𝖗 for prev regex pattern
+    'f'  	= 'search'         	# 🔎𝖗     next
+    'a'  	= '#‹$p›_prev_char'	# 🔍  #‹$p›  incl prev
+    'r'  	= '#‹$p›_till_char'	# ⤹🔎       'till next
+    'w'  	= '#‹$o›_prev_char'	# 🔍⤸       'till prev
+    't'  	= '#‹$p›_next_char'	# 🔎         incl next
+    'j'  	= 'search_prev'    	# 🢔◎ ◎͔ Select prev search match
+    'l'  	= 'search_next'    	# ◎🢖 ◎͕        next
+    space	= 'no_op'          	# Exit menu
+    #    	   Duplicate       	 
+    'q'  	= '#‹$o›_prev_char'	#
+    #todo: make ‹search› sticky for repeatable experience and cancel with ␠ !!!unavailable option
+    #todo: add first/last match !!!unavailable command
+    #todo: replace find_under_expand with a proper command/non-macro !!!unavailable command/parts
+
+    #‹ 	if          	eq .m "normal"                      	-›
+    'd'	= '@naw8e/e'	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+    #‹ 	else if     	eq .m "select"                      	-›
+    'd'	= '@naw8/'  	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+    #‹- end ›
+    #d  	= ['select_mode'                          	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+      #,	 'move_next_word_end'                     	# 1st since word_start command might select previous word
+      #,	 'move_prev_word_start'                   	#
+      #,	 'search_selection_detect_word_boundaries'	#8
+      #,	 'extend_search_next'                     	#
+      #,	 'normal_mode'                            	#
+      #]	                                          	# = Sublime's find_under_expand
