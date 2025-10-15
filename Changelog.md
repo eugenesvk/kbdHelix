@@ -22,23 +22,37 @@ All notable changes to this project will be documented in this file
    <!-- + :lock: ??? -->
    <!-- vulnerabilities -->
   - __Added__
-    + more case conversion commands
-    + block comment command
+    + ✨  ☰∀▋ **Select All** menu to <kbd>⎈</kbd><kbd>a</kbd>
+    + ✨  ☰🔎 **Find** menu to <kbd>d</kbd> to use convenient rollover <kbd>s</kbd>←<kbd>d</kbd> and <kbd>d</kbd>→<kbd>f</kbd> motions instead of <kbd>⇧</kbd> for regex-based search and char find commands
     + add a more convenient way to exit insert mode on key hold (workaround with an external remapping tool)
+    + more case conversion commands
     + line swap commands
     + cut selection stub commands
+    + new 25.07 commands: rotate selection, file picker/explorer, etc.
+    + new 25.01 commands: sub-word movement, `search_selection_detect_word_boundaries`, etc.
+    + new 24.07 commands: goto entry, `changed_file_picker`, sibling/children selection, etc.
+    + new 24.03 commands: line/block comments, etc.
+    + new 23.10 commands: smart tabs, `merge_selections`, `reverse_selection_contents`, `yank_joined` etc.
     + new 23.05 commands
     + new modify config script: allows converting config using custom keymap
   - __Changed__
+    + ✨ move right cursor to inverted T to align with regular cursor muscle memory; likewise move left word-based movements to <kbd>s</kbd><kbd>f</kbd> that align with ◀▶ cursor position. Change various direction-based commands to align with the new directions
+    + swap search/char find commands so that prev/next search is closer to regex-search definition key and also since char commands are within a new close ☰🔎 **Find** menu
+    + goto to a closer <kbd>F9</kbd>
+    + status indicator
     + uncomment default commands so that cheatsheets can still read them from a single config file
     + replace default chezmoi template delimiters from `◊◊` to smaller `‹›`
     + left/right insertion icons to symmetrical ⤹⎀ ⎀⤸
-    + ⤝start/end⭲ symbols
+    + ⤝start/end⭲ symbols: ⤝ points to a char; ⭲ points to a border (before a char)
     + line up/down commands to the new defaults using visual lines
     + move physical line up/down (ignore wrap) to GoTo
     + align normal and select mode files
+    + `X` to more explicit `S-x` key values
+    + `Unimpaired` template to a deduped version using only 1 command for each `☰⧛`/`☰⧚`
+    + swap till/to char commands to pioritize stopping before a char
   - __Fixed__
     + word move naming mistake
+    + don't `no_op` keys when parent isn't translated like `space` to only add the translated keys without overwriting the English ones
 
 [0.4.0]: https://github.com/eugenesvk/kbdHelix/releases/tag/0.4.0
 ## [0.4.0]
