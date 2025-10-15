@@ -89,20 +89,20 @@
 
 
 
-    A-r	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「」	「」
+    'A-.'	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「」	「」
 
     #ⓘ   	Find
-    A-w  	= 'find_till_char'	# ⤹🔎 Find 'till next      char      	「」	「」
-    A-S-w	= 'find_prev_char'	# 🔍        incl prev                	「」	「」
-    #    	                  	                                    	  	 
-    #    	                  	                                    	  	 
-    A-S-d	='rsearch'        	# 🔍𝖗 for previous regex pattern     	「」	「」
-    #A-d 	  ☰🔎              	#                                   	「」	「」
-    #A-d 	= 'search'        	# 🔎𝖗 for          regex pattern     	「」	「」
-    'A-.'	= 'search_prev'   	# 🢔◎ ◎͔ Select previous search match	「」	「」   !!! blocked by .Repeat
-    'A-/'	= 'search_next'   	# ◎🢖 ◎͕ Select next     search match	「」	「」
-    #    	                  	                                    	  	 
-    #    	                  	                                    	  	 
+    'A-/'	= 'find_till_char'	# ⤹🔎 Find 'till next      char  	「」   	「」
+    A-S-w	= 'find_prev_char'	# 🔍        incl prev            	「」   	「」
+    #    	                  	                                	     	 
+    #    	                  	                                	     	 
+    A-S-d	='rsearch'        	# 🔍𝖗 for previous regex pattern 	「」   	「」
+    #A-d 	  ☰🔎              	#                               	「」   	「」
+    #A-d 	= 'search'        	# 🔎𝖗 for          regex pattern 	「」   	「」
+    A-w  	= 'search_prev'   	# 🢔◎ ◎͔ Select prev search match	   「」	「」
+    A-r  	= 'search_next'   	# ◎🢖 ◎͕        next             	   「」	「」
+    #    	                  	                                	     	 
+    #    	                  	                                	     	 
     A-8  	= 'search_selection_detect_word_boundaries' # 𝖗🢔▋ω Use sel as \b search pattern
     'A-*'	= 'search_selection'                        # 𝖗🢔▋  Use sel as    search pattern
 
