@@ -32,6 +32,7 @@
     #'['    	                   	 ☰⧛ Unimpaired           	  Ⓝ「  ]」	「」
     #']'    	                   	 ☰⧚                      	  Ⓝ「  [」	「」
     #'`'    	                   	 ☰𝔸𝕒 Case conversion     	  Ⓝ「  」 	「switch_to_lowercase」
+    #'b'    	                   	 ☰𝔸𝕒 Case conversion     	  Ⓝ「  」 	「move_prev_word_start」
     C-e     	= 'command_palette'	# ☰Ⓒ Command Palette     	「⇧ /」   	「」
     S-r     	= 'command_mode'   	#  Ⓒ Enter :command mode 	「⇧ ;」   	「replace_with_yanked」
 
@@ -366,7 +367,8 @@
 
   #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰?" "k" "F1" "cfg" .cfg) ›
 
-  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰𝔸𝕒" "k" "`" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰𝔸𝕒" "k" "`" "cmd" "switch_to_lowercase" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰𝔸𝕒" "k" "b" "cmd" "move_prev_word_start" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nSelectAll.toml.tmpl") (dict "m" "normal" "i" "Ⓝ ☰∀▋" "k" "C-a" "k2" "" "cfg" .cfg) ›
 
