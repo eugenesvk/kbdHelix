@@ -1,16 +1,16 @@
-# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+# chezmoi:template:left-delimiter=#‹ right-delimiter=›
 #‹- /* m=mode i=icon k=key  Uses↓
   _={m='normal', i='Ⓝ ☰🧩', k='  n'}
   _={m='insert', i='ⓘ ☰🧩', k='A-n'}
   _={m='select', i='Ⓢ ☰🧩', k='  n'}
 #*/ -›
-#‹/* key	= command                   	# Icon Comment                                        	≝「key」	「	cmd」 */ -›
-  [keys.	'#‹.m›'.'#‹.k›']            	##‹.i›  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」  	「」
-    'n' 	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                   	「  m」 	「」
-    '.' 	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS)                   	「  」  	「」 !!!missing
-    '/' 	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS)                   	「  」  	「」 !!!missing
-    'i' 	= 'surround_add'            	# (+)  Surround current selection with <char>         	「  s」 	「」
-    't' 	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>     	「  r」 	「」
-    'x' 	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>              	「  d」 	「」
-    'e' 	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                       	「  a」 	「」
-    'a' 	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                       	「  i」 	「」
+#‹/* k 	= command                   	# Icon Comment                                        	≝「key」	「	cmd」 */ -›
+  [keys	.'#‹.m›'.'#‹.k›']           	##‹.i›  Match mode ☰<i class='fa fa-puzzle-piece'></i>	「$!」  	「」
+    'n'	= 'match_brackets'          	# 🢔()🢖 Goto matching   bracket (TS)                   	「  m」 	「」
+    '.'	= 'match_brackets'          	# 🢔(   Goto next left  bracket (TS)                   	「  」  	「」 !!!missing
+    '/'	= 'match_brackets'          	#   )🢖 Goto next right bracket (TS)                   	「  」  	「」 !!!missing
+    'i'	= 'surround_add'            	# (+)  Surround current selection with <char>         	「  s」 	「」
+    't'	= 'surround_replace'        	# (🗘) Replace surround character <from> with <to>     	「  r」 	「」
+    'x'	= 'surround_delete'         	# (ᵡ)  Delete  surround character <char>              	「  d」 	「」
+    'e'	= 'select_textobject_around'	# 🢔O🢖  Select around textobject                       	「  a」 	「」
+    'a'	= 'select_textobject_inner' 	# 🢖O🢔  Select inside textobject                       	「  i」 	「」
