@@ -123,8 +123,14 @@
    #'q'	= 'mode_fs_close'          	# ☰× Close buffers/files un/saved          	「  」	「  」
    #'x'	= nSpaceQ                  	# ☰␜☰ᵡ Close mode                          	「」  	「  」
 
+    #  	Duplicate                                  	                               	 
     ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
-    'O'	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+    S-o	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
+    #  	Empty                                      	                               	 
+    'i'	= 'no_op'                                  	#                              	「」	「  」
+    'm'	= 'no_op'                                  	#                              	「」	「  」
+    'z'	= 'no_op'                                  	#                              	「」	「  」
+    '.'	= 'no_op'                                  	#                              	「」	「  」
 
   #‹ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "q") ›
   #‹ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "x") ›
