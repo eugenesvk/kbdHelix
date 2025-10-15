@@ -1,7 +1,13 @@
 # chezmoi:template:left-delimiter=#‹ right-delimiter=›
-#‹/* k  	= command               	# Icon Comment                                              	≝「key」	「	cmd」 */ -›
-  [keys 	.'#‹.m›'.'#‹.k›']       	##‹.i› Help mode                                            	「  」  	「」
-   #'F1'	= 'show-keymap'         	# ⌨ Help !!!missing                                         	「  」  	「」
-    'F2'	= ':tree-sitter-scopes' 	# 🌳 Tree sitter scopes (for theming and development)        	「  」  	「」
-    'F3'	= ':tree-sitter-subtree'	# 🌳 Tree sitter subtree under cursor (for debugging queries)	「  」  	「」
-    'c' 	= ':character-info'     	# 🔣ℹ Character info                                         	「  」  	「」
+#‹/* k     	= command                      	# Icon Comment	≝「key」	「	cmd」 */ -›
+  [keys    	.'#‹.m›'.'#‹.k›']              	##‹.i› Help mode
+   #'#‹.k›'	= 'show-keymap'                	# ⌨ Help !!!missing
+    'F2'   	= ':tree-sitter-scopes'        	# 🌳 Tree sitter scopes               (theming & dev)
+    'F3'   	= ':tree-sitter-highlight-name'	# 🔬ℹ theme scope name @ ⎀
+    'F4'   	= ':tree-sitter-subtree'       	# 🌳 Tree sitter subtree under cursor (debug queries)
+    'c'    	= ':character-info'            	# 🔣ℹ Character info
+    #      	   Duplicate                   	 
+    's'    	= ':tree-sitter-scopes'        	#
+    'd'    	= ':tree-sitter-highlight-name'	#
+    't'    	= ':tree-sitter-subtree'       	#
+    'i'    	= ':character-info'            	#
