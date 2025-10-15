@@ -97,7 +97,8 @@
     #    	                  	                                    	  	 
     #    	                  	                                    	  	 
     A-S-d	='rsearch'        	# 🔍𝖗 for previous regex pattern     	「」	「」
-    A-d  	= 'search'        	# 🔎𝖗 for          regex pattern     	「」	「」
+    #A-d 	  ☰🔎              	#                                   	「」	「」
+    #A-d 	= 'search'        	# 🔎𝖗 for          regex pattern     	「」	「」
     'A-.'	= 'search_prev'   	# 🢔◎ ◎͔ Select previous search match	「」	「」   !!! blocked by .Repeat
     'A-/'	= 'search_next'   	# ◎🢖 ◎͕ Select next     search match	「」	「」
     #    	                  	                                    	  	 
@@ -342,6 +343,8 @@
     'A-`'	= 'switch_case'	# 𝕒⇋𝔸 (selection)	「⇧ `」	「」
 
   #‹ includeTemplate (joinPath .cfg "nSelectAll.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰∀▋" "k" "C-a" "k2" "" "cfg" .cfg) ›
+
+  #‹ includeTemplate (joinPath .cfg "nFind.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰🔎" "k" "A-d" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰👁" "k" "A-p" "cfg" .cfg) ›
     # 'p'  	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
