@@ -316,24 +316,24 @@
     #S-q  	= 'replay_macro'   	#⇧[⇧ q] replay_macro]                                  	▶  Play back a recorded macro from the selected register
     #"S-'"	= 'select_register'	# ®  Select a register to yank to or paste from        	「  '<reg>」	「select_register」
 
-    # 'b'  	= 'N/Arepeat_last_change' 	# ∞ Repeat last change !!! no command yet                   	「⇧  .」	「move_prev_word_start」
-    # '.'  	=  'N/Arepeat_last_change'	# ∞ Repeat last change                                      	「  .」 	「n/arepeat_last_change」
-    # ';'  	= 'insert_mode'           	# ⤹⎀ Insert before selection                                	「  i」 	「」
-    'o'    	= 'append_mode'           	# ⎀⤸ Insert after selection (append)                        	「  a」 	「open_above」
-    ':'    	= 'open_above'            	# ⭡␤ Open new line above selection                          	「⇧ o」 	「insert_at_line_start」
-    S-o    	= 'open_below'            	# ⭣␤ Open new line below selection                          	「  o」 	「insert_at_line_end」
-    'u'    	= 'undo'                  	# ⎌ Undo change                                             	「  u」 	「undo mode」
-    'y'    	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「yank」
-    S-u    	= 'earlier'               	# 🕘 Move backward in history   <i class='fa fa-history'></i>	「⇧ ⎇u」	「redo」
-    S-y    	= 'later'                 	# 🕒 Move forward in history ⏱ <i class='fa fa-clock-o'></i> 	「⇧⎇u」 	「」
-    C-y    	= 'redo'                  	# ↷ Redo change                                             	「⇧ u」 	「」
-    'v'    	= 'paste_after'           	# 📋⤹ Paste after selection                                  	「  p」 	「select_mode」
-    C-v    	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection                                  	「☰␠ p」	「」
-    S-v    	= 'paste_before'          	# ⤸📋 Paste before selection                                 	「⇧ p」 	「」
-    C-z    	= 'suspend'               	# ⎌ Undo change                                             	「  u」 	「」
-    C-S-z  	= 'redo'                  	# ↷ Redo change !!!fail                                     	「⇧ u」 	「」
-    #S-i   	= 'insert_at_line_start'  	# ⤝⎀ Insert at the start of the line                        	「⇧ i」 	「insert_at_line_start」
-    #S-a   	= 'insert_at_line_end'    	# ⎀⭲ Insert at the end of the line                          	「⇧ a」 	「insert_at_line_end」
+    #'b' 	= 'N/Arepeat_last_change' 	# ∞ Repeat last change 「⇧  .」       	「move_prev_word_start」 !!! no command yet
+    #'.' 	=  'N/Arepeat_last_change'	# ∞ Repeat last change              	「  .」 	「n/arepeat_last_change」
+    ';'  	= 'insert_mode'           	# ⤹⎀ Insert before selection        	「  i」 	「」
+    'o'  	= 'append_mode'           	# ⎀⤸ Insert after selection (append)	「  a」 	「open_above」
+    ':'  	= 'open_above'            	# ⭡␤ Open new line above selection  	「⇧ o」 	「insert_at_line_start」
+    S-o  	= 'open_below'            	# ⭣␤ Open new line below selection  	「  o」 	「insert_at_line_end」
+    'u'  	= 'undo'                  	# ⎌ Undo change                     	「  u」 	「undo mode」
+    'y'  	= 'redo'                  	# ↷ Redo change                     	「⇧ u」 	「yank」
+    S-u  	= 'earlier'               	# 🕘 Move backward in history        	「⇧ ⎇u」	「redo」 <i class='fa fa-history'></i>
+    S-y  	= 'later'                 	# 🕒 Move forward  in history ⏱      	「⇧⎇u」 	「」 <i class='fa fa-clock-o'></i>
+    C-y  	= 'redo'                  	# ↷ Redo change                     	「⇧ u」 	「」
+    'v'  	= 'paste_after'           	# 📋⤹ Paste after selection          	「  p」 	「select_mode」
+    C-v  	= 'paste_clipboard_after' 	# 📋⤹ Paste after selection          	「☰␠ p」	「」
+    S-v  	= 'paste_before'          	# ⤸📋 Paste before selection         	「⇧ p」 	「」
+    C-z  	= 'suspend'               	# ⎌ Undo change                     	「  u」 	「」
+    C-S-z	= 'redo'                  	# ↷ Redo change !!!fail             	「⇧ u」 	「」
+    #S-i 	= 'insert_at_line_start'  	# ⤝⎀ Insert at the start of the line	「⇧ i」 	「insert_at_line_start」
+    #S-a 	= 'insert_at_line_end'    	# ⎀⭲ Insert at the end of the line  	「⇧ a」 	「insert_at_line_end」
 
 
 
