@@ -1,30 +1,30 @@
-# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
-#‹/* key      	= command            	# Icon Comment                 	≝「key」    	「	cmd」 */ -›
-  [keys.      	'#‹.m›'.'#‹.k›']     	##‹.i› View mode scroll/       	「$!」      	「paste_after」
-    #         	                     	 /manipulate w/o Δselection    	          	#
-    'z'       	= 'no_op'            	#                              	「   」     	「align_view_center」
-    'c'       	= 'no_op'            	#                              	「   」     	「align_view_center」
-    't'       	= 'no_op'            	#                              	「   」     	「align_view_top」
-    'b'       	= 'no_op'            	#                              	「   」     	「align_view_bottom」
-    C-d       	= 'no_op'            	#                              	「   」     	「half_page_down」
-    C-u       	= 'no_op'            	#                              	「   」     	「half_page_up」
-    C-f       	= 'no_op'            	#                              	「   」     	「page_down」
-    C-b       	= 'no_op'            	#                              	「   」     	「page_up」
-    #         	                     	 ↓ Align line to...            	          	#
-    'u'       	= 'align_view_bottom'	# 🗔⭳ ... Screen bottom         	「  b」     	「」
-    'i'       	= 'align_view_top'   	# 🗔⭱ ... Screen top            	「  t」     	「」
-    'n'       	= 'align_view_center'	# 🗔·| ... center       (vert)  	「  z」     	「align_view_center」
-    'h'       	= 'align_view_middle'	# 🗔·⎯ ... Screen middle (horiz)	「  m」     	「align_view_middle」
-    'l'       	= 'align_view_middle'	# 🗔·⎯ ... Screen middle (horiz)	「  m」     	「」
-    'down'    	= 'scroll_down'      	# ▼ Scroll ↓                   	「down」    	「scroll_down」
-    'up'      	= 'scroll_up'        	# ▲ Scroll ↑                   	「up」      	「scroll_up」
-    'j'       	= 'scroll_down'      	# ▼ Scroll ↓                   	「  j」     	「scroll_down」
-    'k'       	= 'scroll_up'        	# ▲ Scroll ↑                   	「  k」     	「scroll_up」
-    'm'       	= 'half_page_down'   	# ⤈ Move half page ↓           	「  d」     	「align_view_middle」
-    ','       	= 'half_page_up'     	# ⤉ Move half page ↑           	「  u」     	「」
-    'J'       	= 'page_down'        	# ⇟ Move      page ↓           	「  f」     	「」
-    'K'       	= 'page_up'          	# ⇞ Move      page ↑           	「  b」     	「」
-    C-j       	= 'page_down'        	# ⇟ Move      page ↓           	「  f」     	「」
-    C-k       	= 'page_up'          	# ⇞ Move      page ↑           	「  b」     	「」
-    'pagedown'	= 'page_down'        	# ⇟ Move      page ↓           	「pageup」  	「page_down」
-    'pageup'  	= 'page_up'          	# ⇞ Move      page ↑           	「pagedown」	「page_up」
+# chezmoi:template:left-delimiter=#‹ right-delimiter=›
+#‹/*key     	= command            	# Icon Comment                 	≝「key」    	「	cmd」 */ -›
+  [keys     	.'#‹.m›'.'#‹.k›']    	##‹.i› View mode scroll/       	「$!」      	「paste_after」
+    #       	                     	 /manipulate w/o Δselection    	          	#
+    'z'     	= 'no_op'            	#                              	「   」     	「align_view_center」
+    'c'     	= 'no_op'            	#                              	「   」     	「align_view_center」
+    't'     	= 'no_op'            	#                              	「   」     	「align_view_top」
+    'b'     	= 'no_op'            	#                              	「   」     	「align_view_bottom」
+    C-d     	= 'no_op'            	#                              	「   」     	「half_page_down」
+    C-u     	= 'no_op'            	#                              	「   」     	「half_page_up」
+    C-f     	= 'no_op'            	#                              	「   」     	「page_down」
+    C-b     	= 'no_op'            	#                              	「   」     	「page_up」
+    #       	                     	 ↓ Align line to...            	          	#
+    'u'     	= 'align_view_bottom'	# 🗔⭳ ... Screen bottom         	「  b」     	「」
+    'i'     	= 'align_view_top'   	# 🗔⭱ ... Screen top            	「  t」     	「」
+    'n'     	= 'align_view_center'	# 🗔·| ... center       (vert)  	「  z」     	「align_view_center」
+    'h'     	= 'align_view_middle'	# 🗔·⎯ ... Screen middle (horiz)	「  m」     	「align_view_middle」
+    'l'     	= 'align_view_middle'	# 🗔·⎯ ... Screen middle (horiz)	「  m」     	「」
+    down    	= 'scroll_down'      	# ▼ Scroll ↓                   	「down」    	「scroll_down」
+    'up'    	= 'scroll_up'        	# ▲ Scroll ↑                   	「up」      	「scroll_up」
+    'j'     	= 'scroll_down'      	# ▼ Scroll ↓                   	「  j」     	「scroll_down」
+    'k'     	= 'scroll_up'        	# ▲ Scroll ↑                   	「  k」     	「scroll_up」
+    'm'     	= 'half_page_down'   	# ⤈ Move half page ↓           	「  d」     	「align_view_middle」
+    ','     	= 'half_page_up'     	# ⤉ Move half page ↑           	「  u」     	「」
+    'J'     	= 'page_down'        	# ⇟ Move      page ↓           	「  f」     	「」
+    'K'     	= 'page_up'          	# ⇞ Move      page ↑           	「  b」     	「」
+    C-j     	= 'page_down'        	# ⇟ Move      page ↓           	「  f」     	「」
+    C-k     	= 'page_up'          	# ⇞ Move      page ↑           	「  b」     	「」
+    pagedown	= 'page_down'        	# ⇟ Move      page ↓           	「pageup」  	「page_down」
+    pageup  	= 'page_up'          	# ⇞ Move      page ↑           	「pagedown」	「page_up」
