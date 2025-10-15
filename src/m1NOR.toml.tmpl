@@ -266,22 +266,22 @@
                  	   'delete_selection','move_line_up',	#                              	     	 
                  	   'paste_before']                   	#                              	     	 
 
-    # '.'      	= 'N/A'                              	# ∞ Repeat last change        	「.」     	「n/a」
-    '6'        	= 'delete_char_forward'              	# ⌦ !!!missing ∀*             	「 ⌦」    	「<5>」
-    'x'        	= 'delete_selection'                 	# ᵡ▋                          	「  d」   	「extend_line_below」
-    A-x        	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)     	「 ⎇d」   	「」
-    # A-c      	= 'change_selection'                 	# Δ                           	「  c」   	「change_selection_noyank」
-    'h'        	= 'delete_char_backward'             	# ⌫c ᵡ char ←                 	「⌫」     	「move_char_left」
-    S-h        	= 'delete_char_forward'              	# ⌦c ᵡ char →                 	「⇧⌦」    	「」
-    A-h        	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                 	ⓘ「 ⎈w」  	「」
-    A-S-h      	= 'delete_word_forward'              	# ⌦ω ᵡ word →                 	 ⓘ「  ⎇d」	「」
-    C-h        	= ['move_prev_long_word_start',      	# ⌫W                          	「   」   	「」
-               	   'delete_selection']               	# ᵡ Word ←                    	 
-    C-x        	= ['yank_main_selection_to_clipboard'	                              	,
-               	   'delete_selection']               	#                             	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
+    #'.'     	= 'N/A'                              	# ∞ Repeat last change        	「.」     	「n/a」
+    '6'      	= 'delete_char_forward'              	# ⌦ !!!missing ∀*             	「 ⌦」    	「<5>」
+    'x'      	= 'delete_selection'                 	# ᵡ▋                          	「  d」   	「extend_line_below」
+    A-x      	= 'delete_selection_noyank'          	# 🕱▋ (...without copying)     	「 ⎇d」   	「」
+    # A-c    	= 'change_selection'                 	# Δ                           	「  c」   	「change_selection_noyank」
+    'h'      	= 'delete_char_backward'             	# ⌫c ᵡ char ←                 	「⌫」     	「move_char_left」
+    S-h      	= 'delete_char_forward'              	# ⌦c ᵡ char →                 	「⇧⌦」    	「」
+    A-h      	= 'delete_word_backward'             	# ⌫ω ᵡ word ←                 	ⓘ「 ⎈w」  	「」
+    A-S-h    	= 'delete_word_forward'              	# ⌦ω ᵡ word →                 	 ⓘ「  ⎇d」	「」
+    C-h      	= ['move_prev_long_word_start',      	# ⌫W                          	「   」   	「」
+             	   'delete_selection']               	# ᵡ Word ←                    	 
+    C-x      	= ['yank_main_selection_to_clipboard'	                              	,
+             	   'delete_selection']               	#                             	      	×📋 cut to clipboard <i class='fa fa-clipboard'></i>	「   」	「decrement」
     backspace	= 'delete_char_backward'             	# ⌫                           	「I.bs」	「」
-    S-x        	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside sel  	「⇧ j」 	「extend_to_line_bounds」
-    A-S-x      	= 'join_selections_space'            	# ᵡ␤,␠ Join lines,select space	「⇧⎇ j」	「」
+    S-x      	= 'join_selections'                  	# ᵡ␤ ⨝ Join lines inside sel  	「⇧ j」 	「extend_to_line_bounds」
+    A-S-x    	= 'join_selections_space'            	# ᵡ␤,␠ Join lines,select space	「⇧⎇ j」	「」
 
     # backspace	= 'delete_char_backward'	# ⌫c ᵡ char ←	「backspace」	「delete_char_backward」
     # C-h        	= 'delete_char_backward'	# ⌫c ᵡ char ←	「C-h」      	「delete_char_backward」
