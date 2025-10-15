@@ -125,10 +125,10 @@
     'r'	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「 ⎇.」	「replace」
 
     #Ⓢ   	Find
-    'w'  	= 'extend_next_char'     	# 🔍   Extend       next     char       	「  f」 	「extend_next_word_start」
-    S-w  	= 'extend_prev_char'     	# 🔎   Extend       previous char       	「⇧ f」 	「extend_next_long_word_start」
-    A-w  	= 'extend_till_char'     	# 🔍₋₁ Extend 'till next     char       	「  t」 	「」
-    A-S-w	= 'extend_till_prev_char'	# 🔎₋₁ Extend 'till previous char       	「⇧ t」 	「」
+    'w'  	= 'extend_till_char'     	# ⤹🔎 Extend 'till next char            	「  t」 	「extend_next_word_start」
+    S-w  	= 'extend_till_prev_char'	# 🔍⤸        'till prev                 	「⇧ t」 	「extend_next_long_word_start」
+    A-w  	= 'extend_next_char'     	# 🔍                next                	「  f」 	「」
+    A-S-w	= 'extend_prev_char'     	# 🔎                prev                	「⇧ f」 	「」
     S-d  	='rsearch'               	# 🔍𝖗 for previous regex pattern        	「⇧ /」 	「」
     'd'  	= 'search'               	# 🔎𝖗 for          regex pattern        	「⇧  /」	「delete_selection」
     '.'  	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend previous search match   	「⇧ n」 	「goto_last_modification!!!」
