@@ -1,50 +1,50 @@
-# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+# chezmoi:template:left-delimiter=#‹ right-delimiter=›
 theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix-editor/helix/wiki/Themes */›
 
 [editor]
-  #‹/* 'key'                 	= 'value'    	#≝        	Comment */ -›
-  # 'scrolloff'              	= 3          	#5        	Number of lines of padding around the edge of the screen when scrolling
-  # 'mouse'                  	= true       	#T        	Enable mouse mode
-  # 'middle-click-paste'     	= true       	#T        	Middle click paste support
-  'scroll-lines'             	= 2          	#3        	Number of lines to scroll per scroll wheel step
-  'shell'                    	= ['nu','-c']	#'sh','-c'	Shell to use when running external commands
-  'line-number'              	= 'relative' 	#absolute 	Line number display (absolute¦relative(=absⓘ))
-  #Completion                	             	#         	#
-  # 'auto-completion'        	= true       	#T        	Auto pop up of auto-completion
-  # 'completion-trigger-len' 	= 2          	#2        	min-length of word under cursor to trigger autocompletion
-  'completion-replace'       	= false      	#F        	completions replace word, not pre-cursor part
-  'preview-completion-insert'	= true       	#T        	apply completion item instantly when selected
-  # 'idle-timeout'           	= 400        	#400      	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant
-  # 'auto-info'              	= true       	#T        	Display infoboxes
-  'cursorline'               	= false      	#F        	Highlight all lines   with a cursor
-  'cursorcolumn'             	= false      	#F        	Highlight all columns with a cursor
-  'auto-format'              	= false      	#T        	auto formatting on save
-  'color-modes'              	= true       	#F        	Color mode indicator depending on the mode itself
-  'text-width'               	= 120        	#80       	Max line length for the :reflow command and soft-wrap.wrap_at_text_width
-  'rulers'                   	= [50, 100]  	#[]       	List of col pos for rulers. Overridden by language specific rulers in languages.toml
-  # 'undercurl'              	= false      	#F        	Override auto detection of terminal undercurl support
-  # 'true-color'             	= false      	#F        	Oerride auto detection of terminal truecolor
-  # 'workspace-lsp-roots'    	= []         	#[]       	Dirs relative to the workspace root that are treated as LSP roots (only set in .helix/config.toml)
-  'default-yank-register'    	= 'r'        	#≝"       	Default register used for copy/paste
-  'bufferline'               	= 'multiple' 	#never    	Line@top with open buffers ¦always|never¦multiple (only shown if more than one buffer is in use)
-  'default-line-ending'      	= 'lf'       	#≝native lf crlf ff cr nel  line ending to use for new docs
-  'indent-heuristic'         	='hybrid'    	# New line indent level (fallback: H→TS→S)
-  #                          	 ≝hybrid       combine both
-  #                          	 simple     	 copy from the previous line
-  #                          	 tree-sitter	 based on the syntax tree
-  'jump-label-alphabet'      	='asdfghjkl;qwertyuiopzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM' #abcdefghijklmnopqrstuvwxyz   Chars used to generate two character jump labels (@beg used first)
-  # UI                       	        		#
-  #'popup-border'            	= 'none'	#≝none popup menu all   Draw border around
-  # Diagnostics              	        	#error warning info hint
-  'end-of-line-diagnostics'  	= 'hint'	#≝disable	Min severity of diagnostics to render @ line end
+  #‹/* key                 	= 'value'    	#≝        	Comment */ -›
+  # scrolloff              	= 3          	#5        	Number of lines of padding around the edge of the screen when scrolling
+  # mouse                  	= true       	#T        	Enable mouse mode
+  # middle-click-paste     	= true       	#T        	Middle click paste support
+  scroll-lines             	= 2          	#3        	Number of lines to scroll per scroll wheel step
+  shell                    	= ['nu','-c']	#'sh','-c'	Shell to use when running external commands
+  line-number              	= 'relative' 	#absolute 	Line number display (absolute¦relative(=absⓘ))
+  #Completion              	             	#         	#
+  # auto-completion        	= true       	#T        	Auto pop up of auto-completion
+  #completion-trigger-len  	= 2          	#2        	min-length of word under cursor to trigger autocompletion
+  completion-replace       	= false      	#F        	completions replace word, not pre-cursor part
+  preview-completion-insert	= true       	#T        	apply completion item instantly when selected
+  #idle-timeout            	= 400        	#400      	Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant
+  #auto-info               	= true       	#T        	Display infoboxes
+  cursorline               	= false      	#F        	Highlight all lines   with a cursor
+  cursorcolumn             	= false      	#F        	Highlight all columns with a cursor
+  auto-format              	= false      	#T        	auto formatting on save
+  color-modes              	= true       	#F        	Color mode indicator depending on the mode itself
+  text-width               	= 120        	#80       	Max line length for the :reflow command and soft-wrap.wrap_at_text_width
+  rulers                   	= [50, 100]  	#[]       	List of col pos for rulers. Overridden by language specific rulers in languages.toml
+  # undercurl              	= false      	#F        	Override auto detection of terminal undercurl support
+  # true-color             	= false      	#F        	Oerride auto detection of terminal truecolor
+  # workspace-lsp-roots    	= []         	#[]       	Dirs relative to the workspace root that are treated as LSP roots (only set in .helix/config.toml)
+  default-yank-register    	= 'r'        	#≝"       	Default register used for copy/paste
+  bufferline               	= 'multiple' 	#never    	Line@top with open buffers ¦always|never¦multiple (only shown if more than one buffer is in use)
+  default-line-ending      	= 'lf'       	#≝native lf crlf ff cr nel  line ending to use for new docs
+  indent-heuristic         	='hybrid'    	# New line indent level (fallback: H→TS→S)
+  #                        	 ≝hybrid       combine both
+  #                        	 simple     	 copy from the previous line
+  #                        	 tree-sitter	 based on the syntax tree
+  jump-label-alphabet      	='asdfghjkl;qwertyuiopzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM' #abcdefghijklmnopqrstuvwxyz   Chars used to generate two character jump labels (@beg used first)
+  # UI                     	        		#
+  #popup-border            	= 'none'	#≝none popup menu all   Draw border around
+  # Diagnostics            	        	#error warning info hint
+  end-of-line-diagnostics  	= 'hint'	#≝disable	Min severity of diagnostics to render @ line end
 
 
-  'atomic-save'             	= true 	#T use atomic operations to write documents to disk. Prevent data loss if editor is interrupted while saving, but may confuse some file watching/hot reloading programs
-  'insert-final-newline'    	= false	#T auto insert trailing line-ending on write if missing
-  'trim-final-newlines'     	= false	#F auto remove line-endings after the final one on write
-  'trim-trailing-whitespace'	= false	#F auto remove whitespace preceding line endings on write
+  atomic-save               	= true 	#T use atomic operations to write documents to disk. Prevent data loss if editor is interrupted while saving, but may confuse some file watching/hot reloading programs
+  insert-final-newline      	= false	#T auto insert trailing line-ending on write if missing
+  trim-final-newlines       	= false	#F auto remove line-endings after the final one on write
+  trim-trailing-whitespace  	= false	#F auto remove whitespace preceding line endings on write
 
-  # 'auto-pairs'	= true	#|true	|  Auto insertion of pairs to parentheses, brackets, etc
+  # auto-pairs  	= true	#|true	|  Auto insertion of pairs to parentheses, brackets, etc
   [editor.auto-pairs]
     '"' = '"'
     '`' = '`'
@@ -96,12 +96,12 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
     #workspace-diagnostics	= ['warning','error']	#≝[warning error] list of severities displayed for workspace
 
 
-  [editor.soft-wrap]    	       	# Options for soft wrapping lines that exceed the view width:
-    'enable'            	= false	#|false	| Enabled
-    'max-wrap'          	= 20   	#|20   	| Max free space left at line end, ↑to ↓ forced mid-word wrapping
-    'max-indent-retain' 	= 40   	#|40   	| Max indentation to carry over when soft wrapping a line
-    'wrap-indicator'    	= "↪"  	#|↪    	| Text before soft wrapped lines, highlighted with ui.virtual.wrap
-    'wrap-at-text-width'	= false	#|false	| Soft wrap at text-width instead of using the full viewport size
+  [editor.soft-wrap]  	       	# Options for soft wrapping lines that exceed the view width:
+    enable            	= false	#|false	| Enabled
+    max-wrap          	= 20   	#|20   	| Max free space left at line end, ↑to ↓ forced mid-word wrapping
+    max-indent-retain 	= 40   	#|40   	| Max indentation to carry over when soft wrapping a line
+    wrap-indicator    	= "↪"  	#|↪    	| Text before soft wrapped lines, highlighted with ui.virtual.wrap
+    wrap-at-text-width	= false	#|false	| Soft wrap at text-width instead of using the full viewport size
 
   [editor.cursor-shape]
     normal	= "block"    	# |block	|
@@ -128,59 +128,59 @@ theme	= 'SolarGold' #‹- /* ingrid bogster gruvbox monokai_pro github.com/helix
     skip-levels	= 1   	#|0    	|
 
   [editor.search]
-    'smart-case' 	= false	#|true	| Smart case regex searching (case insensitive unless pattern contains upper case characters)
-    'wrap-around'	= false	#|true	| Whether the search should wrap after depleting the matches
+    smart-case   	= false	#|true	| Smart case regex searching (case insensitive unless pattern contains upper case characters)
+    wrap-around  	= false	#|true	| Whether the search should wrap after depleting the matches
 
   [editor.gutters]
     layout	= ["diagnostics","spacer","line-numbers","spacer","diff"]	# |diagnostics spacer line-numbers spacer diff|
   [editor.gutters.line-numbers]
-    'min-width'	= 3	# | 3	| min № of chars to use
+    min-width  	= 3	# | 3	| min № of chars to use
   # [editor.gutters.diagnostics]
-    # 'unused'	= 0	# | 0	| unused
+    # unused  	= 0	# | 0	| unused
   # [editor.gutters.diff]
-    # 'unused'	= 0	# | 0 | unused
+    # unused  	= 0	# | 0 | unused
   # [editor.gutters.spacer]
-    # 'unused'	= 0	# | 0	| unused
+    # unused  	= 0	# | 0	| unused
 
 
   [editor.'file-picker']
-    'hidden'            	= true  	#|true	| Ignore hidden files
-    #'ignore'           	= true  	#|true	| Read .ignore files
-    #'parents'          	= true  	#|true	| Read  ignore files from parent directories
-    #'git-ignore'       	= true  	#|true	| Read .gitignore files
-    #'git-global'       	= true  	#|true	| Read global .gitignore (path: core.excludefile option of git's config)
-    #'git-exclude'      	= true  	#|true	| Read .git/info/exclude files
-    #'follow-links'     	= true  	#|true	| Follow symlinks instead of ignoring them
-    #'deduplicate-links'	= true  	#|true	| Ignore symlinks that point at files already shown in the picker
-    #'max-depth'        	= "None"	# Set with an integer value for maximum depth to recurse
+    hidden              	= true  	#|true	| Ignore hidden files
+    #ignore             	= true  	#|true	| Read .ignore files
+    #parents            	= true  	#|true	| Read  ignore files from parent directories
+    #git-ignore         	= true  	#|true	| Read .gitignore files
+    #git-global         	= true  	#|true	| Read global .gitignore (path: core.excludefile option of git's config)
+    #git-exclude        	= true  	#|true	| Read .git/info/exclude files
+    #follow-links       	= true  	#|true	| Follow symlinks instead of ignoring them
+    #deduplicate-links  	= true  	#|true	| Ignore symlinks that point at files already shown in the picker
+    #max-depth          	= "None"	# Set with an integer value for maximum depth to recurse
 
-  [editor.lsp]                           	       	#≝
-    #'enable'                            	= true 	#T False will completely disable language servers regardless of language settings
-    #'display-messages'                  	= false	#F LSP messages with `window/showMessage` notification
-    #'display-progress-messages'         	= false	#F LSP progress messages below statusline
-    #'auto-signature-help'               	= true 	#T Auto popup of signature help (parameter hints)
-    'display-inlay-hints'                	= true 	#F Inlay hints
-    #'display-signature-help-docs'       	= true 	#T Docs under signature help popup
-    #'snippets'                          	= true 	#T Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set
-    #'goto-reference-include-declaration'	= true 	#T Include declaration in the goto references popup
-    display-color-swatches               	= true 	#T Show color swatches next to colors
+  [editor.lsp]                         	       	#≝
+    #enable                            	= true 	#T False will completely disable language servers regardless of language settings
+    #display-messages                  	= false	#F LSP messages with `window/showMessage` notification
+    #display-progress-messages         	= false	#F LSP progress messages below statusline
+    #auto-signature-help               	= true 	#T Auto popup of signature help (parameter hints)
+    display-inlay-hints                	= true 	#F Inlay hints
+    #display-signature-help-docs       	= true 	#T Docs under signature help popup
+    #snippets                          	= true 	#T Snippet completions. Requires  :lsp-restart to take effect after :config-reload/:set
+    #goto-reference-include-declaration	= true 	#T Include declaration in the goto references popup
+    display-color-swatches             	= true 	#T Show color swatches next to colors
 
   [editor.smart-tab] # navigating and editing using tab key
-    'enable'        	=  true 	#≝T  ⇧⭾ to explicitly insert ⭾
-    #               	        	    W␠ ⎀: insert ⭾ as normal
-    #               	        	‹nonW␠ ⎀: run `move_parent_node_end`
-    'supersede-menu'	=  false	#≝F block ⭾ for menu navigation, always use for smart tabs
+    enable        	=  true 	#≝T  ⇧⭾ to explicitly insert ⭾
+    #             	        	    W␠ ⎀: insert ⭾ as normal
+    #             	        	‹nonW␠ ⎀: run `move_parent_node_end`
+    supersede-menu	=  false	#≝F block ⭾ for menu navigation, always use for smart tabs
 
   [editor.auto-save] #
-    'focus-lost'         	= false	#≝F needs focus event support from your terminal
-    'after-delay.enable' 	= false	#≝F after ...timeout ms since last edit
-    'after-delay.timeout'	= 3000 	#3000 ms since last edit
+    focus-lost         	= false	#≝F needs focus event support from your terminal
+    after-delay.enable 	= false	#≝F after ...timeout ms since last edit
+    after-delay.timeout	= 3000 	#3000 ms since last edit
 
   [editor.inline-diagnostics] # Rendering diagnostics inside text
     # let s = some_var;
     #         └─ no such value in this scope
-    'cursor-line'    	= 'warning'	#≝disable	min diag severity shown inline on line@primary⎀. No effect in ⓘ, works after 350ms post ⎀move
-    'other-lines'    	= 'error'  	#≝disable	min diag severity shown inline on line@no⎀
-    'prefix-len'     	=  1       	#≝ 1     	How many ─horizontal bars to show before diagnostic text
-    'max-wrap'       	= 10       	#≝20     	Max free space left at line end =editor.soft-wrap.max-wrap
-    'max-diagnostics'	=  5       	#≝10     	max № of diag to render inline for a given line
+    cursor-line    	= 'warning'	#≝disable	min diag severity shown inline on line@primary⎀. No effect in ⓘ, works after 350ms post ⎀move
+    other-lines    	= 'error'  	#≝disable	min diag severity shown inline on line@no⎀
+    prefix-len     	=  1       	#≝ 1     	How many ─horizontal bars to show before diagnostic text
+    max-wrap       	= 10       	#≝20     	Max free space left at line end =editor.soft-wrap.max-wrap
+    max-diagnostics	=  5       	#≝10     	max № of diag to render inline for a given line
