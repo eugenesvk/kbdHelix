@@ -6,13 +6,14 @@
     # Escape	= 'normal_mode'	# Switch to normal mode	「Escape」
     # A-x   	= 'normal_mode'	# Maps Alt-X to enter normal mode
   #ⓘ Free ——————————————————————————————————————————————————————————————————————
-    A-b  	= 'no_op'	#	「   」	「move_prev_word_end」
   #ⓘ Major modes ——————————————————————————————————————————————————————————————————————
   'A-}'	= 'normal_mode'     	# mapped to 🠿i⃣ in Karabiner
   ';'  	= {j='normal_mode' }	# Maps `;k` to exit insert mode !!!flashes dialog during typing
   #ⓘ Minor modes / menu dialogs ———————————————————————————————————————————————————————
-    C-e    	= 'command_palette'	# ☰Ⓒ Command Palette    	「」	「」
-    A-S-r  	= 'command_mode'   	#  Ⓒ Enter :command mode	「」	「」
+    C-e  	= 'command_palette'	# ☰Ⓒ Command Palette    	「」     	「」
+    A-S-r	= 'command_mode'   	#  Ⓒ Enter :command mode	「」     	「」
+    #'A-`'	                   	 ☰𝔸𝕒 Case conversion    	  Ⓝ「  」	「move_prev_word_start」
+    #A-b 	                   	 ☰𝔸𝕒 Case conversion    	  Ⓝ「  」	「move_prev_word_start」
 
   #ⓘ     	Compat with non-modal editors                	 
     C-o  	= 'file_picker_in_current_buffer_directory'  	# 🗐  Open file picker  @file dir 	「☰␠⇧ f」	「」
@@ -337,8 +338,9 @@
   ### ☰Minor modes
   #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰?" "k" "F1" "cfg" .cfg) ›
 
-  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-`" "cfg" .cfg) ›
-    'A-`'	= 'switch_case'	# 𝕒⇋𝔸 (selection)	「⇧ `」	「」
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-`" "cmd" "" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰𝔸𝕒" "k" "A-b" "cmd" "" "cfg" .cfg) ›
+    '`'	= 'switch_case'	# 𝕒⇋𝔸 (sel)	「⇧ `」	「」 #‹/*since A-` is auto-added in the template, but ` isn't*/›
 
   #‹ includeTemplate (joinPath .cfg "nSelectAll.toml.tmpl") (dict "m" "insert" "i" "ⓘ ☰∀▋" "k" "C-a" "k2" "" "cfg" .cfg) ›
 
