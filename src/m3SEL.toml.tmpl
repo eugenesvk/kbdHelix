@@ -379,7 +379,8 @@
 
   #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" .cfg) ›
 
-  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰𝔸𝕒" "k" "`" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰𝔸𝕒" "k" "`" "cmd" "switch_to_lowercase" "cfg" .cfg) ›
+  #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰𝔸𝕒" "k" "b" "cmd" "move_prev_word_start" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nFind.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🔎" "k" "d" "cfg" .cfg) ›
 
