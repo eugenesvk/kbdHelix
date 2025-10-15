@@ -100,11 +100,14 @@ def dictMergeDeep(dTo:dict, dFrom:dict) -> dict: # merge dFrom into dTo recursiv
       dMerged[k_From] = deepcopy(v_From)
   return dMerged
 
+skip_conversion_en = R'/'
+skip_adding_ru = R'./'
 from collections.abc import Mapping
 def dictIterDeep(d, k_parent=None, k_parent_lyt=None, isAnyParentRemappable=None, iterLevel=1):
   for k,v in d.copy().items():
     if (key_combo_new := keyT.remap(k)):
-      d[key_combo_new]	= d[k]
+      if not k in skip_conversion_en: # don't move en. to en/ since it's ru.
+        d[key_combo_new]	= d[k]
       if not isinstance(k, Mapping):
         if not k_parent:                  # del if a top-level mapping
           d.pop(k) # avoids content of 'й' replacing 'q'
@@ -114,7 +117,9 @@ def dictIterDeep(d, k_parent=None, k_parent_lyt=None, isAnyParentRemappable=None
               d.pop(k)
             elif (isinstance(d[k],str ) or\
                   isinstance(d[k],list)): # but single commands→no_op to hide the defaults
-              if k_parent and k_parent_lyt and not (k_parent == k_parent_lyt):
+              if k in skip_adding_ru: # don't move en. to en/ since it's ru.
+                d.pop(k)
+              elif k_parent and k_parent_lyt and not (k_parent == k_parent_lyt):
                 d[k] = 'no_op' # avoid nooping content of '␠'(lyt) that is merged with '␠'(en) due to the fact that the label is the same (not translated)
       isAnyParentRemappable = True if iterLevel > 0 else False
     if isinstance(v, Mapping):
