@@ -120,7 +120,7 @@
     S-w  	= 'find_next_char'	# 🔎        incl next            	「  f」   	「move_next_long_word_start」	<i class='mss mss-Search-3'></i>
     A-w  	= 'find_prev_char'	# 🔍        incl prev            	「⇧ f」   	「」                         	<i class='fa fa-search'></i>
     A-S-w	= 'till_prev_char'	# 🔍⤸      'till prev            	「⇧ t」   	「」                         	<i class='fa fa-search'></i>⤸     alt₋›
-    S-d  	='rsearch'        	# 🔍𝖗 for previous regex pattern 	「⇧ /」   	「」
+    S-d  	='rsearch'        	# 🔍𝖗 for prev regex pattern     	「⇧ /」   	「」
     'd'  	= 'search'        	# 🔎𝖗     next                   	「⇧  /」  	「delete_selection」
     '.'  	= 'search_prev'   	# 🢔◎ ◎͔ Select prev search match	   「⇧ n」	「repeat_last_change!!!」   !!! blocked by .Repeat
     '/'  	= 'search_next'   	# ◎🢖 ◎͕        next             	   「  n」	「search」
@@ -137,26 +137,26 @@
     #  ] 	                        	# = find_under_expand
 
 
-    #Ⓝ          	Compat with non-modal editors
-    C-home      	= 'goto_file_start'     	# ⇱ line number `<n>` else file start	「  g」	「」
-    C-end       	= 'goto_last_line'      	# ⇲ file end                         	「  e」	「」
-    C-S-tab     	= 'goto_previous_buffer'	# ⎗                                  	「⇧ⓖp」「」  !!!fail
-    C-tab       	= 'goto_next_buffer'    	# ⎘                                  	「ⓖn」「」  !!!fail
-    C-pageup    	= 'goto_previous_buffer'	# ⎗                                  	「   」	「」
-    C-pagedown  	= 'goto_next_buffer'    	# ⎘                                  	「   」	「」
-    A-pageup    	= 'jump_backward'       	# ⎗̡                                 	「   」	「」
-    A-pagedown  	= 'jump_forward'        	# ⎘̡                                 	「   」	「」
-    # C-j       	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist   	「 ⎈o」	「」
-    # 'C-;'     	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist   	「 ⎈i」	「」 !!!fail
+    #Ⓝ        	Compat with non-modal editors
+    C-home    	= 'goto_file_start'     	# ⇱ line number `<n>` else file start	「  g」	「」
+    C-end     	= 'goto_last_line'      	# ⇲ file end                         	「  e」	「」
+    C-S-tab   	= 'goto_previous_buffer'	# ⎗                                  	「⇧ⓖp」「」  !!!fail
+    C-tab     	= 'goto_next_buffer'    	# ⎘                                  	「ⓖn」「」  !!!fail
+    C-pageup  	= 'goto_previous_buffer'	# ⎗                                  	「   」	「」
+    C-pagedown	= 'goto_next_buffer'    	# ⎘                                  	「   」	「」
+    A-pageup  	= 'jump_backward'       	# ⎗̡                                 	「   」	「」
+    A-pagedown	= 'jump_forward'        	# ⎘̡                                 	「   」	「」
+    #C-j      	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist   	「 ⎈o」	「」
+    #'C-;'    	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist   	「 ⎈i」	「」 !!!fail
 
-    '1'  	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                 	「ⓖp」 	「<1>」
-    '2'  	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                 	「ⓖn」 	「<2>」
-    A-1  	= 'goto_previous_buffer'	# ⎗                               	「ⓖp」 	「」
-    A-2  	= 'goto_next_buffer'    	# ⎘                               	「ⓖn」 	「」
-    '3'  	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「<3>」 !!!missing ∀*
-    '4'  	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「<4>」 !!!missing ∀*
-    A-3  	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「」
-    A-4  	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「」
+    '1'	= 'goto_previous_buffer'	# ⎗ !!!missing ∀*                 	「ⓖp」 	「<1>」
+    '2'	= 'goto_next_buffer'    	# ⎘ !!!missing ∀*                 	「ⓖn」 	「<2>」
+    A-1	= 'goto_previous_buffer'	# ⎗                               	「ⓖp」 	「」
+    A-2	= 'goto_next_buffer'    	# ⎘                               	「ⓖn」 	「」
+    '3'	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「<3>」 !!!missing ∀*
+    '4'	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「<4>」 !!!missing ∀*
+    A-3	= 'jump_backward'       	# ⎗̡ Jump backward on the jumplist	「 ⎈o」	「」
+    A-4	= 'jump_forward'        	# ⎘̡ Jump forward  on the jumplist	「 ⎈i」	「」
 
   #Ⓝ Select ——————————————————————————————————————————————————————————————————————
     'e'	= 'select_mode'	# Ⓢ ✠ Enter select (extend) mode (←↑↓→ in Web) alt「  v」	「move_next_word_end」 <i class='fa fa-arrows'></i>
