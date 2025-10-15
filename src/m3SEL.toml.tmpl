@@ -126,9 +126,9 @@
 
     #Ⓢ   	Find
     'w'  	= 'extend_till_char'     	# ⤹🔎 Extend 'till next char            	「  t」 	「extend_next_word_start」
-    S-w  	= 'extend_till_prev_char'	# 🔍⤸        'till prev                 	「⇧ t」 	「extend_next_long_word_start」
-    A-w  	= 'extend_next_char'     	# 🔍                next                	「  f」 	「」
-    A-S-w	= 'extend_prev_char'     	# 🔎                prev                	「⇧ f」 	「」
+    S-w  	= 'extend_next_char'     	# 🔎          incl next                 	「  f」 	「extend_next_long_word_start」
+    A-w  	= 'extend_prev_char'     	# 🔍          incl prev                 	「⇧ f」 	「」
+    A-S-w	= 'extend_till_prev_char'	# 🔍⤸        'till prev                 	「⇧ t」 	「」
     S-d  	='rsearch'               	# 🔍𝖗 for prev regex pattern            	「⇧ /」 	「」
     'd'  	= 'search'               	# 🔎𝖗     next                          	「⇧  /」	「delete_selection」
     '.'  	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend prev search match       	「⇧ n」 	「goto_last_modification!!!」
