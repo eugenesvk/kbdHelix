@@ -1,21 +1,21 @@
-# chezmoi:template:left-delimiter="#‹" right-delimiter="›"
+# chezmoi:template:left-delimiter=#‹ right-delimiter=›
 #‹- /* m=mode i=icon k=key */ -›
-#‹/* key   	= command                             	# Icon Comment                     	≝「key」 	「	cmd」 */ -›
-  [keys    	.'#‹.m›'.'#‹.k›']                     	##‹.i› ☰␠  Space mode              	Ⓝ「 ␠」  	「」
-   #'space'	= 'insert_mode'                       	# ⁁⤸ Insert before sel             	「  i」  	「」 !!!panick! !!!missing
-    ';'    	= 'no_op'                             	#                                  	「」     	「」
-    'ret'  	= 'command_mode'                      	# Ⓒ Enter command mode             	「  ⎋」  	「」
-    S-f    	= 'file_picker_in_current_directory'  	# 🗁 Open file   picker@curdir      	「☰␠⇧ f」	「file_picker_in_current_directory」
-    'c'    	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main sel to sys clipboard	「☰␠ ⇧y」	「」 <i class='fa fa-clipboard'></i>▋
-    'x'    	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                             	「   」  	「」 <i class='fa fa-clipboard'></i>
-           	   'delete_selection']                	# cut to clipboard                 	「   」  	「」  create a new buffer and paste a buffer there !!! not available yet
-    #      	line                                  	                                   	       	 
-    S-k    	= ['extend_to_line_bounds',           	# ━⮃ swap line ↓                   	「 」    	「」!!! not implemented yet
-           	   'delete_selection',                	#                                  	       	 github.com/helix-editor/helix/issues/2245
-           	   'paste_after']                     	#                                  	       	 
-    S-i    	= ['extend_to_line_bounds',           	# ━⮁ swap line ↑                   	「 」    	「」
-           	   'delete_selection','move_line_up', 	#                                  	       	 
-           	   'paste_before']                    	#                                  	       	 
+#‹/*key  	= command                             	# Icon Comment                     	≝「key」 	「	cmd」 */ -›
+  [keys  	.'#‹.m›'.'#‹.k›']                     	##‹.i› ☰␠  Space mode              	Ⓝ「 ␠」  	「」
+   #space	= 'insert_mode'                       	# ⁁⤸ Insert before sel             	「  i」  	「」 !!!panick! !!!missing
+    ';'  	= 'no_op'                             	#                                  	「」     	「」
+    ret  	= 'command_mode'                      	# Ⓒ Enter command mode             	「  ⎋」  	「」
+    S-f  	= 'file_picker_in_current_directory'  	# 🗁 Open file   picker@curdir      	「☰␠⇧ f」	「file_picker_in_current_directory」
+    'c'  	= 'yank_main_selection_to_clipboard'  	# 📋▋ Copy main sel to sys clipboard	「☰␠ ⇧y」	「」 <i class='fa fa-clipboard'></i>▋
+    'x'  	= ['yank_main_selection_to_clipboard',	# ×📋 ▋                             	「   」  	「」 <i class='fa fa-clipboard'></i>
+         	   'delete_selection']                	# cut to clipboard                 	「   」  	「」  create a new buffer and paste a buffer there !!! not available yet
+    #    	line                                  	                                   	       	 
+    S-k  	= ['extend_to_line_bounds',           	# ━⮃ swap line ↓                   	「 」    	「」!!! not implemented yet
+         	   'delete_selection',                	#                                  	       	 github.com/helix-editor/helix/issues/2245
+         	   'paste_after']                     	#                                  	       	 
+    S-i  	= ['extend_to_line_bounds',           	# ━⮁ swap line ↑                   	「 」    	「」
+         	   'delete_selection','move_line_up', 	#                                  	       	 
+         	   'paste_before']                    	#                                  	       	 
 
     'p'	= 'no_op'                	#                                         	≝「   p」 	「paste_clipboard_after」
     'P'	= 'no_op'                	#                                         	≝「⇧ p」  	「paste_clipboard_before」
@@ -183,8 +183,8 @@
    #"'"	='escape-quotes'	# Add \ before " in current line/selection
 
   #[keys 	.'#‹.m›'.'#‹.k›'.'d'] ##‹.i› ☰⟪ Bracket mode in Space mode (place cursor in between)
-   #'RET'	= 'insert char'   	#
-   #'SPC'	= 'insert unicode'	#
+   #RET  	= 'insert char'   	#
+   #SPC  	= 'insert unicode'	#
    #'d'  	= '()'            	# () parenthesis
    #'f'  	= '[]'            	# [] square bracket
    #'j'  	= '{}'            	# {} brace
