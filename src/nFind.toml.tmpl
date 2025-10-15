@@ -25,10 +25,12 @@
     #todo: add first/last match !!!unavailable command
     #todo: replace find_under_expand with a proper command/non-macro !!!unavailable command/parts
 
-    #‹ 	if          	eq .m "normal"                      	-›
-    'd'	= '@naw8e/e'	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
-    #‹ 	else if     	eq .m "select"                      	-›
-    'd'	= '@naw8/'  	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+    #‹ 	if               	eq .m "normal"                      	-›
+    'd'	= '@naw8e/e'     	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+    #‹ 	else if          	eq .m "select"                      	-›
+    'd'	= '@naw8/'       	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
+    #‹ 	else if          	eq .m "insert"                      	-›
+    'd'	= '@<esc>naw8e/;'	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
     #‹- end ›
     #d  	= ['select_mode'                          	# ₌ω🢖 "Extend" sel to same word next	「   」	「」
       #,	 'move_next_word_end'                     	# 1st since word_start command might select previous word
