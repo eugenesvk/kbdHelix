@@ -104,16 +104,11 @@
     #     	                   	                  	         
     #     	                   	                  	         
 
-    #Ⓝ  	Block
-    #'>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
-    #'?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「rsearch」
-    #!!! remove after .Repeat can be rebound
-    '{'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start           	「[p  」  	「」
-    '}'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end             	「]p  」  	「」
-    '>'	= 'search_prev'        	# 🢔◎ ◎͔ Select previous search match	   「⇧ n」	「indent」
-    '?'	= 'search_next'        	# ◎🢖 ◎͕ Select next     search match	   「  n」	「rsearch」
+    #Ⓝ 	Block
+    '>'	= 'goto_prev_paragraph'	# 🢔¶ Move paragraph start	「[p  」	「indent」
+    '?'	= 'goto_next_paragraph'	# ¶🢖 Move paragraph end  	「]p  」	「rsearch」
 
-    '.'	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「 ⎇.」	「」
+    '.'	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「 ⎇.」	「」  !!! blocked by hardcoded repeat last insert
 
     #Ⓝ   	Find
     '/'  	= 'find_till_char'	# ⤹🔎 Find 'till next            	「  t」   	「search」                   	⤹<i class='mss mss-Search-3'></i>     ‹
