@@ -200,7 +200,6 @@
     # 'A-+'  	= 'dupe_selections'             	# 🗐Duplicate selection (currently nonfunctional/disabled)	「⇧Ⓝ =」	「dupe_selections」
 
   #ⓘ Change ——————————————————————————————————————————————————————————————————————
-    # A-b   	= 'repeat_last_change'               	# ∞ Repeat last change	「⇧Ⓝ  .」	「move_prev_word_start」  !!!missing
     #ⓘ      	line                                 	                      	       	 
     C-S-j   	= ['extend_to_line_bounds',          	# ━⮃ swap line ↓      	「 」    	「」!!! not implemented yet
             	   'delete_selection',               	#                     	       	 github.com/helix-editor/helix/issues/2245
@@ -298,9 +297,8 @@
     # "A-\\"	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	Ⓝ「 ⎇\」	「」
     # 'A-|' 	= 'shell_pipe_to'	# Pipe each selection into    shell command, ignoring       output	「⇧Ⓝ⎇\」	「shell_pipe_to」
 
-    #'A-`' 	= ''                   	# ☰𝔸𝕒 Case conversion mode	Ⓝ「   」 	「switch_to_lowercase」 !!!missing aliases
-    A-S-b  	= 'switch_to_lowercase'	# 𝔸𝕒 (selection)          	Ⓝ「⇧  `」	「」
-    C-b    	= 'switch_to_uppercase'	# 𝕒𝔸 (selection)          	Ⓝ「 ⎇`」 	「」
+    A-S-b	= 'switch_to_lowercase'	# 𝔸𝕒 (sel)	Ⓝ「⇧  `」	「」
+    C-b  	= 'switch_to_uppercase'	# 𝕒𝔸 (sel)	Ⓝ「 ⎇`」 	「」
 
     #A-q    	= 'record_macro'   	# ⏺ Start/stop macro recording to the selected register   	Ⓝ「  q」	「record_macro」
     #A-S-q  	= 'replay_macro'   	# ▶  Play back a recorded macro from the selected register	「⇧Ⓝ q」 replay_macro]
