@@ -85,14 +85,14 @@
     A-right	= 'move_next_sub_word_start' 	# ⍹⭲      next beg            	「」   	「select_next_sibling」
     's'    	= 'move_prev_word_start'     	# ⤝ω       prev beg of    word	「  b」	「select_regex」
     'f'    	= 'move_next_word_end'       	# ω⤞       next end           	「  e」	「find_next_char」
-    A-s    	= 'move_prev_word_end'       	# ⭰ω       prev end           	「」   	「split_selection_on_newline」
-    A-f    	= 'move_next_word_start'     	# ω⭲       next beg           	「  w」	「」
-    S-s    	= 'move_prev_long_word_start'	# ⤝W       prev beg           	「⇧ b」	「split_selection」
-    S-f    	= 'move_next_long_word_end'  	# W⤞       next end of    WORD	「⇧ e」	「find_prev_char」
+    S-s    	= 'move_prev_word_end'       	# ⭰ω       prev end           	「」   	「split_selection」
+    S-f    	= 'move_next_word_start'     	# ω⭲       next beg           	「  w」	「find_prev_char」
+    A-s    	= 'move_prev_long_word_start'	# ⤝W       prev beg of    WORD	「⇧ b」	「split_selection_on_newline」
+    A-f    	= 'move_next_long_word_end'  	# W⤞       next end           	「⇧ e」	「」
     A-S-s  	= 'move_prev_long_word_end'  	# ⭰W       prev end           	「⇧ b」	「」
     A-S-f  	= 'move_next_long_word_start'	# W⭲       next beg           	「⇧ w」	「find_prev_char」
-    #C-f   	= 'move_next_long_word_start'	# W⭲                          	「⇧ w」	「page_down」
     #C-s   	= 'move_prev_long_word_end'  	# ⭰W                          	「⇧ b」	「half_page_down」
+    #C-f   	= 'move_next_long_word_start'	# W⭲                          	「⇧ w」	「page_down」
     #S-g   	= 'goto_line'                	# ⮊⎯ go to line #<n> (Ⓒ<n>⏎)  	「⇧ g」	「goto_line」
     #      	                             	                              	         
     #      	                             	                              	         
