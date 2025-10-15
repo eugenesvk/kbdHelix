@@ -82,17 +82,16 @@
 
 
   [keys	.'#‹.m›'.'#‹.k›'.'f']                        	##‹.i› ☰␜ File mode in Space mode	「☰␠ f」 		「」
-    'p'	= 'file_picker_in_current_buffer_directory'  	# 🗐  Open file picker  @file dir 	「☰␠⇧ f」	「」
-    '['	= 'file_picker'                              	# 🗐                    @workspace	「☰␠  f」	「jump_backward」
-    ']'	= 'file_picker_in_current_directory'         	# 🗐                    @cur  dir 	「」     	「」
-    ';'	= 'file_explorer_in_current_buffer_directory'	# 🗁 Open file explorer@file dir  	「☰␠⇧ e」	「」
-    "'"	= 'file_explorer'                            	# 🗁                   @workspace 	「☰␠  e」	「jump_backward」
-    '\'	= 'file_explorer_in_current_directory'       	# 🗁                   @cur  dir  	「」     	「」
+    'i'	= 'file_picker_in_current_buffer_directory'  	# 🗐🗋  Open file picker  @file dir	「☰␠⇧ f」	「」
+    'o'	= 'file_picker'                              	# 🗐🗍                  @workspace 	「☰␠  f」	「」
+    'p'	= 'file_picker_in_current_directory'         	# 🗐c                    @cur  dir	「」     	「」
+    'k'	= 'file_explorer_in_current_buffer_directory'	# 🗁🗋 Open file explorer@file dir 	「☰␠⇧ e」	「」
+    "l"	= 'file_explorer'                            	# 🗁🗍                  @workspace 	「☰␠  e」	「」
+    ';'	= 'file_explorer_in_current_directory'       	# 🗁c                   @cur  dir 	「」     	「」
 
     'j'	= ['commit_undo_checkpoint'	# 💾 save file                              	「  」  	「  」
       ,	  ':write']                	                                           	      	#
-    'k'	= 'file_picker'            	# 🗁 Open file   picker                     	「☰␠ f」	「  」
-   #'l'	= 'open file at cursor'    	# ❚␜ open file at cursor                   	「  」  	「  」
+   #"'"	= 'open file at cursor'    	# ❚␜ open file at cursor                   	「  」  	「  」
     'f'	= 'buffer_picker'          	# ☰b Open buffer picker                    	「  b」 	「file_picker」
    #'d'	= 'show in desktop'        	# show in desktop                          	「  」  	「  」
     's'	= ['commit_undo_checkpoint'	# 💾 save file                              	「  」  	「  」
@@ -112,7 +111,6 @@
    #'c'	= 'copy file path'         	# 📋C:\ copy file path                      	「  」  	「  」 <i class='fa fa-clipboard'>C:\
    #'t'	= 'list recently closed'   	# list recently closed                     	「  」  	「  」
    #'y'	= 'open recently closed'   	# open recently closed                     	「  」  	「  」
-    'o'	= 'file_picker'            	# 🗁 Open file   picker                     	「☰␠ f」	「  」
     'n'	= ':new'                   	# 🗋 new empty buffer                       	Ⓝ「⎈n」 	「  」
     'm'	= 'changed_file_picker'    	# VCS picker with Δs                       	「☰␠ g」	「  」
    #'b'	= 'recentf open files'     	# recentf open files                   「  」	「  」
@@ -127,9 +125,11 @@
     ','	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
     S-o	= 'file_picker_in_current_buffer_directory'	# 🗁 Open file   picker @ bufdir	「   」	「」
     #  	Empty                                      	                               	 
-    'i'	= 'no_op'                                  	#                              	「」	「  」
+    '['	= 'no_op'                                  	#                              	「」	「  」
+    ']'	= 'no_op'                                  	#                              	「」	「  」
     'z'	= 'no_op'                                  	#                              	「」	「  」
     '.'	= 'no_op'                                  	#                              	「」	「  」
+    '\'	= 'no_op'                                  	#                              	「」	「  」
 
   #‹ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "q") ›
   #‹ includeTemplate (joinPath .cfg "nSpaceQ.toml.tmpl") (dict "m" .m "i" .i "k" .k "q" "x") ›
