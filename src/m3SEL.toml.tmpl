@@ -130,7 +130,8 @@
     A-w  	= 'extend_prev_char'     	# 🔍          incl prev                 	「⇧ f」 	「」
     A-S-w	= 'extend_till_prev_char'	# 🔍⤸        'till prev                 	「⇧ t」 	「」
     S-d  	='rsearch'               	# 🔍𝖗 for prev regex pattern            	「⇧ /」 	「」
-    'd'  	= 'search'               	# 🔎𝖗     next                          	「⇧  /」	「delete_selection」
+    #'d' 	  ☰🔎                     	#                                      	「」    	「delete_selection」
+    #'d' 	= 'search'               	# 🔎𝖗     next                          	「⇧  /」	「delete_selection」
     '.'  	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend prev search match       	「⇧ n」 	「goto_last_modification!!!」
     '/'  	= 'extend_search_next'   	# ◎🢖 ◎͕        next                    	「  n」 	「search」
     #    	                         	                                       	         
@@ -379,6 +380,8 @@
   #‹ includeTemplate (joinPath .cfg "nHelp.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰?" "k" "F1" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nCaseConv.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰𝔸𝕒" "k" "`" "cfg" .cfg) ›
+
+  #‹ includeTemplate (joinPath .cfg "nFind.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰🔎" "k" "d" "cfg" .cfg) ›
 
   #‹ includeTemplate (joinPath .cfg "nView.toml.tmpl") (dict "m" "select" "i" "Ⓢ ☰👁" "k" "p" "cfg" .cfg) ›
     # 'p'	= 'view_mode_sticky'	# ☰👁ₛ 'sticky', persistent	「   」	「」
