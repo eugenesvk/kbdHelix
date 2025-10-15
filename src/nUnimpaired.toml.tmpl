@@ -1,6 +1,6 @@
 # chezmoi:template:left-delimiter=#‹ right-delimiter=›
 #‹- /* m=mode i=icon k=key tf=T¦F an=all¦none pn=prev¦next fl=first¦last ba=before¦after ar=absolute¦relative ab=above¦below i_ab=icon↑↓ #*/›
-#‹/* ke	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -›
+#‹/*key	= command                 	# Icon Comment	≝「key」	「	cmd」 */ -›
   [keys	.'#‹.m›'.'#‹.k›']         	##‹.i› Unimpaired
     'j'	= 'goto_#‹.pn›_change'    	# #‹.il›Δ#‹.ir› Change            	#‹.pn›            	「  g」 	「」
    #S-g	= 'goto_#‹.fl›_change'    	# #‹.ib›Δ#‹.ia›                   	#‹.fl›            	≝「⇧ g」	「goto_#‹.fl›_change」
@@ -25,7 +25,7 @@
       ,	  '#‹ if eq .ab "above" ›move_line_up#‹else›goto_line_end#‹end›' #
       ,	  'paste_#‹.ba›']	#
 
-    'space'	= 'add_newline_#‹.ab›'	# #‹.i_ab›␤ Add newline #‹.ab›		≝「  ␠」	「add_newline_#‹.ab›」
+    space  	= 'add_newline_#‹.ab›'	# #‹.i_ab›␤ Add newline #‹.ab›		≝「  ␠」	「add_newline_#‹.ab›」
 
 
   [keys	.'#‹.m›'.'#‹.k›'.'c']               	##‹.i›ℂ Unimpaired Config toggle #‹.tf›
@@ -64,10 +64,10 @@
   [keys  	.'#‹.m›'.'#‹.k›'.'c'.' ']                	##‹.i›ℂ␠ Unimpaired Config toggle #‹.tf› sub-space mode
     ' '  	= ':set whitespace.render.space   #‹.an›'	# · show space
     'b'  	= ':set whitespace.render.nbsp    #‹.an›'	# ⍽ show nbsp
-    'tab'	= ':set whitespace.render.tab     #‹.an›'	# ⇥ show tab
+    tab  	= ':set whitespace.render.tab     #‹.an›'	# ⇥ show tab
     't'  	= ':set whitespace.render.tab     #‹.an›'	# ⇥ show tab
     'n'  	= ':set whitespace.render.newline #‹.an›'	# ⏎ show newline
-    'ret'	= ':set whitespace.render.newline #‹.an›'	# ⏎ show newline
+    ret  	= ':set whitespace.render.newline #‹.an›'	# ⏎ show newline
 
   [keys	.'#‹.m›'.'#‹.k›'.'c'.'.']              	##‹.i›ℂ🙈 Unimpaired Config toggle #‹.tf› hidden mode
     '.'	= ':set file-picker.hidden      #‹.tf›'	# Ignore hidden files
