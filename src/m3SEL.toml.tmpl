@@ -122,18 +122,18 @@
     '>'	= 'extend_search_prev' 	# 🢔◎ ◎͔ Extend previous search match	「⇧ n」 	「」
     '?'	= 'extend_search_next' 	# ◎🢖 ◎͕ Extend next     search match	「  n」 	「」
 
-    'r'	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「 ⎇.」	「replace」
+    '.'	= 'repeat_last_motion'	# ∞ Repeat last motion find_next¦till_char ¦ Match ¦ unimpaired	「 ⎇.」	「replace」
 
     #Ⓢ   	Find
-    'w'  	= 'extend_till_char'     	# ⤹🔎 Extend 'till next char            	「  t」 	「extend_next_word_start」
+    '/'  	= 'extend_till_char'     	# ⤹🔎 Extend 'till next char            	「  t」 	「search」
     S-w  	= 'extend_next_char'     	# 🔎          incl next                 	「  f」 	「extend_next_long_word_start」
     A-w  	= 'extend_prev_char'     	# 🔍          incl prev                 	「⇧ f」 	「」
     A-S-w	= 'extend_till_prev_char'	# 🔍⤸        'till prev                 	「⇧ t」 	「」
     S-d  	='rsearch'               	# 🔍𝖗 for prev regex pattern            	「⇧ /」 	「」
     #'d' 	  ☰🔎                     	#                                      	「」    	「delete_selection」
     #'d' 	= 'search'               	# 🔎𝖗     next                          	「⇧  /」	「delete_selection」
-    '.'  	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend prev search match       	「⇧ n」 	「goto_last_modification!!!」
-    '/'  	= 'extend_search_next'   	# ◎🢖 ◎͕        next                    	「  n」 	「search」
+    'w'  	= 'extend_search_prev'   	# 🢔◎ ◎͔ Extend prev search match       	「⇧ n」 	「extend_next_word_start」
+    'r'  	= 'extend_search_next'   	# ◎🢖 ◎͕        next                    	「  n」 	「replace」
     #    	                         	                                       	         
     #    	                         	                                       	         
     '8'  	= 'search_selection'     	# 𝖗🢔▋ Use current sel as search pattern	「⇧ 8」	「<8>」 !!!missing ∀*
